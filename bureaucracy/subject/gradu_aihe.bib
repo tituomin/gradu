@@ -1,0 +1,510 @@
+* lähteet
+** päälähteet
+@book{Liang:1999:JNI:520155,
+ author = {Liang, Sheng},
+ title = {Java Native Interface: Programmer's Guide and Reference},
+ year = {1999},
+ isbn = {0201325772},
+ edition = {1st},
+ publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+ address = {Boston, MA, USA},
+} 
+
+*** historialliset
+
+@article {SPE:SPE4380010203,
+  author =       {Knuth, Donald E.},
+  title =        {An empirical study of {FORTRAN} programs},
+  journal =      {Software: Practice and Experience},
+  volume =       1,
+  number =       2,
+  publisher =    {John Wiley & Sons, Ltd.},
+  issn =         {1097-024X},
+  
+  doi =          {10.1002/spe.4380010203},
+  pages =        {105--133},
+  keywords =     {FORTRAN, Optimization, Efficiency, Compiler},
+  year =         1971,
+  abstract =     {A sample of programs, written in FORTRAN by a wide
+                  variety of people for a wide variety of
+                  applications, was chosen "at random" in an attempt
+                  to discover quantitatively "what programmers really
+                  do". Statistical results of this survey are
+                  presented here, together with some of their apparent
+                  implications for future work in compiler design. The
+                  principal conclusion which may be drawn is the
+                  importance of a program "profile", namely a table of
+                  frequency counts which record how often each
+                  statement is performed in a typical run; there are
+                  strong indications that profile-keeping should
+                  become a standard practice in all computer systems,
+                  for casual users as well as system programmers. This
+                  paper is the report of a three month study
+                  undertaken by the author and about a dozen students
+                  and representatives of the software industry during
+                  the summer of 1970. It is hoped that a reader who
+                  studies this report will obtain a fairly clear
+                  conception of how FORTRAN is being used, and what
+                  compilers can do about it.},
+  file =         {knuth-fortran.pdf}
+}
+
+- profilointi (käsitteen esittely: s. 113)
+- huom! kustannusarviot /arvioita/, ei mittauksia
+- jump tracing? gaines [13]
+- p. 128 perusläppää programmer vs. machine time (classic)
+
+
+@book{Bentley:1982:WEP:539147,
+ author = {Bentley, Jon Louis},
+ title = {Writing efficient programs},
+ year = 1982,
+ isbn = {0-13-970251-2},
+ publisher = {Prentice-Hall, Inc.},
+ address = {Upper Saddle River, NJ, USA},
+}
+
+- Call Number:	 Hs 004.04 Bentley
+- käytännön periaatteita, ei niin oleellinen
+
+*** automaattinen jni
+
+@inproceedings{Wang:2011:MAC:2038698.2038704,
+ author = {Wang, Chih-Sheng and Perez, Guillermo and Chung,
+ Yeh-Ching and Hsu, Wei-Chung and Shih, Wei-Kuan and
+ Hsu, Hong-Rong},
+ title = {A method-based ahead-of-time compiler for {Android} applications},
+ booktitle = {Proceedings of the 14th international conference on
+ Compilers, architectures and synthesis for embedded
+ systems},
+ series = {CASES '11},
+ year = 2011,
+ isbn = {978-1-4503-0713-0},
+ location = {Taipei, Taiwan},
+ pages = {15--24},
+ numpages = 10,
+ 
+ doi = {10.1145/2038698.2038704},
+ acmid = 2038704,
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {ahead-of-time compiler, android, dalvik bytecode,
+ just-in-time compiler, reverse engineering, static
+ profiling},
+ file = {p15-wang.pdf}
+} 
+
+Loistava artikkeli. 
+
+*idea* käytä vastaavaa staattista analyysiä vähentämään native ->
+dvm-kutsuja? (siirrä dvm-osapuoli myös natiiviksi?)
+
+- static profiling, aot (aheaod-of-time) vs jit
+- problems
+ - high jni overhed
+ - taken into account in the profiling
+ - type information loss
+- tools
+ - benchmark references
+ - google traceview! (runs code once, combine with monkey?)
+ - find out about real dynamic profiling
+ - smali (dex disassembler)
+- differences btw java & c, bridge 
+- optimisation tricks
+ - avoid calling native code through jni
+ - inlining (lähde 20)
+ - native code runs in vm context ??
+ - aot resolution (constant pool)
+ - caching
+ - method cloning
+- testituloksia
+ - string = expensive
+ - expensive copying operators
+
+@inproceedings{Stepanian:2005:IJN:1064979.1064997,
+ author = {Stepanian, Levon and Brown, Angela Demke and Kielstra, Allan and Koblents, Gita and Stoodley, Kevin},
+ title = {Inlining {Java} native calls at runtime},
+ booktitle = {Proceedings of the 1st ACM/USENIX international conference on Virtual execution environments},
+ series = {VEE '05},
+ year = {2005},
+ isbn = {1-59593-047-7},
+ location = {Chicago, IL, USA},
+ pages = {121--131},
+ numpages = {11},
+ 
+ doi = {10.1145/1064979.1064997},
+ acmid = {1064997},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {JIT compilation, JNI, Java, inlining, native code},
+ file = {p121-stepanian.pdf}
+} 
+
+*** suorituskyky
+
+@book{HELKA:682673,
+ author = {Smith, Connie U.},
+ title = {Performance engineering of software systems},
+ isbn = {0-201-53769-9},
+ address = {Reading (MA) :},
+ publisher = {Addison-Wesley,},
+ year = {1990.},
+ bibdate = {20120402220445}
+}
+
+- Hs 004.04 Smith
+- vertaa myöhäisempään "painokseen"
+
+*** profilointi, työkalut
+
+
+@inproceedings{Hauswirth:2004:VPU:1028976.1028998,
+ author = {Hauswirth, Matthias and Sweeney, Peter F. and Diwan,
+ Amer and Hind, Michael},
+ title = {Vertical profiling: understanding the behavior of object-oriented applications},
+ booktitle = {Proceedings of the 19th annual ACM SIGPLAN
+ conference on Object-oriented programming, systems,
+ languages, and applications},
+ series = {OOPSLA '04},
+ year = 2004,
+ isbn = {1-58113-831-8},
+ location = {Vancouver, BC, Canada},
+ pages = {251--269},
+ numpages = 19,
+ 
+ doi = {10.1145/1028976.1028998},
+ acmid = 1028998,
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {hardware performance monitors, perturbation,
+ software performance monitors, vertical profiling,
+ whole-system analysis},
+ file = {p251-hauswirth.pdf}
+}
+
+@article{Mytkowicz:2010:EAJ:1809028.1806618,
+ author = {Mytkowicz, Todd and Diwan, Amer and Hauswirth,
+ Matthias and Sweeney, Peter F.},
+ title = {Evaluating the accuracy of {Java} profilers},
+ journal = {SIGPLAN Not.},
+ issue_date = {June 2010},
+ volume = 45,
+ number = 6,
+ month = jun,
+ year = 2010,
+ issn = {0362-1340},
+ pages = {187--197},
+ numpages = 11,
+ 
+ doi = {10.1145/1809028.1806618},
+ acmid = 1806618,
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {bias, observer effect, profiling},
+}
+
+@TECHREPORT{Appel88profilingin,
+    author = {Andrew Appel and Bruce F. Duba and David B. Macqueen and Andrew P. Tolmach},
+    title = {Profiling in the Presence of Optimization and Garbage Collection},
+    institution = {},
+    year = {1988},
+    file = {10.1.1.51.7366.pdf}
+}
+
+- Erittäin hyvää perustietoa profiloinnista
+  - interrupt-driven
+  - call counting
+- ei instituutiota?
+
+@MISC{Graham82gprof:a,
+ author = {Susan L. Graham and Peter B. Kessler and Marshall
+ K. McKusick},
+ title = {gprof: a Call Graph Execution Profiler},
+ year = 1982,
+ file = {graham-profiling-82.pdf},
+}
+           
+*** pelit
+@article{Phelps:2004:FGM:971564.971592,
+ author = {Phelps, Andrew M. and Parks, David M.},
+ title = {Fun and Games: Multi-Language Development},
+ journal = {Queue},
+ issue_date = {February 2004},
+ volume = {1},
+ number = {10},
+ month = feb,
+ year = {2004},
+ issn = {1542-7730},
+ pages = {46--56},
+ numpages = {11},
+ 
+ doi = {10.1145/971564.971592},
+ acmid = {971592},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ file = {phelps.pdf}
+} 
+
+** ehkä päälähteet
+
+@inproceedings{Williams:2002:PSM:584369.584397,
+ author = {Williams, Lloyd G. and Smith, Connie U.},
+ title = {PASASM: a method for the performance assessment of software architectures},
+ booktitle = {Proceedings of the 3rd international workshop on
+ Software and performance},
+ series = {WOSP '02},
+ year = 2002,
+ isbn = {1-58113-563-7},
+ location = {Rome, Italy},
+ pages = {179--189},
+ numpages = 11,
+ doi = {10.1145/584369.584397},
+ acmid = 584397,
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ file = {p197-williams.pdf}
+}
+
+@inproceedings{Williams:1998:PES:287318.287353,
+ author = {Williams, Lloyd G. and Smith, Connie U.},
+ title = {Performance evaluation of software architectures},
+ booktitle = {Proceedings of the 1st international workshop on
+ Software and performance},
+ series = {WOSP '98},
+ year = 1998,
+ isbn = {1-58113-060-0},
+ location = {Santa Fe, New Mexico, United States},
+ pages = {164--177},
+ numpages = 14,
+ doi = {10.1145/287318.287353},
+ acmid = 287353,
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ file = {p164-williams.pdf}
+}
+
+@inproceedings{Absar:2011:EPA:2093157.2093175,
+ author = {Absar, Javed and Shekhar, Deepak},
+ title = {Eliminating partially-redundant array-bounds check in the {Android Dalvik JIT} compiler},
+ booktitle = {Proceedings of the 9th International Conference on
+ Principles and Practice of Programming in Java},
+ series = {PPPJ '11},
+ year = 2011,
+ isbn = {978-1-4503-0935-6},
+ location = {Kongens Lyngby, Denmark},
+ pages = {121--128},
+ numpages = 8,
+ 
+ doi = {10.1145/2093157.2093175},
+ acmid = 2093175,
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Java, array bounds check optimization, compilation,
+ just-in-time, optimization, performance,
+ verification},
+ file = {p121-absar.pdf},
+} 
+
+- perusläppää androidista
+- dalvikista ja jitistä
+- muuten ok
+
+@inproceedings{Hirzel:2007:JGJ:1297027.1297030,
+ author = {Hirzel, Martin and Grimm, Robert},
+ title = {Jeannie: granting {Java} native interface developers their wishes},
+ booktitle = {Proceedings of the 22nd annual ACM SIGPLAN
+ conference on Object-oriented programming systems
+ and applications},
+ series = {OOPSLA '07},
+ year = 2007,
+ isbn = {978-1-59593-786-5},
+ location = {Montreal, Quebec, Canada},
+ pages = {19--38},
+ numpages = 20,
+ 
+ doi = {10.1145/1297027.1297030},
+ acmid = 1297030,
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {C, JNI, foreign function interface, java, modular
+ syntax, programming language composition, rats!,
+ xtc},
+}
+
+- jni peruslähde
+*** lainaukset
+    Of course, JNI itself represents only one point in the
+    design space of foreign function interfaces (FFIs). As dis-
+    cussed in detail in [46], FFIs provide both mechanism and
+    policy for bridging between a higher-level language and
+    C. The mechanism typically entails glue code to convert
+    between the different data representations and calling con-
+    ventions. For example, like JNI, the FFIs for O'Caml [37]
+    and SML/NJ [33] as well as the Swig FFI generator for
+    scripting languages [7] rely on glue code written in C.
+    However, the FFI for the Scheme-based esh shell [47], the
+    Haskell FFI [17], NLFFI for SML/NJ [10], and Charon for
+    Moby [21] extend the higher-level language so that glue
+    code can be written in the higher-level language.
+
+    The policy determines how to abstract C's low-level data structures
+    and functions in the higher-level language. For most FFIs, this
+    policy is fixed. For example, JNI enforces an object-oriented view
+    of C code and data. However, FIG
+
+** rajallisesti hyödynnettävissä, tueksi
+
+
+
+@inproceedings{Reppy:2006:AFG:1173706.1173714,
+ author = {Reppy, John and Song, Chunyan},
+ title = {Application-specific foreign-interface generation},
+ booktitle = {Proceedings of the 5th international conference on
+ Generative programming and component engineering},
+ series = {GPCE '06},
+ year = 2006,
+ isbn = {1-59593-237-2},
+ location = {Portland, Oregon, USA},
+ pages = {49--58},
+ numpages = 10,
+ 
+ doi = {10.1145/1173706.1173714},
+ acmid = 1173714,
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {foreign-interface generation, term rewriting},
+ file = {p49-reppy.pdf}
+}
+
+- alussa on hyvää "teoreettista" yleiserittelyä ffi:stä
+
+
+@article{Chiba:2008:JHP:1344834.1344880,
+ author = {Chiba, Yuji},
+ title = {{Java} heap protection for debugging native methods},
+ journal = {Sci. Comput. Program.},
+ issue_date = {February, 2008},
+ volume = {70},
+ number = {2-3},
+ month = feb,
+ year = {2008},
+ issn = {0167-6423},
+ pages = {149--167},
+ numpages = {19},
+ 
+ doi = {10.1016/j.scico.2007.07.004},
+ acmid = {1344880},
+ publisher = {Elsevier North-Holland, Inc.},
+ address = {Amsterdam, The Netherlands, The Netherlands},
+ keywords = {Debugging, Java, Memory protection, Protection domain},
+ file = {1-s2.0-S0167642307001712-main.pdf}
+}
+
+
+@article{Shi:2008:VMS:1328195.1328197,
+ author = {Shi, Yunhe and Casey, Kevin and Ertl, M. Anton and
+ Gregg, David},
+ title = {Virtual machine showdown: Stack versus registers},
+ journal = {ACM Trans. Archit. Code Optim.},
+ issue_date = {January 2008},
+ volume = 4,
+ number = 4,
+ month = jan,
+ year = 2008,
+ issn = {1544-3566},
+ pages = {2:1--2:36},
+ articleno = 2,
+ numpages = 36,
+ 
+ doi = {10.1145/1328195.1328197},
+ acmid = 1328197,
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Interpreter, register architecture, stack
+ architecture, virtual machine},
+ file = {a21-shi.pdf},
+} 
+
+@article{Prechelt:1999:TOC:317665.317683,
+ author = {Prechelt, Lutz},
+ title = {Technical opinion: comparing {Java} vs. {C/C++} efficiency differences to interpersonal differences},
+ journal = {Commun. ACM},
+ issue_date = {Oct. 1999},
+ volume = 42,
+ number = 10,
+ month = oct,
+ year = 1999,
+ issn = {0001-0782},
+ pages = {109--112},
+ numpages = 4,
+ 
+ doi = {10.1145/317665.317683},
+ acmid = 317683,
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ file = {p109-prechelt.pdf},
+}
+
+- Anekdoottimainen tutkimus, tehokkuus: C vs Java
+
+
+@INPROCEEDINGS{824367, 
+author={Radhakrishnan, R. and Vijaykrishnan, N. and John, L.K. and Sivasubramaniam, A.}, 
+booktitle={High-Performance Computer Architecture, 2000. HPCA-6. Proceedings. Sixth International Symposium on},
+ title={Architectural issues in {Java} runtime systems}, 
+year={2000}, 
+month={}, 
+volume={}, 
+number={}, 
+pages={387 -398}, 
+abstract={ The Java Virtual Machine (JVM) is the cornerstone of Java
+                  technology, and its efficiency in executing portable
+                  Java bytecodes is crucial for the success of this
+                  technology. Interpretation, just-in-time (JIT)
+                  compilation and hardware realization are well-known
+                  solutions for JVM, and previous research has
+                  proposed optimizations for each of these
+                  techniques. However, each technique has its pros and
+                  cons and may not be uniformly attractive for all
+                  hardware platforms. Instead, an understanding of the
+                  architectural implications of JVM implementations
+                  with real applications can be crucial to the
+                  development of enabling technologies for efficient
+                  Java runtime system development on a wide range of
+                  platforms (from resource-rich servers to
+                  resource-constrained hand-held/embedded
+                  systems). Towards this goal, this paper examines
+                  architectural issues, from both the hardware and JVM
+                  implementation perspectives. It specifically
+                  explores the potential of a smart JIT compiler
+                  strategy that can dynamically interpret or compile
+                  based on associated costs, investigates the CPU and
+                  cache architectural support that would benefit JVM
+                  implementations, and examines the synchronization
+                  support for enhancing performance, using
+                  applications from the SpecJVM98 benchmarks}, 
+keywords={CPU architectural support;Java Virtual Machine;Java runtime
+                  systems;SpecJVM98 benchmarks;cache architectural
+                  support;computer
+                  architecture;costs;efficiency;embedded
+                  systems;enabling technologies;hand-held
+                  systems;hardware
+                  realization;interpretation;just-in-time
+                  compilation;performance enhancement;portable Java
+                  bytecodes;resource-constrained systems;resource-rich
+                  servers;smart JIT compiler strategy;synchronization
+                  support;Java;cache storage;computer
+                  architecture;program compilers;program
+                  interpreters;synchronisation;virtual machines;}, 
+doi={10.1109/HPCA.2000.824367}, 
+file = {00824367.pdf},
+ISSN={},}
+
+- Perustaustaa Javan suorituskyvystä
+- nykymittauksia?
+
+*** portability
+
+
+*** jni-bugit
+

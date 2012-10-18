@@ -1,0 +1,58 @@
+
+* performance measuring
+** profiling
+*** static
+*** dynamic
+* tools
+** valgrind
+   - compatibility? (binutils)
+*** vgprof
+
+*** gprof 
+** benchmarks
+   SPECjvm98, SPECjbb2000, VolanoMark, and JFCMark benchmark suites
+
+* google i/o
+** what's new
+*** "manual" memory management possibilities
+
+** media apis use jni + binder?
+
+** performance (butter)
+
+*** dumpsys gfx info
+    frame rate monitoring
+*** systrace.py
+*** traceviewdumpsys surfacefinger
+*** allocation tracker
+
+**** tips
+
+***** don't use new
+
+***** postframecallback (coreographer)
+
+***** 
+** more with less
+*** tools
+**** procranck
+** renderscript
+*** generates jni glue code
+** gl tracer
+
+Youtube Android Internals and NDK
+http://www.youtube.com/watch?v=byFTAhXVF7k
+* adb shell
+* bionic libc
+* binder ipc
+** same interface in c + java
+
+ndk
+* entire cross-compile toolchain
+* packaging, distribution
+* standard stable headers
+* motivation
+** access to hw not a good motivation (because of sandboxing)
+   
+best jni doc
+chapter 5 of oracle/sun developer network
