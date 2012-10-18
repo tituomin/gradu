@@ -97,10 +97,10 @@
 \ProcessOptions\relax
 \LoadClass{article}[2000/05/19]
 \RequirePackage{latexsym}[1998/08/17 v2.2e Standard LaTeX package (lasy symbols)]
-\RequirePackage[latin9]{inputenc}[2000/07/01 v0.996 Input encoding file ]
+\RequirePackage[latin1]{inputenc}[2000/07/01 v0.996 Input encoding file ]
 \RequirePackage[T1]{fontenc}[2000/08/30 v1.91 Standard LaTeX package]
 \if@finnish
-  \RequirePackage[finnish,english]{babel}[2001/03/01 v3.7h The Babel package]
+  \RequirePackage[finnish]{babel}[2001/03/01 v3.7h The Babel package]
 \else
   \if@english
     \RequirePackage[english]{babel}[2001/03/01 v3.7h The Babel package]

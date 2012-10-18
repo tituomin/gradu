@@ -2,7 +2,6 @@
 #+TITLE: Suorituskykyinen sovellusarkkitehtuuri JNI-natiivirajapintaa hyödyntävälle Android-sovellukselle
 
 #+LATEX_HEADER: \usepackage[finnish]{babel}
-#+LATEX_HEADER: \usepackage[latin9]{inputenc}
 #+LaTeX_CLASS: gradu
 
 Pro gradu -tutkielman aihemäärittely\newline
