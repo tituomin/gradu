@@ -32,17 +32,17 @@ este Androidin Java-sovelluskehyksen käyttämiselle on sen
 /suorituskyky/, erityisesti jos ohjelmisto suorittaa paljon raskasta
 laskentaa tai sille on oleellisia tosiaikavaatimuksia.
 
-/Suorituskykytuotanto/ (/Software Performance Engineering/, /SPE/) on
-ohjelmistotekniikan osa-alue, jossa ohjelmistoprosessin alusta lähtien
-varmistetaan, että ohjelmistolle asetetut suorituskykyvaatimukset
-täyttyvät lopullisessa tuotteessa. Menettely on näennäisesti
-ristiriidassa usein lainatun Donald Knuthin lausahduksen kanssa:
-"Ennenaikainen optimointi on kaiken pahan alku ja juuri." Yleisen
-tulkinnan mukaan ohjelmistoa suunniteltaessa tulisi keskittyä sen
-oikeaan toimivuuteen ja optimoida suorituskykyä vasta, kun käytössä on
-suoritettava ohjelma. Sen suoritusaikaista käyttäytymistä
-/profiloimalla/ mitataan, mihin ohjelman osiin optimoinnissa kannattaa
-keskittyä.
+/Ohjelmistojen suorituskykytekniikka/ (/Software Performance
+Engineering/, /SPE/) on ohjelmistotekniikan osa-alue, jossa
+ohjelmistoprosessin alusta lähtien varmistetaan, että ohjelmistolle
+asetetut suorituskykyvaatimukset täyttyvät lopullisessa
+tuotteessa. Menettely on näennäisesti ristiriidassa usein lainatun
+Donald Knuthin lausahduksen kanssa: "Ennenaikainen optimointi on
+kaiken pahan alku ja juuri." Yleisen tulkinnan mukaan ohjelmistoa
+suunniteltaessa tulisi keskittyä sen oikeaan toimivuuteen ja optimoida
+suorituskykyä vasta, kun käytössä on suoritettava ohjelma. Sen
+suoritusaikaista käyttäytymistä /profiloimalla/ mitataan, mihin
+ohjelman osiin optimoinnissa kannattaa keskittyä.
 
 Android-sovelluskehityksestä löydämme kuitenkin tapauksia, joissa
 kehitysprosessin loppuvaiheessa voi olla liian myöhäistä vaikuttaa
@@ -90,16 +90,28 @@ myös sovelluksen kokonaisarkkitehtuuri. JNI-kutsukerroksen käyttäminen
 on aina suorituskykyrasite, erityisesti kun natiivikomponentti kutsuu
 Java-kom\-ponenttia. Monia haasteita liittyy myös muistinhallintaan ja
 resurssien jakamiseen virtuaalikoneen hallitseman muistin ja
-natiivikomponentin välillä. Tutkielmassa käytetään
-SPE-arviointimenetelmiä ja erityisesti ohjelmakoodin instrumentointia
-sekä suorituskykymittauksia tutkimaan monikielisyydestä johtuvien
-rasitteiden suuruusluokkia. Tuloksista johdetaan suosituksia Androidin
-natiivikehityksessä tehokkaalle sovellusarkkitehtuurille ja esitellään
-arkkitehtuuria käyttävä esimerkkisovellus.
+natiivikomponentin välillä.
 
-[fn:1] Esimerkiksi Applen /iOS/-käyttöjärjestelmän sovellukset käännetään /Objective-C/ -kielestä laitteiston konekielellä suoritettaviksi, ja alustan kehitystyökaluilla voi suoraan hyödyntää myös C- tai C++-kielisiä komponentteja.
+Tutkielmassa käytetään SPE-arviointimenetelmiä ja erityisesti
+ohjelmakoodin instrumentointia sekä suorituskykymittauksia tutkimaan
+monikielisyydestä johtuvien rasitteiden suuruusluokkia. Tutkielma
+sisältää kirjallisuuteen perustuvan osuuden, jossa esitellään
+suorituskyvyn mallintamiseen, arvioimiseen ja mittaamiseen käytettäviä
+periaatteita, metodeita sekä työkaluja. Lisäksi lähteiden perusteella
+esitellään Android-ohjelmistoalustan rakennetta suorituskyvyn
+näkökulmasta, keskittyen Dalvik-virtuaalikoneeseen ja sen
+JNI-toteutukseen. Tutkielman toinen osa soveltaa ensimmäisen osan
+metodeja ja käsitteitä JNI-rajapintaa hyödyntävään
+esimerkkisovellukseen. Mittausten ja analyysin perusteella tästä
+johdetaan yleisiä suosituksia Androidin natiivikehityksessä
+tehokkaalle sovellusarkkitehtuurille.
 
+[fn:1] Esimerkiksi Applen /iOS/-käyttöjärjestelmän sovellukset
+käännetään /Objective-C/ -kielestä laitteiston konekielellä
+suoritettaviksi, ja alustan kehitystyökaluilla voi suoraan hyödyntää
+myös C- tai C++-kielisiä komponentteja.
 
+\newpage
 \nocite{*}
 \bibliographystyle{tktl}
 \bibliography{gradu_aihe}

@@ -1,0 +1,10 @@
+
+* dalvik/vm/Jni.cpp 
+  Sisältää hyviä kommentteja, esim. memory pinning vs. copying.
+
+** only minimal checks
+*** array bounds included
+   
+   
+   
+  

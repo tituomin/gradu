@@ -1,0 +1,22 @@
+
+* Performance profiling
+
+** oprof uses CPU instructions, accurate
+   - requires recompilation of kernel + root access
+
+** google perf-tools uses kernel calls
+   - inaccurate, easier
+   - does it matter?
+
+** valgrind uses simulation/emulation
+   - slow
+
+** gprof "historical"
+   http://stackoverflow.com/questions/1777556/alternatives-to-gprof/1779343#1779343
+
+** hprof java, stack samples
+
+** manual method
+   - threads == problem?
+
+   
