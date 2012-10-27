@@ -1,0 +1,28 @@
+#+AUTHOR: Timo Tuominen
+#+TITLE: Suorituskykyinen sovellusarkkitehtuuri JNI-natiivirajapintaa hyödyntävälle Android-sovellukselle
+#+LaTeX_CLASS: gradu
+
+#+BEGIN_abstract
+#+INCLUDE: "chapters/abstract.org"
+#+END_abstract
+
+#+LATEX: \mytableofcontents
+#+LATEX: \newpage
+
+* Johdanto
+#+INCLUDE: "chapters/intro.org" :minlevel 1
+#+LATEX: \newpage
+* Suorituskyky ohjelmistokehityksessä
+* Suorituskyvyn arviointimenetelmät
+#+LATEX: \newpage
+* Android-järjestelmä
+* Androidin natiivikielinen ohjelmointi
+#+LATEX: \newpage
+* Esimerkkisovelluksen tausta
+* Tulokset
+* Päätelmät
+#+LATEX: \newpage
+* Loppusanat
+
+#+LATEX: \newpage
+#+LATEX: \section*{Lähteet}
