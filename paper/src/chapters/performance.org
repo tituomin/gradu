@@ -1,0 +1,3 @@
+
+Missä vaiheessa ohjelmiston kehitystä tulisi kiinnittää huomiota
+suorituskykyyn? 

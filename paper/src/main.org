@@ -12,7 +12,11 @@
 * Johdanto
 #+INCLUDE: "chapters/intro.org" :minlevel 1
 #+LATEX: \newpage
+
 * Suorituskyky ohjelmistokehityksessä
+#+INCLUDE: "chapters/performance.org" :minlevel 1
+#+LATEX: \newpage
+
 * Suorituskyvyn arviointimenetelmät
 #+LATEX: \newpage
 * Android-järjestelmä
