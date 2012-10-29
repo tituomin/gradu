@@ -1,5 +1,5 @@
-* l‰hteet
-** p‰‰l‰hteet
+* l√§hteet
+** p√§√§l√§hteet
 *** historialliset
 
 @book{Liang:1999:JNI:520155,
@@ -15,7 +15,7 @@
 - s.28 getStringCritical: GC off -supported in Android?
 - 72: encouraged to use PushLocalFrame/PopLocalFrame
 - 89 + 93->: threading (check ndk docs)
-  - 97: t‰rke‰! thread model native vs. java must be the same
+  - 97: t√§rke√§! thread model native vs. java must be the same
 - 109: wrappers, architecture!
   - 113: shared stubs
   - 123: peer classes, check NDK impl.
@@ -62,10 +62,31 @@
   file =         {knuth-fortran.pdf}
 }
 
-- profilointi (k‰sitteen esittely: s. 113)
+- profilointi (k√§sitteen esittely: s. 113)
 - huom! kustannusarviot /arvioita/, ei mittauksia
 - jump tracing? gaines [13]
-- p. 128 perusl‰pp‰‰ programmer vs. machine time (classic)
+- p. 128 perusl√§pp√§√§ programmer vs. machine time (classic)
+
+@article{Knuth:1974:SPG:356635.356640,
+ author = {Knuth, Donald E.},
+ title = {Structured Programming with go to Statements},
+ journal = {ACM Comput. Surv.},
+ issue_date = {Dec. 1974},
+ volume = {6},
+ number = {4},
+ month = dec,
+ year = {1974},
+ issn = {0360-0300},
+ pages = {261--301},
+ numpages = {41},
+ url = {http://doi.acm.org/10.1145/356635.356640},
+ doi = {10.1145/356635.356640},
+ acmid = {356640},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+- s. 268: premature optimization  is the root of all evil
 
 
 @book{Bentley:1982:WEP:539147,
@@ -78,7 +99,7 @@
 }
 
 - Call Number:	 Hs 004.04 Bentley
-- k‰yt‰nnˆn periaatteita, ei niin oleellinen
+- k√§yt√§nn√∂n periaatteita, ei niin oleellinen
 
 *** automaattinen jni
 
@@ -109,8 +130,8 @@
 
 Loistava artikkeli. 
 
-*idea* k‰yt‰ vastaavaa staattista analyysi‰ v‰hent‰m‰‰n native ->
-dvm-kutsuja? (siirr‰ dvm-osapuoli myˆs natiiviksi?)
+*idea* k√§yt√§ vastaavaa staattista analyysi√§ v√§hent√§m√§√§n native ->
+dvm-kutsuja? (siirr√§ dvm-osapuoli my√∂s natiiviksi?)
 
 - static profiling, aot (aheaod-of-time) vs jit
 - problems
@@ -125,7 +146,7 @@ dvm-kutsuja? (siirr‰ dvm-osapuoli myˆs natiiviksi?)
 - differences btw java & c, bridge 
 - optimisation tricks
  - avoid calling native code through jni
- - inlining (l‰hde 20)
+ - inlining (l√§hde 20)
  - native code runs in vm context ??
  - aot resolution (constant pool)
  - caching
@@ -166,9 +187,9 @@ dvm-kutsuja? (siirr‰ dvm-osapuoli myˆs natiiviksi?)
 }
 
 - Hs 004.04 Smith
-- vertaa myˆh‰isemp‰‰n "painokseen"
+- vertaa my√∂h√§isemp√§√§n "painokseen"
 
-*** profilointi, tyˆkalut
+*** profilointi, ty√∂kalut
 
 @article{Hauswirth:2004:VPU:1035292.1028998,
  author = {Hauswirth, Matthias and Sweeney, Peter F. and Diwan,
@@ -246,7 +267,7 @@ dvm-kutsuja? (siirr‰ dvm-osapuoli myˆs natiiviksi?)
     file = {10.1.1.51.7366.pdf}
 }
 
-- Eritt‰in hyv‰‰ perustietoa profiloinnista
+- Eritt√§in hyv√§√§ perustietoa profiloinnista
   - interrupt-driven
   - call counting
 - ei instituutiota?
@@ -280,7 +301,7 @@ dvm-kutsuja? (siirr‰ dvm-osapuoli myˆs natiiviksi?)
  file = {phelps.pdf}
 } 
 
-** ehk‰ p‰‰l‰hteet
+** ehk√§ p√§√§l√§hteet
 
 @article{Nair:2011:EHN:1952522.1952525,
  author = {Nair, Ajay and Shankar, Karthik and Lysecky, Roman},
@@ -307,9 +328,9 @@ dvm-kutsuja? (siirr‰ dvm-osapuoli myˆs natiiviksi?)
  file = {a32-nair.pdf}
 } 
 
-- perusl‰hteit‰ profilointiin?
+- perusl√§hteit√§ profilointiin?
 - tosin aika h/w, embedded-focus
-- itse tutkimus ei sovellu, mutta l‰hdelista voi olla hyv‰
+- itse tutkimus ei sovellu, mutta l√§hdelista voi olla hyv√§
 
 @INPROCEEDINGS{Nethercote03valgrind:a,
     author = {Nicholas Nethercote and Julian Seward},
@@ -341,8 +362,8 @@ dvm-kutsuja? (siirr‰ dvm-osapuoli myˆs natiiviksi?)
  file = {p121-absar.pdf},
 } 
 
-- perusl‰pp‰‰ androidista
-- dalvikista ja jitist‰
+- perusl√§pp√§√§ androidista
+- dalvikista ja jitist√§
 - muuten ok
 
 @inproceedings{Hirzel:2007:JGJ:1297027.1297030,
@@ -389,7 +410,7 @@ dvm-kutsuja? (siirr‰ dvm-osapuoli myˆs natiiviksi?)
  file = {p19-hirzel.pdf},
 }
 
-- jni perusl‰hde
+- jni perusl√§hde
 *** lainaukset
     Of course, JNI itself represents only one point in the
     design space of foreign function interfaces (FFIs). As dis-
@@ -410,7 +431,7 @@ dvm-kutsuja? (siirr‰ dvm-osapuoli myˆs natiiviksi?)
     policy is fixed. For example, JNI enforces an object-oriented view
     of C code and data. However, FIG
 
-** rajallisesti hyˆdynnett‰viss‰, tueksi
+** rajallisesti hy√∂dynnett√§viss√§, tueksi
 
 @inproceedings{Pathak:2012:ESI:2168836.2168841,
  author = {Pathak, Abhinav and Hu, Y. Charlie and Zhang, Ming},
@@ -477,7 +498,7 @@ dvm-kutsuja? (siirr‰ dvm-osapuoli myˆs natiiviksi?)
  file = {p49-reppy.pdf}
 }
 
-- alussa on hyv‰‰ "teoreettista" yleiserittely‰ ffi:st‰
+- alussa on hyv√§√§ "teoreettista" yleiserittely√§ ffi:st√§
 
 
 @article{Chiba:2008:JHP:1344834.1344880,
@@ -642,7 +663,7 @@ doi={10.1109/HPCA.2000.824367},
 file = {00824367.pdf},
 ISSN={},}
 
-- Perustaustaa Javan suorituskyvyst‰
+- Perustaustaa Javan suorituskyvyst√§
 - nykymittauksia?
 
 *** portability
@@ -667,7 +688,7 @@ ISSN={},}
  address = {New York, NY, USA},
 }
 
-- K‰yt‰nnˆn kokemuksia cross-platform-kehityksest‰ + varhaisesta javasta
+- K√§yt√§nn√∂n kokemuksia cross-platform-kehityksest√§ + varhaisesta javasta
   - ei JNI-asiaa
 
 *** jni-bugit
@@ -692,7 +713,7 @@ ISSN={},}
  file = {p1-li.pdf}
 } 
 
-- bugien luokittelua, hyv‰!
+- bugien luokittelua, hyv√§!
 
 
 * tiedekirjastossa
@@ -736,7 +757,7 @@ Henry H. Liu
  publisher = {Prentice Hall PTR}
 }
 
-- Ei lˆydy kirjastosta.
+- Ei l√∂ydy kirjastosta.
 
 @book{noble2001small,
  title = {Small memory software: patterns for systems with limited memory},
@@ -749,10 +770,213 @@ Henry H. Liu
  publisher = {Addison-Wesley}
 }
 
-- Ei lˆydy HY kirjastosta
+- Ei l√∂ydy HY kirjastosta
  
 * arvioi
 http://www.cse.wustl.edu/~jain/cse567-06/ftp/sw_monitors1/index.html
+
+** architecture, modeling, performance
+@incollection{,
+year={2005},
+isbn={978-3-540-25877-3},
+booktitle={Component-Based Software Engineering},
+volume={3489},
+series={Lecture Notes in Computer Science},
+editor={Heineman, GeorgeT. and Crnkovic, Ivica and Schmidt, HeinzW. and Stafford, JudithA. and Szyperski, Clemens and Wallnau, Kurt},
+doi={10.1007/11424529_5},
+title={Evaluating Performance Attributes of Layered Software Architecture},
+url={http://dx.doi.org/10.1007/11424529_5},
+publisher={Springer Berlin Heidelberg},
+author={Sharma, VibhuSaujanya and Jalote, Pankaj and Trivedi, KishorS.},
+pages={66-81},
+file={layered-arch-perf-model.pdf}
+}
+
+- hyv√§√§ perusl√§pp√§√§ SPE:st√§!
+
+@incollection{,
+year={2000},
+isbn={978-3-540-67658-4},
+booktitle={Applications of Graph Transformations with Industrial Relevance},
+volume={1779},
+series={Lecture Notes in Computer Science},
+editor={Nagl, Manfred and Sch√ºrr, Andreas and M√ºnch, Manfred},
+doi={10.1007/3-540-45104-8_4},
+title={From UML Descriptions of High-Level Software Architectures to LQN Performance Models},
+url={http://dx.doi.org/10.1007/3-540-45104-8_4},
+publisher={Springer Berlin Heidelberg},
+author={Petriu, DorinaC. and Wang, Xin},
+pages={47-63},
+language={English},
+file={uml-arch-perf-model.pdf}
+}
+
+-- vaikuttaa hyv√§lt√§, liittyy edelliseen
+
+@incollection{,
+year={2005},
+isbn={978-3-540-30644-3},
+booktitle={Component-Based Software Development for Embedded Systems},
+volume={3778},
+series={Lecture Notes in Computer Science},
+editor={Atkinson, Colin and Bunse, Christian and Gross, Hans-Gerhard and Peper, Christian},
+doi={10.1007/11591962_14},
+title={Performance Evaluation Approaches for Software Architects},
+url={http://dx.doi.org/10.1007/11591962_14},
+publisher={Springer Berlin Heidelberg},
+author={Purhonen, Anu},
+pages={275-295}
+}
+
+@incollection{,
+year={2008},
+isbn={978-3-540-87878-0},
+booktitle={Quality of Software Architectures. Models and Architectures},
+volume={5281},
+series={Lecture Notes in Computer Science},
+editor={Becker, Steffen and Plasil, Frantisek and Reussner, Ralf},
+doi={10.1007/978-3-540-87879-7_1},
+title={Rethinking the Use of Models in Software Architecture},
+url={http://dx.doi.org/10.1007/978-3-540-87879-7_1},
+publisher={Springer Berlin Heidelberg},
+author={Ardagna, Danilo and Ghezzi, Carlo and Mirandola, Raffaela},
+pages={1-27}
+file={rethinking-models.pdf}
+}
+
+- eritt√§in hyv√§lt√§ vaikuttava yleistajuinen esitys malleista
+
+modeling conf:
+http://dl.acm.org/event.cfm?id=RE313&CFID=187693783&CFTOKEN=27205712
+
+
+
+
+** java vs.  c++
+
+Przemys√°aw Bruski, ‚ÄúThe Java (not really) Faster than C++
+Benchmark,‚Äù Available: http://bruscy.republika.pl/pages/przemek/
+java_not_really_faster_than_cpp.html.
+Christian Felde, ‚ÄúC++ vs Java performance; It's a tie!,‚Äù Available:
+http://blog.cfelde.com/2010/06/c-vs-java-performance.
+Lasse K√§rkk√§inen, ‚ÄúYet Another Java vs. C++ Shootout,,‚Äù Available:
+http://zi.fi/shootout.
+Keith, ‚ÄúThe Java is Faster than C++ and C++ Sucks Unbiased
+Benchmark,‚Äù Available: http://keithlea.com/javabench.
+
+
+** android ndk ieee suoria l√§hteit√§ :)
+
+Ôªø@incollection {springerlink:10.1007/978-3-642-01802-2_28,
+   author = {Batyuk, Leonid and Schmidt, Aubrey-Derrick and Schmidt, Hans-Gunther and Camtepe, Ahmet and Albayrak, Sahin},
+   affiliation = {Technische Universit√§t Berlin 10587 Berlin Germany},
+   title = {Developing and Benchmarking Native Linux Applications on Android},
+   booktitle = {MobileWireless Middleware, Operating Systems, and Applications},
+   series = {Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering},
+   editor = {Bonnin, Jean-Marie and Giannelli, Carlo and Magedanz, Thomas and Akan, Ozgur and Bellavista, Paolo and Cao, Jiannong and Dressler, Falko and Ferrari, Domenico and Gerla, Mario and Kobayashi, Hisashi and Palazzo, Sergio and Sahni, Sartaj and Shen, Xuemin (Sherman) and Stan, Mircea and Xiaohua, Jia and Zomaya, Albert and Coulson, Geoffrey},
+   publisher = {Springer Berlin Heidelberg},
+   isbn = {978-3-642-01802-2},
+   keyword = {Computer Science},
+   pages = {381-392},
+   volume = {7},
+   url = {http://dx.doi.org/10.1007/978-3-642-01802-2_28},
+   note = {10.1007/978-3-642-01802-2_28},
+   abstract = {Smartphones get increasingly popular where more and more smartphone platforms emerge. Special attention was gained by the open source platform Android which was presented by the Open Handset Alliance (OHA) hosting members like Google, Motorola, and HTC. Android uses a Linux kernel and a stripped-down userland with a custom Java VM set on top. The resulting system joins the advantages of both environments, while third-parties are intended to develop only Java applications at the moment. In this work, we present the benefit of using native applications in Android. Android includes a fully functional Linux, and using it for heavy computational tasks when developing applications can bring in substantional performance increase. We present how to develop native applications and software components, as well as how to let Linux applications and components communicate with Java programs. Additionally, we present performance measurements of native and Java applications executing identical tasks. The results show that native C applications can be up to 30 times as fast as an identical algorithm running in Dalvik VM. Java applications can become a speed-up of up to 10 times if utilizing JNI.},
+   year = {2009},
+   file = {dev-benchmark-nat-android.pdf}
+}
+
+
+-- hyvi√§ l√§hteit√§!
+
+@INPROCEEDINGS{6088515, 
+author={Namseung Lee and Sung-Soo Lim}, 
+booktitle={Embedded Systems for Real-Time Multimedia (ESTIMedia), 2011 9th IEEE Symposium on}, title={A whole layer performance analysis method for Android platforms}, 
+year={2011}, 
+month={oct.}, 
+volume={}, 
+number={}, 
+pages={1}, 
+abstract={As the products based on Android platform have been widely spread in consumer electronics market, the needs for systematic performance analysis have significantly increased. We implemented a whole layer performance analysis tool set combining and integrating available open source performance analysis tools. Android framework layer profiling is performed DDMS mechanism with a little modification and the kernel layer profiling is based on Ftrace. The reason why we selected Ftrace instead of Oprofile as kernel layer profiler is that the Oprofile often misses the important kernel events to analyze since Oprofile is using purely time-based sampling. While Ftrace provides accuracy in performance profiling, the additional costs to perform kernel events profiling are significant. Therefore, minimizing the profiling cost maintaining the accuracy of event logging has been a primary issue in performance profiling at kernel layer.}, 
+keywords={Android framework layer profiling;Android platform;Dalvik Debug Monitor Server mechanism;Ftrace;consumer electronics market;event logging;kernel layer profiling;open source performance analysis tools;whole layer performance analysis method;consumer electronics;operating system kernels;program debugging;software performance evaluation;}, 
+doi={10.1109/ESTIMedia.2011.6088515}, 
+ISSN={},
+file = {06088515.pdf}
+}
+
+@INPROCEEDINGS{6118781, 
+author={Cheng-Min Lin and Jyh-Horng Lin and Chyi-Ren Dow and Chang-Ming Wen}, 
+booktitle={Innovations in Bio-inspired Computing and Applications (IBICA), 2011 Second International Conference on}, title={Benchmark Dalvik and Native Code for Android System}, 
+year={2011}, 
+month={dec.}, 
+volume={}, 
+number={}, 
+pages={320 -323}, 
+keywords={Android development platform;Android native development kit;Android programming;Android system;C-C++ compiling;Dalvik Java code;Google;native code;performance analysis;test program;C++ language;Java;mobile computing;operating systems (computers);program compilers;program testing;virtual machines;}, 
+doi={10.1109/IBICA.2011.85}, 
+ISSN={},
+file={06118781.pdf}
+}
+
+@INPROCEEDINGS{6163104, 
+author={Ki-Cheol Son and Jong-Yeol Lee}, 
+booktitle={Awareness Science and Technology (iCAST), 2011 3rd International Conference on}, title={The method of android application speed up by using NDK}, 
+year={2011}, 
+month={sept.}, 
+volume={}, 
+number={}, 
+pages={382 -385}, 
+abstract={The Android platform is one of the most popular used embedded OS, is mounted on robot, TVs, especially on Smart phones. Because general android applications are developed by the JAVA language, it is very slow in case which requires many calculational operations such as image processing. To overcome these defects, the Android OS is supporting JNI with the Android NDK, which makes available to use the C libraries in the android at application level. Through NDK, the Android applications can approach hardware and is able to developed high speed application. In this paper, we consider that how to enhance performance of the JAVA applications by using the Android NDK. We compared original NyARToolKit, which is augmented reality engine, with the improved NyARToolKit using the NDK. Through this experiment, we confirmed that android application programmers can make their application efficiently by using the NDK. We could increase speed of NyARToolKit by 1.869 times in our experiment. This paper presents a guideline for an effective way to use native code libraries in Android applications.}, 
+keywords={Android NDK;Android application speed up method;C libraries;JAVA language;JNI;Java native interface;NyARToolKit;TV;augmented reality engine;embedded OS;image processing;native code libraries;native development kit;robot;smart phones;C language;Java;augmented reality;operating systems (computers);software engineering;}, 
+doi={10.1109/ICAwST.2011.6163104}, 
+ISSN={},
+file={06163104.pdf}}
+
+- kehno, todella kehno
+
+@INPROCEEDINGS{5669738, 
+author={Sangchul Lee and Jae Wook Jeon}, 
+booktitle={Control Automation and Systems (ICCAS), 2010 International Conference on}, title={Evaluating performance of Android platform using native C for embedded systems}, 
+year={2010}, 
+month={oct.}, 
+volume={}, 
+number={}, 
+pages={1160 -1163}, 
+abstract={The Android platform used for mobile devices can be applied to embedded systems, such as robot control systems. Developers should create applications by using Java language provided by Android SDK for embedded systems operated via Android platforms. However, in many existing embedded systems, developers have written applications for controlling the system by using C language. Android NDK makes it possible for developers to easily reuse such legacy code written in C/C++ languages. In this paper, we show the difference in terms of performance between an Android application using native code library from C source and an Android application using the same algorithm written in Java language only. We conducted an experiment on five parts: JNI communication delay, integer calculation, floating-point calculation, memory access algorithm, and heap memory allocation algorithm. This paper presents a guideline for an effective way to use native code libraries in Android applications.}, 
+keywords={Android NDK;Android SDK;Android platform;C language;JNI communication delay;Java language;embedded systems;floating-point calculation;heap memory allocation algorithm;integer calculation;memory access algorithm;mobile devices;C language;Java;embedded systems;mobile computing;}, 
+doi={}, 
+ISSN={},
+file={05669738.pdf}
+}
+
+@INPROCEEDINGS{5718811, 
+author={Kundu, T.K. and Paul, K.}, 
+booktitle={VLSI Design (VLSI Design), 2011 24th International Conference on}, title={Improving Android Performance and Energy Efficiency}, 
+year={2011}, 
+month={jan.}, 
+volume={}, 
+number={}, 
+pages={256 -261}, 
+abstract={Mobile devices and embedded devices need more processing power but energy consumption should be less to save battery power. Google has released an open source platform Android for mobile devices. Android uses new power management framework to save power in mobile devices. Android developers are allowed to build only JAVA applications. In this work, we present benefits of using Android in low power embedded devices. We compared Android JAVA performance with popular Sun embedded JVM running on top of Angstrom linux. Our work shows that Android can be made more energy efficient by improving performance of JAVA applications. We developed a JAVA DSP framework which allows Android JAVA applications to use both ARM amp; DSP parallely and thus improves performance. We also showed, Android can be made more energy efficient by using our developed framework.}, 
+keywords={ARM;Android operating system;Angstrom Linux kernel;Java DSP framework;Java application;Sun embedded JVM;battery power;energy consumption;energy efficiency;low power embedded device;mobile device;open source platform;power management;power saving;processing power;Java;Linux;digital signal processing chips;electronic engineering computing;embedded systems;low-power electronics;mobile radio;operating system kernels;power aware computing;power consumption;public domain software;}, 
+doi={10.1109/VLSID.2011.63}, 
+ISSN={1063-9667},
+file={05718811.pdf}}
+
+@INPROCEEDINGS{6163105, 
+author={Jae Kyu Lee and Jong Yeol Lee}, 
+booktitle={Awareness Science and Technology (iCAST), 2011 3rd International Conference on}, title={Android programming techniques for improving performance}, 
+year={2011}, 
+month={sept.}, 
+volume={}, 
+number={}, 
+pages={386 -389}, 
+abstract={Android has been researched in various mobile device fields such as Smartphone and Tablet PC. In here, we should remember that mobile devices have limited storage and constrained battery life. Therefore, when developers develop applications, they should do efficient programming. In this paper, we have proposed programming guidelines for an effective way to improve performance in Android applications. We have programmed Android applications using Java and Native C, and compared the performance between the two languages. The applications are composed of five categories such as JNI delay, Integer, Floating-point, Memory access algorithm and String processing. By analyzing the results, we propose a more efficient way to program Android applications.}, 
+keywords={Android application programming;Android programming techniques;JNI delay;Java;floating-point;integer;memory access algorithm;mobile device;native C;performance improvement;programming guidelines;smartphone;string processing;tablet PC;C language;Java;operating systems (computers);smart phones;software performance evaluation;}, 
+doi={10.1109/ICAwST.2011.6163105}, 
+ISSN={},
+file={06163105.pdf}
+}
 
 ** ffi
 
@@ -796,7 +1020,7 @@ http://www.cse.wustl.edu/~jain/cse567-06/ftp/sw_monitors1/index.html
    title = {Performance Issues for Multi-language Java Applications},
    booktitle = {Parallel and Distributed Processing},
    series = {Lecture Notes in Computer Science},
-   editor = {Rolim, JosÈ},
+   editor = {Rolim, Jos√©},
    publisher = {Springer Berlin / Heidelberg},
    isbn = {978-3-540-67442-9},
    keyword = {Computer Science},
@@ -863,6 +1087,26 @@ http://www.cse.wustl.edu/~jain/cse567-06/ftp/sw_monitors1/index.html
 }
 
 
+** dalvik jit jne
+BibTeX | EndNote | ACM Ref
+@inproceedings{Perez:2012:HJC:2380403.2380418,
+ author = {Perez, Guillermo A. and Kao, Chung-Min and Chung, Yeh-Ching and Hsu, Wei-Chung},
+ title = {A hybrid just-in-time compiler for android: comparing JIT types and the result of cooperation},
+ booktitle = {Proceedings of the 2012 international conference on Compilers, architectures and synthesis for embedded systems},
+ series = {CASES '12},
+ year = {2012},
+ isbn = {978-1-4503-1424-4},
+ location = {Tampere, Finland},
+ pages = {41--50},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/2380403.2380418},
+ doi = {10.1145/2380403.2380418},
+ acmid = {2380418},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {android, dalvik vm, jit, method-based, trace-based},
+ file = {p41-perez.pdf}
+} 
 
 ** energiankulutus
 
@@ -1302,7 +1546,7 @@ Vol. 13, no. 2: Performance: myths, measurements, and morals; Part 6: Useful mea
 Vol. 13, no. 3: Performance: myths, measurements, and morals; Part 7: Detailed measurements of a small program
 
 
-* ei miss‰‰n nimess‰
+* ei miss√§√§n nimess√§
 
 @MISC{Matthews07operationalsemantics,
     author = {Jacob Matthews and et al.},
