@@ -1,0 +1,66 @@
+% Created 2012-10-30 Tue 13:07
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{Riittävä suorituskyky on keskeinen laatuvaatimus mille tahansa}
+\author{Timo I Tuominen}
+\date{\today}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs Org-mode version 7.8.11}}
+
+\begin{document}
+
+\maketitle
+
+% Org-mode is exporting headings to 3 levels.
+
+ohjelmistolle, mutta millä tavalla suorituskykyvaatimukset tulisi
+ottaa huomioon ohjelmiston kehitysprosessissa? Ohjelmistotekniikan
+kirjallisuudessa kysymykseen on vastattu hyvin eri tavoin.
+
+Donald Knuthilta on peräisin tunnettu lainaus: ``Ennenaikainen
+optimointi on kaiken pahan alku ja juuri.''\cite{todo} Käsitellessään \textbf{rakenteellisen ohjelmoinnin periaatteita} Knuth korostoaa, ettei
+varsinaisessa ohjelmointityössä kannata käyttää aikaa suorituskykyä
+parantaviin manuaalisiin optimointeihin ennen kuin ohjelman
+suoritusaikaista käyttäytymistä on tutkittu ja löydetty ne ohjelman
+osat, joiden suoritusaika on merkittävä osa ohjelman
+kokonaissuoritusajasta.
+
+Periaatteeseen on kaksi syytä. Ensinnäkin ohjelmoijan intuitio johtaa
+yleensä harhaan, kun etsitään ohjelman suorituskyvyn kannalta
+keskeisiä osia. Lisäksi käsityönä tehdyt optimoinnit tekevät
+ohjelmakoodista vaikeammin ymmärrettävää ja ylläpidettävää, joten
+niitä kannattaa välttää kaikkialla, missä niitä ei todistetusti
+tarvita.
+
+Knuthin tueksi voi nykynäkökulmasta todeta, että
+laitteistoarkkitehtuurien, optimoivien kääntäjien, virtuaalikoneiden
+ja suoritusympäristön yleisen monimutkaistumisen takia pelkästä
+ohjelman lähdekoodista on yhä vaikeampaa suoraan päätellä ohjelman
+suoritusaikaista käyttäytymistä.
+
+\section{\textbf{TODO} esimerkki lähteistä}
+\label{sec-1}
+
+
+Knuthin näkökulma rajottui kuitenkin yksittäisen algoritmin, ohjelman
+tai komponentin ohjelmointiin. Laaja
+
+\end{document}
