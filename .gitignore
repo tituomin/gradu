@@ -1,3 +1,5 @@
+paper/build
+paper/gen
 *.aux
 *.bbl
 *.blg
