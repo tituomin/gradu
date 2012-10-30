@@ -17,7 +17,7 @@
 #+INCLUDE: "chapters/performance.org" :minlevel 1
 #+LATEX: \newpage
 
-* Suorituskyvyn arviointimenetelmät
+* Suorituskyvyn arviointi
 #+LATEX: \newpage
 * Android-järjestelmä
 * Androidin natiivikielinen ohjelmointi
@@ -29,4 +29,5 @@
 * Loppusanat
 
 #+LATEX: \newpage
-#+LATEX: \section*{Lähteet}
+#+LATEX: \bibliographystyle{templates/tktl}
+#+LATEX: \bibliography{bib/main}
