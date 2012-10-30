@@ -5,7 +5,7 @@ ottaa huomioon ohjelmiston kehitysprosessissa? Ohjelmistotekniikan
 kirjallisuudessa kysymykseen on vastattu hyvin eri tavoin.
 
 Donald Knuthilta on peräisin tunnettu lainaus: "Ennenaikainen
-optimointi on kaiken pahan alku ja juuri."\cite{todo} 
+optimointi on kaiken pahan alku ja juuri." @@todo
 Käsitellessään *rakenteellisen* ohjelmoinnin periaatteita Knuth korostaa, ettei
 varsinaisessa ohjelmointityössä kannata käyttää aikaa suorituskykyä
 parantaviin manuaalisiin optimointeihin ennen kuin ohjelman
@@ -50,7 +50,7 @@ Suorituskykyvaatimuksien täyttymistä ohjelmistoprosessin näkökulmasta
 tavoitellaan /ohjelmistojen suorituskykytekniikan/ alalla (/Software
 Performance Engineering/, /SPE/). Se on ohjelmistotekniikan osa-alue,
 jossa suorituskykyvaatimukset kvantifioidaan ja otetaan huomioon
-vaatimusanalyysistä lähtien aina ylläpitoon asti.\cite[s.~1]{spe} Alan
+vaatimusanalyysistä lähtien aina ylläpitoon asti @@spe(1). Alan
 kehittäjän Connie U. Smithin mukaan puutteelliset
 suorituskykyominaisuudet ovat olleet keskeisessä osassa
 epäonnistuneissa ohjelmistoprojekteissa, ja ne voitaisiin välttää
@@ -60,13 +60,13 @@ toteutusvaihetta.
 * Suorituskyky
 
 Suorituskyky on subjektiivinen käsite, joka kuvaa, miten /hyvin/
-ohjelmisto toteuttaa tehtävänsä\cite[s.~2]{ferrari}. Tässä
+ohjelmisto toteuttaa tehtävänsä @@ferrari(2). Tässä
 tutkielmassa määritellään suorituskyky ohjelmiston laadullisiksi
 ominaisuuksiksi, jotka kuvaavat miten /tehokkaasti/ ohjelmisto toimii
 käyttäjän näkökulmasta, eli miten tyydyttävät sen vasteajat ovat ja
 miten tehokkaasti se prosessoi syötteitä. Näinkin rajattuna käsite on
 suhteellinen käyttäjän tarpeisiin ja siten ohjelmiston vaatimuksiin
-nähden.
+nähden @@todo(2--4).
 
 
 # probleemi: subjektiivisuus vs. mitattavuus. tästä löytyy matskua. :)

@@ -10,11 +10,11 @@
 #+LATEX: \newpage
 
 * Johdanto
-#+INCLUDE: "chapters/intro.org" :minlevel 1
+#+INCLUDE: "../gen/chapters/intro.org" :minlevel 1
 #+LATEX: \newpage
 
 * Suorituskyky ohjelmistokehityksessä
-#+INCLUDE: "chapters/performance.org" :minlevel 1
+#+INCLUDE: "../gen/chapters/performance.org" :minlevel 1
 #+LATEX: \newpage
 
 * Suorituskyvyn arviointi
