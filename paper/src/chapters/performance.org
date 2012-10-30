@@ -41,16 +41,15 @@ ovat riippuvaisia aikaisemmin tehdyistä makrotason valinnoista, kuten
   suoritusympäristön eri osiin,
 - valmiiden komponenttien käytöstä ja valinnasta.
   
-Kaikkia näitä valintoja voi periaatteessa toki muuttaa milloin vain,
-mutta suhteessa konkreettisen projektin rajoituksiin se voi olla joko
-hyvin kallista tai mahdotonta.
+Kaikkia näitä valintoja voi toki periaatteessa muuttaa milloin tahansa,
+mutta todellisten projektien rajoitusten takia se on usein mahdotonta.
   
 # comment: lähde edelliseen?
 
-Laajemmasta näkökulmasta suorituskykyvaatimuksien täyttymiseen pyrkii
-/ohjelmistojen suorituskykytekniikka/ (/Software Performance
-Engineering/, /SPE/). Se on ohjelmistotekniikan osa-alue, jossa
-suorituskykyvaatimukset kvantifioidaan ja otetaan huomioon
+Suorituskykyvaatimuksien täyttymistä ohjelmistoprosessin näkökulmasta
+tavoitellaan /ohjelmistojen suorituskykytekniikan/ alalla (/Software
+Performance Engineering/, /SPE/). Se on ohjelmistotekniikan osa-alue,
+jossa suorituskykyvaatimukset kvantifioidaan ja otetaan huomioon
 vaatimusanalyysistä lähtien aina ylläpitoon asti.\cite[s.~1]{spe} Alan
 kehittäjän Connie U. Smithin mukaan puutteelliset
 suorituskykyominaisuudet ovat olleet keskeisessä osassa
@@ -62,12 +61,15 @@ toteutusvaihetta.
 
 Suorituskyky on subjektiivinen käsite, joka kuvaa, miten /hyvin/
 ohjelmisto toteuttaa tehtävänsä\cite[s.~2]{ferrari}. Tässä
-tutkielmassa määritellään suorituskyky ohjelmiston laadullisina
-ominaisuuksina, jotka kuvaavat miten /tehokkaasti/ ohjelmisto toimii
+tutkielmassa määritellään suorituskyky ohjelmiston laadullisiksi
+ominaisuuksiksi, jotka kuvaavat miten /tehokkaasti/ ohjelmisto toimii
 käyttäjän näkökulmasta, eli miten tyydyttävät sen vasteajat ovat ja
-miten suuri sen suoritusteho on. Tälläkin tavalla rajattuna käsite on
-edelleen suhteellinen käyttäjän tarpeisiin ja siten
-ohjelmiston vaatimuksiin nähden.
+miten tehokkaasti se prosessoi syötteitä. Näinkin rajattuna käsite on
+suhteellinen käyttäjän tarpeisiin ja siten ohjelmiston vaatimuksiin
+nähden.
+
 
 # probleemi: subjektiivisuus vs. mitattavuus. tästä löytyy matskua. :)
 # ferrari luku 5.2.3
+
+
