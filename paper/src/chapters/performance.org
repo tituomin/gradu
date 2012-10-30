@@ -1,3 +1,73 @@
 
-Missä vaiheessa ohjelmiston kehitystä tulisi kiinnittää huomiota
-suorituskykyyn? 
+Riittävä suorituskyky on keskeinen laatuvaatimus mille tahansa
+ohjelmistolle, mutta millä tavalla suorituskykyvaatimukset tulisi
+ottaa huomioon ohjelmiston kehitysprosessissa? Ohjelmistotekniikan
+kirjallisuudessa kysymykseen on vastattu hyvin eri tavoin.
+
+Donald Knuthilta on peräisin tunnettu lainaus: "Ennenaikainen
+optimointi on kaiken pahan alku ja juuri."\cite{todo} 
+Käsitellessään *rakenteellisen* ohjelmoinnin periaatteita Knuth korostaa, ettei
+varsinaisessa ohjelmointityössä kannata käyttää aikaa suorituskykyä
+parantaviin manuaalisiin optimointeihin ennen kuin ohjelman
+suoritusaikaista käyttäytymistä on tutkittu ja löydetty ohjelman
+osat, joiden suoritusaika on merkittävä osa ohjelman
+kokonaissuoritusajasta.
+
+Periaatteeseen on kaksi syytä. Ensinnäkin ohjelmoijan intuitio johtaa
+yleensä harhaan, kun etsitään ohjelman suorituskyvyn kannalta
+keskeisiä osia. Lisäksi käsityönä tehdyt optimoinnit tekevät
+ohjelmakoodista vaikeammin ymmärrettävää ja ylläpidettävää, joten
+niitä kannattaa välttää kaikkialla, missä niitä ei todistetusti
+tarvita.
+
+Knuthin tueksi voi nykynäkökulmasta todeta, että
+laitteistoarkkitehtuurien, optimoivien kääntäjien, virtuaalikoneiden
+ja suoritusympäristön yleisen monimutkaistumisen takia pelkästä
+ohjelman lähdekoodista on yhä vaikeampaa suoraan päätellä ohjelman
+suoritusaikaista käyttäytymistä.
+
+# TODO esimerkki lähteistä (java vertical profiling)
+
+Knuthin näkökulma rajottui kuitenkin yksittäisen algoritmin, ohjelman
+tai komponentin /ohjelmointiin/. Laajempaa ohjelmistoa rakentaessa
+otetaan kantaa myös ohjelmiston konseptuaalisiin vaatimuksiin ja
+suunnitellaan ohjelmiston yleistason arkkitehtuuri sekä ohjelmiston
+tarkempi rakenne. Oli ohjelmiston tuotantoprosessi miten
+inkrementaalinen tahansa, ohjelmoitaessa tehtävät mikrotason valinnat
+ovat riippuvaisia aikaisemmin tehdyistä makrotason valinnoista, kuten
+
+- käytettävästä ohjelmointikielestä tai -kielistä,
+- ohjelmiston yleisarkkitehtuurista ja komponenttien sijoittumisesta
+  suoritusympäristön eri osiin,
+- valmiiden komponenttien käytöstä ja valinnasta.
+  
+Kaikkia näitä valintoja voi periaatteessa toki muuttaa milloin vain,
+mutta suhteessa konkreettisen projektin rajoituksiin se voi olla joko
+hyvin kallista tai mahdotonta.
+  
+# comment: lähde edelliseen?
+
+Laajemmasta näkökulmasta suorituskykyvaatimuksien täyttymiseen pyrkii
+/ohjelmistojen suorituskykytekniikka/ (/Software Performance
+Engineering/, /SPE/). Se on ohjelmistotekniikan osa-alue, jossa
+suorituskykyvaatimukset kvantifioidaan ja otetaan huomioon
+vaatimusanalyysistä lähtien aina ylläpitoon asti.\cite[s.~1]{spe} Alan
+kehittäjän Connie U. Smithin mukaan puutteelliset
+suorituskykyominaisuudet ovat olleet keskeisessä osassa
+epäonnistuneissa ohjelmistoprojekteissa, ja ne voitaisiin välttää
+/mallintamalla/ ohjelmistoja suorituskykynäkökulmasta jo ennen
+toteutusvaihetta.
+
+* Suorituskyky
+
+Suorituskyky on subjektiivinen käsite, joka kuvaa, miten /hyvin/
+ohjelmisto toteuttaa tehtävänsä\cite[s.~2]{ferrari}. Tässä
+tutkielmassa määritellään suorituskyky ohjelmiston laadullisina
+ominaisuuksina, jotka kuvaavat miten /tehokkaasti/ ohjelmisto toimii
+käyttäjän näkökulmasta, eli miten tyydyttävät sen vasteajat ovat ja
+miten suuri sen suoritusteho on. Tälläkin tavalla rajattuna käsite on
+edelleen suhteellinen käyttäjän tarpeisiin ja siten
+ohjelmiston vaatimuksiin nähden.
+
+# probleemi: subjektiivisuus vs. mitattavuus. tästä löytyy matskua. :)
+# ferrari luku 5.2.3

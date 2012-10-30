@@ -1,7 +1,6 @@
 
 TEXINPUTS := ./gen/:./templates/:
 BIBINPUTS := ../bib:
-
 CHAPTERS := $(wildcard src/chapters/*.org)
 
 vpath %.org src
@@ -34,7 +33,7 @@ main.tex: main.org $(CHAPTERS)
 # missing file reference and interactively asking you for an alternative.
 
 main.pdf: main.tex
-	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/: latexmk -pdf -pdflatex="pdflatex -interactive=nonstopmode" -use-make gen/main.tex
+	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/: latexmk -jobname=build/gradu -pdf -pdflatex="pdflatex -interactive=nonstopmode" -use-make gen/main.tex 
 
 clean:
 	latexmk -CA
