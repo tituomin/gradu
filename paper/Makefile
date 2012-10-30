@@ -1,10 +1,7 @@
 
-TEXINPUTS := ./gen/:./templates/:
-BIBINPUTS := ../bib:
 CHAPTERS := $(wildcard src/chapters/*.org)
 
 vpath %.org src
-#vpath %.org ./src/chapters
 vpath %.tex gen
 
 # You want latexmk to *always* run, because make does not have all the info.
@@ -33,7 +30,7 @@ main.tex: main.org $(CHAPTERS)
 # missing file reference and interactively asking you for an alternative.
 
 main.pdf: main.tex
-	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/gradu -pdf -pdflatex="pdflatex -interactive=nonstopmode" -use-make gen/main.tex 
+	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/tituomin-gradu -pdf -pdflatex="pdflatex -interactive=nonstopmode" -use-make gen/main.tex 
 
 clean:
 	latexmk -CA
