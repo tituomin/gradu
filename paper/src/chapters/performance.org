@@ -5,8 +5,9 @@ ottaa huomioon ohjelmiston kehitysprosessissa? Ohjelmistotekniikan
 kirjallisuudessa kysymykseen on vastattu hyvin eri tavoin.
 
 Donald Knuthilta on peräisin tunnettu lainaus: "Ennenaikainen
-optimointi on kaiken pahan alku ja juuri." @@todo
+optimointi on kaiken pahan alku ja juuri @@goto(268)." 
 Käsitellessään *rakenteellisen* ohjelmoinnin periaatteita Knuth korostaa, ettei
+# todo: mitä artikkeli itse asiassa käsittelee?
 varsinaisessa ohjelmointityössä kannata käyttää aikaa suorituskykyä
 parantaviin manuaalisiin optimointeihin ennen kuin ohjelman
 suoritusaikaista käyttäytymistä on tutkittu ja löydetty ohjelman
@@ -27,14 +28,15 @@ ohjelman lähdekoodista on yhä vaikeampaa suoraan päätellä ohjelman
 suoritusaikaista käyttäytymistä @@vertical.
 
 # TODO esimerkki lähteistä (java vertical profiling)
+# lisää lähteitä?
 
 Knuthin näkökulma rajottui kuitenkin yksittäisen algoritmin, ohjelman
 tai komponentin /ohjelmointiin/. Laajempaa ohjelmistoa rakentaessa
 otetaan kantaa myös ohjelmiston konseptuaalisiin vaatimuksiin ja
 suunnitellaan ohjelmiston komponenttitason arkkitehtuuri sekä
 komponenttien tarkempi rakenne. Oli ohjelmiston tuotantoprosessi miten
-inkrementaalinen tahansa, aikaisin tehdyt makrotason ratkaisut
-rajoittavat usein myöhempiä mikrotason valintoja. Merkittäviä
+inkrementaalinen tahansa, monet varhaiset makrotason ratkaisut
+rajoittavat myöhempiä mikrotason ratkaisuita. Merkittäviä
 seurannaisvaikutuksia on esimerkiksi
 
 - valituilla ohjelmointikielellä tai -kielillä,
@@ -61,20 +63,44 @@ toteutusvaihetta.
 
 * Suorituskyky
 
-Suorituskyky on subjektiivinen käsite, joka kertoo, miten /hyvin/
-ohjelmisto toteuttaa tehtävänsä @@ferrari(2). Tässä tutkielmassa
-määritellään suorituskyky ohjelmiston laadulliseksi ominaisuudeksi,
-joka luonnehtii, miten /tehokkaasti/ ohjelmisto toimii käyttäjän
-näkökulmasta: miten tyydyttävät sen vasteajat ovat ja miten
-tehokkaasti se prosessoi syötedataa. Näinkin rajattuna käsite on
-riippuvainen käyttäjän tarpeista ja siten ohjelmiston vaatimuksista
-@@todo(2--4). Jotta suorituskykyä voisi mallintaa ja mitata, sekä
-relevantit suorituskykyvaatimukset että suorituskykyominaisuudet on
-analysoitava kvantifikoitaviksi suureiksi @@ferrari(12). Tällaiset
-suureet koskevat järjestelmän /tuottavuutta/, /responsiivisuutta/ ja
-/käyttöastetta/ @@ferrari(12).
+Suorituskyky on pohjimmiltaan subjektiivinen käsite, joka kertoo,
+miten /hyvin/ ohjelmisto toteuttaa tehtävänsä @@ferrari(2). Tässä
+tutkielmassa määritellään suorituskyky ohjelmiston laadulliseksi
+ominaisuudeksi, joka kuvaa, miten /tehokkaasti/ ohjelmisto toimii
+käyttäjän näkökulmasta: miten tyydyttävät sen vasteajat ovat ja miten
+tehokkaasti se prosessoi syötedataa.
 
-Tuottavuuteen liittyy
+Jotta suorituskykyä voisi mallintaa ja mitata, sekä relevantit
+suorituskykyvaatimukset että suorituskykyominaisuudet on analysoitava
+kvantifikoitaviksi /mittaluvuiksi/ @@ferrari(12). Tällaiset mittaluvut
+koskevat joko järjestelmän /tuottavuutta/, /responsiivisuutta/ tai
+valitun ohjelmisto- tai laitteistoresurssin /käyttöastetta/
+@@ferrari(12).
+
+Tässä tutkielmassa käsitellään ensisijaisesti mobiilisovellusten
+responsiivisuutta. Sitä arvioidaan mittaamalla vasteaikaa: aikaväliä
+syötteen saamisesta siihen hetkeen kun ohjelman tai ohjelmakomponentin
+tuloste on palautettu käyttäjälle tai kutsuvalle komponentille
+@@ferrari(13). Vasteajan perussuure on siis aika, ja sitä voi mitata
+ohjelmiston eri tasoilla yksittäisestä aliohjelmasta koko
+ohjelmistoon.
+
+Myös tuottavuutta käsitellään tutkielmassa sikäli kuin komponenttien
+tuottavuus vaikuttaa vasteaikaan. Tuottavuus tarkoittaa
+käsittelytehoa, jolla ohjelma suoriutuu esimerkiksi tietyn datamäärän
+tai työkuorman käsittelystä, ja tuottavuusmittalukujen suure on
+/kuorma aikayksikköä kohti/. Kuormalle ei ole aina löydettävissä
+universaalia, laitteisto- tai sovellusalueriippumatonta mittayksikköä
+@@ferrari(12).
+
+
+
+
+#Näinkin rajattuna käsite on
+#riippuvainen käyttäjän tarpeista ja siten ohjelmiston vaatimuksista
+# @@todo(2--4).
+
+#Tuottavuuteen liittyy
 # todo 
 
 # probleemi: subjektiivisuus vs. mitattavuus. tästä löytyy matskua. :)
