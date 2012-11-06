@@ -4,6 +4,8 @@ ohjelmistolle, mutta millä tavalla suorituskykyvaatimukset tulisi
 ottaa huomioon ohjelmiston kehitysprosessissa? Ohjelmistotekniikan
 kirjallisuudessa kysymykseen on vastattu hyvin eri tavoin.
 
+* Suorituskyvyn saavuttaminen
+
 Donald Knuthilta on peräisin tunnettu lainaus: "Ennenaikainen
 optimointi on kaiken pahan alku ja juuri @@goto(268)." 
 Käsitellessään *rakenteellisen* ohjelmoinnin periaatteita Knuth korostaa, ettei
@@ -61,37 +63,56 @@ epäonnistuneissa ohjelmistoprojekteissa, ja ne voitaisiin välttää
 /mallintamalla/ ohjelmistoja suorituskykynäkökulmasta jo ennen
 toteutusvaihetta.
 
-* Suorituskyky
+* Suorituskyvyn mittaaminen
 
-Suorituskyky on pohjimmiltaan subjektiivinen käsite, joka kertoo,
+Suorituskyky on pohjimmiltaan subjektiivinen käsite, joka kuvastaa,
 miten /hyvin/ ohjelmisto toteuttaa tehtävänsä @@ferrari(2). Tässä
 tutkielmassa määritellään suorituskyky ohjelmiston laadulliseksi
 ominaisuudeksi, joka kuvaa, miten /tehokkaasti/ ohjelmisto toimii
 käyttäjän näkökulmasta: miten tyydyttävät sen vasteajat ovat ja miten
-tehokkaasti se prosessoi syötedataa.
+tehokkaasti se käsittelee syötedataa.
 
-Jotta suorituskykyä voisi mallintaa ja mitata, sekä relevantit
-suorituskykyvaatimukset että suorituskykyominaisuudet on analysoitava
-kvantifikoitaviksi /mittaluvuiksi/ @@ferrari(12). Tällaiset mittaluvut
-koskevat joko järjestelmän /tuottavuutta/, /responsiivisuutta/ tai
-valitun ohjelmisto- tai laitteistoresurssin /käyttöastetta/
-@@ferrari(12).
+Jotta järjestelmän suorituskykyä voisi arvioida täsmällisesti, on
+käsite purettava kvantitatiivisiksi /mittareiksi/.  Tällaiset mittarit
+jakautuvat luokkiin sen mukaan, koskevatko ne järjestelmän
+/tuottavuutta/, /responsiivisuutta/ vai valitun ohjelmisto- tai
+laitteistoresurssin /käyttöastetta/ @@ferrari(12).
 
 Tässä tutkielmassa käsitellään ensisijaisesti mobiilisovellusten
-responsiivisuutta. Sitä arvioidaan mittaamalla vasteaikaa: aikaväliä
+responsiivisuutta. Sitä arvioidaan mittaamalla /vasteaikaa/: aikaväliä
 syötteen saamisesta siihen hetkeen kun ohjelman tai ohjelmakomponentin
 tuloste on palautettu käyttäjälle tai kutsuvalle komponentille
-@@ferrari(13). Vasteajan perussuure on siis aika, ja sitä voi mitata
-ohjelmiston eri tasoilla yksittäisestä aliohjelmasta koko
+@@ferrari(13). Vasteajan perussuure on siis aika, ja vasteaikaa voi
+mitata eri kokoluokissa jopa yksittäisestä konekäskystä koko
 ohjelmistoon.
 
 Myös tuottavuutta käsitellään tutkielmassa sikäli kuin komponenttien
-tuottavuus vaikuttaa vasteaikaan. Tuottavuus tarkoittaa
-käsittelytehoa, jolla ohjelma suoriutuu esimerkiksi tietyn datamäärän
-tai työkuorman käsittelystä, ja tuottavuusmittalukujen suure on
-/kuorma aikayksikköä kohti/. Kuormalle ei ole aina löydettävissä
-universaalia, laitteisto- tai sovellusalueriippumatonta mittayksikköä
-@@ferrari(12).
+tuottavuus vaikuttaa käyttäjän kokemiin vasteaikoihin. Tuottavuus
+tarkoittaa käsittelytehoa, jolla ohjelma suoriutuu esimerkiksi tietyn
+datamäärän tai työkuorman käsittelystä, ja tuottavuusmittarit
+ilmaistaan yksiköllä /kuorma aikayksikköä kohti/. Kuormalle ei yleensä
+ole löydettävissä universaalia, laitteisto- tai
+sovellusalueriippumatonta mittayksikköä @@ferrari(12).
+
+Sama universaalisuusongelma koskee kaikkia suorituskykymittareita;
+vaikka suorituskyvyn eri osatekijöitä voi mitata kvantitatiivisilla
+mittareilla, niiden objektiivisuus on aina rajallinen. Esimerkiksi
+vasteaikamittarit ovat merkityksellisiä vain suhteessa /määriteltyyn/
+käyttötapaukseen ja kokonaistyömäärään -- molemmat näistä on hyvin
+vaikea luetella tyhjentävästi ja yksikäsitteisesti @@ferrari(14).
+Lisäksi moniajojärjestelmän, kuten Android-järjestelmän, kokonaistila
+vaikuttaa yksittäisiin mitattuihin vasteaikoihin. Näistä syistä
+mittariksi tulee ottaa vasteaikojen tilastollinen jakauma tietyn
+ajanjakson sisällä ja tietyn käyttötapausluokan sisällä, jotta
+vaihtelut molempien suhteen voidaan otetaan huomioon tilastollisesti
+@@ferrari(14--15).
+
+Objektiivisuuden puute voi vaikeuttaa tulosten tieteellistä
+toistettavuutta. Käytännön kehitystyössä se ei aina ole ongelma, sillä
+tiettyjä mittaustuloksia hyödynnetään aina suhteessa kulloisiinkin
+/tavoitteisiin/ @@ferrari(todo: sivut).
+
+# käsittele lyhyesti (max 2 kpl) O-algoritmianalyysi
 
 
 
