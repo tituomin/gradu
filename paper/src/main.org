@@ -11,23 +11,19 @@
 
 * Johdanto
 #+INCLUDE: "../gen/chapters/intro.org" :minlevel 1
-#+LATEX: \newpage
 
 * Suorituskyky ohjelmistokehityksess‰
 #+INCLUDE: "../gen/chapters/performance.org" :minlevel 1
-#+LATEX: \newpage
 
-* Suorituskyvyn arviointi
-#+LATEX: \newpage
 * Android-j‰rjestelm‰
-* Androidin natiivikielinen ohjelmointi
-#+LATEX: \newpage
-* Esimerkkisovelluksen tausta
-* Tulokset
-* P‰‰telm‰t
-#+LATEX: \newpage
-* Loppusanat
+#+INCLUDE: "../gen/chapters/android.org" :minlevel 1
 
+* Androidin natiivikielinen ohjelmointi                            :noexport:
+* Esimerkkisovelluksen tausta                                      :noexport:
+* Tulokset                                                         :noexport:
+* P‰‰telm‰t                                                        :noexport:
+* Loppusanat                                                       :noexport:
+* L‰hteet
 #+LATEX: \newpage
 #+LATEX: \bibliographystyle{templates/tktl}
 #+LATEX: \bibliography{bib/main}
