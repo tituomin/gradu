@@ -68,15 +68,14 @@ toteutusvaihetta.
 Suorituskyky on pohjimmiltaan subjektiivinen käsite, joka kuvastaa,
 miten /hyvin/ ohjelmisto toteuttaa tehtävänsä @@ferrari(2). Tässä
 tutkielmassa määritellään suorituskyky ohjelmiston laadulliseksi
-ominaisuudeksi, joka kuvaa, miten /tehokkaasti/ ohjelmisto toimii
+ominaisuudeksi, joka kuvaa, miten /nopeasti/ ohjelmisto toimii
 käyttäjän näkökulmasta: miten tyydyttävät sen vasteajat ovat ja miten
 tehokkaasti se käsittelee syötedataa.
 
 Jotta järjestelmän suorituskykyä voisi arvioida täsmällisesti, on
-käsite purettava kvantitatiivisiksi /mittareiksi/.  Tällaiset mittarit
-jakautuvat luokkiin sen mukaan, koskevatko ne järjestelmän
-/tuottavuutta/, /responsiivisuutta/ vai valitun ohjelmisto- tai
-laitteistoresurssin /käyttöastetta/ @@ferrari(12).
+käsite purettava kvantitatiivisiksi /mittareiksi/.  Ne mittaavat
+järjestelmän /tuottavuutta/ tai /responsiivisuutta/, tai valitun
+ohjelmisto- tai laitteistoresurssin /käyttöastetta/ @@ferrari(12).
 
 Tässä tutkielmassa käsitellään ensisijaisesti mobiilisovellusten
 responsiivisuutta. Sitä arvioidaan mittaamalla /vasteaikaa/: aikaväliä
@@ -88,29 +87,59 @@ ohjelmistoon.
 
 Myös tuottavuutta käsitellään tutkielmassa sikäli kuin komponenttien
 tuottavuus vaikuttaa käyttäjän kokemiin vasteaikoihin. Tuottavuus
-tarkoittaa käsittelytehoa, jolla ohjelma suoriutuu esimerkiksi tietyn
-datamäärän tai työkuorman käsittelystä, ja tuottavuusmittarit
-ilmaistaan yksiköllä /kuorma aikayksikköä kohti/. Kuormalle ei yleensä
-ole löydettävissä universaalia, laitteisto- tai
-sovellusalueriippumatonta mittayksikköä @@ferrari(12).
+tarkoittaa käsittelytehoa, jolla ohjelma suoriutuu tietyn työkuorman
+käsittelystä, ja tuottavuusmittarit ilmaistaan yksiköllä /kuorma
+aikayksikköä kohti/. Kuormalle ei yleensä ole löydettävissä
+universaalia, laitteisto- tai sovellusalueriippumatonta mittayksikköä
+@@ferrari(12), ja työkuorman mallintaminen onkin keskeisiä haasteita
+suorituskyvyn mittaamisessa ja arvioinnissa @@spe(115), @@ferrari(221).
+#todo oikea syntaksi monelle viitteelle?
 
-Sama universaalisuusongelma koskee kaikkia suorituskykymittareita;
-vaikka suorituskyvyn eri osatekijöitä voi mitata kvantitatiivisilla
+Sama universaalisuusongelma koskee kaikkia suorituskykymittareita.
+Vaikka suorituskyvyn eri osatekijöitä voi mitata kvantitatiivisilla
 mittareilla, niiden objektiivisuus on aina rajallinen. Esimerkiksi
-vasteaikamittarit ovat merkityksellisiä vain suhteessa /määriteltyyn/
-käyttötapaukseen ja kokonaistyömäärään -- molemmat näistä on hyvin
-vaikea luetella tyhjentävästi ja yksikäsitteisesti @@ferrari(14).
-Lisäksi moniajojärjestelmän, kuten Android-järjestelmän, kokonaistila
+vasteaikamittarit ovat merkityksellisiä vain suhteessa kulloiseenkin
+käyttötapaukseen ja kokonaistyömäärään, joista molemmat on hyvin
+vaikea kuvata tyhjentävästi @@ferrari(14). Lisäksi
+moniajojärjestelmän, kuten Android-järjestelmän, kokonaistila ja
 vaikuttaa yksittäisiin mitattuihin vasteaikoihin. Näistä syistä
 mittariksi tulee ottaa vasteaikojen tilastollinen jakauma tietyn
 ajanjakson sisällä ja tietyn käyttötapausluokan sisällä, jotta
-vaihtelut molempien suhteen voidaan otetaan huomioon tilastollisesti
+vaihtelut molempien suhteen voidaan ottaa huomioon tilastollisesti
 @@ferrari(14--15).
 
+#viite: android moniajo
+
 Objektiivisuuden puute voi vaikeuttaa tulosten tieteellistä
-toistettavuutta. Käytännön kehitystyössä se ei aina ole ongelma, sillä
-tiettyjä mittaustuloksia hyödynnetään aina suhteessa kulloisiinkin
-/tavoitteisiin/ @@ferrari(todo: sivut).
+toistettavuutta. Käytännön kehitystyössä se ei aina ole ongelma, jos
+tuloksista vedetäänkin vain rajallisia johtopäätöksiä. Jos tavoitteena
+on tietyn järjestelmän suorituskyvyn /parantaminen/, riittää että
+mittauksia voi käyttää alkuperäisen ja muokatun järjestelmän
+vertailuun, tarkemmin sanottuna hypoteettisen suorituskykyparannuksen
+/validointiin/ @@ferrari(336). Jos tavoitteena on uuden
+ohjelmistojärjestelmän tuottaminen, mittauksia käytetään validoimaan
+suorituskykyarvioita, joita on sisällytetty määrittely- ja
+suunnitteluvaiheiden malleihin.  @@spe(18). Ohjelmistoprosessissa
+näitä validoituja malleja verrataan lopulta alkuperäisiin
+suorituskykyvaatimuksiin, joita niitäkin voidaan joskus jopa muuttaa
+@@spe(18). Siten kvantifioidutkin mallit ja mittaukset ovat lopulta
+alisteisia ohjelmiston käyttäjien subjektiiviselle kokemukselle [fn:bar].
+
+[fn:bar] Lisäksi sama mitattu vasteaika voi näyttäytyä käyttäjälle
+erilaisena, jos työn etenemistä osoittava käyttöliittymäelementti
+etenee eri tavalla @@progressbar.
+# todo lue ja varmista että lähde sanoo näin ;)
+
+* Ohjelmiston mallintaminen (Markov)
+
+
+
+* Työkuorman mallintaminen
+# todo, tämä on vähän hankalampi, katotaan myöhemmin
+
+
+* Ohjelmiston mittaustekniikat
+
 
 # käsittele lyhyesti (max 2 kpl) O-algoritmianalyysi
 
