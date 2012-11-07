@@ -1,0 +1,5 @@
+
+Googlen Android on Linux-pohjainen moniajokäyttöjärjestelmä
+mobiililaitteille [fn:version].
+
+[fn:version] Tämä tutkielma perustuu Androidin versioon 4.1.2.
