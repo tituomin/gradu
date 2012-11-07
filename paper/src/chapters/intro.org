@@ -12,10 +12,15 @@ ratkaisu. Ensinnäkin käytettävissä saattaa olla muulla kielellä kuin
 Javalla kirjoitettua ohjelmakoodia, jota halutaan hyödyntää
 sellaisenaan. Toisaalta täysin uudestakin mobiilisovelluksesta
 halutaan usein lähtökohtaisesti rakentaa mahdollisimman
-/siirrettävä/.[fn:1] Kolmas ja tämän tutkielman kannalta oleellisin
+/siirrettävä/.[fn:ios] Kolmas ja tämän tutkielman kannalta oleellisin
 este Androidin Java-sovelluskehyksen käyttämiselle on sen
 /suorituskyky/, erityisesti jos ohjelmisto suorittaa paljon raskasta
 laskentaa tai sille on oleellisia tosiaikavaatimuksia.
+
+[fn:ios] Esimerkiksi Applen /iOS/-käyttöjärjestelmän sovellukset
+käännetään /Objective-C/ -kielestä laitteiston konekielellä
+suoritettaviksi, ja alustan kehitystyökaluilla voi suoraan hyödyntää
+myös C- tai C++-kielisiä komponentteja.
 
 /Ohjelmistojen suorituskykytekniikka/ (/Software Performance
 Engineering/, /SPE/) on ohjelmistotekniikan osa-alue, jossa
@@ -88,9 +93,3 @@ metodeja ja käsitteitä JNI-rajapintaa hyödyntävään
 esimerkkisovellukseen. Mittausten ja analyysin perusteella tästä
 johdetaan yleisiä suosituksia Androidin natiivikehityksessä
 tehokkaalle sovellusarkkitehtuurille.
-
-[fn:1] Esimerkiksi Applen /iOS/-käyttöjärjestelmän sovellukset
-käännetään /Objective-C/ -kielestä laitteiston konekielellä
-suoritettaviksi, ja alustan kehitystyökaluilla voi suoraan hyödyntää
-myös C- tai C++-kielisiä komponentteja.
-
