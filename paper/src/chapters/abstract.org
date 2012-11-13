@@ -1,2 +1,2 @@
 
-JNI-ohjelmointi on Cava-J++ -ohjelmointia.
+JNI, FFI, suorituskyky, Android, arkkitehtuuri.
