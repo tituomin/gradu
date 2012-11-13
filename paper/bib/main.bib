@@ -229,6 +229,66 @@ dvm-kutsuja? (siirrä dvm-osapuoli myös natiiviksi?)
 -- modeling
 -- markov chains, vaikuttaa juuri asialliselta
 
+*** arkkitehtuuri
+
+@inproceedings{perf-arch,
+ author = {Williams, Lloyd G. and Smith, Connie U.},
+ title = {Performance evaluation of software architectures},
+ booktitle = {Proceedings of the 1st international workshop on
+ Software and performance},
+ series = {WOSP '98},
+ year = 1998,
+ isbn = {1-58113-060-0},
+ location = {Santa Fe, New Mexico, United States},
+ pages = {164--177},
+ numpages = 14,
+ url = {http://doi.acm.org/10.1145/287318.287353},
+ doi = {10.1145/287318.287353},
+ acmid = 287353,
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ file = {p164-williams.pdf}
+}
+
+- alussa hyviä perusväittämiä, arkkitehtuuri + suorituskyky
+
+@INPROCEEDINGS{arch,
+author={Clements, P.C.}, 
+booktitle={Parallel and Distributed Real-Time Systems, 1997. Proceedings of the Joint Workshop on}, title={Coming attractions in software architecture}, 
+year={1997}, 
+month={apr}, 
+volume={}, 
+number={}, 
+pages={2 -9}, 
+abstract={Software architecture has emerged as an important topic in software engineering. This paper examines what is new about the subject, and what is not, and what research trends we may expect in the future. We discuss the promise that work in the field holds, and organize the work into five predominant themes: selection, representation, evaluation, development, and recovery. Technology for the formal representation of architectures is examined in detail, along with notions of architectural styles and patterns. The paper begins by examining the range of meanings associated with the term in order to provide a context for its treatment}, 
+keywords={development;evaluation;recovery;representation;selection;software architecture;software engineering;software engineering;technological forecasting;}, 
+doi={10.1109/WPDRTS.1997.637857}, 
+ISSN={},
+file={00637857.pdf}}
+
+- smith et al viittaa tähän, ehkä menee vähän liian yleishölinäksi kuitenkin
+- no, voi viitata suhteessa hajautettuihin järjestelmiin
+
+*** mallinnus
+
+@incollection{rethink,
+year={2008},
+isbn={978-3-540-87878-0},
+booktitle={Quality of Software Architectures. Models and Architectures},
+volume={5281},
+series={Lecture Notes in Computer Science},
+editor={Becker, Steffen and Plasil, Frantisek and Reussner, Ralf},
+doi={10.1007/978-3-540-87879-7_1},
+title={Rethinking the Use of Models in Software Architecture},
+url={http://dx.doi.org/10.1007/978-3-540-87879-7_1},
+publisher={Springer Berlin Heidelberg},
+author={Ardagna, Danilo and Ghezzi, Carlo and Mirandola, Raffaela},
+pages={1-27},
+file={rethinking-models.pdf}
+}
+
+- erittäin hyvältä vaikuttava yleistajuinen esitys malleista
+
 *** profilointi, työkalut
 
 @ARTICLE{1667162, 
@@ -490,6 +550,22 @@ file={01667162.pdf}
     of C code and data. However, FIG
 
 ** rajallisesti hyödynnettävissä, tueksi
+
+@ARTICLE{4plus1, 
+author={Kruchten, P.B.}, 
+journal={Software, IEEE}, title={The 4+1 View Model of architecture}, 
+year={1995}, 
+month={nov}, 
+volume={12}, 
+number={6}, 
+pages={42 -50}, 
+abstract={The 4+1 View Model organizes a description of a software architecture using five concurrent views, each of which addresses a specific set of concerns. Architects capture their design decisions in four views and use the fifth view to illustrate and validate them. The logical view describes the design's object model when an object-oriented design method is used. To design an application that is very data driven, you can use an alternative approach to develop some other form of logical view, such as an entity-relationship diagram. The process view describes the design's concurrency and synchronization aspects. The physical view describes the mapping of the software onto the hardware and reflects its distributed aspect. The development view describes the software's static organization in its development environment}, 
+keywords={4+1 View Model;concurrency;data-driven application design;design decisions;design object model;development environment;development view;distributed aspect;entity-relationship diagram;hardware;object-oriented design method;physical view;software architecture;software mapping;software static organization;synchronization;validation;distributed processing;entity-relationship modelling;object-oriented methods;software engineering;}, 
+doi={10.1109/52.469759}, 
+ISSN={0740-7459},
+file={00469759.pdf}
+}
+
 
 @inproceedings{Pathak:2012:ESI:2168836.2168841,
  author = {Pathak, Abhinav and Hu, Y. Charlie and Zhang, Ming},
@@ -829,6 +905,9 @@ Henry H. Liu
 http://www.cse.wustl.edu/~jain/cse567-06/ftp/sw_monitors1/index.html
 
 ** architecture, modeling, performance
+
+
+
 @incollection{,
 year={2005},
 isbn={978-3-540-25877-3},
@@ -866,7 +945,7 @@ file={uml-arch-perf-model.pdf}
 
 -- vaikuttaa hyvältä, liittyy edelliseen
 
-@incollection{,
+@incollection{purhonen,
 year={2005},
 isbn={978-3-540-30644-3},
 booktitle={Component-Based Software Development for Embedded Systems},
@@ -881,23 +960,6 @@ author={Purhonen, Anu},
 pages={275-295}
 }
 
-@incollection{,
-year={2008},
-isbn={978-3-540-87878-0},
-booktitle={Quality of Software Architectures. Models and Architectures},
-volume={5281},
-series={Lecture Notes in Computer Science},
-editor={Becker, Steffen and Plasil, Frantisek and Reussner, Ralf},
-doi={10.1007/978-3-540-87879-7_1},
-title={Rethinking the Use of Models in Software Architecture},
-url={http://dx.doi.org/10.1007/978-3-540-87879-7_1},
-publisher={Springer Berlin Heidelberg},
-author={Ardagna, Danilo and Ghezzi, Carlo and Mirandola, Raffaela},
-pages={1-27},
-file={rethinking-models.pdf}
-}
-
-- erittäin hyvältä vaikuttava yleistajuinen esitys malleista
 
 modeling conf:
 http://dl.acm.org/event.cfm?id=RE313&CFID=187693783&CFTOKEN=27205712
@@ -1363,27 +1425,9 @@ BibTeX | EndNote | ACM Ref
  acmid = 584397,
  publisher = {ACM},
  address = {New York, NY, USA},
- file = {p197-williams.pdf}
+ file = {p179-williams.pdf}
 }
 
-@inproceedings{Williams:1998:PES:287318.287353,
- author = {Williams, Lloyd G. and Smith, Connie U.},
- title = {Performance evaluation of software architectures},
- booktitle = {Proceedings of the 1st international workshop on
- Software and performance},
- series = {WOSP '98},
- year = 1998,
- isbn = {1-58113-060-0},
- location = {Santa Fe, New Mexico, United States},
- pages = {164--177},
- numpages = 14,
- url = {http://doi.acm.org/10.1145/287318.287353},
- doi = {10.1145/287318.287353},
- acmid = 287353,
- publisher = {ACM},
- address = {New York, NY, USA},
- file = {p164-williams.pdf}
-}
 
 @article{Husaini:1997:UJN:332100.332105,
  author = {Husaini, S. Fouzi},

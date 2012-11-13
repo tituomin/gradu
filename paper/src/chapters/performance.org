@@ -137,6 +137,7 @@ käyttäjälle erilaisina, jos työn etenemistä osoittava
 käyttöliittymäelementti etenee eri tavalla @@progressbar.
 # todo lue ja varmista että lähde sanoo näin ;)
 
+# todo : tästä alkaa versio 1
 Tutkielman hypoteesina on, että Java- ja C-kieliä yhdistävän
 sovelluksen erilaiset arkkitehtuuriratkaisut johtavat erilaisiin
 suoritusaikoihin, vaikka sovellukset suorittaisivat saman tehtävän.
@@ -179,6 +180,76 @@ valittua formalismia.
 * Ohjelmiston mittaustekniikat
 
 # aasinsilta sitten android-internaaleihin
+#todo: tähän loppuu versio 1 ja alkaa 2
+Ennen kuin käsittelemme tarkemmin suorituskyvyn mittaamisen
+periaatteita, käymme läpi ohjelmiston arkkitehtuurin vaikutuksia
+suorituskykyyn ja ohjelmiston mallintamista tästä näkökulmasta.
+# todo käsitteleMME
+
+* Arkkitehtuurin mallintaminen
+
+# Performance depends largely upon the
+# volume and complexity of the inter-component com-
+# munication and coordination, especially if the compo-
+# nents are physically distributed processes
+
+Monet ohjelmistojen suorituskykyongelmat johtuvat varhaisen
+suunnitteluvaiheen arkkitehtuuriratkaisuista @@perf-arch(164);
+suorituskyky riippuu pitkälti komponenttien välisen kommunikaation ja
+koordinoinnin laajuudesta ja monimutkaisuudesta erityisesti fyysisesti
+hajautetuissa prosesseissa @@arch(2). Android-ohjelmoinnissa tällaista
+hajauttamista hyödynnetään mobiilisovelluksissa, jotka kommunikoivat
+verkkoyhteyden välityksellä palvelinresurssien kanssa.
+
+Tässä tutkielmassa keskitytään kuitenkin sovelluksiin, joissa tehdään
+vaativaa laskentaa /paikallisesti/ yksittäisessä mobiilaitteessa. Kun
+osia sovelluksesta suorittaa Dalvik-virtuaalikone ja toisia suoraan
+laitteen prosessori, eri komponenttien välinen kommunikaatio ja niiden
+sijoittelu on tällöinkin oleellinen suorituskykytekijä.
+
+Jotta arkkitehtuuriratkaisuiden suorituskykyä voisi arvioida
+varhaisessa suunnitteluvaiheessa, tulee ohjelmiston arkkitehtuuri
+/mallintaa/ @@perf-arch(165--166). Varhaiset mallit voivat olla melko
+yksinkertaisiakin, sikäli kuin niiden niiden tavoitteena on arvioida,
+ohjelmiston keskimääräiset, parhaat ja huonoimmat vasteajat suhteessa
+vaatimuksiin.
+
+Mallit voivat perustua esimerkiksi 4+1-arkkitehtuurimallien kehikkoon
+@@4plus1 ja UML-malleihin täydennettynä suorituskykyyn liittyvillä
+laajennuksilla. Toisaalta UML-mallit ja monet ohjelmistokehityksessä
+perinteisesti käytetyt mallit on kehitetty ohjelmiston /suunnittelun/
+tueksi. Kun halutaan /analysoida/ ohjelmiston ei-funktionaalisia
+ominaisuuksia, kuten suorituskykyä, käytetään usein erityyppisiä
+malleja @@rethink(2--3). On tärkeää, että mallin ja todellisen
+lopullisen ohjelmiston välillä säilyy yhteys, jotta ohjelmistosta
+todellisessa käytössä tehdyt mittaukset voivat korjata mallien
+oletuksia kun ohjelmistoa kehitetään inkrementaalisesti ja
+evoluutiivisesti.
+
+# logical
+# process
+# physical
+# development
+# + use case
+
+Tutkielman keskiössä on suhteellisen pienen mittakaavan
+Android-sovellukset. Vaikka Android on moniajokäyttöjärjestelmä, yksi
+mobiililaite on tyypillisesti yhden käyttäjän käytössä kerrallaan, ja
+optimitilanteessa käyttöjärjestelmä rajoittaa samanaikaisesti
+suoritettavien prosessien määrää. Siksi sivuutan jotkin massiivisempaa
+rinnakkaiskäyttöä kuvaavat mallinnustavat, kuten ohjelmistojen
+suoritustekniikassa korostetut /jonotusmallit/ (/Queing Network
+Models/). Ne soveltuvat tilanteisiin, joissa esimerkiksi yksittäisen
+palvelinympäristön resursseista kilpailee monta asiakasta
+@@spe(227--228).
+# todo suomennos qnm
+
+# todo here
+
+
+
+* Ohjelmiston mallintaminen (Markov)
+# todo: tähän loppuu versio 2
 
 
 
