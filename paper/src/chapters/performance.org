@@ -63,10 +63,10 @@ epäonnistuneissa ohjelmistoprojekteissa, ja ne voitaisiin välttää
 /mallintamalla/ ohjelmistoja suorituskykynäkökulmasta jo ennen
 toteutusvaihetta.
 
-* Suorituskyvyn mittaaminen
+* Suorituskyvyn arvioiminen
 
 Suorituskyky on pohjimmiltaan subjektiivinen käsite, joka kuvastaa,
-miten /hyvin/ ohjelmisto toteuttaa tehtävänsä @@ferrari(2). Tässä
+miten /hyvin/ järjestelmä toteuttaa tehtävänsä @@ferrari(2). Tässä
 tutkielmassa määritellään suorituskyky ohjelmiston laadulliseksi
 ominaisuudeksi, joka kuvaa, miten /nopeasti/ ohjelmisto toimii
 käyttäjän näkökulmasta: miten tyydyttävät sen vasteajat ovat ja miten
@@ -91,7 +91,7 @@ tarkoittaa käsittelytehoa, jolla ohjelma suoriutuu tietyn työkuorman
 käsittelystä, ja tuottavuusmittarit ilmaistaan yksiköllä /kuorma
 aikayksikköä kohti/. Kuormalle ei yleensä ole löydettävissä
 universaalia, laitteisto- tai sovellusalueriippumatonta mittayksikköä
-@@ferrari(12), ja työkuorman mallintaminen onkin keskeisiä haasteita
+@@ferrari(12). Työkuorman mallintaminen onkin keskeisiä haasteita
 suorituskyvyn mittaamisessa ja arvioinnissa @@spe(115), @@ferrari(221).
 #todo oikea syntaksi monelle viitteelle?
 
@@ -100,19 +100,26 @@ Vaikka suorituskyvyn eri osatekijöitä voi mitata kvantitatiivisilla
 mittareilla, niiden objektiivisuus on aina rajallinen. Esimerkiksi
 vasteaikamittarit ovat merkityksellisiä vain suhteessa kulloiseenkin
 käyttötapaukseen ja kokonaistyömäärään, joista molemmat on hyvin
-vaikea kuvata tyhjentävästi @@ferrari(14). Lisäksi
-moniajojärjestelmän, kuten Android-järjestelmän, kokonaistila ja
+vaikea kuvata tyhjentävästi @@ferrari(14).
+
+Lisäksi moniajojärjestelmän, kuten Android-järjestelmän, kokonaistila
 vaikuttaa yksittäisiin mitattuihin vasteaikoihin. Näistä syistä
 mittariksi tulee ottaa vasteaikojen tilastollinen jakauma tietyn
 ajanjakson sisällä ja tietyn käyttötapausluokan sisällä, jotta
 vaihtelut molempien suhteen voidaan ottaa huomioon tilastollisesti
-@@ferrari(14--15).
+@@ferrari(14--15). Silloinkin ohjelman suoritusaikaan perustuvat
+mittarit ovat riippuvaisia järjestelmästä ja laitteistoalustasta,
+esimerkiksi mobiililaitemallista ja Android-versiosta
+@@ferrari(454). Suoritusaika koskee aina /ohjelma--syöte/-pareja, eikä
+puhtaasti ohjelmaa @@ferrari(455).
 
 #viite: android moniajo
 
+* Arvioimisen tavoitteista
+
 Objektiivisuuden puute voi vaikeuttaa tulosten tieteellistä
 toistettavuutta. Käytännön kehitystyössä se ei aina ole ongelma, jos
-tuloksista vedetäänkin vain rajallisia johtopäätöksiä. Jos tavoitteena
+tuloksista vedetään vain rajallisia johtopäätöksiä. Jos tavoitteena
 on tietyn järjestelmän suorituskyvyn /parantaminen/, riittää että
 mittauksia voi käyttää alkuperäisen ja muokatun järjestelmän
 vertailuun, tarkemmin sanottuna hypoteettisen suorituskykyparannuksen
@@ -125,12 +132,53 @@ suorituskykyvaatimuksiin, joita niitäkin voidaan joskus jopa muuttaa
 @@spe(18). Siten kvantifioidutkin mallit ja mittaukset ovat lopulta
 alisteisia ohjelmiston käyttäjien subjektiiviselle kokemukselle [fn:bar].
 
-[fn:bar] Lisäksi sama mitattu vasteaika voi näyttäytyä käyttäjälle
-erilaisena, jos työn etenemistä osoittava käyttöliittymäelementti
-etenee eri tavalla @@progressbar.
+[fn:bar] Jopa yhtäsuuret mitatut vasteajat voivat näyttäytyä
+käyttäjälle erilaisina, jos työn etenemistä osoittava
+käyttöliittymäelementti etenee eri tavalla @@progressbar.
 # todo lue ja varmista että lähde sanoo näin ;)
 
-* Ohjelmiston mallintaminen (Markov)
+Tutkielman hypoteesina on, että Java- ja C-kieliä yhdistävän
+sovelluksen erilaiset arkkitehtuuriratkaisut johtavat erilaisiin
+suoritusaikoihin, vaikka sovellukset suorittaisivat saman tehtävän.
+Tutkielma rajataan sovelluksiin, joiden suoritusaikaa määrittää
+oleellisesti sovelluksen prosessointi keskusyksikössä sekä muistihaut,
+eivät esimerkiksi I/O-operaatiot @@ferrari(168). Tällöin analyysin
+kohteeksi tuleekin, /mihin/ Android-sovellus kuluttaa suoritusaikansa.
+
+# todo tarkista että em. pitää paikkansa lopulta
+
+* Suoritusajan analysointi ja ohjelman mallinnus
+
+Suoritusajan analysoimiseksi ohjelma on jaettava joukkoon erillisiä
+/tiloja/, joista ohjelman suoritus on yksikäsitteisesti yhdessä
+tilassa kerrallaan @@ferrari(456--458). Ohjelman kokonaissuoritusta
+kuvaa /tila--suoritusaika/ -pareista koostuva
+jono. Kokonaissuoritusaika on jonon alkioiden suoritusaikojen summa.
+
+Tilajako on mielivaltainen, mutta siitä on mielenkiintoinen
+erikoistapaus, joka vastaa lähes suoraan Androidin ja monien muiden
+ympäristöjen ohjelmointityökalujen mittaamia tuloksia: jos jokainen
+ohjelman lause tulkitaan omaksi tilakseen, niin näistä
+suoritustiloista koostuvaa jonoa kutsutaan ohjelman /suoritusjäljeksi/
+(/program trace/) @@ferrari(458). Luettelo kustakin lauseesta
+kokonaissuorituskertoineen on ohjelman /profiili/ @@fortran(todo
+sivu).
+
+Jos tilajako on karkeampi, ja yksittäinen tila vastaa esimerkiksi
+ohjelmiston komponenttia, tulee ohjelmisto /mallintaa/ käyttäen
+valittua formalismia. 
+
+# todo: CPU time vs. other time: viittaa mittausten yhteydessäa
+
+#+LATEX: \newpage
+
+* Ohjelmiston suorituskyvyn mallintaminen
+# markov
+
+
+* Ohjelmiston mittaustekniikat
+
+# aasinsilta sitten android-internaaleihin
 
 
 
@@ -138,7 +186,6 @@ etenee eri tavalla @@progressbar.
 # todo, tämä on vähän hankalampi, katotaan myöhemmin
 
 
-* Ohjelmiston mittaustekniikat
 
 
 # käsittele lyhyesti (max 2 kpl) O-algoritmianalyysi
