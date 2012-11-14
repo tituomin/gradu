@@ -41,10 +41,11 @@ inkrementaalinen tahansa, monet varhaiset makrotason ratkaisut
 rajoittavat myöhempiä mikrotason ratkaisuita. Merkittäviä
 seurannaisvaikutuksia on esimerkiksi
 
-- valituilla ohjelmointikielellä tai -kielillä,
-- valmiiden komponenttien ja kirjastojen valinnalla,
+- valituilla ohjelmointikielillä,
+- valituilla valmiilla komponenteilla ja ohjelmakirjastoilla,
+- komponenttien toteutuskielillä sekä
 - ohjelmiston yleisarkkitehtuurilla ja komponenttien sijoittumisesta
-  suoritusympäristön eri osiin,
+  suoritusympäristön eri osiin.
   
 Kaikkia näitä valintoja voi toki periaatteessa muuttaa milloin
 tahansa, mutta todellisten projektien rajoitusten takia se on usein
@@ -64,7 +65,8 @@ epäonnistuneissa ohjelmistoprojekteissa, ja ne voitaisiin välttää
 toteutusvaihetta.
 
 * Suorituskyvyn arvioiminen
-
+# todo: arvioiminen &mallintaminen vs. mittaaminen/mittari
+# (kielenkäyttö)
 Suorituskyky on pohjimmiltaan subjektiivinen käsite, joka kuvastaa,
 miten /hyvin/ järjestelmä toteuttaa tehtävänsä @@ferrari(2). Tässä
 tutkielmassa määritellään suorituskyky ohjelmiston laadulliseksi
@@ -73,16 +75,19 @@ käyttäjän näkökulmasta: miten tyydyttävät sen vasteajat ovat ja miten
 tehokkaasti se käsittelee syötedataa.
 
 Jotta järjestelmän suorituskykyä voisi arvioida täsmällisesti, on
-käsite purettava kvantitatiivisiksi /mittareiksi/.  Ne mittaavat
+käsite purettava kvantitatiivisiksi /mittareiksi/.  Ne arvioivat
 järjestelmän /tuottavuutta/ tai /responsiivisuutta/, tai valitun
 ohjelmisto- tai laitteistoresurssin /käyttöastetta/ @@ferrari(12).
+Käytän mittarin käsitettä kuvaamaan suorituskyvyn kvantitatiivisia
+ulottuvuuksia, oli ne sitten johdettu ohjelmistoa kuvaavista malleista
+tai saatu todellisista mittauksista.
 
 Tässä tutkielmassa käsitellään ensisijaisesti mobiilisovellusten
-responsiivisuutta. Sitä arvioidaan mittaamalla /vasteaikaa/: aikaväliä
-syötteen saamisesta siihen hetkeen kun ohjelman tai ohjelmakomponentin
-tuloste on palautettu käyttäjälle tai kutsuvalle komponentille
-@@ferrari(13). Vasteajan perussuure on siis aika, ja vasteaikaa voi
-mitata eri kokoluokissa jopa yksittäisestä konekäskystä koko
+responsiivisuutta. Sitä arvioidaan /vasteajalla/: aikavälillä syötteen
+saamisesta siihen hetkeen kun ohjelman tai ohjelmakomponentin tuloste
+on palautettu käyttäjälle tai kutsuvalle komponentille
+@@ferrari(13). Vasteajan perussuure on aika, ja vasteaikaa voi
+arvioida eri kokoluokissa jopa yksittäisestä konekäskystä koko
 ohjelmistoon.
 
 Myös tuottavuutta käsitellään tutkielmassa sikäli kuin komponenttien
@@ -92,15 +97,17 @@ käsittelystä, ja tuottavuusmittarit ilmaistaan yksiköllä /kuorma
 aikayksikköä kohti/. Kuormalle ei yleensä ole löydettävissä
 universaalia, laitteisto- tai sovellusalueriippumatonta mittayksikköä
 @@ferrari(12). Työkuorman mallintaminen onkin keskeisiä haasteita
-suorituskyvyn mittaamisessa ja arvioinnissa @@spe(115), @@ferrari(221).
+suorituskyvyn arvioinnissa @@spe(115), @@ferrari(221).
 #todo oikea syntaksi monelle viitteelle?
 
 Sama universaalisuusongelma koskee kaikkia suorituskykymittareita.
 Vaikka suorituskyvyn eri osatekijöitä voi mitata kvantitatiivisilla
-mittareilla, niiden objektiivisuus on aina rajallinen. Esimerkiksi
+mittareilla, tulosten objektiivisuus on aina rajallinen. Esimerkiksi
 vasteaikamittarit ovat merkityksellisiä vain suhteessa kulloiseenkin
 käyttötapaukseen ja kokonaistyömäärään, joista molemmat on hyvin
-vaikea kuvata tyhjentävästi @@ferrari(14).
+vaikea kuvata tyhjentävästi @@ferrari(14). Konkreettiset
+suoritusaikamittaukset koskevat aina /ohjelma--syöte/-pareja, eikä
+puhtaasti ohjelmaa sellaisenaan @@ferrari(455).
 
 Lisäksi moniajojärjestelmän, kuten Android-järjestelmän, kokonaistila
 vaikuttaa yksittäisiin mitattuihin vasteaikoihin. Näistä syistä
@@ -110,34 +117,132 @@ vaihtelut molempien suhteen voidaan ottaa huomioon tilastollisesti
 @@ferrari(14--15). Silloinkin ohjelman suoritusaikaan perustuvat
 mittarit ovat riippuvaisia järjestelmästä ja laitteistoalustasta,
 esimerkiksi mobiililaitemallista ja Android-versiosta
-@@ferrari(454). Suoritusaika koskee aina /ohjelma--syöte/-pareja, eikä
-puhtaasti ohjelmaa @@ferrari(455).
+@@ferrari(454).
 
 #viite: android moniajo
+# mainitse vielä mittaus vs. mallinnus
 
 * Arvioimisen tavoitteista
-
-Objektiivisuuden puute voi vaikeuttaa tulosten tieteellistä
+# todo: käsittelee oikeastaan /mittaamisen/ tavoitteita
+Objektiivisuuden puute voi vaikeuttaa mittausten tieteellistä
 toistettavuutta. Käytännön kehitystyössä se ei aina ole ongelma, jos
-tuloksista vedetään vain rajallisia johtopäätöksiä. Jos tavoitteena
-on tietyn järjestelmän suorituskyvyn /parantaminen/, riittää että
-mittauksia voi käyttää alkuperäisen ja muokatun järjestelmän
-vertailuun, tarkemmin sanottuna hypoteettisen suorituskykyparannuksen
-/validointiin/ @@ferrari(336). Jos tavoitteena on uuden
-ohjelmistojärjestelmän tuottaminen, mittauksia käytetään validoimaan
-suorituskykyarvioita, joita on sisällytetty määrittely- ja
-suunnitteluvaiheiden malleihin.  @@spe(18). Ohjelmistoprosessissa
-näitä validoituja malleja verrataan lopulta alkuperäisiin
-suorituskykyvaatimuksiin, joita niitäkin voidaan joskus jopa muuttaa
-@@spe(18). Siten kvantifioidutkin mallit ja mittaukset ovat lopulta
-alisteisia ohjelmiston käyttäjien subjektiiviselle kokemukselle [fn:bar].
+tuloksista vedetään vain rajallisia johtopäätöksiä. Jos tavoitteena on
+tietyn järjestelmän suorituskyvyn /parantaminen/, riittää että
+mittauksia voi käyttää hypoteettisen suorituskykyparannuksen
+/validointiin/ alkuperäistä ja muokattua järjestelmää vertailemalla
+@@ferrari(336). Jos tavoitteena on uuden ohjelmistojärjestelmän
+tuottaminen, mittauksia käytetään validoimaan suorituskykyarvioita,
+joita on sisällytetty määrittely- ja suunnitteluvaiheiden malleihin
+@@spe(18). Ohjelmistoprosessissa näitä validoituja malleja verrataan
+lopulta alkuperäisiin suorituskykyvaatimuksiin, joita niitäkin voidaan
+joskus jopa tarkistaa @@spe(18). Siten kvantifioidutkin mallit ja
+mittaukset ovat lopulta alisteisia ohjelmiston käyttäjien
+subjektiiviselle kokemukselle [fn:bar].
 
-[fn:bar] Jopa yhtäsuuret mitatut vasteajat voivat näyttäytyä
-käyttäjälle erilaisina, jos työn etenemistä osoittava
-käyttöliittymäelementti etenee eri tavalla @@progressbar.
+[fn:bar] Jopa yhtäsuuret vasteajat voivat näyttäytyä käyttäjälle
+erilaisina, jos työn etenemistä osoittava käyttöliittymäelementti
+etenee eri tavalla @@progressbar.
 # todo lue ja varmista että lähde sanoo näin ;)
 
-# todo : tästä alkaa versio 1
+Seuraavaksi käyn läpi arkkitehtuurin vaikutuksia ohjelmiston
+suorituskykyyn ja ohjelmiston mallintamista tästä näkökulmasta.
+Mallintamisesta edetään mittaustekniikoihin ja periaatteisiin, joilla
+saadaan malleja vastaavia mittaustuloksia.
+
+* Arkkitehtuurin mallintaminen
+
+# Performance depends largely upon the
+# volume and complexity of the inter-component com-
+# munication and coordination, especially if the compo-
+# nents are physically distributed processes
+
+Monet ohjelmistojen suorituskykyongelmat johtuvat varhaisen
+suunnitteluvaiheen arkkitehtuuriratkaisuista @@perf-arch(164);
+suorituskyky riippuu pitkälti komponenttien välisen kommunikaation ja
+koordinoinnin mittaluokista erityisesti fyysisesti hajautetuissa
+prosesseissa @@arch(2). Android-ohjelmoinnissa tällaista hajauttamista
+hyödynnetään mobiilisovelluksissa, jotka kommunikoivat verkkoyhteyden
+välityksellä palvelinprosessien kanssa.
+# todo mittaluokista ??
+
+Tässä tutkielmassa keskitytään kuitenkin sovelluksiin, joissa
+suoritetaan laskentaa /paikallisesti/ yksittäisessä
+mobiilaitteessa. Kun osaa sovelluksesta suoritetaan virtuaalikoneen
+välityksellä ja toista konekielisenä suoraan prosessorissa, näiden
+osien välinen kommunikaatio ja niiden sijoittelu on tällöinkin
+oleellinen suorituskykytekijä.
+
+Jotta arkkitehtuuriratkaisuiden suorituskykyä voisi arvioida
+varhaisessa suunnitteluvaiheessa, tulee ohjelmiston arkkitehtuuri
+/mallintaa/ @@perf-arch(165--166). Varhaiset mallit voivat olla melko
+yksinkertaisiakin, sikäli kuin niiden niiden tavoitteena on karkeasti
+arvioida, ohjelmiston keskimääräiset, parhaat ja huonoimmat vasteajat
+suhteessa vaatimuksiin.
+
+# 4+1
+# logical
+# process
+# physical
+# development
+# + use case
+
+Mallit voivat perustua esimerkiksi 4+1-arkkitehtuurimallien kehikkoon
+@@4plus1 ja UML-malleihin täydennettynä suorituskykyyn liittyvillä
+laajennuksilla. Toisaalta UML-mallit ja monet ohjelmistoprosessissa
+käytetyt mallit on kehitetty ohjelmiston /suunnittelun/ tueksi. Kun
+halutaan /analysoida/ ohjelmiston ei-funktionaalisia ominaisuuksia,
+kuten suorituskykyä, käytetään usein analyysiin paremmin sopivia
+malleja @@rethink(2--3). On tärkeää, että mallin ja todellisen
+lopullisen ohjelmiston välillä säilyy yhteys, jotta ohjelmistosta
+todellisessa käytössä tehdyt mittaukset voivat korjata mallien
+oletuksia kun ohjelmistoa kehitetään inkrementaalisesti ja
+evoluutiivisesti.
+
+Varhaisvaiheen suorituskykymallit sijoittuvat kolmeen päätyyppiin
+@@rethink(6):
+
+# todo: queuing vs queuing network
+# todo suomennos qnm
+
+1. jonotusmallit (queuing models),
+2. Markov-mallit sekä
+3. simulaatiomallit.
+
+Tässä tutkielmassa käytetään Markov-malleja sijoittamaan käytännön
+mittauksista saatavat tulokset korkeamman tason käsitteelliseen
+kehikkoon. Ne sopivat luontevasti käytössä olevien mittausmenetelmien
+pariksi, mitä käsitellään tarkemmin luvussa . Markov-malleja on
+hyödynnetty arkkitehtuurin mallintamiseen kirjallisuudessa
+#todo sisäinen viite, lähteet
+
+Ohjelmistojen suorituskykytekniikan metodeissa käytetään usein
+jonotusmalleja (/Queing Network Models/). Ne soveltuvat
+rinnakkaiskäyttöön perustuviin tilanteisiin, joissa esimerkiksi
+yksittäisen palvelimen resursseista kilpailee monta asiakasta
+@@spe(227--228). Tämän tutkielman keskiössä on suhteellisen pienen
+mittakaavan Android-sovellukset. Vaikka Android on
+moniajokäyttöjärjestelmä, yksi mobiililaite on tyypillisesti yhden
+käyttäjän käytössä kerrallaan, ja optimitilanteessa käyttöjärjestelmä
+rajoittaa samanaikaisesti suoritettavien prosessien määrää.
+
+Simulaatiomallit ovat /suoritettavia/ malleja järjestelmästä, usein
+karkeammalla tasolla kuin lopullinen järjestelmä. Tutkielmassa
+hyödynnetään rajatusti simulaatiota siinä mielessä, että
+Android-kehitystyökalujen /Android-emulaattori/ simuloi todellista
+Android-laitetta ARM-käskyjen tasolla [fn:emulator]. Emulaattoria
+hyödynnetään joidenkin mittaustulosten osalta.
+#todo: lähde
+
+[fn:emulator] Emulaattori-käsitteen syntyaikana @@emu puhtaan
+ohjelmallisesti toteutettu vieraan suoritusympäristön täydellinen
+toisinnos oli myös simulaattori, mutta Android-emulaattori on
+esimerkki nykykäytöstä, jossa ohjelmallistakin toisintamista usein
+kutsutaan emuloinniksi.
+
+# TODO: uncomment? v 
+#Myös simulaatiomalleja hyödynnetään rajatusti, sillä
+#Android-ohjelmia suoritetaan 
+
 Tutkielman hypoteesina on, että Java- ja C-kieliä yhdistävän
 sovelluksen erilaiset arkkitehtuuriratkaisut johtavat erilaisiin
 suoritusaikoihin, vaikka sovellukset suorittaisivat saman tehtävän.
@@ -145,10 +250,11 @@ Tutkielma rajataan sovelluksiin, joiden suoritusaikaa määrittää
 oleellisesti sovelluksen prosessointi keskusyksikössä sekä muistihaut,
 eivät esimerkiksi I/O-operaatiot @@ferrari(168). Tällöin analyysin
 kohteeksi tuleekin, /mihin/ Android-sovellus kuluttaa suoritusaikansa.
-
+Tätä mallinnetaan Markov-ketjuilla.
 # todo tarkista että em. pitää paikkansa lopulta
 
-* Suoritusajan analysointi ja ohjelman mallinnus
+* Mallintamisesta mittauksiin
+# todo markovoi tämä!!
 
 Suoritusajan analysoimiseksi ohjelma on jaettava joukkoon erillisiä
 /tiloja/, joista ohjelman suoritus on yksikäsitteisesti yhdessä
@@ -167,111 +273,15 @@ sivu).
 
 Jos tilajako on karkeampi, ja yksittäinen tila vastaa esimerkiksi
 ohjelmiston komponenttia, tulee ohjelmisto /mallintaa/ käyttäen
-valittua formalismia. 
-
-# todo: CPU time vs. other time: viittaa mittausten yhteydessäa
-
-#+LATEX: \newpage
-
-* Ohjelmiston suorituskyvyn mallintaminen
-# markov
+valittua formalismia.
 
 
-* Ohjelmiston mittaustekniikat
-
-# aasinsilta sitten android-internaaleihin
-#todo: tähän loppuu versio 1 ja alkaa 2
-Ennen kuin käsittelemme tarkemmin suorituskyvyn mittaamisen
-periaatteita, käymme läpi ohjelmiston arkkitehtuurin vaikutuksia
-suorituskykyyn ja ohjelmiston mallintamista tästä näkökulmasta.
-# todo käsitteleMME
-
-* Arkkitehtuurin mallintaminen
-
-# Performance depends largely upon the
-# volume and complexity of the inter-component com-
-# munication and coordination, especially if the compo-
-# nents are physically distributed processes
-
-Monet ohjelmistojen suorituskykyongelmat johtuvat varhaisen
-suunnitteluvaiheen arkkitehtuuriratkaisuista @@perf-arch(164);
-suorituskyky riippuu pitkälti komponenttien välisen kommunikaation ja
-koordinoinnin laajuudesta ja monimutkaisuudesta erityisesti fyysisesti
-hajautetuissa prosesseissa @@arch(2). Android-ohjelmoinnissa tällaista
-hajauttamista hyödynnetään mobiilisovelluksissa, jotka kommunikoivat
-verkkoyhteyden välityksellä palvelinresurssien kanssa.
-
-Tässä tutkielmassa keskitytään kuitenkin sovelluksiin, joissa tehdään
-vaativaa laskentaa /paikallisesti/ yksittäisessä mobiilaitteessa. Kun
-osia sovelluksesta suorittaa Dalvik-virtuaalikone ja toisia suoraan
-laitteen prosessori, eri komponenttien välinen kommunikaatio ja niiden
-sijoittelu on tällöinkin oleellinen suorituskykytekijä.
-
-Jotta arkkitehtuuriratkaisuiden suorituskykyä voisi arvioida
-varhaisessa suunnitteluvaiheessa, tulee ohjelmiston arkkitehtuuri
-/mallintaa/ @@perf-arch(165--166). Varhaiset mallit voivat olla melko
-yksinkertaisiakin, sikäli kuin niiden niiden tavoitteena on arvioida,
-ohjelmiston keskimääräiset, parhaat ja huonoimmat vasteajat suhteessa
-vaatimuksiin.
-
-Mallit voivat perustua esimerkiksi 4+1-arkkitehtuurimallien kehikkoon
-@@4plus1 ja UML-malleihin täydennettynä suorituskykyyn liittyvillä
-laajennuksilla. Toisaalta UML-mallit ja monet ohjelmistokehityksessä
-perinteisesti käytetyt mallit on kehitetty ohjelmiston /suunnittelun/
-tueksi. Kun halutaan /analysoida/ ohjelmiston ei-funktionaalisia
-ominaisuuksia, kuten suorituskykyä, käytetään usein erityyppisiä
-malleja @@rethink(2--3). On tärkeää, että mallin ja todellisen
-lopullisen ohjelmiston välillä säilyy yhteys, jotta ohjelmistosta
-todellisessa käytössä tehdyt mittaukset voivat korjata mallien
-oletuksia kun ohjelmistoa kehitetään inkrementaalisesti ja
-evoluutiivisesti.
-
-# logical
-# process
-# physical
-# development
-# + use case
-
-Tutkielman keskiössä on suhteellisen pienen mittakaavan
-Android-sovellukset. Vaikka Android on moniajokäyttöjärjestelmä, yksi
-mobiililaite on tyypillisesti yhden käyttäjän käytössä kerrallaan, ja
-optimitilanteessa käyttöjärjestelmä rajoittaa samanaikaisesti
-suoritettavien prosessien määrää. Siksi sivuutan jotkin massiivisempaa
-rinnakkaiskäyttöä kuvaavat mallinnustavat, kuten ohjelmistojen
-suoritustekniikassa korostetut /jonotusmallit/ (/Queing Network
-Models/). Ne soveltuvat tilanteisiin, joissa esimerkiksi yksittäisen
-palvelinympäristön resursseista kilpailee monta asiakasta
-@@spe(227--228).
-# todo suomennos qnm
-
-# todo here
-
-
-
-* Ohjelmiston mallintaminen (Markov)
-# todo: tähän loppuu versio 2
-
-
-
-* Työkuorman mallintaminen
-# todo, tämä on vähän hankalampi, katotaan myöhemmin
-
-
-
-
-# käsittele lyhyesti (max 2 kpl) O-algoritmianalyysi
-
-
-
-
-#Näinkin rajattuna käsite on
-#riippuvainen käyttäjän tarpeista ja siten ohjelmiston vaatimuksista
-# @@todo(2--4).
-
-#Tuottavuuteen liittyy
-# todo 
-
-# probleemi: subjektiivisuus vs. mitattavuus. tästä löytyy matskua. :)
-# ferrari luku 5.2.3
+* Tehtäviä                                                         :noexport:
+** TODO CPU time vs. other time: viittaa mittausten yhteydessäa
+** TODO käsittele lyhyesti (max 2 kpl) O-algoritmianalyysi?
+** TODO ferrari luku 5.2.3 objektiivisuus?? mikä tämä oli
+** Aliluvut
+*** Työkuorman mallintaminen                                       :noexport:
+    tämä on vähän hankalampi, katotaan myöhemmin
 
 
