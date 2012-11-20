@@ -1,0 +1,30 @@
+
+* timer (legacy) mode
+  kernel timer interrupts
+  problem: priority?
+  maybe not? nmi has high priority?
+
+
+* interrupt cpu event mode
+  arch dependent
+  problem: accuracy?
+
+** jos ghzit vaihtelee,
+   cycleja on eri määrä per aikayksikkö!!
+
+* logging stack traces
+  **only on x86??? check**
+
+* hyvä dokkari internals.html
+  selittää koko prosessin
+
+* mike dunlaveyn kriitikki osittain huonoa JNI-overheadin
+  mittaamiseen
+
+* idea: sampling period randomization vs. periods
+  multiples of primes +
+  statistical combination ?
+
+  
+
+  
