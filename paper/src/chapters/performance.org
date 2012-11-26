@@ -101,12 +101,12 @@ suorituskyvyn arvioinnissa @@spe(115), @@ferrari(221).
 #todo oikea syntaksi monelle viitteelle?
 
 Sama universaalisuusongelma koskee kaikkia suorituskykymittareita.
-Vaikka suorituskyvyn eri osatekijöitä voi mitata kvantitatiivisilla
+Vaikka suorituskyvyn eri osatekijöitä voi arvioida kvantitatiivisilla
 mittareilla, tulosten objektiivisuus on aina rajallinen. Esimerkiksi
 vasteaikamittarit ovat merkityksellisiä vain suhteessa kulloiseenkin
 käyttötapaukseen ja kokonaistyömäärään, joista molemmat on hyvin
 vaikea kuvata tyhjentävästi @@ferrari(14). Konkreettiset
-suoritusaikamittaukset koskevat aina /ohjelma--syöte/-pareja, eikä
+suoritusaikamittaukset koskevat aina /ohjelma--syöte/-pareja, eivät
 puhtaasti ohjelmaa sellaisenaan @@ferrari(455).
 
 Lisäksi moniajojärjestelmän, kuten Android-järjestelmän, kokonaistila
