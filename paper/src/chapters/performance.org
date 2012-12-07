@@ -7,21 +7,21 @@ kirjallisuudessa kysymykseen on vastattu hyvin eri tavoin.
 * Suorituskyvyn saavuttaminen
 
 Donald Knuthilta on peräisin tunnettu lainaus: "Ennenaikainen
-optimointi on kaiken pahan alku ja juuri @@goto(268)." 
-Käsitellessään *rakenteellisen* ohjelmoinnin periaatteita Knuth korostaa, ettei
-# todo: mitä artikkeli itse asiassa käsittelee?
-varsinaisessa ohjelmointityössä kannata käyttää aikaa suorituskykyä
-parantaviin manuaalisiin optimointeihin ennen kuin ohjelman
-suoritusaikaista käyttäytymistä on tutkittu ja löydetty ohjelman
-osat, joiden suoritusaika on merkittävä osa ohjelman
+optimointi on kaiken pahan alku ja juuri @@goto(268)."  Knuth
+korostaa, ettei varsinaisessa ohjelmointityössä kannata käyttää aikaa
+suorituskykyä parantaviin manuaalisiin optimointeihin ennen kuin
+ohjelman suoritusaikaista käyttäytymistä on tutkittu ja löydetty
+ohjelman osat, joiden suoritusaika on merkittävä osa ohjelman
 kokonaissuoritusajasta.
+# todo: mitä knuthin artikkeli itse asiassa käsittelee?
+
+
 
 Periaatteeseen on kaksi syytä. Ensinnäkin ohjelmoijan intuitio johtaa
 yleensä harhaan, kun etsitään ohjelman suorituskyvyn kannalta
 keskeisiä osia. Lisäksi käsityönä tehdyt optimoinnit tekevät
 ohjelmakoodista vaikeammin ymmärrettävää ja ylläpidettävää, joten
-niitä kannattaa välttää kaikkialla, missä niitä ei todistetusti
-tarvita.
+niitä kannattaa välttää aina kun niitä ei todistetusti tarvita.
 
 Knuthin tueksi voi nykynäkökulmasta todeta, että
 laitteistoarkkitehtuurien, optimoivien kääntäjien, virtuaalikoneiden
@@ -37,12 +37,12 @@ tai komponentin /ohjelmointiin/. Laajempaa ohjelmistoa rakentaessa
 otetaan kantaa myös ohjelmiston konseptuaalisiin vaatimuksiin ja
 suunnitellaan ohjelmiston komponenttitason arkkitehtuuri sekä
 komponenttien tarkempi rakenne. Oli ohjelmiston tuotantoprosessi miten
-inkrementaalinen tahansa, monet varhaiset makrotason ratkaisut
-rajoittavat myöhempiä mikrotason ratkaisuita. Merkittäviä
+inkrementaalinen tahansa, varhaiset makrotason ratkaisut rajoittavat
+usein myöhempiä mikrotason ratkaisuita. Merkittäviä
 seurannaisvaikutuksia on esimerkiksi
 
-- valituilla ohjelmointikielillä,
-- valituilla valmiilla komponenteilla ja ohjelmakirjastoilla,
+- käytetyillä ohjelmointikielillä,
+- käytetyillä valmiilla komponenteilla ja ohjelmakirjastoilla,
 - komponenttien toteutuskielillä sekä
 - ohjelmiston yleisarkkitehtuurilla ja komponenttien sijoittumisesta
   suoritusympäristön eri osiin.
@@ -176,7 +176,7 @@ Jotta arkkitehtuuriratkaisuiden suorituskykyä voisi arvioida
 varhaisessa suunnitteluvaiheessa, tulee ohjelmiston arkkitehtuuri
 /mallintaa/ @@perf-arch(165--166). Varhaiset mallit voivat olla melko
 yksinkertaisiakin, sikäli kuin niiden niiden tavoitteena on karkeasti
-arvioida, ohjelmiston keskimääräiset, parhaat ja huonoimmat vasteajat
+arvioida ohjelmiston keskimääräiset, parhaat ja huonoimmat vasteajat
 suhteessa vaatimuksiin.
 
 # 4+1
@@ -209,17 +209,18 @@ Varhaisvaiheen suorituskykymallit sijoittuvat kolmeen päätyyppiin
 3. simulaatiomallit.
 
 Tässä tutkielmassa käytetään Markov-malleja sijoittamaan käytännön
-mittauksista saatavat tulokset korkeamman tason käsitteelliseen
-kehikkoon. Ne sopivat luontevasti käytössä olevien mittausmenetelmien
-pariksi, mitä käsitellään tarkemmin luvussa . Markov-malleja on
-hyödynnetty arkkitehtuurin mallintamiseen kirjallisuudessa
+mittauksista saatavat tulokset laajempaan käsitteelliseen
+kehikkoon. Markov-mallit sopivat luontevasti käytössä olevien
+mittausmenetelmien pariksi, mitä käsitellään tarkemmin luvussa
+. Markov-malleja on hyödynnetty arkkitehtuurin mallintamiseen
+kirjallisuudessa
 #todo sisäinen viite, lähteet
 
 Ohjelmistojen suorituskykytekniikan metodeissa käytetään usein
 jonotusmalleja (/Queing Network Models/). Ne soveltuvat
-rinnakkaiskäyttöön perustuviin tilanteisiin, joissa esimerkiksi
+rinnakkaislaskentaa hyödyntäviin tilanteisiin, joissa esimerkiksi
 yksittäisen palvelimen resursseista kilpailee monta asiakasta
-@@spe(227--228). Tämän tutkielman keskiössä on suhteellisen pienen
+@@spe(227--228). Tämän tutkielman keskiössä ovat suhteellisen pienen
 mittakaavan Android-sovellukset. Vaikka Android on
 moniajokäyttöjärjestelmä, yksi mobiililaite on tyypillisesti yhden
 käyttäjän käytössä kerrallaan, ja optimitilanteessa käyttöjärjestelmä
@@ -234,23 +235,23 @@ hyödynnetään joidenkin mittaustulosten osalta.
 #todo: lähde
 
 [fn:emulator] Emulaattori-käsitteen syntyaikana @@emu puhtaan
-ohjelmallisesti toteutettu vieraan suoritusympäristön täydellinen
-toisinnos oli myös simulaattori, mutta Android-emulaattori on
-esimerkki nykykäytöstä, jossa ohjelmallistakin toisintamista usein
-kutsutaan emuloinniksi.
+ohjelmallisesti toteutettua vieraan suoritusympäristön täydellistä
+toisinnosta kutsuttiin simulaattoriksi. Emulaattori perustui
+laitteistotukeen. Android-emulaattori on esimerkki nykykäytöstä, jossa
+ohjelmallistakin toisintamista usein kutsutaan emuloinniksi.
 
 # TODO: uncomment? v 
 #Myös simulaatiomalleja hyödynnetään rajatusti, sillä
 #Android-ohjelmia suoritetaan 
 
-Tutkielman hypoteesina on, että Java- ja C-kieliä yhdistävän
-sovelluksen erilaiset arkkitehtuuriratkaisut johtavat erilaisiin
-suoritusaikoihin, vaikka sovellukset suorittaisivat saman tehtävän.
-Tutkielma rajataan sovelluksiin, joiden suoritusaikaa määrittää
-oleellisesti sovelluksen prosessointi keskusyksikössä sekä muistihaut,
-eivät esimerkiksi I/O-operaatiot @@ferrari(168). Tällöin analyysin
-kohteeksi tuleekin, /mihin/ Android-sovellus kuluttaa suoritusaikansa.
-Tätä mallinnetaan Markov-ketjuilla.
+Tutkielman hypoteesi on, että Java- ja C-kieliä yhdistävän sovelluksen
+erilaiset arkkitehtuuriratkaisut johtavat erilaisiin suoritusaikoihin,
+vaikka sovellukset suorittaisivat saman tehtävän.  Tutkielma rajataan
+sovelluksiin, joiden suoritusaikaa määrittää oleellisesti sovelluksen
+prosessointi keskusyksikössä sekä keskusmuistihaut, eivät esimerkiksi
+I/O-operaatiot @@ferrari(168). Tällöin analyysin kohteeksi tuleekin,
+/mihin/ Android-sovellus kuluttaa suoritusaikansa.  Tätä mallinnetaan
+Markov-ketjuilla.
 # todo tarkista että em. pitää paikkansa lopulta
 
 * Mallintamisesta mittauksiin

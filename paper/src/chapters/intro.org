@@ -1,8 +1,8 @@
 /Android/ on Googlen kehittämä Linux-pohjainen käyttöjärjestelmä ja
-sovellus\-ke\-hi\-tys\-a\-lus\-ta mobiililaitteille. Tutkielma kuvailee ja arvioi
-arkkitehtuurimalleja suorituskykykeskeisille Android-sovelluksille
-tapauksissa, joissa osa sovelluksen komponenteista on kirjoitettu
-Java- ja osa C-ohjelmointikielellä.
+sovellus\-ke\-hi\-tys\-a\-lus\-ta mobiililaitteille. Kuvailen ja
+arvioin tutkielmassa arkkitehtuurimalleja suorituskykykeskeisille
+Android-sovelluksille tapauksissa, joissa osa sovelluksen
+komponenteista on kirjoitettu Java- ja osa C-ohjelmointikielellä.
 
 Yleensä Android-sovellukset ohjelmoidaan /Java/-ohjelmointikielellä ja
 suoritetaan Googlen Androidia varten kehittämässä
@@ -20,7 +20,7 @@ laskentaa tai sille on oleellisia tosiaikavaatimuksia.
 [fn:ios] Esimerkiksi Applen /iOS/-käyttöjärjestelmän sovellukset
 käännetään /Objective-C/ -kielestä laitteiston konekielellä
 suoritettaviksi, ja alustan kehitystyökaluilla voi suoraan hyödyntää
-myös C- tai C++-kielisiä komponentteja.
+myös C- tai C++ -kielisiä komponentteja.
 
 /Ohjelmistojen suorituskykytekniikka/ (/Software Performance
 Engineering/, /SPE/) on ohjelmistotekniikan osa-alue, jossa
@@ -48,8 +48,8 @@ monikielinen Android-ohjelmointi asettaa sovelluksen
 arkkitehtuurille suorituskykynäkökohdista. Java-kielen lisäksi ja
 rinnalla Androidia on mahdollista ohjelmoida myös käyttäen
 kohdealustana laitteiston omaa natiivisuoritysympäristöä. Tällöin
-ohjelmointi tapahtuu käytännössä C- tai C++-kielillä, joista ohjelma
-käännetään laitteiston prosessoriarkkitehtuurin konekielelle, tällä
+ohjelmointi tapahtuu käytännössä C- tai C++ -kielillä, joista ohjelma
+käännetään laitteiston prosessorin konekielelle, tällä
 hetkellä yleensä ARM-konekielelle.
 
 Menetelmän mahdollistaa Java-kielen /Java Native Interface/ -standardi
@@ -61,7 +61,7 @@ yhdistämiseksi.
 
 Pelkän JNI-toteutuksen lisäksi Android-kehittäjällä on käytettävissään
 Native Development Kit (/NDK/)-työkalukokonaisuus. Siihen sisältyvät
-rakennusskriptit automatisoivat C- ja C++-lähdekoodin kääntämisen
+rakennusskriptit automatisoivat C- ja C++ -lähdekoodin kääntämisen
 laitteiston kohdearkkitehtuurille sopivaksi
 kirjastobinääriksi. Lisäksi NDK sisältää joukon C-kielisiä
 otsaketiedostoja ja ohjelmointirajapintoja, joiden kautta osajoukkoa
