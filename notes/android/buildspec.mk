@@ -24,7 +24,7 @@
 # Choose a product to build for.  Look in the products directory for ones
 # that work.
 ifndef TARGET_PRODUCT
-#TARGET_PRODUCT:=generic
+TARGET_PRODUCT:=full_crespo
 endif
 
 # Choose a variant to build.  If you don't pick one, the default is eng.
@@ -32,7 +32,7 @@ endif
 # for debugging.  Eng has lots of extra tools for development.
 ifndef TARGET_BUILD_VARIANT
 #TARGET_BUILD_VARIANT:=user
-#TARGET_BUILD_VARIANT:=userdebug
+TARGET_BUILD_VARIANT:=userdebug
 #TARGET_BUILD_VARIANT:=eng
 endif
 
@@ -42,7 +42,26 @@ endif
 # LOCAL_PACKAGE_NAME.  Modules listed here will always be installed in
 # /system, even if they'd usually go in /data.
 ifndef CUSTOM_MODULES
-#CUSTOM_MODULES:=
+CUSTOM_MODULES:= \
+    libperf \
+    perfhost \
+    perf \
+    liboprofile_abi \
+    liboprofile_db \
+    liboprofile_op \
+    liboprofile_op_regex \
+    liboprofile_opt++ \
+    liboprofile_popt \
+    liboprofile_pp \
+    liboprofile_util \
+    liboprofile_util++ \
+    opannotate \
+    oparchive \
+    opcontrol \
+    opgprof \
+    opimport \
+    opreport \
+    oprofiled 
 endif
 
 # Set this to debug or release if you care.  Otherwise, it defaults to release.
@@ -60,6 +79,10 @@ endif
 # to a non-empty value, the appropriate HOST_/TARGET_CUSTOM_DEBUG_CFLAGS
 # will be added to LOCAL_CFLAGS when building the module.
 #DEBUG_MODULE_ModuleName:=true
+DEBUG_MODULE_libdvm:=true
+#DEBUG_DALVIK_VM:=true
+FORCE_ARM_DEBUGGING:=true
+#WITH_JIT:=false
 
 # Specify an alternative tool chain prefix if needed.
 #TARGET_TOOLS_PREFIX:=
@@ -68,7 +91,12 @@ endif
 # DEBUG_MODULE_ variable is set.  Host and device flags are handled
 # separately.
 #HOST_CUSTOM_DEBUG_CFLAGS:=
-#TARGET_CUSTOM_DEBUG_CFLAGS:=
+TARGET_CUSTOM_DEBUG_CFLAGS:= -O0 -g3 -mapcs-frame
+# apparently not necessary?
+#-mtpcs-frame -mtpcs-leaf-frame
+
+# todo: how to enable globally
+#TARGET_GLOBAL_LDFLAGS += -Wl,--build-id # todo check if works
 
 # Choose additional locales, like "en_US" or "it_IT", to add to any
 # built product.  Any locales that appear in CUSTOM_LOCALES but not in
