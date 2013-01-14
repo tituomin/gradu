@@ -1,0 +1,38 @@
+22 matches for "#[0-9][0-9]  pc" in buffer: coredump_02.org
+
+
+    #00  pc 00000c98  /data/data/fi.helsinki.cs.tituomin.nativemainer/lib/libjnilooper.so (Java_fi_helsinki_cs_tituomin_nativemainer_KillerApp_foo+7)
+    #01  pc 0001de30  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+    #02  pc 0004ce73  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+390)
+    #03  pc 00000214  /dev/ashmem/dalvik-jit-code-cache (deleted)
+
+
+    #00  pc 00000c92  /data/data/fi.helsinki.cs.tituomin.nativemainer/lib/libjnilooper.so (Java_fi_helsinki_cs_tituomin_nativemainer_KillerApp_foo+1)
+    #01  pc 0001de30  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+    #02  pc 0004ce73  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+390)
+    #03  pc 00000214  /dev/ashmem/dalvik-jit-code-cache (deleted)
+
+
+
+    #00  pc 00001074  /dev/ashmem/dalvik-jit-code-cache (deleted)
+    #01  pc 0004ce7b  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+398)
+    #02  pc 0002a4a8  /system/lib/libdvm.so (dvmMalloc(unsigned int, int)+120)
+    #03  pc 007e228c  /dev/ashmem/dalvik-heap (deleted)
+
+
+
+    #00  pc 0004889a  /system/lib/libdvm.so
+    #01  pc 0004cd1f  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+50)
+    #02  pc 00000214  /dev/ashmem/dalvik-jit-code-cache (deleted)
+
+
+
+    #00  pc 0001dde8  /system/lib/libdvm.so (dvmPlatformInvoke+40)
+    #01  pc 0004ce73  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+390)
+    #02  pc 00000214  /dev/ashmem/dalvik-jit-code-cache (deleted)
+
+
+    #00  pc 00000c9c  /data/data/fi.helsinki.cs.tituomin.nativemainer/lib/libjnilooper.so (Java_fi_helsinki_cs_tituomin_nativemainer_KillerApp_foo+11)
+    #01  pc 0001de30  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+    #02  pc 0004ce73  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+390)
+    #03  pc 00000214  /dev/ashmem/dalvik-jit-code-cache (deleted)

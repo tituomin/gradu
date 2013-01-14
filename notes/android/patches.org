@@ -1,0 +1,87 @@
+
+* first build
+[[file:configurations.org::*4.1.2%20with%20build%20ids%20and%20libperf,%20oprofile,%20arm%20apcs-frame%20pointers,%20arm%20debugging][4.1.2 with build ids and libperf, oprofile, arm apcs-frame pointers, arm debugging]]
+
+** build
+
+/home/tituomin/droid/src/build
+# Not currently on any branch.
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   core/combo/arch/arm/armv7-a-neon.mk
+#	modified:   core/combo/arch/arm/armv7-a.mk
+#	modified:   target/product/core.mk
+#
+
+
+
+tituomin@yaku:~/droid/src/build$ git diff
+diff --git a/core/combo/arch/arm/armv7-a-neon.mk b/core/combo/arch/arm/armv7-a-neon.mk
+index 32273ff..759e626 100644
+--- a/core/combo/arch/arm/armv7-a-neon.mk
++++ b/core/combo/arch/arm/armv7-a-neon.mk
+@@ -22,4 +22,4 @@ arch_variant_cflags := \
+     -mfpu=neon
+ 
+ arch_variant_ldflags := \
+-       -Wl,--fix-cortex-a8
++       -Wl,--fix-cortex-a8 -Wl,--build-id
+# remember: this  is necessary!!
+
+diff --git a/core/combo/arch/arm/armv7-a.mk b/core/combo/arch/arm/armv7-a.mk
+index 220f7ec..ac9772a 100644
+--- a/core/combo/arch/arm/armv7-a.mk
++++ b/core/combo/arch/arm/armv7-a.mk
+@@ -20,4 +20,4 @@ arch_variant_cflags := \
+     -mfpu=vfpv3-d16
+ 
+ arch_variant_ldflags := \
+-       -Wl,--fix-cortex-a8
++       -Wl,--fix-cortex-a8,--build-id
+# this has been removed, crespo uses neon
+
+diff --git a/target/product/core.mk b/target/product/core.mk
+index b7934b3..4cf49d9 100644
+--- a/target/product/core.mk
++++ b/target/product/core.mk
+@@ -120,7 +120,10 @@ PRODUCT_PACKAGES := \
+     screencap \
+     sensorservice \
+     lint \
+-    uiautomator
++    uiautomator \
++    libperf \
++    perfhost \
++    perf
+# this has been put into buildspec!! not necessary anymore
+# removed from trunk 
+ PRODUCT_COPY_FILES += \
+     system/core/rootdir/init.usb.rc:root/init.usb.rc \
+
+
+** bionic patch
+
+/home/tituomin/droid/src/bionic
+# Not currently on any branch.
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   Android.mk
+
+tituomin@yaku:~/droid/src/bionic$ git diff
+diff --git a/Android.mk b/Android.mk
+index 7c39751..72919ba 100644
+--- a/Android.mk
++++ b/Android.mk
+@@ -15,5 +15,8 @@
+ #
+ 
+ LOCAL_PATH := $(call my-dir)
++LOCAL_CFLAGS += -g3
++LOCAL_CFLAGS += -fno-omit-frame-pointers
++LOCAL_LDFLAGS += -Wl,--build-id
+# todo: are the above necessary? probably not ?
+# removed from trunk

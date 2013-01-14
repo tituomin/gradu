@@ -1,0 +1,1099 @@
+* test 4: single threaded jni app nativemainer
+** I
+
+F/libc    ( 3760): Fatal signal 6 (SIGABRT) at 0x00000e01 (code=0), thread 3760 (in.nativemainer)
+I/DEBUG   (   85): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+I/DEBUG   (   85): Build fingerprint: 'Android/full_crespo/crespo:4.1.2/JZO54K/eng.tituomin.20121207.160734:userdebug/test-keys'
+I/DEBUG   (   85): pid: 3760, tid: 3760, name: in.nativemainer  >>> fi.helsinki.cs.tituomin.nativemainer <<<
+I/DEBUG   (   85): signal 6 (SIGABRT), code -6 (?), fault addr --------
+I/DEBUG   (   85):     r0 41bf2470  r1 1d500019  r2 0116b64a  r3 40cafd28
+I/DEBUG   (   85):     r4 4c945190  r5 41bf3a08  r6 00000004  r7 40cafcf4
+I/DEBUG   (   85):     r8 befa95e8  r9 40cafcec  sl 41bf3a18  fp befa95fc
+I/DEBUG   (   85):     ip 4ec86c91  sp befa95d8  lr 4078de34  pc 4ec86c98  cpsr a0000030
+I/DEBUG   (   85):     d0  0000032044482000  d1  0000005044482000
+I/DEBUG   (   85):     d2  002e006900750000  d3  0070007300690000
+I/DEBUG   (   85):     d4  004500790061006c  d5  0074006e00650076
+I/DEBUG   (   85):     d6  006e006e006f0043  d7  0069007400630065
+I/DEBUG   (   85):     d8  0000000000000000  d9  0000000000000000
+I/DEBUG   (   85):     d10 0000000000000000  d11 0000000000000000
+I/DEBUG   (   85):     d12 0000000000000000  d13 0000000000000000
+I/DEBUG   (   85):     d14 0000000000000000  d15 0000000000000000
+I/DEBUG   (   85):     d16 0000000000000001  d17 0000000000000001
+I/DEBUG   (   85):     d18 0000000000000002  d19 0000000000000000
+I/DEBUG   (   85):     d20 0000000000000000  d21 3fe5555560000000
+I/DEBUG   (   85):     d22 0000000000000000  d23 3fe5555560000000
+I/DEBUG   (   85):     d24 3ff0000000000000  d25 0000000000000000
+I/DEBUG   (   85):     d26 0000000000000000  d27 c032000000000000
+I/DEBUG   (   85):     d28 0000000000000000  d29 3ff0000000000000
+I/DEBUG   (   85):     d30 3ff0000000000000  d31 3ff0000000000000
+I/DEBUG   (   85):     scr 60000011
+I/DEBUG   (   85): 
+I/DEBUG   (   85): backtrace:
+I/DEBUG   (   85):     #00  pc 00000c98  /data/data/fi.helsinki.cs.tituomin.nativemainer/lib/libjnilooper.so (Java_fi_helsinki_cs_tituomin_nativemainer_KillerApp_foo+7)
+I/DEBUG   (   85):     #01  pc 0001de30  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+I/DEBUG   (   85):     #02  pc 0004ce73  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+390)
+I/DEBUG   (   85):     #03  pc 00000214  /dev/ashmem/dalvik-jit-code-cache (deleted)
+I/DEBUG   (   85): 
+I/DEBUG   (   85): stack:
+I/DEBUG   (   85):          befa9598  00000000  
+I/DEBUG   (   85):          befa959c  ba3ff171  
+I/DEBUG   (   85):          befa95a0  00001e5e  
+I/DEBUG   (   85):          befa95a4  befa95e8  [stack]
+I/DEBUG   (   85):          befa95a8  40caf9a4  
+I/DEBUG   (   85):          befa95ac  41bf3a18  [heap]
+I/DEBUG   (   85):          befa95b0  befa95fc  [stack]
+I/DEBUG   (   85):          befa95b4  400f6b5c  /system/lib/libc.so (__gnu_ldivmod_helper+24)
+I/DEBUG   (   85):          befa95b8  00000000  
+I/DEBUG   (   85):          befa95bc  4c6e0928  /dev/ashmem/dalvik-LinearAlloc (deleted)
+I/DEBUG   (   85):          befa95c0  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95c4  00000003  
+I/DEBUG   (   85):          befa95c8  40caf9ac  
+I/DEBUG   (   85):          befa95cc  400f6a68  /system/lib/libc.so
+I/DEBUG   (   85):          befa95d0  df0027ad  
+I/DEBUG   (   85):          befa95d4  00000000  
+I/DEBUG   (   85):     #00  befa95d8  41bf3a08  [heap]
+I/DEBUG   (   85):          ........  ........
+I/DEBUG   (   85):     #01  befa95d8  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95dc  0116b64a  
+I/DEBUG   (   85):          befa95e0  1d500019  
+I/DEBUG   (   85):          befa95e4  41bf2470  [heap]
+I/DEBUG   (   85):          befa95e8  40cafcec  
+I/DEBUG   (   85):          befa95ec  00000001  
+I/DEBUG   (   85):          befa95f0  423dbf00  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95f4  00000008  
+I/DEBUG   (   85):          befa95f8  423f7c94  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95fc  407bce77  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+394)
+I/DEBUG   (   85):     #02  befa9600  40cafcec  
+I/DEBUG   (   85):          befa9604  400269d6  /data/dalvik-cache/data@app@fi.helsinki.cs.tituomin.nativemainer-2.apk@classes.dex
+I/DEBUG   (   85):          befa9608  4ec86c91  /data/data/fi.helsinki.cs.tituomin.nativemainer/lib/libjnilooper.so (Java_fi_helsinki_cs_tituomin_nativemainer_KillerApp_foo)
+I/DEBUG   (   85):          befa960c  41bf3a18  [heap]
+I/DEBUG   (   85):          befa9610  1d500019  
+I/DEBUG   (   85):          befa9614  00000000  
+I/DEBUG   (   85):          befa9618  00000000  
+I/DEBUG   (   85):          befa961c  40137a4c  
+I/DEBUG   (   85):          befa9620  00000001  
+I/DEBUG   (   85):          befa9624  41bf3a08  [heap]
+I/DEBUG   (   85):          befa9628  00000040  
+I/DEBUG   (   85):          befa962c  00000001  
+I/DEBUG   (   85):          befa9630  41bf3a30  [heap]
+I/DEBUG   (   85):          befa9634  407df075  /system/lib/libdvm.so (dvmCompilerWorkEnqueue(unsigned short const*, WorkOrderKind, void*)+172)
+I/DEBUG   (   85):          befa9638  41bf3a08  [heap]
+I/DEBUG   (   85):          befa963c  41bf3a08  [heap]
+I/DEBUG   (   85):          ........  ........
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r0:
+I/DEBUG   (   85):     41bf2450 6c436d65 0000001b 41c094c8 4013051c  emCl.......A...@
+I/DEBUG   (   85):     41bf2460 74696e49 4013003b 00000018 00000023  Init;..@....#...
+I/DEBUG   (   85):     41bf2470 40813970 40813de4 00000001 41bf3a08  p9.@.=.@.....:.A
+I/DEBUG   (   85):     41bf2480 00000000 40d40fc0 00000000 0000001b  .......@........
+I/DEBUG   (   85):     41bf2490 00000000 00000000 00000000 41bf2490  .............$.A
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r1:
+I/DEBUG   (   85):     1d4ffff8 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     1d500008 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     1d500018 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     1d500028 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     1d500038 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r2:
+I/DEBUG   (   85):     0116b628 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     0116b638 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     0116b648 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     0116b658 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     0116b668 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r3:
+I/DEBUG   (   85):     40cafd08 0116b64a 00000000 423dc440 40cafd44  J.......@.=BD..@
+I/DEBUG   (   85):     40cafd18 00000000 4c945278 40026838 423f67c0  ....xR.L8h.@.g?B
+I/DEBUG   (   85):     40cafd28 423dc440 423ed4a8 40cafd58 00000000  @.=B..>BX..@....
+I/DEBUG   (   85):     40cafd38 00000000 00000000 423f67c0 40cafd8c  .........g?B...@
+I/DEBUG   (   85):     40cafd48 410f500e 4c6aae40 00000006 00000000  .P.A@.jL........
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r4:
+I/DEBUG   (   85):     4c945170 00000004 40026d37 40026770 00000000  ....7m.@pg.@....
+I/DEBUG   (   85):     4c945180 00000000 00000000 400276dd 00000000  .........v.@....
+I/DEBUG   (   85):     4c945190 423dbf00 0000010c 00010000 00010000  ..=B............
+I/DEBUG   (   85):     4c9451a0 40026dd7 5136e1b0 00000000 400269d6  .m.@..6Q.....i.@
+I/DEBUG   (   85):     4c9451b0 4ec86c91 40000000 407bcced 00000100  .l.N...@..{@....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r5:
+I/DEBUG   (   85):     41bf39e8 00000000 00000000 00000000 00000013  ................
+I/DEBUG   (   85):     41bf39f8 00000000 00000800 4004e008 00000453  ...........@S...
+I/DEBUG   (   85):     41bf3a08 4d94981e 40cafcec 4c945158 4002c000  ...M...@XQ.L...@
+I/DEBUG   (   85):     41bf3a18 093a03df 08234d96 befa9710 00000000  ..:..M#.........
+I/DEBUG   (   85):     41bf3a28 befa9744 00000001 00000000 4078dfc0  D.............x@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r7:
+I/DEBUG   (   85):     40cafcd4 4d96ca06 40cafd04 40026798 4c945190  ...M...@.g.@.Q.L
+I/DEBUG   (   85):     40cafce4 00000006 52d9e095 0116b64a 40cafd28  .......RJ...(..@
+I/DEBUG   (   85):     40cafcf4 40026838 4c945158 40026798 00000000  8h.@XQ.L.g.@....
+I/DEBUG   (   85):     40cafd04 022d6c95 0116b64a 00000000 423dc440  .l-.J.......@.=B
+I/DEBUG   (   85):     40cafd14 40cafd44 00000000 4c945278 40026838  D..@....xR.L8h.@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r8:
+I/DEBUG   (   85):     befa95c8 40caf9ac 400f6a68 df0027ad 00000000  ...@hj.@.'......
+I/DEBUG   (   85):     befa95d8 41bf3a08 0116b64a 1d500019 41bf2470  .:.AJ.....P.p$.A
+I/DEBUG   (   85):     befa95e8 40cafcec 00000001 423dbf00 00000008  ...@......=B....
+I/DEBUG   (   85):     befa95f8 423f7c94 407bce77 40cafcec 400269d6  .|?Bw.{@...@.i.@
+I/DEBUG   (   85):     befa9608 4ec86c91 41bf3a18 1d500019 00000000  .l.N.:.A..P.....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r9:
+I/DEBUG   (   85):     40cafccc 40026782 4c7cb4e8 4d96ca06 40cafd04  .g.@..|L...M...@
+I/DEBUG   (   85):     40cafcdc 40026798 4c945190 00000006 52d9e095  .g.@.Q.L.......R
+I/DEBUG   (   85):     40cafcec 0116b64a 40cafd28 40026838 4c945158  J...(..@8h.@XQ.L
+I/DEBUG   (   85):     40cafcfc 40026798 00000000 022d6c95 0116b64a  .g.@.....l-.J...
+I/DEBUG   (   85):     40cafd0c 00000000 423dc440 40cafd44 00000000  ....@.=BD..@....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sl:
+I/DEBUG   (   85):     41bf39f8 00000000 00000800 4004e008 00000453  ...........@S...
+I/DEBUG   (   85):     41bf3a08 4d94981e 40cafcec 4c945158 4002c000  ...M...@XQ.L...@
+I/DEBUG   (   85):     41bf3a18 093a03df 08234d96 befa9710 00000000  ..:..M#.........
+I/DEBUG   (   85):     41bf3a28 befa9744 00000001 00000000 4078dfc0  D.............x@
+I/DEBUG   (   85):     41bf3a38 00000000 00000000 40709270 40caa300  ........p.p@...@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near fp:
+I/DEBUG   (   85):     befa95dc 0116b64a 1d500019 41bf2470 40cafcec  J.....P.p$.A...@
+I/DEBUG   (   85):     befa95ec 00000001 423dbf00 00000008 423f7c94  ......=B.....|?B
+I/DEBUG   (   85):     befa95fc 407bce77 40cafcec 400269d6 4ec86c91  w.{@...@.i.@.l.N
+I/DEBUG   (   85):     befa960c 41bf3a18 1d500019 00000000 00000000  .:.A..P.........
+I/DEBUG   (   85):     befa961c 40137a4c 00000001 41bf3a08 00000040  Lz.@.....:.A@...
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near ip:
+I/DEBUG   (   85):     4ec86c70 e0059303 33019b02 9b039302 93033301  .......3.....3..
+I/DEBUG   (   85):     4ec86c80 4b029a03 ddf5429a 4770b004 0000270f  ...K.B....pG.'..
+I/DEBUG   (   85):     4ec86c90 9003b084 92019102 447b4b06 9a01681b  .........K{D.h..
+I/DEBUG   (   85):     4ec86ca0 1c59189a 447b4b04 46c06019 1c181c13  ..Y..K{D.`.F....
+I/DEBUG   (   85):     4ec86cb0 4770b004 00003366 0000335a e5903000  ..pGf3..Z3...0..
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sp:
+I/DEBUG   (   85):     befa95b8 00000000 4c6e0928 41bf3a08 00000003  ....(.nL.:.A....
+I/DEBUG   (   85):     befa95c8 40caf9ac 400f6a68 df0027ad 00000000  ...@hj.@.'......
+I/DEBUG   (   85):     befa95d8 41bf3a08 0116b64a 1d500019 41bf2470  .:.AJ.....P.p$.A
+I/DEBUG   (   85):     befa95e8 40cafcec 00000001 423dbf00 00000008  ...@......=B....
+I/DEBUG   (   85):     befa95f8 423f7c94 407bce77 40cafcec 400269d6  .|?Bw.{@...@.i.@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around pc:
+I/DEBUG   (   85):     4ec86c78 9b039302 93033301 4b029a03 ddf5429a  .....3.....K.B..
+I/DEBUG   (   85):     4ec86c88 4770b004 0000270f 9003b084 92019102  ..pG.'..........
+I/DEBUG   (   85):     4ec86c98 447b4b06 9a01681b 1c59189a 447b4b04  .K{D.h....Y..K{D
+I/DEBUG   (   85):     4ec86ca8 46c06019 1c181c13 4770b004 00003366  .`.F......pGf3..
+I/DEBUG   (   85):     4ec86cb8 0000335a e5903000 e3130101 13833102  Z3...0.......1..
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around lr:
+I/DEBUG   (   85):     4078de14 3497c004 3488c004 3afffff9 e2888004  ...4...4...:....
+I/DEBUG   (   85):     4078de24 eafffff9 e899000c e59bc00c e12fff3c  ............<./.
+I/DEBUG   (   85):     4078de34 e3560000 159bc010 e24bd014 188c0003  ..V.......K.....
+I/DEBUG   (   85):     4078de44 e8bd8bc0 e1a0ce22 e59b6008 e2866001  ...."....`...`..
+I/DEBUG   (   85):     4078de54 e3a02000 e4d6c001 e35c0000 0a000007  . ........\.....
+
+** II
+
+F/libc    ( 3794): Fatal signal 6 (SIGABRT) at 0x00000e01 (code=0), thread 3794 (in.nativemainer)
+I/DEBUG   (   85): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+I/DEBUG   (   85): Build fingerprint: 'Android/full_crespo/crespo:4.1.2/JZO54K/eng.tituomin.20121207.160734:userdebug/test-keys'
+I/DEBUG   (   85): pid: 3794, tid: 3794, name: in.nativemainer  >>> fi.helsinki.cs.tituomin.nativemainer <<<
+I/DEBUG   (   85): signal 6 (SIGABRT), code -6 (?), fault addr --------
+I/DEBUG   (   85):     r0 41bf2470  r1 f0500019  r2 00bf0652  r3 40cafd28
+I/DEBUG   (   85):     r4 4c945190  r5 41bf3a08  r6 00000004  r7 40cafcf4
+I/DEBUG   (   85):     r8 befa95e8  r9 40cafcec  sl 41bf3a18  fp befa95fc
+I/DEBUG   (   85):     ip 4ec86c91  sp befa95d8  lr 4078de34  pc 4ec86c92  cpsr a0000030
+I/DEBUG   (   85):     d0  000d010200000001  d1  0000000000000000
+I/DEBUG   (   85):     d2  4c94519000000000  d3  0000010000000000
+I/DEBUG   (   85):     d4  0000000000000044  d5  0003000940e00000
+I/DEBUG   (   85):     d6  0000000000000000  d7  4450000000000340
+I/DEBUG   (   85):     d8  0000000000000000  d9  0000000000000000
+I/DEBUG   (   85):     d10 0000000000000000  d11 0000000000000000
+I/DEBUG   (   85):     d12 0000000000000000  d13 0000000000000000
+I/DEBUG   (   85):     d14 0000000000000000  d15 0000000000000000
+I/DEBUG   (   85):     d16 0000000000000001  d17 0000000000000001
+I/DEBUG   (   85):     d18 0000000000000002  d19 0000000000000000
+I/DEBUG   (   85):     d20 0000000000000000  d21 3fe5555560000000
+I/DEBUG   (   85):     d22 0000000000000000  d23 3fe5555560000000
+I/DEBUG   (   85):     d24 3ff0000000000000  d25 0000000000000000
+I/DEBUG   (   85):     d26 0000000000000000  d27 c032000000000000
+I/DEBUG   (   85):     d28 0000000000000000  d29 3ff0000000000000
+I/DEBUG   (   85):     d30 3ff0000000000000  d31 3ff0000000000000
+I/DEBUG   (   85):     scr 60000011
+I/DEBUG   (   85): 
+I/DEBUG   (   85): backtrace:
+I/DEBUG   (   85):     #00  pc 00000c92  /data/data/fi.helsinki.cs.tituomin.nativemainer/lib/libjnilooper.so (Java_fi_helsinki_cs_tituomin_nativemainer_KillerApp_foo+1)
+I/DEBUG   (   85):     #01  pc 0001de30  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+I/DEBUG   (   85):     #02  pc 0004ce73  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+390)
+I/DEBUG   (   85):     #03  pc 00000214  /dev/ashmem/dalvik-jit-code-cache (deleted)
+I/DEBUG   (   85): 
+I/DEBUG   (   85): stack:
+I/DEBUG   (   85):          befa9598  40137a4c  
+I/DEBUG   (   85):          befa959c  40026b94  /data/dalvik-cache/data@app@fi.helsinki.cs.tituomin.nativemainer-2.apk@classes.dex
+I/DEBUG   (   85):          befa95a0  423f77ec  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95a4  40103429  /system/lib/libc.so (sprintf+64)
+I/DEBUG   (   85):          befa95a8  423dcd40  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95ac  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95b0  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95b4  00000000  
+I/DEBUG   (   85):          befa95b8  26000019  
+I/DEBUG   (   85):          befa95bc  41bf2470  [heap]
+I/DEBUG   (   85):          befa95c0  423dcd40  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95c4  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95c8  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95cc  00000027  
+I/DEBUG   (   85):          befa95d0  df0027ad  
+I/DEBUG   (   85):          befa95d4  00000000  
+I/DEBUG   (   85):     #00  befa95d8  41bf3a08  [heap]
+I/DEBUG   (   85):          ........  ........
+I/DEBUG   (   85):     #01  befa95d8  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95dc  41bf3ab0  [heap]
+I/DEBUG   (   85):          befa95e0  423dcd40  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95e4  407b88af  /system/lib/libdvm.so
+I/DEBUG   (   85):          befa95e8  40cafcec  
+I/DEBUG   (   85):          befa95ec  00000001  
+I/DEBUG   (   85):          befa95f0  423dcd40  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95f4  00000008  
+I/DEBUG   (   85):          befa95f8  423f77ec  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95fc  407bce77  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+394)
+I/DEBUG   (   85):     #02  befa9600  40cafcec  
+I/DEBUG   (   85):          befa9604  400269d6  /data/dalvik-cache/data@app@fi.helsinki.cs.tituomin.nativemainer-2.apk@classes.dex
+I/DEBUG   (   85):          befa9608  4ec86c91  /data/data/fi.helsinki.cs.tituomin.nativemainer/lib/libjnilooper.so (Java_fi_helsinki_cs_tituomin_nativemainer_KillerApp_foo)
+I/DEBUG   (   85):          befa960c  41bf3a18  [heap]
+I/DEBUG   (   85):          befa9610  f0500019  
+I/DEBUG   (   85):          befa9614  00000000  
+I/DEBUG   (   85):          befa9618  40137a4c  
+I/DEBUG   (   85):          befa961c  40137a4c  
+I/DEBUG   (   85):          befa9620  00000004  
+I/DEBUG   (   85):          befa9624  41bf3a08  [heap]
+I/DEBUG   (   85):          befa9628  ffffbfff  
+I/DEBUG   (   85):          befa962c  00000001  
+I/DEBUG   (   85):          befa9630  41bf3a30  [heap]
+I/DEBUG   (   85):          befa9634  407df075  /system/lib/libdvm.so (dvmCompilerWorkEnqueue(unsigned short const*, WorkOrderKind, void*)+172)
+I/DEBUG   (   85):          befa9638  41bf3a08  [heap]
+I/DEBUG   (   85):          befa963c  41bf3a08  [heap]
+I/DEBUG   (   85):          ........  ........
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r0:
+I/DEBUG   (   85):     41bf2450 6c436d65 0000001b 41c094c8 4013051c  emCl.......A...@
+I/DEBUG   (   85):     41bf2460 74696e49 4013003b 00000018 00000023  Init;..@....#...
+I/DEBUG   (   85):     41bf2470 40813970 40813de4 00000001 41bf3a08  p9.@.=.@.....:.A
+I/DEBUG   (   85):     41bf2480 00000000 40d40fc0 00000000 0000001b  .......@........
+I/DEBUG   (   85):     41bf2490 00000000 00000000 00000000 41bf2490  .............$.A
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r2:
+I/DEBUG   (   85):     00bf0630 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     00bf0640 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     00bf0650 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     00bf0660 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     00bf0670 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r3:
+I/DEBUG   (   85):     40cafd08 00bf0652 00000000 423dd280 40cafd44  R.........=BD..@
+I/DEBUG   (   85):     40cafd18 00000000 4c945278 40026838 00000001  ....xR.L8h.@....
+I/DEBUG   (   85):     40cafd28 423dd280 423ee2e8 40cafd58 00000000  ..=B..>BX..@....
+I/DEBUG   (   85):     40cafd38 00000000 00000000 00000001 40cafd8c  ...............@
+I/DEBUG   (   85):     40cafd48 410f500e 4c6aae40 00000006 00000000  .P.A@.jL........
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r4:
+I/DEBUG   (   85):     4c945170 00000004 40026d37 40026770 00000000  ....7m.@pg.@....
+I/DEBUG   (   85):     4c945180 00000000 00000000 400276dd 00000000  .........v.@....
+I/DEBUG   (   85):     4c945190 423dcd40 0000010c 00010000 00010000  @.=B............
+I/DEBUG   (   85):     4c9451a0 40026dd7 5136e1b0 00000000 400269d6  .m.@..6Q.....i.@
+I/DEBUG   (   85):     4c9451b0 4ec86c91 40000000 407bcced 00000100  .l.N...@..{@....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r5:
+I/DEBUG   (   85):     41bf39e8 00000000 00000000 00000000 00000013  ................
+I/DEBUG   (   85):     41bf39f8 00000000 00000800 4004e008 00000453  ...........@S...
+I/DEBUG   (   85):     41bf3a08 4002679e 40cafcec 4c945158 4002c000  .g.@...@XQ.L...@
+I/DEBUG   (   85):     41bf3a18 023d12f7 017e0ca6 befa9710 00000000  ..=...~.........
+I/DEBUG   (   85):     41bf3a28 befa9744 00000001 00000000 4078dfc0  D.............x@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r7:
+I/DEBUG   (   85):     40cafcd4 4d96ca06 40cafd04 40026798 4c945190  ...M...@.g.@.Q.L
+I/DEBUG   (   85):     40cafce4 00000006 52d9e095 00bf0652 40cafd28  .......RR...(..@
+I/DEBUG   (   85):     40cafcf4 40026838 4c945158 40026798 00000000  8h.@XQ.L.g.@....
+I/DEBUG   (   85):     40cafd04 017e0ca5 00bf0652 00000000 423dd280  ..~.R.........=B
+I/DEBUG   (   85):     40cafd14 40cafd44 00000000 4c945278 40026838  D..@....xR.L8h.@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r8:
+I/DEBUG   (   85):     befa95c8 41bf3a08 00000027 df0027ad 00000000  .:.A'....'......
+I/DEBUG   (   85):     befa95d8 41bf3a08 41bf3ab0 423dcd40 407b88af  .:.A.:.A@.=B..{@
+I/DEBUG   (   85):     befa95e8 40cafcec 00000001 423dcd40 00000008  ...@....@.=B....
+I/DEBUG   (   85):     befa95f8 423f77ec 407bce77 40cafcec 400269d6  .w?Bw.{@...@.i.@
+I/DEBUG   (   85):     befa9608 4ec86c91 41bf3a18 f0500019 00000000  .l.N.:.A..P.....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r9:
+I/DEBUG   (   85):     40cafccc 40026782 4c7cb4e8 4d96ca06 40cafd04  .g.@..|L...M...@
+I/DEBUG   (   85):     40cafcdc 40026798 4c945190 00000006 52d9e095  .g.@.Q.L.......R
+I/DEBUG   (   85):     40cafcec 00bf0652 40cafd28 40026838 4c945158  R...(..@8h.@XQ.L
+I/DEBUG   (   85):     40cafcfc 40026798 00000000 017e0ca5 00bf0652  .g.@......~.R...
+I/DEBUG   (   85):     40cafd0c 00000000 423dd280 40cafd44 00000000  ......=BD..@....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sl:
+I/DEBUG   (   85):     41bf39f8 00000000 00000800 4004e008 00000453  ...........@S...
+I/DEBUG   (   85):     41bf3a08 4002679e 40cafcec 4c945158 4002c000  .g.@...@XQ.L...@
+I/DEBUG   (   85):     41bf3a18 023d12f7 017e0ca6 befa9710 00000000  ..=...~.........
+I/DEBUG   (   85):     41bf3a28 befa9744 00000001 00000000 4078dfc0  D.............x@
+I/DEBUG   (   85):     41bf3a38 00000000 00000000 40709270 40caa300  ........p.p@...@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near fp:
+I/DEBUG   (   85):     befa95dc 41bf3ab0 423dcd40 407b88af 40cafcec  .:.A@.=B..{@...@
+I/DEBUG   (   85):     befa95ec 00000001 423dcd40 00000008 423f77ec  ....@.=B.....w?B
+I/DEBUG   (   85):     befa95fc 407bce77 40cafcec 400269d6 4ec86c91  w.{@...@.i.@.l.N
+I/DEBUG   (   85):     befa960c 41bf3a18 f0500019 00000000 40137a4c  .:.A..P.....Lz.@
+I/DEBUG   (   85):     befa961c 40137a4c 00000004 41bf3a08 ffffbfff  Lz.@.....:.A....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near ip:
+I/DEBUG   (   85):     4ec86c70 e0059303 33019b02 9b039302 93033301  .......3.....3..
+I/DEBUG   (   85):     4ec86c80 4b029a03 ddf5429a 4770b004 0000270f  ...K.B....pG.'..
+I/DEBUG   (   85):     4ec86c90 9003b084 92019102 447b4b06 9a01681b  .........K{D.h..
+I/DEBUG   (   85):     4ec86ca0 1c59189a 447b4b04 46c06019 1c181c13  ..Y..K{D.`.F....
+I/DEBUG   (   85):     4ec86cb0 4770b004 00003366 0000335a e5903000  ..pGf3..Z3...0..
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sp:
+I/DEBUG   (   85):     befa95b8 26000019 41bf2470 423dcd40 41bf3a08  ...&p$.A@.=B.:.A
+I/DEBUG   (   85):     befa95c8 41bf3a08 00000027 df0027ad 00000000  .:.A'....'......
+I/DEBUG   (   85):     befa95d8 41bf3a08 41bf3ab0 423dcd40 407b88af  .:.A.:.A@.=B..{@
+I/DEBUG   (   85):     befa95e8 40cafcec 00000001 423dcd40 00000008  ...@....@.=B....
+I/DEBUG   (   85):     befa95f8 423f77ec 407bce77 40cafcec 400269d6  .w?Bw.{@...@.i.@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around pc:
+I/DEBUG   (   85):     4ec86c70 e0059303 33019b02 9b039302 93033301  .......3.....3..
+I/DEBUG   (   85):     4ec86c80 4b029a03 ddf5429a 4770b004 0000270f  ...K.B....pG.'..
+I/DEBUG   (   85):     4ec86c90 9003b084 92019102 447b4b06 9a01681b  .........K{D.h..
+I/DEBUG   (   85):     4ec86ca0 1c59189a 447b4b04 46c06019 1c181c13  ..Y..K{D.`.F....
+I/DEBUG   (   85):     4ec86cb0 4770b004 00003366 0000335a e5903000  ..pGf3..Z3...0..
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around lr:
+I/DEBUG   (   85):     4078de14 3497c004 3488c004 3afffff9 e2888004  ...4...4...:....
+I/DEBUG   (   85):     4078de24 eafffff9 e899000c e59bc00c e12fff3c  ............<./.
+I/DEBUG   (   85):     4078de34 e3560000 159bc010 e24bd014 188c0003  ..V.......K.....
+I/DEBUG   (   85):     4078de44 e8bd8bc0 e1a0ce22 e59b6008 e2866001  ...."....`...`..
+I/DEBUG   (   85):     4078de54 e3a02000 e4d6c001 e35c0000 0a000007  . ........\.....
+I/BootReceiver(  248): Copying /data/tombstones/tombstone_05 to DropBox (SYSTEM_TOMBSTONE)
+
+** III
+
+F/libc    ( 3898): Fatal signal 6 (SIGABRT) at 0x00000e01 (code=0), thread 3898 (in.nativemainer)
+I/DEBUG   (   85): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+I/DEBUG   (   85): Build fingerprint: 'Android/full_crespo/crespo:4.1.2/JZO54K/eng.tituomin.20121207.160734:userdebug/test-keys'
+I/DEBUG   (   85): pid: 3898, tid: 3898, name: in.nativemainer  >>> fi.helsinki.cs.tituomin.nativemainer <<<
+I/DEBUG   (   85): signal 6 (SIGABRT), code -6 (?), fault addr --------
+I/DEBUG   (   85):     r0 003005be  r1 003005be  r2 00600b7c  r3 40137a4c
+I/DEBUG   (   85):     r4 40026798  r5 40cafd04  r6 41bf3a08  r7 40cafcec
+I/DEBUG   (   85):     r8 407bcced  r9 00000006  sl 40cafcd8  fp 423f083c
+I/DEBUG   (   85):     ip 41bf3a18  sp befa9710  lr 407bce7f  pc 52d9e074  cpsr 00000030
+I/DEBUG   (   85):     d0  000d010200000001  d1  4c94519000000000
+I/DEBUG   (   85):     d2  74616e2f6e696d00  d3  656e69616d657600
+I/DEBUG   (   85):     d4  004500790061006c  d5  0074006e00650076
+I/DEBUG   (   85):     d6  006e006e006f0043  d7  0069007400630065
+I/DEBUG   (   85):     d8  0000000000000000  d9  0000000000000000
+I/DEBUG   (   85):     d10 0000000000000000  d11 0000000000000000
+I/DEBUG   (   85):     d12 0000000000000000  d13 0000000000000000
+I/DEBUG   (   85):     d14 0000000000000000  d15 0000000000000000
+I/DEBUG   (   85):     d16 0000000000000001  d17 0000000000000001
+I/DEBUG   (   85):     d18 0000000000000002  d19 0000000000000000
+I/DEBUG   (   85):     d20 0000000000000000  d21 3fe5555560000000
+I/DEBUG   (   85):     d22 0000000000000000  d23 3fe5555560000000
+I/DEBUG   (   85):     d24 3ff0000000000000  d25 0000000000000000
+I/DEBUG   (   85):     d26 0000000000000000  d27 c032000000000000
+I/DEBUG   (   85):     d28 0000000000000000  d29 3ff0000000000000
+I/DEBUG   (   85):     d30 3ff0000000000000  d31 3ff0000000000000
+I/DEBUG   (   85):     scr 60000011
+I/DEBUG   (   85): 
+I/DEBUG   (   85): backtrace:
+I/DEBUG   (   85):     #00  pc 00001074  /dev/ashmem/dalvik-jit-code-cache (deleted)
+I/DEBUG   (   85):     #01  pc 0004ce7b  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+398)
+I/DEBUG   (   85):     #02  pc 0002a4a8  /system/lib/libdvm.so (dvmMalloc(unsigned int, int)+120)
+I/DEBUG   (   85):     #03  pc 007e228c  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85): 
+I/DEBUG   (   85): stack:
+I/DEBUG   (   85):          befa96d0  00000001  
+I/DEBUG   (   85):          befa96d4  40cafd04  
+I/DEBUG   (   85):          befa96d8  4081687c  /system/lib/libdvm.so
+I/DEBUG   (   85):          befa96dc  4081a668  /system/lib/libdvm.so
+I/DEBUG   (   85):          befa96e0  52d9e104  /dev/ashmem/dalvik-jit-code-cache (deleted)
+I/DEBUG   (   85):          befa96e4  6bc08e40  
+I/DEBUG   (   85):          befa96e8  4081a668  /system/lib/libdvm.so
+I/DEBUG   (   85):          befa96ec  40026798  /data/dalvik-cache/data@app@fi.helsinki.cs.tituomin.nativemainer-2.apk@classes.dex
+I/DEBUG   (   85):          befa96f0  40cafd04  
+I/DEBUG   (   85):          befa96f4  41bf3a08  [heap]
+I/DEBUG   (   85):          befa96f8  00000001  
+I/DEBUG   (   85):          befa96fc  407bcced  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*))
+I/DEBUG   (   85):          befa9700  00000006  
+I/DEBUG   (   85):          befa9704  40cafcd8  
+I/DEBUG   (   85):          befa9708  df0027ad  
+I/DEBUG   (   85):          befa970c  00000000  
+I/DEBUG   (   85):     #00  befa9710  400fc511  /system/lib/libc.so (dlfree)
+I/DEBUG   (   85):          ........  ........
+I/DEBUG   (   85):     #01  befa9710  400fc511  /system/lib/libc.so (dlfree)
+I/DEBUG   (   85):          befa9714  41bf3a08  [heap]
+I/DEBUG   (   85):          befa9718  40815c98  /system/lib/libdvm.so
+I/DEBUG   (   85):          befa971c  4c945278  /dev/ashmem/dalvik-LinearAlloc (deleted)
+I/DEBUG   (   85):          befa9720  00000000  
+I/DEBUG   (   85):          befa9724  befa9744  [stack]
+I/DEBUG   (   85):          befa9728  befa97e8  [stack]
+I/DEBUG   (   85):          befa972c  00000000  
+I/DEBUG   (   85):          befa9730  423f083c  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa9734  4079bb3c  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+I/DEBUG   (   85):          befa9738  4f2462f0  
+I/DEBUG   (   85):          befa973c  26b00019  
+I/DEBUG   (   85):          befa9740  4f2462f0  
+I/DEBUG   (   85):          befa9744  41153e00  /data/dalvik-cache/system@framework@core.jar@classes.dex
+I/DEBUG   (   85):          befa9748  40cafd28  
+I/DEBUG   (   85):          befa974c  4c6ab2a8  /dev/ashmem/dalvik-LinearAlloc (deleted)
+I/DEBUG   (   85):          ........  ........
+I/DEBUG   (   85):     #02  befa9820  00000001  
+I/DEBUG   (   85):          befa9824  6bc08e40  
+I/DEBUG   (   85):          befa9828  41bf3928  [heap]
+I/DEBUG   (   85):          befa982c  41bf3a18  [heap]
+I/DEBUG   (   85):          befa9830  423d5c60  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa9834  423f0768  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa9838  4c945278  /dev/ashmem/dalvik-LinearAlloc (deleted)
+I/DEBUG   (   85):          befa983c  423d6290  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r0:
+I/DEBUG   (   85):     0030059c ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     003005ac ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     003005bc ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     003005cc ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     003005dc ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r1:
+I/DEBUG   (   85):     0030059c ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     003005ac ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     003005bc ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     003005cc ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     003005dc ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r2:
+I/DEBUG   (   85):     00600b5c ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     00600b6c ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     00600b7c ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     00600b8c ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     00600b9c ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r3:
+I/DEBUG   (   85):     40137a2c 00000000 00000000 00000000 00000000  ................
+I/DEBUG   (   85):     40137a3c 00000000 00000000 00000000 00000000  ................
+I/DEBUG   (   85):     40137a4c 6bc08e40 00000000 00000000 00000000  @..k............
+I/DEBUG   (   85):     40137a5c 00000000 00000000 00000000 00000000  ................
+I/DEBUG   (   85):     40137a6c 00000000 00000000 00000000 00000000  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r4:
+I/DEBUG   (   85):     40026778 00130013 00d831f4 20f80212 002101c9  .....1..... ..!.
+I/DEBUG   (   85):     40026788 01140012 05f5e100 000a1035 020001db  ........5.......
+I/DEBUG   (   85):     40026798 00111071 00d80001 f4280100 00030114  q.........(.....
+I/DEBUG   (   85):     400267a8 20707f04 00130013 00d831f4 20f81212  ..p .....1..... 
+I/DEBUG   (   85):     400267b8 002101c9 0000000e 00020003 00000002  ..!.............
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r5:
+I/DEBUG   (   85):     40cafce4 00000006 52d9e095 003005bd 40cafd28  .......R..0.(..@
+I/DEBUG   (   85):     40cafcf4 40026838 4c945158 40026798 00000000  8h.@XQ.L.g.@....
+I/DEBUG   (   85):     40cafd04 00600b7c 003005be 00000000 423d6290  |.`...0......b=B
+I/DEBUG   (   85):     40cafd14 40cafd44 00000000 4c945278 40026838  D..@....xR.L8h.@
+I/DEBUG   (   85):     40cafd24 00000001 423d6290 423e72f8 40cafd58  .....b=B.r>BX..@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r6:
+I/DEBUG   (   85):     41bf39e8 00000000 00000000 00000000 00000013  ................
+I/DEBUG   (   85):     41bf39f8 00000000 00000800 4004e008 00000453  ...........@S...
+I/DEBUG   (   85):     41bf3a08 4002679e 40cafd04 4c945158 4002c000  .g.@...@XQ.L...@
+I/DEBUG   (   85):     41bf3a18 00901139 00600b7d befa9710 00000000  9...}.`.........
+I/DEBUG   (   85):     41bf3a28 befa9744 00000001 00000000 4078dfc0  D.............x@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r7:
+I/DEBUG   (   85):     40cafccc 40026782 4c7cb4e8 4d96ca06 40cafd04  .g.@..|L...M...@
+I/DEBUG   (   85):     40cafcdc 40026798 4c945190 00000006 52d9e095  .g.@.Q.L.......R
+I/DEBUG   (   85):     40cafcec 003005bd 40cafd28 40026838 4c945158  ..0.(..@8h.@XQ.L
+I/DEBUG   (   85):     40cafcfc 40026798 00000000 00600b7c 003005be  .g.@....|.`...0.
+I/DEBUG   (   85):     40cafd0c 00000000 423d6290 40cafd44 00000000  .....b=BD..@....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r8:
+I/DEBUG   (   85):     407bcccc f7fc4619 4621f817 f7fc9801 f020ffe5  .F....!F...... .
+I/DEBUG   (   85):     407bccdc 4604ffe9 f7fca801 4620f831 0000bd1c  ...F....1. F....
+I/DEBUG   (   85):     407bccec 4ff0e92d 4b76461d 68524614 447b4606  -..O.FvK.FRh.F{D
+I/DEBUG   (   85):     407bccfc b0bb681b 0908f012 6818468a 1140f3c2  .h.......F.h..@.
+I/DEBUG   (   85):     407bcd0c 91059307 d0089039 8000f8d4 27004628  ....9.......(F.'
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sl:
+I/DEBUG   (   85):     40cafcb8 00000001 00000020 423e72f8 00000000  .... ....r>B....
+I/DEBUG   (   85):     40cafcc8 40cafd04 40026782 4c7cb4e8 4d96ca06  ...@.g.@..|L...M
+I/DEBUG   (   85):     40cafcd8 40cafd04 40026798 4c945190 00000006  ...@.g.@.Q.L....
+I/DEBUG   (   85):     40cafce8 52d9e095 003005bd 40cafd28 40026838  ...R..0.(..@8h.@
+I/DEBUG   (   85):     40cafcf8 4c945158 40026798 00000000 00600b7c  XQ.L.g.@....|.`.
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near fp:
+I/DEBUG   (   85):     423f081c 006e0069 00000067 0000001b 41bf4e90  i.n.g........N.A
+I/DEBUG   (   85):     423f082c 00000000 00000001 00000000 423e72f8  .............r>B
+I/DEBUG   (   85):     423f083c 00000023 41bf50b8 00000000 423f0860  #....P.A....`.?B
+I/DEBUG   (   85):     423f084c d49e1c1b 00000000 0000000d 00000000  ................
+I/DEBUG   (   85):     423f085c 00000033 41bf5928 00000000 0000000d  3...(Y.A........
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near ip:
+I/DEBUG   (   85):     41bf39f8 00000000 00000800 4004e008 00000453  ...........@S...
+I/DEBUG   (   85):     41bf3a08 4002679e 40cafd04 4c945158 4002c000  .g.@...@XQ.L...@
+I/DEBUG   (   85):     41bf3a18 00901139 00600b7d befa9710 00000000  9...}.`.........
+I/DEBUG   (   85):     41bf3a28 befa9744 00000001 00000000 4078dfc0  D.............x@
+I/DEBUG   (   85):     41bf3a38 00000000 00000000 40709270 40caa300  ........p.p@...@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sp:
+I/DEBUG   (   85):     befa96f0 40cafd04 41bf3a08 00000001 407bcced  ...@.:.A......{@
+I/DEBUG   (   85):     befa9700 00000006 40cafcd8 df0027ad 00000000  .......@.'......
+I/DEBUG   (   85):     befa9710 400fc511 41bf3a08 40815c98 4c945278  ...@.:.A.\.@xR.L
+I/DEBUG   (   85):     befa9720 00000000 befa9744 befa97e8 00000000  ....D...........
+I/DEBUG   (   85):     befa9730 423f083c 4079bb3c 4f2462f0 26b00019  <.?B<.y@.b$O...&
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around pc:
+I/DEBUG   (   85):     52d9e054 4ed38fd4 f85f0048 68010008 60013101  ...NH._....h.1.`
+I/DEBUG   (   85):     52d9e064 0fc26828 10511812 f2a51c08 60690718  (h....Q.......i`
+I/DEBUG   (   85):     52d9e074 f8dfc701 a1060064 4058f8df f7ff2701  ....d.....X@.'..
+I/DEBUG   (   85):     52d9e084 e000e894 f8dfde00 6ef1004c 1c2d4788  ........L..n.G-.
+I/DEBUG   (   85):     52d9e094 4300e02c 47806f70 4002679e 00000100  ,..Cpo.G.g.@....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around lr:
+I/DEBUG   (   85):     407bce5c 89e36a22 92029101 0368f8d5 6a629904  "j........h...bj
+I/DEBUG   (   85):     407bce6c f8cd9600 f7d0a00c 4628efa6 f0054639  ..........(F9F..
+I/DEBUG   (   85):     407bce7c 69e3fe79 284c7818 6c68d109 f8dab938  y..i.xL(..hl8...
+I/DEBUG   (   85):     407bce8c b1211000 f7fc4628 f8caff07 9b050000  ..!.(F..........
+I/DEBUG   (   85):     407bce9c 4628b11b f0044641 f894ffa5 b12a202e  ..(FAF....... *.
+I/BootReceiver(  248): Copying /data/tombstones/tombstone_07 to DropBox (SYSTEM_TOMBSTONE)
+D/dalvikvm(  248): GC_CONCURRENT freed 1142K, 19% free 14206K/17415K, paused 14ms+13ms, total 102
+
+
+
+** IV
+
+F/libc    ( 3921): Fatal signal 6 (SIGABRT) at 0x00000e01 (code=0), thread 3921 (in.nativemainer)
+I/DEBUG   (   85): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+I/DEBUG   (   85): Build fingerprint: 'Android/full_crespo/crespo:4.1.2/JZO54K/eng.tituomin.20121207.160734:userdebug/test-keys'
+I/DEBUG   (   85): pid: 3921, tid: 3921, name: in.nativemainer  >>> fi.helsinki.cs.tituomin.nativemainer <<<
+I/DEBUG   (   85): signal 6 (SIGABRT), code -6 (?), fault addr --------
+D/AudioHardware(   90): AudioHardware pcm playback is going to standby.
+D/AudioHardware(   90): closePcmOut_l() mPcmOpenCnt: 1
+I/DEBUG   (   85):     r0 41bf3a08  r1 423d6b40  r2 0000010c  r3 40137a4c
+I/DEBUG   (   85):     r4 423d6b40  r5 41bf3a08  r6 41bf3a08  r7 00000000
+I/DEBUG   (   85):     r8 423d6b40  r9 00000008  sl 41bf3a18  fp 423f3a4c
+I/DEBUG   (   85):     ip 41bf3a18  sp befa95e8  lr 407bcd23  pc 407b889a  cpsr 60000030
+I/DEBUG   (   85):     d0  000d010200000001  d1  4c94519000000000
+I/DEBUG   (   85):     d2  656e69616d657600  d3  72656c6c694b2f00
+I/DEBUG   (   85):     d4  004500790061006c  d5  0074006e00650076
+I/DEBUG   (   85):     d6  006e006e006f0043  d7  0069007400630065
+I/DEBUG   (   85):     d8  0000000000000000  d9  0000000000000000
+I/DEBUG   (   85):     d10 0000000000000000  d11 0000000000000000
+I/DEBUG   (   85):     d12 0000000000000000  d13 0000000000000000
+I/DEBUG   (   85):     d14 0000000000000000  d15 0000000000000000
+I/DEBUG   (   85):     d16 0000000000000001  d17 0000000000000001
+I/DEBUG   (   85):     d18 0000000000000002  d19 0000000000000000
+I/DEBUG   (   85):     d20 0000000000000000  d21 3fe5555560000000
+I/DEBUG   (   85):     d22 0000000000000000  d23 3fe5555560000000
+I/DEBUG   (   85):     d24 3ff0000000000000  d25 0000000000000000
+I/DEBUG   (   85):     d26 0000000000000000  d27 c032000000000000
+I/DEBUG   (   85):     d28 0000000000000000  d29 3ff0000000000000
+I/DEBUG   (   85):     d30 3ff0000000000000  d31 3ff0000000000000
+I/DEBUG   (   85):     scr 60000011
+I/DEBUG   (   85): 
+I/DEBUG   (   85): backtrace:
+I/DEBUG   (   85):     #00  pc 0004889a  /system/lib/libdvm.so
+I/DEBUG   (   85):     #01  pc 0004cd1f  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+50)
+I/DEBUG   (   85):     #02  pc 00000214  /dev/ashmem/dalvik-jit-code-cache (deleted)
+I/DEBUG   (   85): 
+I/DEBUG   (   85): stack:
+I/DEBUG   (   85):          befa95a8  423d6b40  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95ac  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95b0  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95b4  00000000  
+I/DEBUG   (   85):          befa95b8  6a100019  
+I/DEBUG   (   85):          befa95bc  41bf2470  [heap]
+I/DEBUG   (   85):          befa95c0  423d6b40  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95c4  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95c8  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95cc  00000027  
+I/DEBUG   (   85):          befa95d0  423d6b40  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95d4  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95d8  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95dc  0036ba82  
+I/DEBUG   (   85):          befa95e0  df0027ad  
+I/DEBUG   (   85):          befa95e4  00000000  
+I/DEBUG   (   85):     #00  befa95e8  40137a4c  
+I/DEBUG   (   85):          befa95ec  4c945190  /dev/ashmem/dalvik-LinearAlloc (deleted)
+I/DEBUG   (   85):          befa95f0  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95f4  40cafcec  
+I/DEBUG   (   85):          befa95f8  00000000  
+I/DEBUG   (   85):          befa95fc  407bcd23  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+54)
+I/DEBUG   (   85):     #01  befa9600  40cafcec  
+I/DEBUG   (   85):          befa9604  400269d6  /data/dalvik-cache/data@app@fi.helsinki.cs.tituomin.nativemainer-2.apk@classes.dex
+I/DEBUG   (   85):          befa9608  4ec82c91  /data/data/fi.helsinki.cs.tituomin.nativemainer/lib/libjnilooper.so (Java_fi_helsinki_cs_tituomin_nativemainer_KillerApp_foo)
+I/DEBUG   (   85):          befa960c  41bf3a18  [heap]
+I/DEBUG   (   85):          befa9610  ba500019  
+I/DEBUG   (   85):          befa9614  00000000  
+I/DEBUG   (   85):          befa9618  40137a4c  
+I/DEBUG   (   85):          befa961c  40137a4c  
+I/DEBUG   (   85):          befa9620  0000000c  
+I/DEBUG   (   85):          befa9624  41bf3a08  [heap]
+I/DEBUG   (   85):          befa9628  ffffbfff  
+I/DEBUG   (   85):          befa962c  00000001  
+I/DEBUG   (   85):          befa9630  41bf3a30  [heap]
+I/DEBUG   (   85):          befa9634  407df075  /system/lib/libdvm.so (dvmCompilerWorkEnqueue(unsigned short const*, WorkOrderKind, void*)+172)
+I/DEBUG   (   85):          befa9638  41bf3a08  [heap]
+I/DEBUG   (   85):          befa963c  41bf3a08  [heap]
+I/DEBUG   (   85):          ........  ........
+I/DEBUG   (   85):     #02  befa9710  400fc511  /system/lib/libc.so (dlfree)
+I/DEBUG   (   85):          befa9714  41bf3a08  [heap]
+I/DEBUG   (   85):          befa9718  40815c98  /system/lib/libdvm.so
+I/DEBUG   (   85):          befa971c  4c945278  /dev/ashmem/dalvik-LinearAlloc (deleted)
+I/DEBUG   (   85):          befa9720  00000000  
+I/DEBUG   (   85):          befa9724  befa9744  [stack]
+I/DEBUG   (   85):          befa9728  befa97e8  [stack]
+I/DEBUG   (   85):          befa972c  00000000  
+I/DEBUG   (   85):          befa9730  423f3a4c  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa9734  4079bb3c  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+I/DEBUG   (   85):          befa9738  51e4b4b8  
+I/DEBUG   (   85):          befa973c  68800019  
+I/DEBUG   (   85):          befa9740  51e4b4b8  
+I/DEBUG   (   85):          befa9744  4115475e  /data/dalvik-cache/system@framework@core.jar@classes.dex
+I/DEBUG   (   85):          befa9748  40cafd28  
+I/DEBUG   (   85):          befa974c  4c6ab2a8  /dev/ashmem/dalvik-LinearAlloc (deleted)
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r0:
+I/DEBUG   (   85):     41bf39e8 00000000 00000000 00000000 00000013  ................
+I/DEBUG   (   85):     41bf39f8 00000000 00000800 4004e008 00000453  ...........@S...
+I/DEBUG   (   85):     41bf3a08 4002679e 40cafcec 4c945158 4002c000  .g.@...@XQ.L...@
+I/DEBUG   (   85):     41bf3a18 00a42f87 006d7506 befa9710 00000000  ./...um.........
+I/DEBUG   (   85):     41bf3a28 befa9744 00000001 00000000 4078dfc0  D.............x@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r1:
+I/DEBUG   (   85):     423d6b20 4c8c4b00 0000000b 4c72f2a8 00000042  .K.L......rLB...
+I/DEBUG   (   85):     423d6b30 4c6afba8 00000000 00000000 000000db  ..jL............
+I/DEBUG   (   85):     423d6b40 41bf41e8 00000000 00000000 00000000  .A.A............
+I/DEBUG   (   85):     423d6b50 00000000 00000000 40026b94 00000000  .........k.@....
+I/DEBUG   (   85):     423d6b60 00030001 500009db 4002c000 00000007  .......P...@....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r3:
+I/DEBUG   (   85):     40137a2c 00000000 00000000 00000000 00000000  ................
+I/DEBUG   (   85):     40137a3c 00000000 00000000 00000000 00000000  ................
+I/DEBUG   (   85):     40137a4c 6bc08e40 00000000 00000000 00000000  @..k............
+I/DEBUG   (   85):     40137a5c 00000000 00000000 00000000 00000000  ................
+I/DEBUG   (   85):     40137a6c 00000000 00000000 00000000 00000000  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r4:
+I/DEBUG   (   85):     423d6b20 4c8c4b00 0000000b 4c72f2a8 00000042  .K.L......rLB...
+I/DEBUG   (   85):     423d6b30 4c6afba8 00000000 00000000 000000db  ..jL............
+I/DEBUG   (   85):     423d6b40 41bf41e8 00000000 00000000 00000000  .A.A............
+I/DEBUG   (   85):     423d6b50 00000000 00000000 40026b94 00000000  .........k.@....
+I/DEBUG   (   85):     423d6b60 00030001 500009db 4002c000 00000007  .......P...@....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r5:
+I/DEBUG   (   85):     41bf39e8 00000000 00000000 00000000 00000013  ................
+I/DEBUG   (   85):     41bf39f8 00000000 00000800 4004e008 00000453  ...........@S...
+I/DEBUG   (   85):     41bf3a08 4002679e 40cafcec 4c945158 4002c000  .g.@...@XQ.L...@
+I/DEBUG   (   85):     41bf3a18 00a42f87 006d7506 befa9710 00000000  ./...um.........
+I/DEBUG   (   85):     41bf3a28 befa9744 00000001 00000000 4078dfc0  D.............x@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r6:
+I/DEBUG   (   85):     41bf39e8 00000000 00000000 00000000 00000013  ................
+I/DEBUG   (   85):     41bf39f8 00000000 00000800 4004e008 00000453  ...........@S...
+I/DEBUG   (   85):     41bf3a08 4002679e 40cafcec 4c945158 4002c000  .g.@...@XQ.L...@
+I/DEBUG   (   85):     41bf3a18 00a42f87 006d7506 befa9710 00000000  ./...um.........
+I/DEBUG   (   85):     41bf3a28 befa9744 00000001 00000000 4078dfc0  D.............x@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r8:
+I/DEBUG   (   85):     423d6b20 4c8c4b00 0000000b 4c72f2a8 00000042  .K.L......rLB...
+I/DEBUG   (   85):     423d6b30 4c6afba8 00000000 00000000 000000db  ..jL............
+I/DEBUG   (   85):     423d6b40 41bf41e8 00000000 00000000 00000000  .A.A............
+I/DEBUG   (   85):     423d6b50 00000000 00000000 40026b94 00000000  .........k.@....
+I/DEBUG   (   85):     423d6b60 00030001 500009db 4002c000 00000007  .......P...@....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sl:
+I/DEBUG   (   85):     41bf39f8 00000000 00000800 4004e008 00000453  ...........@S...
+I/DEBUG   (   85):     41bf3a08 4002679e 40cafcec 4c945158 4002c000  .g.@...@XQ.L...@
+I/DEBUG   (   85):     41bf3a18 00a42f87 006d7506 befa9710 00000000  ./...um.........
+I/DEBUG   (   85):     41bf3a28 befa9744 00000001 00000000 4078dfc0  D.............x@
+I/DEBUG   (   85):     41bf3a38 00000000 00000000 40709270 40caa300  ........p.p@...@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near fp:
+I/DEBUG   (   85):     423f3a2c 006e0069 00000067 0000001b 41bf4e90  i.n.g........N.A
+I/DEBUG   (   85):     423f3a3c 00000000 00000001 00000000 423e81f8  ..............>B
+I/DEBUG   (   85):     423f3a4c 00000023 41bf50b8 00000000 423f3a70  #....P.A....p:?B
+I/DEBUG   (   85):     423f3a5c d49e1c1b 00000000 0000000d 00000000  ................
+I/DEBUG   (   85):     423f3a6c 00000033 41bf5928 00000000 0000000d  3...(Y.A........
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near ip:
+I/DEBUG   (   85):     41bf39f8 00000000 00000800 4004e008 00000453  ...........@S...
+I/DEBUG   (   85):     41bf3a08 4002679e 40cafcec 4c945158 4002c000  .g.@...@XQ.L...@
+I/DEBUG   (   85):     41bf3a18 00a42f87 006d7506 befa9710 00000000  ./...um.........
+I/DEBUG   (   85):     41bf3a28 befa9744 00000001 00000000 4078dfc0  D.............x@
+I/DEBUG   (   85):     41bf3a38 00000000 00000000 40709270 40caa300  ........p.p@...@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sp:
+I/DEBUG   (   85):     befa95c8 41bf3a08 00000027 423d6b40 41bf3a08  .:.A'...@k=B.:.A
+I/DEBUG   (   85):     befa95d8 41bf3a08 0036ba82 df0027ad 00000000  .:.A..6..'......
+I/DEBUG   (   85):     befa95e8 40137a4c 4c945190 41bf3a08 40cafcec  Lz.@.Q.L.:.A...@
+I/DEBUG   (   85):     befa95f8 00000000 407bcd23 40cafcec 400269d6  ....#.{@...@.i.@
+I/DEBUG   (   85):     befa9608 4ec82c91 41bf3a18 ba500019 00000000  .,.N.:.A..P.....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around pc:
+I/DEBUG   (   85):     407b8878 447a4905 f7d44479 e8bdee20 f7fd4008  .IzDyD.. ....@..
+I/DEBUG   (   85):     407b8888 bf00ba11 0004659d 000422fe 4606b5f8  .....e...".....F
+I/DEBUG   (   85):     407b8898 b331460c f1006843 462207a8 f8534638  .F1.Ch...."F8FS.
+I/DEBUG   (   85):     407b88a8 f7df1c08 4605efa8 490fb9a0 44794638  .......F...I8FyD
+I/DEBUG   (   85):     407b88b8 ec2af7e0 4a0e490d 44792006 30a8f8b6  ..*..I.J. yD...0
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around lr:
+I/DEBUG   (   85):     407bcd00 0908f012 6818468a 1140f3c2 91059307  .....F.h..@.....
+I/DEBUG   (   85):     407bcd10 d0089039 8000f8d4 27004628 f7fb4641  9.......(F.'AF..
+I/DEBUG   (   85):     407bcd20 9004fdb9 f8d6e009 46288000 46412701  ..........(F.'AF
+I/DEBUG   (   85):     407bcd30 fdb0f7fb 9010f8cd f8946030 b9c3302d  ........0`..-0..
+I/DEBUG   (   85):     407bcd40 901cf8d4 2b4ae011 2b4cd00d 2b44d002  ......J+..L+..D+
+
+** V
+
+I/DEBUG   (   85): pid: 3973, tid: 3973, name: in.nativemainer  >>> fi.helsinki.cs.tituomin.nativemainer <<<
+I/DEBUG   (   85): signal 6 (SIGABRT), code -6 (?), fault addr --------
+I/DEBUG   (   85):     r0 41bf2470  r1 ae700019  r2 40000000  r3 00000001
+I/DEBUG   (   85):     r4 4c945190  r5 41bf3a08  r6 00000004  r7 00000001
+I/DEBUG   (   85):     r8 423d8748  r9 40cafcec  sl 41bf3a18  fp befa95fc
+I/DEBUG   (   85):     ip 00000000  sp befa95e8  lr 407bce77  pc 4078dde8  cpsr 20000010
+I/DEBUG   (   85):     d0  000d010200000001  d1  0000000000000000
+I/DEBUG   (   85):     d2  4c94519000000000  d3  0000010000000000
+I/DEBUG   (   85):     d4  004500790061006c  d5  0074006e00650076
+I/DEBUG   (   85):     d6  006e006e006f0043  d7  0069007400630065
+I/DEBUG   (   85):     d8  0000000000000000  d9  0000000000000000
+I/DEBUG   (   85):     d10 0000000000000000  d11 0000000000000000
+I/DEBUG   (   85):     d12 0000000000000000  d13 0000000000000000
+I/DEBUG   (   85):     d14 0000000000000000  d15 0000000000000000
+I/DEBUG   (   85):     d16 0000000000000001  d17 0000000000000001
+I/DEBUG   (   85):     d18 0000000000000002  d19 0000000000000000
+I/DEBUG   (   85):     d20 0000000000000000  d21 3fe5555560000000
+I/DEBUG   (   85):     d22 0000000000000000  d23 3fe5555560000000
+I/DEBUG   (   85):     d24 3ff0000000000000  d25 0000000000000000
+I/DEBUG   (   85):     d26 0000000000000000  d27 c032000000000000
+I/DEBUG   (   85):     d28 0000000000000000  d29 3ff0000000000000
+I/DEBUG   (   85):     d30 3ff0000000000000  d31 3ff0000000000000
+I/DEBUG   (   85):     scr 60000011
+I/DEBUG   (   85): 
+I/DEBUG   (   85): backtrace:
+I/DEBUG   (   85):     #00  pc 0001dde8  /system/lib/libdvm.so (dvmPlatformInvoke+40)
+I/DEBUG   (   85):     #01  pc 0004ce73  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+390)
+I/DEBUG   (   85):     #02  pc 00000214  /dev/ashmem/dalvik-jit-code-cache (deleted)
+I/DEBUG   (   85): 
+I/DEBUG   (   85): stack:
+I/DEBUG   (   85):          befa95a8  423d8748  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95ac  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95b0  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95b4  00000000  
+I/DEBUG   (   85):          befa95b8  2ae00019  
+I/DEBUG   (   85):          befa95bc  41bf2470  [heap]
+I/DEBUG   (   85):          befa95c0  423d8748  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95c4  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95c8  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95cc  00000027  
+I/DEBUG   (   85):          befa95d0  423d8748  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95d4  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95d8  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95dc  41bf3ab0  [heap]
+I/DEBUG   (   85):          befa95e0  df0027ad  
+I/DEBUG   (   85):          befa95e4  00000000  
+I/DEBUG   (   85):     #00  befa95e8  40cafcec  
+I/DEBUG   (   85):          befa95ec  00000001  
+I/DEBUG   (   85):          befa95f0  423d8748  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95f4  00000008  
+I/DEBUG   (   85):          befa95f8  423f31f4  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95fc  407bce77  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+394)
+I/DEBUG   (   85):     #01  befa9600  40cafcec  
+I/DEBUG   (   85):          befa9604  400269d6  /data/dalvik-cache/data@app@fi.helsinki.cs.tituomin.nativemainer-2.apk@classes.dex
+I/DEBUG   (   85):          befa9608  4ec82c91  /data/data/fi.helsinki.cs.tituomin.nativemainer/lib/libjnilooper.so (Java_fi_helsinki_cs_tituomin_nativemainer_KillerApp_foo)
+I/DEBUG   (   85):          befa960c  41bf3a18  [heap]
+I/DEBUG   (   85):          befa9610  ae700019  
+I/DEBUG   (   85):          befa9614  00000000  
+I/DEBUG   (   85):          befa9618  40137a4c  
+I/DEBUG   (   85):          befa961c  40137a4c  
+I/DEBUG   (   85):          befa9620  00000004  
+I/DEBUG   (   85):          befa9624  41bf3a08  [heap]
+I/DEBUG   (   85):          befa9628  ffffbfff  
+I/DEBUG   (   85):          befa962c  00000001  
+I/DEBUG   (   85):          befa9630  41bf3a30  [heap]
+I/DEBUG   (   85):          befa9634  407df075  /system/lib/libdvm.so (dvmCompilerWorkEnqueue(unsigned short const*, WorkOrderKind, void*)+172)
+I/DEBUG   (   85):          befa9638  41bf3a08  [heap]
+I/DEBUG   (   85):          befa963c  41bf3a08  [heap]
+I/DEBUG   (   85):          ........  ........
+I/DEBUG   (   85):     #02  befa9710  400fc511  /system/lib/libc.so (dlfree)
+I/DEBUG   (   85):          befa9714  41bf3a08  [heap]
+I/DEBUG   (   85):          befa9718  40815c98  /system/lib/libdvm.so
+I/DEBUG   (   85):          befa971c  4c945278  /dev/ashmem/dalvik-LinearAlloc (deleted)
+I/DEBUG   (   85):          befa9720  00000000  
+I/DEBUG   (   85):          befa9724  befa9744  [stack]
+I/DEBUG   (   85):          befa9728  befa97e8  [stack]
+I/DEBUG   (   85):          befa972c  00000000  
+I/DEBUG   (   85):          befa9730  423f31f4  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa9734  4079bb3c  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+I/DEBUG   (   85):          befa9738  5133ed90  
+I/DEBUG   (   85):          befa973c  29500019  
+I/DEBUG   (   85):          befa9740  5133ed90  
+I/DEBUG   (   85):          befa9744  41153e00  /data/dalvik-cache/system@framework@core.jar@classes.dex
+I/DEBUG   (   85):          befa9748  40cafd28  
+I/DEBUG   (   85):          befa974c  4c6ab2a8  /dev/ashmem/dalvik-LinearAlloc (deleted)
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r0:
+I/DEBUG   (   85):     41bf2450 6c436d65 0000001b 41c094c8 4013051c  emCl.......A...@
+I/DEBUG   (   85):     41bf2460 74696e49 4013003b 00000018 00000023  Init;..@....#...
+I/DEBUG   (   85):     41bf2470 40813970 40813de4 00000001 41bf3a08  p9.@.=.@.....:.A
+I/DEBUG   (   85):     41bf2480 00000000 40d40fc0 00000000 0000001b  .......@........
+I/DEBUG   (   85):     41bf2490 00000000 00000000 00000000 41bf2490  .............$.A
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r1:
+I/DEBUG   (   85):     ae6ffff8 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     ae700008 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     ae700018 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     ae700028 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     ae700038 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r2:
+I/DEBUG   (   85):     3fffffe0 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     3ffffff0 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     40000000 00000000 00000000 00000000 00000000  ................
+I/DEBUG   (   85):     40000010 00000000 00000000 00000000 00000000  ................
+I/DEBUG   (   85):     40000020 00000000 00000000 00000000 00000000  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r4:
+I/DEBUG   (   85):     4c945170 00000004 40026d37 40026770 00000000  ....7m.@pg.@....
+I/DEBUG   (   85):     4c945180 00000000 00000000 400276dd 00000000  .........v.@....
+I/DEBUG   (   85):     4c945190 423d8748 0000010c 00010000 00010000  H.=B............
+I/DEBUG   (   85):     4c9451a0 40026dd7 51277dd0 00000000 400269d6  .m.@.}'Q.....i.@
+I/DEBUG   (   85):     4c9451b0 4ec82c91 40000000 407bcced 00000100  .,.N...@..{@....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r5:
+I/DEBUG   (   85):     41bf39e8 00000000 00000000 00000000 00000013  ................
+I/DEBUG   (   85):     41bf39f8 00000000 00000800 4004e008 00000453  ...........@S...
+I/DEBUG   (   85):     41bf3a08 4002679e 40cafcec 4c945158 4002c000  .g.@...@XQ.L...@
+I/DEBUG   (   85):     41bf3a18 00549c55 0038683a befa9710 00000000  U.T.:h8.........
+I/DEBUG   (   85):     41bf3a28 befa9744 00000001 00000000 4078dfc0  D.............x@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r8:
+I/DEBUG   (   85):     423d8728 4c8c4b00 0000000b 4c72f2a8 00000042  .K.L......rLB...
+I/DEBUG   (   85):     423d8738 4c6afba8 00000000 00000000 000000db  ..jL............
+I/DEBUG   (   85):     423d8748 41bf41e8 00000000 00000000 00000000  .A.A............
+I/DEBUG   (   85):     423d8758 00000000 00000000 40026b94 00000000  .........k.@....
+I/DEBUG   (   85):     423d8768 00030001 500009db 4002c000 00000007  .......P...@....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r9:
+I/DEBUG   (   85):     40cafccc 40026782 4c7cb4e8 4d96ca06 40cafd04  .g.@..|L...M...@
+I/DEBUG   (   85):     40cafcdc 40026798 4c945190 00000006 52c9e095  .g.@.Q.L.......R
+I/DEBUG   (   85):     40cafcec 001c341c 40cafd28 40026838 4c945158  .4..(..@8h.@XQ.L
+I/DEBUG   (   85):     40cafcfc 40026798 00000000 00386839 001c341c  .g.@....9h8..4..
+I/DEBUG   (   85):     40cafd0c 00000000 423d8c88 40cafd44 00000000  ......=BD..@....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sl:
+I/DEBUG   (   85):     41bf39f8 00000000 00000800 4004e008 00000453  ...........@S...
+I/DEBUG   (   85):     41bf3a08 4002679e 40cafcec 4c945158 4002c000  .g.@...@XQ.L...@
+I/DEBUG   (   85):     41bf3a18 00549c55 0038683a befa9710 00000000  U.T.:h8.........
+I/DEBUG   (   85):     41bf3a28 befa9744 00000001 00000000 4078dfc0  D.............x@
+I/DEBUG   (   85):     41bf3a38 00000000 00000000 40709270 40caa300  ........p.p@...@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near fp:
+I/DEBUG   (   85):     befa95dc 41bf3ab0 df0027ad 00000000 40cafcec  .:.A.'.........@
+I/DEBUG   (   85):     befa95ec 00000001 423d8748 00000008 423f31f4  ....H.=B.....1?B
+I/DEBUG   (   85):     befa95fc 407bce77 40cafcec 400269d6 4ec82c91  w.{@...@.i.@.,.N
+I/DEBUG   (   85):     befa960c 41bf3a18 ae700019 00000000 40137a4c  .:.A..p.....Lz.@
+I/DEBUG   (   85):     befa961c 40137a4c 00000004 41bf3a08 ffffbfff  Lz.@.....:.A....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sp:
+I/DEBUG   (   85):     befa95c8 41bf3a08 00000027 423d8748 41bf3a08  .:.A'...H.=B.:.A
+I/DEBUG   (   85):     befa95d8 41bf3a08 41bf3ab0 df0027ad 00000000  .:.A.:.A.'......
+I/DEBUG   (   85):     befa95e8 40cafcec 00000001 423d8748 00000008  ...@....H.=B....
+I/DEBUG   (   85):     befa95f8 423f31f4 407bce77 40cafcec 400269d6  .1?Bw.{@...@.i.@
+I/DEBUG   (   85):     befa9608 4ec82c91 41bf3a18 ae700019 00000000  .,.N.:.A..p.....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around pc:
+I/DEBUG   (   85):     4078ddc8 e59b9004 e3510000 02433001 04991004  ......Q..0C.....
+I/DEBUG   (   85):     4078ddd8 e3320000 4a000019 e202c40f e1a06e22  ..2....J...."n..
+I/DEBUG   (   85):     4078dde8 e04ddaac e1a0800d e1a07009 e1b02122  ..M......p.."!..
+I/DEBUG   (   85):     4078ddf8 32877008 32433002 22877004 22433001  .p.2.0C2.p.".0C"
+I/DEBUG   (   85):     4078de08 e2533001 4a000005 e1b020a2 3497c004  .0S....J. .....4
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around lr:
+I/DEBUG   (   85):     407bce54 fe8cf005 69e14607 89e36a22 92029101  .....F.i"j......
+I/DEBUG   (   85):     407bce64 0368f8d5 6a629904 f8cd9600 f7d0a00c  ..h...bj........
+I/DEBUG   (   85):     407bce74 4628efa6 f0054639 69e3fe79 284c7818  ..(F9F..y..i.xL(
+I/DEBUG   (   85):     407bce84 6c68d109 f8dab938 b1211000 f7fc4628  ..hl8.....!.(F..
+I/DEBUG   (   85):     407bce94 f8caff07 9b050000 4628b11b f0044641  ..........(FAF..
+
+** VI 
+F/libc    ( 3992): Fatal signal 6 (SIGABRT) at 0x00000e01 (code=0), thread 3992 (in.nativemainer)
+I/DEBUG   (   85): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+I/DEBUG   (   85): Build fingerprint: 'Android/full_crespo/crespo:4.1.2/JZO54K/eng.tituomin.20121207.160734:userdebug/test-keys'
+I/DEBUG   (   85): pid: 3992, tid: 3992, name: in.nativemainer  >>> fi.helsinki.cs.tituomin.nativemainer <<<
+I/DEBUG   (   85): signal 6 (SIGABRT), code -6 (?), fault addr --------
+I/DEBUG   (   85):     r0 41bf2470  r1 a3300019  r2 005b6ad1  r3 4ec86004
+I/DEBUG   (   85):     r4 4c945190  r5 41bf3a08  r6 00000004  r7 40cafcf4
+I/DEBUG   (   85):     r8 befa95e8  r9 40cafcec  sl 41bf3a18  fp befa95fc
+I/DEBUG   (   85):     ip 4ec82c91  sp befa95d8  lr 4078de34  pc 4ec82c9c  cpsr a0000030
+I/DEBUG   (   85):     d0  000d010200000001  d1  0000000000000000
+I/DEBUG   (   85):     d2  4c94519000000000  d3  0000010000000000
+I/DEBUG   (   85):     d4  004500790061006c  d5  0074006e00650076
+I/DEBUG   (   85):     d6  006e006e006f0043  d7  0069007400630065
+I/DEBUG   (   85):     d8  0000000000000000  d9  0000000000000000
+I/DEBUG   (   85):     d10 0000000000000000  d11 0000000000000000
+I/DEBUG   (   85):     d12 0000000000000000  d13 0000000000000000
+I/DEBUG   (   85):     d14 0000000000000000  d15 0000000000000000
+I/DEBUG   (   85):     d16 0000000000000001  d17 0000000000000001
+I/DEBUG   (   85):     d18 0000000000000002  d19 0000000000000000
+I/DEBUG   (   85):     d20 0000000000000000  d21 3fe5555560000000
+I/DEBUG   (   85):     d22 0000000000000000  d23 3fe5555560000000
+I/DEBUG   (   85):     d24 3ff0000000000000  d25 0000000000000000
+I/DEBUG   (   85):     d26 0000000000000000  d27 c032000000000000
+I/DEBUG   (   85):     d28 0000000000000000  d29 3ff0000000000000
+I/DEBUG   (   85):     d30 3ff0000000000000  d31 3ff0000000000000
+I/DEBUG   (   85):     scr 60000011
+I/DEBUG   (   85): 
+I/DEBUG   (   85): backtrace:
+I/DEBUG   (   85):     #00  pc 00000c9c  /data/data/fi.helsinki.cs.tituomin.nativemainer/lib/libjnilooper.so (Java_fi_helsinki_cs_tituomin_nativemainer_KillerApp_foo+11)
+I/DEBUG   (   85):     #01  pc 0001de30  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+I/DEBUG   (   85):     #02  pc 0004ce73  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+390)
+I/DEBUG   (   85):     #03  pc 00000214  /dev/ashmem/dalvik-jit-code-cache (deleted)
+I/DEBUG   (   85): 
+I/DEBUG   (   85): stack:
+I/DEBUG   (   85):          befa9598  40137a4c  
+I/DEBUG   (   85):          befa959c  40026b94  /data/dalvik-cache/data@app@fi.helsinki.cs.tituomin.nativemainer-2.apk@classes.dex
+I/DEBUG   (   85):          befa95a0  423f581c  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95a4  40103429  /system/lib/libc.so (sprintf+64)
+I/DEBUG   (   85):          befa95a8  423d9630  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95ac  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95b0  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95b4  00000000  
+I/DEBUG   (   85):          befa95b8  49000019  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95bc  41bf2470  [heap]
+I/DEBUG   (   85):          befa95c0  423d9630  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95c4  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95c8  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95cc  00000027  
+I/DEBUG   (   85):          befa95d0  df0027ad  
+I/DEBUG   (   85):          befa95d4  00000000  
+I/DEBUG   (   85):     #00  befa95d8  41bf3a08  [heap]
+I/DEBUG   (   85):          ........  ........
+I/DEBUG   (   85):     #01  befa95d8  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95dc  005b6ad1  
+I/DEBUG   (   85):          befa95e0  a3300019  
+I/DEBUG   (   85):          befa95e4  41bf2470  [heap]
+I/DEBUG   (   85):          befa95e8  40cafcec  
+I/DEBUG   (   85):          befa95ec  00000001  
+I/DEBUG   (   85):          befa95f0  423d9630  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95f4  00000008  
+I/DEBUG   (   85):          befa95f8  423f581c  /dev/ashmem/dalvik-heap (deleted)
+I/DEBUG   (   85):          befa95fc  407bce77  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+394)
+I/DEBUG   (   85):     #02  befa9600  40cafcec  
+I/DEBUG   (   85):          befa9604  400269d6  /data/dalvik-cache/data@app@fi.helsinki.cs.tituomin.nativemainer-2.apk@classes.dex
+I/DEBUG   (   85):          befa9608  4ec82c91  /data/data/fi.helsinki.cs.tituomin.nativemainer/lib/libjnilooper.so (Java_fi_helsinki_cs_tituomin_nativemainer_KillerApp_foo)
+I/DEBUG   (   85):          befa960c  41bf3a18  [heap]
+I/DEBUG   (   85):          befa9610  a3300019  
+I/DEBUG   (   85):          befa9614  00000000  
+I/DEBUG   (   85):          befa9618  40137a4c  
+I/DEBUG   (   85):          befa961c  40137a4c  
+I/DEBUG   (   85):          befa9620  0000000c  
+I/DEBUG   (   85):          befa9624  41bf3a08  [heap]
+I/DEBUG   (   85):          befa9628  ffffbfff  
+I/DEBUG   (   85):          befa962c  00000001  
+I/DEBUG   (   85):          befa9630  41bf3a30  [heap]
+I/DEBUG   (   85):          befa9634  407df075  /system/lib/libdvm.so (dvmCompilerWorkEnqueue(unsigned short const*, WorkOrderKind, void*)+172)
+I/DEBUG   (   85):          befa9638  41bf3a08  [heap]
+I/DEBUG   (   85):          befa963c  41bf3a08  [heap]
+I/DEBUG   (   85):          ........  ........
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r0:
+I/DEBUG   (   85):     41bf2450 6c436d65 0000001b 41c094c8 4013051c  emCl.......A...@
+I/DEBUG   (   85):     41bf2460 74696e49 4013003b 00000018 00000023  Init;..@....#...
+I/DEBUG   (   85):     41bf2470 40813970 40813de4 00000001 41bf3a08  p9.@.=.@.....:.A
+I/DEBUG   (   85):     41bf2480 00000000 40d40fc0 00000000 0000001b  .......@........
+I/DEBUG   (   85):     41bf2490 00000000 00000000 00000000 41bf2490  .............$.A
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r1:
+I/DEBUG   (   85):     a32ffff8 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     a3300008 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     a3300018 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     a3300028 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     a3300038 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r2:
+I/DEBUG   (   85):     005b6ab0 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     005b6ac0 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     005b6ad0 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     005b6ae0 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     005b6af0 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r3:
+I/DEBUG   (   85):     4ec85fe4 40105e4d 40105f65 400fa36d 400f516c  M^.@e_.@m..@lQ.@
+I/DEBUG   (   85):     4ec85ff4 400f4bd0 00000000 00000000 00000000  .K.@............
+I/DEBUG   (   85):     4ec86004 00b6d5a4 00000000 00000000 00000000  ................
+I/DEBUG   (   85):     4ec86014 00000000 00000000 00000000 00000000  ................
+I/DEBUG   (   85):     4ec86024 00000000 00000000 00000000 00000000  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r4:
+I/DEBUG   (   85):     4c945170 00000004 40026d37 40026770 00000000  ....7m.@pg.@....
+I/DEBUG   (   85):     4c945180 00000000 00000000 400276dd 00000000  .........v.@....
+I/DEBUG   (   85):     4c945190 423d9630 0000010c 00010000 00010000  0.=B............
+I/DEBUG   (   85):     4c9451a0 40026dd7 51370f98 00000000 400269d6  .m.@..7Q.....i.@
+I/DEBUG   (   85):     4c9451b0 4ec82c91 40000000 407bcced 00000100  .,.N...@..{@....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r5:
+I/DEBUG   (   85):     41bf39e8 00000000 00000000 00000000 00000013  ................
+I/DEBUG   (   85):     41bf39f8 00000000 00000800 4004e008 00000453  ...........@S...
+I/DEBUG   (   85):     41bf3a08 4002679e 40cafcec 4c945158 4002c000  .g.@...@XQ.L...@
+I/DEBUG   (   85):     41bf3a18 01124074 00b6d5a4 befa9710 00000000  t@..............
+I/DEBUG   (   85):     41bf3a28 befa9744 00000001 00000000 4078dfc0  D.............x@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r7:
+I/DEBUG   (   85):     40cafcd4 4d96ca06 40cafd04 40026798 4c945190  ...M...@.g.@.Q.L
+I/DEBUG   (   85):     40cafce4 00000006 52c9e24d 005b6ad1 40cafd28  ....M..R.j[.(..@
+I/DEBUG   (   85):     40cafcf4 40026838 4c945158 40026798 00000000  8h.@XQ.L.g.@....
+I/DEBUG   (   85):     40cafd04 00b6d5a3 005b6ad1 00000000 423d9b70  .....j[.....p.=B
+I/DEBUG   (   85):     40cafd14 40cafd44 00000000 4c945278 40026838  D..@....xR.L8h.@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r8:
+I/DEBUG   (   85):     befa95c8 41bf3a08 00000027 df0027ad 00000000  .:.A'....'......
+I/DEBUG   (   85):     befa95d8 41bf3a08 005b6ad1 a3300019 41bf2470  .:.A.j[...0.p$.A
+I/DEBUG   (   85):     befa95e8 40cafcec 00000001 423d9630 00000008  ...@....0.=B....
+I/DEBUG   (   85):     befa95f8 423f581c 407bce77 40cafcec 400269d6  .X?Bw.{@...@.i.@
+I/DEBUG   (   85):     befa9608 4ec82c91 41bf3a18 a3300019 00000000  .,.N.:.A..0.....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r9:
+I/DEBUG   (   85):     40cafccc 40026782 4c7cb4e8 4d96ca06 40cafd04  .g.@..|L...M...@
+I/DEBUG   (   85):     40cafcdc 40026798 4c945190 00000006 52c9e24d  .g.@.Q.L....M..R
+I/DEBUG   (   85):     40cafcec 005b6ad1 40cafd28 40026838 4c945158  .j[.(..@8h.@XQ.L
+I/DEBUG   (   85):     40cafcfc 40026798 00000000 00b6d5a3 005b6ad1  .g.@.........j[.
+I/DEBUG   (   85):     40cafd0c 00000000 423d9b70 40cafd44 00000000  ....p.=BD..@....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sl:
+I/DEBUG   (   85):     41bf39f8 00000000 00000800 4004e008 00000453  ...........@S...
+I/DEBUG   (   85):     41bf3a08 4002679e 40cafcec 4c945158 4002c000  .g.@...@XQ.L...@
+I/DEBUG   (   85):     41bf3a18 01124074 00b6d5a4 befa9710 00000000  t@..............
+I/DEBUG   (   85):     41bf3a28 befa9744 00000001 00000000 4078dfc0  D.............x@
+I/DEBUG   (   85):     41bf3a38 00000000 00000000 40709270 40caa300  ........p.p@...@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near fp:
+I/DEBUG   (   85):     befa95dc 005b6ad1 a3300019 41bf2470 40cafcec  .j[...0.p$.A...@
+I/DEBUG   (   85):     befa95ec 00000001 423d9630 00000008 423f581c  ....0.=B.....X?B
+I/DEBUG   (   85):     befa95fc 407bce77 40cafcec 400269d6 4ec82c91  w.{@...@.i.@.,.N
+I/DEBUG   (   85):     befa960c 41bf3a18 a3300019 00000000 40137a4c  .:.A..0.....Lz.@
+I/DEBUG   (   85):     befa961c 40137a4c 0000000c 41bf3a08 ffffbfff  Lz.@.....:.A....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near ip:
+I/DEBUG   (   85):     4ec82c70 e0059303 33019b02 9b039302 93033301  .......3.....3..
+I/DEBUG   (   85):     4ec82c80 4b029a03 ddf5429a 4770b004 0000270f  ...K.B....pG.'..
+I/DEBUG   (   85):     4ec82c90 9003b084 92019102 447b4b06 9a01681b  .........K{D.h..
+I/DEBUG   (   85):     4ec82ca0 1c59189a 447b4b04 46c06019 1c181c13  ..Y..K{D.`.F....
+I/DEBUG   (   85):     4ec82cb0 4770b004 00003366 0000335a e5903000  ..pGf3..Z3...0..
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sp:
+I/DEBUG   (   85):     befa95b8 49000019 41bf2470 423d9630 41bf3a08  ...Ip$.A0.=B.:.A
+I/DEBUG   (   85):     befa95c8 41bf3a08 00000027 df0027ad 00000000  .:.A'....'......
+I/DEBUG   (   85):     befa95d8 41bf3a08 005b6ad1 a3300019 41bf2470  .:.A.j[...0.p$.A
+I/DEBUG   (   85):     befa95e8 40cafcec 00000001 423d9630 00000008  ...@....0.=B....
+I/DEBUG   (   85):     befa95f8 423f581c 407bce77 40cafcec 400269d6  .X?Bw.{@...@.i.@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around pc:
+I/DEBUG   (   85):     4ec82c7c 93033301 4b029a03 ddf5429a 4770b004  .3.....K.B....pG
+I/DEBUG   (   85):     4ec82c8c 0000270f 9003b084 92019102 447b4b06  .'...........K{D
+I/DEBUG   (   85):     4ec82c9c 9a01681b 1c59189a 447b4b04 46c06019  .h....Y..K{D.`.F
+I/DEBUG   (   85):     4ec82cac 1c181c13 4770b004 00003366 0000335a  ......pGf3..Z3..
+I/DEBUG   (   85):     4ec82cbc e5903000 e3130101 13833102 03c33102  .0.......1...1..
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around lr:
+I/DEBUG   (   85):     4078de14 3497c004 3488c004 3afffff9 e2888004  ...4...4...:....
+I/DEBUG   (   85):     4078de24 eafffff9 e899000c e59bc00c e12fff3c  ............<./.
+I/DEBUG   (   85):     4078de34 e3560000 159bc010 e24bd014 188c0003  ..V.......K.....
+I/DEBUG   (   85):     4078de44 e8bd8bc0 e1a0ce22 e59b6008 e2866001  ...."....`...`..
+I/DEBUG   (   85):     4078de54 e3a02000 e4d6c001 e35c0000 0a000007  . ........\.....

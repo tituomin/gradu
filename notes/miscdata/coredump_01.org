@@ -1,0 +1,431 @@
+* test 1: running jni task
+
+F/libc    ( 3489): Fatal signal 6 (SIGABRT) at 0x00000d6b (code=0), thread 3489 (in.nativelooper)
+I/DEBUG   (   85): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+I/DEBUG   (   85): Build fingerprint: 'Android/full_crespo/crespo:4.1.2/JZO54K/eng.tituomin.20121207.160734:userdebug/test-keys'
+I/DEBUG   (   85): pid: 3489, tid: 3489, name: in.nativelooper  >>> fi.helsinki.cs.tituomin.nativelooper <<<
+I/DEBUG   (   85): signal 6 (SIGABRT), code -6 (?), fault addr --------
+I/DEBUG   (   85):     r0 fffffffc  r1 befa95f8  r2 00000010  r3 ffffffff
+I/DEBUG   (   85):     r4 40d40ef0  r5 ffffffff  r6 00000000  r7 000000fc
+I/DEBUG   (   85):     r8 00000000  r9 00000014  sl 40d40f04  fp befa976c
+I/DEBUG   (   85):     ip 4009eff0  sp befa95b0  lr 4009a795  pc 400f4a40  cpsr 20000010
+I/DEBUG   (   85):     d0  0000000000000030  d1  00000000000000b0
+I/DEBUG   (   85):     d2  0000000800000344  d3  5244b02800000052
+I/DEBUG   (   85):     d4  0066007200750053  d5  0054006500630061
+I/DEBUG   (   85):     d6  0075007400780065  d7  0000000000650072
+I/DEBUG   (   85):     d8  0000000000000000  d9  0000000000000000
+I/DEBUG   (   85):     d10 0000000000000000  d11 0000000000000000
+I/DEBUG   (   85):     d12 0000000000000000  d13 0000000000000000
+I/DEBUG   (   85):     d14 0000000000000000  d15 0000000000000000
+I/DEBUG   (   85):     d16 7fffffffffffffff  d17 7fffffffffffffff
+I/DEBUG   (   85):     d18 0000000000000000  d19 3ff0000000000000
+I/DEBUG   (   85):     d20 0000000000000000  d21 0000000000000000
+I/DEBUG   (   85):     d22 0000000000000000  d23 0000000000000000
+I/DEBUG   (   85):     d24 3ff0000000000000  d25 3ff0000000000000
+I/DEBUG   (   85):     d26 0000000000000000  d27 c032000000000000
+I/DEBUG   (   85):     d28 0000000000000000  d29 3ff0000000000000
+I/DEBUG   (   85):     d30 3ff0000000000000  d31 3ff0000000000000
+I/DEBUG   (   85):     scr 80000011
+I/DEBUG   (   85): 
+I/DEBUG   (   85): backtrace:
+I/DEBUG   (   85):     #00  pc 0000da40  /system/lib/libc.so (epoll_wait+12)
+I/DEBUG   (   85):     #01  pc 00014791  /system/lib/libutils.so (android::Looper::pollInner(int)+96)
+I/DEBUG   (   85):     #02  pc 000149f9  /system/lib/libutils.so (android::Looper::pollOnce(int, int*, int*, void**)+104)
+I/DEBUG   (   85):     #03  pc 0005d11b  /system/lib/libandroid_runtime.so (android::NativeMessageQueue::pollOnce(_JNIEnv*, int)+22)
+I/DEBUG   (   85):     #04  pc 0001de30  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+I/DEBUG   (   85):     #05  pc 0004ce73  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+390)
+I/DEBUG   (   85):     #06  pc 00027260  /system/lib/libdvm.so
+I/DEBUG   (   85):     #07  pc 0002bb38  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+180)
+I/DEBUG   (   85):     #08  pc 0005f877  /system/lib/libdvm.so (dvmInvokeMethod(Object*, Method const*, ArrayObject*, ArrayObject*, ClassObject*, bool)+374)
+I/DEBUG   (   85):     #09  pc 00066d4d  /system/lib/libdvm.so
+I/DEBUG   (   85):     #10  pc 00027260  /system/lib/libdvm.so
+I/DEBUG   (   85):     #11  pc 0002bb38  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+180)
+I/DEBUG   (   85):     #12  pc 0005f5b1  /system/lib/libdvm.so (dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)+272)
+I/DEBUG   (   85):     #13  pc 000494cb  /system/lib/libdvm.so
+I/DEBUG   (   85):     #14  pc 0004698d  /system/lib/libandroid_runtime.so
+I/DEBUG   (   85):     #15  pc 0004746f  /system/lib/libandroid_runtime.so (android::AndroidRuntime::start(char const*, char const*)+390)
+I/DEBUG   (   85):     #16  pc 00000dcf  /system/bin/app_process
+I/DEBUG   (   85): 
+I/DEBUG   (   85): stack:
+I/DEBUG   (   85):          befa9570  00000000  
+I/DEBUG   (   85):          befa9574  00000000  
+I/DEBUG   (   85):          befa9578  00000000  
+I/DEBUG   (   85):          befa957c  5133e4c8  
+I/DEBUG   (   85):          befa9580  00000000  
+I/DEBUG   (   85):          befa9584  400fdd1d  /system/lib/libc.so (free+12)
+I/DEBUG   (   85):          befa9588  00000001  
+I/DEBUG   (   85):          befa958c  40095035  /system/lib/libutils.so (android::SharedBuffer::dealloc(android::SharedBuffer const*)+10)
+I/DEBUG   (   85):          befa9590  40d40f38  
+I/DEBUG   (   85):          befa9594  40097f31  /system/lib/libutils.so (android::VectorImpl::_shrink(unsigned int, unsigned int)+138)
+I/DEBUG   (   85):          befa9598  00000000  
+I/DEBUG   (   85):          befa959c  40d40ef0  
+I/DEBUG   (   85):          befa95a0  ffffffff  
+I/DEBUG   (   85):          befa95a4  00000000  
+I/DEBUG   (   85):          befa95a8  df0027ad  
+I/DEBUG   (   85):          befa95ac  00000000  
+I/DEBUG   (   85):     #00  befa95b0  40d40ef0  
+I/DEBUG   (   85):          befa95b4  00000000  
+I/DEBUG   (   85):     #01  befa95b8  befa964c  [stack]
+I/DEBUG   (   85):          befa95bc  404730f9  /system/lib/libgui.so
+I/DEBUG   (   85):          befa95c0  00000000  
+I/DEBUG   (   85):          befa95c4  be010001  
+I/DEBUG   (   85):          befa95c8  00000001  
+I/DEBUG   (   85):          befa95cc  40d40f38  
+I/DEBUG   (   85):          befa95d0  0000273d  
+I/DEBUG   (   85):          befa95d4  0000276a  
+I/DEBUG   (   85):          befa95d8  00000050  
+I/DEBUG   (   85):          befa95dc  00000000  
+I/DEBUG   (   85):          befa95e0  00000000  
+I/DEBUG   (   85):          befa95e4  00000000  
+I/DEBUG   (   85):          befa95e8  00000000  
+I/DEBUG   (   85):          befa95ec  51010001  /dev/pvrsrvkm
+I/DEBUG   (   85):          befa95f0  00000000  
+I/DEBUG   (   85):          befa95f4  00000000  
+I/DEBUG   (   85):          ........  ........
+I/DEBUG   (   85):     #02  befa9720  00000000  
+I/DEBUG   (   85):          befa9724  51474d28  
+I/DEBUG   (   85):          befa9728  00000000  
+I/DEBUG   (   85):          befa972c  41bf2470  [heap]
+I/DEBUG   (   85):          befa9730  40cafe24  
+I/DEBUG   (   85):          befa9734  befa9758  [stack]
+I/DEBUG   (   85):          befa9738  40cafe1c  
+I/DEBUG   (   85):          befa973c  4022111f  /system/lib/libandroid_runtime.so (android::NativeMessageQueue::pollOnce(_JNIEnv*, int)+26)
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r1:
+I/DEBUG   (   85):     befa95d8 00000050 00000000 00000000 00000000  P...............
+I/DEBUG   (   85):     befa95e8 00000000 51010001 00000000 00000000  .......Q........
+I/DEBUG   (   85):     befa95f8 00000001 5244b028 00000017 00000000  ....(.DR........
+I/DEBUG   (   85):     befa9608 00000008 5244b030 00000000 00000000  ....0.DR........
+I/DEBUG   (   85):     befa9618 00000000 40010001 00000000 00000000  .......@........
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r4:
+I/DEBUG   (   85):     40d40ed0 00000400 00000000 00000000 41ac6008  .............`.A
+I/DEBUG   (   85):     40d40ee0 00000000 00000000 41c07a80 00000073  .........z.As...
+I/DEBUG   (   85):     40d40ef0 4009ebc0 51942500 65755100 00000017  ...@.%.Q.Que....
+I/DEBUG   (   85):     40d40f00 0000001d 00000000 4009ea00 00000000  ...........@....
+I/DEBUG   (   85):     40d40f10 00000000 00000000 00000010 00000000  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sl:
+I/DEBUG   (   85):     40d40ee4 00000000 41c07a80 00000073 4009ebc0  .....z.As......@
+I/DEBUG   (   85):     40d40ef4 51942500 65755100 00000017 0000001d  .%.Q.Que........
+I/DEBUG   (   85):     40d40f04 00000000 4009ea00 00000000 00000000  .......@........
+I/DEBUG   (   85):     40d40f14 00000000 00000010 00000000 0000001e  ................
+I/DEBUG   (   85):     40d40f24 4009ea48 516037e0 00000002 00000000  H..@.7`Q........
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near fp:
+I/DEBUG   (   85):     befa974c 41bf3a08 00000000 4078de34 40cafe18  .:.A....4.x@...@
+I/DEBUG   (   85):     befa975c 00000001 423cb228 00000000 423cb1ac  ....(.<B......<B
+I/DEBUG   (   85):     befa976c 407bce77 40cafe18 4dd9324d 4022113b  w.{@...@M2.M;."@
+I/DEBUG   (   85):     befa977c 41bf3a18 00000000 00000000 00000000  .:.A............
+I/DEBUG   (   85):     befa978c 40137a4c 00000001 41bf3a08 ffffbfff  Lz.@.....:.A....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near ip:
+I/DEBUG   (   85):     4009efd0 40101f45 400f9db4 400f3c1c 400ff585  E..@...@.<.@...@
+I/DEBUG   (   85):     4009efe0 400f49fc 400f4a18 400fa060 400f9fb4  .I.@.J.@`..@...@
+I/DEBUG   (   85):     4009eff0 400f4a34 40108e25 40061f7c 40105f65  4J.@%..@|..@e_.@
+I/DEBUG   (   85):     4009f000 ffffffff 00001000 00000001 ffffffff  ................
+I/DEBUG   (   85):     4009f010 00000001 4020a831 0000001f 00000000  ....1. @........
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sp:
+I/DEBUG   (   85):     befa9590 40d40f38 40097f31 00000000 40d40ef0  8..@1..@.......@
+I/DEBUG   (   85):     befa95a0 ffffffff 00000000 df0027ad 00000000  .........'......
+I/DEBUG   (   85):     befa95b0 40d40ef0 00000000 befa964c 404730f9  ...@....L....0G@
+I/DEBUG   (   85):     befa95c0 00000000 be010001 00000001 40d40f38  ............8..@
+I/DEBUG   (   85):     befa95d0 0000273d 0000276a 00000050 00000000  ='..j'..P.......
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around pc:
+I/DEBUG   (   85):     400f4a20 ef000000 e8bd0090 e1b00000 512fff1e  ............../Q
+I/DEBUG   (   85):     400f4a30 ea00b06e e92d0090 e3a070fc ef000000  n.....-..p......
+I/DEBUG   (   85):     400f4a40 e8bd0090 e1b00000 512fff1e ea00b067  ........../Qg...
+I/DEBUG   (   85):     400f4a50 e92d0090 e3a07f4f ef000000 e8bd0090  ..-.O...........
+I/DEBUG   (   85):     400f4a60 e1b00000 512fff1e ea00b060 e92d0090  ....../Q`.....-.
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around lr:
+I/DEBUG   (   85):     4009a774 0248f104 92052700 0a14f104 f7fd4610  ..H..'.......F..
+I/DEBUG   (   85):     4009a784 2210fbf3 a910462b 6b2065e7 e830f7f8  ..."+F...e k..0.
+I/DEBUG   (   85):     4009a794 46509004 edf2f7f7 42bb9b04 f7f7da11  ..PF.......B....
+I/DEBUG   (   85):     4009a7a4 6800ee66 d0692804 ee60f7f7 4a724971  f..h.(i...`.qIrJ
+I/DEBUG   (   85):     4009a7b4 0503f06f 447a4479 20056803 edd2f7f7  o...yDzD.h. ....
+
+
+* test 2: waiting for button
+F/libc    ( 3518): Fatal signal 6 (SIGABRT) at 0x00000d6b (code=0), thread 3518 (in.nativelooper)
+I/DEBUG   (   85): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+I/DEBUG   (   85): Build fingerprint: 'Android/full_crespo/crespo:4.1.2/JZO54K/eng.tituomin.20121207.160734:userdebug/test-keys'
+I/DEBUG   (   85): pid: 3518, tid: 3518, name: in.nativelooper  >>> fi.helsinki.cs.tituomin.nativelooper <<<
+I/DEBUG   (   85): signal 6 (SIGABRT), code -6 (?), fault addr --------
+I/DEBUG   (   85):     r0 fffffffc  r1 befa95f8  r2 00000010  r3 ffffffff
+I/DEBUG   (   85):     r4 40d40ef0  r5 ffffffff  r6 00000000  r7 000000fc
+I/DEBUG   (   85):     r8 00000000  r9 00000014  sl 40d40f04  fp befa976c
+I/DEBUG   (   85):     ip 4009eff0  sp befa95b0  lr 4009a795  pc 400f4a40  cpsr 20000010
+I/DEBUG   (   85):     d0  0000001200000000  d1  00000000000000df
+I/DEBUG   (   85):     d2  000000d4000000ef  d3  40cb4d7000000050
+I/DEBUG   (   85):     d4  0000000100000015  d5  006e006500000002
+I/DEBUG   (   85):     d6  0000000200000000  d7  0000000000530055
+I/DEBUG   (   85):     d8  0000000000000000  d9  0000000000000000
+I/DEBUG   (   85):     d10 0000000000000000  d11 0000000000000000
+I/DEBUG   (   85):     d12 0000000000000000  d13 0000000000000000
+I/DEBUG   (   85):     d14 0000000000000000  d15 0000000000000000
+I/DEBUG   (   85):     d16 7fffffffffffffff  d17 7fffffffffffffff
+I/DEBUG   (   85):     d18 0000000000000000  d19 0000000000000000
+I/DEBUG   (   85):     d20 0000000000000000  d21 3fe5555560000000
+I/DEBUG   (   85):     d22 0000000000000000  d23 3fe5555560000000
+I/DEBUG   (   85):     d24 3ff0000000000000  d25 0000000000000000
+I/DEBUG   (   85):     d26 0000000000000000  d27 c032000000000000
+I/DEBUG   (   85):     d28 0000000000000000  d29 3ff0000000000000
+I/DEBUG   (   85):     d30 3ff0000000000000  d31 3ff0000000000000
+I/DEBUG   (   85):     scr 80000011
+I/DEBUG   (   85): 
+I/DEBUG   (   85): backtrace:
+I/DEBUG   (   85):     #00  pc 0000da40  /system/lib/libc.so (epoll_wait+12)
+I/DEBUG   (   85):     #01  pc 00014791  /system/lib/libutils.so (android::Looper::pollInner(int)+96)
+I/DEBUG   (   85):     #02  pc 000149f9  /system/lib/libutils.so (android::Looper::pollOnce(int, int*, int*, void**)+104)
+I/DEBUG   (   85):     #03  pc 0005d11b  /system/lib/libandroid_runtime.so (android::NativeMessageQueue::pollOnce(_JNIEnv*, int)+22)
+I/DEBUG   (   85):     #04  pc 0001de30  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+I/DEBUG   (   85):     #05  pc 0004ce73  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+390)
+I/DEBUG   (   85):     #06  pc 00027260  /system/lib/libdvm.so
+I/DEBUG   (   85):     #07  pc 0002bb38  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+180)
+I/DEBUG   (   85):     #08  pc 0005f877  /system/lib/libdvm.so (dvmInvokeMethod(Object*, Method const*, ArrayObject*, ArrayObject*, ClassObject*, bool)+374)
+I/DEBUG   (   85):     #09  pc 00066d4d  /system/lib/libdvm.so
+I/DEBUG   (   85):     #10  pc 00027260  /system/lib/libdvm.so
+I/DEBUG   (   85):     #11  pc 0002bb38  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+180)
+I/DEBUG   (   85):     #12  pc 0005f5b1  /system/lib/libdvm.so (dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)+272)
+I/DEBUG   (   85):     #13  pc 000494cb  /system/lib/libdvm.so
+I/DEBUG   (   85):     #14  pc 0004698d  /system/lib/libandroid_runtime.so
+I/DEBUG   (   85):     #15  pc 0004746f  /system/lib/libandroid_runtime.so (android::AndroidRuntime::start(char const*, char const*)+390)
+I/DEBUG   (   85):     #16  pc 00000dcf  /system/bin/app_process
+I/DEBUG   (   85): 
+I/DEBUG   (   85): stack:
+I/DEBUG   (   85):          befa9570  00000000  
+I/DEBUG   (   85):          befa9574  00000000  
+I/DEBUG   (   85):          befa9578  00000000  
+I/DEBUG   (   85):          befa957c  51c2e970  
+I/DEBUG   (   85):          befa9580  00000000  
+I/DEBUG   (   85):          befa9584  400fdd1d  /system/lib/libc.so (free+12)
+I/DEBUG   (   85):          befa9588  00000001  
+I/DEBUG   (   85):          befa958c  40095035  /system/lib/libutils.so (android::SharedBuffer::dealloc(android::SharedBuffer const*)+10)
+I/DEBUG   (   85):          befa9590  40d40f38  
+I/DEBUG   (   85):          befa9594  40097f31  /system/lib/libutils.so (android::VectorImpl::_shrink(unsigned int, unsigned int)+138)
+I/DEBUG   (   85):          befa9598  00000000  
+I/DEBUG   (   85):          befa959c  40d40ef0  
+I/DEBUG   (   85):          befa95a0  ffffffff  
+I/DEBUG   (   85):          befa95a4  00000000  
+I/DEBUG   (   85):          befa95a8  df0027ad  
+I/DEBUG   (   85):          befa95ac  00000000  
+I/DEBUG   (   85):     #00  befa95b0  40d40ef0  
+I/DEBUG   (   85):          befa95b4  00000000  
+I/DEBUG   (   85):     #01  befa95b8  41bf3a08  [heap]
+I/DEBUG   (   85):          befa95bc  407b9cc7  /system/lib/libdvm.so (dvmDecodeIndirectRef(Thread*, _jobject*)+34)
+I/DEBUG   (   85):          befa95c0  0d300019  
+I/DEBUG   (   85):          befa95c4  51525b20  
+I/DEBUG   (   85):          befa95c8  00000000  
+I/DEBUG   (   85):          befa95cc  40d40f38  
+I/DEBUG   (   85):          befa95d0  0000273d  
+I/DEBUG   (   85):          befa95d4  0000276a  
+I/DEBUG   (   85):          befa95d8  00007206  
+I/DEBUG   (   85):          befa95dc  00007211  
+I/DEBUG   (   85):          befa95e0  40137a4c  
+I/DEBUG   (   85):          befa95e4  4016bfe3  /system/lib/libbinder.so (android::Parcel::setDataSize(unsigned int)+10)
+I/DEBUG   (   85):          befa95e8  00000034  
+I/DEBUG   (   85):          befa95ec  51525b20  
+I/DEBUG   (   85):          befa95f0  51525b50  
+I/DEBUG   (   85):          befa95f4  40168c43  /system/lib/libbinder.so (android::IPCThreadState::talkWithDriver(bool)+194)
+I/DEBUG   (   85):          ........  ........
+I/DEBUG   (   85):     #02  befa9720  00000000  
+I/DEBUG   (   85):          befa9724  51474d28  
+I/DEBUG   (   85):          befa9728  00000000  
+I/DEBUG   (   85):          befa972c  41bf2470  [heap]
+I/DEBUG   (   85):          befa9730  40cafe24  
+I/DEBUG   (   85):          befa9734  befa9758  [stack]
+I/DEBUG   (   85):          befa9738  40cafe1c  
+I/DEBUG   (   85):          befa973c  4022111f  /system/lib/libandroid_runtime.so (android::NativeMessageQueue::pollOnce(_JNIEnv*, int)+26)
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r1:
+I/DEBUG   (   85):     befa95d8 00007206 00007211 40137a4c 4016bfe3  .r...r..Lz.@...@
+I/DEBUG   (   85):     befa95e8 00000034 51525b20 51525b50 40168c43  4... [RQP[RQC..@
+I/DEBUG   (   85):     befa95f8 00000001 00000034 00000017 00000000  ....4...........
+I/DEBUG   (   85):     befa9608 00000000 00000000 00000000 51525af0  .............ZRQ
+I/DEBUG   (   85):     befa9618 00000000 00000000 00000000 4016910d  ...............@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r4:
+I/DEBUG   (   85):     40d40ed0 00000400 00000000 00000000 41ac6008  .............`.A
+I/DEBUG   (   85):     40d40ee0 00000000 00000000 41c07a80 00000073  .........z.As...
+I/DEBUG   (   85):     40d40ef0 4009ebc0 51942500 65755100 00000017  ...@.%.Q.Que....
+I/DEBUG   (   85):     40d40f00 0000001d 00000000 4009ea00 00000000  ...........@....
+I/DEBUG   (   85):     40d40f10 00000000 00000000 00000010 00000000  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sl:
+I/DEBUG   (   85):     40d40ee4 00000000 41c07a80 00000073 4009ebc0  .....z.As......@
+I/DEBUG   (   85):     40d40ef4 51942500 65755100 00000017 0000001d  .%.Q.Que........
+I/DEBUG   (   85):     40d40f04 00000000 4009ea00 00000000 00000000  .......@........
+I/DEBUG   (   85):     40d40f14 00000000 00000010 00000000 0000001e  ................
+I/DEBUG   (   85):     40d40f24 4009ea48 520431f8 00000002 00000000  H..@.1.R........
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near fp:
+I/DEBUG   (   85):     befa974c 41bf3a08 00000000 4078de34 40cafe18  .:.A....4.x@...@
+I/DEBUG   (   85):     befa975c 00000001 423cc060 00000000 423cbfe4  ....`.<B......<B
+I/DEBUG   (   85):     befa976c 407bce77 40cafe18 4dd9324d 4022113b  w.{@...@M2.M;."@
+I/DEBUG   (   85):     befa977c 41bf3a18 00000000 00000000 befa980c  .:.A............
+I/DEBUG   (   85):     befa978c 40137a4c 00000001 41c73710 00000003  Lz.@.....7.A....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near ip:
+I/DEBUG   (   85):     4009efd0 40101f45 400f9db4 400f3c1c 400ff585  E..@...@.<.@...@
+I/DEBUG   (   85):     4009efe0 400f49fc 400f4a18 400fa060 400f9fb4  .I.@.J.@`..@...@
+I/DEBUG   (   85):     4009eff0 400f4a34 40108e25 40061f7c 40105f65  4J.@%..@|..@e_.@
+I/DEBUG   (   85):     4009f000 ffffffff 00001000 00000001 ffffffff  ................
+I/DEBUG   (   85):     4009f010 00000001 4020a831 0000001f 00000000  ....1. @........
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sp:
+I/DEBUG   (   85):     befa9590 40d40f38 40097f31 00000000 40d40ef0  8..@1..@.......@
+I/DEBUG   (   85):     befa95a0 ffffffff 00000000 df0027ad 00000000  .........'......
+I/DEBUG   (   85):     befa95b0 40d40ef0 00000000 41bf3a08 407b9cc7  ...@.....:.A..{@
+I/DEBUG   (   85):     befa95c0 0d300019 51525b20 00000000 40d40f38  ..0. [RQ....8..@
+I/DEBUG   (   85):     befa95d0 0000273d 0000276a 00007206 00007211  ='..j'...r...r..
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around pc:
+I/DEBUG   (   85):     400f4a20 ef000000 e8bd0090 e1b00000 512fff1e  ............../Q
+I/DEBUG   (   85):     400f4a30 ea00b06e e92d0090 e3a070fc ef000000  n.....-..p......
+I/DEBUG   (   85):     400f4a40 e8bd0090 e1b00000 512fff1e ea00b067  ........../Qg...
+I/DEBUG   (   85):     400f4a50 e92d0090 e3a07f4f ef000000 e8bd0090  ..-.O...........
+I/DEBUG   (   85):     400f4a60 e1b00000 512fff1e ea00b060 e92d0090  ....../Q`.....-.
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around lr:
+I/DEBUG   (   85):     4009a774 0248f104 92052700 0a14f104 f7fd4610  ..H..'.......F..
+I/DEBUG   (   85):     4009a784 2210fbf3 a910462b 6b2065e7 e830f7f8  ..."+F...e k..0.
+I/DEBUG   (   85):     4009a794 46509004 edf2f7f7 42bb9b04 f7f7da11  ..PF.......B....
+I/DEBUG   (   85):     4009a7a4 6800ee66 d0692804 ee60f7f7 4a724971  f..h.(i...`.qIrJ
+I/DEBUG   (   85):     4009a7b4 0503f06f 447a4479 20056803 edd2f7f7  o...yDzD.h. ....
+
+
+* test 3: single threaded cli app
+F/libc    ( 3596): Fatal signal 6 (SIGABRT) at 0x00000e01 (code=0), thread 3596 (timos_foo)
+I/DEBUG   (   85): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+I/DEBUG   (   85): Build fingerprint: 'Android/full_crespo/crespo:4.1.2/JZO54K/eng.tituomin.20121207.160734:userdebug/test-keys'
+I/DEBUG   (   85): pid: 3596, tid: 3596, name: timos_foo  >>> ./timos_foo <<<
+I/DEBUG   (   85): signal 6 (SIGABRT), code -6 (?), fault addr --------
+I/DEBUG   (   85):     r0 00000334  r1 00000003  r2 0005e089  r3 000f423f
+I/DEBUG   (   85):     r4 400ae3f1  r5 bedd6c04  r6 00000001  r7 bedd6bc0
+I/DEBUG   (   85):     r8 00000000  r9 00000000  sl 00000000  fp 00000000
+I/DEBUG   (   85):     ip 4010500c  sp bedd6bc0  lr 400ae415  pc 400ae382  cpsr 80000030
+I/DEBUG   (   85):     d0  8188d78038a586f0  d1  0000000000000069
+I/DEBUG   (   85):     d2  0000000000000062  d3  000000000000006d
+I/DEBUG   (   85):     d4  0000000000000000  d5  0000000000000000
+I/DEBUG   (   85):     d6  0000000000000000  d7  819757e500000000
+I/DEBUG   (   85):     d8  0000000000000000  d9  0000000000000000
+I/DEBUG   (   85):     d10 0000000000000000  d11 0000000000000000
+I/DEBUG   (   85):     d12 0000000000000000  d13 0000000000000000
+I/DEBUG   (   85):     d14 0000000000000000  d15 0000000000000000
+I/DEBUG   (   85):     d16 c1df9a2a06fae148  d17 3f50624dd2f1a9fc
+I/DEBUG   (   85):     d18 41cc52c378000000  d19 0000000000000000
+I/DEBUG   (   85):     d20 0000000000000000  d21 0000000000000000
+I/DEBUG   (   85):     d22 0000000000000000  d23 0000000000000000
+I/DEBUG   (   85):     d24 0000000000000000  d25 0000000000000000
+I/DEBUG   (   85):     d26 0000000000000000  d27 0000000000000000
+I/DEBUG   (   85):     d28 0000000000000000  d29 0000000000000000
+I/DEBUG   (   85):     d30 0000000000000000  d31 0000000000000000
+I/DEBUG   (   85):     scr 00000010
+I/DEBUG   (   85): 
+I/DEBUG   (   85): backtrace:
+I/DEBUG   (   85):     #00  pc 00000382  /data/timos_foo (globber+17)
+I/DEBUG   (   85):     #01  pc 00000411  /data/timos_foo (main+32)
+I/DEBUG   (   85): 
+I/DEBUG   (   85): stack:
+I/DEBUG   (   85):          bedd6b80  00000004  
+I/DEBUG   (   85):          bedd6b84  40109f7c  /system/bin/linker
+I/DEBUG   (   85):          bedd6b88  000000e4  
+I/DEBUG   (   85):          bedd6b8c  00000000  
+I/DEBUG   (   85):          bedd6b90  00001000  
+I/DEBUG   (   85):          bedd6b94  00000022  
+I/DEBUG   (   85):          bedd6b98  00001000  
+I/DEBUG   (   85):          bedd6b9c  400d8f09  /system/lib/libc.so (__libc_fini)
+I/DEBUG   (   85):          bedd6ba0  4010500c  
+I/DEBUG   (   85):          bedd6ba4  00001000  
+I/DEBUG   (   85):          bedd6ba8  400fa38c  
+I/DEBUG   (   85):          bedd6bac  00000000  
+I/DEBUG   (   85):          bedd6bb0  00001000  
+I/DEBUG   (   85):          bedd6bb4  400d8f09  /system/lib/libc.so (__libc_fini)
+I/DEBUG   (   85):          bedd6bb8  df0027ad  
+I/DEBUG   (   85):          bedd6bbc  00000000  
+I/DEBUG   (   85):     #00  bedd6bc0  fff43ef1  
+I/DEBUG   (   85):          ........  ........
+I/DEBUG   (   85):     #01  bedd6bc0  fff43ef1  
+I/DEBUG   (   85):          bedd6bc4  00000334  
+I/DEBUG   (   85):          bedd6bc8  bedd6c04  [stack]
+I/DEBUG   (   85):          bedd6bcc  0005e089  
+I/DEBUG   (   85):          bedd6bd0  bedd6c0c  [stack]
+I/DEBUG   (   85):          bedd6bd4  bedd6bd8  [stack]
+I/DEBUG   (   85):          bedd6bd8  00000003  
+I/DEBUG   (   85):          bedd6bdc  00000334  
+I/DEBUG   (   85):          bedd6be0  bedd6c0c  [stack]
+I/DEBUG   (   85):          bedd6be4  400c7ead  /system/lib/libc.so (__libc_init+40)
+I/DEBUG   (   85):          bedd6be8  400ae350  /data/timos_foo
+I/DEBUG   (   85):          bedd6bec  400c7e85  /system/lib/libc.so (__libc_init)
+I/DEBUG   (   85):          bedd6bf0  00000000  
+I/DEBUG   (   85):          bedd6bf4  00000000  
+I/DEBUG   (   85):          bedd6bf8  00000000  
+I/DEBUG   (   85):          bedd6bfc  400ae348  /data/timos_foo
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r2:
+I/DEBUG   (   85):     0005e068 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     0005e078 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     0005e088 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     0005e098 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     0005e0a8 ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r3:
+I/DEBUG   (   85):     000f421c ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     000f422c ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     000f423c ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     000f424c ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85):     000f425c ffffffff ffffffff ffffffff ffffffff  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r4:
+I/DEBUG   (   85):     400ae3d0 68fa60fb 233ff244 030ff2c0 ddf0429a  .`.hD.?#.....B..
+I/DEBUG   (   85):     400ae3e0 4618683b 0714f107 bc8046bd bf004770  ;h.F.....F..pG..
+I/DEBUG   (   85):     400ae3f0 b082b580 f04faf00 603b0305 0300f04f  ......O...;`O...
+I/DEBUG   (   85):     400ae400 e013607b f103683b 603b0303 68396878  {`..;h....;`xh9h
+I/DEBUG   (   85):     400ae410 ffaef7ff 603b4603 68396878 ffc8f7ff  .....F;`xh9h....
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r5:
+I/DEBUG   (   85):     bedd6be4 400c7ead 400ae350 400c7e85 00000000  .~.@P..@.~.@....
+I/DEBUG   (   85):     bedd6bf4 00000000 00000000 400ae348 00000001  ........H..@....
+I/DEBUG   (   85):     bedd6c04 bedd6d07 00000000 bedd6d13 bedd6d21  .m.......m..!m..
+I/DEBUG   (   85):     bedd6c14 bedd6d49 bedd6d5a bedd6e66 bedd6ea3  Im..Zm..fn...n..
+I/DEBUG   (   85):     bedd6c24 bedd6ebc bedd6ecf bedd6ee4 bedd6ef9  .n...n...n...n..
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near r7:
+I/DEBUG   (   85):     bedd6ba0 4010500c 00001000 400fa38c 00000000  .P.@.......@....
+I/DEBUG   (   85):     bedd6bb0 00001000 400d8f09 df0027ad 00000000  .......@.'......
+I/DEBUG   (   85):     bedd6bc0 fff43ef1 00000334 bedd6c04 0005e089  .>..4....l......
+I/DEBUG   (   85):     bedd6bd0 bedd6c0c bedd6bd8 00000003 00000334  .l...k......4...
+I/DEBUG   (   85):     bedd6be0 bedd6c0c 400c7ead 400ae350 400c7e85  .l...~.@P..@.~.@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near ip:
+I/DEBUG   (   85):     40104fec 00000000 00000000 00000000 00000000  ................
+I/DEBUG   (   85):     40104ffc 00000000 00000000 00000002 00000154  ............T...
+I/DEBUG   (   85):     4010500c 00000000 00000000 00000000 400d8f09  ...............@
+I/DEBUG   (   85):     4010501c 400afee0 00000000 00000000 00000000  ...@............
+I/DEBUG   (   85):     4010502c 00000000 00000000 00000000 00000000  ................
+I/DEBUG   (   85): 
+I/DEBUG   (   85): memory near sp:
+I/DEBUG   (   85):     bedd6ba0 4010500c 00001000 400fa38c 00000000  .P.@.......@....
+I/DEBUG   (   85):     bedd6bb0 00001000 400d8f09 df0027ad 00000000  .......@.'......
+I/DEBUG   (   85):     bedd6bc0 fff43ef1 00000334 bedd6c04 0005e089  .>..4....l......
+I/DEBUG   (   85):     bedd6bd0 bedd6c0c bedd6bd8 00000003 00000334  .l...k......4...
+I/DEBUG   (   85):     bedd6be0 bedd6c0c 400c7ead 400ae350 400c7e85  .l...~.@P..@.~.@
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around pc:
+I/DEBUG   (   85):     400ae360 400ae3f1 400c7e85 e1a00000 e1a00000  ...@.~.@........
+I/DEBUG   (   85):     400ae370 b085b480 6078af00 f04f6039 60fb0300  ......x`9`O....`
+I/DEBUG   (   85):     400ae380 683be007 0302f1a3 68fb603b 0301f103  ..;h....;`.h....
+I/DEBUG   (   85):     400ae390 68fa60fb 233ff244 030ff2c0 ddf0429a  .`.hD.?#.....B..
+I/DEBUG   (   85):     400ae3a0 4618683b 0714f107 bc8046bd bf004770  ;h.F.....F..pG..
+I/DEBUG   (   85): 
+I/DEBUG   (   85): code around lr:
+I/DEBUG   (   85):     400ae3f4 f04faf00 603b0305 0300f04f e013607b  ..O...;`O...{`..
+I/DEBUG   (   85):     400ae404 f103683b 603b0303 68396878 ffaef7ff  ;h....;`xh9h....
+I/DEBUG   (   85):     400ae414 603b4603 68396878 ffc8f7ff 603b4603  .F;`xh9h.....F;`
+I/DEBUG   (   85):     400ae424 f103687b 607b0301 f244687a f2c0233f  {h....{`zhD.?#..
+I/DEBUG   (   85):     400ae434 429a030f 683bdde4 f1074618 46bd0708  ...B..;h.F.....F
+
+

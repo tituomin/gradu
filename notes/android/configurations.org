@@ -1,0 +1,9 @@
+
+* 4.1.2 with build ids and libperf, oprofile, arm apcs-frame pointers, arm debugging
+buildspec.mk f3940cf57c7fe3fa9e45dbc4cd97f9323baa7a77
+
+libdvm bb9aba8b f58b30c9 7e9ca8c8 2adba4e7 e2ad8f21
+notice: buildid-list gives different: 2695c0a1b69e214499d43740f2123e152feb9a1d
+
+kernel: 167e5f94 d32c48ad ecc4e184 a7bcaadf f83d58a6
+

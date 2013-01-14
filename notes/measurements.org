@@ -1,0 +1,12 @@
+
+|------------------------+------------------+----------------------+----------+----------+----------+-------------------------------------------|
+| date                   | kernel           | android              | tool     | profile  | dump     | notes                                     |
+|------------------------+------------------+----------------------+----------+----------+----------+-------------------------------------------|
+| <2013-01-08 Tue 18:40> | [[file:kernel/versions.org::*oprofile%20enabled][oprofile enabled]] | [[file:android/configurations.org::*4.1.2%20with%20build%20ids%20and%20libperf,%20oprofile,%20arm%20apcs-frame%20pointers,%20arm%20debugging][4.1.2 with build ids]] | oprofile | [[file:measurements/initial_comparison.org::*Oprofile][Oprofile]] | [[file:measurements/initial_comparison.org::*raw%20data][raw data]] | vastaavat, todo: siirrä tiedostot talteen |
+|                        |                  |                      | perf     | [[file:measurements/initial_comparison.org::*Perf][Perf]]     | [[file:measurements/initial_comparison.org::*raw%20data][raw data]] | vastaavat                                 |
+|------------------------+------------------+----------------------+----------+----------+----------+-------------------------------------------|
+|                        |                  |                      |          |          |          |                                           |
+|                        |                  |                      |          |          |          |                                           |
+|------------------------+------------------+----------------------+----------+----------+----------+-------------------------------------------|
+
+

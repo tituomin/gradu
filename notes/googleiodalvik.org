@@ -1,0 +1,111 @@
+
+Google I/O Dalvik
+
+* background
+
+** each application separate process
+
+** energy doesn't follow moore's law
+
+** memory efficiency problem
+
+*** no swap?
+
+* dex
+
+** multiple class files, lots of duplication
+
+*** (memory efficiency)
+
+*** dex: lot of pointers
+
+*** per-type pools
+
+*** size comparison
+    common system libraries
+    (U) 21445320 — 100%
+    (J) 10662048 — 50%
+    (D) 10311972 — 48%
+    web browser app
+    (U) 470312 — 100%
+    (J) 232065 — 49%
+    (D) 209248 — 44%
+    alarm clock app
+    (U) 119200 — 100%
+    (J) 61658 — 52%
+    (D) 53020 — 44%
+
+
+
+**** good uncompressed size
+
+*** minimize private dirty memory
+
+*** shared dirty
+
+**** zygote
+
+***** libraries
+
+***** shared copy-on-write heap
+
+* garbage collection
+
+** separate gc for sep. processes
+
+** separate gc metadata bits
+
+* cpu
+
+** originally no JIT
+
+*** lots of native code
+
+** platform security secured by process boundaries
+
+** optimization
+
+*** static linking: string-based lookup > index lookup on vtable
+
+** register vm
+
+* battery
+
+* optimizations
+
+** avoid allocation
+
+* jni
+
+** support real jni + couple tweaks
+
+*** platform developers:
+
+**** you can make a native call avoiding lot of the overhead
+
+***** only exposed as very low level platform feature ??
+
+Google I/O 2011: Bringing c and c++ games
+
+30.00 
+* GLSurfaceView: initialize in Dalvik, use in NDK
+** context shared
+* PCM generate own audio
+* OpenSL / ES : only NDK
+* Assets work without JNI overhead
+
+
+36:55 ! Threading
+
+* JNI Contexts are per thread
+* Performance tools
+** perfhud-es
+** adreno-profiler
+** powervr insider utilities
+*** pvrtrace pvrtune
+** freeciv
+
+* C only
+** debugger little flaky
+* media player, dalvik only (2011)
+* camera not accessible

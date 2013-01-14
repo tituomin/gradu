@@ -1,0 +1,11 @@
+
+Git commit hashes refer to kernel/config commits.
+The version of the kernel checked out is 
+5894150 == 58941501e897aa344317efeed8c14f5e6da89a10
+
+* default Herring :886ec4290d593653f2dca859ca6d478ccd109038:
+  No oprofile support by default.
+
+* oprofile enabled :22c70ac692688617103a4181acd602fab7afe2cf:
+  Oprofile support.
+

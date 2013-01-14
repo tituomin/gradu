@@ -1,0 +1,7 @@
+
+Things to remember
+* turn of gcc optimisation for trivial loops
+* inlining native functions? disable
+* java inline native invocations...
+0> /proc/sys/kernel/kptr_restrict
+-1> /proc/sys/kernel/perf_event_paranoid
