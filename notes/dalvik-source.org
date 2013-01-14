@@ -5,6 +5,21 @@
 ** only minimal checks
 *** array bounds included
    
-   
+* building with debug symbols
+** Step Two: Edit the buildspec.mk 
+- Copy the file from build/buildspec.mk.default to buildspec.mk (in the root directory of your AOSP 
+build)
+- Edit the file and add the following:
+DEBUG_MODULE_libwebcore:=true
+DEBUG_MODULE_libxml2:=true
+TARGET_CUSTOM_DEBUG_CFLAGS:=­O0 ­mlong­calls
+ADDITIONAL_BUILD_PROPERTIES += debug.db.uid=100000
+- This allows WebKit to be built in DEBUG mode
+
+** Step Three: Edit the Android.mk in external/webkit
+- This is VERY IMPORTANT
+- Your AOSP build will break if this is not done, since libwebkit will be huge with debugger symbols
+- Uncomment this line:
+LOCAL_PRELINK_MODULE := false   
    
   
