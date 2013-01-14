@@ -1,0 +1,6 @@
+
+* cheating?? jni.cpp 714
+** fast jni: doesn't use normal variables :)
+** 1052: "internal jni methods are called directly"
+*** tuosta alkaa varsinainen bridge-koodi
+* 1194 JNI defineclass not supported
