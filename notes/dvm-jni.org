@@ -1,6 +1,38 @@
+#+STARTUP: indent
+#+STARTUP: odd
 
 * cheating?? jni.cpp 714
-** fast jni: doesn't use normal variables :)
-** 1052: "internal jni methods are called directly"
-*** tuosta alkaa varsinainen bridge-koodi
+
+*** fast jni: doesn't use normal variables :)
+
+*** 1052: "internal jni methods are called directly"
+
+***** tuosta alkaa varsinainen bridge-koodi
+
 * 1194 JNI defineclass not supported
+
+* ideas for work load parameters
+
+*** primitive vs. reference arguments
+
+***** primitive vs. object arrays
+
+******* accessing
+        "Because the underlying garbage collector may not support
+        pinning, the virtual machine may return a pointer to a copy of
+        the original primitive array."
+
+***** strings
+
+******* converting strings manually: account for it!
+        "Because the Java virtual machine implementation needs to allocate
+        memory to hold the UTF-8 string, there is a chance that memory
+        allocation will fail."
+
+***** field access
+
+*** primitive vs. reference return types
+
+*** how to bypass jnienv &c. creation
+
+*** JNI callbacks
