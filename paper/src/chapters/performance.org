@@ -67,19 +67,19 @@ toteutusvaihetta.
 * Suorituskyvyn arvioiminen
 # todo: arvioiminen &mallintaminen vs. mittaaminen/mittari
 # (kielenkäyttö)
-Suorituskyky on pohjimmiltaan subjektiivinen käsite, joka kuvastaa,
+Suorituskyky on pohjimmiltaan subjektiivinen käsite, joka ilmaisee
 miten /hyvin/ järjestelmä toteuttaa tehtävänsä @@ferrari(2). Tässä
 tutkielmassa määritellään suorituskyky ohjelmiston laadulliseksi
 ominaisuudeksi, joka kuvaa, miten /nopeasti/ ohjelmisto toimii
 käyttäjän näkökulmasta: miten tyydyttävät sen vasteajat ovat ja miten
 tehokkaasti se käsittelee syötedataa.
 
-Jotta järjestelmän suorituskykyä voisi arvioida täsmällisesti, on
-käsite purettava kvantitatiivisiksi /mittareiksi/.  Ne arvioivat
+Jotta järjestelmän suorituskykyä voisi arvioida täsmällisesti, käsite
+on purettava kvantitatiivisiksi /mittareiksi/.  Ne arvioivat
 järjestelmän /tuottavuutta/ tai /responsiivisuutta/, tai valitun
 ohjelmisto- tai laitteistoresurssin /käyttöastetta/ @@ferrari(12).
 Käytän mittarin käsitettä kuvaamaan suorituskyvyn kvantitatiivisia
-ulottuvuuksia, oli ne sitten johdettu ohjelmistoa kuvaavista malleista
+osatekijöitä, oli ne sitten johdettu ohjelmistoa kuvaavista malleista
 tai saatu todellisista mittauksista.
 
 Tässä tutkielmassa käsitellään ensisijaisesti mobiilisovellusten
@@ -105,9 +105,10 @@ Vaikka suorituskyvyn eri osatekijöitä voi arvioida kvantitatiivisilla
 mittareilla, tulosten objektiivisuus on aina rajallinen. Esimerkiksi
 vasteaikamittarit ovat merkityksellisiä vain suhteessa kulloiseenkin
 käyttötapaukseen ja kokonaistyömäärään, joista molemmat on hyvin
-vaikea kuvata tyhjentävästi @@ferrari(14). Konkreettiset
-suoritusaikamittaukset koskevat aina /ohjelma--syöte/-pareja, eivät
-puhtaasti ohjelmaa sellaisenaan @@ferrari(455).
+vaikea kuvata tyhjentävästi ja järjestelmäriippumattomasti
+@@ferrari(14). Varsinaiset suoritusaikamittaukset puolestaan koskevat
+aina /ohjelma--syöte/-pareja, eivät puhtaasti ohjelmaa sellaisenaan
+@@ferrari(455).
 
 Lisäksi moniajojärjestelmän, kuten Android-järjestelmän, kokonaistila
 vaikuttaa yksittäisiin mitattuihin vasteaikoihin. Näistä syistä
@@ -122,7 +123,7 @@ esimerkiksi mobiililaitemallista ja Android-versiosta
 #viite: android moniajo
 # mainitse vielä mittaus vs. mallinnus
 
-* Arvioimisen tavoitteista
+* Arvioimisen yleispätevyys ja tavoitteet
 # todo: käsittelee oikeastaan /mittaamisen/ tavoitteita
 Objektiivisuuden puute voi vaikeuttaa mittausten tieteellistä
 toistettavuutta. Käytännön kehitystyössä se ei aina ole ongelma, jos
@@ -130,9 +131,11 @@ tuloksista vedetään vain rajallisia johtopäätöksiä. Jos tavoitteena on
 tietyn järjestelmän suorituskyvyn /parantaminen/, riittää että
 mittauksia voi käyttää hypoteettisen suorituskykyparannuksen
 /validointiin/ alkuperäistä ja muokattua järjestelmää vertailemalla
-@@ferrari(336). Jos tavoitteena on uuden ohjelmistojärjestelmän
-tuottaminen, mittauksia käytetään validoimaan suorituskykyarvioita,
-joita on sisällytetty määrittely- ja suunnitteluvaiheiden malleihin
+@@ferrari(336).
+
+Jos tavoitteena on uuden ohjelmistojärjestelmän tuottaminen,
+mittauksia käytetään validoimaan suorituskykyarvioita, jotka on
+johdettu määrittely- ja suunnitteluvaiheiden malleista
 @@spe(18). Ohjelmistoprosessissa näitä validoituja malleja verrataan
 lopulta alkuperäisiin suorituskykyvaatimuksiin, joita niitäkin voidaan
 joskus jopa tarkistaa @@spe(18). Siten kvantifioidutkin mallit ja
@@ -143,6 +146,20 @@ subjektiiviselle kokemukselle [fn:bar].
 erilaisina, jos työn etenemistä osoittava käyttöliittymäelementti
 etenee eri tavalla @@progressbar.
 # todo lue ja varmista että lähde sanoo näin ;)
+
+# todo: varmista lopuksi että tämä on näin
+Tässä tutkielmassa mitataan Dalvik-virtuaalikoneen
+Java-natiivirajapinnan eri osien suorituskykyrasituksia suhteessa
+toisiinsa ja suhteessa vastaaviin operaatioihin Java-kielisessä
+ohjelmassa.  Tuloksista johdetaan tilastollinen malli, joka ennustaa
+ohjelmiston JNI-operaatioista aiheutuvia ylimääräisiä
+rasitteita. Mallin parametreinä on käytettyjen JNI-kutsujen määrä,
+tyyppi, sekä niissä käytettyjen kutsuparametrien määrät ja tyypit.
+
+Pelkästään JNI- ja Java-kutsujen rasitteiden keskinäisestä vertailusta
+on hyötyä.
+# todo: here i am on fire
+# end todo
 
 Seuraavaksi käyn läpi arkkitehtuurin vaikutuksia ohjelmiston
 suorituskykyyn ja ohjelmiston mallintamista tästä näkökulmasta.
@@ -266,7 +283,7 @@ jono. Kokonaissuoritusaika on jonon alkioiden suoritusaikojen summa.
 Tilajako on mielivaltainen, mutta siitä on mielenkiintoinen
 erikoistapaus, joka vastaa lähes suoraan Androidin ja monien muiden
 ympäristöjen ohjelmointityökalujen mittaamia tuloksia: jos jokainen
-ohjelman lause tulkitaan omaksi tilakseen, niin näistä
+ohjelman lause tai konekäskys tulkitaan omaksi tilakseen, niin näistä
 suoritustiloista koostuvaa jonoa kutsutaan ohjelman /suoritusjäljeksi/
 (/program trace/) @@ferrari(458). Luettelo kustakin lauseesta
 kokonaissuorituskertoineen on ohjelman /profiili/ @@fortran(todo
