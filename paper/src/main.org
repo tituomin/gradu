@@ -16,7 +16,7 @@
 * Suorituskyky ohjelmistokehityksessä
 #+INCLUDE: "../gen/chapters/performance.org" :minlevel 1
 
-* Android-järjestelmä
+* Android-käyttöjärjestelmä
 #+INCLUDE: "../gen/chapters/android.org" :minlevel 1
 
 * Androidin natiivikielinen ohjelmointi                            :noexport:
