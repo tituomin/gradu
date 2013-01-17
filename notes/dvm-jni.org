@@ -18,16 +18,16 @@
 ***** primitive vs. object arrays
 
 ******* accessing
-        "Because the underlying garbage collector may not support
-        pinning, the virtual machine may return a pointer to a copy of
-        the original primitive array."
+"Because the underlying garbage collector may not support
+pinning, the virtual machine may return a pointer to a copy of
+the original primitive array."
 
 ***** strings
 
 ******* converting strings manually: account for it!
-        "Because the Java virtual machine implementation needs to allocate
-        memory to hold the UTF-8 string, there is a chance that memory
-        allocation will fail."
+"Because the Java virtual machine implementation needs to allocate
+memory to hold the UTF-8 string, there is a chance that memory
+allocation will fail."
 
 ***** field access
 
