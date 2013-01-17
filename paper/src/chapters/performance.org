@@ -129,9 +129,11 @@ Objektiivisuuden puute voi vaikeuttaa mittausten tieteellistä
 toistettavuutta. Käytännön kehitystyössä se ei aina ole ongelma, jos
 tuloksista vedetään vain rajallisia johtopäätöksiä. Jos tavoitteena on
 tietyn järjestelmän suorituskyvyn /parantaminen/, riittää että
-mittauksia voi käyttää hypoteettisen suorituskykyparannuksen
-/validointiin/ alkuperäistä ja muokattua järjestelmää vertailemalla
-@@ferrari(336).
+mittauksista löydetään suorituskyvyn kannalta ongelmalliset
+suorituskohdat, ja /validoidaan/ näin saatu suorituskykyoptimointi
+vertailemalla alkuperäistä ja muokattua järjestelmää @@ferrari(336).
+
+# ferrari 224: arvioidaan kriteereitä (workload-) malleille
 
 Jos tavoitteena on uuden ohjelmistojärjestelmän tuottaminen,
 mittauksia käytetään validoimaan suorituskykyarvioita, jotka on
@@ -139,39 +141,156 @@ johdettu määrittely- ja suunnitteluvaiheiden malleista
 @@spe(18). Ohjelmistoprosessissa näitä validoituja malleja verrataan
 lopulta alkuperäisiin suorituskykyvaatimuksiin, joita niitäkin voidaan
 joskus jopa tarkistaa @@spe(18). Siten kvantifioidutkin mallit ja
-mittaukset ovat lopulta alisteisia ohjelmiston käyttäjien
-subjektiiviselle kokemukselle [fn:bar].
-
-[fn:bar] Jopa yhtäsuuret vasteajat voivat näyttäytyä käyttäjälle
-erilaisina, jos työn etenemistä osoittava käyttöliittymäelementti
-etenee eri tavalla @@progressbar.
-# todo lue ja varmista että lähde sanoo näin ;)
+mittaukset ovat lopulta alisteisia ohjelmistolle asetetuille
+vaatimuksille ja viime kädessä käyttäjien subjektiiviselle kokemukselle.
 
 # todo: varmista lopuksi että tämä on näin
 Tässä tutkielmassa mitataan Dalvik-virtuaalikoneen
-Java-natiivirajapinnan eri osien suorituskykyrasituksia suhteessa
-toisiinsa ja suhteessa vastaaviin operaatioihin Java-kielisessä
-ohjelmassa.  Tuloksista johdetaan tilastollinen malli, joka ennustaa
-ohjelmiston JNI-operaatioista aiheutuvia ylimääräisiä
-rasitteita. Mallin parametreinä on käytettyjen JNI-kutsujen määrä,
+Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
+suhteessa toisiinsa ja suhteessa vastaaviin operaatioihin
+Java-kielisessä ohjelmassa. Tuloksista johdetaan tilastollinen malli,
+joka ennustaa ohjelmiston JNI-operaatioista aiheutuvia rasitteita eri
+tilanteissa. Mallin parametreinä on käytettyjen JNI-kutsujen määrä,
 tyyppi, sekä niissä käytettyjen kutsuparametrien määrät ja tyypit.
 
-Pelkästään JNI- ja Java-kutsujen rasitteiden keskinäisestä vertailusta
-on hyötyä.
-# todo: here i am on fire
+JNI- ja Java-kutsujen rasitteiden keskinäisestä vertailusta on hyötyä
+mille tahansa natiivikomponentteja hyödyntävälle sovellukselle, koska
+sen avulla voidaan välttää tunnettuja ongelmakohtia komponenttien
+välisessä kommunikaatiossa. Kysymys, onko natiivirajapinnan käytöstä
+ylipäätään suorituskykyetua tietylle sovellukselle, saa
+lisävalaistusta vasta kun natiivirajapinnan ylimääräisiä rasitteita
+verrataan natiivikomponentin ja vastaavan Java-komponentin
+vasteaikojen erotukseen.
 # end todo
 
-Seuraavaksi käyn läpi arkkitehtuurin vaikutuksia ohjelmiston
-suorituskykyyn ja ohjelmiston mallintamista tästä näkökulmasta.
-Mallintamisesta edetään mittaustekniikoihin ja periaatteisiin, joilla
-saadaan malleja vastaavia mittaustuloksia.
+* Mallintaminen ja mittaaminen
 
-* Arkkitehtuurin mallintaminen
+Suorituskykyä käsittelevä kirjallisuus keskittyy usein joko myöhäisen
+vaiheen diagnosointiin /mittausten/ avulla tai ohjelmiston
+/mallintamiseen/ varhaisessa kehitysvaiheessa @@future-spe(172). Tämä
+heijastelee johdannossa hahmoteltua näkemyseroa. Mittaamista voidaan
+tehdä vasta, kun ohjelmisto tai sen osa on jo olemassa. Mallintamista
+hankaloittaa puolestaan, että käyttökelpoiselta mallilta vaaditaan
+riittävää abstraktiutta ja yksinkertaisuutta, mutta samalla riittävää
+/tarkkuutta/ suhteessa määriteltyyn syöteavaruuteen ja reunaehtoihin
+ollaakseen /validi/ @@ferrari(161--162).
+
+Tässä tutkielmassa lähdetään oletuksesta, että Dalvik-virtuaalikoneen
+natiivirajapinta on kokonaisjärjestelmän osana riittävän
+yksinkertainen, jotta siitä on mahdollista melko suoraviivaisesti
+luoda malli perustuen rajapinnasta tehtyihin mittauksiin
+kontrolloidulla syötejoukolla. Tähän asti mittaus- ja
+mallintamisnäkökulmaa ei ole saatu yhdistettyä toisiinsa riittävän
+yleispätevästi @@future-spe(172); tämän tutkielman lähestymistapana on
+rajata näkökulma spesifisti Java-virtuaalikoneen ja natiivikoodin
+välisestä kommunikaatiosta johtuvaan pullonkaulaan, ja konstruoida
+mallit alusta lähtien mittausten perusteella. Käsittelenkin
+seuraavaksi ohjelmiston suorituskyvyn mittaamiseen käytettäviä
+tekniikoita ennen käyttämieni mallinnustekniikoiden esittelyä.
+   
+** Suorituskyvyn mittaaminen
+Tietyn käyttötapauksen kokonaisvasteajan mittaaminen on
+käsitteellisesti yksinkertaista: mitataan aikaväli syötteen saamisesta
+siihen kun haluttu tulos on tulostettu käyttäjälle.
+# lähde: ferrari alkusivut? spe-book?
+Nykyaikaisen vuorovaikutteisen sovelluksen suorittaman laskennan ja
+käyttäjän syötteiden vuorottelu voi toki olla vilkasta. Käyttäjän ja
+järjestelmän laskenta voi olla osin päällekkäistäkin. Käyttäjän
+odottamisesta johtuvat viiveet eivät ole osa vasteaikaa, joten
+vuorovaikutukset on jaettava riittävän yksinkertaisiin mitattaviin
+yksiköihin, joissa käyttäjän ja sovelluksen roolit on erotettavissa.
+# lähde tuohon
+
+Mittauksissa käytettävät vaihtelevat tekniikat mittaavat erilaisia
+osia kokonaisajasta. Järjestelmän ulkopuoliselle käyttäjälle havainnot
+ovat riippuvaisia todellisesta kuluneesta ajasta, /tosiajasta/
+(/real time/, /wall clock time/), jota vastaa sekuntikellolla mitattu
+aikaväli [fn:bar]. Linux-käyttöjärjestelmissä tätä mittaa
+järjestelmäkutsu =gettimeofday=, joka lukee laitteiston kelloa. Jos
+sovellusohjelma kutsuu sitä tavallisena käyttöjärjestelmäkutsuna,
+saattaa ohjelman suoritus häiriintyä tarkkuutta vaativissa
+mittauksissa @@ferrari(472) [fn:gettimeofday]. Tässä tutkielmassa
+kyseistä rutiinia käytetään ainoastaan kokonaisvasteaikojen
+mittaamiseen, jolloin pienet häiriöt eivät ole kriittisiä.
+# todo tarkista onko androidissa tarkka userspace gettimeofday (arm)
+# todo tosiaika?
+
+Tässä tutkielmassa kaikki suorituskykyä parantavat ratkaisut tähtäävät
+/oleellisten käyttötapausten lyhentyneeseen vasteaikaan tosiaikana
+mitattuna/. Tarkemman suorituskykyanalyysin kannalta pelkkä tosiajan
+käyttäminen ei kuitenkaan aina ole riittävää. Linux ja muut
+käyttöjärjestelmät pitävät kirjaa myös /sovellusajasta/ (Linuxissa
+/user time/), eli ajasta, jonka sovellusprosessi viettää aktiivisesti
+tavallisessa suoritustilassa käyttöjärjestelmäytimen ulkopuolella
+(/unprivileged mode/, /user mode/). Toinen osa sovellusprosessin
+suoritusajasta, järjestelmäaika (/system time/), vietetään
+käyttöjärjestelmäytimen sisällä palveluissa, joita sovellus on
+eksplisiittisesti kutsunut.
+
+Aika, joka kuluu I/O- tai muita palveluita odotettaessa, lasketaan
+tosiaikaan mutta ei sovellus- tai järjestelmäaikaan. Käyttäjän
+kannalta esimerkiksi I/O-operaatioden odottelulla on selvästi suuri
+merkitys. Sovellus- ja järjestelmäaika yhdessä taas vastaavat
+sovelluksen /suoritinaikaa/ (/CPU time/), koska niihin kuuluu
+ainoastaan prosessin aktiivinen suoritusaika. Tutkielmassa oletetaan,
+että suoritinaika on natiivirajapinnan rasitteiden oleellisin
+osatekijä, mutta tosiaikaa mittaamalla varmistetaan, etteivät
+suoritinajan ulkopuoliset merkittävät viiveet jää huomiotta.
+
+*** Vasteajan jakautuminen
+
+Kokonaisvasteajalla on merkitystä lähinnä tulosten lopullisen
+validoinnin kannalta. Tarkempi suorituskykyanalyysi vaatii tuekseen
+yksityiskohtaisempia mittauksia. Niiden tavoite on purkaa vasteaika
+osatekijöihin ja tunnistaa ne ohjelman osat, joiden suorituksella on
+kokokonaisuuden kannalta suurin vaikutus.
+
+
+
+# todo here
+# todo vanhaa tekstiä tästä alaspäin
+Suoritusajan analysoimiseksi ohjelma on jaettava joukkoon erillisiä
+/tiloja/, joista ohjelman suoritus on yksikäsitteisesti yhdessä
+tilassa kerrallaan @@ferrari(456--458). Ohjelman kokonaissuoritusta
+kuvaa /tila--suoritusaika/ -pareista koostuva
+jono. Kokonaissuoritusaika on jonon alkioiden suoritusaikojen summa.
+
+# Tilajako on mielivaltainen, mutta siitä on mielenkiintoinen
+# erikoistapaus, joka vastaa lähes suoraan Androidin ja monien muiden
+# ympäristöjen ohjelmointityökalujen mittaamia tuloksia: jos jokainen
+# ohjelman lause tai konekäskys tulkitaan omaksi tilakseen, niin näistä
+# suoritustiloista koostuvaa jonoa kutsutaan ohjelman /suoritusjäljeksi/
+# (/program trace/) @@ferrari(458). Luettelo kustakin lauseesta
+# kokonaissuorituskertoineen on ohjelman /profiili/ @@fortran(todo
+# sivu).
+
+Jos tilajako on karkeampi, ja yksittäinen tila vastaa esimerkiksi
+ohjelmiston komponenttia, tulee ohjelmisto /mallintaa/ käyttäen
+valittua formalismia.
+
+[fn:bar] Toisaalta käyttäjä voi kokea jopa yhtäsuuriksi mitatut
+vasteajat erilaisiksi, jos työn etenemistä osoittava
+käyttöliittymäelementti etenee eri tavalla @@progressbar.
+# todo lue ja varmista että lähde sanoo näin ;)
+
+[fn:gettimeofday] Joissakin laitteistoissa kyseistä Linuxin palvelua
+voi kutsua vähäisellä rasitteella siirtymättä kernelin suoritustilaan.
+# lähde vdso etc.
+
+** Arkkitehtuurin mallintaminen 
+#Seuraavaksi käyn läpi arkkitehtuurin vaikutuksia ohjelmiston
+#suorituskykyyn ja ohjelmiston mallintamista tästä näkökulmasta.
+#Mallintamisesta edetään mittaustekniikoihin ja periaatteisiin, joilla
+#saadaan malleja vastaavia mittaustuloksia.
+
 
 # Performance depends largely upon the
 # volume and complexity of the inter-component com-
 # munication and coordination, especially if the compo-
 # nents are physically distributed processes
+
+# lisää tähän selitys ferrarin 4-luvusta deterministinen
+# vs. probabilistinen malli.
 
 Monet ohjelmistojen suorituskykyongelmat johtuvat varhaisen
 suunnitteluvaiheen arkkitehtuuriratkaisuista @@perf-arch(164);
@@ -186,7 +305,7 @@ Tässä tutkielmassa keskitytään kuitenkin sovelluksiin, joissa
 suoritetaan laskentaa /paikallisesti/ yksittäisessä
 mobiilaitteessa. Kun osaa sovelluksesta suoritetaan virtuaalikoneen
 välityksellä ja toista konekielisenä suoraan prosessorissa, näiden
-osien välinen kommunikaatio ja niiden sijoittelu on tällöinkin
+osien sijoittelu ja niiden välinen kommunikaatio on edelleen
 oleellinen suorituskykytekijä.
 
 Jotta arkkitehtuuriratkaisuiden suorituskykyä voisi arvioida
@@ -270,28 +389,6 @@ I/O-operaatiot @@ferrari(168). Tällöin analyysin kohteeksi tuleekin,
 /mihin/ Android-sovellus kuluttaa suoritusaikansa.  Tätä mallinnetaan
 Markov-ketjuilla.
 # todo tarkista että em. pitää paikkansa lopulta
-
-* Mallintamisesta mittauksiin
-# todo markovoi tämä!!
-
-Suoritusajan analysoimiseksi ohjelma on jaettava joukkoon erillisiä
-/tiloja/, joista ohjelman suoritus on yksikäsitteisesti yhdessä
-tilassa kerrallaan @@ferrari(456--458). Ohjelman kokonaissuoritusta
-kuvaa /tila--suoritusaika/ -pareista koostuva
-jono. Kokonaissuoritusaika on jonon alkioiden suoritusaikojen summa.
-
-Tilajako on mielivaltainen, mutta siitä on mielenkiintoinen
-erikoistapaus, joka vastaa lähes suoraan Androidin ja monien muiden
-ympäristöjen ohjelmointityökalujen mittaamia tuloksia: jos jokainen
-ohjelman lause tai konekäskys tulkitaan omaksi tilakseen, niin näistä
-suoritustiloista koostuvaa jonoa kutsutaan ohjelman /suoritusjäljeksi/
-(/program trace/) @@ferrari(458). Luettelo kustakin lauseesta
-kokonaissuorituskertoineen on ohjelman /profiili/ @@fortran(todo
-sivu).
-
-Jos tilajako on karkeampi, ja yksittäinen tila vastaa esimerkiksi
-ohjelmiston komponenttia, tulee ohjelmisto /mallintaa/ käyttäen
-valittua formalismia.
 
 
 * Tehtäviä                                                         :noexport:
