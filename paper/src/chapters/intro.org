@@ -24,7 +24,7 @@ myös C- tai C++ -kielisiä komponentteja.
 
 /Ohjelmistojen suorituskykytekniikka/ (/Software Performance
 Engineering/, /SPE/) on ohjelmistotekniikan osa-alue, jossa
-ohjelmistoprosessin alusta lähtien varmistetaan, että ohjelmistolle
+varmistetaan ohjelmistoprosessin alusta lähtien, että ohjelmistolle
 asetetut suorituskykyvaatimukset täyttyvät lopullisessa
 tuotteessa. Menettely on näennäisesti ristiriidassa usein lainatun
 Donald Knuthin lausahduksen kanssa: "Ennenaikainen optimointi on
