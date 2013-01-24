@@ -34,7 +34,7 @@ suoritusaikaista käyttäytymistä @@vertical.
 
 Knuthin näkökulma rajottui kuitenkin yksittäisen algoritmin, ohjelman
 tai komponentin /ohjelmointiin/. Laajempaa ohjelmistoa rakentaessa
-otetaan kantaa myös ohjelmiston konseptuaalisiin vaatimuksiin ja
+otetaan kantaa myös ohjelmiston käsitteellisiin vaatimuksiin ja
 suunnitellaan ohjelmiston komponenttitason arkkitehtuuri sekä
 komponenttien tarkempi rakenne. Oli ohjelmiston tuotantoprosessi miten
 inkrementaalinen tahansa, varhaiset makrotason ratkaisut rajoittavat
@@ -131,7 +131,7 @@ toistettavuutta. Käytännön kehitystyössä se ei aina ole ongelma, jos
 tuloksista vedetään vain rajallisia johtopäätöksiä. Jos tavoitteena on
 tietyn järjestelmän suorituskyvyn /parantaminen/, riittää että
 mittauksista löydetään suorituskyvyn kannalta ongelmalliset
-suorituskohdat ja /validoidaan/ näin saatu suorituskykyparannus
+suorituskohdat ja /validoidaan/ lopullinen suorituskykyparannus
 vertailemalla alkuperäistä ja muokattua järjestelmää @@ferrari(336).
 
 # ferrari 224: arvioidaan kriteereitä (workload-) malleille
@@ -165,7 +165,6 @@ vasteaikojen erotukseen.
 # end todo
 
 * Mittaamisesta mallintamiseen
-
 Suorituskykyä käsittelevä kirjallisuus keskittyy usein joko myöhäisen
 vaiheen diagnosointiin /mittausten/ avulla tai ohjelmiston
 /mallintamiseen/ varhaisessa kehitysvaiheessa @@future-spe(172). Tämä
@@ -194,15 +193,16 @@ Tietyn käyttötapauksen kokonaisvasteajan mittaaminen on
 käsitteellisesti yksinkertaista: mitataan aikaväli syötteen saamisesta
 siihen hetkeen, kun haluttu tulos on tulostettu käyttäjälle.
 # lähde: ferrari alkusivut? spe-book?
-Nykyaikaisen vuorovaikutteisen sovelluksen suorittaman laskennan ja
-käyttäjän syötteiden vuorottelu voi toki olla vilkasta. Käyttäjän ja
-järjestelmän laskenta voi olla osin päällekkäistäkin. Käyttäjän
-odottamisesta johtuvat viiveet eivät ole osa vasteaikaa, joten
-vuorovaikutukset on jaettava riittävän yksinkertaisiin mitattaviin
-yksiköihin, joissa käyttäjän ja sovelluksen roolit on erotettavissa.
+Toisaalta vuorovaikutteisen sovelluksen suorittaman laskennan ja
+käyttäjän syötteiden vuorottelu voi olla vilkasta. Käyttäjän toiminta
+on usein samanaikaista järjestelmän laskennan kanssa. Käyttäjän
+harkinta- ja reagointiviiveet eivät ole osa vasteaikaa, joten
+vuorovaikutukset on mittausta varten eriteltävä riittävän
+yksinkertaisiin mitattaviin yksiköihin, joissa käyttäjän ja
+sovelluksen roolit on erotettavissa.
 # lähde tuohon
 
-Erilaiset keinot mitata aikaa mittaavat erilaisia osia
+Erilaiset keinot mitata aikaa koskevat erilaisia osia
 kokonaisajasta. Järjestelmän ulkopuoliselle käyttäjälle havainnot ovat
 riippuvaisia todellisesta kuluneesta ajasta, /tosiajasta/ (/real
 time/, /wall clock time/), jota vastaa sekuntikellolla mitattu
@@ -245,12 +245,11 @@ ohjelma--syöte-pari, joten sopivien syötteiden käyttäminen
 mittauksissa on tärkeää @@ferrari(455).
 
 ** Vasteajan jakautuminen
-
 Kokonaisvasteajalla on merkitystä ohjelmiston käyttäjälle sekä
 tulosten lopullisessa validoinnissa. Tarkempi suorituskykyanalyysi
-vaatii tuekseen yksityiskohtaisempia mittauksia. Niiden tavoite on
-purkaa vasteaika osatekijöihin ja tunnistaa ne ohjelman osat, joiden
-suorituksella on kokonaisuuden kannalta suurin vaikutus
+vaatii kuitenkin tuekseen yksityiskohtaisempia mittauksia. Niiden
+tavoite on purkaa vasteaika osatekijöihin ja tunnistaa ne ohjelman
+osat, joiden suorituksella on kokonaisuuden kannalta suurin vaikutus
 @@ferrari(455--456).
 
 Yksittäisen ohjelmiston ajonaikaista käyttäytymistä on
@@ -261,7 +260,7 @@ minimaalisesti, mutta laitteiston tasolla tapahtuvien mikrotason
 tapahtumien havaitseminen on käsitteellisesti kaukana ohjelmiston
 sisäisestä suorituskontekstista @@ferrari(32). Käytännön
 ohjelmistokehityksessä mittauslaitteiden hyödyntäminen ei usein
-ole käytännön syistä mahdollista.
+ole mahdollista.
 #todo: suorituskonteksti hyvä pointti mutta ferrari ei sano tuota suoraan
 
 Mittaustekniikat jakaantuvat menetelmiin, jotka joko /kirjaavat/
@@ -276,16 +275,17 @@ tilasta.
 
 Tyypillinen kirjaamismenetelmä on ohjelman /instrumentointi/:
 suoritettava ohjelma kirjaa mittauksen kohteena olevat tapahtumat
-eksplisiittisillä, ohjelmaan itseensä sisältyvillä käskyillä @@spe(328).
-Keskeinen esimerkki on ohjelman /kutsuprofiilin/ rakentaminen
-laskemalla jokaisen aliohjelman jokainen kutsu. Ohjelman profiilin
-käsitteen loi Donald Knuth @@fortran. Näin tallennetun informaation
-avulla voidaan suorituksen jälkeen tulostaa luettelo jokaisesta
-kutsutusta aliohjelmasta järjestettynä kutsukertojen mukaan. Tämän
-kaltaista instrumentointia ei välttämättä tarvitse ohjelmoida käsin:
-kääntäjä voi lisätä instrumentointikäskyjä kohdeohjelmaan tarvittaessa
-automaattisesti.
+eksplisiittisillä, ohjelmaan itseensä sisältyvillä käskyillä
+@@spe(328).  Keskeinen esimerkki on ohjelman /kutsuprofiilin/
+rakentaminen laskemalla jokaisen aliohjelman jokainen kutsu. Näin
+tallennetun informaation avulla voidaan suorituksen jälkeen tulostaa
+luettelo jokaisesta kutsutusta aliohjelmasta järjestettynä
+kutsukertojen mukaan. Ohjelman profiilin käsitteen loi Donald Knuth
+@@fortran. Tämän kaltaista instrumentointia ei välttämättä tarvitse
+ohjelmoida käsin: kääntäjä voi lisätä instrumentointikäskyjä
+kohdeohjelmaan tarvittaessa automaattisesti.
 #todo profile kutsu vs lausetason?  plus lähde tähän
+# knuth irrallinen > siirrä myöhemmäksi
 
 Näytteenoton tavoite on kerätä ohjelman suoritustiloista edustava
 otanta kirjaamatta jokaista tilanmuutosta ohjelman sisältä käsin.
@@ -303,8 +303,172 @@ vaihtamalla tai ohjelmaa muuten muokkaamalla näitä /kuumia kohtia/
 (/hot spot/) voidaan optimoida -- tai välttää kutsumasta niitä
 ollenkaan.
 
-** Mittaustekniikoiden valitsemisesta
-Tässä mennään.
+** Mittausten toteuttaminen
+Instrumentoitua ohjelmaa voi suorittaa normaalisti samassa
+ympäristössä, jossa tuotantosovellukset tavallisestikin suoritetaan,
+eli Android-laitteessa. Täysipainoinen näytteenotto sen sijaan vaatii
+käyttöjärjestelmältä tukea näytteenoton suorittamiselle tiettyjen
+laitteistokeskeytysten tapahtuessa. Tämä käyttöjärjestelmän toiminto
+pohjautuu laskureihin ja keskeytyksiin, jotka on varta vasten
+sisäänrakennettu suorittimiin. Esimerkiksi ARM-suorittimet voi asettaa
+laskemaan kuluneita prosessorisyklejä, väärin ennustettuja
+suoritushaaroja, muistihakuja sekä muita tapahtumia. Kun valittu
+tapahtumamäärä on ylittynyt, keskeytys käynnistää
+käyttöjärjestelmäytimen mittausrutiinin.
+# todo arm-lähde (virallinen dokkari)
+# todo 
+
+Vaihtoehto normaalin suoritusympäristön käyttämiselle on
+/virtualisointi/, jossa pelkkä sovellus tai koko ohjelmistoympäristö
+käyttöjärjestelmineen suoritetaan ohjelmallisessa
+virtuaalikoneessa. Tällöin virtuaalikoneeseen voi periaatteessa
+ohjelmoida mitä tahansa räätälöityjä mittauksia [fn:vm]. Olen rajannut
+virtualisointimenetelmät tutkielman ulkopuolelle, sillä tavallisessa
+Android-laitteessa tehtävät mittaukset antavat kaikki tarvittavat
+tulokset, ja virtualisoitu suoritusympäristö voi käyttäytymiseltään
+erota todellisista laitteista tavoilla, joiden toteaminen edellyttäisi
+joka tapauksessa mittauksia myös todellisessa ympäristössä [fn:valgrind].
+
+Myös Androidin Java-virtuaalikoneessa Dalvikissa on ohjelmien
+suorituskykyä kirjaavia toimintoja, joiden mittauksiin Androidin
+kehitysympäristön suorituskykytyökalut perustuvat. Dalvik mittaa
+kuitenkin Java-ohjelman osien sekä natiivialiohjelmien suoritusaikoja,
+siinä missä tämän tutkielman tarkoituksena on tutkia Dalvikin itsensä
+suorituskykyä -- Javan natiivirajapinnan toteutus kun on osa
+C++-kielellä ja symbolisella konekielellä toteutettua
+Dalvik-virtuaalikonetta.
+
+Tutkielman mittaukset suoritetaan näytteenottotekniikalla, Linuxin
+/perf/-työkalujen avulla. Android-laitteeseen on asennettu räätälöity
+Linux-ydin joka tukee suorituskykylaskurien käyttöä. Itse mittaukset
+suoritetaan ytimen ulkopuolisilla /perf/-työkaluilla.
+
+[fn:vm] Esimerkki virtualisoinnista on Androidin oma /emulaattori/,
+joka perustuu QEMU-virtuaalikoneeseen. Se on emulaattori, sillä se
+mallintaa Androidin laitteistoarkkitehtuuria eri laitteistolla,
+tavallisella mikrotietokoneella. Valgrind-työkalu, jota tavallisimmin
+käytetään muistinhallinnan virheidenjäljitykseen, tukee myös
+suorituskykyprofilointia. Androidin tapauksessa Valgrind
+käännettäisiin Androidin suoritusympäristöön.
+# lähde !!
+[fn:valgrind] Sovelluksen suorittaminen Valgrind-virtuaalikoneessa on
+merkittävästi normaalia hitaampaa.
+
+
+** Mittaustekniikoiden valintaperusteista
+Eri mittaustekniikoilla on hyvät ja huonot puolensa. Instrumentointi
+ei vaadi minkäänlaista erityistukea järjestelmältä, mutta edellyttää
+kuitenkin instrumentoitavien ohjelmien uudelleen kääntämistä ja usein
+myös niiden muokkaamista käsin. Käsin tai metaohjelmoinnin avulla
+lisätyllä instrumentoinnilla saadaan kirjattua yksityiskohtaisinta
+tietoa ohjelmiston sisäisestä tilasta ja sovellusaluekohtaisesta
+informaatiosta: esimerkiksi siitä, minkä tyyppiset parametrit ovat
+yleisimpiä tietyissä kutsuissa tai mitkä ovat lähetettyjen viestien
+yleisimmät pituudet ja jopa sisällöt. Pelkällä kääntäjän lisäämällä
+ei-sovelluskohtaisella instrumentaatiolla saadaan myös tietoa, jota ei
+muilla tekniikoilla tavoita: jokaisen aliohjelman kutsujen määrä ja
+jokaisen kutsun vasteaika.
+
+Instrumentaatio on kapeasti ymmärrettynä tarkin mittausmenetelmä,
+sillä kaikki kirjattu data on sinänsä eksaktia. Erityisesti
+vasteaikojen suhteen ongelmaksi kuitenkin muodostuu se, että
+insrumentointi aina /häiritsee/ enemmän tai vähemmän suoritettavan
+ohjelman toimintaa. Toisin sanoen ittauskohteena onkin instrumentoitu
+eikä alkuperäinen ohjelma. Jos vasteaikoja mitataan tihein väliajoin
+käyttöjärjestelmäkutsulla, joka palauttaa järjestelmän kellon arvon,
+saattaa tämä kutsu ja sen aiheuttama prosessin tilamuutos vaikuttaa
+ohjelman suoritukseen merkittävästi.
+# pertrubation problem
+# lähteitä ferrari, smith, java vertical profiling?
+
+Toisaalta, jos ohjelmiston suorituskyvyn seuraaminen katsotaan osaksi
+sen normaalia toimintaa, ja instrumentointikäskyt ovat oleellinen osa
+tuontakäytössä suoritettavaa ohjelmistoa, häirinnän ongelma
+katoaa. Tämä lienee käytännöllisintä laajoissa palvelinohjelmistoissa
+-- yksittäisten käyttäjien mobiililaitteissa suoritettavien
+sovellusohjelmien jatkuva suorituskykyseuranta ei usein tule
+kyseeseen, vaan mahdolliset instrumentointikäskyt poistetaan
+tuotantoversiota rakennettaessa.
+
+Häirinnän ongelma on vähäisempi näytteenottotekniikoissa, sillä
+käyttöjärjestelmä keskeyttää ohjelman toiminnan suhteellisen harvoin.
+Näytteenoton aiheuttama häirintä jää tilastollisesti
+pieneksi. Näytteenotossa tutkittavan ohjelmiston tilaa pitää kuitenkin
+tulkita ohjelmiston itsensä ulkopuolelta, joten käytännössä analyysin
+pohjana on suorittimen tila näytteenottohetkellä: käskyosoittimen
+(/program counter/), muiden rekisterien sekä pinon sisällöt.
+
+Pelkän käskyosoittimen käyttöä suorituskykyanalyysin perustana on
+kritisoitu. Käskyosoitinnäytteiden avulla saadaan kyllä selville,
+missä ohjelman osassa suoritin viettää eniten aikaa. Näin on kuitenkin
+vaikea hahmottaa laajempaa suorituskontekstia, joka selittäisi mistä
+eniten suoritusaikaa käyttävää aliohjelmaa on
+kutsuttu. Suorituskykypullonkaulojen syiden merkityksellisempi
+analyysi vaatii lähtökohdakseen oikean abstraktiotason. Käytännössä
+yhden yksittäisen kutsuja aiheuttavan kohdan muuttaminen korkeammalla
+kutsupinossa voi siirtää matalamman tason suorituskriittiset kohdat
+aivan muualle.
+# dunlavey
+
+Tämän vuoksi käyttökelpoinen näytteenotto vaatii kutsupinon
+uudelleenrakentamista pinon sisällöstä otetuista raakanäytteistä.  Nyt
+aliohjelman /A/ kustannuksiin voidaan laskea mukaan kaikki näytteet,
+joiden kutsupinoissa /A/ esiintyy, vaikka näytteen aikana suoritin
+olikin suorittamassa toista aliohjelmaa /C/. Proseduraalisessa
+ohjelmointiparadigmassa on usein mielekästä nähdä aliohjelman /A/
+ilmentämä abstraktio myös sellaisen laskennan syynä, joka tapahtuu
+aliohjelmassa /C/ esimerkiksi kutsuketjun /((A, B), (B, C)/
+välityksellä. Yksinkertaisessa yksisäikeisessä ohjelmassa pääohjelman
+kontolle laskettaisiin siis /kaikki/ suoritus. Käytännössä mielekäs
+abstraktiotaso näytteiden analyysille löytyy jostakin pääohjelman ja
+suoritettavan kohdan väliltä kutsupinosta.
+
+Profilointityökaluissa aliohjelman suoritusaikaa kutsutaan usein
+/inklusiiviseksi/, jos siihen lasketaan mukaan myös aliohjelman
+kutsumien muiden aliohjelmien ajat. Pelkkään käskyosoittimeen
+perustuva raaka suoritusaika on usein nimeltään /self time/.
+# gprof, oprofile, etc.
+
+Näytteenotto ei ole mittausmenetelmänä aivan niin tarkka kuin
+instrumentointi. Suorittimen keskeytyksen laukeamisen jälkeen ohjelman
+suoritus saattaa edetä joitakin konekäskyjä ennen näytteen
+ottamista. Vaikka periaatteessa työkalut saattavat raportoida jopa
+yksittäisten konekäskyjen suhteelliset, inklusiiviset kustannukset,
+kannattaa näihin suhtautua pienellä varauksella. Korkealla
+kutsupinossa olevien aliohjelmien inklusiiviisiin aikoihin tällä
+epätarkkuudella ei ole käytännön merkitystä.
+#oprofile
+
+Käytän tutkielman mittauksiin lähinnä /perf/-työkalun
+näytteenottotekniikkaa, sillä siinä mittauskohteena on mahdollisimman
+paljon tuotantoversiota vastaava sovellus. Näytteenoton avulla ei
+kuitenkaan saada selville aliohjelmakutsujen /määriä/, jotka ovat yksi
+osatekijä käyttämissäni mallinnusmenetelmissä. Kutsumääriä
+kontrolloidaan mahdollisuuksien mukaan mitattavan ohjelman avulla ja
+staattisella ohjelmakoodin analyysilla. /gcc/-kääntäjän automaattista
+instrumentointia käytetään tarvittaessa tähän tarkoitukseen.
+
+** Näytteenoton tilastollinen edustavuus
+Keskeinen kaikenlaisen näytteenoton haaste on taata, että näytteet
+ovat /tilastollisesti edustavia/. Näytteet on on valittava niin, että
+näytejoukkoa tutkimalla voidaan tehdä päätelmiä koko populaatiosta.
+Tämän varmistamiseen on eri menetelmiä. Käskyosoittimen ja 
+# todo: lue tilastotieteen perusteet ja kirjoita em. kappale paremmin
+# =) lol
+# todo tässä
+
+[fn:bar] Toisaalta käyttäjä voi kokea jopa yhtäsuuriksi mitatut
+vasteajat erilaisiksi, jos työn etenemistä osoittava
+käyttöliittymäelementti etenee eri tavalla @@progressbar.
+# todo lue ja varmista että lähde sanoo näin ;)
+
+[fn:gettimeofday] Joissakin laitteistoissa kyseistä Linuxin palvelua
+voi kutsua vähäisellä rasitteella siirtymättä kernelin suoritustilaan.
+# lähde vdso etc.
+
+* Arkkitehtuurin mallintaminen 
+
+
 
 # todo vanhaa tekstiä tästä alaspäin ---------===========----
 # Suoritusajan analysoimiseksi ohjelma on jaettava joukkoon erillisiä
@@ -322,16 +486,6 @@ Tässä mennään.
 # kokonaissuorituskertoineen on ohjelman /profiili/ @@fortran(todo
 # sivu).
 
-[fn:bar] Toisaalta käyttäjä voi kokea jopa yhtäsuuriksi mitatut
-vasteajat erilaisiksi, jos työn etenemistä osoittava
-käyttöliittymäelementti etenee eri tavalla @@progressbar.
-# todo lue ja varmista että lähde sanoo näin ;)
-
-[fn:gettimeofday] Joissakin laitteistoissa kyseistä Linuxin palvelua
-voi kutsua vähäisellä rasitteella siirtymättä kernelin suoritustilaan.
-# lähde vdso etc.
-
-* Arkkitehtuurin mallintaminen 
 #Seuraavaksi käyn läpi arkkitehtuurin vaikutuksia ohjelmiston
 #suorituskykyyn ja ohjelmiston mallintamista tästä näkökulmasta.
 #Mallintamisesta edetään mittaustekniikoihin ja periaatteisiin, joilla
@@ -446,8 +600,9 @@ Markov-ketjuilla.
 
 
 * Tehtäviä                                                         :noexport:
+** TODO [#A] mainitse tilavaativuus
+** TODO [#B] käsittele lyhyesti (max 2 kpl) O-algoritmianalyysi?
 ** TODO CPU time vs. other time: viittaa mittausten yhteydessäa
-** TODO käsittele lyhyesti (max 2 kpl) O-algoritmianalyysi?
 ** TODO ferrari luku 5.2.3 objektiivisuus?? mikä tämä oli
 ** Aliluvut
 *** Työkuorman mallintaminen                                       :noexport:
