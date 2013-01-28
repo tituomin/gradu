@@ -1,8 +1,8 @@
 
 Riittävä suorituskyky on keskeinen laatuvaatimus mille tahansa
-ohjelmistolle, mutta millä tavalla suorituskykyvaatimukset tulisi
-ottaa huomioon ohjelmiston kehitysprosessissa? Ohjelmistotekniikan
-kirjallisuudessa kysymykseen on vastattu hyvin eri tavoin.
+ohjelmistolle, mutta millä tavalla suorituskyky tulisi ottaa huomioon
+ohjelmiston kehitysprosessissa? Ohjelmistotekniikan kirjallisuudessa
+kysymykseen on vastattu hyvin eri tavoin.
 
 * Suorituskyvyn saavuttaminen
 
@@ -217,6 +217,15 @@ kriittisiä.
 # todo tarkista onko androidissa tarkka userspace gettimeofday (arm)
 # todo tosiaika?
 
+[fn:bar] Toisaalta käyttäjä voi kokea jopa yhtäsuuriksi mitatut
+vasteajat erilaisiksi, jos työn etenemistä osoittava
+käyttöliittymäelementti etenee eri tavalla @@progressbar.
+# todo lue ja varmista että lähde sanoo näin ;)
+
+[fn:gettimeofday] Joissakin laitteistoissa kyseistä Linuxin palvelua
+voi kutsua vähäisellä rasitteella siirtymättä kernelin suoritustilaan.
+# lähde vdso etc.
+
 Tässä tutkielmassa kaikki suorituskykyä parantavat ratkaisut tähtäävät
 /oleellisten käyttötapausten lyhentyneeseen vasteaikaan tosiaikana
 mitattuna/. Tarkemman suorituskykyanalyysin kannalta pelkkä tosiajan
@@ -311,7 +320,7 @@ käyttöjärjestelmältä tukea näytteenoton suorittamiselle tiettyjen
 laitteistokeskeytysten tapahtuessa. Tämä käyttöjärjestelmän toiminto
 pohjautuu laskureihin ja keskeytyksiin, jotka on varta vasten
 sisäänrakennettu suorittimiin. Esimerkiksi ARM-suorittimet voi asettaa
-laskemaan kuluneita prosessorisyklejä, väärin ennustettuja
+laskemaan kuluneita suoritinsyklejä, väärin ennustettuja
 suoritushaaroja, muistihakuja sekä muita tapahtumia. Kun valittu
 tapahtumamäärä on ylittynyt, keskeytys käynnistää
 käyttöjärjestelmäytimen mittausrutiinin.
@@ -373,7 +382,7 @@ Instrumentaatio on kapeasti ymmärrettynä tarkin mittausmenetelmä,
 sillä kaikki kirjattu data on sinänsä eksaktia. Erityisesti
 vasteaikojen suhteen ongelmaksi kuitenkin muodostuu se, että
 insrumentointi aina /häiritsee/ enemmän tai vähemmän suoritettavan
-ohjelman toimintaa. Toisin sanoen ittauskohteena onkin instrumentoitu
+ohjelman toimintaa. Toisin sanoen mittauskohteena onkin instrumentoitu
 eikä alkuperäinen ohjelma. Jos vasteaikoja mitataan tihein väliajoin
 käyttöjärjestelmäkutsulla, joka palauttaa järjestelmän kellon arvon,
 saattaa tämä kutsu ja sen aiheuttama prosessin tilamuutos vaikuttaa
@@ -449,27 +458,65 @@ staattisella ohjelmakoodin analyysilla. /gcc/-kääntäjän automaattista
 instrumentointia käytetään tarvittaessa tähän tarkoitukseen.
 
 ** Näytteenoton tilastollinen edustavuus
-Keskeinen kaikenlaisen näytteenoton haaste on taata, että näytteet
-ovat /tilastollisesti edustavia/. Näytteet on on valittava niin, että
-näytejoukkoa tutkimalla voidaan tehdä päätelmiä koko populaatiosta.
-Tämän varmistamiseen on eri menetelmiä. Käskyosoittimen ja 
+Kaikenlaisessa näytteenotossa on varmistettava, että otanta on
+/tilastollisesti edustava/: rajattua otosta tutkimalla on voitava
+tehdä päätelmiä koko perusjoukosta. Tässä tapauksessa haluamme
+päätellä rajallisen ajanhetkijoukon avulla (otos), miten
+käskyosoittimen ja kutsupinon arvot jakautuvat ohjelman koko
+suoritusajalle (perusjoukko). Tämä varmistetaan suorittimen
+suorituskykylaskureihin perustuvassa näytteenotossa /systemaattisen
+otannan/ menetelmällä. Siinä jokaisella ajanhetkellä on sama
+todennäköisyys tulla valituksi otantaan, sillä näyte otetaan
+systemaattisesti tasaisin väliajoin, ja mittaus aloitetaan
+satunnaisella ajanhetkellä. Tällöin eri ajanhetkien mittausarvoja ei
+tarvitse painottaa suhteesssa toisiinsa.
 # todo: lue tilastotieteen perusteet ja kirjoita em. kappale paremmin
-# =) lol
-# todo tässä
+# =) lol wikipediasta käsitteet systemaattinen ja 
+# todo systemattinen: lähde wikipedia
+# ferrari 57-59
 
-[fn:bar] Toisaalta käyttäjä voi kokea jopa yhtäsuuriksi mitatut
-vasteajat erilaisiksi, jos työn etenemistä osoittava
-käyttöliittymäelementti etenee eri tavalla @@progressbar.
-# todo lue ja varmista että lähde sanoo näin ;)
+Systemaattisessa jaksollisessa näytteenottossa saattaa tapahtua
+erilaisia suunnitteluvirheitä, joiden seurauksena tietyt ajanhetket
+valitaan otokseen todennäköisemmin kuin toiset. Jos tutkittavassa
+prosessissa on jokin jaksollisesti toistuva ilmiö, jonka kanssa
+näytteenoton jakso sattuu synkronoitumaan, tulokset
+vääristyvät. Esimerkiksi tutkittavassa järjestelmässä saattaa olla
+käytössä järjestelmän kelloon perustuvia keskeytyksiä, jotka
+laukaisevat tiettyjä toimintoja. Huonosti valitulla
+näytteenottojaksolla nämä toiminnot yli- tai alikorostuvat
+mittauksissa.
 
-[fn:gettimeofday] Joissakin laitteistoissa kyseistä Linuxin palvelua
-voi kutsua vähäisellä rasitteella siirtymättä kernelin suoritustilaan.
-# lähde vdso etc.
+Näytteenoton toteutustavassa saattaa myös olla sisäänrakennettuja
+seurausvaikutuksia, joiden takia mittaus jo lähtökohtaisesti painottaa
+tiettyjä ajanhetkiä. Koska haluamme tutkia suorittimen tilaa
+/tosiajassa/, on varmistuttava, että näytteet jakautuvat tasaisesti
+tosiajan suhteen. Esimerkiksi monet yleisesti käytetyt Java-profilointityökalut
+kykenevät saamaan näytteitä ainoastaan ohjelman ns. luovutuskohdista
+(/yield point/), eivät mistä tahansa suorituskohdasta @@java-acc(193).
 
+Tutkielman mittauksissa näytteenotto tapahtuu aina kun ARM-suorittimen
+suoritinsyklejä on tapahtunut ennalta valittu määrä (tapahtuma
+~CPU_CYCLES~). Android-laitteen suorittimen kellotaajuus (syklien
+määrä sekunnissa) ei kuitenkaan tyypillisesti ole vakio, vaan mukautuu
+laskentatarpeeseen. Mittauksissa on siis erikseen asetettava
+suorittimen kellotaajuus vakioksi, etteivät suuren kellotaajuuden
+ajanhetket ylikorostuisi.
+# 5 tehdä tilaa, väistyä (liikenteessä)
+# yield up
+# 1 luovuttaa, luopua
+# liitä viite arm-dokkariin
+
+Kannattaa huomata, että otannan ei tarvitse olla satunnainen:
+systemaattinen jaksollinen otanta riittää, kunhan on varmistuttu
+siitä, ettei perusjoukko sisällä jaksollisia ilmiöitä. Oletamme tässä
+tutkielmassa, ettei mitattava järjestelmä sisällä jaksoja, jotka
+asettuisivat yksiin täsmälleen /n/ suoritinsyklin kuluttaman
+ajanjakson kanssa. Varmistumme tästä suorittamalla useita mittauksia,
+joista jokainen alkaa satunnaisella ajanhetkellä, ja vaihtelemme
+mitattavaa syklimäärä.
+
+# todo: analysoi linuxin timeria ja schedulointia..
 * Arkkitehtuurin mallintaminen 
-
-
-
 # todo vanhaa tekstiä tästä alaspäin ---------===========----
 # Suoritusajan analysoimiseksi ohjelma on jaettava joukkoon erillisiä
 # /tiloja/, joista ohjelman suoritus on yksikäsitteisesti yhdessä
@@ -485,11 +532,6 @@ voi kutsua vähäisellä rasitteella siirtymättä kernelin suoritustilaan.
 # (/program trace/) @@ferrari(458). Luettelo kustakin lauseesta
 # kokonaissuorituskertoineen on ohjelman /profiili/ @@fortran(todo
 # sivu).
-
-#Seuraavaksi käyn läpi arkkitehtuurin vaikutuksia ohjelmiston
-#suorituskykyyn ja ohjelmiston mallintamista tästä näkökulmasta.
-#Mallintamisesta edetään mittaustekniikoihin ja periaatteisiin, joilla
-#saadaan malleja vastaavia mittaustuloksia.
 
 
 # Performance depends largely upon the
