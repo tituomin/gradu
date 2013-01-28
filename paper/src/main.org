@@ -13,12 +13,12 @@
 * Johdanto
 #+INCLUDE: "../gen/chapters/intro.org" :minlevel 1
 
+* Yleiskatsaus Android-järjestelmään
+#+INCLUDE: "../gen/chapters/android_summary.org" :minlevel 1
 * Suorituskyky ohjelmistokehityksessä
 #+INCLUDE: "../gen/chapters/performance.org" :minlevel 1
-
-* Android-käyttöjärjestelmä
+* Dalvikin natiivirajapinta
 #+INCLUDE: "../gen/chapters/android.org" :minlevel 1
-
 * Androidin natiivikielinen ohjelmointi                            :noexport:
 * Esimerkkisovelluksen tausta                                      :noexport:
 * Tulokset                                                         :noexport:

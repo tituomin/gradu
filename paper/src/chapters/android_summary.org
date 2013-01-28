@@ -1,0 +1,38 @@
+Annan aluksi lyhyen yleiskuvauksen Android-järjestelmästä ennen
+siirtymistä tutkielman varsinaiseen aiheeseen, suorituskyvyn
+mittaamiseen ja mallintamiseen sekä Javan natiivirajapintaan.
+
+Android on Linuxiin perustuva mobiilikäyttöjärjestelmä, joka käyttää
+omaa versiotaan Linux-käyttö\-jär\-jes\-tel\-mä\-y\-ti\-mes\-tä. Siinä
+on mukana joitakin mobiililaitteille räätälöityjä ominaisuuksia, jotka
+esimerkiksi vähentävät muistin- ja virrankulutusta.
+
+Käyttöjärjestelmäytimen ulkopuolinen Android ei muistuta tyypillistä
+Linux-pohjais\-ta työpöytäkäyttöjärjestelmää. Se on läheisempää sukua
+/upotetuille/ Linux-järjestelmille, mutta eroaa niistäkin ja onkin
+rakennettu suurelta osin puhtaalta pöydältä. Seuraava kuva esittää
+Android-järjestelmän perusosia.
+
+# todo tähän kaavio luultavasti embedded androidista
+# todo määrittele upotettu
+
+Kuvan arkkitehtuurin kerroksista ylimpänä olevat ovat lähimpänä
+käyttäjää. Suurin osa Android-sovelluksista ohjelmoidaan Javalla
+Androidin sovelluskehyksen ohjelmointirajapintaa
+käyttäen. Ohjelmointirajapinnan ~android~-nimiavaruuden paketit ovat
+varta vasten Androidia varten rakennettu, ja ne päästävät ohjelmoijan
+käsiksi käyttöjärjestelmän ja laitteiston palveluihin. Nimiavaruuden
+~java~ ohjelmointirajapinta on peräisin /Apache Harmony/ -projektista,
+joka on avoimen lähdekoodin toteutus /Java Standard Edition/
+-rajapinnasta (Java SE).
+
+Kaikki Java-ohjelmakoodi Androidissa suoritetaan
+Dalvik-virtuaalikoneessa. Tähän lukeutuvat sekä sovellusohjelmat että
+ohjelmointirajapintojen sisäiset toteutukset -- siltä osin kun ne on
+toteutettu Javalla.
+
+Android tukee lähtökohtaisesti
+# binder : jokainen jvm omassa prosessissaan!
+# system services
+# jni
+
