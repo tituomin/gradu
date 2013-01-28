@@ -1,38 +1,77 @@
 Annan aluksi lyhyen yleiskuvauksen Android-järjestelmästä ennen
 siirtymistä tutkielman varsinaiseen aiheeseen, suorituskyvyn
-mittaamiseen ja mallintamiseen sekä Javan natiivirajapintaan.
+mittaamiseen ja mallintamiseen sekä Androidin Java-natiivirajapintaan.
 
-Android on Linuxiin perustuva mobiilikäyttöjärjestelmä, joka käyttää
-omaa versiotaan Linux-käyttö\-jär\-jes\-tel\-mä\-y\-ti\-mes\-tä. Siinä
-on mukana joitakin mobiililaitteille räätälöityjä ominaisuuksia, jotka
+Android on mobiilikäyttöjärjestelmä, joka käyttää omaa versiotaan
+Linux-käyttö\-jär\-jes\-tel\-mä\-y\-ti\-mes\-tä. Siinä on mukana
+joitakin mobiililaitteille räätälöityjä ominaisuuksia, jotka
 esimerkiksi vähentävät muistin- ja virrankulutusta.
 
 Käyttöjärjestelmäytimen ulkopuolinen Android ei muistuta tyypillistä
-Linux-pohjais\-ta työpöytäkäyttöjärjestelmää. Se on läheisempää sukua
-/upotetuille/ Linux-järjestelmille, mutta eroaa niistäkin ja onkin
-rakennettu suurelta osin puhtaalta pöydältä. Seuraava kuva esittää
-Android-järjestelmän perusosia.
+Linux-pohjais\-ta työpöytä- tai palvelinkäyttöjärjestelmää. Se on
+läheisempää sukua /upotetuille/ Linux-järjestelmille, mutta eroaa
+niistäkin ja on rakennettu suurelta osin puhtaalta pöydältä. Seuraava
+kuva esittää Android-järjestelmän perusosia.
 
 # todo tähän kaavio luultavasti embedded androidista
 # todo määrittele upotettu
 
-Kuvan arkkitehtuurin kerroksista ylimpänä olevat ovat lähimpänä
+Kuvan arkkitehtuurikerroksista ylimmät ovat lähimpänä
 käyttäjää. Suurin osa Android-sovelluksista ohjelmoidaan Javalla
 Androidin sovelluskehyksen ohjelmointirajapintaa
 käyttäen. Ohjelmointirajapinnan ~android~-nimiavaruuden paketit ovat
-varta vasten Androidia varten rakennettu, ja ne päästävät ohjelmoijan
+varta vasten Androidia varten rakennettuja. Ne päästävät ohjelmoijan
 käsiksi käyttöjärjestelmän ja laitteiston palveluihin. Nimiavaruuden
 ~java~ ohjelmointirajapinta on peräisin /Apache Harmony/ -projektista,
 joka on avoimen lähdekoodin toteutus /Java Standard Edition/
 -rajapinnasta (Java SE).
 
-Kaikki Java-ohjelmakoodi Androidissa suoritetaan
-Dalvik-virtuaalikoneessa. Tähän lukeutuvat sekä sovellusohjelmat että
-ohjelmointirajapintojen sisäiset toteutukset -- siltä osin kun ne on
-toteutettu Javalla.
+Kaikki Java-ohjelmakoodi käännetään Androidia varten ensin normaaliksi
+tavukoodiksi ja siitä Androidin omaksi rekisteripohjaiseksi
+~dex~-tavukoodiksi, jota suorittaa Dalvik-virtuaalikone. Dalvikissa
+suoritetaan sekä sovellusohjelmat että järjestelmän sisäiset
+komponentit -- siltä osin kun ne on toteutettu Javalla.
 
-Android tukee lähtökohtaisesti
+Android on alusta lähtien suunniteltu tukemaan moniajoa. Jokaista
+Android-sovellusta suoritetaan omassa virtuaalikoneessaan ja jokaista
+virtuaalikonetta omassa Linux-prosessissaan. Tällä tavoin sovellukset
+on eristetty omiin hiekkalaatikoihinsa, ja esimerkiksi sovellusten
+käyttöoikeuksista voidaan pitää kirjaa prosessitasolla.
+
+Androidin käyttöjärjestelmän tarjoamat tukitoiminnot on toteutettu
+kahtena erityisenä palvelukomponenttina, joita järjestelmä suorittaa
+kahdessa erillisessä prosessissa. Tavallisesti sovellusohjelmoija ei
+kutsu näitä tukipalveluita suoraan, vaan
+Android-ohjelmointirajapintojen sisäiset toteutukset kutsuvat niitä
+Androidin prosessienvälisen kutsumekanismin /Binder/:in avulla
+sovelluksen prosessista käsin.
+# todo check kahdessa
+
+Suurin osa näistä tukipalveluista kuuluu /System Server/
+-komponenttiin, jonka sisältämistä palveluista suurin osa on
+toteutettu Javalla. Nämä siis suoritetaan omassa
+Dalvik-virtuaalikoneessa. Laitteistoa hyödyntävät palvelut kutsuvat
+puolestaan järjestelmän alempia natiivikerroksia Dalvikin kautta Java
+Native Interface -natiivirajapinnan avulla.
+# emvbedded system services
+
+En tässä tutkielmassa käsittele tarkemmin Androidin matalamman tason
+komponentteja. Tiivistetysti voidaan sanoa, että Android on
+Linux-ytimen päälle rakennettu olioparadigmaa noudattava
+käyttöjärjestelmä. Järjestelmän toiminnoista valtaosa on toteutettu
+järjestelmäpalveluina ja sidottu toisiinsa sekä sovelluksiin
+Binder-kutsumekanismilla. Muut käyttöjärjestelmän osat toimivat tukena
+tälle suurelta osin Java-ympäristöön perustuvalle järjestelmälle.
+
+# mainitse ndk:n stable apit??
+
+#Java-writ­ten sys­tem ser­vices, for in­stance, very often use JNI to
+#com­mu­ni­cate with match­ing na­tive code that in­ter­faces with a
+#given ser­vice's cor­re­spond­ing hard­ware.
+# lähteestä embedded android
+
 # binder : jokainen jvm omassa prosessissaan!
 # system services
 # jni
+# tsekkaa toimiiko system server omassa yhdessä dalvikissa
 
