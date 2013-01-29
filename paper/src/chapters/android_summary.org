@@ -1,24 +1,32 @@
+
 Annan aluksi lyhyen yleiskuvauksen Android-järjestelmästä ennen
 siirtymistä tutkielman varsinaiseen aiheeseen, suorituskyvyn
 mittaamiseen ja mallintamiseen sekä Androidin Java-natiivirajapintaan.
 
-Android on mobiilikäyttöjärjestelmä, joka käyttää omaa versiotaan
+Android on mobiilikäyttöjärjestelmä, jossa on oma versionsa
 Linux-käyttö\-jär\-jes\-tel\-mä\-y\-ti\-mes\-tä. Siinä on mukana
 joitakin mobiililaitteille räätälöityjä ominaisuuksia, jotka
 esimerkiksi vähentävät muistin- ja virrankulutusta.
 
-Käyttöjärjestelmäytimen ulkopuolinen Android ei muistuta tyypillistä
-Linux-pohjais\-ta työpöytä- tai palvelinkäyttöjärjestelmää. Se on
-läheisempää sukua /upotetuille/ Linux-järjestelmille, mutta eroaa
-niistäkin ja on rakennettu suurelta osin puhtaalta pöydältä. Seuraava
-kuva esittää Android-järjestelmän perusosia.
+Kokonaisuutena Android ei muistuta tyypillistä Linux-pohjais\-ta
+työpöytä- tai palvelinkäyttöjärjestelmää. Se on läheisempää sukua
+/upotetuille/ Linux-järjestelmille, mutta eroaa niistäkin: ensinnäkin
+merkittävä osa sovelluksista ja koko järjestelmästä on ohjelmoitu
+Javalla ja suoritetaan virtuaalikoneessa. Järjestelmän rakenne ei
+muutenkaan noudata esimerkiksi POSIX-standardia vaan perustuu
+hajautettuun komponenttiarkkitehtuuriin, joka on nimeltään /Binder/.
+Binder-arkkitehtuurin infrastruktuuri, Dalvik-virtuaalikone sekä
+suuri osa järjestelmän matalamman tason palveluista on toteutettu
+C++-kielellä.
+
+Seuraava kuva esittää Android-järjestelmän perusosia.
 
 # todo tähän kaavio luultavasti embedded androidista
 # todo määrittele upotettu
 
-Kuvan arkkitehtuurikerroksista ylimmät ovat lähimpänä
-käyttäjää. Suurin osa Android-sovelluksista ohjelmoidaan Javalla
-Androidin sovelluskehyksen ohjelmointirajapintaa
+Kuvan arkkitehtuurikerroksista ylimmät ovat lähimpänä käyttäjää ja
+sovellusohjelmoijaa. Suurin osa Android-sovelluksista ohjelmoidaan
+Javalla Androidin sovelluskehyksen ohjelmointirajapintaa
 käyttäen. Ohjelmointirajapinnan ~android~-nimiavaruuden paketit ovat
 varta vasten Androidia varten rakennettuja. Ne päästävät ohjelmoijan
 käsiksi käyttöjärjestelmän ja laitteiston palveluihin. Nimiavaruuden
@@ -38,30 +46,58 @@ virtuaalikonetta omassa Linux-prosessissaan. Tällä tavoin sovellukset
 on eristetty omiin hiekkalaatikoihinsa, ja esimerkiksi sovellusten
 käyttöoikeuksista voidaan pitää kirjaa prosessitasolla.
 
-Androidin käyttöjärjestelmän tarjoamat tukitoiminnot on toteutettu
-kahtena erityisenä palvelukomponenttina, joita järjestelmä suorittaa
-kahdessa erillisessä prosessissa. Tavallisesti sovellusohjelmoija ei
-kutsu näitä tukipalveluita suoraan, vaan
+Android-ohjelmointirajapinnan luokat antavat sovellusohjelmoijalle
+yksinkertaisen näkymän käyttöjärjestelmän palveluihin. Valtaosa
+palveluiden varsinaisesta toteutuksesta kuuluu kuitenkin Androidin
+/järjestelmäpalveluihin/ (/system services/), komponentteihin joita
+järjestelmä suorittaa omissa palvelinprosesseissaan. Yleensä
+sovellusohjelmoija ei kutsu näitä tukipalveluita suoraan, vaan
 Android-ohjelmointirajapintojen sisäiset toteutukset kutsuvat niitä
-Androidin prosessienvälisen kutsumekanismin /Binder/:in avulla
+Binderin tarjoaman prosessienvälisen kutsumekanismin avulla
 sovelluksen prosessista käsin.
-# todo check kahdessa
 
-Suurin osa näistä tukipalveluista kuuluu /System Server/
--komponenttiin, jonka sisältämistä palveluista suurin osa on
-toteutettu Javalla. Nämä siis suoritetaan omassa
-Dalvik-virtuaalikoneessa. Laitteistoa hyödyntävät palvelut kutsuvat
-puolestaan järjestelmän alempia natiivikerroksia Dalvikin kautta Java
-Native Interface -natiivirajapinnan avulla.
+Javan natiivirajapinta JNI on laajasti käytössä eri tasoilla Androidin
+arkkitehtuurissa. JNI esitellään tarkemmin luvussa 3. Voimme kuitenkin
+jo nyt havaita, että JNI:tä hyödynnetään paljon, kun Java-koodista on
+kutsuttava matalamman arkkitehtuuritason natiiveja kirjastoja.
+# todo sisäinen viite
+
+Osa Androidin järjestelmäpalveluista on toteutettu Java-kielellä ja
+osa C++-kielellä. Itse Binder-kutsumekanismin toteutus on
+C++-kielinen, mutta Android sisältää myös Java-rajapinnat Binderin
+käyttöön. Sisäisesti nämä Javan Binder-sidonnat on toteutettu Javan
+natiivirajapinnan avulla. Niin ikään monet Javalla toteutetut
+järjestelmäpalvelut kutsuvat itse natiivikirjastoja JNI:n kautta. Jopa
+monet Android-ohjelmointirajapinnan luokat kutsuvat natiivikirjastoja
+suoraan JNI:n avulla ohittaen järjestelmäpalvelutason: esimerkiksi
+~Log~-luokka kutsuu suoraan ~liblog~-natiivikirjastoa.
+# lähde: binder.pdf
+
+Järjestelmäpalveluita matalammalla olevia arkkitehtuuritasoja ei tässä
+käsitellä sen tarkemmin. Mainittakoon kuitenkin, että Androidin Native
+Development Kit -työkalut sisältävät rajapinnat pieneen osajoukkoon
+natiivikirjastojen toiminnoista tavallisten C- ja
+C++-otsaketiedostojen kautta. Näitä dynaamisesti linkitettyjä
+natiivikirjastoja voi siis kutsua suoraan tavallisilla
+aliohjelmakutsuilla natiiviohjelmasta käsin. Androidin Binderiin
+perustuvaan komponenttiarkkitehtuuriin ei natiiviohjelmoija kuitenkaan
+pääse käsiksi. Natiivityökalujen ulottumattomiin jääkin suurin osa
+Androidin laajasta toiminnallisuudesta, mutta esimerkiksi
+peliohjelmointia varten NDK:n natiivirajapinnat ovat riittäviä. Ne
+sisältävät esimerkiksi tuen OpenGL- ja bittikarttagrafiikalle, ääni-
+ja multimediatoimintoja sekä valmiudet laitteen sensorien lukemiseen.
+
+# todo check C - *ja* C++??
+# todo check dynamic linking
 # emvbedded system services
 
-En tässä tutkielmassa käsittele tarkemmin Androidin matalamman tason
-komponentteja. Tiivistetysti voidaan sanoa, että Android on
-Linux-ytimen päälle rakennettu olioparadigmaa noudattava
-käyttöjärjestelmä. Järjestelmän toiminnoista valtaosa on toteutettu
-järjestelmäpalveluina ja sidottu toisiinsa sekä sovelluksiin
-Binder-kutsumekanismilla. Muut käyttöjärjestelmän osat toimivat tukena
-tälle suurelta osin Java-ympäristöön perustuvalle järjestelmälle.
+# Tiivistetysti voidaan sanoa, että Android on Linux-ytimen päälle
+# rakennettu hajautettuihin olioparadigmaa noudattaviin komponentteihin
+# perustuva käyttöjärjestelmä. Järjestelmän toiminnoista valtaosa on
+# toteutettu järjestelmäpalveluina ja sidottu toisiinsa sekä
+# sovelluksiin Binder-kutsumekanismilla. Muut käyttöjärjestelmän osat
+# toimivat tukena tälle suurelta osin Java-ympäristöön perustuvalle
+# järjestelmälle.
 
 # mainitse ndk:n stable apit??
 
