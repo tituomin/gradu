@@ -197,6 +197,13 @@ dvm-kutsuja? (siirrä dvm-osapuoli myös natiiviksi?)
 
 *** suorituskyky
 
+@book {javaplatform,
+ title = {Java Platform Performance: Strategies and Tactics},
+ file = {http://web.archive.org/web/20060820211453/http://java.sun.com/docs/books/performance/}
+}
+
+-waybackmachine 
+
 @article{todo,
   author = {T, T and O, O and D, D},
   title = {Todo},
@@ -420,7 +427,6 @@ file={01667162.pdf}
  file = {phelps.pdf}
 } 
 
-
 ** ehkä päälähteet
 
 @ARTICLE{1291833, 
@@ -527,7 +533,7 @@ http://www.ibm.com/developerworks/rational/library/4169.html
 - dalvikista ja jitistä
 - muuten ok
 
-@inproceedings{Hirzel:2007:JGJ:1297027.1297030,
+@inproceedings{jeannie,
  author = {Hirzel, Martin and Grimm, Robert},
  title = {Jeannie: granting java native interface developers their wishes},
  booktitle = {Proceedings of the 22nd annual ACM SIGPLAN
@@ -570,9 +576,46 @@ http://www.ibm.com/developerworks/rational/library/4169.html
  xtc},
  file = {p19-hirzel.pdf},
 }
+# sivu 19
+# Higher-level languages must interface with lower-level lan-
+# guages, typically C, to access platform functionality, reuse
+# legacy libraries, and improve efficiency. For example, most
+# Java programs execute native code, since several methods
+# of even class Object at the root of Java’s class hierarchy
+# are written in C. Foreign-function interfaces (FFIs) accom-
+# plish this task, providing access to C code and data from
+# higher-level languages and vice versa. For example, a Java
+# project can reuse a high-performance C library for binary
+# decision diagrams (BDDs) through the Java Native Inter-
+# face [38] (JNI), which is the standard FFI for Java.
+# FFI designs aim for productivity, safety, portability, and
+# efficiency. Unfortunately, these goals are often at odds. For
+# instance, Sun’s original FFI for Java, the Native Method In-
+# terface [52, 53] (NMI), directly exposed Java objects as C
+# structs and thus provided simple and fast access to object
+# fields. However, this is unsafe, since C code can violate Java
+# types, notably by storing an object of incompatible type in a
+# field. Furthermore, it constrains garbage collectors and just-
+# in-time compilers, since changes to the data representation
+# may break native code. In fact, NMI required a conserva-
+# tive garbage collector because direct field access prevents
+# the Java virtual machine (JVM) from tracking references in
+# native code. Finally, native code that depends on a virtual
+# machine’s object layout is hard to port to other JVMs.
+# In contrast to the Native Method Interface, the Java Na-
+# tive Interface is well encapsulated. As a result, C code is
+# easily portable while also permitting efficient and differing
+# Java virtual machine implementations. But JNI’s reflection-
+# like API requires verbose boiler-plate code, which reduces
+# productivity when writing and maintaining native code. Fur-
+# thermore, it is still unsafe—typing errors cannot be checked
+# statically, nor does the JNI specification require dynamic
+# checks. It is also less efficient than unportable FFIs that ex-
+# pose language implementation details.
+
 
 - jni peruslähde
-*** lainaukset
+- lainaukset
     Of course, JNI itself represents only one point in the
     design space of foreign function interfaces (FFIs). As dis-
     cussed in detail in [46], FFIs provide both mechanism and
@@ -730,7 +773,7 @@ file={00469759.pdf}
 (compared to around two million lines of Java code).
 
 
-@inproceedings{Reppy:2006:AFG:1173706.1173714,
+@inproceedings{reppy,
  author = {Reppy, John and Song, Chunyan},
  title = {Application-specific foreign-interface generation},
  booktitle = {Proceedings of the 5th international conference on
@@ -1224,6 +1267,8 @@ doi={},
 ISSN={},
 file={05669738.pdf}
 }
+
+- vaikuttaa hyvältä!
 
 @INPROCEEDINGS{5718811, 
 author={Kundu, T.K. and Paul, K.}, 

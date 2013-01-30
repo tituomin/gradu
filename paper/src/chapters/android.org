@@ -1,22 +1,116 @@
 
-Googlen Android on Linux-pohjainen moniajokäyttöjärjestelmä
-mobiililaitteille [fn:version].
+Kaikki Android-järjestelmään asennettavat tavalliset sovellukset
+suoritetaan Dalvik-virtuaalikoneessa, vaikka ne sisältäisivätkin
+natiivikomponentteja. Toki sovelluksen voisi periaatteessa ohjelmoida
+vaikkapa C-kielellä komentoriviltä käynnistettäväksi ohjelmaksi ja
+kääntää Android-käyttöjärjestelmän sisäisten rakennuskomentosarjojen
+avulla osaksi itse käyttöjärjestelmää, mutta tällainen sovellus jäisi
+Androidin normaalin julkaisu- ja asennusprosessin ulkopuolelle ja
+siten käyttäjien ulottumattomiin.
+# todo: tarkista native activity
 
-[fn:version] Tämä tutkielma perustuu Androidin versioon 4.1.2.
+Tehtyjen tutkimusten mukaan natiivikomponenttien käytöstä todella on
+suorituskykyhyötyä joissakin tilanteissa: korkean tason kielenä Javan
+suoritusmekanismiin jää väistämättä rasitteita verrattuna suoraan
+konekielellä suoritettavaan ohjelmaan. Miten siis korkean tason
+kielestä on mahdollista siirtyä suorittamaan konekielistä ohjelmaa?
+# todo tähän kerää kaikki mittaukset aiheesta
 
-* Järjestelmän kokonaisarkkitehtuuri
+* Java Native Interface ja vieraskutsurajapinnat
+/Vieraskutsurajapinta/ (/Foreign Function Interface/) on rajapinta,
+jonka kautta korkean tason ohjelmointikielestä käsin voidaan kutsua
+matalamman tason kielellä ohjelmoituja aliohjelmia. Java Native
+Interface on tällaisen vieraskutsurajapinnan spesifikaatio. Sen avulla
+Java-ohjelma voi kutsua C- tai C++-kielellä toteutettuja /natiiveja/
+aliohjelmia ja vastaavasti natiiviohjelma voi kutsua Java-ohjelman
+metodeita. Tässä yhteydessä kielten luokittelu matalan ja korkean
+tason kieliin ei perustu kielen abstraktiomekanismien ilmaisuvoimaan
+vaan kielen toteutustapaan: Java on korkean tason kieli, sillä
+Java-ohjelmia suoritetaan välikielen muodossa abstraktissa
+virtuaalikoneessa eikä suoraan "matalamman" tason konekielelle
+käännettynä.
 
-* Dalvik-virtuaalikone
-
-* Java Native Interface
-
-** Vieraskutsurajapinnat
+Vieraskutsurajapinnan toteutuksen on aina huolehdittava seuraavista
+tehtävistä:
+- kielten erilaisten kutsukäytäntöjen yhteensovittamisesta,
+- kutsuparametrien sekä palautusarvojen muuntamisesta lähdekielen
+  tyypeistä kohdekielen hyödynnettävissä olevaan muotoon.
+ 
+Javan kaltaisen automaattista muistinhallintaa käyttävän kielen
+tapauksessa vieraskutsurajapinnan on lisäksi varmistettava, että 
+# todo here  
+  
+#lähteet jeannie ja reppy
 
 ** JNI:n tavoitteet
 
 ** Natiivirajapinnan käyttö
 
 *** Rajapintaoperaatiot
+
+* Dalvik-virtuaalikone
+Javalla ohjelmoidun Android-sovelluksen matka suoritettavaksi
+ohjelmaksi on pääpiirteissään seuraavanlainen. Aluksi sovellus
+käännetään Java-lähdekoodista tavallisella Java-kääntäjällä
+luokkatiedostoiksi, jotka sisältävät standardinmukaisen
+Java-virtuaalikoneen ymmärtämää välikieltä, Java-tavukoodia.
+
+Androidin Dalvik-virtuaalikone ei kuitenkaan ole
+Java-virtuaalikone. Luokkatiedostoja käyttävä Java-virtuaalikone
+noudattaa pinopohjaista käskyarkkitehtuuria, jossa konekäskyjen
+operandit sijaitsevat implisiittisesti virtuaalikoneen pinossa. Dalvik
+sen sijaan on rekisteripohjainen virtuaalikone, jossa konekäskyjen
+operandit viittaavat eksplisiittisesti virtuaalikoneen ylläpitämiin
+rekistereihin [fn:vmarch].
+
+[fn:vmarch] Lisätietoa Dalvikin suunniteluratkaisuista perusteluineen
+antavat lähteet. 
+# todo etsi ne lähteet
+
+Androidin kehitystyökalut kääntävätkin ohjelman Java-tavukoodista
+edelleen /Dalvik Executable/ -formaattiin, ~.dex~-päätteisiin
+tiedostoihin. Näistä tiedostoista Dalvik-virtuaalikone lataa ohjelman
+luokat ja niiden sisältämät Dalvik-käskykannan mukaiset käskyt.
+# todo wikipedia sanoo että kaikkia class-tiedostoja ei käännetä?
+
+Dalvik-virtuaalikone nykyisessä muodossaan on /jäljittävä Just-In-Time
+-kääntäjä/ (/tracing JIT compiler/). Siten Dalvik sisältää /tulkin/,
+joka tulkitsee Dalvik-käskykantaa noudattavaa ohjelmaa ja pitää
+samalla kirjaa metodeista, joiden kääntäminen suoraan
+laitteistoalustan konekielelle nopeuttaisi eniten ohjelman
+suoritusta. Tällaiset metodit Dalvik kääntää konekielelle ja suorittaa
+konekielisinä. Ne myös tallennetaan JIT-kääntäjän välimuistiin ja
+Androidin tiedostojärjestelmään, joten käännösvaihe tapahtuu vain
+kerran.
+
+Dalvik on ohjelmoitu C++-kielellä, mutta sen tulkki koostuu pääosin
+hyvin pitkälle optimoidusta symbolisesta konekielestä, jonka avulla
+minimoidaan joitakin tulkkien toteutuksille tyypillisiä
+suorituskykyrasitteita.
+
+Jos tarkastelemme Dalvikin suoritusaikaista toimintaa Java-ohjelman
+ulkopuolisesta näkökulmasta, havaitsemme siis, että Dalvik viettää
+ohjelman suoritusajan hieman yksinkertaistaen joko tulkissa
+(syötteenään dex-ohjelma), JIT-kääntäjässä (syötteenään dex-ohjelman
+metodi) tai laitteiston konekielelle jo kääntämänsä metodin
+ohjelmakoodissa.
+
+Näiden suoritustilojen lisäksi Dalvikin
+Java-natiivirajapintatoteutuksen ansiosta virtuaalikoneen prosessi
+saattaa siirtyä suorittamaan valmiiksi käännettyä konekielistä
+natiiviohjelmaa, palata sieltä väliaikaisesti suorittamaan
+natiiviohjelman kutsumia Java-ohjelman operaatioita ja palata lopulta
+takaisin ei-natiiviin suoritustilaansa. Siirtyminen normaalin
+suorituksen ja natiivisuorituksen välillä vaatii virtuaalikoneelta
+erityistoimenpiteitä esimerkiksi kutsuparametrien muuntamisen
+takia. Tämän tutkielman aihe on näiden erityistoimien aiheuttamien
+suorituskykyrasitteiden tutkiminen, käytännössä Dalvik-virtuaalikoneen
+suoritusaikaisen käyttäytymisen mittaaminen ja tulosten analyysi.
+
+Seuraavaksi tarkastelemme, mitä periaatteita ja spesifikaatioita Javan
+natiivirajapinta noudattaa, ja miten natiivimetodien hyödyntäminen
+käytännössä tapahtuu Java- ja Android-ohjelmoinnissa.
+# todo tuossa yllä ei ole esim optimointia, garbage collectionia, ym.
 
 
 

@@ -1,7 +1,9 @@
 
 Annan aluksi lyhyen yleiskuvauksen Android-järjestelmästä ennen
 siirtymistä tutkielman varsinaiseen aiheeseen, suorituskyvyn
-mittaamiseen ja mallintamiseen sekä Androidin Java-natiivirajapintaan.
+mittaamiseen ja mallintamiseen sekä Androidin Java-natiivirajapintaan [fn:version].
+
+[fn:version] Tämä tutkielma perustuu Androidin versioon 4.1.2.
 
 Android on mobiilikäyttöjärjestelmä, jossa on oma versionsa
 Linux-käyttö\-jär\-jes\-tel\-mä\-y\-ti\-mes\-tä. Siinä on mukana
@@ -58,8 +60,9 @@ sovelluksen prosessista käsin.
 
 Javan natiivirajapinta JNI on laajasti käytössä eri tasoilla Androidin
 arkkitehtuurissa. JNI esitellään tarkemmin luvussa 3. Voimme kuitenkin
-jo nyt havaita, että JNI:tä hyödynnetään paljon, kun Java-koodista on
-kutsuttava matalamman arkkitehtuuritason natiiveja kirjastoja.
+jo nyt havaita, että JNI:n käyttö järjestelmän sisäisessä
+toteutuksessa on yleistä, kun Java-koodista on kutsuttava matalamman
+arkkitehtuuritason natiiveja kirjastoja.
 # todo sisäinen viite
 
 Osa Androidin järjestelmäpalveluista on toteutettu Java-kielellä ja
@@ -67,25 +70,27 @@ osa C++-kielellä. Itse Binder-kutsumekanismin toteutus on
 C++-kielinen, mutta Android sisältää myös Java-rajapinnat Binderin
 käyttöön. Sisäisesti nämä Javan Binder-sidonnat on toteutettu Javan
 natiivirajapinnan avulla. Niin ikään monet Javalla toteutetut
-järjestelmäpalvelut kutsuvat itse natiivikirjastoja JNI:n kautta. Jopa
-monet Android-ohjelmointirajapinnan luokat kutsuvat natiivikirjastoja
-suoraan JNI:n avulla ohittaen järjestelmäpalvelutason: esimerkiksi
-~Log~-luokka kutsuu suoraan ~liblog~-natiivikirjastoa.
+järjestelmäpalvelut kutsuvat itse natiivikirjastoja JNI:n
+kautta. Lisäksi jotkut Android-ohjelmointirajapinnan luokat kutsuvat
+natiivikirjastoja suoraan JNI:n avulla ohittaen
+järjestelmäpalvelutason: esimerkiksi ~Log~-luokka kutsuu suoraan
+~liblog~-natiivikirjastoa.
 # lähde: binder.pdf
 
-Järjestelmäpalveluita matalammalla olevia arkkitehtuuritasoja ei tässä
-käsitellä sen tarkemmin. Mainittakoon kuitenkin, että Androidin Native
+Järjestelmäpalveluita matalammalla olevia arkkitehtuuritasoja en
+käsittele sen tarkemmin. Mainittakoon kuitenkin, että Androidin Native
 Development Kit -työkalut sisältävät rajapinnat pieneen osajoukkoon
 natiivikirjastojen toiminnoista tavallisten C- ja
 C++-otsaketiedostojen kautta. Näitä dynaamisesti linkitettyjä
 natiivikirjastoja voi siis kutsua suoraan tavallisilla
-aliohjelmakutsuilla natiiviohjelmasta käsin. Androidin Binderiin
-perustuvaan komponenttiarkkitehtuuriin ei natiiviohjelmoija kuitenkaan
-pääse käsiksi. Natiivityökalujen ulottumattomiin jääkin suurin osa
-Androidin laajasta toiminnallisuudesta, mutta esimerkiksi
-peliohjelmointia varten NDK:n natiivirajapinnat ovat riittäviä. Ne
-sisältävät esimerkiksi tuen OpenGL- ja bittikarttagrafiikalle, ääni-
-ja multimediatoimintoja sekä valmiudet laitteen sensorien lukemiseen.
+aliohjelmakutsuilla natiiviohjelmasta käsin, ohittaen
+järjestelmäpalvelukerroksen. Androidin Binderiin perustuvaan
+komponenttiarkkitehtuuriin ei natiiviohjelmoija pääse
+käsiksi. Natiivityökalujen ulottumattomiin jääkin suurin osa Androidin
+laajasta toiminnallisuudesta, mutta esimerkiksi peliohjelmointia
+varten NDK:n natiivirajapinnat ovat riittäviä. Ne sisältävät
+esimerkiksi tuen OpenGL- ja bittikarttagrafiikalle, ääni- ja
+multimediatoimintoja sekä valmiudet laitteen sensorien lukemiseen.
 
 # todo check C - *ja* C++??
 # todo check dynamic linking
