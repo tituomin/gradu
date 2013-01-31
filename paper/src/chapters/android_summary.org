@@ -60,16 +60,16 @@ Binderin tarjoaman prosessienvälisen kutsumekanismin avulla
 sovelluksen prosessista käsin.
 
 Osa Androidin järjestelmäpalveluista on toteutettu Java-kielellä ja
-osa C++-kielellä. Javan natiivirajapinta JNI onkin laajasti käytössä
-eri tasoilla Androidin arkkitehtuurissa. JNI esitellään tarkemmin
-luvussa 3. Voimme kuitenkin jo nyt havaita, että JNI:tä käytetään
-yleisesti järjestelmän sisäisessä toteutuksessa, kun Java-koodista on
-kutsuttava matalamman arkkitehtuuritason natiiveja kirjastoja.
-Esimerkiksi Binder-kutsumekanismin toteutus on C++-kielinen, mutta
-Android sisältää myös Java-rajapinnat Binderin käyttöön. Sisäisesti
-nämä Javan Binder-sidonnat on toteutettu Javan natiivirajapinnan
-avulla. Niin ikään monet Javalla toteutetut järjestelmäpalvelut
-kutsuvat itse natiivikirjastoja JNI:n kautta. Lisäksi jotkut
+osa C++-kielellä. Javan natiivirajapinta JNI esitellään tarkemmin
+luvussa 3, mutta voimme tässä yhteydessä havaita, että
+natiivirajapintaa käytetään yleisesti järjestelmän sisäisessä
+toteutuksessa, kun Java-koodista on kutsuttava matalamman
+arkkitehtuuritason natiiveja kirjastoja.  Esimerkiksi
+Binder-kutsumekanismin toteutus on C++-kielinen, mutta Android
+sisältää myös Java-rajapinnat Binderin käyttöön. Sisäisesti nämä Javan
+Binder-sidonnat on toteutettu Javan natiivirajapinnan avulla. Niin
+ikään monet Javalla toteutetut järjestelmäpalvelut kutsuvat itse
+natiivikirjastoja JNI:n kautta. Lisäksi jotkut
 Android-ohjelmointirajapinnan luokat kutsuvat natiivikirjastoja
 suoraan JNI:n avulla ohittaen järjestelmäpalvelutason: esimerkiksi
 ~Log~-luokka kutsuu suoraan ~liblog~-natiivikirjastoa.
@@ -79,8 +79,8 @@ suoraan JNI:n avulla ohittaen järjestelmäpalvelutason: esimerkiksi
 Järjestelmäpalveluita matalammalla olevia arkkitehtuuritasoja,
 mukaanlukien dynaamisesti ladattavia natiivikirjastoja, en käsittele
 sen tarkemmin. Mainittakoon kuitenkin, että Androidin Native
-Development Kit -työkalut sisältävät rajapinnat pieneen osajoukkoon
-natiivikirjastojen toiminnoista tavallisten C- ja C++
+Development Kit -työkaluihin kuuluvat rajapinnat rajattuun valikoimaan
+natiivikirjastojen toimintoja. Näitä voi hyödyntää NDK:n C- ja C++
 -otsaketiedostojen kautta. Näitä dynaamisesti linkitettyjä
 natiivikirjastoja voi siis kutsua suoraan tavallisilla
 aliohjelmakutsuilla natiiviohjelmasta käsin, ohittaen
@@ -116,3 +116,62 @@ multimediatoimintoja sekä valmiudet laitteen sensorien lukemiseen.
 # jni
 # tsekkaa toimiiko system server omassa yhdessä dalvikissa
 
+* Dalvik-virtuaalikone
+Javalla ohjelmoidun Android-sovelluksen matka suoritettavaksi
+ohjelmaksi on pääpiirteissään seuraavanlainen. Aluksi sovellus
+käännetään Java-lähdekoodista tavallisella Java-kääntäjällä
+luokkatiedostoiksi, jotka sisältävät standardinmukaisen
+Java-virtuaalikoneen ymmärtämää välikieltä, Java-tavukoodia.
+
+Androidin Dalvik-virtuaalikone ei kuitenkaan ole
+Java-virtuaalikone. Luokkatiedostoja käyttävä Java-virtuaalikone
+noudattaa pinopohjaista käskyarkkitehtuuria, jossa konekäskyjen
+operandit sijaitsevat implisiittisesti virtuaalikoneen pinossa. Dalvik
+sen sijaan on rekisteripohjainen virtuaalikone, jossa konekäskyjen
+operandit viittaavat eksplisiittisesti virtuaalikoneen ylläpitämiin
+rekistereihin [fn:vmarch].
+
+[fn:vmarch] Lisätietoa Dalvikin suunniteluratkaisuista perusteluineen
+antavat lähteet. 
+# todo etsi ne lähteet
+
+Androidin kehitystyökalut kääntävätkin ohjelman Java-tavukoodista
+edelleen /Dalvik Executable/ -formaattiin, ~.dex~-päätteisiin
+tiedostoihin. Näistä tiedostoista Dalvik-virtuaalikone lataa ohjelman
+luokat ja niiden sisältämät Dalvik-käskykannan mukaiset käskyt.
+# todo wikipedia sanoo että kaikkia class-tiedostoja ei käännetä?
+
+Dalvik-virtuaalikone nykyisessä muodossaan on /jäljittävä Just-In-Time
+-kääntäjä/ (/tracing JIT compiler/). Siten Dalvik sisältää /tulkin/,
+joka tulkitsee Dalvik-käskykantaa noudattavaa ohjelmaa ja pitää
+samalla kirjaa metodeista, joiden kääntäminen suoraan
+laitteistoalustan konekielelle nopeuttaisi todennäköisimmin ohjelman
+suoritusta. Tällaiset metodit Dalvik kääntää konekielelle ja suorittaa
+konekielisinä. Ne myös tallennetaan JIT-kääntäjän välimuistiin ja
+Androidin tiedostojärjestelmään, joten käännösvaihe tapahtuu vain
+kerran.
+
+Dalvik on ohjelmoitu C++-kielellä, mutta sen tulkki koostuu pääosin
+hyvin pitkälle optimoidusta symbolisesta konekielestä, jonka avulla
+minimoidaan joitakin tulkkien toteutuksille tyypillisiä
+suorituskykyrasitteita.
+
+Jos tarkastelemme Dalvikin suoritusaikaista toimintaa Java-ohjelman
+ulkopuolisesta näkökulmasta, havaitsemme siis, että Dalvik viettää
+ohjelman suoritusajan hieman yksinkertaistaen joko tulkissa
+(syötteenään dex-ohjelma), JIT-kääntäjässä (syötteenään dex-ohjelman
+metodi) tai laitteiston konekielelle jo kääntämänsä metodin
+ohjelmakoodissa.
+
+Näiden suoritustilojen lisäksi Dalvikin
+Java-natiivirajapintatoteutuksen ansiosta virtuaalikoneen prosessi
+saattaa siirtyä suorittamaan valmiiksi käännettyä konekielistä
+natiiviohjelmaa, palata sieltä väliaikaisesti suorittamaan
+natiiviohjelman kutsumia Java-ohjelman operaatioita ja palata lopulta
+takaisin ei-natiiviin suoritustilaansa. Siirtyminen normaalin
+suorituksen ja natiivisuorituksen välillä vaatii virtuaalikoneelta
+erityistoimenpiteitä esimerkiksi kutsuparametrien muuntamisen
+takia. Tämän tutkielman aihe on näiden erityistoimien aiheuttamien
+suorituskykyrasitteiden tutkiminen, käytännössä Dalvik-virtuaalikoneen
+suoritusaikaisen käyttäytymisen mittaaminen ja tulosten analyysi.
+# todo tuossa yllä ei ole esim optimointia, garbage collectionia, ym.

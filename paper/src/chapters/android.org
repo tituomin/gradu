@@ -5,7 +5,7 @@ sisältäisivätkin natiivikomponentteja. Toki sovelluksen voisi
 periaatteessa ohjelmoida vaikkapa C-kielellä komentoriviltä
 käynnistettäväksi ohjelmaksi ja kääntää osaksi itse
 Android-käyttöjärjestelmää, mutta tällainen sovellus jäisi Androidin
-normaalin julkaisukäytäntöjen ulkopuolelle ja siten käyttäjien
+normaalien julkaisukäytäntöjen ulkopuolelle ja siten käyttäjien
 ulottumattomiin.
 # todo: tarkista native activity
 
@@ -112,8 +112,8 @@ class HelloWorld {
 #+end_src
 Natiivin metodin ~print~ (rivi [[(nativedecl)]]) toteutus on osa
 kirjastoa, joka on ladattava erillisellä ~System.loadLibrary~
--kutsulla rivillä [[(loadlib)]]. Tässä lataaminen tapahtuu erillisessä
-staattisessa alustuslohkossa ennen luokan ~HelloWorld~ lataamista.
+-kutsulla rivillä [[(loadlib)]]. Tässä lataaminen tapahtuu /staattisessa
+alustuslohkossa/ ennen luokan ~HelloWorld~ lataamista.
 
 Javan käännöstyökalut tulostavat natiivimetodeja sisältävän
 luokkamäärittelyn perusteella C-otsaketiedoston, joka sisältää
@@ -155,65 +155,6 @@ joita JNI-ohjelmoinnissa käytetään.
 ** Tietotyypit
 ** Rajapintaoperaatiot
 
-* Natiivirajapinnan toteutus Dalvik-virtuaalikoneessa
-Javalla ohjelmoidun Android-sovelluksen matka suoritettavaksi
-ohjelmaksi on pääpiirteissään seuraavanlainen. Aluksi sovellus
-käännetään Java-lähdekoodista tavallisella Java-kääntäjällä
-luokkatiedostoiksi, jotka sisältävät standardinmukaisen
-Java-virtuaalikoneen ymmärtämää välikieltä, Java-tavukoodia.
-
-Androidin Dalvik-virtuaalikone ei kuitenkaan ole
-Java-virtuaalikone. Luokkatiedostoja käyttävä Java-virtuaalikone
-noudattaa pinopohjaista käskyarkkitehtuuria, jossa konekäskyjen
-operandit sijaitsevat implisiittisesti virtuaalikoneen pinossa. Dalvik
-sen sijaan on rekisteripohjainen virtuaalikone, jossa konekäskyjen
-operandit viittaavat eksplisiittisesti virtuaalikoneen ylläpitämiin
-rekistereihin [fn:vmarch].
-
-[fn:vmarch] Lisätietoa Dalvikin suunniteluratkaisuista perusteluineen
-antavat lähteet. 
-# todo etsi ne lähteet
-
-Androidin kehitystyökalut kääntävätkin ohjelman Java-tavukoodista
-edelleen /Dalvik Executable/ -formaattiin, ~.dex~-päätteisiin
-tiedostoihin. Näistä tiedostoista Dalvik-virtuaalikone lataa ohjelman
-luokat ja niiden sisältämät Dalvik-käskykannan mukaiset käskyt.
-# todo wikipedia sanoo että kaikkia class-tiedostoja ei käännetä?
-
-Dalvik-virtuaalikone nykyisessä muodossaan on /jäljittävä Just-In-Time
--kääntäjä/ (/tracing JIT compiler/). Siten Dalvik sisältää /tulkin/,
-joka tulkitsee Dalvik-käskykantaa noudattavaa ohjelmaa ja pitää
-samalla kirjaa metodeista, joiden kääntäminen suoraan
-laitteistoalustan konekielelle nopeuttaisi todennäköisimmin ohjelman
-suoritusta. Tällaiset metodit Dalvik kääntää konekielelle ja suorittaa
-konekielisinä. Ne myös tallennetaan JIT-kääntäjän välimuistiin ja
-Androidin tiedostojärjestelmään, joten käännösvaihe tapahtuu vain
-kerran.
-
-Dalvik on ohjelmoitu C++-kielellä, mutta sen tulkki koostuu pääosin
-hyvin pitkälle optimoidusta symbolisesta konekielestä, jonka avulla
-minimoidaan joitakin tulkkien toteutuksille tyypillisiä
-suorituskykyrasitteita.
-
-Jos tarkastelemme Dalvikin suoritusaikaista toimintaa Java-ohjelman
-ulkopuolisesta näkökulmasta, havaitsemme siis, että Dalvik viettää
-ohjelman suoritusajan hieman yksinkertaistaen joko tulkissa
-(syötteenään dex-ohjelma), JIT-kääntäjässä (syötteenään dex-ohjelman
-metodi) tai laitteiston konekielelle jo kääntämänsä metodin
-ohjelmakoodissa.
-
-Näiden suoritustilojen lisäksi Dalvikin
-Java-natiivirajapintatoteutuksen ansiosta virtuaalikoneen prosessi
-saattaa siirtyä suorittamaan valmiiksi käännettyä konekielistä
-natiiviohjelmaa, palata sieltä väliaikaisesti suorittamaan
-natiiviohjelman kutsumia Java-ohjelman operaatioita ja palata lopulta
-takaisin ei-natiiviin suoritustilaansa. Siirtyminen normaalin
-suorituksen ja natiivisuorituksen välillä vaatii virtuaalikoneelta
-erityistoimenpiteitä esimerkiksi kutsuparametrien muuntamisen
-takia. Tämän tutkielman aihe on näiden erityistoimien aiheuttamien
-suorituskykyrasitteiden tutkiminen, käytännössä Dalvik-virtuaalikoneen
-suoritusaikaisen käyttäytymisen mittaaminen ja tulosten analyysi.
-# todo tuossa yllä ei ole esim optimointia, garbage collectionia, ym.
 
 
 
