@@ -1,18 +1,18 @@
 
 Kaikki Android-järjestelmään asennettavat tavalliset sovellukset
-suoritetaan Dalvik-virtuaalikoneessa, vaikka ne sisältäisivätkin
-natiivikomponentteja. Toki sovelluksen voisi periaatteessa ohjelmoida
-vaikkapa C-kielellä komentoriviltä käynnistettäväksi ohjelmaksi ja
-kääntää Android-käyttöjärjestelmän sisäisten rakennuskomentosarjojen
-avulla osaksi itse käyttöjärjestelmää, mutta tällainen sovellus jäisi
-Androidin normaalin julkaisu- ja asennusprosessin ulkopuolelle ja
-siten käyttäjien ulottumattomiin.
+suoritetaan Dalvik-virtuaalikoneen prosessissa, vaikka ne
+sisältäisivätkin natiivikomponentteja. Toki sovelluksen voisi
+periaatteessa ohjelmoida vaikkapa C-kielellä komentoriviltä
+käynnistettäväksi ohjelmaksi ja kääntää osaksi itse
+Android-käyttöjärjestelmää, mutta tällainen sovellus jäisi Androidin
+normaalin julkaisukäytäntöjen ulkopuolelle ja siten käyttäjien
+ulottumattomiin.
 # todo: tarkista native activity
 
 Tehtyjen tutkimusten mukaan natiivikomponenttien käytöstä todella on
 suorituskykyhyötyä joissakin tilanteissa: korkean tason kielenä Javan
-suoritusmekanismiin jää väistämättä rasitteita verrattuna suoraan
-konekielellä suoritettavaan ohjelmaan. Miten siis korkean tason
+suoritusmekanismi johtaa yleisrasitteisiin verrattuna suoraan
+konekielellä suoritettavaan ohjelmaan. Kuinka siis korkean tason
 kielestä on mahdollista siirtyä suorittamaan konekielistä ohjelmaa?
 # todo tähän kerää kaikki mittaukset aiheesta
 
@@ -27,7 +27,7 @@ metodeita. Tässä yhteydessä kielten luokittelu matalan ja korkean
 tason kieliin ei perustu kielen abstraktiomekanismien ilmaisuvoimaan
 vaan kielen toteutustapaan: Java on korkean tason kieli, sillä
 Java-ohjelmia suoritetaan välikielen muodossa abstraktissa
-virtuaalikoneessa eikä suoraan "matalamman" tason konekielelle
+virtuaalikoneessa eikä suoraan laitteistotason konekielelle
 käännettynä.
 
 Vieraskutsurajapinnan toteutuksen on aina huolehdittava seuraavista
@@ -35,20 +35,127 @@ tehtävistä:
 - kielten erilaisten kutsukäytäntöjen yhteensovittamisesta,
 - kutsuparametrien sekä palautusarvojen muuntamisesta lähdekielen
   tyypeistä kohdekielen hyödynnettävissä olevaan muotoon.
- 
-Javan kaltaisen automaattista muistinhallintaa käyttävän kielen
-tapauksessa vieraskutsurajapinnan on lisäksi varmistettava, että 
-# todo here  
-  
-#lähteet jeannie ja reppy
 
-** JNI:n tavoitteet
+Lisäksi JNI tarjoaa natiiviohjelmoijalle takaisinkutsurajapinnan,
+jonka avulla natiiviohjelmasta voi kutsua Java-ohjelman metodeita ja
+lukea Javan tietorakenteita, esimerkiksi olioiden
+kenttiä. Ei-primitiivisten tietorakenteiden kuten merkkijonojen ja
+taulukoiden käsittelyyn natiiviohjelmassa JNI tarjoaa omat
+apufunktionsa.
+# lähteet jeannie ja reppy
+# vaihtoehdot jni:lle androidissa?
 
-** Natiivirajapinnan käyttö
+** Natiivirajapinnan suunnitteluperiaatteet
+Javan natiivirajapinnan määrittelyssä on tavoiteltu tasapainoa kahden
+keskenään ristiriitaisen vaatimuksen kanssa. Toinen on
+/binääriyhteensopivuus/: saman binäärimuotoisen natiivikirjaston tulee
+toimia eri virtuaalikonetoteutusten kanssa ilman uudelleenkääntämistä.
+Se tarkoittaa, ettei JNI voi tehdä mitään oletuksia virtuaalikoneen
+sisäisestä toteutuksesta @@jnibook(145). Periaate on tärkeä ennen
+kaikkea siksi, että virtuaalikoneen on aina kyettävä järjestämään
+uudelleen omia tietorakenteitaan esimerkiksi automaattisen
+muistinhallinnan, JIT-kääntämisen ja erilaisten optimointien
+toteuttamiseksi. JNI:tä edeltänyt varhainen Javan
+natiivirajapintatoteutus oli suoraviivaisempi ja asettikin rajoituksia
+virtuaalikoneen roskienkeruualgoritmeille.
 
-*** Rajapintaoperaatiot
+Yhteensopivuuden vaatimus on ristiriidassa toisen keskeisen
+vaatimuksen, /hyvän suorituskyvyn/ kanssa. Yhteensopivuus on
+mahdollista saavuttaa ainoastaan piilottamalla natiiviohjelman pääsy
+virtuaalikoneen tietorakenteisiin abstraktin rajapinnan taakse. Sen
+sijaan, että C-kieliselle natiiviohjelmalle välitettäisiin esimerkiksi
+osoitin muistialueelle, jonne Java-taulukon alkiot on tallennettu,
+välitetään sille osoitin JNI-kutsurajapinnan
+kontekstitietueeseen. Tietueen kenttien kautta natiiviohjelma voi
+kutsua apufunktioita, joilla se voi lukea taulukon
+alkioita. Suhteellisen yksinkertaisen taulukkotietorakenteenkin
+käsittely natiivikoodissa edellyttää siis pahimmillaan useita
+epäsuoria kutsuja JNI:n tarjoaman rajapinnan ylitse.
+#todo: siirrä ehkä yksityiskohtaisempi tietueista puhuminen
+# myöhemmäksi
 
-* Dalvik-virtuaalikone
+Seuraavaksi käyn yksityiskohtaisemmin läpi, miten natiivirajapinnan
+palveluita käytetään ja kommentoin alustavasti palveluiden
+potentiaalisia suorituskykyrasitteita.
+
+** Natiivirajapinnan käyttöönotto
+Javan natiivirajapinta tukee kahdenlaista integraatiota
+natiivikomponentin ja virtuaalikoneen välillä. Ensimmäisessä
+vaihtoehdossa suorituksen kontrolli on Java-kielisellä sovelluksella
+joka kutsuu silloin tällöin /natiivikirjaston/ tarjoamia palveluita
+@@jnibook(5). Toisessa vaihtoehdossa pääsovellus toteutetaan matalan
+tason kielellä, ja sovellukseen /upotetaan/ Java-virtuaalikone, jonka
+avulla sovellus voi suorittaa Java-kielisiä ohjelmia.
+
+Android-sovellusohjelmat ovat aina lähtökohtaisesti Java-kielellä
+toteutettuja, joten ainoastaan ensimmäinen integraatiomekanismi on
+käytettävissä. Käytännössä nativiikirjasto otetaan Java-sovelluksen
+käyttöön seuraavasti.
+# lähde embedded
+
+Natiiivimetodi esitellään Java-kielessä luokan sisällä, kuten
+tavallista, mutta sen määreeksi lisätään varattu sana
+~native~. Esittely riittää, eikä metodille anneta toteutusta
+Java-luokan sisällä. Seuraava esimerkki kuvaa tilannetta
+@@jnibook(13).
+
+#+begin_src java -n -r
+class HelloWorld {
+    private native void print(int num); (ref:nativedecl)
+    public static void main(String[] args) {
+        new HelloWorld().print(5);
+    }
+    static {
+        System.loadLibrary("HelloWorld"); (ref:loadlib)
+    }
+}
+#+end_src
+Natiivin metodin ~print~ (rivi [[(nativedecl)]]) toteutus on osa
+kirjastoa, joka on ladattava erillisellä ~System.loadLibrary~
+-kutsulla rivillä [[(loadlib)]]. Tässä lataaminen tapahtuu erillisessä
+staattisessa alustuslohkossa ennen luokan ~HelloWorld~ lataamista.
+
+Javan käännöstyökalut tulostavat natiivimetodeja sisältävän
+luokkamäärittelyn perusteella C-otsaketiedoston, joka sisältää
+natiivimetodia vastaavan C-kielisen funktion esittelyn. Tästä
+huolehtii komento ~javah -jni HelloWorld~, joka ottaa syötteekseen
+luokkatiedoston. Natiivimetodia ~private native void print()~
+vastaavan funktion esittely otsaketiedostossa näyttää seuraavalta.
+
+#+begin_src c 
+JNIEXPORT void JNICALL
+Java_HelloWorld_print (JNIEnv *, jobject, jint);
+#+end_src
+
+Ensimmäisen parametrin tyyppi ~JNIEnv~ vastaa aiemmin mainittua JNI:n
+kontekstitietuetta, jonka kautta natiivirajapinnan palveluita
+kutsutaan. Tyyppi ~jobject~ on viite ~HelloWorld~-olioon -- kyseessä
+on ilmentymämetodi, joka saattaa käyttää ilmentymän
+palveluita. Luokkametodin tapauksessa natiivifunktio saisi vastaavasti
+luokkaa edustavan ~jclass~-tyyppisen parametrin. Loput funktion
+parametreista noudattavat natiivimetodille määriteltyjä
+kutsuparametreja: ~jint~ vastaa Javan primitiivityyppiä ~int~.
+
+Tässä vaiheessa natiivifunktiolle on vielä kirjoitettava toteutus
+C-kielellä ja käännettävä se osaksi dynaamisesti ladattavaa
+kirjastoa. Androidin tapauksessa tämä käännösvaihe edellyttää
+/ristiinkääntämistä/, koska kohdearkkitehtuurin ARM-arkkitehtuuri ja
+suoritusympäristö eroavat kehitysympäristön vastaavista. Käännösvaiheen
+yksityiskohdista huolehtivat Androidin Native Development Kit
+-työkalut yhdellä komentorivikäskyllä ~ndk-build~.
+# todo käännös ristiinkääntäminen? parempi käännös?
+# todo: lisää tähän c++-eroavaisuudet
+# todo: mainitse Android.mk?
+
+Lopputuloksena on Java-ohjelma, joka voi kutsua natiivimetodia aivan
+kuin se olisi tavallinen Java-metodi. Kutsun toteuttamisesta ja sen
+edellyttämistä argumenttien muunnoksista vastaa virtuaalikoneen
+toteutus. Seuraavaksi esitellään tarkemmin tietotyypit ja palvelut,
+joita JNI-ohjelmoinnissa käytetään.
+** Tietotyypit
+** Rajapintaoperaatiot
+
+* Natiivirajapinnan toteutus Dalvik-virtuaalikoneessa
 Javalla ohjelmoidun Android-sovelluksen matka suoritettavaksi
 ohjelmaksi on pääpiirteissään seuraavanlainen. Aluksi sovellus
 käännetään Java-lähdekoodista tavallisella Java-kääntäjällä
@@ -77,7 +184,7 @@ Dalvik-virtuaalikone nykyisessä muodossaan on /jäljittävä Just-In-Time
 -kääntäjä/ (/tracing JIT compiler/). Siten Dalvik sisältää /tulkin/,
 joka tulkitsee Dalvik-käskykantaa noudattavaa ohjelmaa ja pitää
 samalla kirjaa metodeista, joiden kääntäminen suoraan
-laitteistoalustan konekielelle nopeuttaisi eniten ohjelman
+laitteistoalustan konekielelle nopeuttaisi todennäköisimmin ohjelman
 suoritusta. Tällaiset metodit Dalvik kääntää konekielelle ja suorittaa
 konekielisinä. Ne myös tallennetaan JIT-kääntäjän välimuistiin ja
 Androidin tiedostojärjestelmään, joten käännösvaihe tapahtuu vain
@@ -106,10 +213,6 @@ erityistoimenpiteitä esimerkiksi kutsuparametrien muuntamisen
 takia. Tämän tutkielman aihe on näiden erityistoimien aiheuttamien
 suorituskykyrasitteiden tutkiminen, käytännössä Dalvik-virtuaalikoneen
 suoritusaikaisen käyttäytymisen mittaaminen ja tulosten analyysi.
-
-Seuraavaksi tarkastelemme, mitä periaatteita ja spesifikaatioita Javan
-natiivirajapinta noudattaa, ja miten natiivimetodien hyödyntäminen
-käytännössä tapahtuu Java- ja Android-ohjelmoinnissa.
 # todo tuossa yllä ei ole esim optimointia, garbage collectionia, ym.
 
 

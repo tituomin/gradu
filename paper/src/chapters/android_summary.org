@@ -5,20 +5,21 @@ mittaamiseen ja mallintamiseen sekä Androidin Java-natiivirajapintaan [fn:versi
 
 [fn:version] Tämä tutkielma perustuu Androidin versioon 4.1.2.
 
-Android on mobiilikäyttöjärjestelmä, jossa on oma versionsa
+Android on mobiilikäyttöjärjestelmä, johon kuuluu oma versionsa
 Linux-käyttö\-jär\-jes\-tel\-mä\-y\-ti\-mes\-tä. Siinä on mukana
 joitakin mobiililaitteille räätälöityjä ominaisuuksia, jotka
 esimerkiksi vähentävät muistin- ja virrankulutusta.
 
 Kokonaisuutena Android ei muistuta tyypillistä Linux-pohjais\-ta
 työpöytä- tai palvelinkäyttöjärjestelmää. Se on läheisempää sukua
-/upotetuille/ Linux-järjestelmille, mutta eroaa niistäkin: ensinnäkin
-merkittävä osa sovelluksista ja koko järjestelmästä on ohjelmoitu
-Javalla ja suoritetaan virtuaalikoneessa. Järjestelmän rakenne ei
-muutenkaan noudata esimerkiksi POSIX-standardia vaan perustuu
-hajautettuun komponenttiarkkitehtuuriin, joka on nimeltään /Binder/.
-Binder-arkkitehtuurin infrastruktuuri, Dalvik-virtuaalikone sekä
-suuri osa järjestelmän matalamman tason palveluista on toteutettu
+riisutummille /upotetuille/ Linux-järjestelmille, mutta eroaa
+niistäkin. Ensinnäkin merkittävä osa sovelluksista ja koko
+järjestelmästä on ohjelmoitu Javalla ja suoritetaan
+virtuaalikoneessa. Järjestelmän rakenne ei muutenkaan noudata
+esimerkiksi POSIX-standardia vaan perustuu hajautettuun
+komponenttiarkkitehtuuriin, joka on nimeltään /Binder/.
+Binder-arkkitehtuurin infrastruktuuri, Dalvik-virtuaalikone sekä suuri
+osa järjestelmän matalamman tason palveluista on toteutettu
 C++-kielellä.
 
 Seuraava kuva esittää Android-järjestelmän perusosia.
@@ -32,9 +33,9 @@ Javalla Androidin sovelluskehyksen ohjelmointirajapintaa
 käyttäen. Ohjelmointirajapinnan ~android~-nimiavaruuden paketit ovat
 varta vasten Androidia varten rakennettuja. Ne päästävät ohjelmoijan
 käsiksi käyttöjärjestelmän ja laitteiston palveluihin. Nimiavaruuden
-~java~ ohjelmointirajapinta on peräisin /Apache Harmony/ -projektista,
-joka on avoimen lähdekoodin toteutus /Java Standard Edition/
--rajapinnasta (Java SE).
+~java~ ohjelmointirajapinta on osajoukko /Java Standard Edition/
+-rajapinnasta (Java SE), ja on peräisin /Apache Harmony/ -projektista.
+# todo ei sisällä koko SE:tä (lähde: embedded?)
 
 Kaikki Java-ohjelmakoodi käännetään Androidia varten ensin normaaliksi
 tavukoodiksi ja siitä Androidin omaksi rekisteripohjaiseksi
@@ -58,38 +59,37 @@ Android-ohjelmointirajapintojen sisäiset toteutukset kutsuvat niitä
 Binderin tarjoaman prosessienvälisen kutsumekanismin avulla
 sovelluksen prosessista käsin.
 
-Javan natiivirajapinta JNI on laajasti käytössä eri tasoilla Androidin
-arkkitehtuurissa. JNI esitellään tarkemmin luvussa 3. Voimme kuitenkin
-jo nyt havaita, että JNI:n käyttö järjestelmän sisäisessä
-toteutuksessa on yleistä, kun Java-koodista on kutsuttava matalamman
-arkkitehtuuritason natiiveja kirjastoja.
+Osa Androidin järjestelmäpalveluista on toteutettu Java-kielellä ja
+osa C++-kielellä. Javan natiivirajapinta JNI onkin laajasti käytössä
+eri tasoilla Androidin arkkitehtuurissa. JNI esitellään tarkemmin
+luvussa 3. Voimme kuitenkin jo nyt havaita, että JNI:tä käytetään
+yleisesti järjestelmän sisäisessä toteutuksessa, kun Java-koodista on
+kutsuttava matalamman arkkitehtuuritason natiiveja kirjastoja.
+Esimerkiksi Binder-kutsumekanismin toteutus on C++-kielinen, mutta
+Android sisältää myös Java-rajapinnat Binderin käyttöön. Sisäisesti
+nämä Javan Binder-sidonnat on toteutettu Javan natiivirajapinnan
+avulla. Niin ikään monet Javalla toteutetut järjestelmäpalvelut
+kutsuvat itse natiivikirjastoja JNI:n kautta. Lisäksi jotkut
+Android-ohjelmointirajapinnan luokat kutsuvat natiivikirjastoja
+suoraan JNI:n avulla ohittaen järjestelmäpalvelutason: esimerkiksi
+~Log~-luokka kutsuu suoraan ~liblog~-natiivikirjastoa.
+# lähde: binder.pdf
 # todo sisäinen viite
 
-Osa Androidin järjestelmäpalveluista on toteutettu Java-kielellä ja
-osa C++-kielellä. Itse Binder-kutsumekanismin toteutus on
-C++-kielinen, mutta Android sisältää myös Java-rajapinnat Binderin
-käyttöön. Sisäisesti nämä Javan Binder-sidonnat on toteutettu Javan
-natiivirajapinnan avulla. Niin ikään monet Javalla toteutetut
-järjestelmäpalvelut kutsuvat itse natiivikirjastoja JNI:n
-kautta. Lisäksi jotkut Android-ohjelmointirajapinnan luokat kutsuvat
-natiivikirjastoja suoraan JNI:n avulla ohittaen
-järjestelmäpalvelutason: esimerkiksi ~Log~-luokka kutsuu suoraan
-~liblog~-natiivikirjastoa.
-# lähde: binder.pdf
-
-Järjestelmäpalveluita matalammalla olevia arkkitehtuuritasoja en
-käsittele sen tarkemmin. Mainittakoon kuitenkin, että Androidin Native
+Järjestelmäpalveluita matalammalla olevia arkkitehtuuritasoja,
+mukaanlukien dynaamisesti ladattavia natiivikirjastoja, en käsittele
+sen tarkemmin. Mainittakoon kuitenkin, että Androidin Native
 Development Kit -työkalut sisältävät rajapinnat pieneen osajoukkoon
-natiivikirjastojen toiminnoista tavallisten C- ja
-C++-otsaketiedostojen kautta. Näitä dynaamisesti linkitettyjä
+natiivikirjastojen toiminnoista tavallisten C- ja C++
+-otsaketiedostojen kautta. Näitä dynaamisesti linkitettyjä
 natiivikirjastoja voi siis kutsua suoraan tavallisilla
 aliohjelmakutsuilla natiiviohjelmasta käsin, ohittaen
 järjestelmäpalvelukerroksen. Androidin Binderiin perustuvaan
 komponenttiarkkitehtuuriin ei natiiviohjelmoija pääse
 käsiksi. Natiivityökalujen ulottumattomiin jääkin suurin osa Androidin
 laajasta toiminnallisuudesta, mutta esimerkiksi peliohjelmointia
-varten NDK:n natiivirajapinnat ovat riittäviä. Ne sisältävät
-esimerkiksi tuen OpenGL- ja bittikarttagrafiikalle, ääni- ja
+varten NDK:n natiivirajapinnat ovat riittäviä. Ne sisältävät muun
+muassa tuen OpenGL- ja bittikarttagrafiikalle, ääni- ja
 multimediatoimintoja sekä valmiudet laitteen sensorien lukemiseen.
 
 # todo check C - *ja* C++??
