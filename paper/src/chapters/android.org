@@ -127,7 +127,7 @@ estämistä, mutta JNI sallii virtuaalikoneelle myös mahdollisuuden
 varten. Tästä seuraisi merkittäviä suorituskykyrasitteita, mitä
 kysymystä tutkimme myöhemmässä vaiheessa.
 # todo: huom ! tämän takia yksittäiset olioviitteet pitää yksitellen poimia
-# taulukoista
+# taulukoista ? (check)
 
 # todo : allokointi suomeksi?
 
@@ -186,7 +186,7 @@ esittely otsaketiedostossa näyttää seuraavalta.
 JNIEXPORT void JNICALL
 Java_HelloWorld_print (JNIEnv *, jobject, jint);
 #+end_src
-
+# jnienv: kuva sivulta 23 jnibook
 Ensimmäinen ~JNIEnv~ -tyyppinen parametri on mukana kaikissa
 natiivimetodeissa. Se on natiivirajapinnan suorituskontekstia edustava
 tietue, jonka kautta natiivirajapinnan palveluita kutsutaan. Tyyppi
@@ -217,7 +217,38 @@ joita JNI-ohjelmoinnissa käytetään.
 
 ** Tietotyypit
 
+Javan primitiivityypit kuvautuvat suoraviivaisesti C- ja
+C++-tyyppeille seuraavan taulukon mukaisesti @@jnibook(166).
+# todo suomennos opaque reference
+| Java    | C        | bittejä | etumerkki |
+|---------+----------+---------+-----------|
+| boolean | jboolean |       8 | ei        |
+| byte    | jbyte    |       8 | kyllä     |
+| char    | jchar    |      16 | ei        |
+| short   | jshort   |      16 | kyllä     |
+| int     | jint     |      32 | kyllä     |
+| long    | jlong    |      64 | kyllä     |
+|---------+----------+---------+-----------|
+| float   | jfloat   |      32 | --        |
+| double  | jdouble  |      64 | --        |
+|---------+----------+---------+-----------|
 
 
+- viitetyypit
+# All JNI references have type jobject. For convenience and enhanced type
+# safety, the JNI defines a set of reference types that are conceptually “subtypes” of
+# jobject.
+
+- merkkijonot konvertoitava
+  - critical functions (do not block!)
+  - s. 31 suorituskykyvertailua stringifunktioiden
+
+#The JNI treats primitive arrays and object arrays differently.
+- arrays
+  - similar critical functions..
+
+
+
+   
 ** Rajapintaoperaatiot
 
