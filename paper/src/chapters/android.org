@@ -66,20 +66,20 @@ vaatimuksen, /hyvän suorituskyvyn/ kanssa. Yhteensopivuus on
 mahdollista saavuttaa ainoastaan piilottamalla natiiviohjelman pääsy
 virtuaalikoneen tietorakenteisiin abstraktin rajapinnan taakse. Sen
 sijaan, että C-kieliselle natiiviohjelmalle välitettäisiin esimerkiksi
-osoitin muistialueelle, jonne Java-taulukon alkiot on tallennettu,
-natiiviohjelma lukee taulukon alkioita aina natiivirajapinnan
-apufunktioiden kautta. Suhteellisen yksinkertaisen
-taulukkotietorakenteenkin käsittely natiivikoodissa edellyttää siis
-pahimmillaan useita epäsuoria kutsuja JNI:n tarjoaman rajapinnan
-ylitse.
+osoitin Java-taulukon muistialueelle, natiiviohjelma lukee taulukon
+alkioita aina natiivirajapinnan apufunktioiden kautta. Suhteellisen
+yksinkertaisen taulukkotietorakenteenkin käsittely natiivikoodissa
+edellyttää siis pahimmillaan useita epäsuoria kutsuja JNI:n tarjoaman
+rajapinnan ylitse.
 
-Javan natiivirajapinta ei kykene piilottamaan synkronointiongelmia
-tilanteessa, jossa virtuaalikoneen ja natiivikomponentin käyttävät eri
+Yhdessä suhteessa Javan natiivirajapinta ei ole toteutusriippumaton:
+se ei kykene estämään synkronointiongelmia tilanteessa, jossa
+virtuaalikone ja natiivikomponentti käyttävät eri
 säietoteutuksia. Onnistunut rajapinnan ylittävä säikeiden koordinointi
 edellyttääkin, että virtuaalikoneen säikeet käyttävät perustanaan
 natiivialustan säikeitä. Dalvikin tapauksessa näin onkin; kannattaa
-huomata, että natiivimetodit suoritetaan aina
-virtuaalikoneenprosessissa ja säikeessä joka natiivikutsun suorittaa.
+huomata, että natiivimetodit suoritetaan aina virtuaalikoneen
+prosessissa ja säikeessä joka natiivikutsun suorittaa.
 # todo tarkista vielä lähteestä
 
 ** Muistinhallinta natiiviohjelmoinnissa
@@ -219,25 +219,48 @@ joita JNI-ohjelmoinnissa käytetään.
 
 Javan primitiivityypit kuvautuvat suoraviivaisesti C- ja
 C++-tyyppeille seuraavan taulukon mukaisesti @@jnibook(166).
+
 # todo suomennos opaque reference
-| Java    | C        | bittejä | etumerkki |
-|---------+----------+---------+-----------|
-| boolean | jboolean |       8 | ei        |
-| byte    | jbyte    |       8 | kyllä     |
-| char    | jchar    |      16 | ei        |
-| short   | jshort   |      16 | kyllä     |
-| int     | jint     |      32 | kyllä     |
-| long    | jlong    |      64 | kyllä     |
-|---------+----------+---------+-----------|
-| float   | jfloat   |      32 | --        |
-| double  | jdouble  |      64 | --        |
-|---------+----------+---------+-----------|
 
+| Java      | C               | bittejä | etumerkki |
+|-----------+-----------------+---------+-----------|
+| ~boolean~ | ~jboolean~      |       8 | ei        |
+| ~byte~    | ~jbyte~         |       8 | kyllä     |
+| ~char~    | ~jchar~         |      16 | ei        |
+| ~short~   | ~jshort~        |      16 | kyllä     |
+| ~int~     | ~jint~, ~jsize~ |      32 | kyllä     |
+| ~long~    | ~jlong~         |      64 | kyllä     |
+|-----------+-----------------+---------+-----------|
+| ~float~   | ~jfloat~        |      32 | ---       |
+| ~double~  | ~jdouble~       |      64 | ---       |
+|-----------+-----------------+---------+-----------|
 
-- viitetyypit
-# All JNI references have type jobject. For convenience and enhanced type
-# safety, the JNI defines a set of reference types that are conceptually “subtypes” of
-# jobject.
+C-kieliset olevat tyyppinimet määritellään
+~jni.h~-otsaketiedostossa. Primitiiviparametrien arvot välitetään
+natiivirajapinnan yli yksinkertaisesti kopioimalla.
+
+Viitetyyppiset parametrit sitä vastoin välitetään kopioimalla epäsuora
+viite tyyppiä ~jobject~.  Sitä käsitellään natiivikomponentissa
+ainoastaan JNI:n apufunktioiden avulla. C-kielessä ~jobject~-tyypille
+on ~typedef~ -määrittelyillä annettu joukko aliaksia, joten
+käytännössä yleisimmille Java-tyypeille on omat tyyppinimensä
+C-ohjelmassa: luokille, merkkijonoille, erilaisille taulukoille sekä
+~Throwable~ -tyypille. C++-natiivikoodia varten JNI määrittelee myös
+näiden tyyppien keskinäiset perintäsuhteet käännösaikaista
+tyyppitarkistusta varten.
+
+** Merkkijonot ja taulukot
+Ohjelmointityössä ehkä yleisimpien olioiden, merkkijonojen sekä
+taulukoiden, käyttäminen edellyttää kaikkien tietorakenteita
+hyödyntävien operaatioiden kutsumista ~JNIEnv~-rajapinnan funktioiden
+kautta. Näistä apufunktioista on kuitenkin erilaisia versioita, joiden
+reunaehdot suorituskyvyn suhteen eroavat toisistaan.
+
+Pienten merkkijonojen käsittelyyn järkevintä on 
+
+# todo: tutki, 
+
+** Oliot ja luokat
 
 - merkkijonot konvertoitava
   - critical functions (do not block!)

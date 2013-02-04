@@ -1,6 +1,6 @@
 /Android/ on Googlen kehittämä Linux-pohjainen käyttöjärjestelmä ja
 sovellus\-ke\-hi\-tys\-a\-lus\-ta mobiililaitteille. Kuvailen ja
-arvioin tutkielmassa arkkitehtuurimalleja suorituskykykeskeisille
+arvioin tutkielmassa arkkitehtuurimalleja suorituskykyisille
 Android-sovelluksille tapauksissa, joissa osa sovelluksen
 komponenteista on kirjoitettu Java- ja osa C-ohjelmointikielellä.
 
