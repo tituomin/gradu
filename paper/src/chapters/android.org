@@ -101,6 +101,8 @@ estetty: oletuksena olion olemassaolo taataan natiivimetodin
 elinkaaren ajaksi. Pidempiaikaiset viittaukset edellyttävät
 natiiviohjelmoijalta eksplisiittistä globaalien viitteiden luomista ja
 vapauttamista natiivirajapinnan funktioiden avulla.
+# todo: korjaa, ei elinkaaren ajaksi vaan jotkut vaativat myös
+# eksplisiittiset lopetuskutsut
 
 Jos taas natiivimetodeita sisältävä Java-luokka määrittelee
 /edustaolion/ natiivikomponentin allokoimille tietorakenteille,
@@ -109,6 +111,7 @@ myös Java-ohjelmassa: muistinvarauksen voi kytkeä edustaolion
 konstruktoriin, mutta muistin vapauttaminen vaatii Java-luokaltakin
 eksplisiittisesti kutsuttavan lopetusmetodin [fn:nativestruct].
 # todo: onko finalize  tarpeen joskus?
+# todo: edustaolio vs. peer object
 
 [fn:nativestruct] JNI ei tarjoa automaattista tukea edustaluokkien
 tekemiseen natiivitietorakenteille, vaan ohjelmoijan on itse
@@ -172,15 +175,16 @@ class HelloWorld {
 #+end_src
 Natiivin metodin ~print~ (rivi [[(nativedecl)]]) toteutus on osa
 kirjastoa, joka on ladattava erillisellä ~System.loadLibrary~
--kutsulla rivillä [[(loadlib)]]. Tässä lataaminen tapahtuu /staattisessa
+-kutsulla (rivi [[(loadlib)]]). Tässä lataaminen tapahtuu /staattisessa
 alustuslohkossa/ ennen luokan ~HelloWorld~ lataamista.
+# todo ennen vain yhteydessä
 
 Javan käännöstyökalut tulostavat natiivimetodeja sisältävän
 luokkamäärittelyn perusteella C-otsaketiedoston, joka sisältää
 natiivimetodia vastaavan C-kielisen funktion esittelyn. Tästä
 huolehtii komento ~javah -jni HelloWorld~, joka ottaa syötteekseen
-luokkatiedoston. Rivin [[(nativedecl) ]] natiivimetodia vastaavan funktion
-esittely otsaketiedostossa näyttää seuraavalta.
+luokkatiedoston. Natiivimetodia ~print~ vastaavan funktion esittely
+otsaketiedostossa näyttää seuraavalta.
 
 #+begin_src c 
 JNIEXPORT void JNICALL
@@ -190,20 +194,20 @@ Java_HelloWorld_print (JNIEnv *, jobject, jint);
 Ensimmäinen ~JNIEnv~ -tyyppinen parametri on mukana kaikissa
 natiivimetodeissa. Se on natiivirajapinnan suorituskontekstia edustava
 tietue, jonka kautta natiivirajapinnan palveluita kutsutaan. Tyyppi
-~jobject~ on viite ~HelloWorld~-olioon -- kyseessä on ilmentymämetodi,
-joka saattaa käyttää ilmentymän palveluita. Luokkametodin tapauksessa
-natiivifunktio saisi vastaavasti luokkaa edustavan ~jclass~-tyyppisen
-parametrin. Loput funktion parametreista noudattavat natiivimetodille
-määriteltyjä kutsuparametreja: ~jint~ vastaa Javan primitiivityyppiä
-~int~.
+~jobject~ on epäsuora viite ~HelloWorld~-olioon -- kyseessä on
+ilmentymämetodi, joka saattaa käyttää ilmentymän
+palveluita. Luokkametodin tapauksessa natiivifunktio saisi vastaavasti
+luokkaa edustavan ~jclass~-tyyppisen parametrin. Loput funktion
+parametreista noudattavat natiivimetodille määriteltyjä
+kutsuparametreja: ~jint~ vastaa Javan primitiivityyppiä ~int~.
 
-Tässä vaiheessa natiivifunktiolle on vielä kirjoitettava toteutus
-C-kielellä ja käännettävä se osaksi dynaamisesti ladattavaa
-kirjastoa. Androidin tapauksessa tämä käännösvaihe edellyttää
-/ristiinkääntämistä/, koska kohdearkkitehtuurin ARM-arkkitehtuuri ja
-suoritusympäristö eroavat kehitysympäristön vastaavista. Käännösvaiheen
-yksityiskohdista huolehtivat Androidin Native Development Kit
--työkalut yhdellä komentorivikäskyllä ~ndk-build~.
+Lopuksi natiivifunktiolle on vielä kirjoitettava toteutus C-kielellä
+ja käännettävä se osaksi dynaamisesti ladattavaa kirjastoa. Androidin
+tapauksessa tämä käännösvaihe edellyttää /ristiinkääntämistä/, koska
+kohdearkkitehtuurin ARM-arkkitehtuuri ja suoritusympäristö eroavat
+kehitysympäristön vastaavista. Käännösvaiheen yksityiskohdista
+huolehtivat Androidin Native Development Kit -työkalut yhdellä
+komentorivikäskyllä ~ndk-build~.
 # todo käännös ristiinkääntäminen? parempi käännös?
 # todo: lisää tähän c++-eroavaisuudet
 # todo: mainitse Android.mk?
@@ -213,10 +217,9 @@ Lopputuloksena on Java-ohjelma, joka voi kutsua natiivimetodia aivan
 kuin se olisi tavallinen Java-metodi. Kutsun toteuttamisesta ja sen
 edellyttämistä argumenttien muunnoksista vastaa virtuaalikoneen
 toteutus. Seuraavaksi esitellään oleelliset tietotyypit ja palvelut,
-joita JNI-ohjelmoinnissa käytetään.
+joihin JNI-ohjelmointi perustuu.
 
 ** Tietotyypit
-
 Javan primitiivityypit kuvautuvat suoraviivaisesti C- ja
 C++-tyyppeille seuraavan taulukon mukaisesti @@jnibook(166).
 
@@ -235,16 +238,16 @@ C++-tyyppeille seuraavan taulukon mukaisesti @@jnibook(166).
 | ~double~  | ~jdouble~       |      64 | ---       |
 |-----------+-----------------+---------+-----------|
 
-C-kieliset olevat tyyppinimet määritellään
-~jni.h~-otsaketiedostossa. Primitiiviparametrien arvot välitetään
-natiivirajapinnan yli yksinkertaisesti kopioimalla.
+C-kieliset tyyppinimet määritellään
+~jni.h~ -otsaketiedostossa. Primitiiviparametrien arvot välitetään
+natiivirajapinnan yli kopioimalla.
 
 Viitetyyppiset parametrit sitä vastoin välitetään kopioimalla epäsuora
-viite tyyppiä ~jobject~.  Sitä käsitellään natiivikomponentissa
-ainoastaan JNI:n apufunktioiden avulla. C-kielessä ~jobject~-tyypille
-on ~typedef~ -määrittelyillä annettu joukko aliaksia, joten
-käytännössä yleisimmille Java-tyypeille on omat tyyppinimensä
-C-ohjelmassa: luokille, merkkijonoille, erilaisille taulukoille sekä
+viite tyyppiä ~jobject~. Sitä käsitellään natiivikomponentissa aina
+JNI:n apufunktioiden avulla. C-kielessä ~jobject~-tyypille on
+~typedef~ -määrittelyillä annettu joukko aliaksia, joten käytännössä
+yleisimmille Java-tyypeille on omat tyyppinimensä C-ohjelmassa:
+luokkatyypille, merkkijonotyypille, erityyppisille taulukoille sekä
 ~Throwable~ -tyypille. C++-natiivikoodia varten JNI määrittelee myös
 näiden tyyppien keskinäiset perintäsuhteet käännösaikaista
 tyyppitarkistusta varten.
@@ -252,26 +255,120 @@ tyyppitarkistusta varten.
 ** Merkkijonot ja taulukot
 Ohjelmointityössä ehkä yleisimpien olioiden, merkkijonojen sekä
 taulukoiden, käyttäminen edellyttää kaikkien tietorakenteita
-hyödyntävien operaatioiden kutsumista ~JNIEnv~-rajapinnan funktioiden
+hyödyntävien operaatioiden kutsumista ~JNIEnv~-rajapintafunktioiden
 kautta. Näistä apufunktioista on kuitenkin erilaisia versioita, joiden
 reunaehdot suorituskyvyn suhteen eroavat toisistaan.
 
-Pienten merkkijonojen käsittelyyn järkevintä on 
+Merkkijonoihin pääsee käsiksi kahdella tavalla. Ensimmäisessä
+JNI-funktio palauttaa osoittimen virtuaalikoneessa olevaan yhtenäiseen
+muistialueeseen joka sisältää merkkijonon. Kuten aina,
+JNI-spesifikaatio kuitenkin sallii virtuaalikoneen luoda merkkijonon
+sisällöstä uuden kopion ja palauttaakin osoittimen siihen. Funktioista
+on olemassa versiot, jotka kytkevät väliaikaisesti roskienkeruun pois
+päältä, jolloin kopioimisen tarve todennäköisesti katoaa. Näiden
+versioiden käyttö edellyttää kuitenkin, ettei natiivikoodi suoraan tai
+välillisesti siirry odottamaan minkäänlaista synkronisoitua resurssia.
 
-# todo: tutki, 
+Esimerkiksi C-kielinen ohjelma saa osoittimen 16-bittiseen
+Unicode-merkkijonoon seuraavalla kutsulla.
+
+#+begin_src c
+const jchar *str;
+jboolean is_copy;
+str = (*env)->GetStringChars(env, jstring_variable, &is_copy);
+#+end_src
+
+Parametri ~JNIEnv env~ on viite JNI:n kontekstietueeseen, ~jstring
+jstring_variable~ on esimerkiksi natiivifunktiolle parametrina
+välitetty JNI-merkkijonoviite. Parametriin ~jboolean_is_copy~
+tallentuu tieto, johtiko operaatio kopioimiseen. Merkkijono on aina
+lopuksi vapautettava eksplisiittisellä kutsulla, mikä pätee myös
+Java-taulukoille.
+#+begin_src c
+(*env)->ReleaseStringChars(env, jstring_variable, str);
+#+end_src
+
+Käytettävissä ovat myös funktiot, jotka kopioivat merkkijonon merkit
+natiivipuolella allokoituun muistialueeseen, esimerkiksi paikalliseen
+muuttujaan. Kopioivien funktioiden käytöstä on JNI-dokumentaation
+mukaan suorituskykyetua erityisesti lyhyiden merkkijonojen
+tapauksessa, koska puskurin allokoinnin yleisrasite erityisesti
+natiivipinosta on mitätön, samoin kuin pienen merkkimäärän kopioinnin.
+
+Dalvik-virtuaalikone tukee olioiden kiinnikytkemistä eli sulkemista
+roskienkeruun ulkopuolelle. Periaatteessa tämän pitäisi estää
+merkkijono-operaatioista aiheutuvat muistinvaraus- ja
+kopiointikustannukset. Android-dokumentaation mukaan
+kopiointikustannuksia syntyy lähinnä, jos Dalvikin sisäisestä
+16-bittisestä Unicode-merkkijono\-to\-teu\-tuk\-ses\-ta siirrytään
+UTF-8 -koodauksen merkkijonoon; lähes kaikista
+JNI-merkkijonofunktioista on sekä Unicode- että
+UTF-versiot. Dalvik-virtuaalikoneen natiivirajapinnan
+merkkijono-operaatioiden suorituskyvyn tarkempi analyysi vaatii
+kuitenkin mittauksia ja virtuaalikoneen toteutuksen tutkimista.
+
+Yleisestikin suorituskykyvaatimukset usein edellyttävät abstraktien
+rajapintojen piilottamien toteutusyksityiskohtien uudelleen
+paljastamista.
+# lähde http://developer.android.com/training/articles/perf-jni.html
+# todo: joku lähde tuohon abstrakti rajapinta vs. toteutus
+
+Primitiivialkioita sisältävien taulukoiden käsittely on täysin
+analogista merkkijonojen käsittelyn kanssa. Primitiivialkiot on
+mahdollista kopioida suoraan natiivipuskuriin, tai pyytää osoitin
+alkioiden muistialueelle virtuaalikoneeseen.
+
+Sen sijaan olioalkioita sisältäviä taulukoita ei voi käsitellä
+kokonaisuuksina natiivipuolelta, vaan JNI sallii pääsyn vain
+yksittäiseen alkioon kerrallaan palauttaen siihen ~jobject~ -tyyppisen
+viitteen.
 
 ** Oliot ja luokat
+Yksittäistä mielivaltaisen tyyppistä Java-oliota käsitellään hieman
+vastaavasti. Olion kenttien käsittely ja metodien kutsuminen tapahtuu
+menettelyn kautta, joka muistuttaa epäsuoruudessaan Java-kielen
+reflektiorajapintaa. Esimerkiksi olion instanssimetodin kutsuminen
+vaatii monta vaihetta.
 
-- merkkijonot konvertoitava
-  - critical functions (do not block!)
-  - s. 31 suorituskykyvertailua stringifunktioiden
+Aluksi haetaan viite olion luokkaan funktiolla ~GetObjectClass~:
+#+begin_src c
+jclass GetObjectClass(JNIEnv *env, jobject obj);
+#+end_src
 
-#The JNI treats primitive arrays and object arrays differently.
-- arrays
-  - similar critical functions..
+Sitten hateaan luokasta metodin tunniste metodin nimen ja tyypin
+perusteella funktiolla ~GetMethodId~:
+#+begin_src c
+jmethodID GetMethodID(JNIEnv *env, jclass clazz,
+                      const char *name, const char *sig);
+#+end_src
 
+Lopuksi metodia on vielä kutsuttava olioviitteen ja metoditunnisteen
+perusteella funktiolla ~Call<Type>Method~ [fn:genericpp]:
 
+#+begin_src c
+<NativeType> Call<Type>Method(JNIEnv *env, jobject obj,
+                              jmethodID methodID, ...);
+#+end_src
 
-   
-** Rajapintaoperaatiot
+[fn:genericpp] Funktioesittelyn tyyppiparametrit ~<NativeType>~ ja
+~<Type>~ eivät liity geneeriseen C++-ohjelmointiin, vaan ~Call~
+-funktiosta todella on oma versionsa jokaiselle JNI:n tunnistamalle
+Java-tyypille.
 
+Vastaava prosessi vaaditaan oliokenttien läpikäymiseen.  On selvää,
+että metodin tai kentän etsiminen symbolisen nimen ja
+tyyppimäärityksen perusteella on raskas operaatio käytettäväksi
+toistuvasti @@jnibook(56--57). Siksi Javan natiiviohjelmoinnissa
+suositellaan metodien ja kenttien tunnisteiden jättämistä talteen,
+mikä ihanteellisesti tapahtuu luokan latauksen yhteydessä.
+
+Alkuperäisessä natiivirajapinnan spesifikaatiossa arvioidaan, että
+tunnisteiden tallentamisesta huolimatta natiivi--Java
+-takaisinkutsurajapinnan käyttäminen on tyypillisissä toteutuksissa
+hitaampaa kuin natiivimetodien kutsuminen juuri funktiokutsujen
+epäsuoruuden takia, ja siksi ettei tätä käyttötapausta yleensä ole
+optimoitu @@jnibook(58). Dalvikin tapauksessa todelliset
+suorituskykytulokset tulevat nähtäväksi mittausten myötä.
+
+** Viitteet ja muistinhallinta
+Lopuksi vielä maininta 
