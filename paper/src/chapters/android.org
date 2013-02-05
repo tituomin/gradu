@@ -9,8 +9,8 @@ normaalien julkaisukäytäntöjen ulkopuolelle ja siten käyttäjien
 ulottumattomiin.
 # todo: tarkista native activity
 
-Tehtyjen tutkimusten mukaan natiivikomponenttien käytöstä todella on
-suorituskykyhyötyä joissakin tilanteissa: korkean tason kielenä Javan
+Tehtyjen tutkimusten mukaan natiivikomponenttien käytöstä joskus
+todella on suorituskykyetua: korkean tason kielenä Javan
 suoritusmekanismi johtaa yleisrasitteisiin verrattuna suoraan
 konekielellä suoritettavaan ohjelmaan. Kuinka siis korkean tason
 kielestä on mahdollista siirtyä suorittamaan konekielistä ohjelmaa?
@@ -66,11 +66,11 @@ vaatimuksen, /hyvän suorituskyvyn/ kanssa. Yhteensopivuus on
 mahdollista saavuttaa ainoastaan piilottamalla natiiviohjelman pääsy
 virtuaalikoneen tietorakenteisiin abstraktin rajapinnan taakse. Sen
 sijaan, että C-kieliselle natiiviohjelmalle välitettäisiin esimerkiksi
-osoitin Java-taulukon muistialueelle, natiiviohjelma lukee taulukon
-alkioita aina natiivirajapinnan apufunktioiden kautta. Suhteellisen
-yksinkertaisen taulukkotietorakenteenkin käsittely natiivikoodissa
-edellyttää siis pahimmillaan useita epäsuoria kutsuja JNI:n tarjoaman
-rajapinnan ylitse.
+suoraan osoitin Java-taulukon totetutukseen, natiiviohjelma lukee
+taulukon alkioita aina natiivirajapinnan apufunktioiden
+kautta. Suhteellisen yksinkertaisen taulukkotietorakenteenkin
+käsittely natiivikoodissa edellyttää siis pahimmillaan useita
+epäsuoria kutsuja JNI:n tarjoaman rajapinnan ylitse.
 
 Yhdessä suhteessa Javan natiivirajapinta ei ole toteutusriippumaton:
 se ei kykene estämään synkronointiongelmia tilanteessa, jossa
@@ -173,11 +173,11 @@ class HelloWorld {
     }
 }
 #+end_src
-Natiivin metodin ~print~ (rivi [[(nativedecl)]]) toteutus on osa
-kirjastoa, joka on ladattava erillisellä ~System.loadLibrary~
+Natiivin metodin ~print~ (esittely rivillä [[(nativedecl)]]) toteutus on
+osa kirjastoa, joka on ladattava erillisellä ~System.loadLibrary~
 -kutsulla (rivi [[(loadlib)]]). Tässä lataaminen tapahtuu /staattisessa
-alustuslohkossa/ ennen luokan ~HelloWorld~ lataamista.
-# todo ennen vain yhteydessä
+alustuslohkossa/ luokan ~HelloWorld~ lataamisen yhteydessä.
+# todo ennen vai yhteydessä
 
 Javan käännöstyökalut tulostavat natiivimetodeja sisältävän
 luokkamäärittelyn perusteella C-otsaketiedoston, joka sisältää
@@ -200,6 +200,8 @@ palveluita. Luokkametodin tapauksessa natiivifunktio saisi vastaavasti
 luokkaa edustavan ~jclass~-tyyppisen parametrin. Loput funktion
 parametreista noudattavat natiivimetodille määriteltyjä
 kutsuparametreja: ~jint~ vastaa Javan primitiivityyppiä ~int~.
+~JNIEXPORT~- ja ~JNICALL~ -makrot määrittävät natiivimetoditoteutusten
+sekä JNI-funktioiden kutsu- ja linkityskäytännöt @@jnibook(170).
 
 Lopuksi natiivifunktiolle on vielä kirjoitettava toteutus C-kielellä
 ja käännettävä se osaksi dynaamisesti ladattavaa kirjastoa. Androidin
@@ -238,9 +240,10 @@ C++-tyyppeille seuraavan taulukon mukaisesti @@jnibook(166).
 | ~double~  | ~jdouble~       |      64 | ---       |
 |-----------+-----------------+---------+-----------|
 
-C-kieliset tyyppinimet määritellään
-~jni.h~ -otsaketiedostossa. Primitiiviparametrien arvot välitetään
-natiivirajapinnan yli kopioimalla.
+C-kieliset tyyppinimet määritellään ~jni.h~
+-otsaketiedostossa. Primitiiviparametrien arvot välitetään
+natiivirajapinnan yli kopioimalla, mihin siihenkin liittyy omat
+rasitteensa kielten erilaisten kutsukäytäntöjen takia.
 
 Viitetyyppiset parametrit sitä vastoin välitetään kopioimalla epäsuora
 viite tyyppiä ~jobject~. Sitä käsitellään natiivikomponentissa aina
@@ -272,7 +275,7 @@ välillisesti siirry odottamaan minkäänlaista synkronisoitua resurssia.
 Esimerkiksi C-kielinen ohjelma saa osoittimen 16-bittiseen
 Unicode-merkkijonoon seuraavalla kutsulla.
 
-#+begin_src c
+#+begin_src c -n
 const jchar *str;
 jboolean is_copy;
 str = (*env)->GetStringChars(env, jstring_variable, &is_copy);
@@ -324,11 +327,13 @@ yksittäiseen alkioon kerrallaan palauttaen siihen ~jobject~ -tyyppisen
 viitteen.
 
 ** Oliot ja luokat
-Yksittäistä mielivaltaisen tyyppistä Java-oliota käsitellään hieman
-vastaavasti. Olion kenttien käsittely ja metodien kutsuminen tapahtuu
+# todo: selitä itse tekstissä että metodi on ainoa java->c-integraatio-
+# menetelmä
+Yksittäistä mielivaltaisen tyyppistä Java-oliota käsitellään saman
+kaltaisesti. Olion kenttien käsittely ja metodien kutsuminen tapahtuu
 menettelyn kautta, joka muistuttaa epäsuoruudessaan Java-kielen
 reflektiorajapintaa. Esimerkiksi olion instanssimetodin kutsuminen
-vaatii monta vaihetta.
+vaatii seuraavat vaiheet.
 
 Aluksi haetaan viite olion luokkaan funktiolla ~GetObjectClass~:
 #+begin_src c
@@ -370,5 +375,57 @@ epäsuoruuden takia, ja siksi ettei tätä käyttötapausta yleensä ole
 optimoitu @@jnibook(58). Dalvikin tapauksessa todelliset
 suorituskykytulokset tulevat nähtäväksi mittausten myötä.
 
-** Viitteet ja muistinhallinta
-Lopuksi vielä maininta 
+** Viitteidenhallinta ja olioiden elinkaari
+Natiivirajapinta tarjoaa natiivikomponentille kolmentyyppisiä
+viitteitä virtuaalikoneen olioihin: /paikallisia viitteitä/,
+/globaaleja viitteitä/ ja /heikkoja globaaleja viitteitä/ (/local
+references/, /global references/, /weak global references/).
+
+Kuten mainittu, suorat osoittimet virtuaalikoneen merkkijonoihin ja
+taulukoihin, jotka on saatu JNI-apufunktioista, tulee aina
+eksplisiittisesti myös vapauttaa, jotta niiden virtuaalikoneessa
+käyttämät muistialueet voidaan vapauttaa.
+
+Oletuksena kaikki muut oliviitteet, jotka JNI antaa natiiviohjelman
+käyttöön, ovat paikallisia viitteitä: niitä ei /yleensä/ tarvitse eritse
+vapauttaa, sillä niiden elinkaari on automaattisesti sidottu
+natiivimetodin kutsun alkamiseen ja päättymiseen. Niiden käyttö ei ole
+säieturvallista. Globaalit viitteet on eksplisiittisesti luotava
+~NewGlobalRef~ -kutsulla, estävät olion roskienkeruun ja
+mahdollistavat olioihin viittaamisen yli eri natiivimetodien kutsujen
+myös eri säikeistä.
+
+JNI:n ohjelmoijalta edellyttämä eksplisiittinen viitteidenhallinta ja
+virtuaalikoneen varaamasta muistista huolehtiminen tarkoittaa, että
+ohjelmoija on vastuussa muistinkäytön tehokkuudesta ja muistivuotojen
+välttämisestä. Erilaisilla viitteidenhallintastrategioilla on
+potentiaalisesti myös erilaisia rasitteita jotka näkyvät
+vasteajoissa. Virtuaalikoneen suorittama roskienkeruukin on osa
+ohjelman suoritusaikaa, ja erilaisten viitteiden käyttäminen vaikuttaa
+siihen, milloin roskienkeruuta voidaan suorittaa.
+
+Paikalliset viitteet eivät vaadi roskienkeruuta, mutta sisältävät
+nekin omat rasitteensa. JNI-spesifikaatio tarjoaa niiden
+eksplisiittiseen hallintaan funktioparin ~PushLocalFrame~ ja
+~PopLocalFrame~, joita väitetään tehokkaaksi tavaksi hallita lokaaleja
+viitteitä useampi viite kerrallaan. Yhden natiivimetodin kutsuhan voi
+käynnistää pitkäänkin toimivan natiivin ohjaussilmukan, joten kyseisen
+metodin kutsukaari saattaa pitää paikallisten viitteiden edellyttämät
+muistivaraukset käytössä hyvinkin pitkään, jos viitteitä ei erikseen
+vapauteta.
+
+** Natiivirajapinnan suorituskykyrasitteista
+Olemme edellä ennakoineet, että natiivirajapinnan ylittäminen voi
+lisätä ylimääräisiä suorituskykyrasitteita aivan tavallisiin
+laskentatehtäviin kuten merkkijonojen ja taulukoiden käsittelyyn,
+olioiden kenttien ja metodien käyttämiseen ja natiivimetodien
+kutsumiseen Java-ohjelmasta käsin. Rasitteet voivat aiheutua Java- ja
+natiivialiohjelmien erilaisista kutsukäytännöistä, menetelmistä kuroa
+umpeen eroja natiivikielten ja virtuaalikoneen muistinhallinnassa sekä
+operaatioiden edellyttämästä epäsuorien funktiokutsujen määristä.
+Seuraavaksi paneudumme tarkemmin Dalvik-virtuaalikoneen toteutukseen,
+mittaamme eri natiivioperaatioiden suorituskykyä eri parametreilla, ja
+luomme tuloksista malleja Javan natiivirajapinnan tehokkaalle
+hyödyntämiselle Android-sovelluksissa.
+
+# mainitse jossain virheistä

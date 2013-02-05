@@ -115,7 +115,7 @@ multimediatoimintoja sekä valmiudet laitteen sensorien lukemiseen.
 # system services
 # jni
 # tsekkaa toimiiko system server omassa yhdessä dalvikissa
-
+# todo mainitse renderscript
 * Dalvik-virtuaalikone
 Javalla ohjelmoidun Android-sovelluksen matka suoritettavaksi
 ohjelmaksi on pääpiirteissään seuraavanlainen. Aluksi sovellus
