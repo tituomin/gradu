@@ -540,6 +540,8 @@ jakson pituutta syklimäärässä.
 # volume and complexity of the inter-component com-
 # munication and coordination, especially if the compo-
 # nents are physically distributed processes
+#
+# todo älä kirjoita tällaisia lainauksia ilman lähdeviitteitä
 
 # lisää tähän selitys ferrarin 4-luvusta deterministinen
 # vs. probabilistinen malli.
@@ -663,10 +665,36 @@ Markov-ketjuilla.
 # todo tarkista että em. pitää paikkansa lopulta
 
 ** Vasteaikojen mallintaminen Markov-ketjuilla
-Hyödynnän Beizerin (1970) esittelemää yksinkertaista stokastista
-mallia jolla ohjelman kokonaisvasteajan saa laskettua sen osien
-suoritusajoista. Kuten kaikki Markov-prosesseihin perustuvat
-mallinnusmenetelmät, tämäkin 
+
+Hyödynnän Beizerin (1970) esittelemää yksinkertaista Markov-mallia
+jolla ohjelman kokonaisvasteajan saa laskettua sen osien
+suoritusajoista @@beizer,ferrari. Mallinnustavan etuna on
+yksinkertaisuus sekä se, että mittaustuloksina saatavat vasteaikojen
+jakautumat voi yksinkertaisesti kytkeä mallin osaksi.
+
+Mallissa ohjelma jaetaan suoritustiloihin halutulla karkeusasteella --
+tutkielmassa jako noudattaa lähinnä profilointityökaluissa esiintyvien
+aliohjelmien rajoja, yhdistellen tarvittaessa aliohjelmia suuremmiksi
+"moduuleiksi". Malli on /verkko/, jonka /solmut/ vastaavat hetkellisiä
+diskreettejä suoritustiloja, ja solmujen väliset /kaaret/ vastaavat
+siirtymiä tilasta toiseen ja myös laskentaa joka siirtymässä
+tapahtuu. Yhdestä tilasta voi lähteä useampi kaari, ja kaariin
+kytketyt todennäköisyydet ilmaisevat todennäköisyyttä että kyseinen
+siirtymä tapahtuu.
+
+Mallinnustavan erikoisuutena laskenta ei sijoitu solmuihin vaan
+kaariin, joilla on todennäköisyyden lisäksi keskimääräinen
+suoritusaika sekä suoritusajan varianssi (jotka vastaavat
+mittauksia). Muutoin kyseessä on perinteinen Markov-malli, mikä
+tarkoittaa mallin /historiattomuutta/: /Markov-oletuksen/ mukaisesti
+eri siirtymien todennäköisyydet riippuvat ainoastaan kulloisestakin
+tilasta eikä prosessin aikaisemmista tiloista. Oletus on tietenkin
+epärealistinen, mutta stokastisten prosessien hyöty piileekin siinä,
+että abstraktikin malli voi tiettyyn rajaan asti ennustaa
+todellisuuden monimutkaisiakin prosesseja.
+
+
+
 # todo here...
 
 * Tehtäviä                                                         :noexport:
