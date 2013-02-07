@@ -1,5 +1,5 @@
 #+AUTHOR: Timo Tuominen
-#+TITLE: Suorituskykyinen sovellusarkkitehtuuri JNI-natiivirajapintaa hyödyntävälle Android-sovellukselle
+#+TITLE: Suorituskykyinen sovellusarkkitehtuuri Java-natiivirajapintaa hyödyntävälle Android-sovellukselle
 #+LaTeX_CLASS: gradu
 
 #+BEGIN_abstract

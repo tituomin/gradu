@@ -61,12 +61,12 @@ yhdistämiseksi.
 
 Pelkän JNI-toteutuksen lisäksi Android-kehittäjällä on käytettävissään
 Native Development Kit (/NDK/)-työkalukokonaisuus. Siihen sisältyvät
-rakennusskriptit automatisoivat C- ja C++ -lähdekoodin kääntämisen
+rakennusskriptit huolehtivat C- tai C++ -ohjelman kääntämisestä
 laitteiston kohdearkkitehtuurille sopivaksi
 kirjastobinääriksi. Lisäksi NDK sisältää joukon C-kielisiä
 otsaketiedostoja ja ohjelmointirajapintoja, joiden kautta osajoukkoa
 Android-alustan ominaisuuksista voidaan hyödyntää suoraan natiivista
-ohjelmasta kutsumatta Java-sovelluskehyksen rajapintoja JNI-kerroksen
+ohjelmasta, kutsumatta Java-sovelluskehyksen rajapintoja JNI-kerroksen
 kautta. Nämä natiivit rajapinnat ovat stabiileja toisin kuin useimmat
 Android-arkkitehtuurin natiivitason rajapinnat. Uusissa NDK-versioissa
 on jopa mahdollista ohjelmoida näitä rajoitettuja rajapintoja käyttävä
@@ -93,3 +93,4 @@ metodeja ja käsitteitä JNI-rajapintaa hyödyntävään
 esimerkkisovellukseen. Mittausten ja analyysin perusteella tästä
 johdetaan yleisiä suosituksia Androidin natiivikehityksessä
 tehokkaalle sovellusarkkitehtuurille.
+# todo: poista esimerkkisovellus?

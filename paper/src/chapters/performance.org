@@ -178,15 +178,15 @@ ollaakseen /validi/ @@ferrari(161--162).
 Tässä tutkielmassa lähdetään oletuksesta, että Dalvik-virtuaalikoneen
 natiivirajapinta on kokonaisjärjestelmän osana riittävän
 yksinkertainen, jotta siitä on mahdollista melko suoraviivaisesti
-luoda malli perustuen rajapinnasta tehtyihin mittauksiin
-kontrolloidulla syötejoukolla. Tähän asti mittaus- ja
-mallintamisnäkökulmaa ei ole saatu yhdistettyä toisiinsa riittävän
-yleispätevästi @@future-spe(172); tämän tutkielman lähestymistapana on
-rajata näkökulma spesifisti Java-virtuaalikoneen ja natiivikoodin
-välisestä kommunikaatiosta johtuvaan pullonkaulaan, ja konstruoida
-malli natiivirajapinnasta mittausten perusteella. Käsittelenkin
-seuraavaksi ohjelmiston suorituskyvyn mittaamiseen käytettäviä
-tekniikoita ennen mallinnusformalismien esittelyä.
+luoda malli joka perustuu rajapinnasta tehtyihin mittauksiin
+kontrolloidulla syötejoukolla. Mittaus- ja mallintamisnäkökulmaa ei
+ole saatu yhdistettyä toisiinsa riittävän yleispätevästi
+@@future-spe(172); tämän tutkielman lähestymistapana on rajata
+näkökulma spesifisti Java-virtuaalikoneen ja natiivikoodin väliseen
+viestintään, ja konstruoida malli natiivirajapinnasta mittausten
+perusteella. Käsittelenkin seuraavaksi ohjelmiston suorituskyvyn
+mittaamiseen käytettäviä tekniikoita ennen mallinnusformalismien
+esittelyä.
    
 * Suorituskyvyn mittaaminen
 Tietyn käyttötapauksen kokonaisvasteajan mittaaminen on
@@ -239,8 +239,8 @@ käyttöjärjestelmäytimen sisällä palveluissa, joita sovellus on
 eksplisiittisesti kutsunut.
 # todo lähteet + lievennä Linux-spesifisyys
 
-Aika, joka kuluu I/O- tai muita palveluita odotettaessa, lasketaan
-tosiaikaan mutta ei sovellus- tai järjestelmäaikaan. Käyttäjän
+Aika, joka kuluu I/O- tai muita palveluita odottaessa, lasketaan
+tosiaikaan muttei sovellus- tai järjestelmäaikaan. Käyttäjän
 kannalta esimerkiksi I/O-operaatioden odottelulla on selvästi suuri
 merkitys. Sovellus- ja järjestelmäaika yhdessä taas vastaavat
 sovelluksen /suoritinaikaa/ (/CPU time/), koska niihin kuuluu
@@ -257,8 +257,8 @@ mittauksissa on tärkeää @@ferrari(455).
 Kokonaisvasteajalla on merkitystä ohjelmiston käyttäjälle sekä
 tulosten lopullisessa validoinnissa. Tarkempi suorituskykyanalyysi
 vaatii kuitenkin tuekseen yksityiskohtaisempia mittauksia. Niiden
-tavoite on purkaa vasteaika osatekijöihin ja tunnistaa ne ohjelman
-osat, joiden suorituksella on kokonaisuuden kannalta suurin vaikutus
+tavoite on purkaa vasteaika osiin ja tunnistaa ne ohjelman osat, joiden
+suorituksella on kokonaisuuden kannalta suurin vaikutus
 @@ferrari(455--456).
 
 Yksittäisen ohjelmiston ajonaikaista käyttäytymistä on
@@ -339,12 +339,12 @@ erota todellisista laitteista tavoilla, joiden toteaminen edellyttäisi
 joka tapauksessa mittauksia myös todellisessa ympäristössä [fn:valgrind].
 
 Myös Androidin Java-virtuaalikoneessa Dalvikissa on ohjelmien
-suorituskykyä kirjaavia toimintoja, joiden mittauksiin Androidin
-kehitysympäristön suorituskykytyökalut perustuvat. Dalvik mittaa
-kuitenkin Java-ohjelman osien sekä natiivialiohjelmien suoritusaikoja,
-siinä missä tämän tutkielman tarkoituksena on tutkia Dalvikin itsensä
-suorituskykyä -- Javan natiivirajapinnan toteutus kun on osa
-C++-kielellä ja symbolisella konekielellä toteutettua
+ajonaikaista käyttäytymistä kirjaavia toimintoja, joiden mittauksiin
+Androidin kehitysympäristön suorituskykytyökalut perustuvat. Dalvik
+mittaa kuitenkin Java-ohjelman osien sekä natiivialiohjelmien
+suoritusaikoja, siinä missä tämän tutkielman tarkoituksena on tutkia
+Dalvikin itsensä suorituskykyä -- Javan natiivirajapinnan toteutus kun
+on osa C++-kielellä ja symbolisella konekielellä toteutettua
 Dalvik-virtuaalikonetta.
 
 Tutkielman mittaukset suoritetaan näytteenottotekniikalla, Linuxin
@@ -386,7 +386,8 @@ ohjelman toimintaa. Toisin sanoen mittauskohteena onkin instrumentoitu
 eikä alkuperäinen ohjelma. Jos vasteaikoja mitataan tihein väliajoin
 käyttöjärjestelmäkutsulla, joka palauttaa järjestelmän kellon arvon,
 saattaa tämä kutsu ja sen aiheuttama prosessin tilamuutos vaikuttaa
-ohjelman suoritukseen merkittävästi.
+ohjelman käyttäytymiseen merkittävästi, vaikka kutsujen suorittamiseen
+kuluvan ajan vähentäisikin tuloksista.
 # pertrubation problem
 # lähteitä ferrari, smith, java vertical profiling?
 
@@ -426,20 +427,21 @@ joiden kutsupinoissa /A/ esiintyy, vaikka näytteen aikana suoritin
 olikin suorittamassa toista aliohjelmaa /C/. Proseduraalisessa
 ohjelmointiparadigmassa on usein mielekästä nähdä aliohjelman /A/
 ilmentämä abstraktio myös sellaisen laskennan syynä, joka tapahtuu
-aliohjelmassa /C/ esimerkiksi kutsuketjun /((A, B), (B, C)/
+aliohjelmassa /C/ esimerkiksi kutsuketjun /((A, B), (B, C))/
 välityksellä. Yksinkertaisessa yksisäikeisessä ohjelmassa pääohjelman
 kontolle laskettaisiin siis /kaikki/ suoritus. Käytännössä mielekäs
-abstraktiotaso näytteiden analyysille löytyy jostakin pääohjelman ja
-suoritettavan kohdan väliltä kutsupinosta.
+abstraktiotaso näytteiden analyysille löytyy tilannekohtaisesti
+jostakin pääohjelman ja suoritettavan kohdan väliltä kutsupinosta.
 
 Profilointityökaluissa aliohjelman suoritusaikaa kutsutaan usein
 /inklusiiviseksi/, jos siihen lasketaan mukaan myös aliohjelman
 kutsumien muiden aliohjelmien ajat. Pelkkään käskyosoittimeen
-perustuva raaka suoritusaika on usein nimeltään /self time/.
+perustuva raaka suoritusaika on usein nimeltään /self time/, tässä
+tutkielmassa /eksklusiivinen/ suoritusaika.
 # gprof, oprofile, etc.
 
-Näytteenotto ei ole mittausmenetelmänä aivan niin tarkka kuin
-instrumentointi. Suorittimen keskeytyksen laukeamisen jälkeen ohjelman
+Näytteenotto ei ole mittausmenetelmänä kytketty tarkalleen tiettyihin
+ohjelmakohtiin.  Suorittimen keskeytyksen laukeamisen jälkeen ohjelman
 suoritus saattaa edetä joitakin konekäskyjä ennen näytteen
 ottamista. Vaikka periaatteessa työkalut saattavat raportoida jopa
 yksittäisten konekäskyjen suhteelliset, inklusiiviset kustannukset,
@@ -463,13 +465,13 @@ Kaikenlaisessa näytteenotossa on varmistettava, että otanta on
 tehdä päätelmiä koko perusjoukosta. Tässä tapauksessa haluamme
 päätellä rajallisen ajanhetkijoukon avulla (otos), miten
 käskyosoittimen ja kutsupinon arvot jakautuvat ohjelman koko
-suoritusajalle (perusjoukko). Tämä varmistetaan suorittimen
-suorituskykylaskureihin perustuvassa näytteenotossa /systemaattisen
-otannan/ menetelmällä. Siinä jokaisella ajanhetkellä on sama
-todennäköisyys tulla valituksi otantaan, sillä näyte otetaan
-systemaattisesti tasaisin väliajoin, ja mittaus aloitetaan
-satunnaisella ajanhetkellä. Tällöin eri ajanhetkien mittausarvoja ei
-tarvitse painottaa suhteesssa toisiinsa.
+suoritusajalle (perusjoukko). Tämä varmistetaan suoritinsyklien
+laskemiseen perustuvassa näytteenotossa /systemaattisen otannan/
+menetelmällä. Siinä jokaisella ajanhetkellä on sama todennäköisyys
+tulla valituksi otantaan, sillä näyte otetaan systemaattisesti
+tasaisin väliajoin, ja mittaus aloitetaan satunnaisella
+ajanhetkellä. Tällöin eri ajanhetkien mittausarvoja ei tarvitse
+painottaa suhteesssa toisiinsa.
 # todo: lue tilastotieteen perusteet ja kirjoita em. kappale paremmin
 # =) lol wikipediasta käsitteet systemaattinen ja 
 # todo systemattinen: lähde wikipedia
@@ -513,9 +515,9 @@ tutkielmassa, ettei mitattava järjestelmä sisällä jaksoja, jotka
 asettuisivat yksiin täsmälleen /n/ suoritinsyklin kuluttaman
 ajanjakson kanssa. Varmistumme tästä suorittamalla useita mittauksia,
 joista jokainen alkaa satunnaisella ajanhetkellä, ja vaihtelemme
-mitattavaa syklimäärä.
-
+jakson pituutta syklimäärässä.
 # todo: analysoi linuxin timeria ja schedulointia..
+# todo: onko dalvikissa ym. muissa komponenteissa jaksollisia ilmiöitä?
 * Arkkitehtuurin mallintaminen 
 # todo vanhaa tekstiä tästä alaspäin ---------===========----
 # Suoritusajan analysoimiseksi ohjelma on jaettava joukkoon erillisiä
@@ -555,7 +557,7 @@ Tässä tutkielmassa keskitytään kuitenkin sovelluksiin, joissa
 suoritetaan laskentaa /paikallisesti/ yksittäisessä
 mobiilaitteessa. Kun osaa sovelluksesta suoritetaan virtuaalikoneen
 välityksellä ja toista konekielisenä suoraan prosessorissa, näiden
-osien sijoittelu ja niiden välinen kommunikaatio on edelleen
+osien sijoittelu ja niiden välinen kommunikaatio on kuitenkin edelleen
 oleellinen suorituskykytekijä.
 
 Jotta arkkitehtuuriratkaisuiden suorituskykyä voisi arvioida
@@ -577,11 +579,11 @@ Mallit voivat perustua esimerkiksi 4+1-arkkitehtuurimallien kehikkoon
 laajennuksilla. Toisaalta UML-mallit ja monet ohjelmistoprosessissa
 käytetyt mallit on kehitetty ohjelmiston /suunnittelun/ tueksi. Kun
 halutaan /analysoida/ ohjelmiston ei-funktionaalisia ominaisuuksia,
-kuten suorituskykyä, käytetään usein analyysiin paremmin sopivia
-malleja @@rethink(2--3). On tärkeää, että mallin ja todellisen
-lopullisen ohjelmiston välillä säilyy yhteys, jotta ohjelmistosta
-todellisessa käytössä tehdyt mittaukset voivat korjata mallien
-oletuksia kun ohjelmistoa kehitetään inkrementaalisesti ja
+kuten suorituskykyä, käytetään usein kvantitatiiviseen analyysiin
+paremmin sopivia malleja @@rethink(2--3). On tärkeää, että mallin ja
+todellisen lopullisen ohjelmiston välillä säilyy yhteys, jotta
+ohjelmistosta todellisessa käytössä tehdyt mittaukset voivat korjata
+mallien oletuksia kun ohjelmistoa kehitetään inkrementaalisesti ja
 evoluutiivisesti.
 
 Varhaisvaiheen suorituskykymallit sijoittuvat kolmeen päätyyppiin
@@ -613,18 +615,38 @@ käyttäjän käytössä kerrallaan, ja optimitilanteessa käyttöjärjestelmä
 rajoittaa samanaikaisesti suoritettavien prosessien määrää.
 
 Simulaatiomallit ovat /suoritettavia/ malleja järjestelmästä, usein
-karkeammalla tasolla kuin lopullinen järjestelmä. Tutkielmassa
-hyödynnetään rajatusti simulaatiota siinä mielessä, että
-Android-kehitystyökalujen /Android-emulaattori/ simuloi todellista
-Android-laitetta ARM-käskyjen tasolla [fn:emulator]. Emulaattoria
-hyödynnetään joidenkin mittaustulosten osalta.
-#todo: lähde
+karkeammalla tasolla kuin lopullinen järjestelmä.
 
-[fn:emulator] Emulaattori-käsitteen syntyaikana @@emu puhtaan
-ohjelmallisesti toteutettua vieraan suoritusympäristön täydellistä
-toisinnosta kutsuttiin simulaattoriksi. Emulaattori perustui
-laitteistotukeen. Android-emulaattori on esimerkki nykykäytöstä, jossa
-ohjelmallistakin toisintamista usein kutsutaan emuloinniksi.
+Oman mainintansa ansaitsevat tietojenkäsittelytieteen perinteisen
+ydinalueen, algoritmien ja tietorakenteiden tutkimuksen formaalit
+tavat mallintaa ohjelmia. Algoritmien asymptoottisen käyttäytymisen
+tuntemisesta on rajatussa mielessä hyötyä suorituskyvyn
+mallintamisessa. Tällainen analyysi tukee kuitenkin lähinnä
+yksittäisten algoritmien ja tietorakenteiden valintaa, ja antaa vain
+rajallisesti tukea järjestelmän kokonaisarkkitehtuurin
+laatimiselle. Käytännön ohjelmistokehitykselle merkittävä puute on
+lisäksi, että asymptoottinen analyysi pelkistää ohjelman
+käyttäytymistä liiaksi jättäen huomiotta yksittäisten operaatioiden
+todelliset kustannukset todellisilla laitteilla -- analyysin
+perusteella tehokas algoritmi saattaa esimerkiksi sopia huonosti
+yhteen nykyaikaisen suorittimen välimuistin vaatimusten
+kanssa. Hyödynnän kuitenkin asymptoottisen analyysin kaltaista
+menetelmää ekstrapoloidessani JNI-operaatioiden käyttäytymistä
+vaihtelevilla syöteparametreilla.
+# todo lähde
+
+
+# Tutkielmassa
+# hyödynnetään rajatusti simulaatiota siinä mielessä, että
+# Android-kehitystyökalujen /Android-emulaattori/ simuloi todellista
+# Android-laitetta ARM-käskyjen tasolla [fn:emulator]. Emulaattoria
+# hyödynnetään joidenkin mittaustulosten osalta.
+#todo: lähde
+# [fn:emulator] Emulaattori-käsitteen syntyaikana @@emu puhtaan
+# ohjelmallisesti toteutettua vieraan suoritusympäristön täydellistä
+# toisinnosta kutsuttiin simulaattoriksi. Emulaattori perustui
+# laitteistotukeen. Android-emulaattori on esimerkki nykykäytöstä, jossa
+# ohjelmallistakin toisintamista usein kutsutaan emuloinniksi.
 
 # TODO: uncomment? v 
 #Myös simulaatiomalleja hyödynnetään rajatusti, sillä
@@ -640,6 +662,12 @@ I/O-operaatiot @@ferrari(168). Tällöin analyysin kohteeksi tuleekin,
 Markov-ketjuilla.
 # todo tarkista että em. pitää paikkansa lopulta
 
+** Vasteaikojen mallintaminen Markov-ketjuilla
+Hyödynnän Beizerin (1970) esittelemää yksinkertaista stokastista
+mallia jolla ohjelman kokonaisvasteajan saa laskettua sen osien
+suoritusajoista. Kuten kaikki Markov-prosesseihin perustuvat
+mallinnusmenetelmät, tämäkin 
+# todo here...
 
 * Tehtäviä                                                         :noexport:
 ** TODO [#A] mainitse tilavaativuus
