@@ -669,8 +669,8 @@ Markov-ketjuilla.
 Hyödynnän Beizerin (1970) esittelemää yksinkertaista Markov-mallia
 jolla ohjelman kokonaisvasteajan saa laskettua sen osien
 suoritusajoista @@beizer,ferrari. Mallinnustavan etuna on
-yksinkertaisuus sekä se, että mittaustuloksina saatavat vasteaikojen
-jakautumat voi yksinkertaisesti kytkeä mallin osaksi.
+yksinkertaisuuden lisäksi se, että mittaustuloksina saatavat
+vasteaikojen jakautumat voi yksinkertaisesti kytkeä mallin osaksi.
 
 Mallissa ohjelma jaetaan suoritustiloihin halutulla karkeusasteella --
 tutkielmassa jako noudattaa lähinnä profilointityökaluissa esiintyvien
@@ -682,26 +682,55 @@ tapahtuu. Yhdestä tilasta voi lähteä useampi kaari, ja kaariin
 kytketyt todennäköisyydet ilmaisevat todennäköisyyttä että kyseinen
 siirtymä tapahtuu.
 
+# todo tähän kuva
+
 Mallinnustavan erikoisuutena laskenta ei sijoitu solmuihin vaan
 kaariin, joilla on todennäköisyyden lisäksi keskimääräinen
 suoritusaika sekä suoritusajan varianssi (jotka vastaavat
-mittauksia). Muutoin kyseessä on perinteinen Markov-malli, mikä
-tarkoittaa mallin /historiattomuutta/: /Markov-oletuksen/ mukaisesti
-eri siirtymien todennäköisyydet riippuvat ainoastaan kulloisestakin
-tilasta eikä prosessin aikaisemmista tiloista. Oletus on tietenkin
-epärealistinen, mutta stokastisten prosessien hyöty piileekin siinä,
-että abstraktikin malli voi tiettyyn rajaan asti ennustaa
-todellisuuden monimutkaisiakin prosesseja.
+mittauksia). Muutoin kyseessä on perinteinen Markov-malli, joka on
+/historiaton/: /Markov-oletuksen/ mukaisesti eri siirtymien
+todennäköisyydet riippuvat ainoastaan kulloisestakin tilasta eikä
+prosessin aikaisemmista tiloista. Oletus on tietenkin epärealistinen,
+mutta stokastisten prosessien hyöty piileekin siinä, että abstraktikin
+malli voi tiettyyn rajaan asti ennustaa todellisuuden monimutkaisiakin
+prosesseja. Kuten mittauksetkin, mallin arvot ovat vahvasti
+riippuvaisia ohjelmiston itsensä lisäksi sille annetuista syötteistä;
+lähestymistapana tässä tutkielmassa on parametrisoida mallin
+vasteaika-arvot JNI-rajapintaan kohdistuvien työkuormien suhteen.
 
+Ohjelmiston kokonaisvasteaika ratkaistaan Beizerin mallinnustavassa
+algortimilla, joka eliminoi verkosta yhden solmun
+kerrallaan. Algoritmissa on eri yhtälöt /sarjaan/ ja /rinnan/
+kytkettyjen solmujen sekä /silmukoiden/ poistoon.
 
+1. Valitaan poistettava solmu.
+2. Poistetaan solmu käyttämällä /sarjaan/ kytkettyjen solmujen
+   poistomenetelmää. Kaarien määrä lisääntyy.
+3. Yhdistetään /rinnakkaiset/ kaaret.
+4. Poistetaan /silmukat/.
+5. Palataan kohtaan 1.
+
+# todo kuvat
+
+Jokaisessa solmun tai kaaren poisto-operaatiossa malli
+yksinkertaistuu, ja tuloksena syntyvien kaarien arvot lasketaan vanhan
+osamallin arvoista, kunnes mallissa on ainoastaan yksi solmu. Siitä
+nähdään ohjelman kokonaisvasteaika, joka saattaa vaihdella jos
+ohjelman suoritus käynnistyy eri kohdista tai loppuu eri kohtiin. Jos
+käytetty malli on tarpeeksi totuudenmukainen, saadaan yksinkertaiselle
+yhden käyttäjän ohjelmalle arvioitua keskimääräinen suoritusaika
+varianssineen jo ennen ohjelman laatimista.
 
 # todo here...
 
 * Tehtäviä                                                         :noexport:
 ** TODO [#A] mainitse tilavaativuus
-** TODO [#B] käsittele lyhyesti (max 2 kpl) O-algoritmianalyysi?
+** DONE [#B] käsittele lyhyesti (max 2 kpl) O-algoritmianalyysi?
 ** TODO CPU time vs. other time: viittaa mittausten yhteydessäa
 ** TODO ferrari luku 5.2.3 objektiivisuus?? mikä tämä oli
+** TODO mahdollista profilointi-sanan käyttö nykykäytön mukaisesti
+** TODO mainitse renderscript
+** TODO oikeastaan mittausten avulla mallinnetaan aika lailla /työkuormaa/
 ** Aliluvut
 *** Työkuorman mallintaminen                                       :noexport:
     tämä on vähän hankalampi, katotaan myöhemmin
