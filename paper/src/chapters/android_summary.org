@@ -1,7 +1,8 @@
 
 Annan aluksi lyhyen yleiskuvauksen Android-järjestelmästä ennen
 siirtymistä tutkielman varsinaiseen aiheeseen, suorituskyvyn
-mittaamiseen ja mallintamiseen sekä Androidin Java-natiivirajapintaan [fn:version].
+mittaamiseen ja mallintamiseen sekä Androidin
+Java-natiivirajapintaan.[fn:version]
 
 [fn:version] Tämä tutkielma perustuu Androidin versioon 4.1.2.
 
@@ -18,9 +19,8 @@ järjestelmästä on ohjelmoitu Javalla ja suoritetaan
 virtuaalikoneessa. Järjestelmän rakenne ei muutenkaan noudata
 esimerkiksi POSIX-standardia vaan perustuu hajautettuun
 komponenttiarkkitehtuuriin, joka on nimeltään /Binder/.
-Binder-arkkitehtuurin infrastruktuuri, Dalvik-virtuaalikone sekä suuri
-osa järjestelmän matalamman tason palveluista on toteutettu
-C++-kielellä.
+Arkkitehtuurin infrastruktuuri, Dalvik-virtuaalikone sekä suuri osa
+järjestelmän matalamman tason palveluista on toteutettu C++-kielellä.
 
 Seuraava kuva esittää Android-järjestelmän perusosia.
 
@@ -69,11 +69,11 @@ yleisesti järjestelmän sisäisessä toteutuksessa, kun Java-koodista on
 kutsuttava matalamman arkkitehtuuritason natiiveja kirjastoja.
 Esimerkiksi Binder-kutsumekanismin toteutus on C++-kielinen, mutta
 Android sisältää myös Java-rajapinnat Binderin käyttöön. Sisäisesti
-nämä Javan Binder-sidonnat on toteutettu Javan natiivirajapinnan
+nämä Javan Binder-sidonnat on toteutettu natiivirajapinnan
 avulla. Niin ikään monet Javalla toteutetut
 järjestelmäpalvelukomponentit kutsuvat itse natiivikirjastoja JNI:n
 kautta. Lisäksi jotkut Android-ohjelmointirajapinnan luokat kutsuvat
-natiivikirjastoja suoraan JNI:n kautta mutta ohittaen
+natiivikirjastoja suoraan JNI:n kautta, mutta ohittavat
 järjestelmäpalvelutason: esimerkiksi ~Log~-luokka kutsuu suoraan
 ~liblog~-natiivikirjastoa.
 # lähde: binder.pdf
@@ -81,19 +81,17 @@ järjestelmäpalvelutason: esimerkiksi ~Log~-luokka kutsuu suoraan
 
 Järjestelmäpalveluita matalammalla olevia arkkitehtuuritasoja,
 mukaanlukien dynaamisesti ladattavia natiivikirjastoja, en käsittele
-sen tarkemmin. Mainittakoon kuitenkin, että Androidin Native
-Development Kit -työkalut sisältävät rajapinnat rajattuun valikoimaan
-natiivikirjastojen toimintoja. Näitä voi hyödyntää NDK:n C- ja C++
--otsaketiedostojen kautta. Näitä dynaamisesti linkitettyjä
-natiivikirjastoja voi siis kutsua suoraan tavallisilla
-aliohjelmakutsuilla natiiviohjelmasta käsin, ohittaen
-järjestelmäpalvelukerroksen. Androidin Binderiin perustuvaan
-komponenttiarkkitehtuuriin ei natiiviohjelmoija pääse
-käsiksi. Natiivityökalujen ulottumattomiin jääkin suurin osa Androidin
-laajasta toiminnallisuudesta, mutta esimerkiksi peliohjelmointia
-varten NDK:n natiivirajapinnat ovat riittäviä. Ne sisältävät muun
-muassa tuen OpenGL- ja bittikarttagrafiikalle, ääni- ja
-multimediatoimintoja sekä valmiudet laitteen sensorien lukemiseen.
+sen tarkemmin. Mainittakoon kuitenkin, että Native Development Kitin
+vakaat natiivirajapinnat kuuluvat tälle tasolle arkkitehtuurissa.
+Näitä dynaamisesti linkitettyjä natiivikirjastoja voi siis kutsua
+suoraan tavallisilla aliohjelmakutsuilla natiiviohjelmasta käsin,
+ohittaen järjestelmäpalvelukerroksen. Androidin Binder-komponentteihin
+ei natiiviohjelmoija pääse käsiksi. Natiivityökalujen ulottumattomiin
+jääkin suurin osa Androidin laajasta toiminnallisuudesta, mutta
+esimerkiksi peliohjelmointia varten NDK:n natiivirajapinnat ovat
+riittäviä. Ne sisältävät muun muassa tuen OpenGL- ja
+bittikarttagrafiikalle, ääni- ja multimediatoimintoja sekä valmiudet
+laitteen sensorien lukemiseen.
 
 # todo check C - *ja* C++??
 # todo check dynamic linking
@@ -132,7 +130,7 @@ noudattaa pinopohjaista käskyarkkitehtuuria, jossa konekäskyjen
 operandit sijaitsevat implisiittisesti virtuaalikoneen pinossa. Dalvik
 sen sijaan on rekisteripohjainen virtuaalikone, jossa konekäskyjen
 operandit viittaavat eksplisiittisesti virtuaalikoneen ylläpitämiin
-rekistereihin [fn:vmarch].
+rekistereihin.[fn:vmarch]
 
 [fn:vmarch] Lisätietoa Dalvikin suunniteluratkaisuista perusteluineen
 antavat lähteet. 
@@ -145,13 +143,13 @@ luokat ja niiden sisältämät Dalvik-käskykannan mukaiset käskyt.
 # todo wikipedia sanoo että kaikkia class-tiedostoja ei käännetä?
 
 Dalvik-virtuaalikone nykyisessä muodossaan on /jäljittävä Just-In-Time
--kääntäjä/ (/tracing JIT compiler/). Näin ollen Dalvik sisältää
-/tulkin/, joka tulkitsee Dalvik-käskykantaa noudattavaa ohjelmaa ja
-pitää samalla kirjaa metodeista, joiden kääntäminen suoraan
-laitteistoalustan konekielelle nopeuttaisi todennäköisimmin ohjelman
-suoritusta. Tällaiset metodit Dalvik kääntää konekielelle ja suorittaa
-konekielisinä. Ne myös tallennetaan JIT-kääntäjän välimuistiin ja
-Androidin tiedostojärjestelmään, joten käännösvaihe tapahtuu vain
+-kääntäjä/ (/tracing JIT compiler/). Näin ollen Dalvikin /tulkki/
+suorittaa Dalvik-käskykannan mukaista ohjelmaa ja pitää samalla kirjaa
+metodeista, joiden kääntäminen suoraan laitteistoalustan konekielelle
+nopeuttaisi todennäköisimmin ohjelman suoritusta. Tällaiset metodit
+Dalvik kääntää konekielelle ja suorittaa konekielisinä. Ne myös
+tallennetaan JIT-kääntäjän välimuistiin ja Androidin
+tiedostojärjestelmään, joten kääntäminen tapahtuu parhaimmillaan vain
 kerran.
 
 Dalvik on ohjelmoitu C++-kielellä, mutta sen tulkki koostuu pääosin

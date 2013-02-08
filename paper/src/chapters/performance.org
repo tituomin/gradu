@@ -4,8 +4,6 @@ ohjelmistolle, mutta millä tavalla suorituskyky tulisi ottaa huomioon
 ohjelmiston kehitysprosessissa? Ohjelmistotekniikan kirjallisuudessa
 kysymykseen on vastattu hyvin eri tavoin.
 
-* Suorituskyvyn saavuttaminen
-
 Donald Knuthilta on peräisin tunnettu lainaus: "Ennenaikainen
 optimointi on kaiken pahan alku ja juuri @@goto(268)."  Knuth
 korostaa, ettei varsinaisessa ohjelmointityössä kannata käyttää aikaa
@@ -37,8 +35,8 @@ tai komponentin /ohjelmointiin/. Laajempaa ohjelmistoa rakentaessa
 otetaan kantaa myös ohjelmiston käsitteellisiin vaatimuksiin ja
 suunnitellaan ohjelmiston komponenttitason arkkitehtuuri sekä
 komponenttien tarkempi rakenne. Oli ohjelmiston tuotantoprosessi miten
-inkrementaalinen tahansa, varhaiset makrotason ratkaisut rajoittavat
-usein myöhempiä mikrotason ratkaisuita. Merkittäviä
+inkrementaalinen tahansa, varhaiset suuren mittaluokan ratkaisut
+rajoittavat usein myöhempiä yksityiskohtia. Merkittäviä
 seurannaisvaikutuksia on esimerkiksi
 
 - käytetyillä ohjelmointikielillä,
