@@ -20,12 +20,13 @@
 \newpage
 * Java-natiivirajapinta
 #+INCLUDE: "../gen/chapters/android.org" :minlevel 1
+
+#+LATEX: \newpage
+#+LATEX: \bibliographystyle{templates/tktl}
+#+LATEX: \bibliography{bib/main}
+
 * Androidin natiivikielinen ohjelmointi                            :noexport:
 * Esimerkkisovelluksen tausta                                      :noexport:
 * Tulokset                                                         :noexport:
 * P‰‰telm‰t                                                        :noexport:
 * Loppusanat                                                       :noexport:
-* L‰hteet
-#+LATEX: \newpage
-#+LATEX: \bibliographystyle{templates/tktl}
-#+LATEX: \bibliography{bib/main}
