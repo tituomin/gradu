@@ -210,7 +210,7 @@ aikaväli.[fn:bar] Linux-käyttöjärjestelmissä tätä mittaa
 järjestelmäkutsu =gettimeofday=, joka lukee laitteiston kelloa. Jos
 sovellusohjelma kutsuu sitä tavallisena käyttöjärjestelmäkutsuna,
 saattaa ohjelman suoritus häiriintyä tarkkuutta vaativissa
-mittauksissa @@ferrari(472) [fn:gettimeofday]. Tässä tutkielmassa
+mittauksissa @@ferrari(472).[fn:gettimeofday] Tässä tutkielmassa
 kyseistä rutiinia käytetään ainoastaan tarpeeksi pitkien
 kokonaisvasteaikojen mittaamiseen, jolloin pienet häiriöt eivät ole
 kriittisiä.
@@ -637,7 +637,7 @@ vaihtelevilla syöteparametreilla.
 # Tutkielmassa
 # hyödynnetään rajatusti simulaatiota siinä mielessä, että
 # Android-kehitystyökalujen /Android-emulaattori/ simuloi todellista
-# Android-laitetta ARM-käskyjen tasolla [fn:emulator]. Emulaattoria
+# Android-laitetta ARM-käskyjen tasolla.[fn:emulator] Emulaattoria
 # hyödynnetään joidenkin mittaustulosten osalta.
 #todo: lähde
 # [fn:emulator] Emulaattori-käsitteen syntyaikana @@emu puhtaan
