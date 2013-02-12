@@ -9,18 +9,19 @@ Java-natiivirajapintaan.[fn:version]
 Android on mobiilikäyttöjärjestelmä, johon kuuluu oma versionsa
 Linux-käyttö\-jär\-jes\-tel\-mä\-y\-ti\-mes\-tä. Siinä on mukana
 joitakin mobiililaitteille räätälöityjä ominaisuuksia, jotka
-esimerkiksi vähentävät muistin- ja virrankulutusta.
+esimerkiksi vähentävät muistin- ja virrankulutusta @@embedded(49--53).
 
 Kokonaisuutena Android ei muistuta tyypillistä Linux-pohjais\-ta
-työpöytä- tai palvelinkäyttöjärjestelmää. Se on läheisempää sukua
-riisutummille /upotetuille/ Linux-järjestelmille, mutta eroaa
-niistäkin. Ensinnäkin merkittävä osa sovelluksista ja koko
+työpöytä- tai palvelinkäyttöjärjestelmää @@embedded(48). Se on
+läheisempää sukua riisutummille /upotetuille/ Linux-järjestelmille,
+mutta eroaa niistäkin. Ensinnäkin merkittävä osa sovelluksista ja koko
 järjestelmästä on ohjelmoitu Javalla ja suoritetaan
 virtuaalikoneessa. Järjestelmän rakenne ei muutenkaan noudata
 esimerkiksi POSIX-standardia vaan perustuu hajautettuun
-komponenttiarkkitehtuuriin, joka on nimeltään /Binder/.
+komponenttiarkkitehtuuriin, joka on nimeltään /Binder/ @@embedded(79).
 Arkkitehtuurin infrastruktuuri, Dalvik-virtuaalikone sekä suuri osa
-järjestelmän matalamman tason palveluista on toteutettu C++-kielellä.
+järjestelmän matalamman tason palveluista on toteutettu C- ja
+C++-kielillä @@embedded(138).
 
 Seuraava kuva esittää Android-järjestelmän perusosia.
 
@@ -29,36 +30,39 @@ Seuraava kuva esittää Android-järjestelmän perusosia.
 
 Kuvan arkkitehtuurikerroksista ylimmät ovat lähimpänä käyttäjää ja
 sovellusohjelmoijaa. Suurin osa Android-sovelluksista ohjelmoidaan
-Javalla Androidin sovelluskehyksen ohjelmointirajapintaa
+Javalla Androidin sovelluskehyksen ohjelmointirajapintaa @@sdk
 käyttäen. Ohjelmointirajapinnan ~android~-nimiavaruuden paketit ovat
 varta vasten Androidia varten rakennettuja. Ne päästävät ohjelmoijan
 käsiksi käyttöjärjestelmän ja laitteiston palveluihin. Nimiavaruuden
 ~java~ ohjelmointirajapinta on osajoukko /Java Standard Edition/
--rajapinnasta ja on peräisin /Apache Harmony/ -projektista.
+-rajapinnasta ja on peräisin /Apache Harmony/ -projektista
+@@embedded(77).
 # todo ei sisällä koko SE:tä (lähde: embedded?)
 
 Kaikki Java-ohjelmakoodi käännetään Androidia varten ensin normaaliksi
 tavukoodiksi ja siitä Androidin omaksi rekisteripohjaiseksi
-~dex~-tavukoodiksi, jota suorittaa Dalvik-virtuaalikone. Dalvikissa
+~dex~-tavukoodiksi, jota suorittaa Dalvik-virtuaalikone @@aot(15). Dalvikissa
 suoritetaan sekä sovellusohjelmat että järjestelmän sisäiset
 komponentit -- siltä osin kun ne on toteutettu Javalla.
 
 Android on alusta lähtien suunniteltu tukemaan moniajoa. Jokaista
 Android-sovellusta suoritetaan omassa virtuaalikoneessaan ja jokaista
-virtuaalikonetta omassa Linux-prosessissaan. Tällä tavoin sovellukset
-on eristetty omiin hiekkalaatikoihinsa, ja esimerkiksi sovellusten
-käyttöoikeuksista voidaan pitää kirjaa prosessitasolla.
+virtuaalikonetta omassa Linux-prosessissaan @@embedded(43--45). Tällä
+tavoin sovellukset on eristetty omiin hiekkalaatikoihinsa, ja
+esimerkiksi sovellusten käyttöoikeuksista voidaan pitää kirjaa
+prosessitasolla.
 
 Android-ohjelmointirajapinnan luokat antavat sovellusohjelmoijalle
 yksinkertaisen näkymän käyttöjärjestelmän palveluihin. Valtaosa
 palveluiden varsinaisesta toteutuksesta sijoittuu kuitenkin Androidin
 /järjestelmäpalveluihin/ (/system services/), komponentteihin joita
-järjestelmä suorittaa omissa palvelinprosesseissaan. Yleensä
-sovellusohjelmoija ei kutsu näitä tukipalveluita suoraan, vaan
-Android-ohjelmointirajapintojen sisäiset toteutukset kutsuvat niitä
-Binderin tarjoaman prosessienvälisen kutsumekanismin avulla
-sovelluksen prosessista käsin. Komponenttien välinen sidonta on täysin
-ajonaikaista ja perustuu erilliseen palveluhakemistokomponenttiin.
+järjestelmä suorittaa omissa palvelinprosesseissaan
+@@embedded(79). Yleensä sovellusohjelmoija ei kutsu näitä
+tukipalveluita suoraan, vaan Android-ohjelmointirajapintojen sisäiset
+toteutukset kutsuvat niitä Binderin tarjoaman prosessienvälisen
+kutsumekanismin avulla sovelluksen prosessista käsin. Komponenttien
+välinen sidonta on täysin ajonaikaista ja perustuu erilliseen
+palveluhakemistokomponenttiin.
 # todo palveluhakemistokomponentti, lähteet & tarkenna:
 # osa androidia vai osa binderia?
 
@@ -66,32 +70,33 @@ Osa Androidin järjestelmäpalveluista on toteutettu Java-kielellä ja
 osa C++-kielellä. Javan natiivirajapinta JNI esitellään tarkemmin
 luvussa 3, mutta voimme jo havaita, että natiivirajapintaa käytetään
 yleisesti järjestelmän sisäisessä toteutuksessa, kun Java-koodista on
-kutsuttava matalamman arkkitehtuuritason natiiveja kirjastoja.
-Esimerkiksi Binder-kutsumekanismin toteutus on C++-kielinen, mutta
-Android sisältää myös Java-rajapinnat Binderin käyttöön. Sisäisesti
-nämä Javan Binder-sidonnat on toteutettu natiivirajapinnan
-avulla. Niin ikään monet Javalla toteutetut
+kutsuttava matalamman arkkitehtuuritason natiiveja kirjastoja
+@@embedded(78).  Esimerkiksi Binder-kutsumekanismin toteutus on
+C++-kielinen, mutta Android sisältää myös Java-rajapinnat Binderin
+käyttöön. Sisäisesti nämä Javan Binder-sidonnat on toteutettu
+natiivirajapinnan avulla @@aosp. Niin ikään monet Javalla toteutetut
 järjestelmäpalvelukomponentit kutsuvat itse natiivikirjastoja JNI:n
 kautta. Lisäksi jotkut Android-ohjelmointirajapinnan luokat kutsuvat
 natiivikirjastoja suoraan JNI:n kautta, mutta ohittavat
 järjestelmäpalvelutason: esimerkiksi ~Log~-luokka kutsuu suoraan
 ~liblog~-natiivikirjastoa.
-# lähde: binder.pdf
+# lähde: binder.pdf (? voiko käyttää)
 # todo sisäinen viite
 
 Järjestelmäpalveluita matalammalla olevia arkkitehtuuritasoja,
 mukaanlukien dynaamisesti ladattavia natiivikirjastoja, en käsittele
 sen tarkemmin. Mainittakoon kuitenkin, että Native Development Kitin
-vakaat natiivirajapinnat kuuluvat tälle tasolle arkkitehtuurissa.
-Näitä dynaamisesti linkitettyjä natiivikirjastoja voi siis kutsua
-suoraan tavallisilla aliohjelmakutsuilla natiiviohjelmasta käsin,
-ohittaen järjestelmäpalvelukerroksen. Androidin Binder-komponentteihin
-ei natiiviohjelmoija pääse käsiksi. Natiivityökalujen ulottumattomiin
+@@ndk vakaat natiivirajapinnat kuuluvat tälle tasolle
+arkkitehtuurissa.  Näitä dynaamisesti linkitettyjä natiivikirjastoja
+voi siis kutsua suoraan tavallisilla aliohjelmakutsuilla
+natiiviohjelmasta käsin, ohittaen
+järjestelmäpalvelukerroksen. Androidin Binder-komponentteihin ei
+natiiviohjelmoija pääse käsiksi. Natiivityökalujen ulottumattomiin
 jääkin suurin osa Androidin laajasta toiminnallisuudesta, mutta
 esimerkiksi peliohjelmointia varten NDK:n natiivirajapinnat ovat
-riittäviä. Ne sisältävät muun muassa tuen OpenGL- ja
-bittikarttagrafiikalle, ääni- ja multimediatoimintoja sekä valmiudet
-laitteen sensorien lukemiseen.
+riittäviä @@embedded(46--47). Ne sisältävät muun muassa tuen OpenGL-
+ja bittikarttagrafiikalle, ääni- ja multimediatoimintoja sekä
+valmiudet laitteen sensorien lukemiseen.
 
 # todo check C - *ja* C++??
 # todo check dynamic linking
