@@ -25,7 +25,7 @@ Knuthin tueksi voi nykynäkökulmasta todeta, että
 laitteistoarkkitehtuurien, optimoivien kääntäjien, virtuaalikoneiden
 ja suoritusympäristön yleisen monimutkaistumisen takia pelkästä
 ohjelman lähdekoodista on yhä vaikeampaa suoraan päätellä ohjelman
-suoritusaikaista käyttäytymistä @@vertical.
+suoritusaikaista käyttäytymistä @@vertical, @@appel.
 
 # TODO esimerkki lähteistä (java vertical profiling)
 # lisää lähteitä?
@@ -199,21 +199,26 @@ on usein samanaikaista järjestelmän laskennan kanssa. Käyttäjän
 harkinta- ja reagointiviiveet eivät ole osa vasteaikaa, joten
 vuorovaikutukset on mittausta varten eriteltävä riittävän
 yksinkertaisiin mitattaviin yksiköihin, joissa käyttäjän ja
-sovelluksen roolit on erotettavissa.
+sovelluksen roolit on erotettavissa @@ferrari(14--16), @@spe(114).
 # lähde tuohon
 
 Erilaiset keinot mitata aikaa koskevat erilaisia osia
 kokonaisajasta. Järjestelmän ulkopuoliselle käyttäjälle havainnot ovat
 riippuvaisia todellisesta kuluneesta ajasta, /tosiajasta/ (/real
 time/, /wall clock time/), jota vastaa sekuntikellolla mitattu
-aikaväli.[fn:bar] Linux-käyttöjärjestelmissä tätä mittaa
-järjestelmäkutsu =gettimeofday=, joka lukee laitteiston kelloa. Jos
+aikaväli @@ferrari(463), @@advanced-unix(20).[fn:bar]
+UNIX-käyttöjärjestelmissä tätä mittaa järjestelmäkutsu =gettimeofday=
+@@advanced-unix(173), joka lukee laitteiston kelloa. Jos
 sovellusohjelma kutsuu sitä tavallisena käyttöjärjestelmäkutsuna,
 saattaa ohjelman suoritus häiriintyä tarkkuutta vaativissa
 mittauksissa @@ferrari(472).[fn:gettimeofday] Tässä tutkielmassa
 kyseistä rutiinia käytetään ainoastaan tarpeeksi pitkien
 kokonaisvasteaikojen mittaamiseen, jolloin pienet häiriöt eivät ole
-kriittisiä.
+kriittisiä. Toinen tosiajan ongelma on, moniajojärjestelmistä se on
+riippuvainen järjestelmän kokonaistilasta @@ferrari(455); tässä
+tutkielmassa muiden prosessien vaikutus tulkitaan tilastolliseksi
+varianssiksi.
+# todo luetaan piiriin
 # todo tarkista onko androidissa tarkka userspace gettimeofday (arm)
 # todo tosiaika?
 
@@ -229,25 +234,26 @@ voi kutsua vähäisellä rasitteella siirtymättä kernelin suoritustilaan.
 Tässä tutkielmassa kaikki suorituskykyä parantavat ratkaisut tähtäävät
 /oleellisten käyttötapausten lyhentyneeseen vasteaikaan tosiaikana
 mitattuna/. Tarkemman suorituskykyanalyysin kannalta pelkkä tosiajan
-käyttäminen ei kuitenkaan aina ole riittävää. Linux ja muut
-käyttöjärjestelmät pitävät kirjaa myös /sovellusajasta/ (Linuxissa
-/user time/), eli ajasta, jonka sovellusprosessi viettää aktiivisesti
-tavallisessa suoritustilassa käyttöjärjestelmäytimen ulkopuolella
-(/unprivileged mode/, /user mode/). Toinen osa sovellusprosessin
+käyttäminen ei kuitenkaan aina ole riittävää. UNIX-käyttöjärjestelmät
+pitävät kirjaa myös /sovellusajasta/ (/user time/), eli ajasta, jonka
+sovellusprosessi viettää aktiivisesti tavallisessa suoritustilassa
+käyttöjärjestelmäytimen ulkopuolella (/unprivileged mode/, /user
+mode/) @@advanced-unix(20). Toinen osa sovellusprosessin
 suoritusajasta, järjestelmäaika (/system time/), vietetään
 käyttöjärjestelmäytimen sisällä palveluissa, joita sovellus on
 eksplisiittisesti kutsunut.
 # todo lähteet + lievennä Linux-spesifisyys
+# todo kuvaa ferrarin termeillä?
 
 Aika, joka kuluu I/O- tai muita palveluita odottaessa, lasketaan
 tosiaikaan muttei sovellus- tai järjestelmäaikaan. Käyttäjän kannalta
 esimerkiksi I/O-operaatioden odottelulla on selvästi suuri
 merkitys. Sovellus- ja järjestelmäaika yhdessä vastaavat sovelluksen
 /suoritinaikaa/ (/CPU time/), koska niihin kuuluu ainoastaan prosessin
-aktiivinen suoritusaika. Tutkielmassa oletetaan, että suoritinaika on
-natiivirajapinnan rasitteiden oleellisin osatekijä, mutta tosiaikaa
-mittaamalla varmistetaan, etteivät suoritinajan ulkopuoliset
-merkittävät viiveet jää huomiotta.
+aktiivinen suoritusaika @@advanced-unix(20). Tutkielmassa oletetaan,
+että suoritinaika on natiivirajapinnan rasitteiden oleellisin
+osatekijä, mutta tosiaikaa mittaamalla varmistetaan, etteivät
+suoritinajan ulkopuoliset merkittävät viiveet jää huomiotta.
 
 Kuten aina, vasteaikojen mittaamisen kohde on aina
 ohjelma--syöte -pari, joten sopivien syötteiden käyttäminen
@@ -292,15 +298,15 @@ luettelo jokaisesta kutsutusta aliohjelmasta järjestettynä
 kutsukertojen mukaan. Ohjelman profiilin käsitteen loi Donald Knuth
 @@fortran. Tämän kaltaista instrumentointia ei välttämättä tarvitse
 ohjelmoida käsin: kääntäjä voi lisätä instrumentointikäskyjä
-kohdeohjelmaan tarvittaessa automaattisesti.
+kohdeohjelmaan tarvittaessa automaattisesti @@gprof(2).
 #todo profile kutsu vs lausetason?  plus lähde tähän
 # knuth irrallinen > siirrä myöhemmäksi
 
 Näytteenoton tavoite on kerätä ohjelman suoritustiloista edustava
-otanta kirjaamatta jokaista tilanmuutosta ohjelman sisältä käsin.
-Yksittäinen näyte voidaan ottaa esimerkiksi tosiaikakellon aiheuttaman
-keskeytyksen laukaisemana, ja näytteeseen voidaan tallentaa
-esimerkiksi suorituksessa olleen konekäskyn osoite.
+otanta kirjaamatta jokaista tilanmuutosta ohjelman sisältä käsin
+@@spe(328).  Yksittäinen näyte voidaan ottaa esimerkiksi
+tosiaikakellon aiheuttaman keskeytyksen laukaisemana, ja näytteeseen
+voidaan tallentaa esimerkiksi suorituksessa olleen konekäskyn osoite.
 
 Instrumentoinnin ja näytteenoton avulla ohjelman suoritusajan
 jakautumisesta aliohjelmiin tai jopa yksittäisiin konekäskyihin
@@ -320,11 +326,11 @@ laitteistokeskeytysten tapahtuessa. Tämä käyttöjärjestelmän toiminto
 pohjautuu laskureihin ja keskeytyksiin, jotka on varta vasten
 sisäänrakennettu suorittimiin. Esimerkiksi ARM-suorittimet voi asettaa
 laskemaan kuluneita suoritinsyklejä, väärin ennustettuja
-suoritushaaroja, muistihakuja sekä muita tapahtumia. Kun valittu
+suoritushaaroja, muistihakuja sekä muita tapahtumia @@cortex(3-85 -- 3-88). Kun valittu
 tapahtumamäärä on ylittynyt, keskeytys käynnistää
 käyttöjärjestelmäytimen mittausrutiinin.
 # todo arm-lähde (virallinen dokkari)
-# todo 
+# todo here
 
 Vaihtoehto normaalin suoritusympäristön käyttämiselle on
 /virtualisointi/, jossa pelkkä sovellus tai koko ohjelmistoympäristö

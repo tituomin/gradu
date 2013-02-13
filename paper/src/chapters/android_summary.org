@@ -132,13 +132,13 @@ Java-virtuaalikoneen ymmärtämää välikieltä, Java-tavukoodia.
 Androidin Dalvik-virtuaalikone ei kuitenkaan ole
 Java-virtuaalikone. Luokkatiedostoja käyttävä Java-virtuaalikone
 noudattaa pinopohjaista käskyarkkitehtuuria, jossa konekäskyjen
-operandit sijaitsevat implisiittisesti virtuaalikoneen pinossa. Dalvik
-sen sijaan on rekisteripohjainen virtuaalikone, jossa konekäskyjen
-operandit viittaavat eksplisiittisesti virtuaalikoneen ylläpitämiin
-rekistereihin.[fn:vmarch]
+operandit sijaitsevat implisiittisesti virtuaalikoneen pinossa
+@@dvm-jit(15). Dalvik sen sijaan on rekisteripohjainen virtuaalikone,
+jossa konekäskyjen operandit viittaavat eksplisiittisesti
+virtuaalikoneen ylläpitämiin rekistereihin.[fn:vmarch]
 
-[fn:vmarch] Lisätietoa Dalvikin suunniteluratkaisuista perusteluineen
-antavat lähteet. 
+[fn:vmarch] Lisätietoa virtuaalikoneratkaisuiden eroista lähteestä
+ @@showdown.
 # todo etsi ne lähteet
 
 Androidin kehitystyökalut kääntävätkin ohjelman Java-tavukoodista
@@ -148,19 +148,20 @@ luokat ja niiden sisältämät Dalvik-käskykannan mukaiset käskyt.
 # todo wikipedia sanoo että kaikkia class-tiedostoja ei käännetä?
 
 Dalvik-virtuaalikone nykyisessä muodossaan on /jäljittävä Just-In-Time
--kääntäjä/ (/tracing JIT compiler/). Näin ollen Dalvikin /tulkki/
-suorittaa Dalvik-käskykannan mukaista ohjelmaa ja pitää samalla kirjaa
-metodeista, joiden kääntäminen suoraan laitteistoalustan konekielelle
-nopeuttaisi todennäköisimmin ohjelman suoritusta. Tällaiset metodit
-Dalvik kääntää konekielelle ja suorittaa konekielisinä. Ne myös
-tallennetaan JIT-kääntäjän välimuistiin ja Androidin
-tiedostojärjestelmään, joten kääntäminen tapahtuu parhaimmillaan vain
-kerran.
+-kääntäjä/ (/tracing JIT compiler/) @@dvm-jit(15-16). Näin ollen
+Dalvikin /tulkki/ suorittaa Dalvik-käskykannan mukaista ohjelmaa ja
+pitää samalla kirjaa metodeista, joiden kääntäminen suoraan
+laitteistoalustan konekielelle nopeuttaisi todennäköisimmin ohjelman
+suoritusta. Tällaiset metodit Dalvik kääntää konekielelle ja suorittaa
+konekielisinä. Ne myös tallennetaan JIT-kääntäjän välimuistiin ja
+Androidin tiedostojärjestelmään, joten kääntäminen tapahtuu vain
+kerran @@embedded(197).
 
 Dalvik on ohjelmoitu C++-kielellä, mutta sen tulkki koostuu pääosin
 hyvin pitkälle optimoidusta symbolisesta konekielestä, jonka avulla
 minimoidaan joitakin tulkkien toteutuksille tyypillisiä
-suorituskykyrasitteita.
+suorituskykyrasitteita @@aosp.
+# todo lähde google io video?
 
 Jos tarkastelemme Dalvikin suoritusaikaista toimintaa Java-ohjelman
 ulkopuolisesta näkökulmasta, havaitsemme siis, että Dalvik viettää

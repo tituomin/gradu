@@ -302,6 +302,7 @@ dvm-kutsuja? (siirrä dvm-osapuoli myös natiiviksi?)
 }
 
 - vertaa myöhäisempään "painokseen"
+- todo s. 337 benchmarkin määritelmä
 
 
 @inproceedings{Sharma:2005:ABA:1071021.1071046,
@@ -388,6 +389,17 @@ file={rethinking-models.pdf}
 
 *** profilointi, työkalut
 
+@book{advanced-unix,
+ author = {Stevens, W. Richard and Rago, Stephen A.},
+ title = {Advanced Programming in the UNIX Environment, Second Edition},
+ year = {2008},
+ isbn = {0321525949, 9780321525949},
+ edition = {2nd},
+ publisher = {Addison-Wesley Professional},
+} 
+
+
+
 @ARTICLE{1667162, 
 author={Plattner, B. and Nievergelt, J.}, 
 journal={Computer}, title={Special Feature: Monitoring Program Execution: A Survey}, 
@@ -454,7 +466,7 @@ file={01667162.pdf}
 }
 
 
-@TECHREPORT{Appel88profilingin,
+@TECHREPORT{appel,
     author = {Andrew Appel and Bruce F. Duba and David B. Macqueen and Andrew P. Tolmach},
     title = {Profiling in the Presence of Optimization and Garbage Collection},
     institution = {},
@@ -467,14 +479,29 @@ file={01667162.pdf}
   - call counting
 - ei instituutiota?
 
-@MISC{Graham82gprof:a,
+@MISC{gprof,
  author = {Susan L. Graham and Peter B. Kessler and Marshall
  K. McKusick},
  title = {gprof: a Call Graph Execution Profiler},
  year = 1982,
  file = {graham-profiling-82.pdf},
 }
+
+
            
+@Manual{cortex,
+  title =        {Cortex-A8 Technical Reference Manual},
+  OPTkey =       {},
+  author =    {{ARM Ltd.}},
+  OPTorganization = {},
+  OPTaddress =   {},
+  edition =   {Revision r3p2},
+  OPTmonth =     {},
+  year =      {2010},
+  OPTnote =      {},
+  OPTannote =    {}
+}
+
 *** pelit
 @article{Phelps:2004:FGM:971564.971592,
  author = {Phelps, Andrew M. and Parks, David M.},
@@ -576,7 +603,7 @@ http://www.ibm.com/developerworks/rational/library/4169.html
     file = {valgrind2003.ps}
 }
 
-@inproceedings{Absar:2011:EPA:2093157.2093175,
+@inproceedings{dvm-jit,
  author = {Absar, Javed and Shekhar, Deepak},
  title = {Eliminating partially-redundant array-bounds check in the Android Dalvik JIT compiler},
  booktitle = {Proceedings of the 9th International Conference on
@@ -736,6 +763,8 @@ http://www.ibm.com/developerworks/rational/library/4169.html
  address = {Washington, DC, USA},
  file = {04221619.pdf}
 } 
+
+
 
 # s.172
 #
@@ -1308,6 +1337,8 @@ ISSN={},
 file={06118781.pdf}
 }
 
+- vaikuttaa hyvältä
+
 @INPROCEEDINGS{6163104, 
 author={Ki-Cheol Son and Jong-Yeol Lee}, 
 booktitle={Awareness Science and Technology (iCAST), 2011 3rd International Conference on}, title={The method of android application speed up by using NDK}, 
@@ -1864,6 +1895,26 @@ BibTeX | EndNote | ACM Ref
 
 * erityistarpeisiin
 
+@article{showdown,
+ author = {Shi, Yunhe and Casey, Kevin and Ertl, M. Anton and Gregg, David},
+ title = {Virtual machine showdown: Stack versus registers},
+ journal = {ACM Trans. Archit. Code Optim.},
+ issue_date = {January 2008},
+ volume = {4},
+ number = {4},
+ month = jan,
+ year = {2008},
+ issn = {1544-3566},
+ pages = {2:1--2:36},
+ articleno = {2},
+ numpages = {36},
+ url = {http://doi.acm.org/10.1145/1328195.1328197},
+ doi = {10.1145/1328195.1328197},
+ acmid = {1328197},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Interpreter, register architecture, stack architecture, virtual machine},
+}
 
 
 @Manual{ios,
