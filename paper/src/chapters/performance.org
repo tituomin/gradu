@@ -530,6 +530,8 @@ pituutta syklimäärässä.
 # todo: analysoi linuxin timeria ja schedulointia..
 # todo: onko dalvikissa ym. muissa komponenteissa jaksollisia ilmiöitä?
 * Arkkitehtuurin mallintaminen 
+# todo OHJELMISTON mallintaminen vai arkkitehtuurin?
+
 # todo vanhaa tekstiä tästä alaspäin ---------===========----
 # Suoritusajan analysoimiseksi ohjelma on jaettava joukkoon erillisiä
 # /tiloja/, joista ohjelman suoritus on yksikäsitteisesti yhdessä
@@ -592,7 +594,8 @@ kuten suorituskykyä, käytetään usein kvantitatiiviseen analyysiin
 paremmin sopivia malleja @@rethink(2--3). On tärkeää, että mallin ja
 lopullisen ohjelmiston välillä säilyy yhteys, jotta todellisessa
 käytössä tehdyt mittaukset voivat korjata mallien oletuksia kun
-ohjelmistoa kehitetään inkrementaalisesti ja evoluutiivisesti.
+ohjelmistoa kehitetään inkrementaalisesti ja evoluutiivisesti
+@@rethink(3).
 
 Varhaisvaiheen suorituskykymallit sijoittuvat kolmeen päätyyppiin
 @@rethink(6):
@@ -625,19 +628,18 @@ karkeammalla tasolla kuin lopullinen järjestelmä.
 Oman mainintansa ansaitsevat tietojenkäsittelytieteen perinteisen
 ydinalueen, algoritmien ja tietorakenteiden tutkimuksen formaalit
 tavat mallintaa algoritmeja @@art-programming. Algoritmien
-asymptoottisen käyttäytymisen tuntemisesta on rajatussa mielessä
-hyötyä suorituskyvyn mallintamisessa. Tällainen analyysi tukee
-kuitenkin lähinnä yksittäisten algoritmien ja tietorakenteiden
-valintaa ja antaa vain rajallisesti tukea järjestelmän
-kokonaisarkkitehtuurin laatimiselle. Käytännön ohjelmistokehitykselle
-merkittävä puute on lisäksi, että asymptoottinen analyysi pelkistää
-ohjelman käyttäytymistä liiaksi jättäen huomiotta yksittäisten
-operaatioiden todelliset kustannukset todellisilla laitteilla --
-analyysin perusteella tehokas algoritmi saattaa esimerkiksi sopia
-huonosti yhteen nykyaikaisen suorittimen välimuistin käyttäytymisen
-kanssa. Hyödynnän kuitenkin asymptoottisen analyysin kaltaista
-menetelmää ekstrapoloidessani JNI-operaatioiden käyttäytymistä
-vaihtelevilla syöteparametreilla.
+asymptoottisen käyttäytymisen tuntemisesta on toki hyötyä
+suorituskyvyn mallintamisessa -- tällainen analyysi tukee yksittäisten
+algoritmien ja tietorakenteiden valintaa.  Käytännön
+ohjelmistokehitykselle merkittävä puute on kuitenkin, että
+asymptoottinen analyysi pelkistää ohjelman käyttäytymistä liiaksi
+jättäen huomiotta yksittäisten operaatioiden vakiolliset kustannukset,
+joilla on merkitystä todellisen suorituskyvyn kannalta @@spe(215).
+Todellisessa suorituksessa ohjelman käyttäytyminen saattaa esimerkiksi
+sopia huonosti yhteen suorittimen haarautumista ennustavan
+heuristiikan kanssa @@showdown(21:5). Hyödynnän kuitenkin
+asymptoottisen analyysin kaltaista menetelmää ekstrapoloidessani
+JNI-operaatioiden käyttäytymistä vaihtelevilla syöteparametreilla.
 # todo lähde
 
 
@@ -674,11 +676,11 @@ Markov-ketjuilla.
    :CUSTOM_ID: Markov
    :END:
 
-Hyödynnän Beizerin (1970) esittelemää yksinkertaista Markov-mallia
+Hyödynnän Beizerin @@beizer esittelemää yksinkertaista Markov-mallia
 jolla ohjelman kokonaisvasteajan saa laskettua sen osien
-suoritusajoista @@beizer, @@ferrari. Mallinnustavan etuna on
-yksinkertaisuuden lisäksi se, että mittaustuloksina saatavat
-vasteaikojen jakautumat voi helposti kytkeä mallin osaksi.
+suoritusajoista @@ferrari. Mallinnustavan etuna on yksinkertaisuuden
+lisäksi se, että mittaustuloksina saatavat vasteaikojen jakautumat voi
+helposti kytkeä mallin osaksi.
 # todo ferrari sivut
 
 Mallissa ohjelma jaetaan suoritustiloihin halutulla karkeusasteella --
@@ -700,12 +702,11 @@ mittauksia). Muutoin kyseessä on perinteinen Markov-malli, joka on
 /historiaton/: /Markov-oletuksen/ mukaisesti eri siirtymien
 todennäköisyydet riippuvat ainoastaan kulloisestakin tilasta eikä
 prosessin aikaisemmista tiloista. Oletus on tietenkin epärealistinen,
-mutta stokastisten prosessien hyöty piileekin siinä, että abstraktikin
-malli voi tiettyyn rajaan asti ennustaa todellisuuden monimutkaisiakin
-prosesseja. Kuten mittauksetkin, mallin arvot ovat vahvasti
-riippuvaisia ohjelmistolle annetuista syötteistä; lähestymistapana
-tässä tutkielmassa on parametrisoida mallin vasteaika-arvot
-JNI-rajapintaan kohdistuvilla työkuormilla.
+mutta mallin tarkkuus paranee tilojen ja siirtymien tarkkuuden
+parantuessa @@rethink(17). Kuten mittauksetkin, mallin arvot ovat
+vahvasti riippuvaisia ohjelmiston syötteistä; lähestymistapana tässä
+tutkielmassa on parametrisoida mallin vasteaika-arvot JNI-rajapintaan
+kohdistuvilla työkuormilla.
 
 Ohjelmiston kokonaisvasteaika ratkaistaan Beizerin mallinnustavassa
 algortimilla, joka eliminoi verkosta yhden solmun

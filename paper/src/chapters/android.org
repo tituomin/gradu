@@ -1,33 +1,33 @@
 
 Kaikki Android-järjestelmään asennettavat tavalliset sovellukset
-suoritetaan Dalvik-virtuaalikoneen prosessissa, vaikka ne
+suoritetaan omassa prosessissaan Dalvik-virtuaalikoneessa, vaikka ne
 sisältäisivätkin natiivikomponentteja. Vaikka sovelluksen ohjelmoisi
 vaikkapa C-kielellä komentoriviltä käynnistettäväksi ohjelmaksi ja
 kääntäisi osaksi itse Android-käyttöjärjestelmää, tällainen sovellus
 jäisi Androidin normaalien julkaisukäytäntöjen ulkopuolelle ja siten
 käyttäjien ulottumattomiin.
-# todo: tarkista native activity
 
-Tehtyjen tutkimusten mukaan natiivikomponenttien käytöstä joskus
-todella on suorituskykyetua: korkean tason kielenä Javan
-suoritusmekanismi johtaa yleisrasitteisiin verrattuna suoraan
-konekielellä suoritettavaan ohjelmaan. Kuinka siis korkean tason
-kielestä on mahdollista siirtyä suorittamaan konekielistä ohjelmaa?
+Tehtyjen tutkimusten mukaan @@benchmark-ndk @@kicheol-bad
+@@eval-android-ndk natiivikomponenttien käytöstä joskus todella on
+suorituskykyetua: korkean tason kielenä Javan suoritusmekanismi johtaa
+yleisrasitteisiin verrattuna suoraan konekielellä suoritettavaan
+ohjelmaan. Kuinka siis korkean tason kielestä on mahdollista siirtyä
+suorittamaan konekielistä ohjelmaa?
 # todo tähän kerää kaikki mittaukset aiheesta
 
 * Java Native Interface ja vieraskutsurajapinnat
 /Vieraskutsurajapinta/ (/Foreign Function Interface/) on rajapinta,
 jonka kautta korkean tason ohjelmointikielestä käsin voidaan kutsua
-matalamman tason kielellä ohjelmoituja aliohjelmia. Java Native
-Interface on tällaisen vieraskutsurajapinnan spesifikaatio. Sen avulla
-Java-ohjelma voi kutsua C- tai C++-kielellä toteutettuja natiiveja
-aliohjelmia ja vastaavasti natiiviohjelma voi kutsua Java-ohjelman
-metodeita ja käyttää sen tietorakenteita. Tässä yhteydessä kielten
-luokittelu matalan ja korkean tason kieliin ei perustu kielen
-abstraktiomekanismien ilmaisuvoimaan vaan kielen toteutustapaan: Java
-on korkean tason kieli, sillä Java-ohjelmia suoritetaan välikielen
-muodossa abstraktissa virtuaalikoneessa eikä suoraan laitteistotason
-konekielelle käännettynä.
+matalamman tason kielellä ohjelmoituja aliohjelmia @@jeannie. Java
+Native Interface on tällaisen vieraskutsurajapinnan spesifikaatio
+@@jnibook. Sen avulla Java-ohjelma voi kutsua C- tai C++-kielellä
+toteutettuja natiiveja aliohjelmia ja vastaavasti natiiviohjelma voi
+kutsua Java-ohjelman metodeita ja käyttää sen tietorakenteita. Tässä
+yhteydessä kielten luokittelu matalan ja korkean tason kieliin ei
+perustu kielen abstraktiomekanismien ilmaisuvoimaan vaan kielen
+toteutustapaan: Java on korkean tason kieli, sillä Java-ohjelmia
+suoritetaan välikielen muodossa abstraktissa virtuaalikoneessa eikä
+suoraan laitteistotason konekielelle käännettynä.
 
 Vieraskutsurajapinnan on aina huolehdittava kielten erilaisten
 kutsukäytäntöjen yhteensovittamisesta sekä kutsuparametrien ja
@@ -47,17 +47,17 @@ apufunktionsa.
 
 ** Natiivirajapinnan suunnitteluperiaatteet
 Javan natiivirajapinnan suunnittelussa on tavoiteltu tasapainoa kahden
-keskenään ristiriitaisen vaatimuksen kanssa. Toinen on
-/binääriyhteensopivuus/: saman binäärimuotoisen natiivikirjaston tulee
-toimia eri virtuaalikoneiden kanssa ilman uudelleenkääntämistä.  Tämän
-vuoksi JNI ei voi tehdä mitään oletuksia virtuaalikoneen sisäisestä
-toteutuksesta @@jnibook(145). Periaate on tärkeä ennen kaikkea siksi,
-että virtuaalikoneen on aina kyettävä järjestämään uudelleen omia
-tietorakenteitaan esimerkiksi automaattisen muistinhallinnan,
-JIT-kääntämisen ja erilaisten optimointien toteuttamiseksi. JNI:tä
-edeltänyt varhainen Javan natiivirajapintatoteutus oli
-suoraviivaisempi ja asettikin rajoituksia virtuaalikoneen
-roskienkeruualgoritmeille.
+keskenään ristiriitaisen vaatimuksen kanssa
+@@jnibook(145--146). Toinen on /binääriyhteensopivuus/: saman
+binäärimuotoisen natiivikirjaston tulee toimia eri virtuaalikoneiden
+kanssa ilman uudelleenkääntämistä.  Tämän vuoksi JNI ei voi tehdä
+mitään oletuksia virtuaalikoneen sisäisestä toteutuksesta. Periaate on
+tärkeä ennen kaikkea siksi, että virtuaalikoneen on aina kyettävä
+järjestämään uudelleen omia tietorakenteitaan esimerkiksi
+automaattisen muistinhallinnan, JIT-kääntämisen ja erilaisten
+optimointien toteuttamiseksi. JNI:tä edeltänyt varhainen Javan
+natiivirajapintatoteutus oli suoraviivaisempi ja asettikin rajoituksia
+virtuaalikoneen roskienkeruualgoritmeille @@jnibook(8).
 
 Yhteensopivuuden vaatimus on ristiriidassa toisen keskeisen
 vaatimuksen, /hyvän suorituskyvyn/ kanssa. Yhteensopivuus on
@@ -72,12 +72,12 @@ JNI:n tarjoaman rajapinnan ylitse.
 
 Yhdessä suhteessa Javan natiivirajapinta ei ole toteutusriippumaton:
 se ei kykene estämään synkronointiongelmia tilanteessa, jossa
-virtuaalikone ja natiivikomponentti käyttävät eri
-säietoteutuksia. Onnistunut rajapinnan ylittävä säikeiden koordinointi
-edellyttääkin, että virtuaalikoneen säikeet käyttävät perustanaan
-natiivialustan säikeitä. Dalvikin tapauksessa näin onkin; kannattaa
-huomata, että natiivimetodit suoritetaan aina virtuaalikoneen
-prosessissa ja säikeessä joka natiivikutsun suorittaa.
+virtuaalikone ja natiivikomponentti käyttävät eri säietoteutuksia
+@@jnibook(97--98). Onnistunut rajapinnan ylittävä säikeiden
+koordinointi edellyttääkin, että virtuaalikoneen säikeet käyttävät
+perustanaan natiivialustan säikeitä. Dalvikin tapauksessa näin onkin
+@@jnitips; kannattaa huomata, että natiivimetodit suoritetaan aina
+virtuaalikoneen prosessissa ja säikeessä joka natiivikutsun suorittaa.
 # todo tarkista vielä lähteestä
 
 ** Muistinhallinta natiiviohjelmoinnissa
@@ -92,7 +92,7 @@ käsittelyn.
 Primitiivityyppiset muuttujat välitetään arvoina rajapinnan yli, joten
 ongelmaksi jäävät viitteet allokoituihin rakenteisiin. Viitetyyppiset
 parametrit kuten taulukot ja olioinstanssit välitetään
-natiivikomponentille epäsuorien viitteiden muodossa. Jos
+natiivikomponentille epäsuorien viitteiden muodossa @@jnibook(23). Jos
 natiivipuolelle välitettyyn olioon ei jää viitteitä Java-ohjelmaan,
 saattaisi virtuaalikoneen roskienkeräys poistaa olion. JNI:ssä tämä on
 estetty: oletuksena olion olemassaolo taataan natiivimetodin
@@ -122,8 +122,8 @@ Koska JNI-spesifikaatio ei ota kantaa virtuaalikoneen sisäiseen
 toteutukseen, se ei myöskään määrittele, miten virtuaalikone toteuttaa
 spesifikaation määräämät takuut tietorakenteiden elinkaarille.
 Dalvik-virtuaalikoneen muistinhallinta tukee allokoitujen kohteiden
-/kiinnikytkemistä/ (/pinning/) eli niiden roskienkeruun estämistä,
-mutta JNI sallii virtuaalikoneen myös /kopioida/ kohteen arvon
+/kiinnikytkemistä/ (/pinning/) eli niiden roskienkeruun estämistä
+@@aosp, mutta JNI sallii virtuaalikoneen myös /kopioida/ kohteen arvon
 natiivikomponenttia varten. Tästä seuraisi merkittäviä
 suorituskykyrasitteita, mitä kysymystä tutkimme myöhemmässä vaiheessa.
 # todo: huom ! tämän takia yksittäiset olioviitteet pitää yksitellen poimia
@@ -258,7 +258,7 @@ Ohjelmointityössä ehkä yleisimpien tietotyypien, merkkijonojen ja
 taulukoiden, käyttäminen edellyttää kaikkien tietorakenteita
 hyödyntävien operaatioiden kutsumista ~JNIEnv~-rajapintafunktioiden
 kautta. Näistä apufunktioista on kuitenkin erilaisia versioita, joiden
-reunaehdot suorituskyvyn suhteen eroavat toisistaan.
+reunaehdot suorituskyvyn suhteen eroavat toisistaan jnibook(24--40).
 
 Merkkijonoihin pääsee käsiksi kahdella tavalla. Ensimmäisessä
 JNI-funktio palauttaa osoittimen virtuaalikoneessa olevaan yhtenäiseen
@@ -296,15 +296,15 @@ esimerkiksi paikalliseen muuttujaan. Kopioivien funktioiden käytöstä
 on JNI-dokumentaation mukaan suorituskykyetua erityisesti lyhyiden
 merkkijonojen tapauksessa, koska puskurin allokoinnin yleisrasite
 erityisesti natiivipinosta on mitätön, samoin kuin pienen merkkimäärän
-kopioinnin.
+kopioinnin @@jnibook(31).
 
 Dalvik-virtuaalikone tukee olioiden kiinnikytkemistä eli sulkemista
-roskienkeruun ulkopuolelle. Periaatteessa tämän pitäisi estää
+roskienkeruun ulkopuolelle @@aosp. Periaatteessa tämän pitäisi estää
 merkkijono-operaatioista aiheutuvat muistinvaraus- ja
 kopiointikustannukset. Android-dokumentaation mukaan
 kopiointikustannuksia syntyy lähinnä, jos Dalvikin sisäisestä
 16-bittisestä Unicode-merkkijono\-to\-teu\-tuk\-ses\-ta siirrytään
-UTF-8 -koodauksen merkkijonoon; lähes kaikista
+UTF-8 -koodauksen merkkijonoon @@jnitips; lähes kaikista
 JNI-merkkijonofunktioista on sekä Unicode- että
 UTF-versiot. Dalvik-virtuaalikoneen natiivirajapinnan
 merkkijono-operaatioiden suorituskyvyn tarkempi analyysi vaatii
@@ -389,10 +389,11 @@ voidaan vapauttaa. Oletuksena kaikki muut oliviitteet, jotka JNI antaa
 natiiviohjelman käyttöön, ovat paikallisia viitteitä: niitä ei
 /yleensä/ tarvitse manuaalisesti vapauttaa, sillä niiden elinkaari on
 automaattisesti sidottu natiivimetodin kutsun alkamiseen ja
-päättymiseen. Niiden käyttö ei ole säieturvallista. Globaalit viitteet
-on eksplisiittisesti luotava ~NewGlobalRef~ -kutsulla; ne estävät
-olion roskienkeruun ja mahdollistavat olioihin viittaamisen yli eri
-natiivimetodien kutsujen myös eri säikeistä.
+päättymiseen @@jnibook(62). Niiden käyttö ei ole
+säieturvallista. Globaalit viitteet on eksplisiittisesti luotava
+~NewGlobalRef~ -kutsulla; ne estävät olion roskienkeruun ja
+mahdollistavat olioihin viittaamisen yli eri natiivimetodien kutsujen
+myös eri säikeistä.
 
 JNI:n ohjelmoijalta edellyttämä eksplisiittinen viitteidenhallinta ja
 virtuaalikoneen varaamasta muistista huolehtiminen tarkoittaa, että
@@ -407,8 +408,8 @@ Paikalliset viitteet eivät vaadi roskienkeruuta, mutta sisältävät
 nekin omat rasitteensa. JNI-spesifikaatio tarjoaa niiden
 eksplisiittiseen hallintaan funktioparin ~PushLocalFrame~ ja
 ~PopLocalFrame~, joita väitetään tehokkaaksi tavaksi hallita lokaaleja
-viitteitä useampi viite kerrallaan. Yhden natiivimetodin kutsuhan voi
-siirtää ohjelman suorituksen pitkäksikin aikaa syvälle
+viitteitä useampi viite kerrallaan @@jnibook(68). Yhden natiivimetodin
+kutsuhan voi siirtää ohjelman suorituksen pitkäksikin aikaa syvälle
 natiivikomponenttiin, joten kyseisen metodin kutsukaari saattaa pitää
 paikallisten viitteiden edellyttämät muistivaraukset käytössä hyvinkin
 pitkään, ellei viitteitä erikseen vapauteta.
