@@ -314,7 +314,7 @@ dvm-kutsuja? (siirrä dvm-osapuoli myös natiiviksi?)
 - todo s. 337 benchmarkin määritelmä
 
 
-@inproceedings{Sharma:2005:ABA:1071021.1071046,
+@inproceedings{sharma,
  author = {Sharma, Vibhu Saujanya and Trivedi, Kishor S.},
  title = {Architecture based analysis of performance, reliability and security of software systems},
  booktitle = {Proceedings of the 5th international workshop on
@@ -615,16 +615,25 @@ http://www.ibm.com/developerworks/rational/library/4169.html
  acmid = 1952525,
  publisher = {ACM},
  address = {New York, NY, USA},
- keywords = {Profiling, critical kernels, dynamic
- hardware/software partitioning, dynamic
- optimization, embedded systems, nonintrusive
- profiling},
+ keywords = {Java, array bounds check optimization, compilation,
+ just-in-time, optimization, performance,
+ verification},
  file = {a32-nair.pdf}
-} 
+}
 
 - peruslähteitä profilointiin?
 - tosin aika h/w, embedded-focus
 - itse tutkimus ei sovellu, mutta lähdelista voi olla hyvä
+
+@book{art-programming,
+  author    = {Knuth, Donald E.},
+  title     = {The art of computer programming},
+  isbn      = {0-201-89683-4 (sid.)},
+  address   = {Reading (MA)},
+  publisher = {Addison-Wesley},
+  year      = {1968},
+  bibdate   = {20120403021153}
+}
 
 @ARTICLE{valgrind,
 author={Nethercote, N. and Seward, J.},
@@ -1253,7 +1262,7 @@ http://www.cse.wustl.edu/~jain/cse567-06/ftp/sw_monitors1/index.html
 
 - lue
 
-@incollection{,
+@incollection{sharma2,
 year={2005},
 isbn={978-3-540-25877-3},
 booktitle={Component-Based Software Engineering},
@@ -1683,7 +1692,7 @@ BibTeX | EndNote | ACM Ref
 -- oleellinen!
 
 
-@inproceedings{Ammons:1997:EHP:258915.258924,
+@inproceedings{ammons,
  author = {Ammons, Glenn and Ball, Thomas and Larus, James R.},
  title = {Exploiting hardware performance counters with flow and context sensitive profiling},
  booktitle = {Proceedings of the ACM SIGPLAN 1997 conference on Programming language design and implementation},
@@ -1973,9 +1982,67 @@ BibTeX | EndNote | ACM Ref
  file = {p39-tan.pdf}
 }
 
+* tilastotiede
 
+@book{probability,
+  author    = {Trivedi, Kishor Shridharbhai.},
+  title     = {Probability and statistics with reliability, queuing, and computer science applications /},
+  isbn      = {0-13-711564-4},
+  address   = {Englewood Cliffs (NJ) :},
+  publisher = {Prentice-Hall,},
+  year      = {1982.},
+  note      = {Nimiösivulla tekijän nimi virheellisesti: Trived.},
+  bibdate   = {20120402221746}
+}
+
+@book{sampling,
+  author    = {Cochran, William G.},
+  title     = {Sampling techniques},
+  address   = {New York (NY)},
+  publisher = {Wiley},
+  year      = {1963},
+  annote    = {Keywords: otanta},
+  annote    = {Keywords: tilastomenetelmät - otanta},
+  annote    = {Keywords: tutkimusmenetelmät - otanta},
+  annote    = {Keywords: todennäköisyyslaskenta - otanta},
+  annote    = {Keywords: matemaattinen tilastotiede},
+  bibdate   = {20120718165924}
+}
+            
 
 * erityistarpeisiin
+
+
+@inproceedings{freqscaling,
+ author = {Miyoshi, Akihiko and Lefurgy, Charles and Van Hensbergen, Eric and Rajamony, Ram and Rajkumar, Raj},
+ title = {Critical power slope: understanding the runtime effects of frequency scaling},
+ booktitle = {Proceedings of the 16th international conference on Supercomputing},
+ series = {ICS '02},
+ year = {2002},
+ isbn = {1-58113-483-5},
+ location = {New York, New York, USA},
+ pages = {35--44},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/514191.514200},
+ doi = {10.1145/514191.514200},
+ acmid = {514200},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {energy aware computing},
+ file = {p35-miyoshi.pdf}
+} 
+
+
+
+@manual(perfwiki,
+ author={Misc.},
+ title={Linux kernel profiling with perf},
+ year={2013},
+ month={helmikuu},
+ day={14},
+ url={https://perf.wiki.kernel.org/index.php/Tutorial}
+)
+
 
 @INPROCEEDINGS{androscope,
 author={Myeongjin Cho and Seok Joong Hwang and Ho Jin Lee and Minseong Kim and Seon Wook Kim},

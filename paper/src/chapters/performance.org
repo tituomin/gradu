@@ -412,20 +412,20 @@ suhteellisen harvoin, ja näytteenoton aiheuttama häirintä jää
 tilastollisesti pieneksi. Näytteenotossa tutkittavan ohjelmiston tilaa
 pitää kuitenkin tulkita ohjelmiston itsensä ulkopuolelta, joten
 käytännössä analyysin pohjana on suorittimen tila
-näytteenottohetkellä: käskyosoittimen (/program counter/), muiden
-rekisterien sekä pinon sisällöt @@du(3), @@dunlavey(4).
+näytteenottohetkellä: erityisesti käskyosoittimen (/program counter/)
+sekä pinon sisällöt @@du(3), @@dunlavey(4).
 # todo edellisellä rivillä here here
 
 Pelkän käskyosoittimen käyttöä suorituskykyanalyysin perustana on
-kritisoitu. Käskyosoitinnäytteiden avulla saadaan kyllä selville,
-missä ohjelman osassa suoritin viettää eniten aikaa. Näin on kuitenkin
-vaikea hahmottaa laajempaa suorituskontekstia, joka selittäisi mistä
-eniten suoritusaikaa käyttävää aliohjelmaa on
-kutsuttu. Suorituskykypullonkaulojen syiden merkityksellisempi
-analyysi vaatii lähtökohdakseen oikean abstraktiotason. Käytännössä
-yhden yksittäisen kutsuja aiheuttavan kohdan muuttaminen korkeammalla
-kutsupinossa voi siirtää matalamman tason suorituskriittiset kohdat
-aivan muualle.
+kritisoitu @@dunlavey, @@ammons. Käskyosoitinnäytteiden avulla saadaan
+kyllä selville, missä ohjelman osassa suoritin viettää eniten
+aikaa. Näin on kuitenkin vaikea hahmottaa laajempaa
+suorituskontekstia, joka selittäisi mistä eniten suoritusaikaa
+käyttävää aliohjelmaa on kutsuttu. Suorituskykypullonkaulojen syiden
+merkityksellisempi analyysi vaatii lähtökohdakseen oikean
+abstraktiotason. Käytännössä yhden yksittäisen kutsuja aiheuttavan
+kohdan muuttaminen korkeammalla kutsupinossa voi siirtää matalamman
+tason suorituskriittiset kohdat aivan muualle.
 # dunlavey
 
 Tämän vuoksi käyttökelpoinen näytteenotto vaatii kutsupinon
@@ -444,19 +444,19 @@ väliltä kutsupinosta.
 
 Profilointityökaluissa aliohjelman suoritusaikaa kutsutaan usein
 /inklusiiviseksi/, jos siihen lasketaan mukaan myös aliohjelman
-kutsumien muiden aliohjelmien ajat. Pelkkään käskyosoittimeen
-perustuva raaka suoritusaika on usein nimeltään /self time/, tässä
-tutkielmassa /eksklusiivinen/ suoritusaika.
+kutsumien muiden aliohjelmien ajat @@android-tracing. Pelkkään
+käskyosoittimeen perustuva raaka suoritusaika on tässä tutkielmassa
+/eksklusiivinen/ suoritusaika, usein myös /self time/.
 # gprof, oprofile, etc.
 
 Näytteenotto ei ole mittausmenetelmänä kytketty tarkalleen tiettyihin
 ohjelmakohtiin.  Suorittimen keskeytyksen laukeamisen jälkeen ohjelman
-suoritus saattaa edetä joitakin konekäskyjä ennen näytteen
-ottamista. Vaikka periaatteessa työkalut saattavat raportoida jopa
-yksittäisten konekäskyjen suhteelliset, inklusiiviset kustannukset,
-kannattaa näihin suhtautua pienellä varauksella. Korkealla
-kutsupinossa olevien aliohjelmien inklusiiviisiin aikoihin tällä
-epätarkkuudella ei ole käytännön vaikutusta.
+suoritus saattaa edetä joitakin konekäskyjä ennen näytteen ottamista
+@@perfwiki. Vaikka periaatteessa työkalut saattavat raportoida jopa
+yksittäisten konekäskyjen suhteelliset kustannukset, kannattaa näihin
+suhtautua pienellä varauksella. Korkealla kutsupinossa olevien
+aliohjelmien inklusiiviisiin aikoihin tällä epätarkkuudella ei ole
+käytännön vaikutusta.
 #oprofile
 
 Käytän tutkielman mittauksiin lähinnä /perf/-työkalun
@@ -471,19 +471,17 @@ instrumentointia käytetään tarvittaessa tähän tarkoitukseen.
 ** Näytteenoton tilastollinen edustavuus
 Kaikenlaisessa näytteenotossa on varmistettava, että otanta on
 /tilastollisesti edustava/: rajattua /otosta/ tutkimalla on voitava
-tehdä päätelmiä koko /perusjoukosta/. Tässä tapauksessa haluamme
-päätellä rajallisesta joukosta ajanhetkiä (otos), miten
-käskyosoittimen ja kutsupinon arvot jakautuvat ohjelman koko
+tehdä päätelmiä koko /perusjoukosta/ @@probability(469). Tässä
+tapauksessa haluamme päätellä rajallisesta joukosta ajanhetkiä (otos),
+miten käskyosoittimen ja kutsupinon arvot jakautuvat ohjelman koko
 suoritusajalle (perusjoukko). Tämä varmistetaan suoritinsyklien
 laskemiseen perustuvassa näytteenotossa /systemaattisen otannan/
-menetelmällä. Siinä jokaisella ajanhetkellä on sama todennäköisyys
-tulla valituksi otantaan, sillä näyte otetaan systemaattisesti
-tasaisin väliajoin, ja mittaus aloitetaan satunnaisella
-ajanhetkellä. Tällöin eri ajanhetkien mittausarvoja ei tarvitse
-painottaa suhteesssa toisiinsa.
+@@sampling(206) menetelmällä. Siinä jokaisella ajanhetkellä on sama
+todennäköisyys tulla valituksi otantaan, sillä näyte otetaan
+systemaattisesti tasaisin väliajoin, ja mittaus aloitetaan
+satunnaisella ajanhetkellä. Tällöin eri ajanhetkien mittausarvoja ei
+tarvitse painottaa suhteessa toisiinsa.
 # todo: lue tilastotieteen perusteet ja kirjoita em. kappale paremmin
-# =) lol wikipediasta käsitteet systemaattinen ja 
-# todo systemattinen: lähde wikipedia
 # ferrari 57-59
 
 Systemaattisen ja jaksollisen näytteenotton suunnittelussa saattaa
@@ -493,9 +491,12 @@ tutkittavassa prosessissa on jokin jaksollisesti toistuva ilmiö, jonka
 kanssa näytteenoton jakso sattuu synkronoitumaan, tulokset
 vääristyvät. Esimerkiksi tutkittavassa järjestelmässä saattaa olla
 käytössä järjestelmän kelloon perustuvia keskeytyksiä, jotka
-laukaisevat tiettyjä toimintoja. Huonosti valitulla
+laukaisevat tiettyjä toimintoja @@ferrari(58). Huonosti valitulla
 näytteenottojaksolla nämä toiminnot yli- tai alikorostuvat
 mittauksissa.
+
+# todo selvennä että samplaamme suorittimen tilaa kaikilla
+# sykleillä, emme jatkuvassa ajassa
 
 Näytteenoton toteutustavassa saattaa myös olla sisäänrakennettuja
 seurausvaikutuksia, joiden takia mittaus jo lähtökohtaisesti painottaa
@@ -506,12 +507,12 @@ kykenevät saamaan näytteitä ainoastaan ohjelman ns. luovutuskohdista
 (/yield point/), eivät mistä tahansa suorituskohdasta @@java-acc(193).
 
 Tutkielman mittauksissa näytteenotto tapahtuu aina kun ARM-suorittimen
-suoritinsyklejä on tapahtunut ennalta valittu määrä (tapahtuma
-~CPU_CYCLES~). Android-laitteen suorittimen kellotaajuus (syklien
+kellosyklejä on tapahtunut ennalta valittu määrä (tapahtuma /cycle
+count/ @@cortex(3-86)). Tietokoneen suorittimen kellotaajuus (syklien
 määrä sekunnissa) ei kuitenkaan tyypillisesti ole vakio, vaan mukautuu
-laskentatarpeeseen. Mittauksissa on siis erikseen asetettava
-suorittimen kellotaajuus vakioksi, etteivät suuren kellotaajuuden
-ajanhetket ylikorostuisi.
+laskentatarpeeseen @@freqscaling. Mittauksissa on siis erikseen
+asetettava suorittimen kellotaajuus vakioksi, etteivät suuren
+kellotaajuuden ajanhetket ylikorostuisi.
 # 5 tehdä tilaa, väistyä (liikenteessä)
 # yield up
 # 1 luovuttaa, luopua
@@ -519,12 +520,13 @@ ajanhetket ylikorostuisi.
 
 Kannattaa huomata, ettei otannan tarvitse olla satunnainen:
 systemaattinen jaksollinen otanta riittää, kunhan on varmistuttu
-siitä, ettei perusjoukko sisällä jaksollisia ilmiöitä. Oletamme tässä
-tutkielmassa, ettei mitattava järjestelmä sisällä jaksollisia
-ilmiöitä, joiden jakson pituudella olisi yhteisiä tekijöitä /n/
-suoritinsyklin kuluttaman ajanjakson kanssa. Varmistumme tästä
-suorittamalla useita mittauksia, joista jokainen alkaa satunnaisella
-ajanhetkellä, ja vaihtelemme jakson pituutta syklimäärässä.
+siitä, ettei perusjoukko sisällä jaksollisia ilmiöitä
+@@ferrari(58). Oletamme tässä tutkielmassa, ettei mitattava
+järjestelmä sisällä jaksollisia ilmiöitä, joiden jakson pituudella
+olisi yhteisiä tekijöitä /n/ suoritinsyklin kuluttaman ajanjakson
+kanssa. Varmistumme tästä suorittamalla useita mittauksia, joista
+jokainen alkaa satunnaisella ajanhetkellä, ja vaihtelemme jakson
+pituutta syklimäärässä.
 # todo: analysoi linuxin timeria ja schedulointia..
 # todo: onko dalvikissa ym. muissa komponenteissa jaksollisia ilmiöitä?
 * Arkkitehtuurin mallintaminen 
@@ -543,7 +545,6 @@ ajanhetkellä, ja vaihtelemme jakson pituutta syklimäärässä.
 # (/program trace/) @@ferrari(458). Luettelo kustakin lauseesta
 # kokonaissuorituskertoineen on ohjelman /profiili/ @@fortran(todo
 # sivu).
-
 
 # Performance depends largely upon the
 # volume and complexity of the inter-component com-
@@ -605,11 +606,8 @@ Varhaisvaiheen suorituskykymallit sijoittuvat kolmeen päätyyppiin
 
 Tässä tutkielmassa käytetään Markov-malleja sijoittamaan käytännön
 mittauksista saatavat tulokset laajempaan käsitteelliseen
-kehikkoon. Markov-mallit sopivat luontevasti käytössä olevien
-mittausmenetelmien pariksi, mitä käsitellään tarkemmin luvussa
-. Markov-malleja on hyödynnetty arkkitehtuurin mallintamiseen
-kirjallisuudessa
-#todo sisäinen viite, lähteet
+kehikkoon. Markov-malleja on hyödynnetty ohjelmistojen mallintamiseen
+kirjallisuudessa: @@sharma, @@sharma2, @@beizer.
 
 Ohjelmistojen suorituskykytekniikan metodeissa käytetään usein
 jonotusmalleja (/Queing Network Models/). Ne soveltuvat
@@ -626,17 +624,17 @@ karkeammalla tasolla kuin lopullinen järjestelmä.
 
 Oman mainintansa ansaitsevat tietojenkäsittelytieteen perinteisen
 ydinalueen, algoritmien ja tietorakenteiden tutkimuksen formaalit
-tavat mallintaa ohjelmia. Algoritmien asymptoottisen käyttäytymisen
-tuntemisesta on rajatussa mielessä hyötyä suorituskyvyn
-mallintamisessa. Tällainen analyysi tukee kuitenkin lähinnä
-yksittäisten algoritmien ja tietorakenteiden valintaa ja antaa vain
-rajallisesti tukea järjestelmän kokonaisarkkitehtuurin
-laatimiselle. Käytännön ohjelmistokehitykselle merkittävä puute on
-lisäksi, että asymptoottinen analyysi pelkistää ohjelman
-käyttäytymistä liiaksi jättäen huomiotta yksittäisten operaatioiden
-todelliset kustannukset todellisilla laitteilla -- analyysin
-perusteella tehokas algoritmi saattaa esimerkiksi sopia huonosti
-yhteen nykyaikaisen suorittimen välimuistin käyttäytymisen
+tavat mallintaa algoritmeja @@art-programming. Algoritmien
+asymptoottisen käyttäytymisen tuntemisesta on rajatussa mielessä
+hyötyä suorituskyvyn mallintamisessa. Tällainen analyysi tukee
+kuitenkin lähinnä yksittäisten algoritmien ja tietorakenteiden
+valintaa ja antaa vain rajallisesti tukea järjestelmän
+kokonaisarkkitehtuurin laatimiselle. Käytännön ohjelmistokehitykselle
+merkittävä puute on lisäksi, että asymptoottinen analyysi pelkistää
+ohjelman käyttäytymistä liiaksi jättäen huomiotta yksittäisten
+operaatioiden todelliset kustannukset todellisilla laitteilla --
+analyysin perusteella tehokas algoritmi saattaa esimerkiksi sopia
+huonosti yhteen nykyaikaisen suorittimen välimuistin käyttäytymisen
 kanssa. Hyödynnän kuitenkin asymptoottisen analyysin kaltaista
 menetelmää ekstrapoloidessani JNI-operaatioiden käyttäytymistä
 vaihtelevilla syöteparametreilla.
@@ -671,6 +669,10 @@ Markov-ketjuilla.
 # todo onko tämä nyt se keskeinen hypoteesi? ehkä mutta tsekkaa lopuksi
 
 ** Vasteaikojen mallintaminen Markov-ketjuilla
+# <<Markov>>
+   :PROPERTIES:
+   :CUSTOM_ID: Markov
+   :END:
 
 Hyödynnän Beizerin (1970) esittelemää yksinkertaista Markov-mallia
 jolla ohjelman kokonaisvasteajan saa laskettua sen osien
