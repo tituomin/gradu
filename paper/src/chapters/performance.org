@@ -330,7 +330,7 @@ suoritushaaroja, muistihakuja sekä muita tapahtumia @@cortex(3-85 -- 3-88). Kun
 tapahtumamäärä on ylittynyt, keskeytys käynnistää
 käyttöjärjestelmäytimen mittausrutiinin.
 # todo arm-lähde (virallinen dokkari)
-# todo here
+
 
 Vaihtoehto normaalin suoritusympäristön käyttämiselle on
 /virtualisointi/, jossa pelkkä sovellus tai koko ohjelmistoympäristö
@@ -341,28 +341,29 @@ virtualisointimenetelmät tutkielman ulkopuolelle, sillä tavallisessa
 Android-laitteessa tehtävät mittaukset antavat kaikki tarvittavat
 tulokset, ja virtualisoitu suoritusympäristö voi käyttäytymiseltään
 erota todellisista laitteista tavoilla, joiden toteaminen kuitenkin
-edellyttäisi mittauksia myös todellisessa ympäristössä.[fn:valgrind]
+edellyttäisi mittauksia myös todellisessa ympäristössä. [fn:valgrind]
+# todo lähde on valgrind ja kirjoita ettei se ole virtualisointia
+# vaan dynaamista binääri-instrumentointia !! tärkeä top
 
 Myös Androidin Java-virtuaalikoneessa Dalvikissa on ohjelmien
 ajonaikaista käyttäytymistä kirjaavia toimintoja, joiden mittauksiin
-Androidin kehitysympäristön suorituskykytyökalut perustuvat. Dalvik
-mittaa kuitenkin Java-ohjelman metodien sekä natiivialiohjelmien
-suoritusaikoja, siinä missä tämän tutkielman tarkoituksena on tutkia
-Dalvikin itsensä suorituskykyä: Javan natiivirajapinnan toteutus on
-osa virtuaalikonetta.
+Androidin kehitysympäristön suorituskykytyökalut perustuvat
+@@aosp. Dalvik mittaa kuitenkin Java-ohjelman metodien sekä
+natiivialiohjelmien suoritusaikoja @@android-tracing, @@androscope,
+siinä missä tämän tutkielman tarkoituksena on tutkia Dalvikin itsensä
+suorituskykyä: Javan natiivirajapinnan toteutus on osa
+virtuaalikonetta.
 
 Tutkielman mittaukset suoritetaan näytteenottotekniikalla, Linuxin
-/perf/-työkalujen avulla. Android-laitteeseen on asennettu räätälöity
-Linux-ydin joka tukee suorituskykylaskurien käyttöä. Itse mittaukset
-suoritetaan ytimen ulkopuolisilla /perf/-työkaluilla.
+/perf/-työkalun avulla @@du(13). Android-laitteeseen on asennettu
+räätälöity Linux-ydin joka tukee suorituskykylaskurien käyttöä. Itse
+mittaukset käynnistetään ja raportit tulostetaan /perf/-työkalujen
+ytimen ulkopuolisilla komentorivityökaluilla.
 
 [fn:vm] Esimerkki virtualisoinnista on Androidin oma /emulaattori/,
 joka perustuu QEMU-virtuaalikoneeseen. Se on emulaattori, sillä se
 mallintaa Androidin laitteistoarkkitehtuuria eri laitteistolla,
-tavallisella mikrotietokoneella. Valgrind-työkalu, jota tavallisimmin
-käytetään muistinhallinnan virheidenjäljitykseen, tukee myös
-suorituskykyprofilointia. Androidin tapauksessa Valgrind
-käännettäisiin Androidin suoritusympäristöön.
+tavallisella mikrotietokoneella.
 # lähde !!
 [fn:valgrind] Sovelluksen suorittaminen esimerkiksi
 Valgrind-virtuaalikoneessa on merkittävästi normaalia hitaampaa.
@@ -377,10 +378,10 @@ lisätyllä instrumentoinnilla saadaan kirjattua yksityiskohtaisinta
 tietoa ohjelmiston sisäisestä tilasta ja sovellusaluekohtaisesta
 informaatiosta: esimerkiksi siitä, minkä tyyppiset parametrit ovat
 yleisimpiä tietyissä kutsuissa tai mitkä ovat lähetettyjen viestien
-yleisimmät pituudet ja jopa sisällöt. Pelkällä kääntäjän lisäämällä
-ei-sovelluskohtaisella instrumentaatiolla saadaan myös tietoa, jota ei
-muilla tekniikoilla tavoita: jokaisen aliohjelman kutsujen määrä ja
-jokaisen kutsun vasteaika.
+yleisimmät pituudet ja jopa sisällöt @@spe(334). Pelkällä kääntäjän
+lisäämällä ei-sovelluskohtaisella instrumentaatiolla saadaan myös
+tietoa, jota ei muilla tekniikoilla tavoita: jokaisen aliohjelman
+kutsujen määrä ja jokaisen kutsun vasteaika.
 
 Instrumentaatio on tavallaan kattavin mittausmenetelmä, sillä
 jokaisesta mielenkiintoisesta tapahtumasta saadaan periaatteessa
@@ -400,18 +401,20 @@ Toisaalta, jos ohjelmiston suorituskyvyn seuraaminen katsotaan osaksi
 sen normaalia toimintaa, ja instrumentointikäskyt ovat oleellinen osa
 tuontakäytössä suoritettavaa ohjelmistoa, häirinnän ongelma
 katoaa. Tämä lienee käytännöllisintä laajoissa palvelinohjelmistoissa
--- yksittäisten käyttäjien mobiililaitteissa suoritettavien
-sovellusohjelmien jatkuva suorituskykyseuranta ei usein tule
-kyseeseen, vaan mahdolliset instrumentointikäskyt poistetaan
+tai käyttöjärjestelmissä -- yksittäisten käyttäjien mobiililaitteissa
+suoritettavien sovellusohjelmien jatkuva suorituskykyseuranta ei usein
+tule kyseeseen, vaan mahdolliset instrumentointikäskyt poistetaan
 tuotantoversiota rakennettaessa.
 
-Häirinnän ongelma on vähäisempi näytteenottotekniikoissa, sillä
-käyttöjärjestelmä keskeyttää ohjelman toiminnan suhteellisen harvoin.
-Näytteenoton aiheuttama häirintä jää tilastollisesti
-pieneksi. Näytteenotossa tutkittavan ohjelmiston tilaa pitää kuitenkin
-tulkita ohjelmiston itsensä ulkopuolelta, joten käytännössä analyysin
-pohjana on suorittimen tila näytteenottohetkellä: käskyosoittimen
-(/program counter/), muiden rekisterien sekä pinon sisällöt.
+Häirinnän ongelma on vähäisempi näytteenottotekniikoissa
+@@ferrari(478), sillä käyttöjärjestelmä keskeyttää ohjelman toiminnan
+suhteellisen harvoin, ja näytteenoton aiheuttama häirintä jää
+tilastollisesti pieneksi. Näytteenotossa tutkittavan ohjelmiston tilaa
+pitää kuitenkin tulkita ohjelmiston itsensä ulkopuolelta, joten
+käytännössä analyysin pohjana on suorittimen tila
+näytteenottohetkellä: käskyosoittimen (/program counter/), muiden
+rekisterien sekä pinon sisällöt @@du(3), @@dunlavey(4).
+# todo edellisellä rivillä here here
 
 Pelkän käskyosoittimen käyttöä suorituskykyanalyysin perustana on
 kritisoitu. Käskyosoitinnäytteiden avulla saadaan kyllä selville,
@@ -726,7 +729,7 @@ käytetty malli on tarpeeksi totuudenmukainen, saadaan yksinkertaiselle
 yhden käyttäjän ohjelmalle arvioitua keskimääräinen suoritusaika
 varianssineen jo ennen ohjelman laatimista.
 
-# todo here...
+
 
 * Tehtäviä                                                         :noexport:
 ** TODO [#A] mainitse tilavaativuus

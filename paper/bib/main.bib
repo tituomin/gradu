@@ -161,6 +161,15 @@
   OPTannote =    {}
 }
 
+@manual{android-tracing,
+  title = {Profiling with Traceview and dmtracedump},
+  url = {http://developer.android.com/tools/debugging/debugging-tracing.html},
+  author = {Google},
+  year = {2013},
+  month = {helmikuu},
+  day = {14}
+}
+
 @Manual{ndk,
   title =        {Android Native Development Kit},
   url = {http://developer.android.com/reference/packages.html},
@@ -389,6 +398,28 @@ file={rethinking-models.pdf}
 
 *** profilointi, työkalut
 
+@inproceedings{du,
+ author = {Du, Jiaqing and Sehrawat, Nipun and Zwaenepoel, Willy},
+ title = {Performance profiling of virtual machines},
+ booktitle = {Proceedings of the 7th ACM SIGPLAN/SIGOPS international conference on Virtual execution environments},
+ series = {VEE '11},
+ year = {2011},
+ isbn = {978-1-4503-0687-4},
+ location = {Newport Beach, California, USA},
+ pages = {3--14},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/1952682.1952686},
+ doi = {10.1145/1952682.1952686},
+ acmid = {1952686},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {binary translation, hardware-assisted virtualization, paravirtualization, performance profiling, virtual machine},
+ file = {p3-du.pdf}
+} 
+
+- linux perf
+- perusläppää prosessorin countereista, ym
+
 @book{advanced-unix,
  author = {Stevens, W. Richard and Rago, Stephen A.},
  title = {Advanced Programming in the UNIX Environment, Second Edition},
@@ -595,13 +626,24 @@ http://www.ibm.com/developerworks/rational/library/4169.html
 - tosin aika h/w, embedded-focus
 - itse tutkimus ei sovellu, mutta lähdelista voi olla hyvä
 
-@INPROCEEDINGS{Nethercote03valgrind:a,
-    author = {Nicholas Nethercote and Julian Seward},
-    title = {Valgrind: A program supervision framework},
-    booktitle = {In Third Workshop on Runtime Verification (RV'03},
-    year = {2003},
-    file = {valgrind2003.ps}
+@ARTICLE{valgrind,
+author={Nethercote, N. and Seward, J.},
+title={Valgrind: A program supervision framework},
+journal={Electronic Notes in Theoretical Computer Science},
+year={2003},
+volume={89},
+number={2},
+pages={47-69},
+note={cited By (since 1996) 116},
+url={http://www.scopus.com/inward/record.url?eid=2-s2.0-16244366310&partnerID=40&md5=84a49ab7d52b15ad5ca2d1468fc29a65},
+affiliation={Computer Laboratory, University of Cambridge, Cambridge, United Kingdom},
+abstract={Valgrind is a programmable framework for creating program supervision tools such as bug detectors and profilers. It executes supervised programs using dynamic binary translation, giving it total control over their every part without requiring source code, and without the need for recompilation or relinking prior to execution. New supervision tools can be easily created by writing skins that plug into Valgrind's core. As an example, we describe one skin that performs Purify-style memory checks for C and C++ programs. Â© 2003 Published by Elsevier Science B.V.},
+document_type={Conference Paper},
+source={Scopus},
+ file={Valgrind.pdf}
 }
+
+
 
 @inproceedings{dvm-jit,
  author = {Absar, Javed and Shekhar, Deepak},
@@ -1308,7 +1350,7 @@ Benchmark,” Available: http://keithlea.com/javabench.
 
 -- hyviä lähteitä!
 
-@INPROCEEDINGS{6088515, 
+@INPROCEEDINGS{leelimnotused, 
 author={Namseung Lee and Sung-Soo Lim}, 
 booktitle={Embedded Systems for Real-Time Multimedia (ESTIMedia), 2011 9th IEEE Symposium on}, title={A whole layer performance analysis method for Android platforms}, 
 year={2011}, 
@@ -1316,7 +1358,26 @@ month={oct.},
 volume={}, 
 number={}, 
 pages={1}, 
-abstract={As the products based on Android platform have been widely spread in consumer electronics market, the needs for systematic performance analysis have significantly increased. We implemented a whole layer performance analysis tool set combining and integrating available open source performance analysis tools. Android framework layer profiling is performed DDMS mechanism with a little modification and the kernel layer profiling is based on Ftrace. The reason why we selected Ftrace instead of Oprofile as kernel layer profiler is that the Oprofile often misses the important kernel events to analyze since Oprofile is using purely time-based sampling. While Ftrace provides accuracy in performance profiling, the additional costs to perform kernel events profiling are significant. Therefore, minimizing the profiling cost maintaining the accuracy of event logging has been a primary issue in performance profiling at kernel layer.}, 
+abstract={ As the products based on Android platform have been widely
+                  spread in consumer electronics market, the needs for
+                  systematic performance analysis have significantly
+                  increased. We implemented a whole layer performance
+                  analysis tool set combining and integrating
+                  available open source performance analysis
+                  tools. Android framework layer profiling is
+                  performed DDMS mechanism with a little modification
+                  and the kernel layer profiling is based on
+                  Ftrace. The reason why we selected Ftrace instead of
+                  Oprofile as kernel layer profiler is that the
+                  Oprofile often misses the important kernel events to
+                  analyze since Oprofile is using purely time-based
+                  sampling. While Ftrace provides accuracy in
+                  performance profiling, the additional costs to
+                  perform kernel events profiling are
+                  significant. Therefore, minimizing the profiling
+                  cost maintaining the accuracy of event logging has
+                  been a primary issue in performance profiling at
+                  kernel layer.}, 
 keywords={Android framework layer profiling;Android platform;Dalvik Debug Monitor Server mechanism;Ftrace;consumer electronics market;event logging;kernel layer profiling;open source performance analysis tools;whole layer performance analysis method;consumer electronics;operating system kernels;program debugging;software performance evaluation;}, 
 doi={10.1109/ESTIMedia.2011.6088515}, 
 ISSN={},
@@ -1574,7 +1635,7 @@ BibTeX | EndNote | ACM Ref
 
 ** profilointi
 
-@article{Dunlavey:2007:PTI:1294297.1294298,
+@article{dunlavey,
  author = {Dunlavey, Michael},
  title = {Performance tuning with instruction-level cost derived from call-stack sampling},
  journal = {SIGPLAN Not.},
@@ -1620,6 +1681,27 @@ BibTeX | EndNote | ACM Ref
 } 
 
 -- oleellinen!
+
+
+@inproceedings{Ammons:1997:EHP:258915.258924,
+ author = {Ammons, Glenn and Ball, Thomas and Larus, James R.},
+ title = {Exploiting hardware performance counters with flow and context sensitive profiling},
+ booktitle = {Proceedings of the ACM SIGPLAN 1997 conference on Programming language design and implementation},
+ series = {PLDI '97},
+ year = {1997},
+ isbn = {0-89791-907-6},
+ location = {Las Vegas, Nevada, USA},
+ pages = {85--96},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/258915.258924},
+ doi = {10.1145/258915.258924},
+ acmid = {258924},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ file = {p85-ammons.pdf}
+} 
+
+- ehkä?
 
 
 
@@ -1894,6 +1976,41 @@ BibTeX | EndNote | ACM Ref
 
 
 * erityistarpeisiin
+
+@INPROCEEDINGS{androscope,
+author={Myeongjin Cho and Seok Joong Hwang and Ho Jin Lee and Minseong Kim and Seon Wook Kim},
+booktitle={Consumer Electronics (ICCE), 2012 IEEE International Conference on}, title={AndroScope for detailed performance study of the android platform and its applications},
+year={2012},
+month={jan.},
+volume={},
+number={},
+pages={408 -409},
+abstract={This paper presents a performance analysis tool for the Android platform and its applications, called AndroScope, which collects performance data from both Dalvik VM and native libraries and provides GUI integrated with the Android SDK.},
+keywords={Androids;Humanoid robots;Libraries;graphical user interfaces;mobile computing;operating systems (computers);software libraries;software performance evaluation;AndroScope;Android SDK;Android platform;Dalvik VM;GUI;native libraries;performance analysis tool;performance data collection;virtual machine;},
+doi={10.1109/ICCE.2012.6161796},
+ISSN={2158-3994},
+file = {06161796.pdf}
+}
+
+
+@inproceedings{valgrind,
+ author = {Nethercote, Nicholas and Seward, Julian},
+ title = {Valgrind: a framework for heavyweight dynamic binary instrumentation},
+ booktitle = {Proceedings of the 2007 ACM SIGPLAN conference on Programming language design and implementation},
+ series = {PLDI '07},
+ year = {2007},
+ isbn = {978-1-59593-633-2},
+ location = {San Diego, California, USA},
+ pages = {89--100},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/1250734.1250746},
+ doi = {10.1145/1250734.1250746},
+ acmid = {1250746},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Memcheck, Valgrind, dynamic binary analysis, dynamic binary instrumentation, shadow values},
+}
+
 
 @article{showdown,
  author = {Shi, Yunhe and Casey, Kevin and Ertl, M. Anton and Gregg, David},
