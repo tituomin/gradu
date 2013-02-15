@@ -14,10 +14,8 @@
 #+INCLUDE: "../gen/chapters/intro.org" :minlevel 1
 * Yleiskatsaus Android-j‰rjestelm‰‰n
 #+INCLUDE: "../gen/chapters/android_summary.org" :minlevel 1
-\newpage
 * Suorituskyky ohjelmistokehityksess‰
 #+INCLUDE: "../gen/chapters/performance.org" :minlevel 1
-\newpage
 * Java-natiivirajapinta
 #+INCLUDE: "../gen/chapters/android.org" :minlevel 1
 
