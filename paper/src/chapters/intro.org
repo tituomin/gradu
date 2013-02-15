@@ -37,14 +37,13 @@ suorituskykyä vasta, kun käytössä on suoritettava ohjelma. Sen
 suoritusaikaista käyttäytymistä mittaamalla selvitetään, mihin
 ohjelman osiin optimoinnissa kannattaa keskittyä.
 
-Joidenkin Android-sovellusten kehitysprosessin loppuvaiheessa ei
-kuitenkaan välttämättä enää ehdi korjata suorituskykyongelmia, jos ne
-kumpuavat varhaisista valinnoista kuten käytetyistä
-ohjelmointikielistä, ohjelmiston rakenteellisista ominaisuuksista ja
-komponenttien väliseen kommunikaatioon liittyvistä ratkaisuista. SPE:n
-keskeisiä väitteitä onkin, että ohjelmiston makrotason
-/arkkitehtuurin/ suunnittelu on usein suorituskyvyn kannalta vähintään
-yhtä oleellinen tekijä kuin mikrotason optimoinnit.
+Kehitysprosessin loppuvaiheessa ei kuitenkaan välttämättä enää ehdi
+korjata suorituskykyongelmia, jos ne kumpuavat varhaisista valinnoista
+kuten käytetyistä ohjelmointikielistä, ohjelmiston rakenteellisista
+ominaisuuksista ja komponenttien väliseen kommunikaatioon liittyvistä
+ratkaisuista. SPE:n keskeisiä väitteitä onkin, että ohjelmiston
+makrotason /arkkitehtuurin/ suunnittelu on usein suorituskyvyn
+kannalta vähintään yhtä oleellinen tekijä kuin mikrotason optimoinnit.
 
 Tutkielmassa keskitytään siihen, mitä erityisvaatimuksia
 /monikielinen/ Android-ohjelmointi asettaa sovelluksen

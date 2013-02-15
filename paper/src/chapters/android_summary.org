@@ -76,7 +76,7 @@ C++-kielinen, mutta Android sisältää myös Java-rajapinnat Binderin
 käyttöön. Sisäisesti nämä Javan Binder-sidonnat on toteutettu
 natiivirajapinnan avulla @@aosp. Niin ikään monet Javalla toteutetut
 järjestelmäpalvelukomponentit kutsuvat itse natiivikirjastoja JNI:n
-kautta. Lisäksi jotkut Android-ohjelmointirajapinnan luokat kutsuvat
+kautta. Jotkut Android-ohjelmointirajapinnan luokat kutsuvat
 natiivikirjastoja suoraan JNI:n kautta, mutta ohittavat
 järjestelmäpalvelutason: esimerkiksi ~Log~-luokka kutsuu suoraan
 ~liblog~-natiivikirjastoa.

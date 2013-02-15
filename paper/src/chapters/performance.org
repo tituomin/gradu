@@ -31,7 +31,7 @@ suoritusaikaista käyttäytymistä @@vertical, @@appel.
 # lisää lähteitä?
 
 Knuthin näkökulma rajottui kuitenkin yksittäisen algoritmin, ohjelman
-tai komponentin /ohjelmointiin/. Laajempaa ohjelmistoa rakentaessa
+tai komponentin /ohjelmointiin/. Laajaa ohjelmistoa rakentaessa
 otetaan kantaa myös ohjelmiston käsitteellisiin vaatimuksiin ja
 suunnitellaan ohjelmiston komponenttitason arkkitehtuuri sekä
 komponenttien tarkempi rakenne. Oli ohjelmiston tuotantoprosessi miten
@@ -73,6 +73,14 @@ ominaisuudeksi, joka kuvaa, miten /nopeasti/ ohjelmisto toimii
 käyttäjän näkökulmasta: miten tyydyttävät sen vasteajat ovat ja miten
 tehokkaasti se käsittelee syötedataa.
 
+Ohjelmiston tehokkuus ja nopeus kuvaavat sen käyttäytymistä /ajan
+suhteen/, johon myös tutkielma keskittyy. Toinen keskeinen
+suorituskykymittareiden luokka tutkii ohjelmiston muistinkäyttöä
+@@ferrari(457). Tässä tutkielmassa aikaulottuvuus on ensisijainen ja
+sitä tutkitaan kvantitatiivisesti; mobiilisovellusten muistinkulutus
+on toki oleellinen suorituskykytekijä, mutta tutkimme ainoastaan sen
+vaikutuksia sovelluksen ajalliseen käyttäytymiseen.
+
 Jotta järjestelmän suorituskykyä voisi arvioida täsmällisesti, käsite
 on purettava kvantitatiivisiksi /mittareiksi/.  Ne arvioivat
 järjestelmän /tuottavuutta/ tai /responsiivisuutta/, tai valitun
@@ -104,7 +112,7 @@ Vaikka suorituskyvyn eri osatekijöitä voi arvioida kvantitatiivisilla
 mittareilla, tulosten objektiivisuus on aina rajallinen. Esimerkiksi
 vasteaikamittarit ovat merkityksellisiä vain suhteessa kulloiseenkin
 käyttötapaukseen ja kokonaistyömäärään, joista molemmat on hyvin
-vaikea kuvata tyhjentävästi ja järjestelmäriippumattomasti
+vaikea mallintaa tyhjentävästi ja järjestelmäriippumattomasti
 @@ferrari(14). Varsinaiset suoritusaikamittaukset puolestaan koskevat
 aina /ohjelma--syöte/-pareja, eivät puhtaasti ohjelmaa sellaisenaan
 @@ferrari(455).
@@ -200,7 +208,8 @@ harkinta- ja reagointiviiveet eivät ole osa vasteaikaa, joten
 vuorovaikutukset on mittausta varten eriteltävä riittävän
 yksinkertaisiin mitattaviin yksiköihin, joissa käyttäjän ja
 sovelluksen roolit on erotettavissa @@ferrari(14--16), @@spe(114).
-# lähde tuohon
+# todo footnote mainitse että järjestelmä-käyttäjä-parin 
+# tehokkuuden arviointi / käytettävyys jää tämän ulkopuolelle
 
 Erilaiset keinot mitata aikaa koskevat erilaisia osia
 kokonaisajasta. Järjestelmän ulkopuoliselle käyttäjälle havainnot ovat
@@ -211,13 +220,13 @@ UNIX-käyttöjärjestelmissä tätä mittaa järjestelmäkutsu =gettimeofday=
 @@advanced-unix(173), joka lukee laitteiston kelloa. Jos
 sovellusohjelma kutsuu sitä tavallisena käyttöjärjestelmäkutsuna,
 saattaa ohjelman suoritus häiriintyä tarkkuutta vaativissa
-mittauksissa @@ferrari(472).[fn:gettimeofday] Tässä tutkielmassa
+mittauksissa @@ferrari(472). Tässä tutkielmassa
 kyseistä rutiinia käytetään ainoastaan tarpeeksi pitkien
 kokonaisvasteaikojen mittaamiseen, jolloin pienet häiriöt eivät ole
-kriittisiä. Toinen tosiajan ongelma on, moniajojärjestelmistä se on
-riippuvainen järjestelmän kokonaistilasta @@ferrari(455); tässä
-tutkielmassa muiden prosessien vaikutus tulkitaan tilastolliseksi
-varianssiksi.
+kriittisiä. Moniajojärjestelmissä tosiaikaa käyttävät mittaukset ovat
+myös riippuvaisia järjestelmän kokonaistilasta @@ferrari(455);
+tutkielman mittauksissa muiden prosessien vaikutus tulkitaan
+tilastolliseksi varianssiksi ja pyritään minimoimaan.
 # todo luetaan piiriin
 # todo tarkista onko androidissa tarkka userspace gettimeofday (arm)
 # todo tosiaika?
@@ -227,9 +236,9 @@ vasteajat erilaisiksi, jos työn etenemistä osoittava
 käyttöliittymäelementti etenee eri tavalla @@progressbar.
 # todo lue ja varmista että lähde sanoo näin ;)
 
-[fn:gettimeofday] Joissakin laitteistoissa kyseistä Linuxin palvelua
-voi kutsua vähäisellä rasitteella siirtymättä kernelin suoritustilaan.
-# lähde vdso etc.
+#[fn:gettimeofday] Joissakin laitteistoissa kyseistä Linuxin palvelua
+#voi kutsua vähäisellä rasitteella siirtymättä kernelin suoritustilaan.
+# lähde vdso etc. sitten vasta julkiseksi todo
 
 Tässä tutkielmassa kaikki suorituskykyä parantavat ratkaisut tähtäävät
 /oleellisten käyttötapausten lyhentyneeseen vasteaikaan tosiaikana
@@ -245,15 +254,15 @@ eksplisiittisesti kutsunut.
 # todo lähteet + lievennä Linux-spesifisyys
 # todo kuvaa ferrarin termeillä?
 
-Aika, joka kuluu I/O- tai muita palveluita odottaessa, lasketaan
-tosiaikaan muttei sovellus- tai järjestelmäaikaan. Käyttäjän kannalta
-esimerkiksi I/O-operaatioden odottelulla on selvästi suuri
-merkitys. Sovellus- ja järjestelmäaika yhdessä vastaavat sovelluksen
-/suoritinaikaa/ (/CPU time/), koska niihin kuuluu ainoastaan prosessin
-aktiivinen suoritusaika @@advanced-unix(20). Tutkielmassa oletetaan,
-että suoritinaika on natiivirajapinnan rasitteiden oleellisin
-osatekijä, mutta tosiaikaa mittaamalla varmistetaan, etteivät
-suoritinajan ulkopuoliset merkittävät viiveet jää huomiotta.
+Aika, joka kuluu erilaisia palveluita odottaessa, lasketaan tosiaikaan
+muttei sovellus- tai järjestelmäaikaan. Käyttäjän kannalta esimerkiksi
+I/O-operaatioden odottelulla on selvästi suuri merkitys. Sovellus- ja
+järjestelmäaika yhdessä vastaavat sovelluksen /suoritinaikaa/ (/CPU
+time/), koska niihin kuuluu ainoastaan prosessin aktiivinen
+suoritusaika @@advanced-unix(20). Tutkielmassa oletetaan, että
+suoritinaika on natiivirajapinnan rasitteiden oleellisin osatekijä,
+mutta tosiaikaa mittaamalla varmistetaan, etteivät suoritinajan
+ulkopuoliset merkittävät viiveet jää huomiotta.
 
 Kuten aina, vasteaikojen mittaamisen kohde on aina
 ohjelma--syöte -pari, joten sopivien syötteiden käyttäminen
@@ -295,10 +304,17 @@ eksplisiittisillä, ohjelmaan itseensä sisältyvillä käskyillä
 rakentaminen laskemalla jokaisen aliohjelman jokainen kutsu. Näin
 tallennetun informaation avulla voidaan suorituksen jälkeen tulostaa
 luettelo jokaisesta kutsutusta aliohjelmasta järjestettynä
-kutsukertojen mukaan. Ohjelman profiilin käsitteen loi Donald Knuth
-@@fortran. Tämän kaltaista instrumentointia ei välttämättä tarvitse
-ohjelmoida käsin: kääntäjä voi lisätä instrumentointikäskyjä
+kutsukertojen mukaan.  Tämän kaltaista instrumentointia ei välttämättä
+tarvitse ohjelmoida käsin: kääntäjä voi lisätä instrumentointikäskyjä
 kohdeohjelmaan tarvittaessa automaattisesti @@gprof(2).
+
+Ohjelman profiilin käsitteen loi Donald Knuth @@fortran. Alunperin se
+tarkoitti taulukkoa ohjelman jokaisen lauseen /suorituskerroista/;
+nykyisessä käytössä ja tässä tutkielmassa profiloinnilla tarkoitetaan
+yleisemmin ohjelman osien suorituskäyttäytymisen mittaamista, jolloin
+suorituskertojen sijaan usein tutkitaan osien suoritukseen käytettyä
+aikaa. Se hyödyntää usein instrumentoinnin sijaan tai sen lisäksi
+näytteenottomenetelmiä.
 #todo profile kutsu vs lausetason?  plus lähde tähän
 # knuth irrallinen > siirrä myöhemmäksi
 
@@ -377,23 +393,23 @@ myös niiden muokkaamista käsin. Käsin tai metaohjelmoinnin avulla
 lisätyllä instrumentoinnilla saadaan kirjattua yksityiskohtaisinta
 tietoa ohjelmiston sisäisestä tilasta ja sovellusaluekohtaisesta
 informaatiosta: esimerkiksi siitä, minkä tyyppiset parametrit ovat
-yleisimpiä tietyissä kutsuissa tai mitkä ovat lähetettyjen viestien
-yleisimmät pituudet ja jopa sisällöt @@spe(334). Pelkällä kääntäjän
-lisäämällä ei-sovelluskohtaisella instrumentaatiolla saadaan myös
-tietoa, jota ei muilla tekniikoilla tavoita: jokaisen aliohjelman
-kutsujen määrä ja jokaisen kutsun vasteaika.
+yleisimpiä tietyissä kutsuissa tai mihin käyttötapaukseen mitattu
+tapahtuma liittyy @@spe(334). Pelkällä kääntäjän lisäämällä
+ei-sovelluskohtaisella instrumentaatiolla saadaan myös tietoa, jota ei
+muilla tekniikoilla tavoita: jokaisen aliohjelman kutsujen määrä ja
+jokaisen kutsun vasteaika.
 
 Instrumentaatio on tavallaan kattavin mittausmenetelmä, sillä
 jokaisesta mielenkiintoisesta tapahtumasta saadaan periaatteessa
 kirjattua tarvittava informaatio. Erityisesti vasteaikojen suhteen
 ongelmaksi kuitenkin muodostuu se, että instrumentointi aina
-/häiritsee/ enemmän tai vähemmän suoritettavan ohjelman
-toimintaa. Toisin sanoen mittauskohteena onkin instrumentoitu eikä
+/häiritsee/ enemmän tai vähemmän suoritettavan ohjelman toimintaa
+@@ferrari(44). Toisin sanoen mittauskohteena onkin instrumentoitu eikä
 alkuperäinen ohjelma. Jos vasteaikoja mitataan tihein väliajoin
 käyttöjärjestelmäkutsulla, joka palauttaa järjestelmän kellon arvon,
 saattaa tämä kutsu ja sen aiheuttama prosessin tilamuutos vaikuttaa
-ohjelman käyttäytymiseen merkittävästi, vaikka kutsujen suorittamiseen
-kuluvan ajan vähentäisikin tuloksista.
+ohjelman käyttäytymiseen, vaikka kutsujen suorittamiseen kuluvan ajan
+vähentäisikin tuloksista.
 # pertrubation problem
 # lähteitä ferrari, smith, java vertical profiling?
 

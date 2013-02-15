@@ -1,8 +1,8 @@
 
 Kaikki Android-järjestelmään asennettavat tavalliset sovellukset
 suoritetaan omassa prosessissaan Dalvik-virtuaalikoneessa, vaikka ne
-sisältäisivätkin natiivikomponentteja. Vaikka sovelluksen ohjelmoisi
-vaikkapa C-kielellä komentoriviltä käynnistettäväksi ohjelmaksi ja
+sisältäisivätkin natiivikomponentteja. Jos sovelluksen ohjelmoisi
+esimerkiksi C-kielellä komentoriviltä käynnistettäväksi ohjelmaksi ja
 kääntäisi osaksi itse Android-käyttöjärjestelmää, tällainen sovellus
 jäisi Androidin normaalien julkaisukäytäntöjen ulkopuolelle ja siten
 käyttäjien ulottumattomiin.
@@ -27,7 +27,10 @@ yhteydessä kielten luokittelu matalan ja korkean tason kieliin ei
 perustu kielen abstraktiomekanismien ilmaisuvoimaan vaan kielen
 toteutustapaan: Java on korkean tason kieli, sillä Java-ohjelmia
 suoritetaan välikielen muodossa abstraktissa virtuaalikoneessa eikä
-suoraan laitteistotason konekielelle käännettynä.
+suoraan laitteistotason konekielelle käännettynä. Natiivirajapinnan
+käyttäminen C++-kielessä eroaa hyvin vähän C-kieleen verrattuna, eikä
+suorituskykyeroa kielten välillä ole @@jnibook(106). Käsittelen tässä
+rajapinnan C-kielistä versiota.
 
 Vieraskutsurajapinnan on aina huolehdittava kielten erilaisten
 kutsukäytäntöjen yhteensovittamisesta sekä kutsuparametrien ja
@@ -204,7 +207,7 @@ linkityskäytännöt @@jnibook(170).
 Lopuksi natiivifunktiolle on vielä kirjoitettava toteutus C- tai
 C++-kielellä ja käännettävä se osaksi dynaamisesti ladattavaa
 kirjastoa. Androidin tapauksessa tämä käännösvaihe edellyttää
-/ristiinkääntämistä/, koska kohdearkkitehtuurin ARM-arkkitehtuuri ja
+/ristiinkääntämistä/, koska kohdelaitteiston ARM-arkkitehtuuri ja
 suoritusympäristö eroavat kehitysympäristön
 vastaavista. Käännösvaiheesta yksityiskohtineen huolehtivat
 rakennusmääritysten mukaisesti Androidin Native Development Kit
@@ -258,7 +261,7 @@ Ohjelmointityössä ehkä yleisimpien tietotyypien, merkkijonojen ja
 taulukoiden, käyttäminen edellyttää kaikkien tietorakenteita
 hyödyntävien operaatioiden kutsumista ~JNIEnv~-rajapintafunktioiden
 kautta. Näistä apufunktioista on kuitenkin erilaisia versioita, joiden
-reunaehdot suorituskyvyn suhteen eroavat toisistaan jnibook(24--40).
+reunaehdot suorituskyvyn suhteen eroavat toisistaan @@jnibook(24--40).
 
 Merkkijonoihin pääsee käsiksi kahdella tavalla. Ensimmäisessä
 JNI-funktio palauttaa osoittimen virtuaalikoneessa olevaan yhtenäiseen
@@ -281,7 +284,7 @@ str = (*env)->GetStringChars(env, string, &is_copy);
 #+end_src
 
 Parametri ~JNIEnv env~ on viite JNI:n kontekstietueeseen,
-~jstring~string~ on esimerkiksi natiivifunktiolle parametrina
+~jstring string~ on esimerkiksi natiivifunktiolle parametrina
 välitetty JNI-merkkijonoviite. Parametriin ~jboolean is_copy~
 tallentuu tieto, johtiko operaatio kopioimiseen. Merkkijonoresurssi on
 aina lopuksi vapautettava eksplisiittisellä kutsulla, mikä pätee myös
@@ -304,7 +307,7 @@ merkkijono-operaatioista aiheutuvat muistinvaraus- ja
 kopiointikustannukset. Android-dokumentaation mukaan
 kopiointikustannuksia syntyy lähinnä, jos Dalvikin sisäisestä
 16-bittisestä Unicode-merkkijono\-to\-teu\-tuk\-ses\-ta siirrytään
-UTF-8 -koodauksen merkkijonoon @@jnitips; lähes kaikista
+UTF-8 -koodattuun merkkijonoon @@jnitips; lähes kaikista
 JNI-merkkijonofunktioista on sekä Unicode- että
 UTF-versiot. Dalvik-virtuaalikoneen natiivirajapinnan
 merkkijono-operaatioiden suorituskyvyn tarkempi analyysi vaatii
@@ -346,7 +349,7 @@ jmethodID GetMethodID(JNIEnv *env, jclass clazz,
 #+end_src
 
 Lopuksi metodia on vielä kutsuttava olioviitteen ja metoditunnisteen
-perusteella funktiolla ~Call~<Type>~Method~:[fn:genericpp]
+perusteella funktiolla ~Call<Type>Method~:[fn:genericpp]
 
 #+begin_src c
 <NativeType> Call<Type>Method(JNIEnv *env, jobject obj,
@@ -401,8 +404,8 @@ ohjelmoija on vastuussa muistinkäytön tehokkuudesta ja muistivuotojen
 välttämisestä. Erilaisilla viitteidenhallintastrategioilla on
 potentiaalisesti myös erilaisia rasitteita jotka näkyvät
 vasteajoissa. Virtuaalikoneen suorittama roskienkeruukin on osa
-ohjelman suoritusaikaa, ja erilaisten viitteiden käyttäminen vaikuttaa
-siihen, milloin roskienkeruuta voidaan suorittaa.
+ohjelman suoritusaikaa, ja käytetyt viitetyypit vaikuttavat siihen,
+milloin roskienkeruuta voidaan suorittaa.
 
 Paikalliset viitteet eivät vaadi roskienkeruuta, mutta sisältävät
 nekin omat rasitteensa. JNI-spesifikaatio tarjoaa niiden
@@ -410,16 +413,16 @@ eksplisiittiseen hallintaan funktioparin ~PushLocalFrame~ ja
 ~PopLocalFrame~, joita väitetään tehokkaaksi tavaksi hallita lokaaleja
 viitteitä useampi viite kerrallaan @@jnibook(68). Yhden natiivimetodin
 kutsuhan voi siirtää ohjelman suorituksen pitkäksikin aikaa syvälle
-natiivikomponenttiin, joten kyseisen metodin kutsukaari saattaa pitää
+natiivikomponenttiin, joten kyseinen metodikutsu saattaa pitää
 paikallisten viitteiden edellyttämät muistivaraukset käytössä hyvinkin
 pitkään, ellei viitteitä erikseen vapauteta.
 
 ** Natiivirajapinnan suorituskykyrasitteista
-Olen ennakoinut, että natiivirajapinnan ylittäminen voi lisätä
-ylimääräisiä suorituskykyrasitteita aivan tavallisiin
-laskentatehtäviin kuten merkkijonojen ja taulukoiden käsittelyyn,
-olioiden kenttien ja metodien käyttämiseen sekä natiivimetodien
-kutsumiseen Java-ohjelmasta käsin. Rasitteet voivat aiheutua Java- ja
+Olen ennakoinut, että natiivirajapinnan ylittäminen voi aiheuttaa
+ylimääräisiä suorituskykyrasitteita aivan tavallisissa
+laskentatehtävissä kuten merkkijonojen ja taulukoiden käsittelyssä,
+olioiden kenttien ja metodien käyttämisessä sekä natiivimetodien
+kutsumisessa Java-ohjelmasta käsin. Rasitteet voivat aiheutua Java- ja
 natiivialiohjelmien erilaisista kutsukäytännöistä, menetelmistä kuroa
 umpeen eroja natiivikielten ja virtuaalikoneen muistinhallinnassa sekä
 operaatioiden edellyttämästä epäsuorien funktiokutsujen määristä.
