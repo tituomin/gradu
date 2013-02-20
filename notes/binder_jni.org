@@ -1,0 +1,13 @@
+
+Kyllä, Binder-toteutus käyttää JNI:tä. Esim.  Parcel-Java-luokka
+sisältää primitiivimetodit writeInt jne., joita esim Java service
+ClipBoardService käyttää (ClipData.writeToParcel) QED.
+
+Mutta esimerkiksi Sensor Manager ! ei käytä BInderiä (??) vaan suoraan
+JNI-kutsu samoin kuin Logger. Ei kun binder-kutsu (getService) on
+C++-luokassa.
+
+Esimerkiksi Camera samoin: 
+android.hardware.Camera
+- > Camera.cpp -> getService('media.camera')
+-> ICameraService tms.
