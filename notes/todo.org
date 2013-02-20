@@ -1,6 +1,9 @@
 
 Gradu: duunit
-
+* Tee
+** TODO lisää muut kuin jnienv-funktiot testiin? (tai perustele miksei)
 * Tarkista
 ** TODO gof-book: onko proxy oikea termi peer classille?
+** TODO androidin jni-toteutus ei käytä funktiotauluja?
+
 

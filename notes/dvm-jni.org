@@ -12,7 +12,6 @@
 * 1194 JNI defineclass not supported
 
 * ideas for work load parameters
-
 *** primitive vs. reference arguments
 
 ***** primitive vs. object arrays
@@ -36,3 +35,17 @@ allocation will fail."
 *** how to bypass jnienv &c. creation
 
 *** JNI callbacks
+* Jni.cpp ja jnienvin alustus
+- rivi 3497: oikeasti luodaan osoitin JNIEnvExt (JniInternals.h)-structiin,
+  joka on linkitetty rakenne
+  - linkitetty koska ylläpidetään listaa enveistä
+  - tietueen eka jäsen on osoitin jninativeinterfaceen...
+- rakenteen luontikoodi: 3280
+- *ping* ratkaisu: koska jnienvext castataan jnienv-osoittimeksi,
+  ja jnienv on osoitintyyppi jninativeinterface-tietueeseen, se tulkitsee
+  tietueen *ensimmäisen alkion* osoitinarvoksi (koska jnienvext-tietueen
+  eka alkio on samaa tyyppiä kuin jnienv)
+  - todo tarkista defined order of struct member allocation
+    - jni.h:502 "we rely somewhat on compiler behavior
+  - vastaa kyllä jnibookin kaaviota
+  - 
