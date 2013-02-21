@@ -38,13 +38,19 @@ palautusarvojen muuntamisesta lähdekielen tyypeistä kohdekielen
 hyödynnettävissä olevaan muotoon ja päin vastoin.
 
 # todo: mainitse java-c-spesifit tehtävät vielä toisessa listassa
+\begin{figure}[h!]
+\centerline{
+\includegraphics[scale=1]{figures/jni_basic.pdf}
+}\caption{Natiivirajapinnan asema \cite[s. 5]{jnibook}}\label{fig:jnibasic}
+\end{figure}
 
-Lisäksi JNI tarjoaa natiiviohjelmoijalle takaisinkutsurajapinnan,
-jonka avulla natiiviohjelmasta voi kutsua Java-ohjelman metodeita ja
-lukea Javan tietorakenteita, esimerkiksi olioiden
-kenttiä. Ei-primitiivisten tietorakenteiden kuten merkkijonojen ja
-taulukoiden käsittelyyn natiiviohjelmassa JNI tarjoaa omat
-apufunktionsa.
+JNI:n integraatiomekanismit ovat kahdensuuntaisia (kuva
+\ref{fig:jnibasic}): se tarjoaa natiiviohjelmoijalle myös
+takaisinkutsurajapinnan, jonka avulla natiiviohjelmasta voi kutsua
+Java-ohjelman metodeita ja lukea Javan tietorakenteita, esimerkiksi
+olioiden kenttiä. Ei-primitiivisten tietorakenteiden kuten
+merkkijonojen ja taulukoiden käsittelyyn natiiviohjelmassa JNI tarjoaa
+omat apufunktionsa.
 # lähteet jeannie ja reppy
 # vaihtoehdot jni:lle androidissa?
 
@@ -150,10 +156,10 @@ joka kutsuu silloin tällöin /natiivikirjaston/ tarjoamia palveluita
 tason kielellä, ja sovellukseen /upotetaan/ Java-virtuaalikone, jonka
 avulla sovellus voi suorittaa Java-kielisiä ohjelmia.
 
-Android-sovellusohjelmat ovat aina lähtökohtaisesti Java-kielellä
+Android-sovellukset ovat aina lähtökohtaisesti Java-kielellä
 toteutettuja, joten ainoastaan ensimmäinen integraatiomekanismi on
-käytettävissä. Käytännössä nativiikirjasto otetaan Java-sovelluksen
-käyttöön seuraavasti.
+käytettävissä sovellusohjelmoijalle. Käytännössä nativiikirjasto
+otetaan Java-sovelluksen käyttöön seuraavasti.
 # lähde embedded
 
 Natiiivimetodi esitellään Java-kielessä luokan sisällä, kuten

@@ -324,6 +324,7 @@ otanta kirjaamatta jokaista tilanmuutosta ohjelman sisältä käsin
 tosiaikakellon aiheuttaman keskeytyksen laukaisemana, ja näytteeseen
 voidaan tallentaa esimerkiksi suorituksessa olleen konekäskyn osoite.
 
+\newpage
 Instrumentoinnin ja näytteenoton avulla ohjelman suoritusajan
 jakautumisesta aliohjelmiin tai jopa yksittäisiin konekäskyihin
 voidaan siis periaatteessa saada hyvinkin tarkkoja mittauksia.
@@ -600,7 +601,7 @@ suhteessa vaatimuksiin.
 # physical
 # development
 # + use case
-
+\newpage
 Mallit voivat perustua esimerkiksi 4+1-arkkitehtuurimallien kehikkoon
 @@4plus1 ja UML-malleihin täydennettynä suorituskykyyn liittyvillä
 laajennuksilla. Toisaalta UML-mallit ja monet ohjelmistoprosessissa
@@ -702,19 +703,25 @@ helposti kytkeä mallin osaksi.
 Mallissa ohjelma jaetaan suoritustiloihin halutulla karkeusasteella --
 tutkielmassa jako noudattaa lähinnä profilointityökaluissa esiintyvien
 aliohjelmien rajoja, yhdistellen tarvittaessa aliohjelmia suuremmiksi
-loogisiksi kokonaisuuksiksi. Malli on /verkko/, jonka /solmut/
+loogisiksi kokonaisuuksiksi. Malli on /verkko/, jonka nimetyt /solmut/
 vastaavat hetkellisiä diskreettejä suoritustiloja, ja solmujen väliset
-/kaaret/ vastaavat siirtymiä tilasta toiseen ja myös laskentaa joka
+/kaaret/ vastaavat siirtymiä tilasta toiseen sekä myös laskentaa joka
 siirtymässä tapahtuu. Yhdestä tilasta voi lähteä ja siihen voi saapua
 monta kaarta, ja kaariin kytketyt todennäköisyydet ilmaisevat
 todennäköisyyttä että kyseinen siirtymä tapahtuu.
 
-# todo tähän kuva
+\begin{figure}[h!]
+\centerline{
+\includegraphics[scale=1]{figures/beizer_example.pdf}
+}\caption{Ohjelman mallinnus Markov-prosessina \cite{beizer}}\label{fig:beizer}
+\end{figure}
 
 Mallinnustavan erikoisuutena laskenta ei sijoitu solmuihin vaan
 kaariin, joihin liittyy todennäköisyyden lisäksi keskimääräinen
 suoritusaika sekä suoritusajan varianssi (jotka vastaavat
-mittauksia). Muutoin kyseessä on perinteinen Markov-malli, joka on
+mittauksia). Kuvassa \ref{fig:beizer} tilojen /i/ ja /k/ välisen
+siirtymän suoritusaika on \mu_ik, todennäköisyys p_ik ja suoritusajan
+varianssi \lambda_ik.  Muutoin kyseessä on perinteinen Markov-malli, joka on
 /historiaton/: /Markov-oletuksen/ mukaisesti eri siirtymien
 todennäköisyydet riippuvat ainoastaan kulloisestakin tilasta eikä
 prosessin aikaisemmista tiloista. Oletus on tietenkin epärealistinen,
@@ -727,7 +734,7 @@ kohdistuvilla työkuormilla.
 Ohjelmiston kokonaisvasteaika ratkaistaan Beizerin mallinnustavassa
 algortimilla, joka eliminoi verkosta yhden solmun
 kerrallaan. Algoritmissa on eri yhtälöt /sarjaan/ ja /rinnan/
-kytkettyjen solmujen sekä /silmukoiden/ poistoon.
+kytkettyjen solmujen sekä /silmukoiden/ poistoon @@beizer(521--522).
 
 1. Valitaan poistettava solmu.
 2. Poistetaan solmu käyttämällä /sarjaan/ kytkettyjen solmujen

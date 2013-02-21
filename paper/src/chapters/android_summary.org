@@ -23,12 +23,16 @@ Arkkitehtuurin infrastruktuuri, Dalvik-virtuaalikone sekä suuri osa
 järjestelmän matalamman tason palveluista on toteutettu C- ja
 C++-kielillä @@embedded(138).
 
-Seuraava kuva esittää Android-järjestelmän perusosia.
+\begin{figure}[h!]
+\centerline{
+\includegraphics[scale=1]{figures/android_architecture_complex.pdf}
+}\caption{Android-järjestelmän kokonaisarkkitehtuuri \cite[muokattu]{embedded}}\label{fig:Beer}
+\end{figure}
 
 # todo tähän kaavio luultavasti embedded androidista
 # todo määrittele upotettu
-
-Kuvan arkkitehtuurikerroksista ylimmät ovat lähimpänä käyttäjää ja
+Kuva \ref{fig:Beer} esittää Android-järjestelmän perusosia.  Kuvan
+arkkitehtuurikerroksista ylimmät ovat lähimpänä käyttäjää ja
 sovellusohjelmoijaa. Suurin osa Android-sovelluksista ohjelmoidaan
 Javalla Androidin sovelluskehyksen ohjelmointirajapintaa @@sdk
 käyttäen. Ohjelmointirajapinnan ~android~-nimiavaruuden paketit ovat
