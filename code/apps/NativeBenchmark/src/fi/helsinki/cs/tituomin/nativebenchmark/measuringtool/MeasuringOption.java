@@ -1,13 +1,11 @@
 package fi.helsinki.cs.tituomin.nativebenchmark.measuringtool;
 
-import fi.helsinki.cs.tituomin.metadatacontainer;
-import android.util.Pair<String,String>;
+import java.util.Iterator;
+import android.util.Pair;
 
 public interface MeasuringOption {
 
-    private void optionSpec;
-
-    public void set(String);
+    public void set(String value);
     public String id();
     public boolean optional();
 

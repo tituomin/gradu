@@ -1,37 +1,35 @@
 package fi.helsinki.cs.tituomin.nativebenchmark.measuringtool;
 
-import MeasuringOption;
+import java.util.Set;
+import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.MeasuringOption;
+import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.BasicOption.OptionSpec;
 
 public abstract class MeasuringTool {
 
     public abstract void start();
     public abstract void stop();
+
     public abstract void setFilename();
 
-    protected abstract Set<OptionSpec> allowedOptions();
+    protected abstract Set<OptionSpec> specifyAllowedOptions();
 
     protected void specifyOptions() {
-        this.allowedOptions = allowedOptions();
+        this.allowedOptions = specifyAllowedOptions();
         for (OptionSpec o : this.allowedOptions) {
             if (!o.required) {
-                this.requiredOptions.add
-                    // todo here, where is the collect method?
+                this.requiredOptions.add(o);
             }
         }
-    }
-
-    protected abstract Set<OptionSpec> allowedOptions() {
-        return this.allowedOptions;
     }
 
     // -----
 
     public void setOption(MeasuringOption option) {
-        if (!optionMap().containsKey(option.id())) {
+        if (!allowedOptions.contains(option.id())) {
             throw new UnsupportedOptionException();
         }
         else {
-            this.options.add(option);            
+            this.options.add(option);
         }
     }
 
@@ -40,7 +38,7 @@ public abstract class MeasuringTool {
 
     private Set<OptionSpec> allowedOptions;
     private Set<OptionSpec> requiredOptions;
-    private Set<Option> options;
+    private Set<MeasuringOption> options;
 
     public static class UnsupportedOptionException extends RuntimeException {}
 }
