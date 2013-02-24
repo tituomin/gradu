@@ -3,7 +3,7 @@ package fi.helsinki.cs.tituomin.nativebenchmark;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class Benchmark extends Activity
+public class BenchmarkSelector extends Activity
 {
     /** Called when the activity is first created. */
     @Override
