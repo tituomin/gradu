@@ -62,6 +62,9 @@ public class BasicOption implements MeasuringOption {
         private boolean atEnd;
     }
 
+    public Pair<String,String> toStringPair() {
+        return new Pair<String,String> (this.type.name, this.value);
+    }
 
     
     // ----

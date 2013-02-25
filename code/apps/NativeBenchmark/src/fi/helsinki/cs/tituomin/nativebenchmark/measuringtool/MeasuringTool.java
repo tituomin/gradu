@@ -7,14 +7,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.LinkedList;
 import java.util.HashMap;
+import java.io.IOException;
+import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.Measurement;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.MeasuringOption;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.OptionSpec;
 
 public abstract class MeasuringTool {
 
-    public abstract void start();
-    public abstract void stop();
-    public abstract void terminate();
+    public abstract Measurement start() throws InterruptedException, IOException;
 
     protected abstract List<OptionSpec> specifyAllowedOptions(List<OptionSpec> container);
     protected abstract List<MeasuringOption> defaultOptions(List<MeasuringOption> container);
@@ -51,6 +51,11 @@ public abstract class MeasuringTool {
         }
     }
 
+    protected Measurement getMeasurement() {
+        Measurement measurement = new Measurement();
+        measurement.addOptions(this.options.values());
+        return measurement;
+    }
 
     private boolean hasRequiredOptions() {
         return options.keySet().containsAll(requiredOptions);

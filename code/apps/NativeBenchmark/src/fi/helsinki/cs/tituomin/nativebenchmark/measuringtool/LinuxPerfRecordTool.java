@@ -22,10 +22,12 @@ public class LinuxPerfRecordTool extends CommandlineTool {
         throw new UnsupportedOptionException();
     }
 
-    public void stop() {}
-    public void terminate() {}
+    protected Measurement getMeasurement() {
+        return new Measurement();
+    }
 
-    protected String command() { return "/bin/perf record";}
+    //    protected String command() { return "/bin/perf record sleep 5000";}
+    protected String command() { return "ls /";}
 
     // ---
 

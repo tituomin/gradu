@@ -1,12 +1,20 @@
 package fi.helsinki.cs.tituomin.nativebenchmark.measuringtool;
 
+import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.Measurement;
+
 import java.util.List;
 import java.util.LinkedList;
+import java.util.Date;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.IOException;
+import java.text.DateFormat;
+import android.os.SystemClock;
 
 
 public abstract class CommandlineTool extends MeasuringTool {
+
+    private static final DateFormat dateFormat = DateFormat.getDateTimeInstance();
 
     protected abstract String command();
     protected abstract String formatParameter(MeasuringOption option);
@@ -29,22 +37,33 @@ public abstract class CommandlineTool extends MeasuringTool {
         return options;
     }
 
-    public void start() {
+    public Measurement start() throws InterruptedException, IOException {
+        Measurement measurement = getMeasurement();
 
-        try {
+        this.startDate = new Date();
             this.process = this.builder().start();
             InputStream in = process.getInputStream();
             OutputStream out = process.getOutputStream();
             this.process.waitFor();
-        }
-        catch (Exception e) {
-            System.err.println("foo");
-        }
-        finally {
-            process.destroy();
-        }
-                
+            int exitValue = this.process.exitValue();
+            if (exitValue == 0) {
+                measurement.addData("Started", dateFormat.format(this.startDate));
+            }
+            return measurement;
+        // }
+        // catch (Exception e) {
+        //     System.err.println("foo");
+        // }
+        // finally {
+        //     process.destroy();
+        // }
     }
+
+    public Measurement stop() {
+        throw new UnsupportedOperationException();
+    }
+
+    protected abstract Measurement getMeasurement();
 
     // -----
 
@@ -65,4 +84,7 @@ public abstract class CommandlineTool extends MeasuringTool {
     private ProcessBuilder builder;
     private Process process;
 
+    private Date startDate;
+    private Date endDate;
+    private long startTime;
 }

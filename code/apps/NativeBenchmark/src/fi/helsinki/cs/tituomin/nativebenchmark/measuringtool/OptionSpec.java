@@ -1,7 +1,7 @@
 package fi.helsinki.cs.tituomin.nativebenchmark.measuringtool;
 
 
-public  class OptionSpec {
+public class OptionSpec {
     public String name;
     public String id;
     public boolean required;
