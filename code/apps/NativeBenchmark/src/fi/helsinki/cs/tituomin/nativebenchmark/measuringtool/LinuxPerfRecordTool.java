@@ -1,21 +1,32 @@
 package fi.helsinki.cs.tituomin.nativebenchmark.measuringtool;
 
-import java.util.Set;
-import java.util.HashSet;
+import java.util.List;
+import java.util.LinkedList;
 
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.MeasuringTool;
+import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.MeasuringTool.UnsupportedOptionException;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.BasicOption;
-import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.BasicOption.OptionSpec;
+import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.OptionSpec;
 
-public class LinuxPerfRecordTool extends MeasuringTool {
+public class LinuxPerfRecordTool extends CommandlineTool {
 
-    protected Set<OptionSpec> specifyAllowedOptions() {
-        Set<OptionSpec> options = new HashSet<OptionSpec> ();
+    protected List<OptionSpec> specifyAllowedOptions(List<OptionSpec> options) {
         options.add(BasicOption.OUTPUT_FILEPATH);
         return options;
     }
 
-    public void start() {}
+    public String formatParameter(MeasuringOption option) {
+        if (option.type() == BasicOption.OUTPUT_FILEPATH) {
+            return "--output=" + option.value();
+        }
+        throw new UnsupportedOptionException();
+    }
+
     public void stop() {}
-    public void setFilename() {}
+    public void terminate() {}
+
+    protected String command() { return "/bin/perf record";}
+
+    // ---
+
 }
