@@ -75,16 +75,25 @@ public class BasicOption implements MeasuringOption {
     // ----
 
 
-    public static final OptionSpec COMMAND_STRING  = new OptionSpec();
-    public static final OptionSpec OUTPUT_FILEPATH = new OptionSpec();
-    static {
-        COMMAND_STRING  .name     ("Command run")
-                        .required (true)
-                        .id       ("COMMAND_STRING");
+    public static final OptionSpec COMMAND_STRING   = new OptionSpec();
+    public static final OptionSpec OUTPUT_FILEPATH  = new OptionSpec();
+    public static final OptionSpec MEASURE_LENGTH   = new OptionSpec();
 
-        OUTPUT_FILEPATH .name     ("Output path")
-                        .id       ("OUTPUT_FILEPATH")
-                        .required (true);
+    static {
+        COMMAND_STRING
+            .name     ("Command run")
+            .required (true)
+            .id       ("COMMAND_STRING");
+
+        OUTPUT_FILEPATH 
+            .name     ("Output path")
+            .id       ("OUTPUT_FILEPATH")
+            .required (true);
+
+        MEASURE_LENGTH
+            .name    ("Measuring time (sec)")
+            .id      ("MEASURE_LENGTH")
+            .required (true);
 
     }
 

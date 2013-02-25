@@ -14,13 +14,18 @@ import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.OptionSpec;
 
 public abstract class MeasuringTool {
 
-    public abstract Measurement start() throws InterruptedException, IOException;
+    public abstract Measurement start(Runnable benchmark) throws InterruptedException, IOException;
 
     protected abstract List<OptionSpec> specifyAllowedOptions(List<OptionSpec> container);
     protected abstract List<MeasuringOption> defaultOptions(List<MeasuringOption> container);
 
+    public MeasuringTool() {
+        specifyOptions();
+    }
+
     protected void specifyOptions() {
-        this.allowedOptions = specifyAllowedOptions(new LinkedList<OptionSpec>());
+        this.allowedOptions = specifyAllowedOptions(
+            new LinkedList<OptionSpec>());
         if (this.requiredOptions == null) {
             this.requiredOptions = new HashSet<OptionSpec>();
         }
@@ -29,7 +34,8 @@ public abstract class MeasuringTool {
                 this.requiredOptions.add(o);
             }
         }
-        for (MeasuringOption op : defaultOptions(new LinkedList<MeasuringOption>())) {
+        for (MeasuringOption op : defaultOptions(
+                 new LinkedList<MeasuringOption>())) {
             setOption(op);
         };
     }

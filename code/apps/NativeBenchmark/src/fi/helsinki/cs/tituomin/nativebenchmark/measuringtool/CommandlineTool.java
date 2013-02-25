@@ -21,7 +21,7 @@ public abstract class CommandlineTool extends MeasuringTool {
 
     // ----
 
-    public CommandlineTool() {
+    public void initCommand() {
         List<String> commandline = new LinkedList<String> ();
 
         commandline.add(command());
@@ -37,19 +37,26 @@ public abstract class CommandlineTool extends MeasuringTool {
         return options;
     }
 
-    public Measurement start() throws InterruptedException, IOException {
+    public Measurement start(Runnable benchmark) throws InterruptedException, IOException {
         Measurement measurement = getMeasurement();
 
+        Thread benchmarkThread = new Thread(benchmark);
+        benchmarkThread.start();
+        Thread.sleep(2000); // todo hardcoded
+
         this.startDate = new Date();
-            this.process = this.builder().start();
-            InputStream in = process.getInputStream();
-            OutputStream out = process.getOutputStream();
-            this.process.waitFor();
-            int exitValue = this.process.exitValue();
-            if (exitValue == 0) {
-                measurement.addData("Started", dateFormat.format(this.startDate));
-            }
-            return measurement;
+        this.process = this.builder().start();
+        InputStream in = process.getInputStream();
+        OutputStream out = process.getOutputStream();
+        this.process.waitFor();
+
+        benchmarkThread.interrupt();
+
+        int exitValue = this.process.exitValue();
+        if (exitValue == 0) {
+            measurement.addData("Started", dateFormat.format(this.startDate));
+        }
+        return measurement;
         // }
         // catch (Exception e) {
         //     System.err.println("foo");

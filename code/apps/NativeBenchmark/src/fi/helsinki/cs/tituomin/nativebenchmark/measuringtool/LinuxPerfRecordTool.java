@@ -12,12 +12,16 @@ public class LinuxPerfRecordTool extends CommandlineTool {
 
     protected List<OptionSpec> specifyAllowedOptions(List<OptionSpec> options) {
         options.add(BasicOption.OUTPUT_FILEPATH);
+        options.add(BasicOption.MEASURE_LENGTH); // must be last
         return options;
     }
 
     public String formatParameter(MeasuringOption option) {
         if (option.type() == BasicOption.OUTPUT_FILEPATH) {
             return "--output=" + option.value();
+        }
+        if (option.type() == BasicOption.MEASURE_LENGTH) {
+            return "sleep " + option.value();
         }
         throw new UnsupportedOptionException();
     }
@@ -27,7 +31,7 @@ public class LinuxPerfRecordTool extends CommandlineTool {
     }
 
     //    protected String command() { return "/bin/perf record sleep 5000";}
-    protected String command() { return "ls /";}
+    protected String command() { return "perf record";}
 
     // ---
 
