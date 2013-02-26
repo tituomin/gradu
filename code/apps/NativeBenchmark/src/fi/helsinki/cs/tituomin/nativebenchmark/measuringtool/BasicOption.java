@@ -1,4 +1,5 @@
 package fi.helsinki.cs.tituomin.nativebenchmark.measuringtool;
+
 import  fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.LinuxPerfRecordTool;
 import  fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.OptionSpec;
 import java.util.Iterator;
@@ -14,13 +15,13 @@ public class BasicOption implements MeasuringOption {
 
     public BasicOption(OptionSpec type, String value) {
         this.type = type;
-        this.value = null;
+        this.value = value;
     }
 
     // -----
 
-    public String id() {
-        return this.type.id;
+    public OptionSpec id() {
+        return this.type;
     }
     public void set(String value) {
         this.value = value;
@@ -64,6 +65,10 @@ public class BasicOption implements MeasuringOption {
 
     public Pair<String,String> toStringPair() {
         return new Pair<String,String> (this.type.name, this.value);
+    }
+
+    public String toString() {
+        return this.type() + " " + this.value();
     }
 
     

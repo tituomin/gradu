@@ -8,7 +8,7 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import android.util.Pair;
 
-public class Measurement implements MetadataContainer {
+public class Measurement implements MetadataContainer, Iterable<Pair<String,String>> {
 
     public Iterator<Pair<String,String>> iterateMetadata() {
         return new MeasurementIterator();
@@ -50,6 +50,18 @@ public class Measurement implements MetadataContainer {
             this.values.put(op.toStringPair().first,
                             op.toStringPair().second);
         }
+    }
+
+    public Iterator<Pair<String,String>> iterator() {
+        return new MeasurementIterator();
+    }
+
+    @Override public String toString() {
+        StringBuffer buf = new StringBuffer(128);
+        for (Pair<String,String> pair : this) {
+            buf.append(pair.first + ": " + pair.second);
+        }
+        return buf.toString();
     }
 
     // -----

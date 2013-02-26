@@ -11,27 +11,36 @@ import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.OptionSpec;
 public class LinuxPerfRecordTool extends CommandlineTool {
 
     protected List<OptionSpec> specifyAllowedOptions(List<OptionSpec> options) {
+        options = super.specifyAllowedOptions(options);
         options.add(BasicOption.OUTPUT_FILEPATH);
         options.add(BasicOption.MEASURE_LENGTH); // must be last
         return options;
     }
 
     public String formatParameter(MeasuringOption option) {
+        String prefix;
         if (option.type() == BasicOption.OUTPUT_FILEPATH) {
-            return "--output=" + option.value();
+            prefix = "--output=";
         }
-        if (option.type() == BasicOption.MEASURE_LENGTH) {
-            return "sleep " + option.value();
+        else if (option.type() == BasicOption.MEASURE_LENGTH) {
+            prefix = "sleep ";
         }
-        throw new UnsupportedOptionException();
+        else if (option.type() == BasicOption.COMMAND_STRING) {
+            prefix = "";
+        }
+        else {
+            throw new UnsupportedOptionException();
+        }
+
+        return prefix + option.value();
     }
 
     protected Measurement getMeasurement() {
         return new Measurement();
     }
 
-    //    protected String command() { return "/bin/perf record sleep 5000";}
-    protected String command() { return "perf record";}
+    protected String command() { return "su -c perf record";}
+    //    protected String command() { return "ls";}
 
     // ---
 

@@ -8,7 +8,7 @@ import android.util.Pair;
 public interface MeasuringOption extends MetadataContainer {
 
     public void set(String value);
-    public String id();
+    public OptionSpec id();
     public String value();
     public OptionSpec type();
     public Pair<String,String> toStringPair();

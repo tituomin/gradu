@@ -8,16 +8,23 @@ import java.util.List;
 import java.util.LinkedList;
 import java.util.HashMap;
 import java.io.IOException;
+import android.util.Log;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.Measurement;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.MeasuringOption;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.OptionSpec;
 
 public abstract class MeasuringTool {
 
-    public abstract Measurement start(Runnable benchmark) throws InterruptedException, IOException;
+    public abstract Measurement start(Runnable benchmark)
+        throws InterruptedException, IOException;
 
-    protected abstract List<OptionSpec> specifyAllowedOptions(List<OptionSpec> container);
-    protected abstract List<MeasuringOption> defaultOptions(List<MeasuringOption> container);
+    protected List<OptionSpec>
+        specifyAllowedOptions(List<OptionSpec> container) {
+        return container;
+    }
+
+    protected abstract List<MeasuringOption>
+        defaultOptions(List<MeasuringOption> container);
 
     public MeasuringTool() {
         specifyOptions();
@@ -26,6 +33,7 @@ public abstract class MeasuringTool {
     protected void specifyOptions() {
         this.allowedOptions = specifyAllowedOptions(
             new LinkedList<OptionSpec>());
+
         if (this.requiredOptions == null) {
             this.requiredOptions = new HashSet<OptionSpec>();
         }
@@ -36,23 +44,35 @@ public abstract class MeasuringTool {
         }
         for (MeasuringOption op : defaultOptions(
                  new LinkedList<MeasuringOption>())) {
+            Log.v("mt", "adding " + op.toString());
             setOption(op);
         };
     }
 
     // -----
 
+    public MeasuringTool set(OptionSpec spec, String value) {
+        // todo: not typesafe (assumes basicoption)
+        Log.v("mt", "set called");
+        setOption(new BasicOption(spec, value));
+        return this;
+    }
+
     public void setOption(MeasuringOption option) {
         if (this.allowedOptions == null) {
             specifyOptions();
         }
-        if (!allowedOptions.contains(option.id())) {
+        if (!allowedOptions.contains(option.type())) {
+            // Log.v("mt", allowedOptions.toString());
+            // Log.v("mt", option.toString());
+            // Log.v("mt", option.type().toString());
             throw new UnsupportedOptionException();
         }
         else {
-            if (this.options == null) {
-                this.options = new HashMap<OptionSpec,MeasuringOption> ();
-            }
+            this.options = (options != null ? options :
+                            new HashMap<OptionSpec,MeasuringOption> ());
+            
+            Log.v("mt", "putting " + option);
             this.options.put(option.type(), option);
         }
     }

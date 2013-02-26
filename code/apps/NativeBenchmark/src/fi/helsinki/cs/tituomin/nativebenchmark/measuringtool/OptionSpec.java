@@ -18,4 +18,8 @@ public class OptionSpec {
         this.required = required;
         return this; 
     }
+
+    public String toString() {
+        return name + " " + id;
+    }
 }

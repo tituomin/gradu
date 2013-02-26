@@ -10,7 +10,9 @@ import java.io.OutputStream;
 import java.io.IOException;
 import java.text.DateFormat;
 import android.os.SystemClock;
-
+import android.util.Log;
+import java.io.File;
+import android.os.Environment;
 
 public abstract class CommandlineTool extends MeasuringTool {
 
@@ -19,25 +21,41 @@ public abstract class CommandlineTool extends MeasuringTool {
     protected abstract String command();
     protected abstract String formatParameter(MeasuringOption option);
 
+
     // ----
+
+    public CommandlineTool() {
+        super();
+    }
 
     public void initCommand() {
         List<String> commandline = new LinkedList<String> ();
 
-        commandline.add(command());
         commandline.addAll(generateCommandlineArguments());
 
         this.builder = new ProcessBuilder()
+            .directory(Environment.getExternalStorageDirectory())
             .command(commandline)
             .redirectErrorStream(true);
     }
 
-    protected List<MeasuringOption> defaultOptions(List<MeasuringOption> options) {
-        options.add(new BasicOption(BasicOption.COMMAND_STRING, command()));
+    protected List<OptionSpec> specifyAllowedOptions(List<OptionSpec> options) {
+        options = super.specifyAllowedOptions(options);
+        options.add(BasicOption.COMMAND_STRING);
         return options;
     }
 
-    public Measurement start(Runnable benchmark) throws InterruptedException, IOException {
+    protected List<MeasuringOption> defaultOptions(List<MeasuringOption> options) {
+        Log.v("mt", "foo" + command());
+        options.add(new BasicOption(BasicOption.COMMAND_STRING, command()));
+        Log.v("mt", options.toString());
+        return options;
+    }
+
+    public Measurement start(Runnable benchmark)
+        throws InterruptedException, IOException {
+        initCommand();
+
         Measurement measurement = getMeasurement();
 
         Thread benchmarkThread = new Thread(benchmark);
@@ -46,8 +64,10 @@ public abstract class CommandlineTool extends MeasuringTool {
 
         this.startDate = new Date();
         this.process = this.builder().start();
-        InputStream in = process.getInputStream();
-        OutputStream out = process.getOutputStream();
+        // InputStream in = process.getInputStream();
+        // OutputStream out = process.getOutputStream();
+        // InputStream err = process.getErrorStream();
+        //        Log.v("mt", 
         this.process.waitFor();
 
         benchmarkThread.interrupt();
@@ -78,7 +98,13 @@ public abstract class CommandlineTool extends MeasuringTool {
         List<String> result = new LinkedList<String> ();
         for (OptionSpec type : allowedOptions) {
             MeasuringOption option = options.get(type);
-            result.add(formatParameter(option));
+
+            if (option == null) {
+                Log.v("mt", type + " is null");
+            }
+            else {
+                result.add(formatParameter(option));
+            }
         }
         return result;
     }
