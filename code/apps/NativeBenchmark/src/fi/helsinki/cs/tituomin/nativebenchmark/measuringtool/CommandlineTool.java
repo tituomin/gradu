@@ -13,6 +13,8 @@ import android.os.SystemClock;
 import android.util.Log;
 import java.io.File;
 import android.os.Environment;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
 
 public abstract class CommandlineTool extends MeasuringTool {
 
@@ -28,10 +30,16 @@ public abstract class CommandlineTool extends MeasuringTool {
         super();
     }
 
+    private String command;
+
     public void initCommand() {
         List<String> commandline = new LinkedList<String> ();
 
         commandline.addAll(generateCommandlineArguments());
+        this.command = "";
+        for (String s : commandline) {
+            this.command += s + " ";
+        }
 
         this.builder = new ProcessBuilder()
             .directory(Environment.getExternalStorageDirectory())
@@ -63,19 +71,33 @@ public abstract class CommandlineTool extends MeasuringTool {
         Thread.sleep(2000); // todo hardcoded
 
         this.startDate = new Date();
-        this.process = this.builder().start();
+
+        Log.v("mt", "command " + this.command);
+        this.process = Runtime.getRuntime().exec(this.command);
+        //        this.process = this.builder().start();
         // InputStream in = process.getInputStream();
         // OutputStream out = process.getOutputStream();
-        // InputStream err = process.getErrorStream();
+        InputStream err = process.getErrorStream();
         //        Log.v("mt", 
         this.process.waitFor();
 
         benchmarkThread.interrupt();
 
+        
         int exitValue = this.process.exitValue();
         if (exitValue == 0) {
+            Log.v("tm", "success");
             measurement.addData("Started", dateFormat.format(this.startDate));
         }
+        else {
+            Log.v("tm", "fail");
+            String line;
+            BufferedReader br = new BufferedReader(new InputStreamReader(err));
+            while ((line = br.readLine()) != null) {
+                Log.e("tm", line);
+            }
+        }
+
         return measurement;
         // }
         // catch (Exception e) {

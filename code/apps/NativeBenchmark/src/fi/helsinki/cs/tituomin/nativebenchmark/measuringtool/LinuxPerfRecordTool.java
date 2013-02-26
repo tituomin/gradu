@@ -39,7 +39,8 @@ public class LinuxPerfRecordTool extends CommandlineTool {
         return new Measurement();
     }
 
-    protected String command() { return "su -c perf record";}
+       protected String command() { return "perf record";}
+    //protected String command() { return "pm"; }
     //    protected String command() { return "ls";}
 
     // ---
