@@ -40,7 +40,6 @@ public class Measurement implements MetadataContainer, Iterable<Pair<String,Stri
         private String currentKey;
     }
 
-
     public void addData(String key, String value) {
         this.values.put(key, value);
     }
@@ -71,4 +70,5 @@ public class Measurement implements MetadataContainer, Iterable<Pair<String,Stri
     }
 
     private SortedMap<String,String> values;
+
 }

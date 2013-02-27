@@ -11,12 +11,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
 import android.util.Log;
+import android.util.Pair;
 import java.io.IOException;
 import java.io.File;
 import android.os.Environment;
 
-public class BenchmarkSelector extends Activity
-{
+public class BenchmarkSelector extends Activity implements ApplicationState {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -24,74 +24,84 @@ public class BenchmarkSelector extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         this.textView = (TextView) findViewById(R.id.mytextview);
+        this.resultView = (TextView) findViewById(R.id.resultview);
         this.button = (Button) findViewById(R.id.mybutton);
 
         tempToolSetup();
     }
 
     public void tempToolSetup() {
-        try {
-            Process suProcess = Runtime.getRuntime().exec("su");
-            int suProcessRetval = suProcess.waitFor();
-            boolean retval;
-            if (255 != suProcessRetval)
-                {
-                    // Root access granted
-                    retval = true;
-                }
-            else
-                {
-                    // Root access denied
-                    retval = false;
-                }
-            Log.v("mt", "retval " + retval);
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        tool = new LinuxPerfRecordTool();
         File sd = Environment.getExternalStorageDirectory();
+        File profileDir = new File(sd, "perf_data");
+        profileDir.mkdir();
 
-        File testFile = new File(sd, "foo_test");
-        try {
-            testFile.createNewFile();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        tool.set(BasicOption.OUTPUT_FILEPATH,
-                 sd.getPath() + "/temppi.data");
-        tool.set(BasicOption.MEASURE_LENGTH,
-                 "10");
+        tool = new LinuxPerfRecordTool()
+            .set(BasicOption.OUTPUT_FILEPATH, profileDir.getPath())
+            .set(BasicOption.MEASURE_LENGTH, "10");
+
+        tool.addObserver(this);
     }
 
     public void setMessage(int id) {
         this.textView.setText(id);
     }
 
+    public void updateState(ApplicationState.State state) {
+        runOnUiThread(new StateChanger(state));
+    }
+    public void updateState(ApplicationState.State state, Pair<String,String> data) {
+        runOnUiThread(new StateChanger(state));
+    }
+
+    private class StateChanger implements Runnable {
+        private ApplicationState.State state;
+        public StateChanger(ApplicationState.State state) {
+            this.state = state;
+        }
+        public void run() {
+            setMessage(state.stringId);
+
+            switch (state) {
+            case MEASURING:
+                button.setEnabled(false);
+                break;
+            case MEASURING_FINISHED:
+                for (Pair<String,String> m : tool.getMeasurement()) {
+                    resultView.append(m.first + ": " + m.second + "\n");
+                }
+            case INITIALISED:
+                button.setEnabled(true);
+                break;
+            }
+        }
+    }
+
     public void startMeasuring(View view) {
-        Measurement m = new Measurement();
-        try {
-            m = tool.start(new MockBenchmark());
-        }
-        catch (InterruptedException e) {
-            Log.e(TAG, "MeasuringTool.start was interrupted: " + e);
-        }
-        catch (IOException e) {
-            Log.e(TAG, "Measuring caused IOex: " + e);
-            e.printStackTrace();
-        }
-        Log.d(TAG, m.toString());
+        Thread measuringThread = new Thread(
+            new Runnable () {
+                public void run() {
+                    try {
+                        tool.start(new MockBenchmark());                        
+                    }
+                    catch (InterruptedException e) {
+                        Log.e(TAG, "MeasuringTool.start was interrupted: " + e);
+                    }
+                    catch (IOException e) {
+                        Log.e(TAG, "Measuring caused IOex: " + e);
+                        e.printStackTrace();
+                    }
+                }
+            });
+        this.updateState(ApplicationState.State.MEASURING);
+        measuringThread.start();
     }
 
     private MeasuringTool tool;
-    private TextView textView;
+    private TextView textView, resultView;
     private Button button;
     private static final String TAG = "BenchmarkSelector";
 
-    private MeasuringTool tempTool;
+    private String tempData;
 
     private static class MockBenchmark implements Runnable {
         private double killer;

@@ -17,29 +17,34 @@ public class LinuxPerfRecordTool extends CommandlineTool {
         return options;
     }
 
+    protected String command() { 
+        return "perf record -a";
+    }
+
+    private String generateFilename (String path) {
+        return path + "/perf-" + getUUID() + ".data";
+    }
+
     public String formatParameter(MeasuringOption option) {
-        String prefix;
         if (option.type() == BasicOption.OUTPUT_FILEPATH) {
-            prefix = "--output=";
+            String prefix = "--output=";
+            String filename = generateFilename(option.value());
+            setFilename(filename);
+            return prefix + filename;
         }
         else if (option.type() == BasicOption.MEASURE_LENGTH) {
-            prefix = "sleep ";
+            return "sleep " + option.value();
         }
         else if (option.type() == BasicOption.COMMAND_STRING) {
-            prefix = "";
+            return option.value();
         }
         else {
             throw new UnsupportedOptionException();
         }
-
-        return prefix + option.value();
+            
     }
 
-    protected Measurement getMeasurement() {
-        return new Measurement();
-    }
 
-       protected String command() { return "perf record";}
     //protected String command() { return "pm"; }
     //    protected String command() { return "ls";}
 

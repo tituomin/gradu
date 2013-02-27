@@ -1,6 +1,7 @@
 package fi.helsinki.cs.tituomin.nativebenchmark.measuringtool;
 
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.Measurement;
+import fi.helsinki.cs.tituomin.nativebenchmark.ApplicationState;
 
 import java.util.List;
 import java.util.LinkedList;
@@ -15,6 +16,8 @@ import java.io.File;
 import android.os.Environment;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
+import java.util.UUID;
+
 
 public abstract class CommandlineTool extends MeasuringTool {
 
@@ -25,10 +28,6 @@ public abstract class CommandlineTool extends MeasuringTool {
 
 
     // ----
-
-    public CommandlineTool() {
-        super();
-    }
 
     private String command;
 
@@ -64,11 +63,9 @@ public abstract class CommandlineTool extends MeasuringTool {
         throws InterruptedException, IOException {
         initCommand();
 
-        Measurement measurement = getMeasurement();
-
         Thread benchmarkThread = new Thread(benchmark);
         benchmarkThread.start();
-        Thread.sleep(2000); // todo hardcoded
+        Thread.sleep(2000); // todo hardcoded // randomize
 
         this.startDate = new Date();
 
@@ -98,23 +95,22 @@ public abstract class CommandlineTool extends MeasuringTool {
             }
         }
 
+        notifyObservers(ApplicationState.State.MEASURING_FINISHED);
         return measurement;
-        // }
-        // catch (Exception e) {
-        //     System.err.println("foo");
-        // }
-        // finally {
-        //     process.destroy();
-        // }
     }
 
     public Measurement stop() {
         throw new UnsupportedOperationException();
     }
 
-    protected abstract Measurement getMeasurement();
+    public String getUUID() {
+        return UUID.randomUUID().toString();
+    }
+    public void setFilename(String name) {
+        this.measurement.addData("Filename", name);
+    }
 
-    // -----
+     // -----
 
     public List<String> generateCommandlineArguments() {
         List<String> result = new LinkedList<String> ();

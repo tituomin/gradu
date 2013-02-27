@@ -9,11 +9,20 @@ import java.util.LinkedList;
 import java.util.HashMap;
 import java.io.IOException;
 import android.util.Log;
+import java.util.Observer;
+import java.util.Observable;
+import fi.helsinki.cs.tituomin.nativebenchmark.ApplicationState;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.Measurement;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.MeasuringOption;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.OptionSpec;
 
 public abstract class MeasuringTool {
+
+    public MeasuringTool() {
+        specifyOptions();
+        hasOptions = false;
+        this.measurement = new Measurement();
+    }
 
     public abstract Measurement start(Runnable benchmark)
         throws InterruptedException, IOException;
@@ -25,10 +34,6 @@ public abstract class MeasuringTool {
 
     protected abstract List<MeasuringOption>
         defaultOptions(List<MeasuringOption> container);
-
-    public MeasuringTool() {
-        specifyOptions();
-    }
 
     protected void specifyOptions() {
         this.allowedOptions = specifyAllowedOptions(
@@ -77,11 +82,21 @@ public abstract class MeasuringTool {
         }
     }
 
-    protected Measurement getMeasurement() {
-        Measurement measurement = new Measurement();
-        measurement.addOptions(this.options.values());
-        return measurement;
+
+    public void addObserver(ApplicationState o) {
+        if (this.observers == null) {
+            this.observers = new LinkedList<ApplicationState>();
+        }
+        this.observers.add(o);
     }
+
+    public void notifyObservers(ApplicationState.State state) {
+        
+        for (ApplicationState o : this.observers) {
+            o.updateState(state);
+        }
+    }
+    public final static Observable mockObservable = new Observable();
 
     private boolean hasRequiredOptions() {
         return options.keySet().containsAll(requiredOptions);
@@ -91,6 +106,24 @@ public abstract class MeasuringTool {
     protected Set<OptionSpec> requiredOptions;
     // currently support one value per option, change?
     protected Map<OptionSpec,MeasuringOption> options;
+
+    private List<ApplicationState> observers;
+
+    protected Measurement measurement;
+
+    public Measurement getMeasurement() {
+        if (!hasOptions) {
+            for (MeasuringOption op : options.values()) {
+                this.measurement.addData(
+                    op.toStringPair().first,
+                    op.toStringPair().second);
+            }
+            hasOptions = true;
+        }
+        return this.measurement;
+    }
+
+    private boolean hasOptions;
 
     public static class UnsupportedOptionException extends RuntimeException {}
 }
