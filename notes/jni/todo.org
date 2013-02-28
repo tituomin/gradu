@@ -1,0 +1,3 @@
+* Selvitä palauttaako alloc-funktiot minkälaiset viitteet? (local??)
+* Tukeeko nio:ta?
+

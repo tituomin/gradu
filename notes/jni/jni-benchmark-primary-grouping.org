@@ -1,0 +1,125 @@
+* Parameters
+  - alloc: amount of memory is a parameter (sometimes)
+  - alloc: type of what is being allocated
+  - native array parameters: length
+  - strings: utf / not
+  - array type
+    - primitive / not
+  - everything with <type>: type
+  - variable number of parameters
+  - different modifiers Static,Virtual
+  - explicit copy: amount of data (treshold for efficiency)
+    - compare to non-copy versions
+  - implicit 
+  - write 
+  - critical / not
+  - direction: c->java, java->c !!
+* Groups: compare similar usage, different impl
+  - localframe vs ensurelocalcapacity vs individual refs
+* Pairs: measure in pairs
+ - push, pop
+ - new, delete
+ - get, release
+* Notes
+  - groupings do not imply sequential measurements
+* Problems
+  - might some of the efficiency costs only come to being
+    after a while (after transitioning from native -> java) ? 
+    - how to measure?
+      - force garbage collection System.gc()
+
+* Exceptions
+** Throw                                                            :special:
+** ThrowNew                                                   :special:alloc:
+** ExceptionOccurred                                                   :read:
+** ExceptionCheck                                                      :read:
+** ExceptionClear
+** ExceptionDescribe                                                :exclude:
+** FatalError                                                       :exclude:
+* Global and Local References
+** Global References
+*** NewGlobalRef                                                         :gc:
+*** DeleteGlobalRef                                                      :gc:
+** Local References
+*** EnsureLocalCapacity                                            :allocref:
+*** NewLocalRef                                           :comp1:gc:allocref:
+*** DeleteLocalRef                                        :comp1:gc:allocref:
+*** PushLocalFrame                                           :comp1:allocref:
+*** PopLocalFrame                                            :comp1:allocref:
+** Weak Global References                                      :unclear:rtfm:
+***  NewWeakGlobalRef                                              :allocref:
+***  DeleteWeakGlobalRef                                           :allocref:
+* Object Operations
+** AllocObject                                                        :alloc:
+** NewObject, NewObjectA, NewObjectV                            :comp2:alloc:
+** GetObjectClass                                                      :read:
+** GetObjectRefType                                                    :read:
+** IsInstanceOf                                               :read:traverse:
+** IsSameObject                                                        :read:
+* Accessing Fields of Objects                                           :dep:
+** GetFieldID                                                        :search:
+** Get<type>Field Routines
+** Set<type>Field Routines
+* Calling Instance Methods                                              :dep:
+** GetMethodID                                                       :search:
+** Call<type>Method(A/V) Routines                                     :comp2:
+** CallNonvirtual<type>Method(A/V) Routines                           :comp2:
+* Accessing Static Fields                                               :dep:
+** GetStaticFieldID                                                  :search:
+** GetStatic<type>Field Routines
+** SetStatic<type>Field Routines
+* Calling Static Methods                                                :dep:
+** GetStaticMethodID                                                 :search:
+** CallStatic<type>Method(A/V) Routines
+* String Operations
+** NewString                                                          :alloc:
+** NewStringUTF                                                       :alloc:
+** GetStringLength                                                :util:read:
+** GetStringUTFLength                                             :util:read:
+** GetStringChars                                                     :group:
+** GetStringUTFChars                                                  :group:
+** GetStringCritical, ReleaseStringCritical                           :group:
+** ReleaseStringChars                                                 :group:
+** ReleaseStringUTFChars                                              :group:
+** GetStringRegion                                                     :copy:
+** GetStringUTFRegion                                                  :copy:
+* Array Operations
+** NewObjectArray                                                     :alloc:
+** New<PrimitiveType>Array Routines                                   :alloc:
+** GetArrayLength                                                 :util:read:
+** GetObjectArrayElement                                               :read:
+** SetObjectArrayElement                                              :write:
+** Get<PrimitiveType>ArrayElements Routines                          :group1:
+** Release<PrimitiveType>ArrayElements Routines                      :group1:
+** GetPrimitiveArrayCritical, ReleasePrimitiveArrayCritical          :group3:
+** Get<PrimitiveType>ArrayRegion Routines                       :group2:copy:
+** Set<PrimitiveType>ArrayRegion Routines                       :group2:copy:
+* Registering Native Methods
+** RegisterNatives                                                  :exclude:
+** UnregisterNatives                                                :exclude:
+* Monitor Operations
+** MonitorEnter                                                       :synch:
+** MonitorExit                                                        :synch:
+* NIO Support                                                     :important:
+** NewDirectByteBuffer                                            :important:
+** GetDirectBufferAddress                                         :important:
+** GetDirectBufferCapacity                                             :read:
+
+
+* Class Operations                                            :exclude:maybe:
+** DefineClass                                                      :exclude:
+** FindClass                                           :exclude:maybe:search:
+** GetSuperclass                                     :exclude:maybe:traverse:
+** IsAssignableFrom                                  :exclude:maybe:traverse:
+
+
+* Reflection Support                                                :exclude:
+** FromReflectedMethod
+** FromReflectedField
+** ToReflectedMethod
+** ToReflectedField
+* Java VM Interface                                                 :exclude:
+** GetJavaVM                                                        :exclude:
+* Version Information                                               :exclude:
+** GetVersion                                                       :exclude:
+** Constants                                                        :exclude:

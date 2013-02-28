@@ -1,5 +1,5 @@
 
-/* puuttuu!!! makroversiot...)
+/* puuttuu!!! makroversiot...) */
 
 /* 1 */
 jboolean       ExceptionCheck (                JNIEnv* env )
