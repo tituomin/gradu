@@ -23,8 +23,9 @@ public class {classname} {class_relations} implements Runnable {{
     }}
 
     public void run() {{
-        for (long i = 0; i < multiplier; i++) {{
-            for (long j = 0; i < repetitions; j++) {{
+        long i, j;
+        for (i = 0; i < multiplier; i++) {{
+            for (j = 0; i < repetitions; j++) {{
                 {native_method_name} ({native_method_arguments});
             }}
         }}
@@ -38,7 +39,52 @@ public class {classname} {class_relations} implements Runnable {{
 
 """
 
-replacements = {
+C_TEMPLATE = """
+#include <jni.h>
+#include "jni_benchmark.h"
+
+
+{parameter_declarations}
+{returnvalue_declarations}
+
+{jni_function_templates}
+
+"""
+
+
+C_JNI_FUNCTION_TEMPLATE = """
+JNIEXPORT {return_type} JNICALL
+Java_{package}_{class_name}_{function}
+(JNIEnv *env, {parameters}) {
+    {set_returnvalues}
+}
+
+"""
+
+C_JNI_BENCHMARK_TEMPLATE = """
+void Java_{package}_{class_name}_{function}_init({arguments}) {{
+    {set_arguments}
+}}
+
+
+JNIEXPORT {return_type} JNICALL
+Java_{package}_{class_name}_{function}
+(JNIEnv *env, {parameters}) {{
+    jlong i, j;
+    // gettimeofday
+    for (i = 0; i < multiplier; i++) {{
+        for (j = 0; j < multiplier; j++) {{
+            {jni_function_name} ({arguments});
+        }}
+    }}
+    // gettimeofday
+
+}}
+"""
+
+# todo make sure returnvalues are read and/or not optimised away...
+
+java_replacements = {
     'group'                     : 'nice ones',
     'description'               : 'To test this and that.',
 
@@ -58,7 +104,7 @@ replacements = {
     'library_name'              : 'myNative.so'
 }
 
-result = JAVA_TEMPLATE.format(**replacements)
+result = JAVA_TEMPLATE.format(**java_replacements)
 
 
 primitive_types = {
