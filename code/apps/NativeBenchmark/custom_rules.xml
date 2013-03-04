@@ -13,13 +13,15 @@
   </target>
 
   <target name="generate_benchmark_sources">
-    <exec dir="${codegen_script.dir}"
-          executable="python make_benchmarks ${jni_src.dir}/nativebenchmark.c ${gen_src.dir}"
-          outputproperty="jni_classes" />
+    <exec executable="python" outputproperty="jni_classes">
+          <arg value="${codegen_script.dir}/make_benchmarks.py" />
+          <arg value="${jni_src.dir}/nativebenchmark.c" />
+          <arg value="${gen_src.dir}" />
+    </exec>
   </target>
 
   <target name="jni_headers">
-    <javah destdir="${jni_src.dir}" outputFile="${jni_header}">
+    <javah outputFile="${jni_src.dir}/${jni_header}" classpath="bin/classes">
       <class name="${jni_classes}"/>
     </javah>
   </target>
@@ -27,6 +29,17 @@
   <target name="build-ndk" depends="jni_headers">
     <exec executable="${ndk.dir}/ndk-build" failonerror="true"/>
   </target>
+
+   <!-- <target name="checkbenchmarks"> -->
+   <!--    <uptodate property="nochanges"> -->
+   <!--       <srcfiles dir="${codegen_script.dir}" includes="**/*"/> -->
+   <!--       <mapper to="applicaton.flex"/> -->
+   <!--    </uptodate> -->
+   <!-- </target> -->
+
+   <!-- <target name="compile" depends="checkforchanges" unless="nochanges"> -->
+   <!--    ... -->
+   <!-- </target> -->
 
 </project>
 
