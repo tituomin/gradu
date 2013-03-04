@@ -1,54 +1,30 @@
 
+#from benchmarks.conf import config
+from python_java_generator import create_benchmarks
+
 from sys import argv
 import os.path
 
-def mock_impl(c_output, java_output_dir):
-    c_output.write(
-        """
-#include <jni.h>
-#include <android/log.h>
-#include "natives.h"
+def write_benchmarks(c_output, java_output_dir):
 
-JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_BoomTest_print
-(JNIEnv *env, jobject obj)
-{
-    const char *tag = "boomfactor";
-    const char *text = "killer bee";
-    __android_log_write(ANDROID_LOG_INFO, tag, text);
-    return;
-}
+    benchmarks = create_benchmarks()
+    c_output.write(benchmarks['c'])
+    classes = []
 
+    for benchmark in benchmarks['java']:
+        java_output = open(
+            os.path.join(
+                java_output_dir,
+                benchmark["filename"]), 'w')
 
-""")
+        java_output.write(benchmark["code"])
+        classes.append[benchmark["class"]]
 
-    java_output = open(os.path.join(
-        java_output_dir,
-        "fi/helsinki/cs/tituomin/nativebenchmark/BoomTest.java"), 'w')
-    
-
-    java_output.write("""
-
-package fi.helsinki.cs.tituomin.nativebenchmark;
-
-class BoomTest {
-    private native void print();
-    public static void main(String[] args) {
-        new BoomTest(  ).print();
-    }
-
-    static {
-        System.loadLibrary("nativebenchmark");
-    }
-}
-
-""")
-    
-    return "fi.helsinki.cs.tituomin.nativebenchmark.BoomTest"
+    return ','.join([bm['class'] for bm in benchmarks['java']])
  
 if __name__ == "__main__":
     c_output_name = argv[1]
     java_output_dir = argv[2]
     c_output = open(c_output_name, 'w')
     
-    print(mock_impl(c_output, java_output_dir))
+    print(write_benchmarks(c_output, java_output_dir))

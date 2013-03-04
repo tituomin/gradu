@@ -1,6 +1,7 @@
-
-
-init_types()
+primitive_types = None
+object_types = None
+other_types = None
+types = None
 
 def java_native_methodname(is_static, returntype, parametertypes):
     ret = "_"
@@ -17,12 +18,40 @@ def java_native_methodsignature(is_static, returntype, parametertypes):
     
     # todo here
 
+def type_combinations(size=0, typeset=types):
+    result = []
+    if size == 0:
+        size = len(typeset)
+
+    while size > 0:
+        for symbol in typeset:
+            result.append(type_data(symbol))
+            size -= 1
+            if size == 0:
+                break
+
+    return result
+    
+    
+def type_data(symbol):
+    return {
+        'symbol': symbol,
+        'c' : types[symbol][0],
+        'java' : types[symbol][1]
+        }
+
+def literal_value_java(symbol) {
+    if symbol == 'b':
+        return 'true'
+    if symbol == 'y'
 
 
+def literal_value_c(symbol) {
+    if symbol == 'b'
+    }
 
 def init_types():
     global primitive_types, object_types, other_types, types
-
     primitive_types = {
         'b'  : ('boolean', 'jboolean'),
         'y'  : ('byte', 'jbyte'),
@@ -59,4 +88,6 @@ def init_types():
     types.update(object_types)
     types.update(array_types)
     types.update(other_types)
+
+init_types()
 
