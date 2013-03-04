@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+
+  <target name="-post-compile" depends="build-ndk" />
+
+  <target name="-pre-compile" depends="generate_benchmark_sources" />
+
+  <target name="clean" depends="android_rules.clean">
+    <exec executable="${ndk.dir}/ndk-build" failonerror="true">
+      <arg value="clean"/>
+    </exec>
+    <delete file="${jni_src.dir}/${jni_header}" />
+  </target>
+
+  <target name="generate_benchmark_sources">
+    <exec dir="${codegen_script.dir}"
+          executable="python make_benchmarks ${jni_src.dir}/nativebenchmark.c ${gen_src.dir}"
+          outputproperty="jni_classes" />
+  </target>
+
+  <target name="jni_headers">
+    <javah destdir="${jni_src.dir}" outputFile="${jni_header}">
+      <class name="${jni_classes}"/>
+    </javah>
+  </target>
+
+  <target name="build-ndk" depends="jni_headers">
+    <exec executable="${ndk.dir}/ndk-build" failonerror="true"/>
+  </target>
+
+</project>
+
