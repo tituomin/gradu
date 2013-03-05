@@ -3,7 +3,7 @@ t = """
 
 package {packagename};
 
-import fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkImplementation;
+// todo import fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkImplementation;
 
 public class {classname} {class_relations} implements Runnable {{
 
@@ -13,13 +13,13 @@ public class {classname} {class_relations} implements Runnable {{
     public final static String VARIABLE = "{variable}";
     public final static String SIGNATURE = "{signature}";
 
-    private BenchMark owner;
+// todo    private BenchMark owner;
     private long repetitions, multiplier;
 
     {native_method_modifiers} native {native_method_return_type} {native_method_name} ({native_method_parameters});
 
-    public {classname} (Benchmark o, long r, long m) {{
-        owner = o;
+    public {classname} (/*Benchmark o,*/ long r, long m) {{
+/*        owner = o;*/
         repetitions = r;
         multiplier = m;
     }}

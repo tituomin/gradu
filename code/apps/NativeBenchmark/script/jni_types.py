@@ -27,7 +27,7 @@ primitive_type_definitions = [
         'java'         : 'char',
         'c'            : 'jchar',
         'c-literal'    : '12',
-        'java-literal' : '\u0012'
+        'java-literal' : "'\u0012'"
         },
 
     {
@@ -59,7 +59,7 @@ primitive_type_definitions = [
         'java'         : 'float',
         'c'            : 'jfloat',
         'c-literal'    : '104.1',
-        'java-literal' : '104.1'
+        'java-literal' : '104.1f'
         },
 
     {

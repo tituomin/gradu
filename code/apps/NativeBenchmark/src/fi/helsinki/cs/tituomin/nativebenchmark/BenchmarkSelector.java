@@ -4,6 +4,8 @@ import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.MeasuringTool;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.LinuxPerfRecordTool;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.BasicOption;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.Measurement;
+import fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRegistry;
+import fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkInitialiser;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -26,6 +28,10 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
         this.textView = (TextView) findViewById(R.id.mytextview);
         this.resultView = (TextView) findViewById(R.id.resultview);
         this.button = (Button) findViewById(R.id.mybutton);
+
+        BenchmarkRegistry.repetitions = 100000;
+        BenchmarkRegistry.multiplier  = 100000;
+        BenchmarkInitialiser.init();
 
         tempToolSetup();
     }
@@ -81,7 +87,7 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
             new Runnable () {
                 public void run() {
                     try {
-                        tool.start(new MockBenchmark());                        
+                        tool.start(BenchmarkRegistry.getBenchmarks().get(0));
                     }
                     catch (InterruptedException e) {
                         Log.e(TAG, "MeasuringTool.start was interrupted: " + e);

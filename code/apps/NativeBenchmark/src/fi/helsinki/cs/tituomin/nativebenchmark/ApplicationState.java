@@ -1,4 +1,4 @@
-package fi.helsinki.cs.tituomin.nativebenchmark;
+ package fi.helsinki.cs.tituomin.nativebenchmark;
 import android.util.Pair;
 
 public interface ApplicationState {

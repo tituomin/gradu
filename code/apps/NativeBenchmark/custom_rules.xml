@@ -13,6 +13,10 @@
   </target>
 
   <target name="generate_benchmark_sources">
+    <exec executable="pwd" />
+    <exec executable="echo">
+      <arg value="${codegen_script.dir}" />
+      </exec>
     <exec executable="python" outputproperty="jni_classes">
           <arg value="${codegen_script.dir}/make_benchmarks.py" />
           <arg value="${jni_src.dir}/nativebenchmark.c" />
@@ -21,9 +25,7 @@
   </target>
 
   <target name="jni_headers">
-    <javah outputFile="${jni_src.dir}/${jni_header}" classpath="bin/classes">
-      <class name="${jni_classes}"/>
-    </javah>
+    <javah outputFile="${jni_src.dir}/${jni_header}" classpath="bin/classes" class="${jni_classes}" />
   </target>
 
   <target name="build-ndk" depends="jni_headers">
