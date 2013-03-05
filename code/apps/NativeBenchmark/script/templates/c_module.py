@@ -1,8 +1,7 @@
 
 t = """
 #include <jni.h>
-#include "jni_benchmark.h"
-
+#include "natives.h"
 
 {parameter_declarations}
 {returnvalue_declarations}

@@ -7,15 +7,16 @@ import fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkImplementation;
 
 public class {classname} {class_relations} implements Runnable {{
 
-    public final static GROUP = "{group}";
-    public final static DESCRIPTION = "{description}";
-    public final static FIXED = "{fixed}";
-    public final static VARY = "{vary}";
+    public final static String GROUP = "{group}";
+    public final static String DESCRIPTION = "{description}";
+    public final static String TYPE = "{tipe}";
+    public final static String VARIABLE = "{variable}";
+    public final static String SIGNATURE = "{signature}";
 
     private BenchMark owner;
     private long repetitions, multiplier;
 
-    {native_method_modifiers} {native_method_return_type} {native_method_name} ({native_method_parameters});
+    {native_method_modifiers} native {native_method_return_type} {native_method_name} ({native_method_parameters});
 
     public {classname} (Benchmark o, long r, long m) {{
         owner = o;
@@ -25,7 +26,7 @@ public class {classname} {class_relations} implements Runnable {{
 
     public void run() {{
         long i, j;
-        {parameter_declarations};
+        {parameter_declarations}
         {parameter_initialisations}
 
         for (i = 0; i < multiplier; i++) {{

@@ -2,33 +2,16 @@
 from templates import java_benchmark
 from templates import c_module
 from templates import c_jni_function
-from templates import c_benchmark
+from templates import c_nativemethod
 
-from jni_types import types
+import jni_types
+from jni_types import types, primitive_types
 
 packagename = 'fi.helsinki.cs.tituomin.nativebenchmark.benchmark'
+library_name = 'nativebenchmark.so'
+class_counter = 0
 
 # todo make sure returnvalues are read and/or not optimised away...
-
-java_replacements = {
-    'group'                     : 'nice ones',
-    'description'               : 'To test this and that.',
-
-    'packagename'               : 'fi.helsinki.cs.tituomin.nativebenchmark',
-    'classname'                 : 'TestClass',
-    'class_relations'           : 'extends NativeBenchmarkImplementation',
-
-    'parameter_declarations'    : 'private int foo',
-    'native_method_parameters'  : 'int foo',
-    'parameter_initialisations' : 'foo = 1;',
-    'native_method_arguments'   : 'foo',
-
-    'native_method_modifiers'   : 'private static',
-    'native_method_return_type' : 'void',
-    'native_method_name'        : 'nativeFoo',
-
-    'library_name'              : 'myNative.so'
-}
 
 def create_benchmarks():
     benchmarks = {
@@ -41,34 +24,99 @@ def create_benchmarks():
     
     return benchmarks
 
+def next_classname():
+    global class_counter
+    class_counter += 1
+    return 'Benchmark' + str(class_counter).zfill(5)
+
+def native_method_name(return_type, parameter_types):
+    return "nativemethod"
+    # return "_{retsym}_{paramsyms}".format(
+    #     retsym = return_type['symbol'],
+    #     parameter_types = 
+    #     )
+
+
 def java_to_c_benchmarks():
     java = []
     c = []
 
+    f = open("/tmp/foo.java", 'w')
+    g = open("/tmp/coo.java", 'w')
+
     # single type, change amount
-    for symbol in types.types:
-        for i in range(1,20):
-            for type_data in types.type_combinations(size=i, typeset=[symbol]):
+    for symbol in primitive_types.keys():
+        combinations = jni_types.type_combinations(size=20, typeset=[primitive_types[symbol]])
+        for i, type_data in enumerate(combinations):
 
-                parameter_names = [symbol + i for i in range()]
+            parameter_names = [symbol + str(j) for j in range(1, i+2)]
 
-                parameter_declarations = (
-                    type_data[java] + ", ".join(parameter_names))
+            signature = "".join([type_data['symbol'] for k in range(1, i+2)])
 
-                parameter_initialisations = (
-                    ";\n".join())
-                
+            arguments = ", ".join(parameter_names)
 
-                java.append(
-                    java_benchmark.t.format(
-                        'group' : 'Java to C',
-                        'description' : 'Single type, change amount',
-                        'fixed' : 'parameter_type',
-                        'vary'  : 'parameter_count',
-                        
-                        ))
-            
+            parameter_declarations = (
+                [type_data['java'] + ' ' + argument for argument in parameter_names]                )
 
+            c_parameter_declarations = (
+                "jobject* instance, " + ", ".join([type_data['c'] + ' ' + argument for argument in parameter_names]))
+
+            parameter_initialisations = (
+                "; ".join([name + " = " + type_data['java-literal'] for name in parameter_names]) +
+                ";")
+
+            c_parameter_assignments = (
+                "; ".join(["local_" + name + " = " + name for name in parameter_names]) + ";"
+                )
+
+            classname = next_classname()
+            native_method_name = 'nativemethod'
+            return_type = types['v']
+
+            java.append(
+                java_benchmark.t.format(
+                    class_relations           = '',
+                    group                     = 'Java to C',
+                    description               = 'Single par type with changing count',
+                    native_method_modifiers   = 'private',
+                    signature = signature,
+                    native_method_return_type = return_type['java'],
+                    native_method_name        = native_method_name,
+                    packagename               = packagename,
+                    classname                 = classname,
+                    native_method_parameters  = ", ".join(parameter_declarations),
+                    parameter_declarations    = "; ".join(parameter_declarations) + ";",
+                    parameter_initialisations = parameter_initialisations,
+                    native_method_arguments   = arguments,
+                    library_name              = library_name,
+                    tipe = symbol,
+                    variable = i+1
+                    ))
+
+            c.append(
+                c_nativemethod.t.format(
+                    return_type = return_type['c'],
+                    packagename = packagename,
+                    classname = classname,
+                    function = native_method_name,
+                    parameters = c_parameter_declarations,
+                    parameter_assignments = c_parameter_assignments,
+                    return_expression = ''
+                    ))
+
+    for cls in java:
+        f.write(cls)
+
+    c_file = c_module.t.format(
+                    parameter_declarations = '',
+                    returnvalue_declarations = '',
+                    jni_function_templates = ''.join(c)
+                    )
+        
+    g.write(c_file)
+
+    return [], []
+#    return java, "\n".join(c)
     # number of types
     # number of primitives
     # number of reference types

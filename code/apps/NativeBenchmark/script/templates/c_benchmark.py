@@ -1,12 +1,12 @@
 
 t = """
-void Java_{package}_{class_name}_{function}_init({arguments}) {{
+void Java_{packagename}_{classname}_{function}_init({arguments}) {{
     {set_arguments}
 }}
 
 
 JNIEXPORT {return_type} JNICALL
-Java_{package}_{class_name}_{function}
+Java_{package}_{classname}_{function}
 (JNIEnv *env, {parameters}) {{
     jlong i, j;
     // gettimeofday
