@@ -1,6 +1,5 @@
 
-#from benchmarks.conf import config
-from python_java_generator import create_benchmarks
+from benchmark_generator import create_benchmarks
 from templates import java_registry_init
 
 from sys import argv
