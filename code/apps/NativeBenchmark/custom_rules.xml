@@ -13,11 +13,7 @@
   </target>
 
   <target name="generate_benchmark_sources">
-    <exec executable="pwd" />
-    <exec executable="echo">
-      <arg value="${codegen_script.dir}" />
-      </exec>
-    <exec executable="python" outputproperty="jni_classes">
+    <exec executable="python" outputproperty="jni_classes" logError="true" failonerror="true">
           <arg value="${codegen_script.dir}/make_benchmarks.py" />
           <arg value="${jni_src.dir}/nativebenchmark.c" />
           <arg value="${gen_src.dir}" />

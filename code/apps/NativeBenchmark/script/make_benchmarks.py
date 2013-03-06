@@ -2,9 +2,14 @@
 from benchmark_generator import create_benchmarks
 from templates import java_registry_init
 
+import sys
 from sys import argv
 import os.path
 import os
+import logging
+
+# Log everything, and send it to stderr.
+logging.basicConfig(level=logging.DEBUG)
 
 def write_benchmarks(c_output, java_output_dir):
 
@@ -45,8 +50,13 @@ benchmarks.add(new {classname} (BenchmarkRegistry.repetitions, BenchmarkRegistry
     return ','.join([bm['class'] for bm in benchmarks['java']])
  
 if __name__ == "__main__":
-    c_output_name = argv[1]
-    java_output_dir = argv[2]
-    c_output = open(c_output_name, 'w')
-
-    print(write_benchmarks(c_output, java_output_dir))
+    try:
+        c_output_name = argv[1]
+        java_output_dir = argv[2]
+        c_output = open(c_output_name, 'w')
+        print(write_benchmarks(c_output, java_output_dir))
+    except Exception as e:
+        logging.exception("Exception was thrown.")
+        sys.exit(1)
+    else:
+        sys.exit(0)

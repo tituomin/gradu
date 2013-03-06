@@ -3,25 +3,23 @@ t = """
 
 package {packagename};
 
-// todo import fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkImplementation;
 import fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkParameter;
+import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.BasicOption;
 
 public class {classname} {class_relations} implements Runnable {{
 
     public final static String GROUP = "{group}";
     public final static String DESCRIPTION = "{description}";
 
-// todo    private BenchMark owner;
+    public final static BasicOption[] DYNAMIC_PARAMETERS = {dynamic_parameters};
+
     private long repetitions, multiplier;
-    private MeasuringOption typeSpecs;
 
     {native_method_modifiers} native {native_method_return_type} {native_method_name} ({native_method_parameters});
 
-    public {classname} (/*Benchmark o,*/ long r, long m, MeasuringOption parameterSpecs) {{
-/*        owner = o;*/
+    public {classname} (long r, long m) {{
         repetitions = r;
         multiplier = m;
-        
     }}
 
     public void run() {{

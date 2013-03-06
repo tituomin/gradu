@@ -80,9 +80,10 @@ public class BasicOption implements MeasuringOption {
     // ----
 
 
-    public static final OptionSpec COMMAND_STRING   = new OptionSpec();
-    public static final OptionSpec OUTPUT_FILEPATH  = new OptionSpec();
-    public static final OptionSpec MEASURE_LENGTH   = new OptionSpec();
+    public static final OptionSpec COMMAND_STRING  = new OptionSpec();
+    public static final OptionSpec OUTPUT_FILEPATH = new OptionSpec();
+    public static final OptionSpec MEASURE_LENGTH  = new OptionSpec();
+    public static final OptionSpec VARIABLE        = new OptionSpec();
 
     static {
         COMMAND_STRING
@@ -100,7 +101,10 @@ public class BasicOption implements MeasuringOption {
             .id      ("MEASURE_LENGTH")
             .required (true);
 
+        VARIABLE
+            .name    ("Variable parameter in benchmark")
+            .id      ("VARIABLE")
+            .required (false);
     }
-
 
 }

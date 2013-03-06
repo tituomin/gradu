@@ -142,11 +142,11 @@ def java_native_methodsignature(is_static, returntype, parametertypes):
     
     # todo here
 
-def type_combinations(size=0, typeset=types):
+def type_combinations(size=0, typeset=None):
     if size == 0:
         size = len(typeset)
 
-    return itertools.islice(itertools.cycle(typeset), 0, size +1)
+    return list(itertools.islice(itertools.cycle(typeset), 0, size))
 
 def modifier_combinations():
     return itertools.product(['static', ''], ['private', 'public', 'protected'])
@@ -165,7 +165,7 @@ def init_types():
     # todo here
     array_types = dict([
             ('A' + key, {'symbol': 'A' + key, 'java': tipe['java'] + '[]', 'c' : tipe['c'] + 'Array',
-                         'c-literal': None, 'java-literal': None, 'is_array': True, 'java-element-type': tipe['java']})
+                         'c-literal': None, 'java-literal': None, 'is-array': True, 'java-element-type': tipe['java']})
             for key, tipe
             in array_element_types.iteritems()])
 
