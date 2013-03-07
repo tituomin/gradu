@@ -9,7 +9,6 @@ import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.BasicOption;
 public class {classname} {class_relations} implements Runnable {{
 
     public final static String GROUP = "{group}";
-    public final static String DESCRIPTION = "{description}";
 
     public final static BasicOption[] DYNAMIC_PARAMETERS = {dynamic_parameters};
 
@@ -41,3 +40,6 @@ public class {classname} {class_relations} implements Runnable {{
 }}
 
 """
+
+def dynamic_parameter(var):
+    return 'new BasicOption(BasicOption.VARIABLE, "{variable}")'.format(variable=var)

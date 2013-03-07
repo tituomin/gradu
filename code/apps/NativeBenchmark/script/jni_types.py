@@ -165,7 +165,7 @@ def init_types():
     # todo here
     array_types = dict([
             ('A' + key, {'symbol': 'A' + key, 'java': tipe['java'] + '[]', 'c' : tipe['c'] + 'Array',
-                         'c-literal': None, 'java-literal': None, 'is-array': True, 'java-element-type': tipe['java']})
+                         'c-literal': None, 'java-literal': None, 'is-array': True, 'java-element-type': tipe['java'], 'c-element-type': tipe['c']})
             for key, tipe
             in array_element_types.iteritems()])
 

@@ -14,7 +14,7 @@ packagename = ['fi', 'helsinki', 'cs', 'tituomin', 'nativebenchmark', 'benchmark
 library_name = 'nativebenchmark'
 class_counter = 0
 
-# todo make sure returnvalues are read and/or not optimised away...
+# todo: initialize complex return values for c side
 
 def create_benchmarks():
     benchmarks = { 'java' : [], 'c' : '' }
@@ -27,107 +27,168 @@ def next_classname():
     class_counter += 1
     return 'Benchmark' + str(class_counter).zfill(5)
 
-def java_parameter_initialisation(type_data, name):
-
+def parameter_initialisation(language, type_data, name):
     if type_data.get('is-array', False):
-        expression = 'BenchmarkParameter.retrieve{tipe}Array()'.format(
-            tipe = type_data['java-element-type'].capitalize())
+        if language == 'java':
+            expression = 'BenchmarkParameter.retrieve{tipe}Array()'.format(
+                tipe = type_data['java-element-type'].capitalize())
+        else:
+            expression = 'retrieve_{tipe}_array()'.format(
+                tipe = type_data['c-element-type'])
 
     elif type_data.get('is-object', False):
-        expression = 'BenchmarkParameter.retrieve{tipe}()'.format(
-            tipe = type_data['java'])
+        if language == 'java':
+            expression = 'BenchmarkParameter.retrieve{tipe}()'.format(
+                tipe = type_data['java'])
+        else:
+            expression = 'retrieve_{tipe}()'.format(
+                tipe = type_data['c'])
 
-    elif type_data.get('java-literal'):
-        expression = type_data['java-literal']
+    elif language == 'java':
+        if type_data.get('java-literal'):
+            expression = type_data['java-literal']
+        else:
+            expression = ''
 
-    return name + " = " + expression
+    elif language == 'c':
+        if type_data.get('c-literal'):
+            expression = type_data['c-literal']
+        else:
+            expression = ''
+
+    if name:
+        return name + " = " + expression
+    else:
+        return expression
+
+
+def modifier_combinations():
+    privacy = ['private', 'public', 'protected'] #synchronized, floatingpoint?
+    static = ['static', '']
+    return list(itertools.product(privacy, static))
+
+def specify_combinations():
+    all_combinations = []
+
+    for symbol in types.keys():
+        # one type, varying length
+        all_combinations.append({
+            'return_types' : [return_types['v']],
+            'native_modifiers' : [('private', '')],
+            'types' : jni_types.type_combinations(
+                size=20, typeset=[types[symbol]])})
+
+    # all types, vary length to vary number of types
+    all_combinations.append({
+            'return_types' : [return_types['v']],
+            'native_modifiers' : [('private', '')],
+            'types' : jni_types.type_combinations(
+                typeset = types.values())
+            })
+
+    # modifiers
+    all_combinations.append({
+            'return_types' : [return_types['i']],
+            'native_modifiers' : modifier_combinations(),
+            'types' : [types['i']]
+            })
+
+    # return types
+    all_combinations.append({
+            'return_types' : jni_types.type_combinations(
+                typeset = types.values()),
+            'native_modifiers' : [('private', '')],
+            'types' : [types['i']]
+            })
+
+    return all_combinations
 
 def java_to_c_benchmarks():
     java = []
     c = []
 
-    all_combinations = []
-    for symbol in types.keys():
-        all_combinations.append(jni_types.type_combinations(
-                size=20, typeset=[types[symbol]]))
+    all_combinations = specify_combinations()
 
-    all_combinations.append(jni_types.type_combinations(typeset=types.values()))
+    for spec in all_combinations:
+        for native_modifier in spec['native_modifiers']:
+            for return_type in spec['return_types']:
+                type_combination = spec['types']
 
-    # todo: modifiers
-    # todo: return types
+                native_method_modifiers = " ".join(native_modifier)
+                return_expression = parameter_initialisation('c', return_type, None)
 
-    for combinations in all_combinations:
+                parameter_names = []
+                parameter_declarations = []
+                parameter_initialisations = []
+                # todo: static methods !! 
 
-        parameter_names = []
-        all_parameter_declarations = []
-        all_c_parameter_declarations = ['jobject instance']
-        all_parameter_initialisations = []
+                if native_modifier[1] == 'static':
+                    first_param = 'jclass cls'
+                else:
+                    first_param = 'jobject instance'
+                c_parameter_declarations = [first_param]
 
-        for i, type_data in enumerate(combinations):
-            parameter_names.append(type_data['symbol'] + str(i+1))
+                for i, type_data in enumerate(type_combination):
+                    parameter_names.append(type_data['symbol'] + str(i+1))
 
-            all_parameter_declarations.append(
-                type_data['java'] + ' ' + parameter_names[-1])
+                    parameter_declarations.append(
+                        type_data['java'] + ' ' + parameter_names[-1])
 
-            all_c_parameter_declarations.append(
-                type_data['c'] + ' ' + parameter_names[-1])
+                    c_parameter_declarations.append(
+                        type_data['c'] + ' ' + parameter_names[-1])
 
-            all_parameter_initialisations.append(
-                java_parameter_initialisation(type_data, parameter_names[-1]))
+                    parameter_initialisations.append(
+                        parameter_initialisation('java', type_data, parameter_names[-1]))
 
-        
-        for i in range(0, len(combinations)):
+                for i, __ in enumerate(type_combination):
 
-            if i == 0:
-                params = []
-                if combinations[i]['java'] in ['String', 'Array']:
-                    # generate the varying versions in the same go
-                    # for single parameter types with size
-                    # (java code could figure this out with introspection?)
-                    params.append('new BasicOption(BasicOption.VARIABLE, "size")')
-                    if combinations[i]['java'] == 'String':
-                        params.append("\n    new BasicOption(BasicOption.VARIABLE, \"encoding\")")
+                    if i == 0:
+                        params = []
+                        if type_combination[i]['java'] in ['String', 'Array']:
+                            # generate the varying versions in the same go
+                            # for single parameter types with size
+                            # (java code could figure this out with introspection?)
+                            params.append(java_benchmark.dynamic_parameter('size'))
+                            if type_combination[i]['java'] == 'String':
+                                params.append(java_benchmark.dynamic_parameter('encoding'))
 
-                    dynamic_parameters = "{" + ", ".join(params) + "}"
+                            dynamic_parameters = "{" + ", ".join(params) + "}"
+                            # todo: class / object ? (member count &c..)
 
-                    # todo: class / object ? (member count &c..)
-                    
-            else:
-                dynamic_parameters = "null"
+                    else:
+                        dynamic_parameters = "null"
 
-            classname = next_classname()
-            return_type = return_types['v']
-            native_method_name = 'nativemethod'
+                    classname = next_classname()
+                    native_method_name = 'nativemethod'
 
-            java.append({
-                    'filename' : classname + ".java",
-                    'class'    : '.'.join(packagename) + "." + classname,
-                    'path'     : '/'.join(packagename),
-                    'code'     : java_benchmark.t.format(
-                        class_relations           = '',
-                        group                     = 'Java to C',
-                        native_method_modifiers   = 'private',
-                        native_method_return_type = return_type['java'],
-                        native_method_name        = native_method_name,
-                        packagename               = '.'.join(packagename),
-                        classname                 = classname,
-                        native_method_parameters  = ", ".join(all_parameter_declarations[0:i+1]),
-                        parameter_declarations    = "; ".join(all_parameter_declarations[0:i+1]),
-                        parameter_initialisations = "; ".join(all_parameter_initialisations[0:i+1]),
-                        native_method_arguments   = ", ".join(parameter_names[0:i+1]),
-                        library_name              = library_name,
-                        tipe                      = symbol,
-                        dynamic_parameters        = dynamic_parameters,
-                        variable                  = i+1 )})
+                    java.append({
+                            'filename' : classname + ".java",
+                            'class'    : '.'.join(packagename) + "." + classname,
+                            'path'     : '/'.join(packagename),
+                            'code'     : java_benchmark.t.format(
+                                class_relations           = '',
+                                group                     = 'Java to C',
+                                native_method_modifiers   = native_method_modifiers,
+                                native_method_return_type = return_type['java'],
+                                native_method_name        = native_method_name,
+                                packagename               = '.'.join(packagename),
+                                classname                 = classname,
+                                native_method_parameters  = ", ".join(parameter_declarations[0:i+1]),
+                                parameter_declarations    = "; ".join(parameter_declarations[0:i+1]),
+                                parameter_initialisations = "; ".join(parameter_initialisations[0:i+1]),
+                                native_method_arguments   = ", ".join(parameter_names[0:i+1]),
+                                library_name              = library_name,
+                                dynamic_parameters        = dynamic_parameters,
+                                variable                  = i+1 )})
 
-            c.append(
-                c_nativemethod.t.format(
-                    return_type               = return_type['c'],
-                    packagename               = ('_').join(packagename),
-                    classname                 = classname,
-                    function                  = native_method_name,
-                    parameters                = ", ".join(all_c_parameter_declarations[0:i+2]),
-                    return_expression         = '' ))
+                    c.append(
+                        c_nativemethod.t.format(
+                            return_type               = return_type['c'],
+                            packagename               = ('_').join(packagename),
+                            classname                 = classname,
+                            function                  = native_method_name,
+                            parameters                = ", ".join(c_parameter_declarations[0:i+2]),
+                            return_expression         = return_expression))
 
 
     c_file = c_module.t.format(
@@ -136,4 +197,3 @@ def java_to_c_benchmarks():
         jni_function_templates = ''.join(c))
     
     return java, c_file
-#    return java, "\n".join(c)
