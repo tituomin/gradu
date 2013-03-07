@@ -2,43 +2,46 @@ package fi.helsinki.cs.tituomin.nativebenchmark;
 
 public class BenchmarkParameter {
 
-    public static boolean[] retrieveBooleanArray() {
+    private native int init_returnvalues();
+    private native void free_returnvalues();
+
+    public boolean[] retrieveBooleanArray() {
         return new boolean[] {true, false, true};
     }
-    public static byte[] retrieveByteArray() {
+    public byte[] retrieveByteArray() {
         return new byte[] {1, 2, 3};
     }
-    public static char[] retrieveCharArray() {
+    public char[] retrieveCharArray() {
         return new char[] {'a', 'b', 'c'};
     }
-    public static double[] retrieveDoubleArray() {
+    public double[] retrieveDoubleArray() {
         return new double[] {1.0, 1.1, 1.2};
     }
-    public static float[] retrieveFloatArray() {
+    public float[] retrieveFloatArray() {
         return new float[] {1.0f, 1.1f, 1.2f};
     }
-    public static int[] retrieveIntArray() {
+    public int[] retrieveIntArray() {
         return new int[] {1, 2, 3};
     }
-    public static long[] retrieveLongArray() {
+    public long[] retrieveLongArray() {
         return new long[] {4, 5, 6};
     }
-    public static short[] retrieveShortArray() {
+    public short[] retrieveShortArray() {
         return new short[] {7, 8, 9};
     }
-    public static Object[] retrieveObjectArray() {
+    public Object[] retrieveObjectArray() {
         return new String[] {"ab", "cd", "kissa", "kävelee"};
     }
-    public static Object retrieveObject() {
+    public Object retrieveObject() {
         return retrieveString();
     }
-    public static Class retrieveClass() {
+    public Class retrieveClass() {
         return retrieveString().getClass();
     }
-    public static String retrieveString() {
+    public String retrieveString() {
         return "Killer bee";
     }
-    public static Throwable retrieveThrowable() {
+    public Throwable retrieveThrowable() {
         return new Exception();
     }
 

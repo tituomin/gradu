@@ -15,7 +15,6 @@ def write_benchmarks(c_output, java_output_dir):
 
     benchmarks = create_benchmarks()
     c_output.write(benchmarks['c'])
-    classes = []
     benchmark_inits = []
 
     for benchmark in benchmarks['java']:
@@ -34,9 +33,8 @@ def write_benchmarks(c_output, java_output_dir):
                 benchmark["filename"]), 'w')
 
         java_output.write(benchmark["code"])
-        classes.append(benchmark["class"])
         benchmark_inits.append("""
-benchmarks.add(new {classname} (BenchmarkRegistry.repetitions, BenchmarkRegistry.multiplier));""".format(
+benchmarks.add(new {classname} (BenchmarkRegistry.repetitions, BenchmarkRegistry.multiplier, bp));""".format(
                 classname=benchmark["class"]))
 
     path = os.path.join(
@@ -47,7 +45,9 @@ benchmarks.add(new {classname} (BenchmarkRegistry.repetitions, BenchmarkRegistry
     init_output = open(path, 'w')
     init_output.write(java_registry_init.t.format(register_benchmarks = "\n".join(benchmark_inits)))
 
-    return ','.join([bm['class'] for bm in benchmarks['java']])
+    classes = [bm['class'] for bm in benchmarks['java']]
+    classes.append('fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkParameter')
+    return ','.join(classes)
  
 if __name__ == "__main__":
     try:

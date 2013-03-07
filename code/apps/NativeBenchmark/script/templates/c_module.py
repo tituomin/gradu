@@ -1,10 +1,9 @@
 
 t = """
 #include <jni.h>
+#include <android/log.h>
 #include "natives.h"
-
-{parameter_declarations}
-{returnvalue_declarations}
+#include "returnvalues.h"
 
 {jni_function_templates}
 

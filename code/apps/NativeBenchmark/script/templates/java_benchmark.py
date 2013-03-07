@@ -13,12 +13,14 @@ public class {classname} {class_relations} implements Runnable {{
     public final static BasicOption[] DYNAMIC_PARAMETERS = {dynamic_parameters};
 
     private long repetitions, multiplier;
+    private BenchmarkParameter benchmarkParameter;
 
     {native_method_modifiers} native {native_method_return_type} {native_method_name} ({native_method_parameters});
 
-    public {classname} (long r, long m) {{
+    public {classname} (long r, long m, BenchmarkParameter bp) {{
         repetitions = r;
         multiplier = m;
+        benchmarkParameter = bp;
     }}
 
     public void run() {{

@@ -30,18 +30,18 @@ def next_classname():
 def parameter_initialisation(language, type_data, name):
     if type_data.get('is-array', False):
         if language == 'java':
-            expression = 'BenchmarkParameter.retrieve{tipe}Array()'.format(
+            expression = 'benchmarkParameter.retrieve{tipe}Array()'.format(
                 tipe = type_data['java-element-type'].capitalize())
         else:
-            expression = 'retrieve_{tipe}_array()'.format(
+            expression = '{tipe}ArrayValue'.format(
                 tipe = type_data['c-element-type'])
 
     elif type_data.get('is-object', False):
         if language == 'java':
-            expression = 'BenchmarkParameter.retrieve{tipe}()'.format(
+            expression = 'benchmarkParameter.retrieve{tipe}()'.format(
                 tipe = type_data['java'])
         else:
-            expression = 'retrieve_{tipe}()'.format(
+            expression = '{tipe}Value'.format(
                 tipe = type_data['c'])
 
     elif language == 'java':
@@ -191,9 +191,6 @@ def java_to_c_benchmarks():
                             return_expression         = return_expression))
 
 
-    c_file = c_module.t.format(
-        parameter_declarations = '',
-        returnvalue_declarations = '',
-        jni_function_templates = ''.join(c))
+    c_file = c_module.t.format(jni_function_templates = ''.join(c))
     
     return java, c_file
