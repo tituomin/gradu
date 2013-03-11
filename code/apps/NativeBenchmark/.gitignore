@@ -24,3 +24,5 @@ obj/local/armeabi
 
 # Local configuration file (sdk path, etc)
 local.properties
+cache.properties
+

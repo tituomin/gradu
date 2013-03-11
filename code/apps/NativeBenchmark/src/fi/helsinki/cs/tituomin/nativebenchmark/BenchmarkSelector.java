@@ -6,6 +6,7 @@ import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.BasicOption;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.Measurement;
 import fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRegistry;
 import fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkInitialiser;
+import fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRunner;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -86,16 +87,17 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
         Thread measuringThread = new Thread(
             new Runnable () {
                 public void run() {
-                    try {
-                        tool.start(BenchmarkRegistry.getBenchmarks().get(0));
-                    }
-                    catch (InterruptedException e) {
-                        Log.e(TAG, "MeasuringTool.start was interrupted: " + e);
-                    }
-                    catch (IOException e) {
-                        Log.e(TAG, "Measuring caused IOex: " + e);
-                        e.printStackTrace();
-                    }
+                    BenchmarkRunner.runBenchmarks();
+                    // try {
+                    //     tool.start(BenchmarkRegistry.getBenchmarks().get(0));
+                    // }
+                    // catch (InterruptedException e) {
+                    //     Log.e(TAG, "MeasuringTool.start was interrupted: " + e);
+                    // }
+                    // catch (IOException e) {
+                    //     Log.e(TAG, "Measuring caused IOex: " + e);
+                    //     e.printStackTrace();
+                    // }
                 }
             });
         this.updateState(ApplicationState.State.MEASURING);
@@ -122,4 +124,8 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
             }
         }
     }
+    static {
+        System.loadLibrary("nativebenchmark");
+    }
+
 }

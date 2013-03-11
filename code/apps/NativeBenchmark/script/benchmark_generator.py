@@ -192,5 +192,5 @@ def java_to_c_benchmarks():
 
 
     c_file = c_module.t.format(jni_function_templates = ''.join(c))
-    
+
     return java, c_file

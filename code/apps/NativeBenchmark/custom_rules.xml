@@ -2,7 +2,6 @@
 <project>
 
   <target name="-post-compile" depends="build-ndk" />
-
   <target name="-pre-compile" depends="generate_benchmark_sources" />
 
   <target name="clean" depends="android_rules.clean">
@@ -10,34 +9,58 @@
       <arg value="clean"/>
     </exec>
     <delete file="${jni_src.dir}/${jni_header}" />
+    <delete dir="${gen_src.dir}/fi/helsinki/cs/tituomin/nativebenchmark/benchmark" />
   </target>
 
-  <target name="generate_benchmark_sources">
-    <exec executable="python" outputproperty="jni_classes" logError="true" failonerror="true">
+
+  <fileset dir="${codegen_script.dir}" id="python-codegen" includes="**/*.py">
+    <modified />
+  </fileset>
+
+  <property name="jni_classes_other"
+            value="fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkParameter"/>
+  <fileset dir="src" id="other-natives"
+           includes="fi/helsinki/cs/tituomin/nativebenchmark/BenchmarkParameter.java">
+    <modified />
+  </fileset>
+
+  <pathconvert
+      refid="python-codegen"
+      property="codegen.modified"
+      setonempty="false"/>
+
+  <pathconvert
+      refid="other-natives"
+      property="natives.modified"
+      setonempty="false"/>
+
+  <condition property="headers-dirty">
+    <or>
+      <isset property="code.generated" />
+      <isset property="natives.modified" />
+    </or>
+  </condition>
+
+  <target name="generate_benchmark_sources" if="codegen.modified" >
+    <exec executable="python" outputproperty="jni_classes_benchmarks" logError="true" failonerror="true">
           <arg value="${codegen_script.dir}/make_benchmarks.py" />
           <arg value="${jni_src.dir}/nativebenchmark.c" />
           <arg value="${gen_src.dir}" />
     </exec>
+    <property name="code.generated" value="true" />
   </target>
 
-  <target name="jni_headers">
-    <javah outputFile="${jni_src.dir}/${jni_header}" classpath="bin/classes" class="${jni_classes}" />
+  <target name="jni_headers_benchmark" if="code.generated">
+    <javah outputFile="${jni_src.dir}/${jni_header_benchmarks}" classpath="bin/classes" class="${jni_classes_benchmarks}" />
   </target>
 
-  <target name="build-ndk" depends="jni_headers">
+  <target name="jni_headers_other" if="natives.modified">
+    <javah outputFile="${jni_src.dir}/${jni_header}" classpath="bin/classes" class="${jni_classes_other}" />
+  </target>
+
+  <target name="build-ndk" depends="jni_headers_benchmark,jni_headers_other">
     <exec executable="${ndk.dir}/ndk-build" failonerror="true"/>
   </target>
-
-   <!-- <target name="checkbenchmarks"> -->
-   <!--    <uptodate property="nochanges"> -->
-   <!--       <srcfiles dir="${codegen_script.dir}" includes="**/*"/> -->
-   <!--       <mapper to="applicaton.flex"/> -->
-   <!--    </uptodate> -->
-   <!-- </target> -->
-
-   <!-- <target name="compile" depends="checkforchanges" unless="nochanges"> -->
-   <!--    ... -->
-   <!-- </target> -->
 
 </project>
 

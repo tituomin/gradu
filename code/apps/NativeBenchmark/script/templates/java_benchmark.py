@@ -1,16 +1,22 @@
 
 t = """
-
 package {packagename};
 
+import fi.helsinki.cs.tituomin.nativebenchmark.Benchmark;
 import fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkParameter;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.BasicOption;
 
-public class {classname} {class_relations} implements Runnable {{
+public class {classname} {class_relations} implements Benchmark {{
 
-    public final static String GROUP = "{group}";
+    public final static String GROUP = "{group}"; 
+    public String group() {{
+        return GROUP;
+    }}
 
-    public final static BasicOption[] DYNAMIC_PARAMETERS = {dynamic_parameters};
+    private final static BasicOption[] DYNAMIC_PARAMETERS = {dynamic_parameters};
+    public BasicOption[] dynamicParameters() {{
+        return DYNAMIC_PARAMETERS;
+    }}
 
     private long repetitions, multiplier;
     private BenchmarkParameter benchmarkParameter;
@@ -34,11 +40,6 @@ public class {classname} {class_relations} implements Runnable {{
             }}
         }}
     }}
-
-    static {{
-        System.loadLibrary("{library_name}");
-    }}
-
 }}
 
 """

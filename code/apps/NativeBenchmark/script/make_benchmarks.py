@@ -34,7 +34,7 @@ def write_benchmarks(c_output, java_output_dir):
 
         java_output.write(benchmark["code"])
         benchmark_inits.append("""
-benchmarks.add(new {classname} (BenchmarkRegistry.repetitions, BenchmarkRegistry.multiplier, bp));""".format(
+        benchmarks.add(new {classname} (BenchmarkRegistry.repetitions, BenchmarkRegistry.multiplier, bp));""".format(
                 classname=benchmark["class"]))
 
     path = os.path.join(
@@ -46,15 +46,15 @@ benchmarks.add(new {classname} (BenchmarkRegistry.repetitions, BenchmarkRegistry
     init_output.write(java_registry_init.t.format(register_benchmarks = "\n".join(benchmark_inits)))
 
     classes = [bm['class'] for bm in benchmarks['java']]
-    classes.append('fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkParameter')
-    return ','.join(classes)
+    return classes
  
 if __name__ == "__main__":
     try:
         c_output_name = argv[1]
         java_output_dir = argv[2]
         c_output = open(c_output_name, 'w')
-        print(write_benchmarks(c_output, java_output_dir))
+        classes = write_benchmarks(c_output, java_output_dir)
+        print(",".join(classes))
     except Exception as e:
         logging.exception("Exception was thrown.")
         sys.exit(1)

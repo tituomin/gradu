@@ -2,8 +2,8 @@ package fi.helsinki.cs.tituomin.nativebenchmark;
 
 public class BenchmarkParameter {
 
-    private native int init_returnvalues();
-    private native void free_returnvalues();
+    private native int initReturnvalues();
+    private native void freeReturnvalues();
 
     public boolean[] retrieveBooleanArray() {
         return new boolean[] {true, false, true};

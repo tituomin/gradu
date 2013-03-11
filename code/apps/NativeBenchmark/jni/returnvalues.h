@@ -2,14 +2,13 @@
 #ifndef RETURNVALUES_H_
 #define RETURNVALUES_H_
 
-
 #define RETURN_VALUE(type) static type type ## Value;
 #define NULL 0
 
 
-#define CHECK_AND_CALL(variable, Type, signature)                       \
+#define CHECK_AND_CALL(variable, Type, signature)                                          \
                                                                                            \
-    jmethodID retrieve ## Type = (*env)->GetMethodID(                                          \
+    jmethodID retrieve ## Type = (*env)->GetMethodID(                                      \
         env, cls, "retrieve" # Type, signature);                                           \
                                                                                            \
     if (retrieve ## Type == NULL) {                                                        \
@@ -18,10 +17,10 @@
        return 0;                                                                           \
     }                                                                                      \
     local_reference = (*env)->CallObjectMethod(env, benchmarkParameter, retrieve ## Type); \
-    variable ## Value = (*env)->NewGlobalRef(env, local_reference);                                 \
-    if (variable ## Value == NULL) {                                                                \
+    variable ## Value = (*env)->NewGlobalRef(env, local_reference);                        \
+    if (variable ## Value == NULL) {                                                       \
         __android_log_write(ANDROID_LOG_ERROR, "nativebenchmark", "can't create global     \
-reference"); }                                                                              \
+reference"); }                                                                             \
                                                                                            \
 
 
@@ -40,7 +39,7 @@ RETURN_VALUE(jshortArray)
 RETURN_VALUE(jdoubleArray)
 
 JNIEXPORT int JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_BenchmarkParameter_init_returnvalues
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_BenchmarkParameter_initReturnvalues
 (JNIEnv* env, jobject benchmarkParameter)
 {
     jclass cls = (*env)->GetObjectClass(env, benchmarkParameter);
@@ -65,7 +64,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_BenchmarkParameter_init_r
 }
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_BenchmarkParameter_free_returnvalues
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_BenchmarkParameter_freeReturnvalues
 (JNIEnv* env, jobject benchmarkParameter)
 {
     (*env)->DeleteGlobalRef(env, jclassValue);
