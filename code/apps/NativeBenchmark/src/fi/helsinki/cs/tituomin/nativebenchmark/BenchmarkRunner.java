@@ -2,6 +2,8 @@
 package fi.helsinki.cs.tituomin.nativebenchmark;
 
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.BasicOption;
+import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.MeasuringTool;
+import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.ResponseTimeRecorder;
 import fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRegistry;
 import java.util.List;
 import java.util.ArrayList;
@@ -20,29 +22,67 @@ import android.util.Log;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-public class BenchmarkRunner {
-    private static final String SEPARATOR = ",";
 
-    public static void runBenchmarks() {
-        List<BenchmarkMetadata> compiledMetadata = new ArrayList<BenchmarkMetadata> ();
-        List<Benchmark> benchmarks = BenchmarkRegistry.getBenchmarks();
-        for (Benchmark benchmark : benchmarks) {
-            compiledMetadata.add(inspectBenchmark(benchmark));
-        }
+
+public class BenchmarkRunner {
+    private static final String SEPARATOR     = ",";
+    private static final String MISSING_VALUE = "-";
+
+    private static final MeasuringTool[] measuringTools = {
+        // new LinuxPerfRecordTool()
+        // .set(BasicOption.OUTPUT_FILEPATH, profileDir.getPath())
+        // .set(BasicOption.MEASURE_LENGTH, "10"),
+
+        new ResponseTimeRecorder()
+    };
+
+    public static void runBenchmarks(ApplicationState mainUI) {
         File sd = Environment.getExternalStorageDirectory();
-        File dataDir = new File(sd, "benchmark_data");
+        File dataDir = new File(sd, "results");
         dataDir.mkdir();
+
+        for (MeasuringTool tool : measuringTools) {
+            tool.addObserver(mainUI);
+        }
+
+        List<MetadataContainer> compiledMetadata = new ArrayList<MetadataContainer> ();
+        List<Benchmark> benchmarks = BenchmarkRegistry.getBenchmarks();
+
+        int j = 0;
+        for (Benchmark benchmark : benchmarks/*.subList(0,10)*/) {
+            Log.v("Runner", "" + j);
+            mainUI.updateState(
+                ApplicationState.State.MILESTONE,
+                "Benchmark " + ++j);
+
+            BenchmarkMetadata md = new BenchmarkMetadata();
+            for (int i = 0; i < measuringTools.length; i++) {
+                try {
+                    measuringTools[i].start(benchmark);
+                }
+                catch (InterruptedException e) {
+                    Log.e("BenchmarkRunner", "Measuring was interrupted " + i + " " + j);
+                }
+                catch (IOException e) {
+                    Log.e("BenchmarkRunner", "IOException");
+                }
+                md.addAll(measuringTools[i].getMeasurement());
+            }
+            md.addAll(inspectBenchmark(benchmark));
+            compiledMetadata.add(md);
+        }
+        Log.v("Runner", "compiledMetadata size " + compiledMetadata.size());
+
         File file = new File(dataDir, "testing_metadata.txt");
         BufferedOutputStream out = null;
-        PrintWriter writer;
+
         try {
             out = new BufferedOutputStream(new FileOutputStream(file));
-            writer = new PrintWriter(out);
-            BenchmarkMetadata bmd = compiledMetadata.get(0);
+            PrintWriter writer = new PrintWriter(out);
 
             // 1. gather all labels
             SortedSet<String> labels = new TreeSet<String> ();
-            for (BenchmarkMetadata md : compiledMetadata) {
+            for (MetadataContainer md : compiledMetadata) {
                 labels.addAll(md.labels());
             }
             for (String label : labels) {
@@ -52,17 +92,19 @@ public class BenchmarkRunner {
             String[] values = new String[labels.size()];
 
             // print all possible values for all benchmarks
-            for (BenchmarkMetadata md : compiledMetadata) {
+            for (MetadataContainer md : compiledMetadata) {
                 int i = 0;
                 for (String label : labels) {
                     String val = md.get(label);
-                    values[i++] = val != null ? val: "none";
+                    values[i++] = val != null ? val: MISSING_VALUE;
                 }
                 for (i = 0; i < values.length; i++) {
                     writer.print(values[i] + SEPARATOR);
                 }
                 writer.println("");
             }
+            writer.flush();
+            writer.close();
 
         }
         catch (IOException e) {

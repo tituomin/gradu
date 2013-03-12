@@ -7,6 +7,7 @@ import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.MeasuringTool;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.MeasuringTool.UnsupportedOptionException;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.BasicOption;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.OptionSpec;
+import fi.helsinki.cs.tituomin.nativebenchmark.Utils;
 
 public class LinuxPerfRecordTool extends CommandlineTool {
 
@@ -22,7 +23,7 @@ public class LinuxPerfRecordTool extends CommandlineTool {
     }
 
     private String generateFilename (String path) {
-        return path + "/perf-" + getUUID() + ".data";
+        return path + "/perf-" + Utils.getUUID() + ".data";
     }
 
     public String formatParameter(MeasuringOption option) {
@@ -43,11 +44,5 @@ public class LinuxPerfRecordTool extends CommandlineTool {
         }
             
     }
-
-
-    //protected String command() { return "pm"; }
-    //    protected String command() { return "ls";}
-
-    // ---
 
 }

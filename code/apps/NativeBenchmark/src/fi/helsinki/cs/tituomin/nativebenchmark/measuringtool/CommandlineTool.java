@@ -16,34 +16,20 @@ import java.io.File;
 import android.os.Environment;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
-import java.util.UUID;
 
 
 public abstract class CommandlineTool extends MeasuringTool {
 
-    private static final DateFormat dateFormat = DateFormat.getDateTimeInstance();
-
     protected abstract String command();
     protected abstract String formatParameter(MeasuringOption option);
 
-
-    // ----
-
-    private String command;
-
     public void initCommand() {
         List<String> commandline = new LinkedList<String> ();
-
         commandline.addAll(generateCommandlineArguments());
         this.command = "";
         for (String s : commandline) {
             this.command += s + " ";
         }
-
-        this.builder = new ProcessBuilder()
-            .directory(Environment.getExternalStorageDirectory())
-            .command(commandline)
-            .redirectErrorStream(true);
     }
 
     protected List<OptionSpec> specifyAllowedOptions(List<OptionSpec> options) {
@@ -53,9 +39,7 @@ public abstract class CommandlineTool extends MeasuringTool {
     }
 
     protected List<MeasuringOption> defaultOptions(List<MeasuringOption> options) {
-        Log.v("mt", "foo" + command());
         options.add(new BasicOption(BasicOption.COMMAND_STRING, command()));
-        Log.v("mt", options.toString());
         return options;
     }
 
@@ -69,25 +53,17 @@ public abstract class CommandlineTool extends MeasuringTool {
 
         this.startDate = new Date();
 
-        Log.v("mt", "command " + this.command);
         this.process = Runtime.getRuntime().exec(this.command);
-        //        this.process = this.builder().start();
-        // InputStream in = process.getInputStream();
-        // OutputStream out = process.getOutputStream();
         InputStream err = process.getErrorStream();
-        //        Log.v("mt", 
         this.process.waitFor();
 
         benchmarkThread.interrupt();
-
         
         int exitValue = this.process.exitValue();
         if (exitValue == 0) {
-            Log.v("tm", "success");
             measurement.addData("Started", dateFormat.format(this.startDate));
         }
         else {
-            Log.v("tm", "fail");
             String line;
             BufferedReader br = new BufferedReader(new InputStreamReader(err));
             while ((line = br.readLine()) != null) {
@@ -103,14 +79,11 @@ public abstract class CommandlineTool extends MeasuringTool {
         throw new UnsupportedOperationException();
     }
 
-    public String getUUID() {
-        return UUID.randomUUID().toString();
-    }
     public void setFilename(String name) {
         this.measurement.addData("Filename", name);
     }
 
-     // -----
+    // -----
 
     public List<String> generateCommandlineArguments() {
         List<String> result = new LinkedList<String> ();
@@ -127,15 +100,14 @@ public abstract class CommandlineTool extends MeasuringTool {
         return result;
     }
 
-    protected ProcessBuilder builder() {
-        return builder;
-    }
-
     // -----
-    private ProcessBuilder builder;
-    private Process process;
 
+    private Process process;
     private Date startDate;
     private Date endDate;
     private long startTime;
+    private String command;
+
+    private static final DateFormat dateFormat = DateFormat.getDateTimeInstance();
+
 }

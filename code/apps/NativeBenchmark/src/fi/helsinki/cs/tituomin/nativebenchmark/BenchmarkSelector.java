@@ -25,52 +25,58 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.main);
-        this.textView = (TextView) findViewById(R.id.mytextview);
+        this.textView   = (TextView) findViewById(R.id.mytextview);
         this.resultView = (TextView) findViewById(R.id.resultview);
-        this.button = (Button) findViewById(R.id.mybutton);
+        this.button     = (Button)   findViewById(R.id.mybutton);
 
-        BenchmarkRegistry.repetitions = 100000;
-        BenchmarkRegistry.multiplier  = 100000;
+        BenchmarkRegistry.repetitions = 1000;
+        BenchmarkRegistry.multiplier  = 1000;
         BenchmarkInitialiser.init();
-
-        tempToolSetup();
-    }
-
-    public void tempToolSetup() {
-        File sd = Environment.getExternalStorageDirectory();
-        File profileDir = new File(sd, "perf_data");
-        profileDir.mkdir();
-
-        tool = new LinuxPerfRecordTool()
-            .set(BasicOption.OUTPUT_FILEPATH, profileDir.getPath())
-            .set(BasicOption.MEASURE_LENGTH, "10");
-
-        tool.addObserver(this);
     }
 
     public void setMessage(int id) {
         this.textView.setText(id);
     }
 
+    public void setMessage(String message) {
+        this.textView.setText(message);
+    }
+
     public void updateState(ApplicationState.State state) {
         runOnUiThread(new StateChanger(state));
     }
-    public void updateState(ApplicationState.State state, Pair<String,String> data) {
-        runOnUiThread(new StateChanger(state));
+    public void updateState(ApplicationState.State state, String message) {
+        runOnUiThread(new StateChanger(state, message));
     }
 
     private class StateChanger implements Runnable {
         private ApplicationState.State state;
+        private String message;
+
         public StateChanger(ApplicationState.State state) {
             this.state = state;
         }
+        public StateChanger(ApplicationState.State state, String message) {
+            this.state = state;
+            this.message = message;
+        }
+
         public void run() {
-            setMessage(state.stringId);
+            if (message == null) {
+                setMessage(state.stringId);
+            }
+            else {
+                setMessage(message);
+            }
+
 
             switch (state) {
             case MEASURING:
                 button.setEnabled(false);
+                break;
+            case MILESTONE:
                 break;
             case MEASURING_FINISHED:
                 for (Pair<String,String> m : tool.getMeasurement()) {
@@ -87,17 +93,7 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
         Thread measuringThread = new Thread(
             new Runnable () {
                 public void run() {
-                    BenchmarkRunner.runBenchmarks();
-                    // try {
-                    //     tool.start(BenchmarkRegistry.getBenchmarks().get(0));
-                    // }
-                    // catch (InterruptedException e) {
-                    //     Log.e(TAG, "MeasuringTool.start was interrupted: " + e);
-                    // }
-                    // catch (IOException e) {
-                    //     Log.e(TAG, "Measuring caused IOex: " + e);
-                    //     e.printStackTrace();
-                    // }
+                    BenchmarkRunner.runBenchmarks(BenchmarkSelector.this);
                 }
             });
         this.updateState(ApplicationState.State.MEASURING);
@@ -109,21 +105,6 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
     private Button button;
     private static final String TAG = "BenchmarkSelector";
 
-    private String tempData;
-
-    private static class MockBenchmark implements Runnable {
-        private double killer;
-        public void run() {
-            long i;
-            for (i = 0, killer = Double.MAX_VALUE;
-                 i < Long.MAX_VALUE;
-                 killer /= 2.0, i++) {
-                if (Thread.interrupted()) {
-                    return;
-                }
-            }
-        }
-    }
     static {
         System.loadLibrary("nativebenchmark");
     }

@@ -27,13 +27,12 @@ public abstract class MeasuringTool {
     public abstract Measurement start(Runnable benchmark)
         throws InterruptedException, IOException;
 
-    protected List<OptionSpec>
-        specifyAllowedOptions(List<OptionSpec> container) {
-        return container;
-    }
-
     protected abstract List<MeasuringOption>
         defaultOptions(List<MeasuringOption> container);
+
+    protected List<OptionSpec> specifyAllowedOptions(List<OptionSpec> container) {
+        return container;
+    }
 
     protected void specifyOptions() {
         this.allowedOptions = specifyAllowedOptions(
@@ -68,14 +67,13 @@ public abstract class MeasuringTool {
             specifyOptions();
         }
         if (!allowedOptions.contains(option.type())) {
-            // Log.v("mt", allowedOptions.toString());
-            // Log.v("mt", option.toString());
-            // Log.v("mt", option.type().toString());
             throw new UnsupportedOptionException();
         }
         else {
-            this.options = (options != null ? options :
-                            new HashMap<OptionSpec,MeasuringOption> ());
+            this.options =
+                options != null ?
+                options :
+                new HashMap<OptionSpec,MeasuringOption> ();
             
             Log.v("mt", "putting " + option);
             this.options.put(option.type(), option);
@@ -112,13 +110,15 @@ public abstract class MeasuringTool {
     protected Measurement measurement;
 
     public Measurement getMeasurement() {
-        if (!hasOptions) {
-            for (MeasuringOption op : options.values()) {
-                this.measurement.addData(
-                    op.toStringPair().first,
-                    op.toStringPair().second);
+        if (this.options != null) {
+            if (!hasOptions) {
+                for (MeasuringOption op : options.values()) {
+                    this.measurement.addData(
+                        op.toStringPair().first,
+                        op.toStringPair().second);
+                }
+                hasOptions = true;
             }
-            hasOptions = true;
         }
         return this.measurement;
     }

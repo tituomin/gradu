@@ -5,5 +5,7 @@ Gradu: duunit
 * Tarkista
 ** TODO gof-book: onko proxy oikea termi peer classille?
 ** TODO androidin jni-toteutus ei käytä funktiotauluja?
-
+* Korjaa
+** TODO frameworks/native/libs/utils/Timers.cpp
+*** rivi 35 uptimemillis toteutus, ei aina käytä gettimeofdayta
 

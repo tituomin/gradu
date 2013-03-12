@@ -5,6 +5,7 @@ package {packagename};
 import fi.helsinki.cs.tituomin.nativebenchmark.Benchmark;
 import fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkParameter;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.BasicOption;
+import android.util.Log;
 
 public class {classname} {class_relations} implements Benchmark {{
 
@@ -35,7 +36,7 @@ public class {classname} {class_relations} implements Benchmark {{
         {parameter_initialisations};
 
         for (i = 0; i < multiplier; i++) {{
-            for (j = 0; i < repetitions; j++) {{
+            for (j = 0; j < repetitions; j++) {{
                 {native_method_name} ({native_method_arguments});
             }}
         }}

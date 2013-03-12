@@ -3,5 +3,6 @@
     <string name="app_name">Native Benchmark</string>
     <string name="start_task">Start measuring</string>
     <string name="measuring_started">Measuring started</string>
+    <string name="measuring_milestone">Measuring...</string>
     <string name="measuring_finished">Measuring finished</string>
 </resources>

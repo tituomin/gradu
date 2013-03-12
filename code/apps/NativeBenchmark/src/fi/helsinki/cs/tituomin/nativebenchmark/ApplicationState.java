@@ -3,11 +3,12 @@ import android.util.Pair;
 
 public interface ApplicationState {
     public void updateState(State state);
-    public void updateState(State state, Pair<String,String> data);
+    public void updateState(State state, String message);
 
     public static enum State {
         INITIALISED        ( R.string.app_name ),
         MEASURING          ( R.string.measuring_started ),
+        MILESTONE          ( R.string.measuring_milestone ),
         MEASURING_FINISHED ( R.string.measuring_finished );
 
         public final int stringId;
