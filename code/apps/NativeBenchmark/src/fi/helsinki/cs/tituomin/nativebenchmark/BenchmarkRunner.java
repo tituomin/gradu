@@ -126,6 +126,8 @@ public class BenchmarkRunner {
 
         bdata.add("class", c.getSimpleName());
         bdata.add("group", benchmark.group());
+        bdata.add("from", benchmark.from());
+        bdata.add("to", benchmark.to());
  
         BasicOption[] dynamicParameters = benchmark.dynamicParameters();
 

@@ -6,23 +6,23 @@
 #define NULL 0
 
 
-#define CHECK_AND_CALL(variable, Type, signature)                                          \
-                                                                                           \
-    jmethodID retrieve ## Type = (*env)->GetMethodID(                                      \
-        env, cls, "retrieve" # Type, signature);                                           \
-                                                                                           \
-    if (retrieve ## Type == NULL) {                                                        \
-        __android_log_write(ANDROID_LOG_ERROR,                                             \
-            "nativebenchmark", "missing method for " # Type);                              \
-       return 0;                                                                           \
-    }                                                                                      \
-    local_reference = (*env)->CallObjectMethod(env, benchmarkParameter, retrieve ## Type); \
-    variable ## Value = (*env)->NewGlobalRef(env, local_reference);                        \
-    if (variable ## Value == NULL) {                                                       \
-        __android_log_write(ANDROID_LOG_ERROR, "nativebenchmark", "can't create global     \
-reference"); }                                                                             \
-                                                                                           \
-
+#define CHECK_AND_CALL(variable, Type, signature)                   \
+                                                                    \
+    jmethodID retrieve ## Type = (*env)->GetMethodID(               \
+        env, cls, "retrieve" # Type, signature);                    \
+                                                                    \
+    if (retrieve ## Type == NULL) {                                 \
+        __android_log_write(ANDROID_LOG_ERROR,                      \
+            "nativebenchmark", "missing method for " # Type);       \
+       return 0;                                                    \
+    }                                                               \
+    local_reference = (*env)->CallObjectMethod(                     \
+        env, benchmarkParameter, retrieve ## Type);                 \
+                                                                    \
+    variable ## Value = (*env)->NewGlobalRef(env, local_reference); \
+    if (variable ## Value == NULL) {                                \
+        __android_log_write(ANDROID_LOG_ERROR,                      \
+            "nativebenchmark", "can't create global reference"); }  
 
 RETURN_VALUE(jclass)
 RETURN_VALUE(jobject)

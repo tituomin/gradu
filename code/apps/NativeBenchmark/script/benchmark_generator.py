@@ -166,20 +166,26 @@ def java_to_c_benchmarks():
                             'class'    : '.'.join(packagename) + "." + classname,
                             'path'     : '/'.join(packagename),
                             'code'     : java_benchmark.t.format(
-                                class_relations           = '',
-                                group                     = 'Java to C',
-                                native_method_modifiers   = native_method_modifiers,
-                                native_method_return_type = return_type['java'],
-                                native_method_name        = native_method_name,
-                                packagename               = '.'.join(packagename),
-                                classname                 = classname,
-                                native_method_parameters  = ", ".join(parameter_declarations[0:i+1]),
-                                parameter_declarations    = "; ".join(parameter_declarations[0:i+1]),
-                                parameter_initialisations = "; ".join(parameter_initialisations[0:i+1]),
-                                native_method_arguments   = ", ".join(parameter_names[0:i+1]),
-                                library_name              = library_name,
-                                dynamic_parameters        = dynamic_parameters,
-                                variable                  = i+1 )})
+                                imports                      = '',
+                                from_language                = 'j',
+                                to_language                  = 'c',
+                                class_relations              = '',
+                                group                        = 'Java to C',
+                                counterpart_method_name      = native_method_name,
+                                counterpart_method_arguments = ", ".join(parameter_names[0:i+1]),
+                                packagename                  = '.'.join(packagename),
+                                classname                    = classname,
+                                native_method_parameters     = ,
+                                parameter_declarations       = "; ".join(parameter_declarations[0:i+1]),
+                                parameter_initialisations    = "; ".join(parameter_initialisations[0:i+1]),
+                                library_name                 = library_name,
+                                dynamic_parameters           = dynamic_parameters,
+
+                                native_method = java_benchmark.native_method(
+                                    modifiers                = native_method_modifiers,
+                                    return_type              = return_type['java'],
+                                    name                     = native_method_name,
+                                    parameters               = ", ".join(parameter_declarations[0:i+1])))})
 
                     c.append(
                         c_nativemethod.t.format(

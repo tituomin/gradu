@@ -6,4 +6,6 @@ public interface Benchmark extends Runnable {
 
     public BasicOption[] dynamicParameters();
     public String group();
+    public String from();
+    public String to();
 }
