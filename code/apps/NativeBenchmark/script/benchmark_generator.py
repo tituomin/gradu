@@ -1,5 +1,5 @@
-
 from templates import java_benchmark
+from templates import java_counterparts
 from templates import c_module
 from templates import c_jni_function
 from templates import c_nativemethod
@@ -22,10 +22,13 @@ def create_benchmarks():
     benchmarks['java'].extend(jb)
     return benchmarks
 
-def next_classname():
+def next_sequence_no():
     global class_counter
     class_counter += 1
-    return 'Benchmark' + str(class_counter).zfill(5)
+    return class_counter
+
+def benchmark_classname(prefix, number):
+    return prefix + 'Benchmark' + str(number).zfill(5)    
 
 def parameter_initialisation(language, type_data, name):
     if type_data.get('is-array', False):
@@ -105,6 +108,7 @@ def specify_combinations():
 
 def java_to_c_benchmarks():
     java = []
+    java_callees = []
     c = []
 
     all_combinations = specify_combinations()
@@ -158,43 +162,82 @@ def java_to_c_benchmarks():
                     else:
                         dynamic_parameters = "null"
 
-                    classname = next_classname()
-                    native_method_name = 'nativemethod'
+                    sequence_no = next_sequence_no()
 
-                    java.append({
-                            'filename' : classname + ".java",
-                            'class'    : '.'.join(packagename) + "." + classname,
-                            'path'     : '/'.join(packagename),
-                            'code'     : java_benchmark.t.format(
-                                imports                      = '',
-                                from_language                = 'j',
-                                to_language                  = 'c',
-                                class_relations              = '',
-                                group                        = 'Java to C',
-                                counterpart_method_name      = native_method_name,
-                                counterpart_method_arguments = ", ".join(parameter_names[0:i+1]),
-                                packagename                  = '.'.join(packagename),
-                                classname                    = classname,
-                                native_method_parameters     = ,
-                                parameter_declarations       = "; ".join(parameter_declarations[0:i+1]),
-                                parameter_initialisations    = "; ".join(parameter_initialisations[0:i+1]),
-                                library_name                 = library_name,
-                                dynamic_parameters           = dynamic_parameters,
+                    for from_lang, to_lang in itertools.product(('J', 'C'), repeat=2):
 
-                                native_method = java_benchmark.native_method(
-                                    modifiers                = native_method_modifiers,
-                                    return_type              = return_type['java'],
-                                    name                     = native_method_name,
-                                    parameters               = ", ".join(parameter_declarations[0:i+1])))})
+                        native_method_name = 'nativemethod'
+                        classname = benchmark_classname(
+                            '2'.join((from_lang, to_lang)),
+                            sequence_no)
 
-                    c.append(
-                        c_nativemethod.t.format(
-                            return_type               = return_type['c'],
-                            packagename               = ('_').join(packagename),
-                            classname                 = classname,
-                            function                  = native_method_name,
-                            parameters                = ", ".join(c_parameter_declarations[0:i+2]),
-                            return_expression         = return_expression))
+                        if from_lang == 'C':
+                            run_method = java_benchmark.native_run_method()
+                            native_method = ''
+
+                        elif from lang == 'J':
+                            run_method = java_benchmark.java_run_method(
+                                    parameter_declarations       = "; ".join(parameter_declarations[0:i+1]),
+                                    parameter_initialisations    = "; ".join(parameter_initialisations[0:i+1]),
+                                    counterpart_method_name      = native_method_name,
+                                    counterpart_method_arguments = ", ".join(parameter_names[0:i+1]))
+
+                            native_method                        = java_benchmark.native_method(
+                                        modifiers                = native_method_modifiers,
+                                        return_type              = return_type['java'],
+                                        name                     = native_method_name,
+                                        parameters               = ", ".join(parameter_declarations[0:i+1]))
+
+                        java.append({
+                                'filename' : classname + ".java",
+                                'class'    : '.'.join(packagename) + "." + classname,
+                                'path'     : '/'.join(packagename),
+                                'code'     : java_benchmark.t.format(
+                                    imports                      = '',
+                                    from_language                = 'j',
+                                    to_language                  = 'c',
+                                    class_relations              = '',
+                                    group                        = 'Java to C',
+                                    packagename                  = '.'.join(packagename),
+                                    classname                    = classname,
+                                    native_method_parameters     = ,
+                                    library_name                 = library_name,
+                                    dynamic_parameters           = dynamic_parameters,
+                                    run_method                   = run_method,
+                                    native_method                = native_method)})
+
+                        if (from_lang, to_lang) == ('J', 'J'):
+                            java_callees.append(
+                                java_counterparts.counterpart_method(
+                                    return_type       = ,
+                                    classname         = ,
+                                    methodname        = ,
+                                    parameters        = ,
+                                    return_expression = ))
+
+                            # todo append return expressions
+                            # to counterpart class (at the end or beginning)
+
+                        if (from_lang, to_lang) == ('J', 'C'):
+                            c.append(
+                                c_nativemethod.t.format(
+                                    return_type               = return_type['c'],
+                                    packagename               = ('_').join(packagename),
+                                    classname                 = classname,
+                                    function                  = native_method_name,
+                                    parameters                = ", ".join(c_parameter_declarations[0:i+2]),
+                                    return_expression         = return_expression))
+
+                        if (from_lang, to_lang) == ('C', 'C'):
+                            c.append(
+                                c_nativemethod.t_caller_native.format(
+                                    ))
+
+                        if (from_lang, to_lang) == ('C', 'J'):
+                            c.append(
+                                c_nativemethod.t_caller_java.format(
+                                    ))
+
 
 
     c_file = c_module.t.format(jni_function_templates = ''.join(c))

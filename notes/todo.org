@@ -8,4 +8,26 @@ Gradu: duunit
 * Korjaa
 ** TODO frameworks/native/libs/utils/Timers.cpp
 *** rivi 35 uptimemillis toteutus, ei aina käytä gettimeofdayta
+* Peruskutsutestit
 
+| java | c    | suunta | java | NOTES                                                                    |
+|------+------+--------+------+--------------------------------------------------------------------------|
+| :.   | :.   | ->     | :.   | C2JBenchmarkNNNN -> t_caller_java(classname) -> javacounterparts         |
+| :.   | :.:: | <<     | ---- | C2CBenchmarkNNNN -> t_caller_native(methodname)                          |
+| ---- | ::   | <-     | ::   | J2CBenchmarkNNNN -> c_nativemethod.t                                     |
+| ---- | ---- | >>     | :.   | J2JBenchmarkNNNN -> javacounterparts                                     |
+|------+------+--------+------+--------------------------------------------------------------------------|
+
+Native2JavaBenchmark:
+native run method, method name derived from Native2JavaBenchmark_X_run
+ - callee name derived from benchmark number NNNN
+
+Native2NativeBenchmark:
+native run method, method name derived from Native2NativeBenchmark_X_run
+ - callee name derived from benchmark number NNNN
+
+Benchmark:
+native counterpart, method name derived from Benchmark_nativemethod
+
+Java2JavaBenchmark:
+java run method, callee name derived from benchmark number NNNN

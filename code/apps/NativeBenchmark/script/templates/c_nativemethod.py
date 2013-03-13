@@ -25,21 +25,29 @@ Java_{packagename}_{classname}_run
 
 """
 
-t_call_java = """
+t_caller_java = """
 
 JNIEXPORT void JNICALL
 Java_{packagename}_{classname}_run
 (JNIEnv *env, jobject instance) {{
     jlong i, j;
+    jclass cls = (*env)->GetObjectClass(env, instance);
+    jmethodID mid =
+        (*env)->GetMethodID(env, cls, "{method_name}", "{method_descriptor}");
+    if (mid == NULL) {{
+        return; /* method not found */
+    }}
     {parameter_declarations};
     {parameter_initialisations};
-    for (i = 0; i < multiplier; i++) {
-        for (j = 0; j < multiplier; j++) {
-            {counterpart_method_name} ({counterpart_method_arguments});
-        }
-    }
+
+    for (i = 0; i < multiplier; i++) {{
+        for (j = 0; j < multiplier; j++) {{
+            (*env)->Call{java_return_type}Method{call_variant}(env, instance, mid {arguments});
+        }}
+    }}
 }}
 
 """
 
-# todo here
+# todo: refactor common loop code elsewhere?
+# todo: mid caching could be done beforehand? maybe not
