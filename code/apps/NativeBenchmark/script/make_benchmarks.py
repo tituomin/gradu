@@ -11,15 +11,7 @@ import logging
 # Log everything, and send it to stderr.
 logging.basicConfig(level=logging.DEBUG)
 
-def write_benchmarks(c_output, c_run_output, java_output_dir):
-
-    benchmarks = create_benchmarks()
-    c_output.write(benchmarks['c'])
-    c_run_output.write(benchmarks['c_run'])
-
-    benchmark_inits = []
-
-    for benchmark in benchmarks['java']:
+def write_benchmark(benchmark, java_output_dir):
         java_output_path = os.path.join(
             java_output_dir,
             benchmark["path"])
@@ -35,7 +27,21 @@ def write_benchmarks(c_output, c_run_output, java_output_dir):
                 benchmark["filename"]), 'w')
 
         java_output.write(benchmark["code"])
+    
+
+def write_benchmarks(c_output, c_run_output, java_output_dir):
+
+    benchmarks = create_benchmarks()
+    c_output.write(benchmarks['c'])
+    c_run_output.write(benchmarks['c_run'])
+
+    benchmark_inits = []
+
+    for benchmark in benchmarks['java']:
+        write_benchmark(benchmark, java_output_dir)
         benchmark_inits.append(java_registry_init.inits(benchmark["class"]))
+
+    write_benchmark(benchmarks['java_counter'], java_output_dir)
 
     path = os.path.join(
         java_output_dir,

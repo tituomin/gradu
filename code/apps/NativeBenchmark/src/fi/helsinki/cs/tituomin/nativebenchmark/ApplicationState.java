@@ -9,6 +9,7 @@ public interface ApplicationState {
         INITIALISED        ( R.string.app_name ),
         MEASURING          ( R.string.measuring_started ),
         MILESTONE          ( R.string.measuring_milestone ),
+        ERROR              ( R.string.error ),
         MEASURING_FINISHED ( R.string.measuring_finished );
 
         public final int stringId;

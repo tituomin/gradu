@@ -18,11 +18,9 @@ Java_{packagename}_{classname}_run
     {parameter_declarations};
     {parameter_initialisations};
 
-    jlong i, j;
-    for (i = 0; i < multiplier; i++) {{
-        for (j = 0; j < repetitions; j++) {{
-            {counterpart_method_name} ({counterpart_method_arguments});
-        }}
+    jlong i;
+    for (i = 0; i < repetitions; i++) {{
+        {counterpart_method_name} ({counterpart_method_arguments});
     }}
 }}
 
@@ -38,11 +36,9 @@ Java_{packagename}_{classname}_run
     {parameter_declarations};
     {parameter_initialisations};
 
-    jlong i, j;
-    for (i = 0; i < multiplier; i++) {{
-        for (j = 0; j < repetitions; j++) {{
-            (*env)->Call{java_method_type}Method{call_variant}(env, instance, mid{arguments});
-        }}
+    jlong i;
+    for (i = 0; i < repetitions; i++) {{
+        (*env)->Call{java_method_type}Method{call_variant}(env, instance, mid{arguments});
     }}
 }}
 

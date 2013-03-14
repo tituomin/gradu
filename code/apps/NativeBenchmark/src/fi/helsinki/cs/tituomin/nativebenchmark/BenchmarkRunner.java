@@ -27,6 +27,7 @@ import java.util.TreeSet;
 public class BenchmarkRunner {
     private static final String SEPARATOR     = ",";
     private static final String MISSING_VALUE = "-";
+    private static BenchmarkParameter benchmarkParameter;
 
     private static final MeasuringTool[] measuringTools = {
         // new LinuxPerfRecordTool()
@@ -35,6 +36,11 @@ public class BenchmarkRunner {
 
         new ResponseTimeRecorder()
     };
+
+    public static BenchmarkParameter getBenchmarkParameter() {
+        return benchmarkParameter;
+    }
+
 
     public static void runBenchmarks(ApplicationState mainUI) {
         File sd = Environment.getExternalStorageDirectory();
@@ -47,8 +53,17 @@ public class BenchmarkRunner {
 
         List<MetadataContainer> compiledMetadata = new ArrayList<MetadataContainer> ();
 
-        BenchmarkRegistry.init(1000000, 1);
-        BenchmarkInitialiser.init();
+        try {
+            BenchmarkRegistry.init(1000000);
+        }
+        catch (ClassNotFoundException e) {
+            mainUI.updateState(ApplicationState.State.ERROR);
+            Log.e("BenchmarkRunner", "Class not found.", e);
+            return;
+        }
+
+        benchmarkParameter = new BenchmarkParameter();
+        BenchmarkInitialiser.init(benchmarkParameter);
 
         List<Benchmark> benchmarks = BenchmarkRegistry.getBenchmarks();
 
@@ -129,12 +144,9 @@ public class BenchmarkRunner {
         Class c = benchmark.getClass();
 
         bdata.add("class", c.getSimpleName());
-        bdata.add("group", benchmark.group());
         bdata.add("from", benchmark.from());
         bdata.add("to", benchmark.to());
  
-        BasicOption[] dynamicParameters = benchmark.dynamicParameters();
-
         Method[] methods = c.getDeclaredMethods();
         for (int i = 0; i < methods.length; i++) {
             Method m = methods[i];

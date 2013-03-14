@@ -5,4 +5,5 @@
     <string name="measuring_started">Measuring started</string>
     <string name="measuring_milestone">Measuring...</string>
     <string name="measuring_finished">Measuring finished</string>
+    <string name="error">An error occurred</string>
 </resources>

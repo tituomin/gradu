@@ -18,14 +18,13 @@ public class {classname} {class_relations} implements Benchmark {{
         return "{to_language}";
     }}
 
-    private long repetitions, multiplier;
+    private long repetitions;
     private BenchmarkParameter benchmarkParameter;
 
     {native_method}
 
-    public {classname} (long r, long m, BenchmarkParameter bp) {{
+    public {classname} (long r, BenchmarkParameter bp) {{
         repetitions = r;
-        multiplier = m;
         benchmarkParameter = bp;
     }}
 
@@ -42,14 +41,12 @@ native_run_method_t = 'public native void run();'
 java_run_method_t   = """
 
     public void run() {{
-        long i, j;
         {parameter_declarations};
         {parameter_initialisations};
 
-        for (i = 0; i < multiplier; i++) {{
-            for (j = 0; j < repetitions; j++) {{
-                {counterpart_method_name} ({counterpart_method_arguments});
-            }}
+        long i;
+        for (i = 0; i < repetitions; i++) {{
+            {counterpart_method_name} ({counterpart_method_arguments});
         }}
     }}
 

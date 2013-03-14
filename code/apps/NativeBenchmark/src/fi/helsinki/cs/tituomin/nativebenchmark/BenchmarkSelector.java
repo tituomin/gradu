@@ -18,6 +18,7 @@ import android.util.Pair;
 import java.io.IOException;
 import java.io.File;
 import android.os.Environment;
+import android.content.res.Resources;
 
 public class BenchmarkSelector extends Activity implements ApplicationState {
     /** Called when the activity is first created. */
@@ -30,6 +31,7 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
         this.textView   = (TextView) findViewById(R.id.mytextview);
         this.resultView = (TextView) findViewById(R.id.resultview);
         this.button     = (Button)   findViewById(R.id.mybutton);
+        this.resources  = getResources();
     }
 
     public void setMessage(int id) {
@@ -38,6 +40,10 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
 
     public void setMessage(String message) {
         this.textView.setText(message);
+    }
+
+    public void setMessage(int id, String message) {
+        this.textView.setText(resources.getString(id) + " " + message);
     }
 
     public void updateState(ApplicationState.State state) {
@@ -64,7 +70,7 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
                 setMessage(state.stringId);
             }
             else {
-                setMessage(message);
+                setMessage(state.stringId, message);
             }
 
 
@@ -99,6 +105,7 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
     private MeasuringTool tool;
     private TextView textView, resultView;
     private Button button;
+    private Resources resources;
     private static final String TAG = "BenchmarkSelector";
 
     static {

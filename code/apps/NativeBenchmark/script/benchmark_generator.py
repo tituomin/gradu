@@ -19,9 +19,10 @@ class_counter = 0
 # todo: initialize complex return values for c side
 
 def create_benchmarks():
-    benchmarks = { 'java' : [], 'c' : '', 'c_run': ''}
-    jb, benchmarks['c'], benchmarks['c_run'] = generate_benchmarks()
+    benchmarks = { 'java' : [] }
+    jb, jc, benchmarks['c'], benchmarks['c_run'] = generate_benchmarks()
     benchmarks['java'].extend(jb)
+    benchmarks ['java_counter'] = jc
     return benchmarks
 
 def next_sequence_no():
@@ -189,6 +190,7 @@ def generate_benchmarks():
                                             name                     = native_method_name,
                                             parameters               = ", ".join(parameter_declarations[0:i+1]))
                             else:
+                                counterpart_method_name = 'benchmark' + sequence_no
                                 native_method = ''
 
                         java.append({
@@ -224,21 +226,24 @@ def generate_benchmarks():
                                     packagename               = ('_').join(packagename),
                                     classname                 = classname,
                                     function                  = native_method_name,
-                                    parameters                = ", ".join(c_parameter_declarations[0:i+3]),
+                                    parameters                = ", ".join(c_parameter_declarations[0:i+2]),
                                     return_expression         = return_expression))
 
                         if (from_lang, to_lang) == ('C', 'C'):
+                            jni_param_names = ['env', 'instance']
+                            jni_param_names.extend(parameter_names)
+
                             c_runners.append(
                                 c_nativemethod.t_caller_native.format(
                                     packagename = '_'.join(packagename),
                                     classname = classname,
-                                    parameter_declarations = ", ".join(c_parameter_declarations[1:i+2]),
+                                    parameter_declarations = "; ".join(c_parameter_declarations[1:i+2]),
                                     parameter_initialisations = "; ".join(c_parameter_initialisations[0:i+1]),
                                     counterpart_method_name = "Java_{package}_{cls}_{function}".format(
                                         package = ('_').join(packagename),
                                         cls = 'J2CBenchmark' + str(sequence_no),
                                         function = native_method_name),
-                                    counterpart_method_arguments = ", ".join(parameter_names[0:i+1])))
+                                    counterpart_method_arguments = ", ".join(jni_param_names[0:i+3])))
 
 
                             
@@ -253,7 +258,7 @@ def generate_benchmarks():
                                     seq_no = class_counter,
                                     packagename = '_'.join(packagename),
                                     classname = classname,
-                                    parameter_declarations = ", ".join(c_parameter_declarations[1:i+2]),
+                                    parameter_declarations = "; ".join(c_parameter_declarations[1:i+2]),
                                     parameter_initialisations = "; ".join(c_parameter_initialisations[0:i+1]),                                   java_method_type = java_method_type,
                                     call_variant= '', # todo test variants?
                                     arguments = ', ' + ', '.join(parameter_names[0:i+1])))
@@ -266,11 +271,14 @@ def generate_benchmarks():
                                         return_type, type_combination[0:i+1])))
 
 
-    java.append({
+    java_counterparts_class = {
             'filename' : java_counterpart_classname + ".java",
             'class'    : '.'.join(packagename) + "." + java_counterpart_classname,
             'path'     : '/'.join(packagename),
-            'code'     : ''.join(java_callees)})
+            'code'     : java_counterparts.t.format(
+                packagename = '.'.join(packagename),
+                imports = '',
+                counterpart_methods = ''.join(java_callees))}
 
     c_file = c_module.t.format(
         jni_function_templates = ''.join(c),
@@ -282,4 +290,4 @@ def generate_benchmarks():
             mid_inits = ''.join(c_methodid_inits),
             amount_of_methods = len(c_methodid_inits)))
 
-    return java, c_file, c_runners_file
+    return java, java_counterparts_class, c_file, c_runners_file

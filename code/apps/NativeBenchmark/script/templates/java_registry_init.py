@@ -10,10 +10,8 @@ import java.util.List;
 
 public class BenchmarkInitialiser {{
 
-    public static void init() {{
+    public static void init(BenchmarkParameter bp) {{
         List<Benchmark> benchmarks = BenchmarkRegistry.getBenchmarks();
-
-        BenchmarkParameter bp = new BenchmarkParameter();
 
         {register_benchmarks}
     }}
@@ -24,4 +22,4 @@ public class BenchmarkInitialiser {{
 
 def inits(classname):
     return """
-    benchmarks.add(new {classname} (BenchmarkRegistry.repetitions, BenchmarkRegistry.multiplier, bp));""".format(classname=classname)
+    benchmarks.add(new {classname} (BenchmarkRegistry.repetitions, bp));""".format(classname=classname)
