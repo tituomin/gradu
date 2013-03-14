@@ -14,7 +14,8 @@ primitive_type_definitions = [
         'java'         : 'boolean',
         'c'            : 'jboolean',
         'c-literal'    : '1',
-        'java-literal' : 'true'
+        'java-literal' : 'true',
+        'jvm-desc'     : 'Z'
         },
 
     {
@@ -22,7 +23,8 @@ primitive_type_definitions = [
         'java'         : 'byte',
         'c'            : 'jbyte',
         'c-literal'    : "'a'",
-        'java-literal' : '100'
+        'java-literal' : '100',
+        'jvm-desc'     : 'B'
         # todo: same value?
         },
 
@@ -31,7 +33,8 @@ primitive_type_definitions = [
         'java'         : 'char',
         'c'            : 'jchar',
         'c-literal'    : '12',
-        'java-literal' : "'\u0012'"
+        'java-literal' : "'\u0012'",
+        'jvm-desc'     : 'C'
         },
 
     {
@@ -39,7 +42,8 @@ primitive_type_definitions = [
         'java'         : 'short',
         'c'            : 'jshort',
         'c-literal'    : '101',
-        'java-literal' : '101'
+        'java-literal' : '101',
+        'jvm-desc'     : 'S'
         },
 
     {
@@ -47,7 +51,8 @@ primitive_type_definitions = [
         'java'         : 'int',
         'c'            : 'jint',
         'c-literal'    : '102',
-        'java-literal' : '102'
+        'java-literal' : '102',
+        'jvm-desc'     : 'I'
         },
 
     {
@@ -55,7 +60,8 @@ primitive_type_definitions = [
         'java'         : 'long',
         'c'            : 'jlong',
         'c-literal'    : '103',
-        'java-literal' : '103'
+        'java-literal' : '103',
+        'jvm-desc'     : 'J'
         },
 
     {
@@ -63,7 +69,8 @@ primitive_type_definitions = [
         'java'         : 'float',
         'c'            : 'jfloat',
         'c-literal'    : '104.1',
-        'java-literal' : '104.1f'
+        'java-literal' : '104.1f',
+        'jvm-desc'     : 'F'
         },
 
     {
@@ -71,7 +78,8 @@ primitive_type_definitions = [
         'java'         : 'double',
         'c'            : 'jdouble',
         'c-literal'    : '105.1',
-        'java-literal' : '105.1'
+        'java-literal' : '105.1',
+        'jvm-desc'     : 'D'
         },
 ]
 
@@ -83,7 +91,8 @@ object_type_definitions = [
         'c'            : 'jobject',
         'c-literal'    : None,
         'java-literal' : None,
-        'is-object'    : True
+        'is-object'    : True,
+        'jvm-desc'     : 'Ljava/lang/Object;'
         },
 
     {
@@ -92,7 +101,8 @@ object_type_definitions = [
         'c'            : 'jclass',
         'c-literal'    : None,
         'java-literal' : None,
-        'is-object'    : True
+        'is-object'    : True,
+        'jvm-desc'     : 'Ljava/lang/Class;'
         },
 
     {
@@ -101,7 +111,8 @@ object_type_definitions = [
         'c'            : 'jstring',
         'c-literal'    : None,
         'java-literal' : '"a string"',
-        'is-object'    : True
+        'is-object'    : True,
+        'jvm-desc'     : 'Ljava/lang/String;'
         },
 
     {
@@ -110,7 +121,8 @@ object_type_definitions = [
         'c'            : 'jthrowable',
         'c-literal'    : None,
         'java-literal' : None,
-        'is-object'    : True
+        'is-object'    : True,
+        'jvm-desc'     : 'Ljava/lang/Throwable;'
         }
     
 ]
@@ -122,7 +134,8 @@ other_type_definitions = [
         'java'         : 'void',
         'c'            : 'void',
         'c-literal'    : None,
-        'java-literal' : None
+        'java-literal' : None,
+        'jvm-desc'     : 'V'
         }
 ]
 
@@ -148,8 +161,10 @@ def type_combinations(size=0, typeset=None):
 
     return list(itertools.islice(itertools.cycle(typeset), 0, size))
 
-def modifier_combinations():
-    return itertools.product(['static', ''], ['private', 'public', 'protected'])
+def method_descriptor(return_type, parameter_types):
+    return "({parameters}){returndesc}".format(
+        parameters = ''.join([td['jvm-desc'] for td in parameter_types]),
+        returndesc = return_type['jvm-desc']);
     
 
 def init_types():
@@ -165,7 +180,7 @@ def init_types():
     # todo here
     array_types = dict([
             ('A' + key, {'symbol': 'A' + key, 'java': tipe['java'] + '[]', 'c' : tipe['c'] + 'Array',
-                         'c-literal': None, 'java-literal': None, 'is-array': True, 'java-element-type': tipe['java'], 'c-element-type': tipe['c']})
+                         'c-literal': None, 'java-literal': None, 'is-array': True, 'java-element-type': tipe['java'], 'c-element-type': tipe['c'], 'jvm-desc': '[' + tipe['jvm-desc']})
             for key, tipe
             in array_element_types.iteritems()])
 

@@ -21,3 +21,7 @@ public class BenchmarkInitialiser {{
 }}
 
 """
+
+def inits(classname):
+    return """
+    benchmarks.add(new {classname} (BenchmarkRegistry.repetitions, BenchmarkRegistry.multiplier, bp));""".format(classname=classname)

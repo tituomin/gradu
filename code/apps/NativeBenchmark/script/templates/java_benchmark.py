@@ -15,10 +15,6 @@ public class {classname} {class_relations} implements Benchmark {{
         return GROUP;
     }}
 
-    public BasicOption[] dynamicParameters() {{
-        return {dynamic_parameters};
-    }}
-
     public String from() {{
         return {from_language};
     }}
@@ -88,9 +84,6 @@ def native_method(modifiers=None, return_type=None, name=None, parameters=None):
     return native_method_t.format(
         modifiers=modifiers, return_type=return_type,
         name=name, parameters=parameters)
-
-def dynamic_parameter(var):
-    return dynamic_parameter_t.format(variable=var)
 
 def native_run_method():
     return native_run_method_t

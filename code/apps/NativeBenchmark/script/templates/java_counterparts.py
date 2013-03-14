@@ -16,18 +16,28 @@ public class JavaCounterparts {{
 
 """
 
-def counterpart_method(return_type=None, classname=None, methodname=None, parameters=None, return_expression=None):
-    return """
-public static {return_type} {classname}_{methodname} ({parameters}) {{
+counterpart_t = """
+
+public static {return_type} {methodname} ({parameters}) {{
     return {return_expression};
-}}""".format(
+
+"""
+
+return_value_t = """
+
+private static {actualtype} = BenchmarkParameter.retrieve{typename}({typespecs});
+
+"""
+
+def counterpart_method(return_type=None, methodname=None, parameters=None, return_expression=None):
+    return counterpart_t.format(
         return_type=return_type,
-        name=name,
-        parameters=parameters)
+        methodname=methodname,
+        parameters=parameters,
+        return_expression=return_expression)
 
 def return_value(actualtype=None, typename=None, typespecs=''):
-    return """
-private static {actualtype} = BenchmarkParameter.retrieve{typename}({typespecs});""".format(
+    return return_value_t.format(
         actualtype=actualtype,
         typename=typename,
         typespecs=typespecs)

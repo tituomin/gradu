@@ -45,6 +45,7 @@
     <exec executable="python" outputproperty="jni_classes_benchmarks" logError="true" failonerror="true">
           <arg value="${codegen_script.dir}/make_benchmarks.py" />
           <arg value="${jni_src.dir}/nativebenchmark.c" />
+          <arg value="${jni_src.dir}/nativerunners.c" />
           <arg value="${gen_src.dir}" />
     </exec>
     <property name="code.generated" value="true" />

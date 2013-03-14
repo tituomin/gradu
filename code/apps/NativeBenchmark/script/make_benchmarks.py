@@ -11,10 +11,12 @@ import logging
 # Log everything, and send it to stderr.
 logging.basicConfig(level=logging.DEBUG)
 
-def write_benchmarks(c_output, java_output_dir):
+def write_benchmarks(c_output, c_run_output, java_output_dir):
 
     benchmarks = create_benchmarks()
     c_output.write(benchmarks['c'])
+    c_run_output.write(benchmarks['c_run'])
+
     benchmark_inits = []
 
     for benchmark in benchmarks['java']:
@@ -33,9 +35,7 @@ def write_benchmarks(c_output, java_output_dir):
                 benchmark["filename"]), 'w')
 
         java_output.write(benchmark["code"])
-        benchmark_inits.append("""
-        benchmarks.add(new {classname} (BenchmarkRegistry.repetitions, BenchmarkRegistry.multiplier, bp));""".format(
-                classname=benchmark["class"]))
+        benchmark_inits.append(java_registry_init.inits(benchmark["class"]))
 
     path = os.path.join(
         java_output_dir,
@@ -51,9 +51,11 @@ def write_benchmarks(c_output, java_output_dir):
 if __name__ == "__main__":
     try:
         c_output_name = argv[1]
-        java_output_dir = argv[2]
+        c_run_output_name = argv[2]
+        java_output_dir = argv[3]
         c_output = open(c_output_name, 'w')
-        classes = write_benchmarks(c_output, java_output_dir)
+        c_run_output = open(c_run_output_name, 'w')
+        classes = write_benchmarks(c_output, c_run_output, java_output_dir)
         print(",".join(classes))
     except Exception as e:
         logging.exception("Exception was thrown.")
