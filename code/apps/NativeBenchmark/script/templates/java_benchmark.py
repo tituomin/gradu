@@ -10,17 +10,12 @@ import android.util.Log;
 
 public class {classname} {class_relations} implements Benchmark {{
 
-    public final static String GROUP = "{group}"; 
-    public String group() {{
-        return GROUP;
-    }}
-
     public String from() {{
-        return {from_language};
+        return "{from_language}";
     }}
 
     public String to() {{
-        return {to_language};
+        return "{to_language}";
     }}
 
     private long repetitions, multiplier;
@@ -41,29 +36,10 @@ public class {classname} {class_relations} implements Benchmark {{
 """
 
 
-native_method_t = """
-
-{modifiers} native {return_type} 
-{name} ({parameters});
-
-"""
-
-
-dynamic_parameter_t = """
-
-new BasicOption(BasicOption.VARIABLE, "{variable}")
-
-""".strip()
-
-
-native_run_method_t = """
-
-public native void run();
-
-"""
-
-
-java_run_method_t = """
+native_method_t     = '{modifiers} native {return_type} {name} ({parameters});'
+dynamic_parameter_t = 'new BasicOption(BasicOption.VARIABLE, "{variable}")'.strip()
+native_run_method_t = 'public native void run();'
+java_run_method_t   = """
 
     public void run() {{
         long i, j;

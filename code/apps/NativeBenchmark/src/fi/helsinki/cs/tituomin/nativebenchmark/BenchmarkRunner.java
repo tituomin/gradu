@@ -46,10 +46,14 @@ public class BenchmarkRunner {
         }
 
         List<MetadataContainer> compiledMetadata = new ArrayList<MetadataContainer> ();
+
+        BenchmarkRegistry.init(1000000, 1);
+        BenchmarkInitialiser.init();
+
         List<Benchmark> benchmarks = BenchmarkRegistry.getBenchmarks();
 
         int j = 0;
-        for (Benchmark benchmark : benchmarks/*.subList(0,10)*/) {
+        for (Benchmark benchmark : benchmarks) {
             Log.v("Runner", "" + j);
             mainUI.updateState(
                 ApplicationState.State.MILESTONE,

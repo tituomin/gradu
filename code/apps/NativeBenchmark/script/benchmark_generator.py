@@ -109,10 +109,12 @@ def specify_combinations():
     return all_combinations
 
 def generate_benchmarks():
+    global class_counter
     java = []
     java_callees = []
     c = []
     c_runners = []
+    c_methodid_inits = []
 
     all_combinations = specify_combinations()
 
@@ -177,14 +179,17 @@ def generate_benchmarks():
                             run_method = java_benchmark.java_run_method(
                                     parameter_declarations       = "; ".join(parameter_declarations[0:i+1]),
                                     parameter_initialisations    = "; ".join(parameter_initialisations[0:i+1]),
-                                    counterpart_method_name      = native_method_name,
+                                    counterpart_method_name      = counterpart_method_name,
                                     counterpart_method_arguments = ", ".join(parameter_names[0:i+1]))
 
-                            native_method = java_benchmark.native_method(
-                                        modifiers                = native_method_modifiers,
-                                        return_type              = return_type['java'],
-                                        name                     = native_method_name,
-                                        parameters               = ", ".join(parameter_declarations[0:i+1]))
+                            if to_lang == 'C':
+                                native_method = java_benchmark.native_method(
+                                            modifiers                = native_method_modifiers,
+                                            return_type              = return_type['java'],
+                                            name                     = native_method_name,
+                                            parameters               = ", ".join(parameter_declarations[0:i+1]))
+                            else:
+                                native_method = ''
 
                         java.append({
                                 'filename' : classname + ".java",
@@ -192,10 +197,9 @@ def generate_benchmarks():
                                 'path'     : '/'.join(packagename),
                                 'code'     : java_benchmark.t.format(
                                     imports                      = '',
-                                    from_language                = 'j',
-                                    to_language                  = 'c',
+                                    from_language                = from_lang,
+                                    to_language                  = to_lang,
                                     class_relations              = '',
-                                    group                        = 'Java to C',
                                     packagename                  = '.'.join(packagename),
                                     classname                    = classname,
                                     library_name                 = library_name,
@@ -211,7 +215,7 @@ def generate_benchmarks():
                                     return_expression = parameter_initialisation('java', return_type, None)))
 
                             # todo append return expressions !! (performance optimisation)
-                            # to counterpart class (at the end or beginning)
+                            # to counterpart class (at the end or beginning) ?
 
                         if (from_lang, to_lang) == ('J', 'C'):
                             c.append(
@@ -236,21 +240,30 @@ def generate_benchmarks():
                                         function = native_method_name),
                                     counterpart_method_arguments = ", ".join(parameter_names[0:i+1])))
 
-                        
+
+                            
                         if (from_lang, to_lang) == ('C', 'J'):
+                            if return_type.get('is-object', return_type.get('is-array', False)):
+                                java_method_type = 'Object'
+                            else:
+                                java_method_type = return_type['java'].capitalize()
+
                             c_runners.append(
                                 c_nativemethod.t_caller_java.format(
+                                    seq_no = class_counter,
                                     packagename = '_'.join(packagename),
-                                    class_descriptor = '/'.join(packagename) + '/' + java_counterpart_classname,
                                     classname = classname,
-                                    method_name = counterpart_method_name,
-                                    method_descriptor = jni_types.method_descriptor(
-                                        return_type, type_combination[0:i+1]),
                                     parameter_declarations = ", ".join(c_parameter_declarations[1:i+2]),
-                                    parameter_initialisations = "; ".join(c_parameter_initialisations[0:i+1]),
-                                    java_return_type = return_type['java'].capitalize(),
+                                    parameter_initialisations = "; ".join(c_parameter_initialisations[0:i+1]),                                   java_method_type = java_method_type,
                                     call_variant= '', # todo test variants?
                                     arguments = ', ' + ', '.join(parameter_names[0:i+1])))
+
+                            c_methodid_inits.append(
+                                c_module.mid_init_t.format(
+                                    seq_no = class_counter,
+                                    method_name = counterpart_method_name,
+                                    method_descriptor = jni_types.method_descriptor(
+                                        return_type, type_combination[0:i+1])))
 
 
     java.append({
@@ -259,7 +272,14 @@ def generate_benchmarks():
             'path'     : '/'.join(packagename),
             'code'     : ''.join(java_callees)})
 
-    c_file = c_module.t.format(jni_function_templates = ''.join(c))
-    c_runners_file = c_module.t.format(jni_function_templates = ''.join(c_runners))
+    c_file = c_module.t.format(
+        jni_function_templates = ''.join(c),
+        initialisers='')
+    
+    c_runners_file = c_module.t.format(
+        jni_function_templates = ''.join(c_runners),
+        initialisers=c_module.initialisers_t.format(
+            mid_inits = ''.join(c_methodid_inits),
+            amount_of_methods = len(c_methodid_inits)))
 
     return java, c_file, c_runners_file

@@ -30,10 +30,6 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
         this.textView   = (TextView) findViewById(R.id.mytextview);
         this.resultView = (TextView) findViewById(R.id.resultview);
         this.button     = (Button)   findViewById(R.id.mybutton);
-
-        BenchmarkRegistry.repetitions = 1000;
-        BenchmarkRegistry.multiplier  = 1000;
-        BenchmarkInitialiser.init();
     }
 
     public void setMessage(int id) {

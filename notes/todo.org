@@ -1,16 +1,34 @@
 
 Gradu: duunit
-* Tee
+* Benchmarks
+** TODO funktioiden paluuarvojen tallennus? (ehkä ei)
+** TODO warm up vm
+** TODO java: final local variables?
+*** android designing for performance: Without a JIT, direct field access is about 3x faster than invoking a trivial getter. With the JIT (where direct field access is as cheap as accessing a local), direct field access is about 7x faster than invoking a trivial getter. This is true in Froyo, but will improve in the future when the JIT inlines getter methods.
 ** TODO no call arguments !!!
 ** TODO lisää muut kuin jnienv-funktiot testiin? (tai perustele miksei)
 ** TODO testaa call-variants (ellipsis, array, va_args)
 * Tarkista
 ** TODO gof-book: onko proxy oikea termi peer classille?
 ** TODO androidin jni-toteutus ei käytä funktiotauluja?
+** TODO register natives?
+   The RegisterNatives function is useful for a number of purposes:
+   - It is sometimes more convenient and *more efficient* to register
+     a large number of native method implementations eagerly, as
+     opposed to letting the virtual machine link these entries lazily.
+   - You may call RegisterNatives multiple times on a method, allowing the
+   native method implementation to be updated at runtime.
+   - RegisterNatives is particularly useful when a native application embeds a
+   virtual machine implementation and needs to link with a native
+   method implementation defined in the native application. The
+   virtual machine would not be able to find this native method
+   implementation automatically because it only searches in native
+   libraries, not the application itself.
+
 * Korjaa
 ** TODO frameworks/native/libs/utils/Timers.cpp
 *** rivi 35 uptimemillis toteutus, ei aina käytä gettimeofdayta
-* Peruskutsutestit
+* DONE Peruskutsutestit
 
 | java | c    | suunta | java | NOTES                                                                    |
 |------+------+--------+------+--------------------------------------------------------------------------|
