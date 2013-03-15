@@ -4,6 +4,7 @@ import  fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.LinuxPerfRecordToo
 import  fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.OptionSpec;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.HashSet;
 import android.util.Pair;
 import java.util.NoSuchElementException;
 
@@ -33,9 +34,19 @@ public class BasicOption implements MeasuringOption {
         return value;
     }
 
+    public String get(String label) {
+        return value;
+    }
+
+    public Set<String> labels() {
+        Set<String> s = new HashSet<String> ();
+        s.add(this.type.id);
+        return s;
+    }
+
     // ---- metadata retrieval
 
-    public Iterator<Pair<String,String>> iterateMetadata() {
+    public Iterator<Pair<String,String>> iterator() {
         return new OptionIterator();
     }
 

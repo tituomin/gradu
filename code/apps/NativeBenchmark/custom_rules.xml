@@ -10,36 +10,29 @@
     </exec>
     <delete file="${jni_src.dir}/${jni_header}" />
     <delete dir="${gen_src.dir}/fi/helsinki/cs/tituomin/nativebenchmark/benchmark" />
+    <delete file="cache.properties"/>
   </target>
 
+
+  <property name="jni_classes_other"
+            value="fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkParameter"/>
 
   <fileset dir="${codegen_script.dir}" id="python-codegen" includes="**/*.py">
     <modified />
   </fileset>
-
-  <property name="jni_classes_other"
-            value="fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkParameter"/>
-  <fileset dir="src" id="other-natives"
-           includes="fi/helsinki/cs/tituomin/nativebenchmark/BenchmarkParameter.java">
-    <modified />
-  </fileset>
-
   <pathconvert
       refid="python-codegen"
       property="codegen.modified"
       setonempty="false"/>
 
+  <fileset dir="src" id="other-natives"
+           includes="fi/helsinki/cs/tituomin/nativebenchmark/BenchmarkParameter.java">
+    <modified />
+  </fileset>
   <pathconvert
       refid="other-natives"
       property="natives.modified"
       setonempty="false"/>
-
-  <condition property="headers-dirty">
-    <or>
-      <isset property="code.generated" />
-      <isset property="natives.modified" />
-    </or>
-  </condition>
 
   <target name="generate_benchmark_sources" if="codegen.modified" >
     <exec executable="python" outputproperty="jni_classes_benchmarks" logError="true" failonerror="true">

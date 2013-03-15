@@ -42,7 +42,7 @@ public class BenchmarkRunner {
     }
 
 
-    public static void runBenchmarks(ApplicationState mainUI) {
+    public static void runBenchmarks(ApplicationState mainUI, long repetitions) {
         File sd = Environment.getExternalStorageDirectory();
         File dataDir = new File(sd, "results");
         dataDir.mkdir();
@@ -54,7 +54,7 @@ public class BenchmarkRunner {
         List<MetadataContainer> compiledMetadata = new ArrayList<MetadataContainer> ();
 
         try {
-            BenchmarkRegistry.init(1000000);
+            BenchmarkRegistry.init(repetitions);
         }
         catch (ClassNotFoundException e) {
             mainUI.updateState(ApplicationState.State.ERROR);

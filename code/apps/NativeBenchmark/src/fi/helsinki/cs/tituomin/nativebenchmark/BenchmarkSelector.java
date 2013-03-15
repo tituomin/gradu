@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.io.File;
 import android.os.Environment;
 import android.content.res.Resources;
+import android.widget.NumberPicker;
 
 public class BenchmarkSelector extends Activity implements ApplicationState {
     /** Called when the activity is first created. */
@@ -28,22 +29,35 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.main);
-        this.textView   = (TextView) findViewById(R.id.mytextview);
-        this.resultView = (TextView) findViewById(R.id.resultview);
-        this.button     = (Button)   findViewById(R.id.mybutton);
+        this.numPick    = (NumberPicker) findViewById(R.id.picker_num);
+        this.expPick    = (NumberPicker) findViewById(R.id.picker_exp);
+        this.resultView = (TextView)     findViewById(R.id.resultview);
+        this.button     = (Button)       findViewById(R.id.mybutton);
+        this.repView    = (TextView)     findViewById(R.id.repetitions);
+
+        numPick.setMaxValue(9);
+        expPick.setMaxValue(18);
+        numPick.setMinValue(1);
+        expPick.setMinValue(0);
+        numPick.setValue(1);
+        expPick.setValue(6);
+        NumberPicker.OnValueChangeListener listener = new RepsListener();
+        numPick.setOnValueChangedListener(listener);
+        expPick.setOnValueChangedListener(listener);
+
         this.resources  = getResources();
     }
 
     public void setMessage(int id) {
-        this.textView.setText(id);
+        this.resultView.setText(id);
     }
 
     public void setMessage(String message) {
-        this.textView.setText(message);
+        this.resultView.setText(message);
     }
 
     public void setMessage(int id, String message) {
-        this.textView.setText(resources.getString(id) + " " + message);
+        this.resultView.setText(resources.getString(id) + " " + message);
     }
 
     public void updateState(ApplicationState.State state) {
@@ -95,17 +109,29 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
         Thread measuringThread = new Thread(
             new Runnable () {
                 public void run() {
-                    BenchmarkRunner.runBenchmarks(BenchmarkSelector.this);
+                    BenchmarkRunner.runBenchmarks(BenchmarkSelector.this, repetitions);
                 }
             });
         this.updateState(ApplicationState.State.MEASURING);
         measuringThread.start();
     }
 
+    private class RepsListener implements NumberPicker.OnValueChangeListener {
+        public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+            long exp = BenchmarkSelector.this.expPick.getValue();
+            long value = BenchmarkSelector.this.numPick.getValue();
+            while (exp-- > 0) { value *= 10; }
+            repetitions = value;
+            repView.setText("" + repetitions);
+        }
+    }
+
     private MeasuringTool tool;
-    private TextView textView, resultView;
+    private TextView textView, resultView, repView;
+    private NumberPicker numPick, expPick;
     private Button button;
     private Resources resources;
+    private long repetitions;
     private static final String TAG = "BenchmarkSelector";
 
     static {

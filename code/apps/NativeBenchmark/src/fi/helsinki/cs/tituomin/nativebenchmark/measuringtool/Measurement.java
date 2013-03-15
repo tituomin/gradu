@@ -3,6 +3,7 @@ package fi.helsinki.cs.tituomin.nativebenchmark.measuringtool;
 import fi.helsinki.cs.tituomin.nativebenchmark.MetadataContainer;
 import java.util.NoSuchElementException;
 import java.util.Collection;
+import java.util.Set;
 import java.util.Iterator;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -38,6 +39,14 @@ public class Measurement implements MetadataContainer, Iterable<Pair<String,Stri
             throw new UnsupportedOperationException();
         }
         private String currentKey;
+    }
+
+    public String get(String label) {
+        return this.values.get(label);
+    }
+
+    public Set<String> labels() {
+        return this.values.keySet();
     }
 
     public void addData(String key, String value) {

@@ -19,7 +19,7 @@ public class BenchmarkRegistry {
 
     public static void init(long reps) throws ClassNotFoundException {
         repetitions = reps;
-        Class jCounterparts = Class.forName("JavaCounterparts");
+        Class jCounterparts = Class.forName("fi.helsinki.cs.tituomin.nativebenchmark.benchmark.JavaCounterparts");
         initNative(reps, jCounterparts);
     }
 

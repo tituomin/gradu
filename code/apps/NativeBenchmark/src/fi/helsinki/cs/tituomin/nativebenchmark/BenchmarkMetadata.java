@@ -10,7 +10,6 @@ import java.util.Collections;
 import java.util.Iterator;
 import android.util.Pair;
 
-import fi.helsinki.cs.tituomin.nativebenchmark.PairComparator;
 
 public class BenchmarkMetadata implements MetadataContainer {
 

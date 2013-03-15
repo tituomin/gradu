@@ -6,4 +6,7 @@
     <string name="measuring_milestone">Measuring...</string>
     <string name="measuring_finished">Measuring finished</string>
     <string name="error">An error occurred</string>
+    <string name="base_val">Reps:</string>
+    <string name="exponent">Exponent:</string>
+    <string name="repetitions">repetitions</string>
 </resources>

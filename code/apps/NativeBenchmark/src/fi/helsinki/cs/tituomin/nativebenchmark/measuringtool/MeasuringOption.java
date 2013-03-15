@@ -12,7 +12,4 @@ public interface MeasuringOption extends MetadataContainer {
     public String value();
     public OptionSpec type();
     public Pair<String,String> toStringPair();
-
-    public Iterator<Pair<String,String>> iterateMetadata();
-
 }
