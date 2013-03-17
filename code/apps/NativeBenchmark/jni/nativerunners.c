@@ -13,7 +13,7 @@ static jmethodID mids[468];
 static void init_methodids(JNIEnv *env) {
     jmethodID mid;
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00001", "(Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00001", "(Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -21,7 +21,7 @@ static void init_methodids(JNIEnv *env) {
     mids[1 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00002", "(Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00002", "(Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -29,7 +29,7 @@ static void init_methodids(JNIEnv *env) {
     mids[2 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00003", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00003", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -37,7 +37,7 @@ static void init_methodids(JNIEnv *env) {
     mids[3 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00004", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00004", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -45,7 +45,7 @@ static void init_methodids(JNIEnv *env) {
     mids[4 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00005", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00005", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -53,7 +53,7 @@ static void init_methodids(JNIEnv *env) {
     mids[5 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00006", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00006", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -61,7 +61,7 @@ static void init_methodids(JNIEnv *env) {
     mids[6 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00007", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00007", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -69,7 +69,7 @@ static void init_methodids(JNIEnv *env) {
     mids[7 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00008", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00008", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -77,7 +77,7 @@ static void init_methodids(JNIEnv *env) {
     mids[8 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00009", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00009", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -85,7 +85,7 @@ static void init_methodids(JNIEnv *env) {
     mids[9 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00010", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00010", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -93,7 +93,7 @@ static void init_methodids(JNIEnv *env) {
     mids[10 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00011", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00011", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -101,7 +101,7 @@ static void init_methodids(JNIEnv *env) {
     mids[11 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00012", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00012", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -109,7 +109,7 @@ static void init_methodids(JNIEnv *env) {
     mids[12 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00013", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00013", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -117,7 +117,7 @@ static void init_methodids(JNIEnv *env) {
     mids[13 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00014", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00014", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -125,7 +125,7 @@ static void init_methodids(JNIEnv *env) {
     mids[14 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00015", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00015", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -133,7 +133,7 @@ static void init_methodids(JNIEnv *env) {
     mids[15 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00016", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00016", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -141,7 +141,7 @@ static void init_methodids(JNIEnv *env) {
     mids[16 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00017", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00017", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -149,7 +149,7 @@ static void init_methodids(JNIEnv *env) {
     mids[17 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00018", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00018", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -157,7 +157,7 @@ static void init_methodids(JNIEnv *env) {
     mids[18 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00019", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00019", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -165,7 +165,7 @@ static void init_methodids(JNIEnv *env) {
     mids[19 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00020", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00020", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -173,7 +173,7 @@ static void init_methodids(JNIEnv *env) {
     mids[20 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00021", "([C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00021", "([C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C)V not found.");
         return; /* method not found */
@@ -181,7 +181,7 @@ static void init_methodids(JNIEnv *env) {
     mids[21 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00022", "([C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00022", "([C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C)V not found.");
         return; /* method not found */
@@ -189,7 +189,7 @@ static void init_methodids(JNIEnv *env) {
     mids[22 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00023", "([C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00023", "([C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C)V not found.");
         return; /* method not found */
@@ -197,7 +197,7 @@ static void init_methodids(JNIEnv *env) {
     mids[23 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00024", "([C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00024", "([C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C)V not found.");
         return; /* method not found */
@@ -205,7 +205,7 @@ static void init_methodids(JNIEnv *env) {
     mids[24 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00025", "([C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00025", "([C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -213,7 +213,7 @@ static void init_methodids(JNIEnv *env) {
     mids[25 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00026", "([C[C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00026", "([C[C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -221,7 +221,7 @@ static void init_methodids(JNIEnv *env) {
     mids[26 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00027", "([C[C[C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00027", "([C[C[C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -229,7 +229,7 @@ static void init_methodids(JNIEnv *env) {
     mids[27 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00028", "([C[C[C[C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00028", "([C[C[C[C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -237,7 +237,7 @@ static void init_methodids(JNIEnv *env) {
     mids[28 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00029", "([C[C[C[C[C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00029", "([C[C[C[C[C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -245,7 +245,7 @@ static void init_methodids(JNIEnv *env) {
     mids[29 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00030", "([C[C[C[C[C[C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00030", "([C[C[C[C[C[C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C[C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -253,7 +253,7 @@ static void init_methodids(JNIEnv *env) {
     mids[30 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00031", "([C[C[C[C[C[C[C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00031", "([C[C[C[C[C[C[C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C[C[C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -261,7 +261,7 @@ static void init_methodids(JNIEnv *env) {
     mids[31 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00032", "([C[C[C[C[C[C[C[C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00032", "([C[C[C[C[C[C[C[C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C[C[C[C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -269,7 +269,7 @@ static void init_methodids(JNIEnv *env) {
     mids[32 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00033", "([C[C[C[C[C[C[C[C[C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00033", "([C[C[C[C[C[C[C[C[C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C[C[C[C[C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -277,7 +277,7 @@ static void init_methodids(JNIEnv *env) {
     mids[33 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00034", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00034", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -285,7 +285,7 @@ static void init_methodids(JNIEnv *env) {
     mids[34 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00035", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00035", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -293,7 +293,7 @@ static void init_methodids(JNIEnv *env) {
     mids[35 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00036", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00036", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -301,7 +301,7 @@ static void init_methodids(JNIEnv *env) {
     mids[36 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00037", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00037", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -309,7 +309,7 @@ static void init_methodids(JNIEnv *env) {
     mids[37 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00038", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00038", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -317,7 +317,7 @@ static void init_methodids(JNIEnv *env) {
     mids[38 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00039", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00039", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -325,7 +325,7 @@ static void init_methodids(JNIEnv *env) {
     mids[39 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00040", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00040", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V not found.");
         return; /* method not found */
@@ -333,7 +333,7 @@ static void init_methodids(JNIEnv *env) {
     mids[40 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00041", "(C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00041", "(C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(C)V not found.");
         return; /* method not found */
@@ -341,7 +341,7 @@ static void init_methodids(JNIEnv *env) {
     mids[41 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00042", "(CC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00042", "(CC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CC)V not found.");
         return; /* method not found */
@@ -349,7 +349,7 @@ static void init_methodids(JNIEnv *env) {
     mids[42 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00043", "(CCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00043", "(CCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCC)V not found.");
         return; /* method not found */
@@ -357,7 +357,7 @@ static void init_methodids(JNIEnv *env) {
     mids[43 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00044", "(CCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00044", "(CCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCC)V not found.");
         return; /* method not found */
@@ -365,7 +365,7 @@ static void init_methodids(JNIEnv *env) {
     mids[44 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00045", "(CCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00045", "(CCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCC)V not found.");
         return; /* method not found */
@@ -373,7 +373,7 @@ static void init_methodids(JNIEnv *env) {
     mids[45 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00046", "(CCCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00046", "(CCCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCCC)V not found.");
         return; /* method not found */
@@ -381,7 +381,7 @@ static void init_methodids(JNIEnv *env) {
     mids[46 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00047", "(CCCCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00047", "(CCCCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCCCC)V not found.");
         return; /* method not found */
@@ -389,7 +389,7 @@ static void init_methodids(JNIEnv *env) {
     mids[47 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00048", "(CCCCCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00048", "(CCCCCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCCCCC)V not found.");
         return; /* method not found */
@@ -397,7 +397,7 @@ static void init_methodids(JNIEnv *env) {
     mids[48 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00049", "(CCCCCCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00049", "(CCCCCCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCCCCCC)V not found.");
         return; /* method not found */
@@ -405,7 +405,7 @@ static void init_methodids(JNIEnv *env) {
     mids[49 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00050", "(CCCCCCCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00050", "(CCCCCCCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCCCCCCC)V not found.");
         return; /* method not found */
@@ -413,7 +413,7 @@ static void init_methodids(JNIEnv *env) {
     mids[50 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00051", "(CCCCCCCCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00051", "(CCCCCCCCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCCCCCCCC)V not found.");
         return; /* method not found */
@@ -421,7 +421,7 @@ static void init_methodids(JNIEnv *env) {
     mids[51 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00052", "(CCCCCCCCCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00052", "(CCCCCCCCCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCCCCCCCCC)V not found.");
         return; /* method not found */
@@ -429,7 +429,7 @@ static void init_methodids(JNIEnv *env) {
     mids[52 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00053", "(CCCCCCCCCCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00053", "(CCCCCCCCCCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCCCCCCCCCC)V not found.");
         return; /* method not found */
@@ -437,7 +437,7 @@ static void init_methodids(JNIEnv *env) {
     mids[53 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00054", "(CCCCCCCCCCCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00054", "(CCCCCCCCCCCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCCCCCCCCCCC)V not found.");
         return; /* method not found */
@@ -445,7 +445,7 @@ static void init_methodids(JNIEnv *env) {
     mids[54 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00055", "(CCCCCCCCCCCCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00055", "(CCCCCCCCCCCCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCCCCCCCCCCCC)V not found.");
         return; /* method not found */
@@ -453,7 +453,7 @@ static void init_methodids(JNIEnv *env) {
     mids[55 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00056", "(CCCCCCCCCCCCCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00056", "(CCCCCCCCCCCCCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCCCCCCCCCCCCC)V not found.");
         return; /* method not found */
@@ -461,7 +461,7 @@ static void init_methodids(JNIEnv *env) {
     mids[56 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00057", "(CCCCCCCCCCCCCCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00057", "(CCCCCCCCCCCCCCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCCCCCCCCCCCCCC)V not found.");
         return; /* method not found */
@@ -469,7 +469,7 @@ static void init_methodids(JNIEnv *env) {
     mids[57 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00058", "(CCCCCCCCCCCCCCCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00058", "(CCCCCCCCCCCCCCCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCCCCCCCCCCCCCCC)V not found.");
         return; /* method not found */
@@ -477,7 +477,7 @@ static void init_methodids(JNIEnv *env) {
     mids[58 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00059", "(CCCCCCCCCCCCCCCCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00059", "(CCCCCCCCCCCCCCCCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCCCCCCCCCCCCCCCC)V not found.");
         return; /* method not found */
@@ -485,7 +485,7 @@ static void init_methodids(JNIEnv *env) {
     mids[59 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00060", "(CCCCCCCCCCCCCCCCCCCC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00060", "(CCCCCCCCCCCCCCCCCCCC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(CCCCCCCCCCCCCCCCCCCC)V not found.");
         return; /* method not found */
@@ -493,7 +493,7 @@ static void init_methodids(JNIEnv *env) {
     mids[60 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00061", "(Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00061", "(Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Z)V not found.");
         return; /* method not found */
@@ -501,7 +501,7 @@ static void init_methodids(JNIEnv *env) {
     mids[61 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00062", "(ZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00062", "(ZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZ)V not found.");
         return; /* method not found */
@@ -509,7 +509,7 @@ static void init_methodids(JNIEnv *env) {
     mids[62 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00063", "(ZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00063", "(ZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZ)V not found.");
         return; /* method not found */
@@ -517,7 +517,7 @@ static void init_methodids(JNIEnv *env) {
     mids[63 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00064", "(ZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00064", "(ZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZ)V not found.");
         return; /* method not found */
@@ -525,7 +525,7 @@ static void init_methodids(JNIEnv *env) {
     mids[64 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00065", "(ZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00065", "(ZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZ)V not found.");
         return; /* method not found */
@@ -533,7 +533,7 @@ static void init_methodids(JNIEnv *env) {
     mids[65 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00066", "(ZZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00066", "(ZZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZZ)V not found.");
         return; /* method not found */
@@ -541,7 +541,7 @@ static void init_methodids(JNIEnv *env) {
     mids[66 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00067", "(ZZZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00067", "(ZZZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZZZ)V not found.");
         return; /* method not found */
@@ -549,7 +549,7 @@ static void init_methodids(JNIEnv *env) {
     mids[67 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00068", "(ZZZZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00068", "(ZZZZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZZZZ)V not found.");
         return; /* method not found */
@@ -557,7 +557,7 @@ static void init_methodids(JNIEnv *env) {
     mids[68 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00069", "(ZZZZZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00069", "(ZZZZZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZZZZZ)V not found.");
         return; /* method not found */
@@ -565,7 +565,7 @@ static void init_methodids(JNIEnv *env) {
     mids[69 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00070", "(ZZZZZZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00070", "(ZZZZZZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZZZZZZ)V not found.");
         return; /* method not found */
@@ -573,7 +573,7 @@ static void init_methodids(JNIEnv *env) {
     mids[70 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00071", "(ZZZZZZZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00071", "(ZZZZZZZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZZZZZZZ)V not found.");
         return; /* method not found */
@@ -581,7 +581,7 @@ static void init_methodids(JNIEnv *env) {
     mids[71 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00072", "(ZZZZZZZZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00072", "(ZZZZZZZZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZZZZZZZZ)V not found.");
         return; /* method not found */
@@ -589,7 +589,7 @@ static void init_methodids(JNIEnv *env) {
     mids[72 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00073", "(ZZZZZZZZZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00073", "(ZZZZZZZZZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZZZZZZZZZ)V not found.");
         return; /* method not found */
@@ -597,7 +597,7 @@ static void init_methodids(JNIEnv *env) {
     mids[73 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00074", "(ZZZZZZZZZZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00074", "(ZZZZZZZZZZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZZZZZZZZZZ)V not found.");
         return; /* method not found */
@@ -605,7 +605,7 @@ static void init_methodids(JNIEnv *env) {
     mids[74 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00075", "(ZZZZZZZZZZZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00075", "(ZZZZZZZZZZZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZZZZZZZZZZZ)V not found.");
         return; /* method not found */
@@ -613,7 +613,7 @@ static void init_methodids(JNIEnv *env) {
     mids[75 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00076", "(ZZZZZZZZZZZZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00076", "(ZZZZZZZZZZZZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZZZZZZZZZZZZ)V not found.");
         return; /* method not found */
@@ -621,7 +621,7 @@ static void init_methodids(JNIEnv *env) {
     mids[76 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00077", "(ZZZZZZZZZZZZZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00077", "(ZZZZZZZZZZZZZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZZZZZZZZZZZZZ)V not found.");
         return; /* method not found */
@@ -629,7 +629,7 @@ static void init_methodids(JNIEnv *env) {
     mids[77 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00078", "(ZZZZZZZZZZZZZZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00078", "(ZZZZZZZZZZZZZZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZZZZZZZZZZZZZZ)V not found.");
         return; /* method not found */
@@ -637,7 +637,7 @@ static void init_methodids(JNIEnv *env) {
     mids[78 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00079", "(ZZZZZZZZZZZZZZZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00079", "(ZZZZZZZZZZZZZZZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZZZZZZZZZZZZZZZ)V not found.");
         return; /* method not found */
@@ -645,7 +645,7 @@ static void init_methodids(JNIEnv *env) {
     mids[79 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00080", "(ZZZZZZZZZZZZZZZZZZZZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00080", "(ZZZZZZZZZZZZZZZZZZZZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(ZZZZZZZZZZZZZZZZZZZZ)V not found.");
         return; /* method not found */
@@ -653,7 +653,7 @@ static void init_methodids(JNIEnv *env) {
     mids[80 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00081", "(D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00081", "(D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(D)V not found.");
         return; /* method not found */
@@ -661,7 +661,7 @@ static void init_methodids(JNIEnv *env) {
     mids[81 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00082", "(DD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00082", "(DD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DD)V not found.");
         return; /* method not found */
@@ -669,7 +669,7 @@ static void init_methodids(JNIEnv *env) {
     mids[82 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00083", "(DDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00083", "(DDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDD)V not found.");
         return; /* method not found */
@@ -677,7 +677,7 @@ static void init_methodids(JNIEnv *env) {
     mids[83 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00084", "(DDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00084", "(DDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDD)V not found.");
         return; /* method not found */
@@ -685,7 +685,7 @@ static void init_methodids(JNIEnv *env) {
     mids[84 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00085", "(DDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00085", "(DDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDD)V not found.");
         return; /* method not found */
@@ -693,7 +693,7 @@ static void init_methodids(JNIEnv *env) {
     mids[85 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00086", "(DDDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00086", "(DDDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDDD)V not found.");
         return; /* method not found */
@@ -701,7 +701,7 @@ static void init_methodids(JNIEnv *env) {
     mids[86 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00087", "(DDDDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00087", "(DDDDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDDDD)V not found.");
         return; /* method not found */
@@ -709,7 +709,7 @@ static void init_methodids(JNIEnv *env) {
     mids[87 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00088", "(DDDDDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00088", "(DDDDDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDDDDD)V not found.");
         return; /* method not found */
@@ -717,7 +717,7 @@ static void init_methodids(JNIEnv *env) {
     mids[88 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00089", "(DDDDDDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00089", "(DDDDDDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDDDDDD)V not found.");
         return; /* method not found */
@@ -725,7 +725,7 @@ static void init_methodids(JNIEnv *env) {
     mids[89 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00090", "(DDDDDDDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00090", "(DDDDDDDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDDDDDDD)V not found.");
         return; /* method not found */
@@ -733,7 +733,7 @@ static void init_methodids(JNIEnv *env) {
     mids[90 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00091", "(DDDDDDDDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00091", "(DDDDDDDDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDDDDDDDD)V not found.");
         return; /* method not found */
@@ -741,7 +741,7 @@ static void init_methodids(JNIEnv *env) {
     mids[91 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00092", "(DDDDDDDDDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00092", "(DDDDDDDDDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDDDDDDDDD)V not found.");
         return; /* method not found */
@@ -749,7 +749,7 @@ static void init_methodids(JNIEnv *env) {
     mids[92 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00093", "(DDDDDDDDDDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00093", "(DDDDDDDDDDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDDDDDDDDDD)V not found.");
         return; /* method not found */
@@ -757,7 +757,7 @@ static void init_methodids(JNIEnv *env) {
     mids[93 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00094", "(DDDDDDDDDDDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00094", "(DDDDDDDDDDDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDDDDDDDDDDD)V not found.");
         return; /* method not found */
@@ -765,7 +765,7 @@ static void init_methodids(JNIEnv *env) {
     mids[94 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00095", "(DDDDDDDDDDDDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00095", "(DDDDDDDDDDDDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDDDDDDDDDDDD)V not found.");
         return; /* method not found */
@@ -773,7 +773,7 @@ static void init_methodids(JNIEnv *env) {
     mids[95 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00096", "(DDDDDDDDDDDDDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00096", "(DDDDDDDDDDDDDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDDDDDDDDDDDDD)V not found.");
         return; /* method not found */
@@ -781,7 +781,7 @@ static void init_methodids(JNIEnv *env) {
     mids[96 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00097", "(DDDDDDDDDDDDDDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00097", "(DDDDDDDDDDDDDDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDDDDDDDDDDDDDD)V not found.");
         return; /* method not found */
@@ -789,7 +789,7 @@ static void init_methodids(JNIEnv *env) {
     mids[97 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00098", "(DDDDDDDDDDDDDDDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00098", "(DDDDDDDDDDDDDDDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDDDDDDDDDDDDDDD)V not found.");
         return; /* method not found */
@@ -797,7 +797,7 @@ static void init_methodids(JNIEnv *env) {
     mids[98 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00099", "(DDDDDDDDDDDDDDDDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00099", "(DDDDDDDDDDDDDDDDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDDDDDDDDDDDDDDDD)V not found.");
         return; /* method not found */
@@ -805,7 +805,7 @@ static void init_methodids(JNIEnv *env) {
     mids[99 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00100", "(DDDDDDDDDDDDDDDDDDDD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00100", "(DDDDDDDDDDDDDDDDDDDD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(DDDDDDDDDDDDDDDDDDDD)V not found.");
         return; /* method not found */
@@ -813,7 +813,7 @@ static void init_methodids(JNIEnv *env) {
     mids[100 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00101", "(F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00101", "(F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(F)V not found.");
         return; /* method not found */
@@ -821,7 +821,7 @@ static void init_methodids(JNIEnv *env) {
     mids[101 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00102", "(FF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00102", "(FF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FF)V not found.");
         return; /* method not found */
@@ -829,7 +829,7 @@ static void init_methodids(JNIEnv *env) {
     mids[102 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00103", "(FFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00103", "(FFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFF)V not found.");
         return; /* method not found */
@@ -837,7 +837,7 @@ static void init_methodids(JNIEnv *env) {
     mids[103 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00104", "(FFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00104", "(FFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFF)V not found.");
         return; /* method not found */
@@ -845,7 +845,7 @@ static void init_methodids(JNIEnv *env) {
     mids[104 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00105", "(FFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00105", "(FFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFF)V not found.");
         return; /* method not found */
@@ -853,7 +853,7 @@ static void init_methodids(JNIEnv *env) {
     mids[105 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00106", "(FFFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00106", "(FFFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFFF)V not found.");
         return; /* method not found */
@@ -861,7 +861,7 @@ static void init_methodids(JNIEnv *env) {
     mids[106 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00107", "(FFFFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00107", "(FFFFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFFFF)V not found.");
         return; /* method not found */
@@ -869,7 +869,7 @@ static void init_methodids(JNIEnv *env) {
     mids[107 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00108", "(FFFFFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00108", "(FFFFFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFFFFF)V not found.");
         return; /* method not found */
@@ -877,7 +877,7 @@ static void init_methodids(JNIEnv *env) {
     mids[108 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00109", "(FFFFFFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00109", "(FFFFFFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFFFFFF)V not found.");
         return; /* method not found */
@@ -885,7 +885,7 @@ static void init_methodids(JNIEnv *env) {
     mids[109 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00110", "(FFFFFFFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00110", "(FFFFFFFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFFFFFFF)V not found.");
         return; /* method not found */
@@ -893,7 +893,7 @@ static void init_methodids(JNIEnv *env) {
     mids[110 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00111", "(FFFFFFFFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00111", "(FFFFFFFFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFFFFFFFF)V not found.");
         return; /* method not found */
@@ -901,7 +901,7 @@ static void init_methodids(JNIEnv *env) {
     mids[111 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00112", "(FFFFFFFFFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00112", "(FFFFFFFFFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFFFFFFFFF)V not found.");
         return; /* method not found */
@@ -909,7 +909,7 @@ static void init_methodids(JNIEnv *env) {
     mids[112 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00113", "(FFFFFFFFFFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00113", "(FFFFFFFFFFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFFFFFFFFFF)V not found.");
         return; /* method not found */
@@ -917,7 +917,7 @@ static void init_methodids(JNIEnv *env) {
     mids[113 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00114", "(FFFFFFFFFFFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00114", "(FFFFFFFFFFFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFFFFFFFFFFF)V not found.");
         return; /* method not found */
@@ -925,7 +925,7 @@ static void init_methodids(JNIEnv *env) {
     mids[114 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00115", "(FFFFFFFFFFFFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00115", "(FFFFFFFFFFFFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFFFFFFFFFFFF)V not found.");
         return; /* method not found */
@@ -933,7 +933,7 @@ static void init_methodids(JNIEnv *env) {
     mids[115 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00116", "(FFFFFFFFFFFFFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00116", "(FFFFFFFFFFFFFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFFFFFFFFFFFFF)V not found.");
         return; /* method not found */
@@ -941,7 +941,7 @@ static void init_methodids(JNIEnv *env) {
     mids[116 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00117", "(FFFFFFFFFFFFFFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00117", "(FFFFFFFFFFFFFFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFFFFFFFFFFFFFF)V not found.");
         return; /* method not found */
@@ -949,7 +949,7 @@ static void init_methodids(JNIEnv *env) {
     mids[117 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00118", "(FFFFFFFFFFFFFFFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00118", "(FFFFFFFFFFFFFFFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFFFFFFFFFFFFFFF)V not found.");
         return; /* method not found */
@@ -957,7 +957,7 @@ static void init_methodids(JNIEnv *env) {
     mids[118 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00119", "(FFFFFFFFFFFFFFFFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00119", "(FFFFFFFFFFFFFFFFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFFFFFFFFFFFFFFFF)V not found.");
         return; /* method not found */
@@ -965,7 +965,7 @@ static void init_methodids(JNIEnv *env) {
     mids[119 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00120", "(FFFFFFFFFFFFFFFFFFFF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00120", "(FFFFFFFFFFFFFFFFFFFF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(FFFFFFFFFFFFFFFFFFFF)V not found.");
         return; /* method not found */
@@ -973,7 +973,7 @@ static void init_methodids(JNIEnv *env) {
     mids[120 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00121", "(I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00121", "(I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)V not found.");
         return; /* method not found */
@@ -981,7 +981,7 @@ static void init_methodids(JNIEnv *env) {
     mids[121 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00122", "(II)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00122", "(II)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(II)V not found.");
         return; /* method not found */
@@ -989,7 +989,7 @@ static void init_methodids(JNIEnv *env) {
     mids[122 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00123", "(III)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00123", "(III)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(III)V not found.");
         return; /* method not found */
@@ -997,7 +997,7 @@ static void init_methodids(JNIEnv *env) {
     mids[123 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00124", "(IIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00124", "(IIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIII)V not found.");
         return; /* method not found */
@@ -1005,7 +1005,7 @@ static void init_methodids(JNIEnv *env) {
     mids[124 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00125", "(IIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00125", "(IIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIII)V not found.");
         return; /* method not found */
@@ -1013,7 +1013,7 @@ static void init_methodids(JNIEnv *env) {
     mids[125 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00126", "(IIIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00126", "(IIIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIIII)V not found.");
         return; /* method not found */
@@ -1021,7 +1021,7 @@ static void init_methodids(JNIEnv *env) {
     mids[126 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00127", "(IIIIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00127", "(IIIIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIIIII)V not found.");
         return; /* method not found */
@@ -1029,7 +1029,7 @@ static void init_methodids(JNIEnv *env) {
     mids[127 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00128", "(IIIIIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00128", "(IIIIIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIIIIII)V not found.");
         return; /* method not found */
@@ -1037,7 +1037,7 @@ static void init_methodids(JNIEnv *env) {
     mids[128 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00129", "(IIIIIIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00129", "(IIIIIIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIIIIIII)V not found.");
         return; /* method not found */
@@ -1045,7 +1045,7 @@ static void init_methodids(JNIEnv *env) {
     mids[129 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00130", "(IIIIIIIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00130", "(IIIIIIIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIIIIIIII)V not found.");
         return; /* method not found */
@@ -1053,7 +1053,7 @@ static void init_methodids(JNIEnv *env) {
     mids[130 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00131", "(IIIIIIIIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00131", "(IIIIIIIIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIIIIIIIII)V not found.");
         return; /* method not found */
@@ -1061,7 +1061,7 @@ static void init_methodids(JNIEnv *env) {
     mids[131 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00132", "(IIIIIIIIIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00132", "(IIIIIIIIIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIIIIIIIIII)V not found.");
         return; /* method not found */
@@ -1069,7 +1069,7 @@ static void init_methodids(JNIEnv *env) {
     mids[132 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00133", "(IIIIIIIIIIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00133", "(IIIIIIIIIIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIIIIIIIIIII)V not found.");
         return; /* method not found */
@@ -1077,7 +1077,7 @@ static void init_methodids(JNIEnv *env) {
     mids[133 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00134", "(IIIIIIIIIIIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00134", "(IIIIIIIIIIIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIIIIIIIIIIII)V not found.");
         return; /* method not found */
@@ -1085,7 +1085,7 @@ static void init_methodids(JNIEnv *env) {
     mids[134 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00135", "(IIIIIIIIIIIIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00135", "(IIIIIIIIIIIIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIIIIIIIIIIIII)V not found.");
         return; /* method not found */
@@ -1093,7 +1093,7 @@ static void init_methodids(JNIEnv *env) {
     mids[135 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00136", "(IIIIIIIIIIIIIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00136", "(IIIIIIIIIIIIIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIIIIIIIIIIIIII)V not found.");
         return; /* method not found */
@@ -1101,7 +1101,7 @@ static void init_methodids(JNIEnv *env) {
     mids[136 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00137", "(IIIIIIIIIIIIIIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00137", "(IIIIIIIIIIIIIIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIIIIIIIIIIIIIII)V not found.");
         return; /* method not found */
@@ -1109,7 +1109,7 @@ static void init_methodids(JNIEnv *env) {
     mids[137 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00138", "(IIIIIIIIIIIIIIIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00138", "(IIIIIIIIIIIIIIIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIIIIIIIIIIIIIIII)V not found.");
         return; /* method not found */
@@ -1117,7 +1117,7 @@ static void init_methodids(JNIEnv *env) {
     mids[138 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00139", "(IIIIIIIIIIIIIIIIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00139", "(IIIIIIIIIIIIIIIIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIIIIIIIIIIIIIIIII)V not found.");
         return; /* method not found */
@@ -1125,7 +1125,7 @@ static void init_methodids(JNIEnv *env) {
     mids[139 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00140", "(IIIIIIIIIIIIIIIIIIII)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00140", "(IIIIIIIIIIIIIIIIIIII)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(IIIIIIIIIIIIIIIIIIII)V not found.");
         return; /* method not found */
@@ -1133,7 +1133,7 @@ static void init_methodids(JNIEnv *env) {
     mids[140 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00141", "([F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00141", "([F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F)V not found.");
         return; /* method not found */
@@ -1141,7 +1141,7 @@ static void init_methodids(JNIEnv *env) {
     mids[141 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00142", "([F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00142", "([F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F)V not found.");
         return; /* method not found */
@@ -1149,7 +1149,7 @@ static void init_methodids(JNIEnv *env) {
     mids[142 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00143", "([F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00143", "([F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F)V not found.");
         return; /* method not found */
@@ -1157,7 +1157,7 @@ static void init_methodids(JNIEnv *env) {
     mids[143 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00144", "([F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00144", "([F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F)V not found.");
         return; /* method not found */
@@ -1165,7 +1165,7 @@ static void init_methodids(JNIEnv *env) {
     mids[144 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00145", "([F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00145", "([F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1173,7 +1173,7 @@ static void init_methodids(JNIEnv *env) {
     mids[145 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00146", "([F[F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00146", "([F[F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1181,7 +1181,7 @@ static void init_methodids(JNIEnv *env) {
     mids[146 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00147", "([F[F[F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00147", "([F[F[F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1189,7 +1189,7 @@ static void init_methodids(JNIEnv *env) {
     mids[147 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00148", "([F[F[F[F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00148", "([F[F[F[F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1197,7 +1197,7 @@ static void init_methodids(JNIEnv *env) {
     mids[148 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00149", "([F[F[F[F[F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00149", "([F[F[F[F[F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1205,7 +1205,7 @@ static void init_methodids(JNIEnv *env) {
     mids[149 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00150", "([F[F[F[F[F[F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00150", "([F[F[F[F[F[F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F[F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1213,7 +1213,7 @@ static void init_methodids(JNIEnv *env) {
     mids[150 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00151", "([F[F[F[F[F[F[F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00151", "([F[F[F[F[F[F[F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F[F[F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1221,7 +1221,7 @@ static void init_methodids(JNIEnv *env) {
     mids[151 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00152", "([F[F[F[F[F[F[F[F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00152", "([F[F[F[F[F[F[F[F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F[F[F[F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1229,7 +1229,7 @@ static void init_methodids(JNIEnv *env) {
     mids[152 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00153", "([F[F[F[F[F[F[F[F[F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00153", "([F[F[F[F[F[F[F[F[F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F[F[F[F[F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1237,7 +1237,7 @@ static void init_methodids(JNIEnv *env) {
     mids[153 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00154", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00154", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1245,7 +1245,7 @@ static void init_methodids(JNIEnv *env) {
     mids[154 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00155", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00155", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1253,7 +1253,7 @@ static void init_methodids(JNIEnv *env) {
     mids[155 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00156", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00156", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1261,7 +1261,7 @@ static void init_methodids(JNIEnv *env) {
     mids[156 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00157", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00157", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1269,7 +1269,7 @@ static void init_methodids(JNIEnv *env) {
     mids[157 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00158", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00158", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1277,7 +1277,7 @@ static void init_methodids(JNIEnv *env) {
     mids[158 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00159", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00159", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1285,7 +1285,7 @@ static void init_methodids(JNIEnv *env) {
     mids[159 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00160", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00160", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V not found.");
         return; /* method not found */
@@ -1293,7 +1293,7 @@ static void init_methodids(JNIEnv *env) {
     mids[160 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00161", "(J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00161", "(J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(J)V not found.");
         return; /* method not found */
@@ -1301,7 +1301,7 @@ static void init_methodids(JNIEnv *env) {
     mids[161 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00162", "(JJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00162", "(JJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJ)V not found.");
         return; /* method not found */
@@ -1309,7 +1309,7 @@ static void init_methodids(JNIEnv *env) {
     mids[162 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00163", "(JJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00163", "(JJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJ)V not found.");
         return; /* method not found */
@@ -1317,7 +1317,7 @@ static void init_methodids(JNIEnv *env) {
     mids[163 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00164", "(JJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00164", "(JJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJ)V not found.");
         return; /* method not found */
@@ -1325,7 +1325,7 @@ static void init_methodids(JNIEnv *env) {
     mids[164 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00165", "(JJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00165", "(JJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJ)V not found.");
         return; /* method not found */
@@ -1333,7 +1333,7 @@ static void init_methodids(JNIEnv *env) {
     mids[165 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00166", "(JJJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00166", "(JJJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJJ)V not found.");
         return; /* method not found */
@@ -1341,7 +1341,7 @@ static void init_methodids(JNIEnv *env) {
     mids[166 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00167", "(JJJJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00167", "(JJJJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJJJ)V not found.");
         return; /* method not found */
@@ -1349,7 +1349,7 @@ static void init_methodids(JNIEnv *env) {
     mids[167 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00168", "(JJJJJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00168", "(JJJJJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJJJJ)V not found.");
         return; /* method not found */
@@ -1357,7 +1357,7 @@ static void init_methodids(JNIEnv *env) {
     mids[168 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00169", "(JJJJJJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00169", "(JJJJJJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJJJJJ)V not found.");
         return; /* method not found */
@@ -1365,7 +1365,7 @@ static void init_methodids(JNIEnv *env) {
     mids[169 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00170", "(JJJJJJJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00170", "(JJJJJJJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJJJJJJ)V not found.");
         return; /* method not found */
@@ -1373,7 +1373,7 @@ static void init_methodids(JNIEnv *env) {
     mids[170 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00171", "(JJJJJJJJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00171", "(JJJJJJJJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJJJJJJJ)V not found.");
         return; /* method not found */
@@ -1381,7 +1381,7 @@ static void init_methodids(JNIEnv *env) {
     mids[171 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00172", "(JJJJJJJJJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00172", "(JJJJJJJJJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJJJJJJJJ)V not found.");
         return; /* method not found */
@@ -1389,7 +1389,7 @@ static void init_methodids(JNIEnv *env) {
     mids[172 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00173", "(JJJJJJJJJJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00173", "(JJJJJJJJJJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJJJJJJJJJ)V not found.");
         return; /* method not found */
@@ -1397,7 +1397,7 @@ static void init_methodids(JNIEnv *env) {
     mids[173 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00174", "(JJJJJJJJJJJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00174", "(JJJJJJJJJJJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJJJJJJJJJJ)V not found.");
         return; /* method not found */
@@ -1405,7 +1405,7 @@ static void init_methodids(JNIEnv *env) {
     mids[174 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00175", "(JJJJJJJJJJJJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00175", "(JJJJJJJJJJJJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJJJJJJJJJJJ)V not found.");
         return; /* method not found */
@@ -1413,7 +1413,7 @@ static void init_methodids(JNIEnv *env) {
     mids[175 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00176", "(JJJJJJJJJJJJJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00176", "(JJJJJJJJJJJJJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJJJJJJJJJJJJ)V not found.");
         return; /* method not found */
@@ -1421,7 +1421,7 @@ static void init_methodids(JNIEnv *env) {
     mids[176 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00177", "(JJJJJJJJJJJJJJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00177", "(JJJJJJJJJJJJJJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJJJJJJJJJJJJJ)V not found.");
         return; /* method not found */
@@ -1429,7 +1429,7 @@ static void init_methodids(JNIEnv *env) {
     mids[177 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00178", "(JJJJJJJJJJJJJJJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00178", "(JJJJJJJJJJJJJJJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJJJJJJJJJJJJJJ)V not found.");
         return; /* method not found */
@@ -1437,7 +1437,7 @@ static void init_methodids(JNIEnv *env) {
     mids[178 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00179", "(JJJJJJJJJJJJJJJJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00179", "(JJJJJJJJJJJJJJJJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJJJJJJJJJJJJJJJ)V not found.");
         return; /* method not found */
@@ -1445,7 +1445,7 @@ static void init_methodids(JNIEnv *env) {
     mids[179 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00180", "(JJJJJJJJJJJJJJJJJJJJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00180", "(JJJJJJJJJJJJJJJJJJJJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(JJJJJJJJJJJJJJJJJJJJ)V not found.");
         return; /* method not found */
@@ -1453,7 +1453,7 @@ static void init_methodids(JNIEnv *env) {
     mids[180 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00181", "(Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00181", "(Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1461,7 +1461,7 @@ static void init_methodids(JNIEnv *env) {
     mids[181 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00182", "(Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00182", "(Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1469,7 +1469,7 @@ static void init_methodids(JNIEnv *env) {
     mids[182 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00183", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00183", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1477,7 +1477,7 @@ static void init_methodids(JNIEnv *env) {
     mids[183 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00184", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00184", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1485,7 +1485,7 @@ static void init_methodids(JNIEnv *env) {
     mids[184 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00185", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00185", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1493,7 +1493,7 @@ static void init_methodids(JNIEnv *env) {
     mids[185 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00186", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00186", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1501,7 +1501,7 @@ static void init_methodids(JNIEnv *env) {
     mids[186 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00187", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00187", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1509,7 +1509,7 @@ static void init_methodids(JNIEnv *env) {
     mids[187 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00188", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00188", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1517,7 +1517,7 @@ static void init_methodids(JNIEnv *env) {
     mids[188 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00189", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00189", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1525,7 +1525,7 @@ static void init_methodids(JNIEnv *env) {
     mids[189 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00190", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00190", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1533,7 +1533,7 @@ static void init_methodids(JNIEnv *env) {
     mids[190 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00191", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00191", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1541,7 +1541,7 @@ static void init_methodids(JNIEnv *env) {
     mids[191 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00192", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00192", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1549,7 +1549,7 @@ static void init_methodids(JNIEnv *env) {
     mids[192 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00193", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00193", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1557,7 +1557,7 @@ static void init_methodids(JNIEnv *env) {
     mids[193 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00194", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00194", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1565,7 +1565,7 @@ static void init_methodids(JNIEnv *env) {
     mids[194 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00195", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00195", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1573,7 +1573,7 @@ static void init_methodids(JNIEnv *env) {
     mids[195 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00196", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00196", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1581,7 +1581,7 @@ static void init_methodids(JNIEnv *env) {
     mids[196 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00197", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00197", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1589,7 +1589,7 @@ static void init_methodids(JNIEnv *env) {
     mids[197 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00198", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00198", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1597,7 +1597,7 @@ static void init_methodids(JNIEnv *env) {
     mids[198 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00199", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00199", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1605,7 +1605,7 @@ static void init_methodids(JNIEnv *env) {
     mids[199 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00200", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00200", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -1613,7 +1613,7 @@ static void init_methodids(JNIEnv *env) {
     mids[200 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00201", "([J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00201", "([J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J)V not found.");
         return; /* method not found */
@@ -1621,7 +1621,7 @@ static void init_methodids(JNIEnv *env) {
     mids[201 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00202", "([J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00202", "([J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J)V not found.");
         return; /* method not found */
@@ -1629,7 +1629,7 @@ static void init_methodids(JNIEnv *env) {
     mids[202 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00203", "([J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00203", "([J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J)V not found.");
         return; /* method not found */
@@ -1637,7 +1637,7 @@ static void init_methodids(JNIEnv *env) {
     mids[203 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00204", "([J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00204", "([J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J)V not found.");
         return; /* method not found */
@@ -1645,7 +1645,7 @@ static void init_methodids(JNIEnv *env) {
     mids[204 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00205", "([J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00205", "([J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1653,7 +1653,7 @@ static void init_methodids(JNIEnv *env) {
     mids[205 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00206", "([J[J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00206", "([J[J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1661,7 +1661,7 @@ static void init_methodids(JNIEnv *env) {
     mids[206 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00207", "([J[J[J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00207", "([J[J[J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1669,7 +1669,7 @@ static void init_methodids(JNIEnv *env) {
     mids[207 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00208", "([J[J[J[J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00208", "([J[J[J[J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1677,7 +1677,7 @@ static void init_methodids(JNIEnv *env) {
     mids[208 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00209", "([J[J[J[J[J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00209", "([J[J[J[J[J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1685,7 +1685,7 @@ static void init_methodids(JNIEnv *env) {
     mids[209 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00210", "([J[J[J[J[J[J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00210", "([J[J[J[J[J[J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J[J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1693,7 +1693,7 @@ static void init_methodids(JNIEnv *env) {
     mids[210 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00211", "([J[J[J[J[J[J[J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00211", "([J[J[J[J[J[J[J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J[J[J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1701,7 +1701,7 @@ static void init_methodids(JNIEnv *env) {
     mids[211 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00212", "([J[J[J[J[J[J[J[J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00212", "([J[J[J[J[J[J[J[J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J[J[J[J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1709,7 +1709,7 @@ static void init_methodids(JNIEnv *env) {
     mids[212 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00213", "([J[J[J[J[J[J[J[J[J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00213", "([J[J[J[J[J[J[J[J[J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J[J[J[J[J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1717,7 +1717,7 @@ static void init_methodids(JNIEnv *env) {
     mids[213 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00214", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00214", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1725,7 +1725,7 @@ static void init_methodids(JNIEnv *env) {
     mids[214 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00215", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00215", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1733,7 +1733,7 @@ static void init_methodids(JNIEnv *env) {
     mids[215 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00216", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00216", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1741,7 +1741,7 @@ static void init_methodids(JNIEnv *env) {
     mids[216 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00217", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00217", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1749,7 +1749,7 @@ static void init_methodids(JNIEnv *env) {
     mids[217 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00218", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00218", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1757,7 +1757,7 @@ static void init_methodids(JNIEnv *env) {
     mids[218 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00219", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00219", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1765,7 +1765,7 @@ static void init_methodids(JNIEnv *env) {
     mids[219 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00220", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00220", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V not found.");
         return; /* method not found */
@@ -1773,7 +1773,7 @@ static void init_methodids(JNIEnv *env) {
     mids[220 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00221", "([I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00221", "([I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I)V not found.");
         return; /* method not found */
@@ -1781,7 +1781,7 @@ static void init_methodids(JNIEnv *env) {
     mids[221 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00222", "([I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00222", "([I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I)V not found.");
         return; /* method not found */
@@ -1789,7 +1789,7 @@ static void init_methodids(JNIEnv *env) {
     mids[222 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00223", "([I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00223", "([I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I)V not found.");
         return; /* method not found */
@@ -1797,7 +1797,7 @@ static void init_methodids(JNIEnv *env) {
     mids[223 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00224", "([I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00224", "([I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I)V not found.");
         return; /* method not found */
@@ -1805,7 +1805,7 @@ static void init_methodids(JNIEnv *env) {
     mids[224 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00225", "([I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00225", "([I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1813,7 +1813,7 @@ static void init_methodids(JNIEnv *env) {
     mids[225 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00226", "([I[I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00226", "([I[I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1821,7 +1821,7 @@ static void init_methodids(JNIEnv *env) {
     mids[226 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00227", "([I[I[I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00227", "([I[I[I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1829,7 +1829,7 @@ static void init_methodids(JNIEnv *env) {
     mids[227 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00228", "([I[I[I[I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00228", "([I[I[I[I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1837,7 +1837,7 @@ static void init_methodids(JNIEnv *env) {
     mids[228 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00229", "([I[I[I[I[I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00229", "([I[I[I[I[I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1845,7 +1845,7 @@ static void init_methodids(JNIEnv *env) {
     mids[229 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00230", "([I[I[I[I[I[I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00230", "([I[I[I[I[I[I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I[I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1853,7 +1853,7 @@ static void init_methodids(JNIEnv *env) {
     mids[230 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00231", "([I[I[I[I[I[I[I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00231", "([I[I[I[I[I[I[I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I[I[I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1861,7 +1861,7 @@ static void init_methodids(JNIEnv *env) {
     mids[231 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00232", "([I[I[I[I[I[I[I[I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00232", "([I[I[I[I[I[I[I[I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I[I[I[I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1869,7 +1869,7 @@ static void init_methodids(JNIEnv *env) {
     mids[232 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00233", "([I[I[I[I[I[I[I[I[I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00233", "([I[I[I[I[I[I[I[I[I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I[I[I[I[I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1877,7 +1877,7 @@ static void init_methodids(JNIEnv *env) {
     mids[233 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00234", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00234", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1885,7 +1885,7 @@ static void init_methodids(JNIEnv *env) {
     mids[234 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00235", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00235", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1893,7 +1893,7 @@ static void init_methodids(JNIEnv *env) {
     mids[235 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00236", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00236", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1901,7 +1901,7 @@ static void init_methodids(JNIEnv *env) {
     mids[236 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00237", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00237", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1909,7 +1909,7 @@ static void init_methodids(JNIEnv *env) {
     mids[237 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00238", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00238", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1917,7 +1917,7 @@ static void init_methodids(JNIEnv *env) {
     mids[238 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00239", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00239", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1925,7 +1925,7 @@ static void init_methodids(JNIEnv *env) {
     mids[239 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00240", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00240", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V not found.");
         return; /* method not found */
@@ -1933,7 +1933,7 @@ static void init_methodids(JNIEnv *env) {
     mids[240 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00241", "(S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00241", "(S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(S)V not found.");
         return; /* method not found */
@@ -1941,7 +1941,7 @@ static void init_methodids(JNIEnv *env) {
     mids[241 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00242", "(SS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00242", "(SS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SS)V not found.");
         return; /* method not found */
@@ -1949,7 +1949,7 @@ static void init_methodids(JNIEnv *env) {
     mids[242 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00243", "(SSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00243", "(SSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSS)V not found.");
         return; /* method not found */
@@ -1957,7 +1957,7 @@ static void init_methodids(JNIEnv *env) {
     mids[243 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00244", "(SSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00244", "(SSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSS)V not found.");
         return; /* method not found */
@@ -1965,7 +1965,7 @@ static void init_methodids(JNIEnv *env) {
     mids[244 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00245", "(SSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00245", "(SSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSS)V not found.");
         return; /* method not found */
@@ -1973,7 +1973,7 @@ static void init_methodids(JNIEnv *env) {
     mids[245 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00246", "(SSSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00246", "(SSSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSSS)V not found.");
         return; /* method not found */
@@ -1981,7 +1981,7 @@ static void init_methodids(JNIEnv *env) {
     mids[246 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00247", "(SSSSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00247", "(SSSSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSSSS)V not found.");
         return; /* method not found */
@@ -1989,7 +1989,7 @@ static void init_methodids(JNIEnv *env) {
     mids[247 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00248", "(SSSSSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00248", "(SSSSSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSSSSS)V not found.");
         return; /* method not found */
@@ -1997,7 +1997,7 @@ static void init_methodids(JNIEnv *env) {
     mids[248 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00249", "(SSSSSSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00249", "(SSSSSSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSSSSSS)V not found.");
         return; /* method not found */
@@ -2005,7 +2005,7 @@ static void init_methodids(JNIEnv *env) {
     mids[249 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00250", "(SSSSSSSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00250", "(SSSSSSSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSSSSSSS)V not found.");
         return; /* method not found */
@@ -2013,7 +2013,7 @@ static void init_methodids(JNIEnv *env) {
     mids[250 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00251", "(SSSSSSSSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00251", "(SSSSSSSSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSSSSSSSS)V not found.");
         return; /* method not found */
@@ -2021,7 +2021,7 @@ static void init_methodids(JNIEnv *env) {
     mids[251 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00252", "(SSSSSSSSSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00252", "(SSSSSSSSSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSSSSSSSSS)V not found.");
         return; /* method not found */
@@ -2029,7 +2029,7 @@ static void init_methodids(JNIEnv *env) {
     mids[252 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00253", "(SSSSSSSSSSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00253", "(SSSSSSSSSSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSSSSSSSSSS)V not found.");
         return; /* method not found */
@@ -2037,7 +2037,7 @@ static void init_methodids(JNIEnv *env) {
     mids[253 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00254", "(SSSSSSSSSSSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00254", "(SSSSSSSSSSSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSSSSSSSSSSS)V not found.");
         return; /* method not found */
@@ -2045,7 +2045,7 @@ static void init_methodids(JNIEnv *env) {
     mids[254 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00255", "(SSSSSSSSSSSSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00255", "(SSSSSSSSSSSSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSSSSSSSSSSSS)V not found.");
         return; /* method not found */
@@ -2053,7 +2053,7 @@ static void init_methodids(JNIEnv *env) {
     mids[255 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00256", "(SSSSSSSSSSSSSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00256", "(SSSSSSSSSSSSSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSSSSSSSSSSSSS)V not found.");
         return; /* method not found */
@@ -2061,7 +2061,7 @@ static void init_methodids(JNIEnv *env) {
     mids[256 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00257", "(SSSSSSSSSSSSSSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00257", "(SSSSSSSSSSSSSSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSSSSSSSSSSSSSS)V not found.");
         return; /* method not found */
@@ -2069,7 +2069,7 @@ static void init_methodids(JNIEnv *env) {
     mids[257 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00258", "(SSSSSSSSSSSSSSSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00258", "(SSSSSSSSSSSSSSSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSSSSSSSSSSSSSSS)V not found.");
         return; /* method not found */
@@ -2077,7 +2077,7 @@ static void init_methodids(JNIEnv *env) {
     mids[258 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00259", "(SSSSSSSSSSSSSSSSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00259", "(SSSSSSSSSSSSSSSSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSSSSSSSSSSSSSSSS)V not found.");
         return; /* method not found */
@@ -2085,7 +2085,7 @@ static void init_methodids(JNIEnv *env) {
     mids[259 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00260", "(SSSSSSSSSSSSSSSSSSSS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00260", "(SSSSSSSSSSSSSSSSSSSS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(SSSSSSSSSSSSSSSSSSSS)V not found.");
         return; /* method not found */
@@ -2093,7 +2093,7 @@ static void init_methodids(JNIEnv *env) {
     mids[260 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00261", "([Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00261", "([Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z)V not found.");
         return; /* method not found */
@@ -2101,7 +2101,7 @@ static void init_methodids(JNIEnv *env) {
     mids[261 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00262", "([Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00262", "([Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z)V not found.");
         return; /* method not found */
@@ -2109,7 +2109,7 @@ static void init_methodids(JNIEnv *env) {
     mids[262 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00263", "([Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00263", "([Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2117,7 +2117,7 @@ static void init_methodids(JNIEnv *env) {
     mids[263 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00264", "([Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00264", "([Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2125,7 +2125,7 @@ static void init_methodids(JNIEnv *env) {
     mids[264 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00265", "([Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00265", "([Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2133,7 +2133,7 @@ static void init_methodids(JNIEnv *env) {
     mids[265 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00266", "([Z[Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00266", "([Z[Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2141,7 +2141,7 @@ static void init_methodids(JNIEnv *env) {
     mids[266 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00267", "([Z[Z[Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00267", "([Z[Z[Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2149,7 +2149,7 @@ static void init_methodids(JNIEnv *env) {
     mids[267 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00268", "([Z[Z[Z[Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00268", "([Z[Z[Z[Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2157,7 +2157,7 @@ static void init_methodids(JNIEnv *env) {
     mids[268 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00269", "([Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00269", "([Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2165,7 +2165,7 @@ static void init_methodids(JNIEnv *env) {
     mids[269 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00270", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00270", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2173,7 +2173,7 @@ static void init_methodids(JNIEnv *env) {
     mids[270 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00271", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00271", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2181,7 +2181,7 @@ static void init_methodids(JNIEnv *env) {
     mids[271 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00272", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00272", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2189,7 +2189,7 @@ static void init_methodids(JNIEnv *env) {
     mids[272 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00273", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00273", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2197,7 +2197,7 @@ static void init_methodids(JNIEnv *env) {
     mids[273 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00274", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00274", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2205,7 +2205,7 @@ static void init_methodids(JNIEnv *env) {
     mids[274 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00275", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00275", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2213,7 +2213,7 @@ static void init_methodids(JNIEnv *env) {
     mids[275 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00276", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00276", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2221,7 +2221,7 @@ static void init_methodids(JNIEnv *env) {
     mids[276 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00277", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00277", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2229,7 +2229,7 @@ static void init_methodids(JNIEnv *env) {
     mids[277 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00278", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00278", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2237,7 +2237,7 @@ static void init_methodids(JNIEnv *env) {
     mids[278 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00279", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00279", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2245,7 +2245,7 @@ static void init_methodids(JNIEnv *env) {
     mids[279 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00280", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00280", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V not found.");
         return; /* method not found */
@@ -2253,7 +2253,7 @@ static void init_methodids(JNIEnv *env) {
     mids[280 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00281", "(Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00281", "(Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2261,7 +2261,7 @@ static void init_methodids(JNIEnv *env) {
     mids[281 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00282", "(Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00282", "(Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2269,7 +2269,7 @@ static void init_methodids(JNIEnv *env) {
     mids[282 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00283", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00283", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2277,7 +2277,7 @@ static void init_methodids(JNIEnv *env) {
     mids[283 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00284", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00284", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2285,7 +2285,7 @@ static void init_methodids(JNIEnv *env) {
     mids[284 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00285", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00285", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2293,7 +2293,7 @@ static void init_methodids(JNIEnv *env) {
     mids[285 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00286", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00286", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2301,7 +2301,7 @@ static void init_methodids(JNIEnv *env) {
     mids[286 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00287", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00287", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2309,7 +2309,7 @@ static void init_methodids(JNIEnv *env) {
     mids[287 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00288", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00288", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2317,7 +2317,7 @@ static void init_methodids(JNIEnv *env) {
     mids[288 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00289", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00289", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2325,7 +2325,7 @@ static void init_methodids(JNIEnv *env) {
     mids[289 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00290", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00290", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2333,7 +2333,7 @@ static void init_methodids(JNIEnv *env) {
     mids[290 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00291", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00291", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2341,7 +2341,7 @@ static void init_methodids(JNIEnv *env) {
     mids[291 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00292", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00292", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2349,7 +2349,7 @@ static void init_methodids(JNIEnv *env) {
     mids[292 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00293", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00293", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2357,7 +2357,7 @@ static void init_methodids(JNIEnv *env) {
     mids[293 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00294", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00294", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2365,7 +2365,7 @@ static void init_methodids(JNIEnv *env) {
     mids[294 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00295", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00295", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2373,7 +2373,7 @@ static void init_methodids(JNIEnv *env) {
     mids[295 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00296", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00296", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2381,7 +2381,7 @@ static void init_methodids(JNIEnv *env) {
     mids[296 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00297", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00297", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2389,7 +2389,7 @@ static void init_methodids(JNIEnv *env) {
     mids[297 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00298", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00298", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2397,7 +2397,7 @@ static void init_methodids(JNIEnv *env) {
     mids[298 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00299", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00299", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2405,7 +2405,7 @@ static void init_methodids(JNIEnv *env) {
     mids[299 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00300", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00300", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -2413,7 +2413,7 @@ static void init_methodids(JNIEnv *env) {
     mids[300 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00301", "([Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00301", "([Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2421,7 +2421,7 @@ static void init_methodids(JNIEnv *env) {
     mids[301 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00302", "([Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00302", "([Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2429,7 +2429,7 @@ static void init_methodids(JNIEnv *env) {
     mids[302 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00303", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00303", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2437,7 +2437,7 @@ static void init_methodids(JNIEnv *env) {
     mids[303 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00304", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00304", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2445,7 +2445,7 @@ static void init_methodids(JNIEnv *env) {
     mids[304 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00305", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00305", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2453,7 +2453,7 @@ static void init_methodids(JNIEnv *env) {
     mids[305 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00306", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00306", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2461,7 +2461,7 @@ static void init_methodids(JNIEnv *env) {
     mids[306 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00307", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00307", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2469,7 +2469,7 @@ static void init_methodids(JNIEnv *env) {
     mids[307 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00308", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00308", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2477,7 +2477,7 @@ static void init_methodids(JNIEnv *env) {
     mids[308 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00309", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00309", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2485,7 +2485,7 @@ static void init_methodids(JNIEnv *env) {
     mids[309 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00310", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00310", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2493,7 +2493,7 @@ static void init_methodids(JNIEnv *env) {
     mids[310 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00311", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00311", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2501,7 +2501,7 @@ static void init_methodids(JNIEnv *env) {
     mids[311 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00312", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00312", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2509,7 +2509,7 @@ static void init_methodids(JNIEnv *env) {
     mids[312 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00313", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00313", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2517,7 +2517,7 @@ static void init_methodids(JNIEnv *env) {
     mids[313 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00314", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00314", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2525,7 +2525,7 @@ static void init_methodids(JNIEnv *env) {
     mids[314 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00315", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00315", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2533,7 +2533,7 @@ static void init_methodids(JNIEnv *env) {
     mids[315 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00316", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00316", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2541,7 +2541,7 @@ static void init_methodids(JNIEnv *env) {
     mids[316 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00317", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00317", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2549,7 +2549,7 @@ static void init_methodids(JNIEnv *env) {
     mids[317 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00318", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00318", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2557,7 +2557,7 @@ static void init_methodids(JNIEnv *env) {
     mids[318 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00319", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00319", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2565,7 +2565,7 @@ static void init_methodids(JNIEnv *env) {
     mids[319 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00320", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00320", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -2573,7 +2573,7 @@ static void init_methodids(JNIEnv *env) {
     mids[320 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00321", "([B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00321", "([B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B)V not found.");
         return; /* method not found */
@@ -2581,7 +2581,7 @@ static void init_methodids(JNIEnv *env) {
     mids[321 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00322", "([B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00322", "([B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B)V not found.");
         return; /* method not found */
@@ -2589,7 +2589,7 @@ static void init_methodids(JNIEnv *env) {
     mids[322 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00323", "([B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00323", "([B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B)V not found.");
         return; /* method not found */
@@ -2597,7 +2597,7 @@ static void init_methodids(JNIEnv *env) {
     mids[323 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00324", "([B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00324", "([B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B)V not found.");
         return; /* method not found */
@@ -2605,7 +2605,7 @@ static void init_methodids(JNIEnv *env) {
     mids[324 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00325", "([B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00325", "([B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2613,7 +2613,7 @@ static void init_methodids(JNIEnv *env) {
     mids[325 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00326", "([B[B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00326", "([B[B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2621,7 +2621,7 @@ static void init_methodids(JNIEnv *env) {
     mids[326 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00327", "([B[B[B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00327", "([B[B[B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2629,7 +2629,7 @@ static void init_methodids(JNIEnv *env) {
     mids[327 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00328", "([B[B[B[B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00328", "([B[B[B[B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2637,7 +2637,7 @@ static void init_methodids(JNIEnv *env) {
     mids[328 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00329", "([B[B[B[B[B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00329", "([B[B[B[B[B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2645,7 +2645,7 @@ static void init_methodids(JNIEnv *env) {
     mids[329 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00330", "([B[B[B[B[B[B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00330", "([B[B[B[B[B[B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B[B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2653,7 +2653,7 @@ static void init_methodids(JNIEnv *env) {
     mids[330 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00331", "([B[B[B[B[B[B[B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00331", "([B[B[B[B[B[B[B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B[B[B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2661,7 +2661,7 @@ static void init_methodids(JNIEnv *env) {
     mids[331 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00332", "([B[B[B[B[B[B[B[B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00332", "([B[B[B[B[B[B[B[B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B[B[B[B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2669,7 +2669,7 @@ static void init_methodids(JNIEnv *env) {
     mids[332 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00333", "([B[B[B[B[B[B[B[B[B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00333", "([B[B[B[B[B[B[B[B[B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B[B[B[B[B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2677,7 +2677,7 @@ static void init_methodids(JNIEnv *env) {
     mids[333 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00334", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00334", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2685,7 +2685,7 @@ static void init_methodids(JNIEnv *env) {
     mids[334 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00335", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00335", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2693,7 +2693,7 @@ static void init_methodids(JNIEnv *env) {
     mids[335 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00336", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00336", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2701,7 +2701,7 @@ static void init_methodids(JNIEnv *env) {
     mids[336 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00337", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00337", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2709,7 +2709,7 @@ static void init_methodids(JNIEnv *env) {
     mids[337 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00338", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00338", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2717,7 +2717,7 @@ static void init_methodids(JNIEnv *env) {
     mids[338 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00339", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00339", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2725,7 +2725,7 @@ static void init_methodids(JNIEnv *env) {
     mids[339 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00340", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00340", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V not found.");
         return; /* method not found */
@@ -2733,7 +2733,7 @@ static void init_methodids(JNIEnv *env) {
     mids[340 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00341", "(B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00341", "(B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(B)V not found.");
         return; /* method not found */
@@ -2741,7 +2741,7 @@ static void init_methodids(JNIEnv *env) {
     mids[341 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00342", "(BB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00342", "(BB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BB)V not found.");
         return; /* method not found */
@@ -2749,7 +2749,7 @@ static void init_methodids(JNIEnv *env) {
     mids[342 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00343", "(BBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00343", "(BBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBB)V not found.");
         return; /* method not found */
@@ -2757,7 +2757,7 @@ static void init_methodids(JNIEnv *env) {
     mids[343 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00344", "(BBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00344", "(BBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBB)V not found.");
         return; /* method not found */
@@ -2765,7 +2765,7 @@ static void init_methodids(JNIEnv *env) {
     mids[344 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00345", "(BBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00345", "(BBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBB)V not found.");
         return; /* method not found */
@@ -2773,7 +2773,7 @@ static void init_methodids(JNIEnv *env) {
     mids[345 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00346", "(BBBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00346", "(BBBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBBB)V not found.");
         return; /* method not found */
@@ -2781,7 +2781,7 @@ static void init_methodids(JNIEnv *env) {
     mids[346 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00347", "(BBBBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00347", "(BBBBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBBBB)V not found.");
         return; /* method not found */
@@ -2789,7 +2789,7 @@ static void init_methodids(JNIEnv *env) {
     mids[347 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00348", "(BBBBBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00348", "(BBBBBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBBBBB)V not found.");
         return; /* method not found */
@@ -2797,7 +2797,7 @@ static void init_methodids(JNIEnv *env) {
     mids[348 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00349", "(BBBBBBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00349", "(BBBBBBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBBBBBB)V not found.");
         return; /* method not found */
@@ -2805,7 +2805,7 @@ static void init_methodids(JNIEnv *env) {
     mids[349 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00350", "(BBBBBBBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00350", "(BBBBBBBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBBBBBBB)V not found.");
         return; /* method not found */
@@ -2813,7 +2813,7 @@ static void init_methodids(JNIEnv *env) {
     mids[350 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00351", "(BBBBBBBBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00351", "(BBBBBBBBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBBBBBBBB)V not found.");
         return; /* method not found */
@@ -2821,7 +2821,7 @@ static void init_methodids(JNIEnv *env) {
     mids[351 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00352", "(BBBBBBBBBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00352", "(BBBBBBBBBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBBBBBBBBB)V not found.");
         return; /* method not found */
@@ -2829,7 +2829,7 @@ static void init_methodids(JNIEnv *env) {
     mids[352 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00353", "(BBBBBBBBBBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00353", "(BBBBBBBBBBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBBBBBBBBBB)V not found.");
         return; /* method not found */
@@ -2837,7 +2837,7 @@ static void init_methodids(JNIEnv *env) {
     mids[353 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00354", "(BBBBBBBBBBBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00354", "(BBBBBBBBBBBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBBBBBBBBBBB)V not found.");
         return; /* method not found */
@@ -2845,7 +2845,7 @@ static void init_methodids(JNIEnv *env) {
     mids[354 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00355", "(BBBBBBBBBBBBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00355", "(BBBBBBBBBBBBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBBBBBBBBBBBB)V not found.");
         return; /* method not found */
@@ -2853,7 +2853,7 @@ static void init_methodids(JNIEnv *env) {
     mids[355 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00356", "(BBBBBBBBBBBBBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00356", "(BBBBBBBBBBBBBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBBBBBBBBBBBBB)V not found.");
         return; /* method not found */
@@ -2861,7 +2861,7 @@ static void init_methodids(JNIEnv *env) {
     mids[356 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00357", "(BBBBBBBBBBBBBBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00357", "(BBBBBBBBBBBBBBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBBBBBBBBBBBBBB)V not found.");
         return; /* method not found */
@@ -2869,7 +2869,7 @@ static void init_methodids(JNIEnv *env) {
     mids[357 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00358", "(BBBBBBBBBBBBBBBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00358", "(BBBBBBBBBBBBBBBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBBBBBBBBBBBBBBB)V not found.");
         return; /* method not found */
@@ -2877,7 +2877,7 @@ static void init_methodids(JNIEnv *env) {
     mids[358 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00359", "(BBBBBBBBBBBBBBBBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00359", "(BBBBBBBBBBBBBBBBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBBBBBBBBBBBBBBBB)V not found.");
         return; /* method not found */
@@ -2885,7 +2885,7 @@ static void init_methodids(JNIEnv *env) {
     mids[359 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00360", "(BBBBBBBBBBBBBBBBBBBB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00360", "(BBBBBBBBBBBBBBBBBBBB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(BBBBBBBBBBBBBBBBBBBB)V not found.");
         return; /* method not found */
@@ -2893,7 +2893,7 @@ static void init_methodids(JNIEnv *env) {
     mids[360 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00361", "([S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00361", "([S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S)V not found.");
         return; /* method not found */
@@ -2901,7 +2901,7 @@ static void init_methodids(JNIEnv *env) {
     mids[361 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00362", "([S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00362", "([S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S)V not found.");
         return; /* method not found */
@@ -2909,7 +2909,7 @@ static void init_methodids(JNIEnv *env) {
     mids[362 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00363", "([S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00363", "([S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S)V not found.");
         return; /* method not found */
@@ -2917,7 +2917,7 @@ static void init_methodids(JNIEnv *env) {
     mids[363 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00364", "([S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00364", "([S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S)V not found.");
         return; /* method not found */
@@ -2925,7 +2925,7 @@ static void init_methodids(JNIEnv *env) {
     mids[364 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00365", "([S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00365", "([S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -2933,7 +2933,7 @@ static void init_methodids(JNIEnv *env) {
     mids[365 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00366", "([S[S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00366", "([S[S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -2941,7 +2941,7 @@ static void init_methodids(JNIEnv *env) {
     mids[366 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00367", "([S[S[S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00367", "([S[S[S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -2949,7 +2949,7 @@ static void init_methodids(JNIEnv *env) {
     mids[367 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00368", "([S[S[S[S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00368", "([S[S[S[S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -2957,7 +2957,7 @@ static void init_methodids(JNIEnv *env) {
     mids[368 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00369", "([S[S[S[S[S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00369", "([S[S[S[S[S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -2965,7 +2965,7 @@ static void init_methodids(JNIEnv *env) {
     mids[369 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00370", "([S[S[S[S[S[S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00370", "([S[S[S[S[S[S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S[S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -2973,7 +2973,7 @@ static void init_methodids(JNIEnv *env) {
     mids[370 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00371", "([S[S[S[S[S[S[S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00371", "([S[S[S[S[S[S[S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S[S[S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -2981,7 +2981,7 @@ static void init_methodids(JNIEnv *env) {
     mids[371 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00372", "([S[S[S[S[S[S[S[S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00372", "([S[S[S[S[S[S[S[S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S[S[S[S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -2989,7 +2989,7 @@ static void init_methodids(JNIEnv *env) {
     mids[372 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00373", "([S[S[S[S[S[S[S[S[S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00373", "([S[S[S[S[S[S[S[S[S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S[S[S[S[S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -2997,7 +2997,7 @@ static void init_methodids(JNIEnv *env) {
     mids[373 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00374", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00374", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -3005,7 +3005,7 @@ static void init_methodids(JNIEnv *env) {
     mids[374 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00375", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00375", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -3013,7 +3013,7 @@ static void init_methodids(JNIEnv *env) {
     mids[375 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00376", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00376", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -3021,7 +3021,7 @@ static void init_methodids(JNIEnv *env) {
     mids[376 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00377", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00377", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -3029,7 +3029,7 @@ static void init_methodids(JNIEnv *env) {
     mids[377 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00378", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00378", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -3037,7 +3037,7 @@ static void init_methodids(JNIEnv *env) {
     mids[378 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00379", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00379", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -3045,7 +3045,7 @@ static void init_methodids(JNIEnv *env) {
     mids[379 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00380", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00380", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V not found.");
         return; /* method not found */
@@ -3053,7 +3053,7 @@ static void init_methodids(JNIEnv *env) {
     mids[380 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00381", "(Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00381", "(Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3061,7 +3061,7 @@ static void init_methodids(JNIEnv *env) {
     mids[381 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00382", "(Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00382", "(Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3069,7 +3069,7 @@ static void init_methodids(JNIEnv *env) {
     mids[382 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00383", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00383", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3077,7 +3077,7 @@ static void init_methodids(JNIEnv *env) {
     mids[383 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00384", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00384", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3085,7 +3085,7 @@ static void init_methodids(JNIEnv *env) {
     mids[384 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00385", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00385", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3093,7 +3093,7 @@ static void init_methodids(JNIEnv *env) {
     mids[385 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00386", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00386", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3101,7 +3101,7 @@ static void init_methodids(JNIEnv *env) {
     mids[386 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00387", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00387", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3109,7 +3109,7 @@ static void init_methodids(JNIEnv *env) {
     mids[387 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00388", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00388", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3117,7 +3117,7 @@ static void init_methodids(JNIEnv *env) {
     mids[388 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00389", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00389", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3125,7 +3125,7 @@ static void init_methodids(JNIEnv *env) {
     mids[389 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00390", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00390", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3133,7 +3133,7 @@ static void init_methodids(JNIEnv *env) {
     mids[390 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00391", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00391", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3141,7 +3141,7 @@ static void init_methodids(JNIEnv *env) {
     mids[391 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00392", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00392", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3149,7 +3149,7 @@ static void init_methodids(JNIEnv *env) {
     mids[392 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00393", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00393", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3157,7 +3157,7 @@ static void init_methodids(JNIEnv *env) {
     mids[393 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00394", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00394", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3165,7 +3165,7 @@ static void init_methodids(JNIEnv *env) {
     mids[394 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00395", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00395", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3173,7 +3173,7 @@ static void init_methodids(JNIEnv *env) {
     mids[395 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00396", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00396", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3181,7 +3181,7 @@ static void init_methodids(JNIEnv *env) {
     mids[396 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00397", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00397", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3189,7 +3189,7 @@ static void init_methodids(JNIEnv *env) {
     mids[397 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00398", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00398", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3197,7 +3197,7 @@ static void init_methodids(JNIEnv *env) {
     mids[398 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00399", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00399", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3205,7 +3205,7 @@ static void init_methodids(JNIEnv *env) {
     mids[399 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00400", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00400", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3213,7 +3213,7 @@ static void init_methodids(JNIEnv *env) {
     mids[400 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00401", "([D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00401", "([D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D)V not found.");
         return; /* method not found */
@@ -3221,7 +3221,7 @@ static void init_methodids(JNIEnv *env) {
     mids[401 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00402", "([D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00402", "([D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D)V not found.");
         return; /* method not found */
@@ -3229,7 +3229,7 @@ static void init_methodids(JNIEnv *env) {
     mids[402 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00403", "([D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00403", "([D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D)V not found.");
         return; /* method not found */
@@ -3237,7 +3237,7 @@ static void init_methodids(JNIEnv *env) {
     mids[403 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00404", "([D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00404", "([D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D)V not found.");
         return; /* method not found */
@@ -3245,7 +3245,7 @@ static void init_methodids(JNIEnv *env) {
     mids[404 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00405", "([D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00405", "([D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3253,7 +3253,7 @@ static void init_methodids(JNIEnv *env) {
     mids[405 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00406", "([D[D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00406", "([D[D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3261,7 +3261,7 @@ static void init_methodids(JNIEnv *env) {
     mids[406 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00407", "([D[D[D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00407", "([D[D[D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3269,7 +3269,7 @@ static void init_methodids(JNIEnv *env) {
     mids[407 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00408", "([D[D[D[D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00408", "([D[D[D[D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3277,7 +3277,7 @@ static void init_methodids(JNIEnv *env) {
     mids[408 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00409", "([D[D[D[D[D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00409", "([D[D[D[D[D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3285,7 +3285,7 @@ static void init_methodids(JNIEnv *env) {
     mids[409 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00410", "([D[D[D[D[D[D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00410", "([D[D[D[D[D[D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D[D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3293,7 +3293,7 @@ static void init_methodids(JNIEnv *env) {
     mids[410 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00411", "([D[D[D[D[D[D[D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00411", "([D[D[D[D[D[D[D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D[D[D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3301,7 +3301,7 @@ static void init_methodids(JNIEnv *env) {
     mids[411 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00412", "([D[D[D[D[D[D[D[D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00412", "([D[D[D[D[D[D[D[D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D[D[D[D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3309,7 +3309,7 @@ static void init_methodids(JNIEnv *env) {
     mids[412 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00413", "([D[D[D[D[D[D[D[D[D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00413", "([D[D[D[D[D[D[D[D[D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D[D[D[D[D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3317,7 +3317,7 @@ static void init_methodids(JNIEnv *env) {
     mids[413 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00414", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00414", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3325,7 +3325,7 @@ static void init_methodids(JNIEnv *env) {
     mids[414 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00415", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00415", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3333,7 +3333,7 @@ static void init_methodids(JNIEnv *env) {
     mids[415 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00416", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00416", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3341,7 +3341,7 @@ static void init_methodids(JNIEnv *env) {
     mids[416 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00417", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00417", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3349,7 +3349,7 @@ static void init_methodids(JNIEnv *env) {
     mids[417 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00418", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00418", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3357,7 +3357,7 @@ static void init_methodids(JNIEnv *env) {
     mids[418 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00419", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00419", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3365,7 +3365,7 @@ static void init_methodids(JNIEnv *env) {
     mids[419 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00420", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00420", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V not found.");
         return; /* method not found */
@@ -3373,7 +3373,7 @@ static void init_methodids(JNIEnv *env) {
     mids[420 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00421", "(Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00421", "(Ljava/lang/String;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;)V not found.");
         return; /* method not found */
@@ -3381,7 +3381,7 @@ static void init_methodids(JNIEnv *env) {
     mids[421 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00422", "(Ljava/lang/String;[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00422", "(Ljava/lang/String;[C)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[C)V not found.");
         return; /* method not found */
@@ -3389,7 +3389,7 @@ static void init_methodids(JNIEnv *env) {
     mids[422 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00423", "(Ljava/lang/String;[CC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00423", "(Ljava/lang/String;[CC)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CC)V not found.");
         return; /* method not found */
@@ -3397,7 +3397,7 @@ static void init_methodids(JNIEnv *env) {
     mids[423 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00424", "(Ljava/lang/String;[CCZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00424", "(Ljava/lang/String;[CCZ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZ)V not found.");
         return; /* method not found */
@@ -3405,7 +3405,7 @@ static void init_methodids(JNIEnv *env) {
     mids[424 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00425", "(Ljava/lang/String;[CCZD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00425", "(Ljava/lang/String;[CCZD)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZD)V not found.");
         return; /* method not found */
@@ -3413,7 +3413,7 @@ static void init_methodids(JNIEnv *env) {
     mids[425 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00426", "(Ljava/lang/String;[CCZDF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00426", "(Ljava/lang/String;[CCZDF)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDF)V not found.");
         return; /* method not found */
@@ -3421,7 +3421,7 @@ static void init_methodids(JNIEnv *env) {
     mids[426 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00427", "(Ljava/lang/String;[CCZDFI)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00427", "(Ljava/lang/String;[CCZDFI)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI)V not found.");
         return; /* method not found */
@@ -3429,7 +3429,7 @@ static void init_methodids(JNIEnv *env) {
     mids[427 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00428", "(Ljava/lang/String;[CCZDFI[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00428", "(Ljava/lang/String;[CCZDFI[F)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[F)V not found.");
         return; /* method not found */
@@ -3437,7 +3437,7 @@ static void init_methodids(JNIEnv *env) {
     mids[428 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00429", "(Ljava/lang/String;[CCZDFI[FJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00429", "(Ljava/lang/String;[CCZDFI[FJ)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJ)V not found.");
         return; /* method not found */
@@ -3445,7 +3445,7 @@ static void init_methodids(JNIEnv *env) {
     mids[429 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00430", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00430", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;)V not found.");
         return; /* method not found */
@@ -3453,7 +3453,7 @@ static void init_methodids(JNIEnv *env) {
     mids[430 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00431", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00431", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J)V not found.");
         return; /* method not found */
@@ -3461,7 +3461,7 @@ static void init_methodids(JNIEnv *env) {
     mids[431 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00432", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00432", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[I)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[I)V not found.");
         return; /* method not found */
@@ -3469,7 +3469,7 @@ static void init_methodids(JNIEnv *env) {
     mids[432 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00433", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00433", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS)V not found.");
         return; /* method not found */
@@ -3477,7 +3477,7 @@ static void init_methodids(JNIEnv *env) {
     mids[433 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00434", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00434", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[Z)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[Z)V not found.");
         return; /* method not found */
@@ -3485,7 +3485,7 @@ static void init_methodids(JNIEnv *env) {
     mids[434 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00435", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00435", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;)V not found.");
         return; /* method not found */
@@ -3493,7 +3493,7 @@ static void init_methodids(JNIEnv *env) {
     mids[435 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00436", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00436", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
@@ -3501,7 +3501,7 @@ static void init_methodids(JNIEnv *env) {
     mids[436 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00437", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00437", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[B)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[B)V not found.");
         return; /* method not found */
@@ -3509,7 +3509,7 @@ static void init_methodids(JNIEnv *env) {
     mids[437 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00438", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00438", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB)V not found.");
         return; /* method not found */
@@ -3517,7 +3517,7 @@ static void init_methodids(JNIEnv *env) {
     mids[438 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00439", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00439", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[S)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[S)V not found.");
         return; /* method not found */
@@ -3525,7 +3525,7 @@ static void init_methodids(JNIEnv *env) {
     mids[439 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00440", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00440", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;)V not found.");
         return; /* method not found */
@@ -3533,7 +3533,7 @@ static void init_methodids(JNIEnv *env) {
     mids[440 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00441", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00441", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;[D)V");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;[D)V not found.");
         return; /* method not found */
@@ -3541,7 +3541,7 @@ static void init_methodids(JNIEnv *env) {
     mids[441 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00442", "(I)I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00442", "(I)I");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)I not found.");
         return; /* method not found */
@@ -3549,7 +3549,7 @@ static void init_methodids(JNIEnv *env) {
     mids[442 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00443", "(I)I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00443", "(I)I");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)I not found.");
         return; /* method not found */
@@ -3557,7 +3557,7 @@ static void init_methodids(JNIEnv *env) {
     mids[443 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00444", "(I)I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00444", "(I)I");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)I not found.");
         return; /* method not found */
@@ -3565,7 +3565,7 @@ static void init_methodids(JNIEnv *env) {
     mids[444 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00445", "(I)I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00445", "(I)I");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)I not found.");
         return; /* method not found */
@@ -3573,7 +3573,7 @@ static void init_methodids(JNIEnv *env) {
     mids[445 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00446", "(I)I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00446", "(I)I");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)I not found.");
         return; /* method not found */
@@ -3581,7 +3581,7 @@ static void init_methodids(JNIEnv *env) {
     mids[446 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00447", "(I)I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00447", "(I)I");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)I not found.");
         return; /* method not found */
@@ -3589,7 +3589,7 @@ static void init_methodids(JNIEnv *env) {
     mids[447 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00448", "(I)Ljava/lang/String;");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00448", "(I)Ljava/lang/String;");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)Ljava/lang/String; not found.");
         return; /* method not found */
@@ -3597,7 +3597,7 @@ static void init_methodids(JNIEnv *env) {
     mids[448 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00449", "(I)[C");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00449", "(I)[C");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[C not found.");
         return; /* method not found */
@@ -3605,7 +3605,7 @@ static void init_methodids(JNIEnv *env) {
     mids[449 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00450", "(I)C");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00450", "(I)C");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)C not found.");
         return; /* method not found */
@@ -3613,7 +3613,7 @@ static void init_methodids(JNIEnv *env) {
     mids[450 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00451", "(I)Z");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00451", "(I)Z");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)Z not found.");
         return; /* method not found */
@@ -3621,7 +3621,7 @@ static void init_methodids(JNIEnv *env) {
     mids[451 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00452", "(I)D");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00452", "(I)D");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)D not found.");
         return; /* method not found */
@@ -3629,7 +3629,7 @@ static void init_methodids(JNIEnv *env) {
     mids[452 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00453", "(I)F");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00453", "(I)F");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)F not found.");
         return; /* method not found */
@@ -3637,7 +3637,7 @@ static void init_methodids(JNIEnv *env) {
     mids[453 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00454", "(I)I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00454", "(I)I");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)I not found.");
         return; /* method not found */
@@ -3645,7 +3645,7 @@ static void init_methodids(JNIEnv *env) {
     mids[454 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00455", "(I)[F");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00455", "(I)[F");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[F not found.");
         return; /* method not found */
@@ -3653,7 +3653,7 @@ static void init_methodids(JNIEnv *env) {
     mids[455 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00456", "(I)J");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00456", "(I)J");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)J not found.");
         return; /* method not found */
@@ -3661,7 +3661,7 @@ static void init_methodids(JNIEnv *env) {
     mids[456 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00457", "(I)Ljava/lang/Object;");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00457", "(I)Ljava/lang/Object;");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)Ljava/lang/Object; not found.");
         return; /* method not found */
@@ -3669,7 +3669,7 @@ static void init_methodids(JNIEnv *env) {
     mids[457 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00458", "(I)[J");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00458", "(I)[J");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[J not found.");
         return; /* method not found */
@@ -3677,7 +3677,7 @@ static void init_methodids(JNIEnv *env) {
     mids[458 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00459", "(I)[I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00459", "(I)[I");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[I not found.");
         return; /* method not found */
@@ -3685,7 +3685,7 @@ static void init_methodids(JNIEnv *env) {
     mids[459 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00460", "(I)S");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00460", "(I)S");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)S not found.");
         return; /* method not found */
@@ -3693,7 +3693,7 @@ static void init_methodids(JNIEnv *env) {
     mids[460 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00461", "(I)[Z");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00461", "(I)[Z");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[Z not found.");
         return; /* method not found */
@@ -3701,7 +3701,7 @@ static void init_methodids(JNIEnv *env) {
     mids[461 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00462", "(I)Ljava/lang/Throwable;");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00462", "(I)Ljava/lang/Throwable;");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)Ljava/lang/Throwable; not found.");
         return; /* method not found */
@@ -3709,7 +3709,7 @@ static void init_methodids(JNIEnv *env) {
     mids[462 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00463", "(I)[Ljava/lang/Object;");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00463", "(I)[Ljava/lang/Object;");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[Ljava/lang/Object; not found.");
         return; /* method not found */
@@ -3717,7 +3717,7 @@ static void init_methodids(JNIEnv *env) {
     mids[463 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00464", "(I)[B");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00464", "(I)[B");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[B not found.");
         return; /* method not found */
@@ -3725,7 +3725,7 @@ static void init_methodids(JNIEnv *env) {
     mids[464 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00465", "(I)B");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00465", "(I)B");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)B not found.");
         return; /* method not found */
@@ -3733,7 +3733,7 @@ static void init_methodids(JNIEnv *env) {
     mids[465 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00466", "(I)[S");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00466", "(I)[S");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[S not found.");
         return; /* method not found */
@@ -3741,7 +3741,7 @@ static void init_methodids(JNIEnv *env) {
     mids[466 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00467", "(I)Ljava/lang/Class;");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00467", "(I)Ljava/lang/Class;");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)Ljava/lang/Class; not found.");
         return; /* method not found */
@@ -3749,7 +3749,7 @@ static void init_methodids(JNIEnv *env) {
     mids[467 - 1] = mid;
 
 
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "JavaCounterparts.benchmark00468", "(I)[D");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00468", "(I)[D");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[D not found.");
         return; /* method not found */
@@ -3760,7 +3760,7 @@ static void init_methodids(JNIEnv *env) {
 }
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_BenchmarkRegistry_initNative
+Java_fi_helsinki_cs_tituomin_nativebenchmark_BenchmarkRegistry_initNative
 (JNIEnv *env, jclass cls, jlong reps, jclass javaCounterparts) {
     repetitions = reps;
     java_counterparts_class = javaCounterparts;

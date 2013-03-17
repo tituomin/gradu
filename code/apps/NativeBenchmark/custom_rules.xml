@@ -14,9 +14,6 @@
   </target>
 
 
-  <property name="jni_classes_other"
-            value="fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkParameter"/>
-
   <fileset dir="${codegen_script.dir}" id="python-codegen" includes="**/*.py">
     <modified />
   </fileset>
@@ -25,8 +22,11 @@
       property="codegen.modified"
       setonempty="false"/>
 
-  <fileset dir="src" id="other-natives"
-           includes="fi/helsinki/cs/tituomin/nativebenchmark/BenchmarkParameter.java">
+  <property name="jni_classes_other"
+            value="fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkParameter,fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRegistry"/>
+
+  <fileset dir="bin/classes" id="other-natives"
+           includes="fi/helsinki/cs/tituomin/nativebenchmark/BenchmarkParameter.class,fi/helsinki/cs/tituomin/nativebenchmark/BenchmarkRegistry.class">
     <modified />
   </fileset>
   <pathconvert

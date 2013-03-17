@@ -160,7 +160,6 @@ def generate_benchmarks():
 
                     for from_lang, to_lang in itertools.product(('J', 'C'), repeat=2):
 
-                        counterpart_method_name = 'nativemethod'
                         classname = benchmark_classname(
                             '2'.join((from_lang, to_lang)),
                             sequence_no)
@@ -168,8 +167,11 @@ def generate_benchmarks():
                         if to_lang == 'C':
                             counterpart_method_name = 'nativemethod'
                         else:
-                            counterpart_method_name = '{classname}.benchmark{number}'.format(
-                                classname=java_counterpart_classname, number=sequence_no) 
+                            if from_lang == 'J':
+                                counterpart_method_name = '{classname}.benchmark{number}'.format(
+                                    classname=java_counterpart_classname, number=sequence_no)
+                            if from_lang == 'C':
+                                counterpart_method_name = 'benchmark{number}'.format(number=sequence_no)
 
                         if from_lang == 'C':
                             run_method = java_benchmark.native_run_method()

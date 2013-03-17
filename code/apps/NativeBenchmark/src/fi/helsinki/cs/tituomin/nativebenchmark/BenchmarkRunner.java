@@ -38,6 +38,9 @@ public class BenchmarkRunner {
     };
 
     public static BenchmarkParameter getBenchmarkParameter() {
+        if (benchmarkParameter == null) {
+            benchmarkParameter = new BenchmarkParameter();
+        }
         return benchmarkParameter;
     }
 
@@ -69,7 +72,6 @@ public class BenchmarkRunner {
 
         int j = 0;
         for (Benchmark benchmark : benchmarks) {
-            Log.v("Runner", "" + j);
             mainUI.updateState(
                 ApplicationState.State.MILESTONE,
                 "Benchmark " + ++j);

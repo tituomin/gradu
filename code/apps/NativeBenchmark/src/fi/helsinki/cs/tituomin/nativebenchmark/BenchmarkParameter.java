@@ -39,7 +39,7 @@ public class BenchmarkParameter {
         return retrieveString().getClass();
     }
     public String retrieveString() {
-        return "Killer bee";
+        return new String("Killer bee");
     }
     public Throwable retrieveThrowable() {
         return new Exception();

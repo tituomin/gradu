@@ -29,19 +29,25 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.main);
-        this.numPick    = (NumberPicker) findViewById(R.id.picker_num);
-        this.expPick    = (NumberPicker) findViewById(R.id.picker_exp);
+
         this.resultView = (TextView)     findViewById(R.id.resultview);
         this.button     = (Button)       findViewById(R.id.mybutton);
         this.repView    = (TextView)     findViewById(R.id.repetitions);
 
+        this.numPick    = (NumberPicker) findViewById(R.id.picker_num);
+        this.expPick    = (NumberPicker) findViewById(R.id.picker_exp);
+
+        NumberPicker.OnValueChangeListener listener = new RepsListener();
+
         numPick.setMaxValue(9);
         expPick.setMaxValue(18);
+
         numPick.setMinValue(1);
         expPick.setMinValue(0);
+
         numPick.setValue(1);
         expPick.setValue(6);
-        NumberPicker.OnValueChangeListener listener = new RepsListener();
+
         numPick.setOnValueChangedListener(listener);
         expPick.setOnValueChangedListener(listener);
 

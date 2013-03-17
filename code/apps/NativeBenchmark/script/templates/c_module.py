@@ -22,7 +22,7 @@ static void init_methodids(JNIEnv *env) {{
 }}
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_BenchmarkRegistry_initNative
+Java_fi_helsinki_cs_tituomin_nativebenchmark_BenchmarkRegistry_initNative
 (JNIEnv *env, jclass cls, jlong reps, jclass javaCounterparts) {{
     repetitions = reps;
     java_counterparts_class = javaCounterparts;
@@ -32,7 +32,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_BenchmarkRegistry_initNat
 """
 
 mid_init_t = """
-    mid = (*env)->GetMethodID(env, java_counterparts_class, "{method_name}", "{method_descriptor}");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "{method_name}", "{method_descriptor}");
     if (mid == NULL) {{
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "{method_descriptor} not found.");
         return; /* method not found */

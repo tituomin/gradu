@@ -20,11 +20,9 @@ public class ResponseTimeRecorder extends MeasuringTool {
 
         Thread benchmarkThread = new Thread(benchmark);
         long endTime = 0, startTime = SystemClock.uptimeMillis();
-        Log.v("Recorder", "starting");
         benchmarkThread.start();
         try {
             benchmarkThread.join();        
-            Log.v("Recorder", "joined");
             // todo mainitse tekstissä toteutus (ks. todo.org)
             endTime = SystemClock.uptimeMillis();
             // todo: epätarkkuus, init ym. ? 
