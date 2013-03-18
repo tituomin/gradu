@@ -18,6 +18,10 @@ public class {classname} {class_relations} implements Benchmark {{
         return "{to_language}";
     }}
 
+    public int sequenceNo() {{
+        return {seq_no};
+    }}
+
     private long repetitions;
     private BenchmarkParameter benchmarkParameter;
 

@@ -158,7 +158,7 @@ def generate_benchmarks():
 
                     sequence_no = next_sequence_no()
 
-                    for from_lang, to_lang in itertools.product(('J', 'C'), repeat=2):
+                    for from_lang, to_lang in [('J', 'C'), ('J', 'J'), ('C','C'), ('C', 'J')]:
 
                         classname = benchmark_classname(
                             '2'.join((from_lang, to_lang)),
@@ -201,6 +201,7 @@ def generate_benchmarks():
                                 'path'     : '/'.join(packagename),
                                 'code'     : java_benchmark.t.format(
                                     imports                      = '',
+                                    seq_no                       = class_counter,
                                     from_language                = from_lang,
                                     to_language                  = to_lang,
                                     class_relations              = '',

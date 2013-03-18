@@ -51,6 +51,10 @@ public class BenchmarkMetadata implements MetadataContainer {
         }
     }
 
+    public String toString() {
+        return compiledMetadata.toString();
+    }
+
     public Set<String> labels() {
         return compiledMetadata.keySet();
     }

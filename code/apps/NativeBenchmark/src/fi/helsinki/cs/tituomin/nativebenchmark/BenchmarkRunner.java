@@ -164,45 +164,64 @@ public class BenchmarkRunner {
             "(" + seconds_total + " s tot.)");
     }
 
+    private static BenchmarkMetadata lastMetadata = null;
     private static BenchmarkMetadata inspectBenchmark(Benchmark benchmark) {
         BenchmarkMetadata bdata = new BenchmarkMetadata();
         Class c = benchmark.getClass();
+        String from = benchmark.from();
+        String to   = benchmark.to();
 
-        bdata.add("class", c.getSimpleName());
-        bdata.add("from", benchmark.from());
-        bdata.add("to", benchmark.to());
- 
-        Method[] methods = c.getDeclaredMethods();
-        for (int i = 0; i < methods.length; i++) {
-            Method m = methods[i];
-            int modifiers = m.getModifiers();
-            if (Modifier.isNative(modifiers)) {
-                bdata.add("native_method", m.getName());
-                bdata.add("native_static", Modifier.isStatic(modifiers) ? "1" : "0");
-                bdata.add("native_private", Modifier.isPrivate(modifiers) ? "1" : "0");
+        // reflection only works for J2C version,
+        // results are cached for other versions
+        if (from.equals("J") && to.equals("C")) {
+            bdata.add("no", "" + benchmark.sequenceNo());
+            Method[] methods = c.getDeclaredMethods();
+            for (int i = 0; i < methods.length; i++) {
+                Method m = methods[i];
+                int modifiers = m.getModifiers();
+                if (Modifier.isNative(modifiers)) {
+                    bdata.add("native_static", Modifier.isStatic(modifiers) ? "1" : "0");
+                    bdata.add("native_private", Modifier.isPrivate(modifiers) ? "1" : "0");
 
-                Class [] parameter_arr = m.getParameterTypes();
-                List<Class> parameters = Arrays.asList(parameter_arr);
-                Map<String,Integer> parameterTypes = new HashMap<String,Integer> ();
+                    Class [] parameter_arr = m.getParameterTypes();
+                    List<Class> parameters = Arrays.asList(parameter_arr);
+                    Map<String,Integer> parameterTypes = new HashMap<String,Integer> ();
 
-                Integer previousValue = null;
-                for (Class param : parameters) {
-                    String param_typename = param.getCanonicalName();
-                    previousValue = parameterTypes.get(param_typename);
-                    parameterTypes.put(
-                        param_typename,
-                        (previousValue == null ? 1 : ((int)previousValue) + 1));
+                    Integer previousValue = null;
+                    for (Class param : parameters) {
+                        String param_typename = param.getCanonicalName();
+                        previousValue = parameterTypes.get(param_typename);
+                        parameterTypes.put(
+                            param_typename,
+                            (previousValue == null ? 1 : ((int)previousValue) + 1));
+                    }
+
+                    bdata.add("parameter_type_count", parameterTypes.keySet().size() + "");
+
+                    for (String typename : parameterTypes.keySet()) {
+                        bdata.add("parameter_type_" + typename + "_count", parameterTypes.get(typename) + "");
+                    }
+
+                    bdata.add("parameter_count", parameters.size() + "");
                 }
-
-                bdata.add("parameter_type_count", parameterTypes.keySet().size() + "");
-
-                for (String typename : parameterTypes.keySet()) {
-                    bdata.add("parameter_type_" + typename + "_count", parameterTypes.get(typename) + "");
-                }
-
-                bdata.add("parameter_count", parameters.size() + "");
+            }
+            lastMetadata = bdata;
+        }
+        else {
+            // other than J2C
+            if (lastMetadata == null) {
+                Log.e("BenchmarkRunner", "Could not retrieve inspected metadata.");
+                return null;
+            }
+            bdata = lastMetadata;
+            if (!("" + benchmark.sequenceNo()).equals(bdata.get("no"))) {
+                Log.e("BenchmarkRunner", "Retrieved metadata has wrong number.");
+                return null;
             }
         }
+
+        bdata.add("direction", from + " > " + to);
+
         return bdata;
     }
 }

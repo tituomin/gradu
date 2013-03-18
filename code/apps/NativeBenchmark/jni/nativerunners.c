@@ -3771,6 +3771,20 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_BenchmarkRegistry_initNative
 
 
 JNIEXPORT void JNICALL
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00001_run
+(JNIEnv *env, jobject instance) {
+    jstring S1;
+    S1 = jstringValue;
+
+    jlong i;
+    for (i = 0; i < repetitions; i++) {
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00001_nativemethod (env, instance, S1);
+    }
+}
+
+
+
+JNIEXPORT void JNICALL
 Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00001_run
 (JNIEnv *env, jobject instance) {
     jmethodID mid = mids[1 - 1];
@@ -3801,14 +3815,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00001_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00001_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00002_run
 (JNIEnv *env, jobject instance) {
-    jstring S1;
-    S1 = jstringValue;
+    jstring S1; jstring S2;
+    S1 = jstringValue; S2 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00001_nativemethod (env, instance, S1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00002_nativemethod (env, instance, S1, S2);
     }
 }
 
@@ -3845,14 +3859,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00002_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00002_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00003_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2;
-    S1 = jstringValue; S2 = jstringValue;
+    jstring S1; jstring S2; jstring S3;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00002_nativemethod (env, instance, S1, S2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00003_nativemethod (env, instance, S1, S2, S3);
     }
 }
 
@@ -3889,14 +3903,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00003_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00003_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00004_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00003_nativemethod (env, instance, S1, S2, S3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00004_nativemethod (env, instance, S1, S2, S3, S4);
     }
 }
 
@@ -3933,14 +3947,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00004_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00004_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00005_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00004_nativemethod (env, instance, S1, S2, S3, S4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00005_nativemethod (env, instance, S1, S2, S3, S4, S5);
     }
 }
 
@@ -3977,14 +3991,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00005_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00005_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00006_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00005_nativemethod (env, instance, S1, S2, S3, S4, S5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00006_nativemethod (env, instance, S1, S2, S3, S4, S5, S6);
     }
 }
 
@@ -4021,14 +4035,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00006_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00006_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00007_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00006_nativemethod (env, instance, S1, S2, S3, S4, S5, S6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00007_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7);
     }
 }
 
@@ -4065,14 +4079,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00007_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00007_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00008_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00007_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00008_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8);
     }
 }
 
@@ -4109,14 +4123,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00008_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00008_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00009_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00008_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00009_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9);
     }
 }
 
@@ -4153,14 +4167,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00009_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00009_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00010_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00009_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00010_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10);
     }
 }
 
@@ -4197,14 +4211,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00010_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00010_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00011_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00010_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00011_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11);
     }
 }
 
@@ -4241,14 +4255,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00011_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00011_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00012_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00011_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00012_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12);
     }
 }
 
@@ -4285,14 +4299,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00012_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00012_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00013_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00012_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00013_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13);
     }
 }
 
@@ -4329,14 +4343,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00013_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00013_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00014_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00013_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00014_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14);
     }
 }
 
@@ -4373,14 +4387,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00014_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00014_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00015_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00014_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00015_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15);
     }
 }
 
@@ -4417,14 +4431,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00015_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00015_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00016_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15; jstring S16;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue; S16 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00015_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00016_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16);
     }
 }
 
@@ -4461,14 +4475,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00016_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00016_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00017_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15; jstring S16;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue; S16 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15; jstring S16; jstring S17;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue; S16 = jstringValue; S17 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00016_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00017_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17);
     }
 }
 
@@ -4505,14 +4519,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00017_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00017_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00018_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15; jstring S16; jstring S17;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue; S16 = jstringValue; S17 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15; jstring S16; jstring S17; jstring S18;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue; S16 = jstringValue; S17 = jstringValue; S18 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00017_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00018_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18);
     }
 }
 
@@ -4549,14 +4563,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00018_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00018_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00019_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15; jstring S16; jstring S17; jstring S18;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue; S16 = jstringValue; S17 = jstringValue; S18 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15; jstring S16; jstring S17; jstring S18; jstring S19;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue; S16 = jstringValue; S17 = jstringValue; S18 = jstringValue; S19 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00018_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00019_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19);
     }
 }
 
@@ -4593,14 +4607,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00019_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00019_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00020_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15; jstring S16; jstring S17; jstring S18; jstring S19;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue; S16 = jstringValue; S17 = jstringValue; S18 = jstringValue; S19 = jstringValue;
+    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15; jstring S16; jstring S17; jstring S18; jstring S19; jstring S20;
+    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue; S16 = jstringValue; S17 = jstringValue; S18 = jstringValue; S19 = jstringValue; S20 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00019_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00020_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19, S20);
     }
 }
 
@@ -4637,14 +4651,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00020_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00020_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00021_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15; jstring S16; jstring S17; jstring S18; jstring S19; jstring S20;
-    S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue; S16 = jstringValue; S17 = jstringValue; S18 = jstringValue; S19 = jstringValue; S20 = jstringValue;
+    jcharArray Ac1;
+    Ac1 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00020_nativemethod (env, instance, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19, S20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00021_nativemethod (env, instance, Ac1);
     }
 }
 
@@ -4681,14 +4695,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00021_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00021_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00022_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1;
-    Ac1 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00021_nativemethod (env, instance, Ac1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00022_nativemethod (env, instance, Ac1, Ac2);
     }
 }
 
@@ -4725,14 +4739,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00022_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00022_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00023_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00022_nativemethod (env, instance, Ac1, Ac2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00023_nativemethod (env, instance, Ac1, Ac2, Ac3);
     }
 }
 
@@ -4769,14 +4783,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00023_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00023_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00024_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00023_nativemethod (env, instance, Ac1, Ac2, Ac3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00024_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4);
     }
 }
 
@@ -4813,14 +4827,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00024_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00024_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00025_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00024_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00025_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5);
     }
 }
 
@@ -4857,14 +4871,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00025_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00025_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00026_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00025_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00026_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6);
     }
 }
 
@@ -4901,14 +4915,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00026_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00026_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00027_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00026_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00027_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7);
     }
 }
 
@@ -4945,14 +4959,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00027_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00027_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00028_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00027_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00028_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8);
     }
 }
 
@@ -4989,14 +5003,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00028_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00028_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00029_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00028_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00029_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9);
     }
 }
 
@@ -5033,14 +5047,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00029_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00029_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00030_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00029_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00030_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10);
     }
 }
 
@@ -5077,14 +5091,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00030_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00030_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00031_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00030_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00031_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11);
     }
 }
 
@@ -5121,14 +5135,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00031_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00031_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00032_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00031_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00032_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12);
     }
 }
 
@@ -5165,14 +5179,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00032_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00032_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00033_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00032_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00033_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13);
     }
 }
 
@@ -5209,14 +5223,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00033_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00033_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00034_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00033_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00034_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14);
     }
 }
 
@@ -5253,14 +5267,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00034_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00034_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00035_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00034_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00035_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15);
     }
 }
 
@@ -5297,14 +5311,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00035_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00035_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00036_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15; jcharArray Ac16;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue; Ac16 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00035_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00036_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15, Ac16);
     }
 }
 
@@ -5341,14 +5355,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00036_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00036_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00037_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15; jcharArray Ac16;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue; Ac16 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15; jcharArray Ac16; jcharArray Ac17;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue; Ac16 = jcharArrayValue; Ac17 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00036_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15, Ac16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00037_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15, Ac16, Ac17);
     }
 }
 
@@ -5385,14 +5399,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00037_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00037_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00038_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15; jcharArray Ac16; jcharArray Ac17;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue; Ac16 = jcharArrayValue; Ac17 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15; jcharArray Ac16; jcharArray Ac17; jcharArray Ac18;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue; Ac16 = jcharArrayValue; Ac17 = jcharArrayValue; Ac18 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00037_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15, Ac16, Ac17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00038_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15, Ac16, Ac17, Ac18);
     }
 }
 
@@ -5429,14 +5443,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00038_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00038_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00039_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15; jcharArray Ac16; jcharArray Ac17; jcharArray Ac18;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue; Ac16 = jcharArrayValue; Ac17 = jcharArrayValue; Ac18 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15; jcharArray Ac16; jcharArray Ac17; jcharArray Ac18; jcharArray Ac19;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue; Ac16 = jcharArrayValue; Ac17 = jcharArrayValue; Ac18 = jcharArrayValue; Ac19 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00038_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15, Ac16, Ac17, Ac18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00039_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15, Ac16, Ac17, Ac18, Ac19);
     }
 }
 
@@ -5473,14 +5487,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00039_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00039_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00040_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15; jcharArray Ac16; jcharArray Ac17; jcharArray Ac18; jcharArray Ac19;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue; Ac16 = jcharArrayValue; Ac17 = jcharArrayValue; Ac18 = jcharArrayValue; Ac19 = jcharArrayValue;
+    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15; jcharArray Ac16; jcharArray Ac17; jcharArray Ac18; jcharArray Ac19; jcharArray Ac20;
+    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue; Ac16 = jcharArrayValue; Ac17 = jcharArrayValue; Ac18 = jcharArrayValue; Ac19 = jcharArrayValue; Ac20 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00039_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15, Ac16, Ac17, Ac18, Ac19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00040_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15, Ac16, Ac17, Ac18, Ac19, Ac20);
     }
 }
 
@@ -5517,14 +5531,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00040_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00040_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00041_run
 (JNIEnv *env, jobject instance) {
-    jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15; jcharArray Ac16; jcharArray Ac17; jcharArray Ac18; jcharArray Ac19; jcharArray Ac20;
-    Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue; Ac16 = jcharArrayValue; Ac17 = jcharArrayValue; Ac18 = jcharArrayValue; Ac19 = jcharArrayValue; Ac20 = jcharArrayValue;
+    jchar c1;
+    c1 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00040_nativemethod (env, instance, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15, Ac16, Ac17, Ac18, Ac19, Ac20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00041_nativemethod (env, instance, c1);
     }
 }
 
@@ -5561,14 +5575,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00041_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00041_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00042_run
 (JNIEnv *env, jobject instance) {
-    jchar c1;
-    c1 = 12;
+    jchar c1; jchar c2;
+    c1 = 12; c2 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00041_nativemethod (env, instance, c1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00042_nativemethod (env, instance, c1, c2);
     }
 }
 
@@ -5605,14 +5619,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00042_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00042_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00043_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2;
-    c1 = 12; c2 = 12;
+    jchar c1; jchar c2; jchar c3;
+    c1 = 12; c2 = 12; c3 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00042_nativemethod (env, instance, c1, c2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00043_nativemethod (env, instance, c1, c2, c3);
     }
 }
 
@@ -5649,14 +5663,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00043_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00043_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00044_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3;
-    c1 = 12; c2 = 12; c3 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00043_nativemethod (env, instance, c1, c2, c3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00044_nativemethod (env, instance, c1, c2, c3, c4);
     }
 }
 
@@ -5693,14 +5707,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00044_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00044_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00045_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00044_nativemethod (env, instance, c1, c2, c3, c4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00045_nativemethod (env, instance, c1, c2, c3, c4, c5);
     }
 }
 
@@ -5737,14 +5751,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00045_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00045_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00046_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00045_nativemethod (env, instance, c1, c2, c3, c4, c5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00046_nativemethod (env, instance, c1, c2, c3, c4, c5, c6);
     }
 }
 
@@ -5781,14 +5795,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00046_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00046_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00047_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00046_nativemethod (env, instance, c1, c2, c3, c4, c5, c6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00047_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7);
     }
 }
 
@@ -5825,14 +5839,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00047_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00047_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00048_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00047_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00048_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8);
     }
 }
 
@@ -5869,14 +5883,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00048_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00048_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00049_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00048_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00049_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9);
     }
 }
 
@@ -5913,14 +5927,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00049_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00049_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00050_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00049_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00050_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10);
     }
 }
 
@@ -5957,14 +5971,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00050_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00050_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00051_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00050_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00051_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11);
     }
 }
 
@@ -6001,14 +6015,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00051_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00051_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00052_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00051_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00052_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12);
     }
 }
 
@@ -6045,14 +6059,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00052_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00052_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00053_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00052_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00053_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13);
     }
 }
 
@@ -6089,14 +6103,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00053_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00053_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00054_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00053_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00054_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14);
     }
 }
 
@@ -6133,14 +6147,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00054_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00054_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00055_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00054_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00055_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15);
     }
 }
 
@@ -6177,14 +6191,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00055_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00055_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00056_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15; jchar c16;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12; c16 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00055_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00056_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16);
     }
 }
 
@@ -6221,14 +6235,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00056_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00056_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00057_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15; jchar c16;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12; c16 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15; jchar c16; jchar c17;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12; c16 = 12; c17 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00056_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00057_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17);
     }
 }
 
@@ -6265,14 +6279,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00057_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00057_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00058_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15; jchar c16; jchar c17;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12; c16 = 12; c17 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15; jchar c16; jchar c17; jchar c18;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12; c16 = 12; c17 = 12; c18 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00057_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00058_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18);
     }
 }
 
@@ -6309,14 +6323,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00058_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00058_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00059_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15; jchar c16; jchar c17; jchar c18;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12; c16 = 12; c17 = 12; c18 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15; jchar c16; jchar c17; jchar c18; jchar c19;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12; c16 = 12; c17 = 12; c18 = 12; c19 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00058_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00059_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19);
     }
 }
 
@@ -6353,14 +6367,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00059_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00059_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00060_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15; jchar c16; jchar c17; jchar c18; jchar c19;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12; c16 = 12; c17 = 12; c18 = 12; c19 = 12;
+    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15; jchar c16; jchar c17; jchar c18; jchar c19; jchar c20;
+    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12; c16 = 12; c17 = 12; c18 = 12; c19 = 12; c20 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00059_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00060_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20);
     }
 }
 
@@ -6397,14 +6411,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00060_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00060_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00061_run
 (JNIEnv *env, jobject instance) {
-    jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15; jchar c16; jchar c17; jchar c18; jchar c19; jchar c20;
-    c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12; c16 = 12; c17 = 12; c18 = 12; c19 = 12; c20 = 12;
+    jboolean b1;
+    b1 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00060_nativemethod (env, instance, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00061_nativemethod (env, instance, b1);
     }
 }
 
@@ -6441,14 +6455,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00061_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00061_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00062_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1;
-    b1 = 1;
+    jboolean b1; jboolean b2;
+    b1 = 1; b2 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00061_nativemethod (env, instance, b1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00062_nativemethod (env, instance, b1, b2);
     }
 }
 
@@ -6485,14 +6499,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00062_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00062_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00063_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2;
-    b1 = 1; b2 = 1;
+    jboolean b1; jboolean b2; jboolean b3;
+    b1 = 1; b2 = 1; b3 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00062_nativemethod (env, instance, b1, b2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00063_nativemethod (env, instance, b1, b2, b3);
     }
 }
 
@@ -6529,14 +6543,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00063_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00063_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00064_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3;
-    b1 = 1; b2 = 1; b3 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00063_nativemethod (env, instance, b1, b2, b3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00064_nativemethod (env, instance, b1, b2, b3, b4);
     }
 }
 
@@ -6573,14 +6587,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00064_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00064_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00065_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00064_nativemethod (env, instance, b1, b2, b3, b4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00065_nativemethod (env, instance, b1, b2, b3, b4, b5);
     }
 }
 
@@ -6617,14 +6631,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00065_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00065_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00066_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00065_nativemethod (env, instance, b1, b2, b3, b4, b5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00066_nativemethod (env, instance, b1, b2, b3, b4, b5, b6);
     }
 }
 
@@ -6661,14 +6675,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00066_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00066_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00067_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00066_nativemethod (env, instance, b1, b2, b3, b4, b5, b6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00067_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7);
     }
 }
 
@@ -6705,14 +6719,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00067_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00067_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00068_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00067_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00068_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8);
     }
 }
 
@@ -6749,14 +6763,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00068_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00068_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00069_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00068_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00069_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9);
     }
 }
 
@@ -6793,14 +6807,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00069_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00069_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00070_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00069_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00070_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10);
     }
 }
 
@@ -6837,14 +6851,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00070_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00070_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00071_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00070_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00071_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11);
     }
 }
 
@@ -6881,14 +6895,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00071_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00071_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00072_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00071_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00072_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12);
     }
 }
 
@@ -6925,14 +6939,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00072_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00072_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00073_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00072_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00073_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13);
     }
 }
 
@@ -6969,14 +6983,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00073_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00073_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00074_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00073_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00074_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
     }
 }
 
@@ -7013,14 +7027,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00074_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00074_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00075_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00074_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00075_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
     }
 }
 
@@ -7057,14 +7071,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00075_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00075_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00076_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15; jboolean b16;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1; b16 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00075_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00076_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16);
     }
 }
 
@@ -7101,14 +7115,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00076_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00076_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00077_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15; jboolean b16;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1; b16 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15; jboolean b16; jboolean b17;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1; b16 = 1; b17 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00076_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00077_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17);
     }
 }
 
@@ -7145,14 +7159,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00077_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00077_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00078_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15; jboolean b16; jboolean b17;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1; b16 = 1; b17 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15; jboolean b16; jboolean b17; jboolean b18;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1; b16 = 1; b17 = 1; b18 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00077_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00078_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18);
     }
 }
 
@@ -7189,14 +7203,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00078_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00078_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00079_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15; jboolean b16; jboolean b17; jboolean b18;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1; b16 = 1; b17 = 1; b18 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15; jboolean b16; jboolean b17; jboolean b18; jboolean b19;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1; b16 = 1; b17 = 1; b18 = 1; b19 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00078_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00079_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19);
     }
 }
 
@@ -7233,14 +7247,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00079_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00079_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00080_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15; jboolean b16; jboolean b17; jboolean b18; jboolean b19;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1; b16 = 1; b17 = 1; b18 = 1; b19 = 1;
+    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15; jboolean b16; jboolean b17; jboolean b18; jboolean b19; jboolean b20;
+    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1; b16 = 1; b17 = 1; b18 = 1; b19 = 1; b20 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00079_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00080_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20);
     }
 }
 
@@ -7277,14 +7291,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00080_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00080_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00081_run
 (JNIEnv *env, jobject instance) {
-    jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15; jboolean b16; jboolean b17; jboolean b18; jboolean b19; jboolean b20;
-    b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1; b16 = 1; b17 = 1; b18 = 1; b19 = 1; b20 = 1;
+    jdouble d1;
+    d1 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00080_nativemethod (env, instance, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00081_nativemethod (env, instance, d1);
     }
 }
 
@@ -7321,14 +7335,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00081_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00081_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00082_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1;
-    d1 = 105.1;
+    jdouble d1; jdouble d2;
+    d1 = 105.1; d2 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00081_nativemethod (env, instance, d1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00082_nativemethod (env, instance, d1, d2);
     }
 }
 
@@ -7365,14 +7379,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00082_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00082_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00083_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2;
-    d1 = 105.1; d2 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00082_nativemethod (env, instance, d1, d2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00083_nativemethod (env, instance, d1, d2, d3);
     }
 }
 
@@ -7409,14 +7423,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00083_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00083_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00084_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00083_nativemethod (env, instance, d1, d2, d3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00084_nativemethod (env, instance, d1, d2, d3, d4);
     }
 }
 
@@ -7453,14 +7467,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00084_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00084_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00085_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00084_nativemethod (env, instance, d1, d2, d3, d4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00085_nativemethod (env, instance, d1, d2, d3, d4, d5);
     }
 }
 
@@ -7497,14 +7511,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00085_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00085_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00086_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00085_nativemethod (env, instance, d1, d2, d3, d4, d5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00086_nativemethod (env, instance, d1, d2, d3, d4, d5, d6);
     }
 }
 
@@ -7541,14 +7555,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00086_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00086_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00087_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00086_nativemethod (env, instance, d1, d2, d3, d4, d5, d6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00087_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7);
     }
 }
 
@@ -7585,14 +7599,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00087_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00087_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00088_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00087_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00088_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8);
     }
 }
 
@@ -7629,14 +7643,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00088_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00088_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00089_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00088_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00089_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9);
     }
 }
 
@@ -7673,14 +7687,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00089_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00089_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00090_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00089_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00090_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10);
     }
 }
 
@@ -7717,14 +7731,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00090_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00090_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00091_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00090_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00091_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11);
     }
 }
 
@@ -7761,14 +7775,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00091_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00091_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00092_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00091_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00092_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12);
     }
 }
 
@@ -7805,14 +7819,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00092_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00092_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00093_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00092_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00093_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13);
     }
 }
 
@@ -7849,14 +7863,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00093_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00093_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00094_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00093_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00094_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14);
     }
 }
 
@@ -7893,14 +7907,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00094_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00094_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00095_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00094_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00095_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15);
     }
 }
 
@@ -7937,14 +7951,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00095_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00095_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00096_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15; jdouble d16;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1; d16 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00095_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00096_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16);
     }
 }
 
@@ -7981,14 +7995,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00096_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00096_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00097_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15; jdouble d16;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1; d16 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15; jdouble d16; jdouble d17;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1; d16 = 105.1; d17 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00096_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00097_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17);
     }
 }
 
@@ -8025,14 +8039,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00097_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00097_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00098_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15; jdouble d16; jdouble d17;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1; d16 = 105.1; d17 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15; jdouble d16; jdouble d17; jdouble d18;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1; d16 = 105.1; d17 = 105.1; d18 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00097_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00098_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18);
     }
 }
 
@@ -8069,14 +8083,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00098_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00098_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00099_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15; jdouble d16; jdouble d17; jdouble d18;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1; d16 = 105.1; d17 = 105.1; d18 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15; jdouble d16; jdouble d17; jdouble d18; jdouble d19;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1; d16 = 105.1; d17 = 105.1; d18 = 105.1; d19 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00098_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00099_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19);
     }
 }
 
@@ -8113,14 +8127,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00099_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00099_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00100_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15; jdouble d16; jdouble d17; jdouble d18; jdouble d19;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1; d16 = 105.1; d17 = 105.1; d18 = 105.1; d19 = 105.1;
+    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15; jdouble d16; jdouble d17; jdouble d18; jdouble d19; jdouble d20;
+    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1; d16 = 105.1; d17 = 105.1; d18 = 105.1; d19 = 105.1; d20 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00099_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00100_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20);
     }
 }
 
@@ -8157,14 +8171,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00100_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00100_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00101_run
 (JNIEnv *env, jobject instance) {
-    jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15; jdouble d16; jdouble d17; jdouble d18; jdouble d19; jdouble d20;
-    d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1; d16 = 105.1; d17 = 105.1; d18 = 105.1; d19 = 105.1; d20 = 105.1;
+    jfloat f1;
+    f1 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00100_nativemethod (env, instance, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00101_nativemethod (env, instance, f1);
     }
 }
 
@@ -8201,14 +8215,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00101_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00101_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00102_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1;
-    f1 = 104.1;
+    jfloat f1; jfloat f2;
+    f1 = 104.1; f2 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00101_nativemethod (env, instance, f1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00102_nativemethod (env, instance, f1, f2);
     }
 }
 
@@ -8245,14 +8259,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00102_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00102_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00103_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2;
-    f1 = 104.1; f2 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00102_nativemethod (env, instance, f1, f2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00103_nativemethod (env, instance, f1, f2, f3);
     }
 }
 
@@ -8289,14 +8303,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00103_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00103_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00104_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00103_nativemethod (env, instance, f1, f2, f3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00104_nativemethod (env, instance, f1, f2, f3, f4);
     }
 }
 
@@ -8333,14 +8347,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00104_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00104_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00105_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00104_nativemethod (env, instance, f1, f2, f3, f4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00105_nativemethod (env, instance, f1, f2, f3, f4, f5);
     }
 }
 
@@ -8377,14 +8391,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00105_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00105_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00106_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00105_nativemethod (env, instance, f1, f2, f3, f4, f5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00106_nativemethod (env, instance, f1, f2, f3, f4, f5, f6);
     }
 }
 
@@ -8421,14 +8435,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00106_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00106_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00107_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00106_nativemethod (env, instance, f1, f2, f3, f4, f5, f6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00107_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7);
     }
 }
 
@@ -8465,14 +8479,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00107_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00107_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00108_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00107_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00108_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8);
     }
 }
 
@@ -8509,14 +8523,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00108_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00108_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00109_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00108_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00109_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9);
     }
 }
 
@@ -8553,14 +8567,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00109_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00109_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00110_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00109_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00110_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10);
     }
 }
 
@@ -8597,14 +8611,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00110_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00110_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00111_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00110_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00111_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11);
     }
 }
 
@@ -8641,14 +8655,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00111_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00111_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00112_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00111_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00112_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12);
     }
 }
 
@@ -8685,14 +8699,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00112_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00112_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00113_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00112_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00113_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13);
     }
 }
 
@@ -8729,14 +8743,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00113_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00113_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00114_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00113_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00114_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14);
     }
 }
 
@@ -8773,14 +8787,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00114_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00114_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00115_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00114_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00115_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15);
     }
 }
 
@@ -8817,14 +8831,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00115_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00115_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00116_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15; jfloat f16;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1; f16 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00115_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00116_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16);
     }
 }
 
@@ -8861,14 +8875,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00116_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00116_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00117_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15; jfloat f16;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1; f16 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15; jfloat f16; jfloat f17;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1; f16 = 104.1; f17 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00116_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00117_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17);
     }
 }
 
@@ -8905,14 +8919,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00117_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00117_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00118_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15; jfloat f16; jfloat f17;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1; f16 = 104.1; f17 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15; jfloat f16; jfloat f17; jfloat f18;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1; f16 = 104.1; f17 = 104.1; f18 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00117_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00118_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18);
     }
 }
 
@@ -8949,14 +8963,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00118_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00118_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00119_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15; jfloat f16; jfloat f17; jfloat f18;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1; f16 = 104.1; f17 = 104.1; f18 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15; jfloat f16; jfloat f17; jfloat f18; jfloat f19;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1; f16 = 104.1; f17 = 104.1; f18 = 104.1; f19 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00118_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00119_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18, f19);
     }
 }
 
@@ -8993,14 +9007,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00119_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00119_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00120_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15; jfloat f16; jfloat f17; jfloat f18; jfloat f19;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1; f16 = 104.1; f17 = 104.1; f18 = 104.1; f19 = 104.1;
+    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15; jfloat f16; jfloat f17; jfloat f18; jfloat f19; jfloat f20;
+    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1; f16 = 104.1; f17 = 104.1; f18 = 104.1; f19 = 104.1; f20 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00119_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18, f19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00120_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18, f19, f20);
     }
 }
 
@@ -9037,14 +9051,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00120_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00120_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00121_run
 (JNIEnv *env, jobject instance) {
-    jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15; jfloat f16; jfloat f17; jfloat f18; jfloat f19; jfloat f20;
-    f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1; f16 = 104.1; f17 = 104.1; f18 = 104.1; f19 = 104.1; f20 = 104.1;
+    jint i1;
+    i1 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00120_nativemethod (env, instance, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18, f19, f20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00121_nativemethod (env, instance, i1);
     }
 }
 
@@ -9081,14 +9095,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00121_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00121_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00122_run
 (JNIEnv *env, jobject instance) {
-    jint i1;
-    i1 = 102;
+    jint i1; jint i2;
+    i1 = 102; i2 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00121_nativemethod (env, instance, i1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00122_nativemethod (env, instance, i1, i2);
     }
 }
 
@@ -9125,14 +9139,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00122_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00122_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00123_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2;
-    i1 = 102; i2 = 102;
+    jint i1; jint i2; jint i3;
+    i1 = 102; i2 = 102; i3 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00122_nativemethod (env, instance, i1, i2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00123_nativemethod (env, instance, i1, i2, i3);
     }
 }
 
@@ -9169,14 +9183,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00123_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00123_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00124_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3;
-    i1 = 102; i2 = 102; i3 = 102;
+    jint i1; jint i2; jint i3; jint i4;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00123_nativemethod (env, instance, i1, i2, i3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00124_nativemethod (env, instance, i1, i2, i3, i4);
     }
 }
 
@@ -9213,14 +9227,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00124_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00124_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00125_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00124_nativemethod (env, instance, i1, i2, i3, i4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00125_nativemethod (env, instance, i1, i2, i3, i4, i5);
     }
 }
 
@@ -9257,14 +9271,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00125_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00125_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00126_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00125_nativemethod (env, instance, i1, i2, i3, i4, i5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00126_nativemethod (env, instance, i1, i2, i3, i4, i5, i6);
     }
 }
 
@@ -9301,14 +9315,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00126_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00126_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00127_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00126_nativemethod (env, instance, i1, i2, i3, i4, i5, i6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00127_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7);
     }
 }
 
@@ -9345,14 +9359,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00127_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00127_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00128_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00127_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00128_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8);
     }
 }
 
@@ -9389,14 +9403,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00128_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00128_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00129_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00128_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00129_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9);
     }
 }
 
@@ -9433,14 +9447,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00129_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00129_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00130_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00129_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00130_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10);
     }
 }
 
@@ -9477,14 +9491,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00130_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00130_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00131_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00130_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00131_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11);
     }
 }
 
@@ -9521,14 +9535,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00131_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00131_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00132_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00131_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00132_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12);
     }
 }
 
@@ -9565,14 +9579,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00132_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00132_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00133_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00132_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00133_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13);
     }
 }
 
@@ -9609,14 +9623,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00133_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00133_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00134_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00133_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00134_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14);
     }
 }
 
@@ -9653,14 +9667,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00134_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00134_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00135_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00134_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00135_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15);
     }
 }
 
@@ -9697,14 +9711,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00135_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00135_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00136_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15; jint i16;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102; i16 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00135_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00136_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16);
     }
 }
 
@@ -9741,14 +9755,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00136_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00136_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00137_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15; jint i16;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102; i16 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15; jint i16; jint i17;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102; i16 = 102; i17 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00136_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00137_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17);
     }
 }
 
@@ -9785,14 +9799,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00137_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00137_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00138_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15; jint i16; jint i17;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102; i16 = 102; i17 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15; jint i16; jint i17; jint i18;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102; i16 = 102; i17 = 102; i18 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00137_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00138_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18);
     }
 }
 
@@ -9829,14 +9843,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00138_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00138_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00139_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15; jint i16; jint i17; jint i18;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102; i16 = 102; i17 = 102; i18 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15; jint i16; jint i17; jint i18; jint i19;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102; i16 = 102; i17 = 102; i18 = 102; i19 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00138_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00139_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19);
     }
 }
 
@@ -9873,14 +9887,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00139_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00139_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00140_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15; jint i16; jint i17; jint i18; jint i19;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102; i16 = 102; i17 = 102; i18 = 102; i19 = 102;
+    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15; jint i16; jint i17; jint i18; jint i19; jint i20;
+    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102; i16 = 102; i17 = 102; i18 = 102; i19 = 102; i20 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00139_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00140_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i20);
     }
 }
 
@@ -9917,14 +9931,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00140_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00140_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00141_run
 (JNIEnv *env, jobject instance) {
-    jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15; jint i16; jint i17; jint i18; jint i19; jint i20;
-    i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102; i16 = 102; i17 = 102; i18 = 102; i19 = 102; i20 = 102;
+    jfloatArray Af1;
+    Af1 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00140_nativemethod (env, instance, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00141_nativemethod (env, instance, Af1);
     }
 }
 
@@ -9961,14 +9975,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00141_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00141_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00142_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1;
-    Af1 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00141_nativemethod (env, instance, Af1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00142_nativemethod (env, instance, Af1, Af2);
     }
 }
 
@@ -10005,14 +10019,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00142_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00142_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00143_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00142_nativemethod (env, instance, Af1, Af2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00143_nativemethod (env, instance, Af1, Af2, Af3);
     }
 }
 
@@ -10049,14 +10063,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00143_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00143_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00144_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00143_nativemethod (env, instance, Af1, Af2, Af3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00144_nativemethod (env, instance, Af1, Af2, Af3, Af4);
     }
 }
 
@@ -10093,14 +10107,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00144_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00144_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00145_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00144_nativemethod (env, instance, Af1, Af2, Af3, Af4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00145_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5);
     }
 }
 
@@ -10137,14 +10151,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00145_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00145_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00146_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00145_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00146_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6);
     }
 }
 
@@ -10181,14 +10195,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00146_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00146_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00147_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00146_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00147_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7);
     }
 }
 
@@ -10225,14 +10239,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00147_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00147_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00148_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00147_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00148_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8);
     }
 }
 
@@ -10269,14 +10283,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00148_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00148_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00149_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00148_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00149_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9);
     }
 }
 
@@ -10313,14 +10327,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00149_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00149_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00150_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00149_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00150_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10);
     }
 }
 
@@ -10357,14 +10371,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00150_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00150_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00151_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00150_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00151_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11);
     }
 }
 
@@ -10401,14 +10415,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00151_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00151_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00152_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00151_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00152_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12);
     }
 }
 
@@ -10445,14 +10459,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00152_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00152_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00153_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00152_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00153_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13);
     }
 }
 
@@ -10489,14 +10503,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00153_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00153_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00154_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00153_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00154_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14);
     }
 }
 
@@ -10533,14 +10547,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00154_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00154_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00155_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00154_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00155_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15);
     }
 }
 
@@ -10577,14 +10591,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00155_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00155_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00156_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15; jfloatArray Af16;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue; Af16 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00155_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00156_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15, Af16);
     }
 }
 
@@ -10621,14 +10635,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00156_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00156_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00157_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15; jfloatArray Af16;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue; Af16 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15; jfloatArray Af16; jfloatArray Af17;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue; Af16 = jfloatArrayValue; Af17 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00156_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15, Af16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00157_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15, Af16, Af17);
     }
 }
 
@@ -10665,14 +10679,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00157_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00157_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00158_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15; jfloatArray Af16; jfloatArray Af17;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue; Af16 = jfloatArrayValue; Af17 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15; jfloatArray Af16; jfloatArray Af17; jfloatArray Af18;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue; Af16 = jfloatArrayValue; Af17 = jfloatArrayValue; Af18 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00157_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15, Af16, Af17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00158_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15, Af16, Af17, Af18);
     }
 }
 
@@ -10709,14 +10723,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00158_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00158_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00159_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15; jfloatArray Af16; jfloatArray Af17; jfloatArray Af18;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue; Af16 = jfloatArrayValue; Af17 = jfloatArrayValue; Af18 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15; jfloatArray Af16; jfloatArray Af17; jfloatArray Af18; jfloatArray Af19;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue; Af16 = jfloatArrayValue; Af17 = jfloatArrayValue; Af18 = jfloatArrayValue; Af19 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00158_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15, Af16, Af17, Af18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00159_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15, Af16, Af17, Af18, Af19);
     }
 }
 
@@ -10753,14 +10767,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00159_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00159_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00160_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15; jfloatArray Af16; jfloatArray Af17; jfloatArray Af18; jfloatArray Af19;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue; Af16 = jfloatArrayValue; Af17 = jfloatArrayValue; Af18 = jfloatArrayValue; Af19 = jfloatArrayValue;
+    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15; jfloatArray Af16; jfloatArray Af17; jfloatArray Af18; jfloatArray Af19; jfloatArray Af20;
+    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue; Af16 = jfloatArrayValue; Af17 = jfloatArrayValue; Af18 = jfloatArrayValue; Af19 = jfloatArrayValue; Af20 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00159_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15, Af16, Af17, Af18, Af19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00160_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15, Af16, Af17, Af18, Af19, Af20);
     }
 }
 
@@ -10797,14 +10811,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00160_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00160_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00161_run
 (JNIEnv *env, jobject instance) {
-    jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15; jfloatArray Af16; jfloatArray Af17; jfloatArray Af18; jfloatArray Af19; jfloatArray Af20;
-    Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue; Af16 = jfloatArrayValue; Af17 = jfloatArrayValue; Af18 = jfloatArrayValue; Af19 = jfloatArrayValue; Af20 = jfloatArrayValue;
+    jlong l1;
+    l1 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00160_nativemethod (env, instance, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15, Af16, Af17, Af18, Af19, Af20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00161_nativemethod (env, instance, l1);
     }
 }
 
@@ -10841,14 +10855,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00161_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00161_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00162_run
 (JNIEnv *env, jobject instance) {
-    jlong l1;
-    l1 = 103;
+    jlong l1; jlong l2;
+    l1 = 103; l2 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00161_nativemethod (env, instance, l1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00162_nativemethod (env, instance, l1, l2);
     }
 }
 
@@ -10885,14 +10899,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00162_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00162_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00163_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2;
-    l1 = 103; l2 = 103;
+    jlong l1; jlong l2; jlong l3;
+    l1 = 103; l2 = 103; l3 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00162_nativemethod (env, instance, l1, l2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00163_nativemethod (env, instance, l1, l2, l3);
     }
 }
 
@@ -10929,14 +10943,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00163_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00163_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00164_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3;
-    l1 = 103; l2 = 103; l3 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00163_nativemethod (env, instance, l1, l2, l3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00164_nativemethod (env, instance, l1, l2, l3, l4);
     }
 }
 
@@ -10973,14 +10987,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00164_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00164_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00165_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00164_nativemethod (env, instance, l1, l2, l3, l4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00165_nativemethod (env, instance, l1, l2, l3, l4, l5);
     }
 }
 
@@ -11017,14 +11031,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00165_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00165_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00166_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00165_nativemethod (env, instance, l1, l2, l3, l4, l5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00166_nativemethod (env, instance, l1, l2, l3, l4, l5, l6);
     }
 }
 
@@ -11061,14 +11075,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00166_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00166_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00167_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00166_nativemethod (env, instance, l1, l2, l3, l4, l5, l6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00167_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7);
     }
 }
 
@@ -11105,14 +11119,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00167_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00167_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00168_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00167_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00168_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8);
     }
 }
 
@@ -11149,14 +11163,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00168_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00168_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00169_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00168_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00169_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9);
     }
 }
 
@@ -11193,14 +11207,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00169_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00169_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00170_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00169_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00170_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10);
     }
 }
 
@@ -11237,14 +11251,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00170_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00170_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00171_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00170_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00171_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11);
     }
 }
 
@@ -11281,14 +11295,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00171_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00171_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00172_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00171_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00172_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12);
     }
 }
 
@@ -11325,14 +11339,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00172_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00172_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00173_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00172_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00173_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13);
     }
 }
 
@@ -11369,14 +11383,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00173_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00173_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00174_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00173_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00174_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14);
     }
 }
 
@@ -11413,14 +11427,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00174_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00174_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00175_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00174_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00175_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15);
     }
 }
 
@@ -11457,14 +11471,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00175_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00175_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00176_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15; jlong l16;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103; l16 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00175_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00176_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16);
     }
 }
 
@@ -11501,14 +11515,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00176_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00176_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00177_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15; jlong l16;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103; l16 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15; jlong l16; jlong l17;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103; l16 = 103; l17 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00176_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00177_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17);
     }
 }
 
@@ -11545,14 +11559,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00177_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00177_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00178_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15; jlong l16; jlong l17;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103; l16 = 103; l17 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15; jlong l16; jlong l17; jlong l18;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103; l16 = 103; l17 = 103; l18 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00177_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00178_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18);
     }
 }
 
@@ -11589,14 +11603,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00178_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00178_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00179_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15; jlong l16; jlong l17; jlong l18;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103; l16 = 103; l17 = 103; l18 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15; jlong l16; jlong l17; jlong l18; jlong l19;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103; l16 = 103; l17 = 103; l18 = 103; l19 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00178_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00179_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18, l19);
     }
 }
 
@@ -11633,14 +11647,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00179_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00179_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00180_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15; jlong l16; jlong l17; jlong l18; jlong l19;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103; l16 = 103; l17 = 103; l18 = 103; l19 = 103;
+    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15; jlong l16; jlong l17; jlong l18; jlong l19; jlong l20;
+    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103; l16 = 103; l17 = 103; l18 = 103; l19 = 103; l20 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00179_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18, l19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00180_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18, l19, l20);
     }
 }
 
@@ -11677,14 +11691,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00180_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00180_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00181_run
 (JNIEnv *env, jobject instance) {
-    jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15; jlong l16; jlong l17; jlong l18; jlong l19; jlong l20;
-    l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103; l16 = 103; l17 = 103; l18 = 103; l19 = 103; l20 = 103;
+    jobject O1;
+    O1 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00180_nativemethod (env, instance, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18, l19, l20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00181_nativemethod (env, instance, O1);
     }
 }
 
@@ -11721,14 +11735,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00181_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00181_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00182_run
 (JNIEnv *env, jobject instance) {
-    jobject O1;
-    O1 = jobjectValue;
+    jobject O1; jobject O2;
+    O1 = jobjectValue; O2 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00181_nativemethod (env, instance, O1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00182_nativemethod (env, instance, O1, O2);
     }
 }
 
@@ -11765,14 +11779,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00182_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00182_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00183_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2;
-    O1 = jobjectValue; O2 = jobjectValue;
+    jobject O1; jobject O2; jobject O3;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00182_nativemethod (env, instance, O1, O2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00183_nativemethod (env, instance, O1, O2, O3);
     }
 }
 
@@ -11809,14 +11823,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00183_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00183_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00184_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00183_nativemethod (env, instance, O1, O2, O3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00184_nativemethod (env, instance, O1, O2, O3, O4);
     }
 }
 
@@ -11853,14 +11867,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00184_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00184_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00185_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00184_nativemethod (env, instance, O1, O2, O3, O4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00185_nativemethod (env, instance, O1, O2, O3, O4, O5);
     }
 }
 
@@ -11897,14 +11911,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00185_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00185_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00186_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00185_nativemethod (env, instance, O1, O2, O3, O4, O5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00186_nativemethod (env, instance, O1, O2, O3, O4, O5, O6);
     }
 }
 
@@ -11941,14 +11955,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00186_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00186_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00187_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00186_nativemethod (env, instance, O1, O2, O3, O4, O5, O6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00187_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7);
     }
 }
 
@@ -11985,14 +11999,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00187_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00187_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00188_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00187_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00188_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8);
     }
 }
 
@@ -12029,14 +12043,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00188_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00188_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00189_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00188_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00189_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9);
     }
 }
 
@@ -12073,14 +12087,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00189_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00189_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00190_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00189_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00190_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10);
     }
 }
 
@@ -12117,14 +12131,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00190_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00190_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00191_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00190_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00191_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11);
     }
 }
 
@@ -12161,14 +12175,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00191_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00191_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00192_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00191_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00192_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12);
     }
 }
 
@@ -12205,14 +12219,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00192_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00192_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00193_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00192_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00193_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13);
     }
 }
 
@@ -12249,14 +12263,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00193_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00193_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00194_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00193_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00194_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14);
     }
 }
 
@@ -12293,14 +12307,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00194_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00194_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00195_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00194_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00195_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15);
     }
 }
 
@@ -12337,14 +12351,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00195_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00195_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00196_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15; jobject O16;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue; O16 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00195_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00196_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15, O16);
     }
 }
 
@@ -12381,14 +12395,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00196_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00196_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00197_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15; jobject O16;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue; O16 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15; jobject O16; jobject O17;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue; O16 = jobjectValue; O17 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00196_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15, O16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00197_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15, O16, O17);
     }
 }
 
@@ -12425,14 +12439,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00197_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00197_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00198_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15; jobject O16; jobject O17;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue; O16 = jobjectValue; O17 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15; jobject O16; jobject O17; jobject O18;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue; O16 = jobjectValue; O17 = jobjectValue; O18 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00197_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15, O16, O17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00198_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15, O16, O17, O18);
     }
 }
 
@@ -12469,14 +12483,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00198_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00198_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00199_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15; jobject O16; jobject O17; jobject O18;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue; O16 = jobjectValue; O17 = jobjectValue; O18 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15; jobject O16; jobject O17; jobject O18; jobject O19;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue; O16 = jobjectValue; O17 = jobjectValue; O18 = jobjectValue; O19 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00198_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15, O16, O17, O18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00199_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15, O16, O17, O18, O19);
     }
 }
 
@@ -12513,14 +12527,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00199_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00199_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00200_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15; jobject O16; jobject O17; jobject O18; jobject O19;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue; O16 = jobjectValue; O17 = jobjectValue; O18 = jobjectValue; O19 = jobjectValue;
+    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15; jobject O16; jobject O17; jobject O18; jobject O19; jobject O20;
+    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue; O16 = jobjectValue; O17 = jobjectValue; O18 = jobjectValue; O19 = jobjectValue; O20 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00199_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15, O16, O17, O18, O19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00200_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15, O16, O17, O18, O19, O20);
     }
 }
 
@@ -12557,14 +12571,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00200_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00200_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00201_run
 (JNIEnv *env, jobject instance) {
-    jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15; jobject O16; jobject O17; jobject O18; jobject O19; jobject O20;
-    O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue; O16 = jobjectValue; O17 = jobjectValue; O18 = jobjectValue; O19 = jobjectValue; O20 = jobjectValue;
+    jlongArray Al1;
+    Al1 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00200_nativemethod (env, instance, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15, O16, O17, O18, O19, O20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00201_nativemethod (env, instance, Al1);
     }
 }
 
@@ -12601,14 +12615,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00201_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00201_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00202_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1;
-    Al1 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00201_nativemethod (env, instance, Al1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00202_nativemethod (env, instance, Al1, Al2);
     }
 }
 
@@ -12645,14 +12659,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00202_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00202_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00203_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00202_nativemethod (env, instance, Al1, Al2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00203_nativemethod (env, instance, Al1, Al2, Al3);
     }
 }
 
@@ -12689,14 +12703,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00203_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00203_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00204_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00203_nativemethod (env, instance, Al1, Al2, Al3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00204_nativemethod (env, instance, Al1, Al2, Al3, Al4);
     }
 }
 
@@ -12733,14 +12747,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00204_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00204_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00205_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00204_nativemethod (env, instance, Al1, Al2, Al3, Al4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00205_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5);
     }
 }
 
@@ -12777,14 +12791,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00205_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00205_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00206_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00205_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00206_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6);
     }
 }
 
@@ -12821,14 +12835,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00206_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00206_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00207_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00206_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00207_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7);
     }
 }
 
@@ -12865,14 +12879,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00207_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00207_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00208_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00207_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00208_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8);
     }
 }
 
@@ -12909,14 +12923,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00208_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00208_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00209_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00208_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00209_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9);
     }
 }
 
@@ -12953,14 +12967,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00209_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00209_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00210_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00209_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00210_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10);
     }
 }
 
@@ -12997,14 +13011,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00210_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00210_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00211_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00210_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00211_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11);
     }
 }
 
@@ -13041,14 +13055,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00211_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00211_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00212_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00211_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00212_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12);
     }
 }
 
@@ -13085,14 +13099,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00212_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00212_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00213_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00212_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00213_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13);
     }
 }
 
@@ -13129,14 +13143,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00213_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00213_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00214_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00213_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00214_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14);
     }
 }
 
@@ -13173,14 +13187,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00214_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00214_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00215_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00214_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00215_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15);
     }
 }
 
@@ -13217,14 +13231,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00215_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00215_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00216_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15; jlongArray Al16;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue; Al16 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00215_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00216_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15, Al16);
     }
 }
 
@@ -13261,14 +13275,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00216_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00216_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00217_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15; jlongArray Al16;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue; Al16 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15; jlongArray Al16; jlongArray Al17;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue; Al16 = jlongArrayValue; Al17 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00216_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15, Al16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00217_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15, Al16, Al17);
     }
 }
 
@@ -13305,14 +13319,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00217_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00217_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00218_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15; jlongArray Al16; jlongArray Al17;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue; Al16 = jlongArrayValue; Al17 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15; jlongArray Al16; jlongArray Al17; jlongArray Al18;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue; Al16 = jlongArrayValue; Al17 = jlongArrayValue; Al18 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00217_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15, Al16, Al17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00218_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15, Al16, Al17, Al18);
     }
 }
 
@@ -13349,14 +13363,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00218_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00218_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00219_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15; jlongArray Al16; jlongArray Al17; jlongArray Al18;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue; Al16 = jlongArrayValue; Al17 = jlongArrayValue; Al18 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15; jlongArray Al16; jlongArray Al17; jlongArray Al18; jlongArray Al19;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue; Al16 = jlongArrayValue; Al17 = jlongArrayValue; Al18 = jlongArrayValue; Al19 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00218_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15, Al16, Al17, Al18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00219_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15, Al16, Al17, Al18, Al19);
     }
 }
 
@@ -13393,14 +13407,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00219_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00219_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00220_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15; jlongArray Al16; jlongArray Al17; jlongArray Al18; jlongArray Al19;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue; Al16 = jlongArrayValue; Al17 = jlongArrayValue; Al18 = jlongArrayValue; Al19 = jlongArrayValue;
+    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15; jlongArray Al16; jlongArray Al17; jlongArray Al18; jlongArray Al19; jlongArray Al20;
+    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue; Al16 = jlongArrayValue; Al17 = jlongArrayValue; Al18 = jlongArrayValue; Al19 = jlongArrayValue; Al20 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00219_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15, Al16, Al17, Al18, Al19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00220_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15, Al16, Al17, Al18, Al19, Al20);
     }
 }
 
@@ -13437,14 +13451,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00220_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00220_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00221_run
 (JNIEnv *env, jobject instance) {
-    jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15; jlongArray Al16; jlongArray Al17; jlongArray Al18; jlongArray Al19; jlongArray Al20;
-    Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue; Al16 = jlongArrayValue; Al17 = jlongArrayValue; Al18 = jlongArrayValue; Al19 = jlongArrayValue; Al20 = jlongArrayValue;
+    jintArray Ai1;
+    Ai1 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00220_nativemethod (env, instance, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15, Al16, Al17, Al18, Al19, Al20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00221_nativemethod (env, instance, Ai1);
     }
 }
 
@@ -13481,14 +13495,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00221_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00221_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00222_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1;
-    Ai1 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00221_nativemethod (env, instance, Ai1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00222_nativemethod (env, instance, Ai1, Ai2);
     }
 }
 
@@ -13525,14 +13539,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00222_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00222_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00223_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00222_nativemethod (env, instance, Ai1, Ai2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00223_nativemethod (env, instance, Ai1, Ai2, Ai3);
     }
 }
 
@@ -13569,14 +13583,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00223_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00223_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00224_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00223_nativemethod (env, instance, Ai1, Ai2, Ai3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00224_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4);
     }
 }
 
@@ -13613,14 +13627,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00224_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00224_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00225_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00224_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00225_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5);
     }
 }
 
@@ -13657,14 +13671,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00225_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00225_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00226_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00225_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00226_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6);
     }
 }
 
@@ -13701,14 +13715,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00226_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00226_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00227_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00226_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00227_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7);
     }
 }
 
@@ -13745,14 +13759,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00227_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00227_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00228_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00227_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00228_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8);
     }
 }
 
@@ -13789,14 +13803,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00228_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00228_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00229_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00228_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00229_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9);
     }
 }
 
@@ -13833,14 +13847,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00229_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00229_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00230_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00229_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00230_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10);
     }
 }
 
@@ -13877,14 +13891,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00230_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00230_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00231_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00230_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00231_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11);
     }
 }
 
@@ -13921,14 +13935,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00231_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00231_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00232_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00231_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00232_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12);
     }
 }
 
@@ -13965,14 +13979,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00232_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00232_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00233_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00232_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00233_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13);
     }
 }
 
@@ -14009,14 +14023,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00233_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00233_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00234_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00233_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00234_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14);
     }
 }
 
@@ -14053,14 +14067,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00234_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00234_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00235_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00234_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00235_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15);
     }
 }
 
@@ -14097,14 +14111,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00235_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00235_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00236_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15; jintArray Ai16;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue; Ai16 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00235_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00236_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15, Ai16);
     }
 }
 
@@ -14141,14 +14155,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00236_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00236_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00237_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15; jintArray Ai16;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue; Ai16 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15; jintArray Ai16; jintArray Ai17;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue; Ai16 = jintArrayValue; Ai17 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00236_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15, Ai16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00237_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15, Ai16, Ai17);
     }
 }
 
@@ -14185,14 +14199,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00237_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00237_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00238_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15; jintArray Ai16; jintArray Ai17;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue; Ai16 = jintArrayValue; Ai17 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15; jintArray Ai16; jintArray Ai17; jintArray Ai18;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue; Ai16 = jintArrayValue; Ai17 = jintArrayValue; Ai18 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00237_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15, Ai16, Ai17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00238_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15, Ai16, Ai17, Ai18);
     }
 }
 
@@ -14229,14 +14243,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00238_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00238_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00239_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15; jintArray Ai16; jintArray Ai17; jintArray Ai18;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue; Ai16 = jintArrayValue; Ai17 = jintArrayValue; Ai18 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15; jintArray Ai16; jintArray Ai17; jintArray Ai18; jintArray Ai19;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue; Ai16 = jintArrayValue; Ai17 = jintArrayValue; Ai18 = jintArrayValue; Ai19 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00238_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15, Ai16, Ai17, Ai18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00239_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15, Ai16, Ai17, Ai18, Ai19);
     }
 }
 
@@ -14273,14 +14287,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00239_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00239_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00240_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15; jintArray Ai16; jintArray Ai17; jintArray Ai18; jintArray Ai19;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue; Ai16 = jintArrayValue; Ai17 = jintArrayValue; Ai18 = jintArrayValue; Ai19 = jintArrayValue;
+    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15; jintArray Ai16; jintArray Ai17; jintArray Ai18; jintArray Ai19; jintArray Ai20;
+    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue; Ai16 = jintArrayValue; Ai17 = jintArrayValue; Ai18 = jintArrayValue; Ai19 = jintArrayValue; Ai20 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00239_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15, Ai16, Ai17, Ai18, Ai19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00240_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15, Ai16, Ai17, Ai18, Ai19, Ai20);
     }
 }
 
@@ -14317,14 +14331,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00240_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00240_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00241_run
 (JNIEnv *env, jobject instance) {
-    jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15; jintArray Ai16; jintArray Ai17; jintArray Ai18; jintArray Ai19; jintArray Ai20;
-    Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue; Ai16 = jintArrayValue; Ai17 = jintArrayValue; Ai18 = jintArrayValue; Ai19 = jintArrayValue; Ai20 = jintArrayValue;
+    jshort s1;
+    s1 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00240_nativemethod (env, instance, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15, Ai16, Ai17, Ai18, Ai19, Ai20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00241_nativemethod (env, instance, s1);
     }
 }
 
@@ -14361,14 +14375,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00241_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00241_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00242_run
 (JNIEnv *env, jobject instance) {
-    jshort s1;
-    s1 = 101;
+    jshort s1; jshort s2;
+    s1 = 101; s2 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00241_nativemethod (env, instance, s1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00242_nativemethod (env, instance, s1, s2);
     }
 }
 
@@ -14405,14 +14419,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00242_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00242_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00243_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2;
-    s1 = 101; s2 = 101;
+    jshort s1; jshort s2; jshort s3;
+    s1 = 101; s2 = 101; s3 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00242_nativemethod (env, instance, s1, s2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00243_nativemethod (env, instance, s1, s2, s3);
     }
 }
 
@@ -14449,14 +14463,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00243_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00243_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00244_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3;
-    s1 = 101; s2 = 101; s3 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00243_nativemethod (env, instance, s1, s2, s3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00244_nativemethod (env, instance, s1, s2, s3, s4);
     }
 }
 
@@ -14493,14 +14507,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00244_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00244_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00245_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00244_nativemethod (env, instance, s1, s2, s3, s4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00245_nativemethod (env, instance, s1, s2, s3, s4, s5);
     }
 }
 
@@ -14537,14 +14551,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00245_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00245_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00246_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00245_nativemethod (env, instance, s1, s2, s3, s4, s5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00246_nativemethod (env, instance, s1, s2, s3, s4, s5, s6);
     }
 }
 
@@ -14581,14 +14595,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00246_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00246_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00247_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00246_nativemethod (env, instance, s1, s2, s3, s4, s5, s6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00247_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7);
     }
 }
 
@@ -14625,14 +14639,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00247_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00247_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00248_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00247_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00248_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8);
     }
 }
 
@@ -14669,14 +14683,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00248_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00248_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00249_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00248_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00249_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9);
     }
 }
 
@@ -14713,14 +14727,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00249_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00249_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00250_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00249_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00250_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10);
     }
 }
 
@@ -14757,14 +14771,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00250_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00250_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00251_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00250_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00251_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11);
     }
 }
 
@@ -14801,14 +14815,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00251_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00251_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00252_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00251_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00252_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12);
     }
 }
 
@@ -14845,14 +14859,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00252_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00252_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00253_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00252_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00253_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13);
     }
 }
 
@@ -14889,14 +14903,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00253_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00253_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00254_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00253_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00254_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14);
     }
 }
 
@@ -14933,14 +14947,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00254_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00254_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00255_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00254_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00255_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15);
     }
 }
 
@@ -14977,14 +14991,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00255_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00255_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00256_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15; jshort s16;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101; s16 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00255_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00256_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16);
     }
 }
 
@@ -15021,14 +15035,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00256_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00256_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00257_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15; jshort s16;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101; s16 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15; jshort s16; jshort s17;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101; s16 = 101; s17 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00256_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00257_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17);
     }
 }
 
@@ -15065,14 +15079,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00257_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00257_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00258_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15; jshort s16; jshort s17;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101; s16 = 101; s17 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15; jshort s16; jshort s17; jshort s18;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101; s16 = 101; s17 = 101; s18 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00257_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00258_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18);
     }
 }
 
@@ -15109,14 +15123,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00258_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00258_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00259_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15; jshort s16; jshort s17; jshort s18;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101; s16 = 101; s17 = 101; s18 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15; jshort s16; jshort s17; jshort s18; jshort s19;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101; s16 = 101; s17 = 101; s18 = 101; s19 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00258_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00259_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19);
     }
 }
 
@@ -15153,14 +15167,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00259_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00259_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00260_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15; jshort s16; jshort s17; jshort s18; jshort s19;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101; s16 = 101; s17 = 101; s18 = 101; s19 = 101;
+    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15; jshort s16; jshort s17; jshort s18; jshort s19; jshort s20;
+    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101; s16 = 101; s17 = 101; s18 = 101; s19 = 101; s20 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00259_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00260_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20);
     }
 }
 
@@ -15197,14 +15211,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00260_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00260_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00261_run
 (JNIEnv *env, jobject instance) {
-    jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15; jshort s16; jshort s17; jshort s18; jshort s19; jshort s20;
-    s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101; s16 = 101; s17 = 101; s18 = 101; s19 = 101; s20 = 101;
+    jbooleanArray Ab1;
+    Ab1 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00260_nativemethod (env, instance, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00261_nativemethod (env, instance, Ab1);
     }
 }
 
@@ -15241,14 +15255,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00261_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00261_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00262_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1;
-    Ab1 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00261_nativemethod (env, instance, Ab1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00262_nativemethod (env, instance, Ab1, Ab2);
     }
 }
 
@@ -15285,14 +15299,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00262_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00262_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00263_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00262_nativemethod (env, instance, Ab1, Ab2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00263_nativemethod (env, instance, Ab1, Ab2, Ab3);
     }
 }
 
@@ -15329,14 +15343,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00263_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00263_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00264_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00263_nativemethod (env, instance, Ab1, Ab2, Ab3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00264_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4);
     }
 }
 
@@ -15373,14 +15387,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00264_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00264_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00265_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00264_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00265_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5);
     }
 }
 
@@ -15417,14 +15431,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00265_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00265_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00266_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00265_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00266_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6);
     }
 }
 
@@ -15461,14 +15475,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00266_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00266_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00267_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00266_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00267_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7);
     }
 }
 
@@ -15505,14 +15519,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00267_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00267_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00268_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00267_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00268_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8);
     }
 }
 
@@ -15549,14 +15563,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00268_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00268_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00269_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00268_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00269_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9);
     }
 }
 
@@ -15593,14 +15607,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00269_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00269_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00270_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00269_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00270_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10);
     }
 }
 
@@ -15637,14 +15651,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00270_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00270_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00271_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00270_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00271_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11);
     }
 }
 
@@ -15681,14 +15695,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00271_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00271_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00272_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00271_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00272_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12);
     }
 }
 
@@ -15725,14 +15739,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00272_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00272_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00273_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00272_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00273_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13);
     }
 }
 
@@ -15769,14 +15783,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00273_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00273_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00274_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00273_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00274_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14);
     }
 }
 
@@ -15813,14 +15827,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00274_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00274_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00275_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00274_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00275_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15);
     }
 }
 
@@ -15857,14 +15871,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00275_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00275_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00276_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15; jbooleanArray Ab16;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue; Ab16 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00275_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00276_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15, Ab16);
     }
 }
 
@@ -15901,14 +15915,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00276_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00276_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00277_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15; jbooleanArray Ab16;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue; Ab16 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15; jbooleanArray Ab16; jbooleanArray Ab17;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue; Ab16 = jbooleanArrayValue; Ab17 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00276_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15, Ab16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00277_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15, Ab16, Ab17);
     }
 }
 
@@ -15945,14 +15959,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00277_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00277_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00278_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15; jbooleanArray Ab16; jbooleanArray Ab17;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue; Ab16 = jbooleanArrayValue; Ab17 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15; jbooleanArray Ab16; jbooleanArray Ab17; jbooleanArray Ab18;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue; Ab16 = jbooleanArrayValue; Ab17 = jbooleanArrayValue; Ab18 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00277_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15, Ab16, Ab17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00278_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15, Ab16, Ab17, Ab18);
     }
 }
 
@@ -15989,14 +16003,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00278_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00278_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00279_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15; jbooleanArray Ab16; jbooleanArray Ab17; jbooleanArray Ab18;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue; Ab16 = jbooleanArrayValue; Ab17 = jbooleanArrayValue; Ab18 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15; jbooleanArray Ab16; jbooleanArray Ab17; jbooleanArray Ab18; jbooleanArray Ab19;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue; Ab16 = jbooleanArrayValue; Ab17 = jbooleanArrayValue; Ab18 = jbooleanArrayValue; Ab19 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00278_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15, Ab16, Ab17, Ab18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00279_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15, Ab16, Ab17, Ab18, Ab19);
     }
 }
 
@@ -16033,14 +16047,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00279_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00279_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00280_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15; jbooleanArray Ab16; jbooleanArray Ab17; jbooleanArray Ab18; jbooleanArray Ab19;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue; Ab16 = jbooleanArrayValue; Ab17 = jbooleanArrayValue; Ab18 = jbooleanArrayValue; Ab19 = jbooleanArrayValue;
+    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15; jbooleanArray Ab16; jbooleanArray Ab17; jbooleanArray Ab18; jbooleanArray Ab19; jbooleanArray Ab20;
+    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue; Ab16 = jbooleanArrayValue; Ab17 = jbooleanArrayValue; Ab18 = jbooleanArrayValue; Ab19 = jbooleanArrayValue; Ab20 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00279_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15, Ab16, Ab17, Ab18, Ab19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00280_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15, Ab16, Ab17, Ab18, Ab19, Ab20);
     }
 }
 
@@ -16077,14 +16091,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00280_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00280_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00281_run
 (JNIEnv *env, jobject instance) {
-    jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15; jbooleanArray Ab16; jbooleanArray Ab17; jbooleanArray Ab18; jbooleanArray Ab19; jbooleanArray Ab20;
-    Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue; Ab16 = jbooleanArrayValue; Ab17 = jbooleanArrayValue; Ab18 = jbooleanArrayValue; Ab19 = jbooleanArrayValue; Ab20 = jbooleanArrayValue;
+    jthrowable T1;
+    T1 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00280_nativemethod (env, instance, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15, Ab16, Ab17, Ab18, Ab19, Ab20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00281_nativemethod (env, instance, T1);
     }
 }
 
@@ -16121,14 +16135,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00281_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00281_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00282_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1;
-    T1 = jthrowableValue;
+    jthrowable T1; jthrowable T2;
+    T1 = jthrowableValue; T2 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00281_nativemethod (env, instance, T1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00282_nativemethod (env, instance, T1, T2);
     }
 }
 
@@ -16165,14 +16179,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00282_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00282_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00283_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2;
-    T1 = jthrowableValue; T2 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00282_nativemethod (env, instance, T1, T2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00283_nativemethod (env, instance, T1, T2, T3);
     }
 }
 
@@ -16209,14 +16223,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00283_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00283_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00284_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00283_nativemethod (env, instance, T1, T2, T3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00284_nativemethod (env, instance, T1, T2, T3, T4);
     }
 }
 
@@ -16253,14 +16267,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00284_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00284_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00285_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00284_nativemethod (env, instance, T1, T2, T3, T4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00285_nativemethod (env, instance, T1, T2, T3, T4, T5);
     }
 }
 
@@ -16297,14 +16311,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00285_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00285_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00286_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00285_nativemethod (env, instance, T1, T2, T3, T4, T5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00286_nativemethod (env, instance, T1, T2, T3, T4, T5, T6);
     }
 }
 
@@ -16341,14 +16355,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00286_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00286_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00287_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00286_nativemethod (env, instance, T1, T2, T3, T4, T5, T6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00287_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7);
     }
 }
 
@@ -16385,14 +16399,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00287_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00287_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00288_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00287_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00288_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8);
     }
 }
 
@@ -16429,14 +16443,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00288_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00288_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00289_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00288_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00289_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9);
     }
 }
 
@@ -16473,14 +16487,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00289_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00289_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00290_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00289_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00290_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10);
     }
 }
 
@@ -16517,14 +16531,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00290_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00290_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00291_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00290_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00291_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11);
     }
 }
 
@@ -16561,14 +16575,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00291_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00291_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00292_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00291_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00292_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12);
     }
 }
 
@@ -16605,14 +16619,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00292_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00292_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00293_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00292_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00293_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13);
     }
 }
 
@@ -16649,14 +16663,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00293_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00293_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00294_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00293_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00294_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14);
     }
 }
 
@@ -16693,14 +16707,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00294_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00294_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00295_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00294_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00295_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15);
     }
 }
 
@@ -16737,14 +16751,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00295_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00295_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00296_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15; jthrowable T16;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue; T16 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00295_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00296_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16);
     }
 }
 
@@ -16781,14 +16795,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00296_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00296_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00297_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15; jthrowable T16;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue; T16 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15; jthrowable T16; jthrowable T17;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue; T16 = jthrowableValue; T17 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00296_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00297_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17);
     }
 }
 
@@ -16825,14 +16839,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00297_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00297_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00298_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15; jthrowable T16; jthrowable T17;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue; T16 = jthrowableValue; T17 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15; jthrowable T16; jthrowable T17; jthrowable T18;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue; T16 = jthrowableValue; T17 = jthrowableValue; T18 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00297_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00298_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18);
     }
 }
 
@@ -16869,14 +16883,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00298_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00298_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00299_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15; jthrowable T16; jthrowable T17; jthrowable T18;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue; T16 = jthrowableValue; T17 = jthrowableValue; T18 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15; jthrowable T16; jthrowable T17; jthrowable T18; jthrowable T19;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue; T16 = jthrowableValue; T17 = jthrowableValue; T18 = jthrowableValue; T19 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00298_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00299_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19);
     }
 }
 
@@ -16913,14 +16927,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00299_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00299_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00300_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15; jthrowable T16; jthrowable T17; jthrowable T18; jthrowable T19;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue; T16 = jthrowableValue; T17 = jthrowableValue; T18 = jthrowableValue; T19 = jthrowableValue;
+    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15; jthrowable T16; jthrowable T17; jthrowable T18; jthrowable T19; jthrowable T20;
+    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue; T16 = jthrowableValue; T17 = jthrowableValue; T18 = jthrowableValue; T19 = jthrowableValue; T20 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00299_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00300_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20);
     }
 }
 
@@ -16957,14 +16971,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00300_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00300_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00301_run
 (JNIEnv *env, jobject instance) {
-    jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15; jthrowable T16; jthrowable T17; jthrowable T18; jthrowable T19; jthrowable T20;
-    T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue; T16 = jthrowableValue; T17 = jthrowableValue; T18 = jthrowableValue; T19 = jthrowableValue; T20 = jthrowableValue;
+    jobjectArray AO1;
+    AO1 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00300_nativemethod (env, instance, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00301_nativemethod (env, instance, AO1);
     }
 }
 
@@ -17001,14 +17015,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00301_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00301_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00302_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1;
-    AO1 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00301_nativemethod (env, instance, AO1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00302_nativemethod (env, instance, AO1, AO2);
     }
 }
 
@@ -17045,14 +17059,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00302_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00302_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00303_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00302_nativemethod (env, instance, AO1, AO2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00303_nativemethod (env, instance, AO1, AO2, AO3);
     }
 }
 
@@ -17089,14 +17103,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00303_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00303_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00304_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00303_nativemethod (env, instance, AO1, AO2, AO3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00304_nativemethod (env, instance, AO1, AO2, AO3, AO4);
     }
 }
 
@@ -17133,14 +17147,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00304_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00304_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00305_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00304_nativemethod (env, instance, AO1, AO2, AO3, AO4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00305_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5);
     }
 }
 
@@ -17177,14 +17191,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00305_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00305_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00306_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00305_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00306_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6);
     }
 }
 
@@ -17221,14 +17235,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00306_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00306_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00307_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00306_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00307_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7);
     }
 }
 
@@ -17265,14 +17279,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00307_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00307_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00308_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00307_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00308_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8);
     }
 }
 
@@ -17309,14 +17323,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00308_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00308_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00309_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00308_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00309_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9);
     }
 }
 
@@ -17353,14 +17367,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00309_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00309_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00310_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00309_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00310_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10);
     }
 }
 
@@ -17397,14 +17411,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00310_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00310_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00311_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00310_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00311_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11);
     }
 }
 
@@ -17441,14 +17455,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00311_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00311_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00312_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00311_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00312_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12);
     }
 }
 
@@ -17485,14 +17499,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00312_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00312_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00313_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00312_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00313_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13);
     }
 }
 
@@ -17529,14 +17543,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00313_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00313_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00314_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00313_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00314_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14);
     }
 }
 
@@ -17573,14 +17587,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00314_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00314_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00315_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00314_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00315_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15);
     }
 }
 
@@ -17617,14 +17631,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00315_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00315_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00316_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15; jobjectArray AO16;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue; AO16 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00315_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00316_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15, AO16);
     }
 }
 
@@ -17661,14 +17675,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00316_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00316_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00317_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15; jobjectArray AO16;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue; AO16 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15; jobjectArray AO16; jobjectArray AO17;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue; AO16 = jobjectArrayValue; AO17 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00316_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15, AO16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00317_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15, AO16, AO17);
     }
 }
 
@@ -17705,14 +17719,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00317_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00317_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00318_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15; jobjectArray AO16; jobjectArray AO17;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue; AO16 = jobjectArrayValue; AO17 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15; jobjectArray AO16; jobjectArray AO17; jobjectArray AO18;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue; AO16 = jobjectArrayValue; AO17 = jobjectArrayValue; AO18 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00317_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15, AO16, AO17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00318_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15, AO16, AO17, AO18);
     }
 }
 
@@ -17749,14 +17763,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00318_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00318_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00319_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15; jobjectArray AO16; jobjectArray AO17; jobjectArray AO18;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue; AO16 = jobjectArrayValue; AO17 = jobjectArrayValue; AO18 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15; jobjectArray AO16; jobjectArray AO17; jobjectArray AO18; jobjectArray AO19;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue; AO16 = jobjectArrayValue; AO17 = jobjectArrayValue; AO18 = jobjectArrayValue; AO19 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00318_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15, AO16, AO17, AO18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00319_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15, AO16, AO17, AO18, AO19);
     }
 }
 
@@ -17793,14 +17807,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00319_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00319_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00320_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15; jobjectArray AO16; jobjectArray AO17; jobjectArray AO18; jobjectArray AO19;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue; AO16 = jobjectArrayValue; AO17 = jobjectArrayValue; AO18 = jobjectArrayValue; AO19 = jobjectArrayValue;
+    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15; jobjectArray AO16; jobjectArray AO17; jobjectArray AO18; jobjectArray AO19; jobjectArray AO20;
+    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue; AO16 = jobjectArrayValue; AO17 = jobjectArrayValue; AO18 = jobjectArrayValue; AO19 = jobjectArrayValue; AO20 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00319_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15, AO16, AO17, AO18, AO19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00320_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15, AO16, AO17, AO18, AO19, AO20);
     }
 }
 
@@ -17837,14 +17851,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00320_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00320_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00321_run
 (JNIEnv *env, jobject instance) {
-    jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15; jobjectArray AO16; jobjectArray AO17; jobjectArray AO18; jobjectArray AO19; jobjectArray AO20;
-    AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue; AO16 = jobjectArrayValue; AO17 = jobjectArrayValue; AO18 = jobjectArrayValue; AO19 = jobjectArrayValue; AO20 = jobjectArrayValue;
+    jbyteArray Ay1;
+    Ay1 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00320_nativemethod (env, instance, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15, AO16, AO17, AO18, AO19, AO20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00321_nativemethod (env, instance, Ay1);
     }
 }
 
@@ -17881,14 +17895,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00321_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00321_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00322_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1;
-    Ay1 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00321_nativemethod (env, instance, Ay1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00322_nativemethod (env, instance, Ay1, Ay2);
     }
 }
 
@@ -17925,14 +17939,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00322_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00322_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00323_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00322_nativemethod (env, instance, Ay1, Ay2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00323_nativemethod (env, instance, Ay1, Ay2, Ay3);
     }
 }
 
@@ -17969,14 +17983,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00323_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00323_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00324_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00323_nativemethod (env, instance, Ay1, Ay2, Ay3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00324_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4);
     }
 }
 
@@ -18013,14 +18027,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00324_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00324_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00325_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00324_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00325_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5);
     }
 }
 
@@ -18057,14 +18071,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00325_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00325_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00326_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00325_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00326_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6);
     }
 }
 
@@ -18101,14 +18115,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00326_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00326_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00327_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00326_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00327_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7);
     }
 }
 
@@ -18145,14 +18159,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00327_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00327_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00328_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00327_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00328_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8);
     }
 }
 
@@ -18189,14 +18203,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00328_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00328_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00329_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00328_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00329_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9);
     }
 }
 
@@ -18233,14 +18247,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00329_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00329_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00330_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00329_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00330_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10);
     }
 }
 
@@ -18277,14 +18291,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00330_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00330_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00331_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00330_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00331_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11);
     }
 }
 
@@ -18321,14 +18335,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00331_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00331_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00332_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00331_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00332_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12);
     }
 }
 
@@ -18365,14 +18379,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00332_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00332_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00333_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00332_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00333_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13);
     }
 }
 
@@ -18409,14 +18423,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00333_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00333_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00334_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00333_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00334_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14);
     }
 }
 
@@ -18453,14 +18467,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00334_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00334_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00335_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00334_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00335_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15);
     }
 }
 
@@ -18497,14 +18511,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00335_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00335_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00336_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15; jbyteArray Ay16;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue; Ay16 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00335_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00336_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15, Ay16);
     }
 }
 
@@ -18541,14 +18555,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00336_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00336_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00337_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15; jbyteArray Ay16;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue; Ay16 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15; jbyteArray Ay16; jbyteArray Ay17;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue; Ay16 = jbyteArrayValue; Ay17 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00336_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15, Ay16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00337_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15, Ay16, Ay17);
     }
 }
 
@@ -18585,14 +18599,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00337_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00337_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00338_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15; jbyteArray Ay16; jbyteArray Ay17;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue; Ay16 = jbyteArrayValue; Ay17 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15; jbyteArray Ay16; jbyteArray Ay17; jbyteArray Ay18;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue; Ay16 = jbyteArrayValue; Ay17 = jbyteArrayValue; Ay18 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00337_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15, Ay16, Ay17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00338_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15, Ay16, Ay17, Ay18);
     }
 }
 
@@ -18629,14 +18643,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00338_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00338_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00339_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15; jbyteArray Ay16; jbyteArray Ay17; jbyteArray Ay18;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue; Ay16 = jbyteArrayValue; Ay17 = jbyteArrayValue; Ay18 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15; jbyteArray Ay16; jbyteArray Ay17; jbyteArray Ay18; jbyteArray Ay19;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue; Ay16 = jbyteArrayValue; Ay17 = jbyteArrayValue; Ay18 = jbyteArrayValue; Ay19 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00338_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15, Ay16, Ay17, Ay18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00339_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15, Ay16, Ay17, Ay18, Ay19);
     }
 }
 
@@ -18673,14 +18687,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00339_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00339_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00340_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15; jbyteArray Ay16; jbyteArray Ay17; jbyteArray Ay18; jbyteArray Ay19;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue; Ay16 = jbyteArrayValue; Ay17 = jbyteArrayValue; Ay18 = jbyteArrayValue; Ay19 = jbyteArrayValue;
+    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15; jbyteArray Ay16; jbyteArray Ay17; jbyteArray Ay18; jbyteArray Ay19; jbyteArray Ay20;
+    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue; Ay16 = jbyteArrayValue; Ay17 = jbyteArrayValue; Ay18 = jbyteArrayValue; Ay19 = jbyteArrayValue; Ay20 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00339_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15, Ay16, Ay17, Ay18, Ay19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00340_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15, Ay16, Ay17, Ay18, Ay19, Ay20);
     }
 }
 
@@ -18717,14 +18731,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00340_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00340_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00341_run
 (JNIEnv *env, jobject instance) {
-    jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15; jbyteArray Ay16; jbyteArray Ay17; jbyteArray Ay18; jbyteArray Ay19; jbyteArray Ay20;
-    Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue; Ay16 = jbyteArrayValue; Ay17 = jbyteArrayValue; Ay18 = jbyteArrayValue; Ay19 = jbyteArrayValue; Ay20 = jbyteArrayValue;
+    jbyte y1;
+    y1 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00340_nativemethod (env, instance, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15, Ay16, Ay17, Ay18, Ay19, Ay20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00341_nativemethod (env, instance, y1);
     }
 }
 
@@ -18761,14 +18775,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00341_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00341_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00342_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1;
-    y1 = 'a';
+    jbyte y1; jbyte y2;
+    y1 = 'a'; y2 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00341_nativemethod (env, instance, y1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00342_nativemethod (env, instance, y1, y2);
     }
 }
 
@@ -18805,14 +18819,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00342_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00342_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00343_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2;
-    y1 = 'a'; y2 = 'a';
+    jbyte y1; jbyte y2; jbyte y3;
+    y1 = 'a'; y2 = 'a'; y3 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00342_nativemethod (env, instance, y1, y2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00343_nativemethod (env, instance, y1, y2, y3);
     }
 }
 
@@ -18849,14 +18863,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00343_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00343_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00344_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3;
-    y1 = 'a'; y2 = 'a'; y3 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00343_nativemethod (env, instance, y1, y2, y3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00344_nativemethod (env, instance, y1, y2, y3, y4);
     }
 }
 
@@ -18893,14 +18907,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00344_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00344_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00345_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00344_nativemethod (env, instance, y1, y2, y3, y4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00345_nativemethod (env, instance, y1, y2, y3, y4, y5);
     }
 }
 
@@ -18937,14 +18951,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00345_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00345_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00346_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00345_nativemethod (env, instance, y1, y2, y3, y4, y5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00346_nativemethod (env, instance, y1, y2, y3, y4, y5, y6);
     }
 }
 
@@ -18981,14 +18995,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00346_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00346_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00347_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00346_nativemethod (env, instance, y1, y2, y3, y4, y5, y6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00347_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7);
     }
 }
 
@@ -19025,14 +19039,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00347_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00347_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00348_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00347_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00348_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8);
     }
 }
 
@@ -19069,14 +19083,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00348_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00348_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00349_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00348_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00349_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9);
     }
 }
 
@@ -19113,14 +19127,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00349_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00349_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00350_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00349_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00350_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10);
     }
 }
 
@@ -19157,14 +19171,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00350_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00350_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00351_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00350_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00351_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11);
     }
 }
 
@@ -19201,14 +19215,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00351_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00351_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00352_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00351_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00352_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12);
     }
 }
 
@@ -19245,14 +19259,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00352_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00352_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00353_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00352_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00353_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13);
     }
 }
 
@@ -19289,14 +19303,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00353_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00353_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00354_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00353_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00354_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14);
     }
 }
 
@@ -19333,14 +19347,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00354_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00354_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00355_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00354_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00355_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15);
     }
 }
 
@@ -19377,14 +19391,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00355_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00355_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00356_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15; jbyte y16;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a'; y16 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00355_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00356_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16);
     }
 }
 
@@ -19421,14 +19435,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00356_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00356_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00357_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15; jbyte y16;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a'; y16 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15; jbyte y16; jbyte y17;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a'; y16 = 'a'; y17 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00356_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00357_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17);
     }
 }
 
@@ -19465,14 +19479,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00357_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00357_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00358_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15; jbyte y16; jbyte y17;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a'; y16 = 'a'; y17 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15; jbyte y16; jbyte y17; jbyte y18;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a'; y16 = 'a'; y17 = 'a'; y18 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00357_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00358_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18);
     }
 }
 
@@ -19509,14 +19523,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00358_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00358_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00359_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15; jbyte y16; jbyte y17; jbyte y18;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a'; y16 = 'a'; y17 = 'a'; y18 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15; jbyte y16; jbyte y17; jbyte y18; jbyte y19;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a'; y16 = 'a'; y17 = 'a'; y18 = 'a'; y19 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00358_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00359_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18, y19);
     }
 }
 
@@ -19553,14 +19567,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00359_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00359_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00360_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15; jbyte y16; jbyte y17; jbyte y18; jbyte y19;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a'; y16 = 'a'; y17 = 'a'; y18 = 'a'; y19 = 'a';
+    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15; jbyte y16; jbyte y17; jbyte y18; jbyte y19; jbyte y20;
+    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a'; y16 = 'a'; y17 = 'a'; y18 = 'a'; y19 = 'a'; y20 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00359_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18, y19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00360_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18, y19, y20);
     }
 }
 
@@ -19597,14 +19611,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00360_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00360_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00361_run
 (JNIEnv *env, jobject instance) {
-    jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15; jbyte y16; jbyte y17; jbyte y18; jbyte y19; jbyte y20;
-    y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a'; y16 = 'a'; y17 = 'a'; y18 = 'a'; y19 = 'a'; y20 = 'a';
+    jshortArray As1;
+    As1 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00360_nativemethod (env, instance, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18, y19, y20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00361_nativemethod (env, instance, As1);
     }
 }
 
@@ -19641,14 +19655,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00361_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00361_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00362_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1;
-    As1 = jshortArrayValue;
+    jshortArray As1; jshortArray As2;
+    As1 = jshortArrayValue; As2 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00361_nativemethod (env, instance, As1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00362_nativemethod (env, instance, As1, As2);
     }
 }
 
@@ -19685,14 +19699,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00362_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00362_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00363_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2;
-    As1 = jshortArrayValue; As2 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00362_nativemethod (env, instance, As1, As2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00363_nativemethod (env, instance, As1, As2, As3);
     }
 }
 
@@ -19729,14 +19743,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00363_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00363_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00364_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00363_nativemethod (env, instance, As1, As2, As3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00364_nativemethod (env, instance, As1, As2, As3, As4);
     }
 }
 
@@ -19773,14 +19787,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00364_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00364_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00365_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00364_nativemethod (env, instance, As1, As2, As3, As4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00365_nativemethod (env, instance, As1, As2, As3, As4, As5);
     }
 }
 
@@ -19817,14 +19831,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00365_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00365_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00366_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00365_nativemethod (env, instance, As1, As2, As3, As4, As5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00366_nativemethod (env, instance, As1, As2, As3, As4, As5, As6);
     }
 }
 
@@ -19861,14 +19875,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00366_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00366_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00367_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00366_nativemethod (env, instance, As1, As2, As3, As4, As5, As6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00367_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7);
     }
 }
 
@@ -19905,14 +19919,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00367_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00367_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00368_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00367_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00368_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8);
     }
 }
 
@@ -19949,14 +19963,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00368_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00368_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00369_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00368_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00369_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9);
     }
 }
 
@@ -19993,14 +20007,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00369_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00369_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00370_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00369_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00370_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10);
     }
 }
 
@@ -20037,14 +20051,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00370_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00370_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00371_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00370_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00371_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11);
     }
 }
 
@@ -20081,14 +20095,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00371_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00371_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00372_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00371_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00372_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12);
     }
 }
 
@@ -20125,14 +20139,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00372_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00372_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00373_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00372_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00373_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13);
     }
 }
 
@@ -20169,14 +20183,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00373_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00373_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00374_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00373_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00374_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14);
     }
 }
 
@@ -20213,14 +20227,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00374_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00374_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00375_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00374_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00375_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15);
     }
 }
 
@@ -20257,14 +20271,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00375_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00375_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00376_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15; jshortArray As16;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue; As16 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00375_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00376_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15, As16);
     }
 }
 
@@ -20301,14 +20315,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00376_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00376_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00377_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15; jshortArray As16;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue; As16 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15; jshortArray As16; jshortArray As17;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue; As16 = jshortArrayValue; As17 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00376_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15, As16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00377_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15, As16, As17);
     }
 }
 
@@ -20345,14 +20359,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00377_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00377_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00378_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15; jshortArray As16; jshortArray As17;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue; As16 = jshortArrayValue; As17 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15; jshortArray As16; jshortArray As17; jshortArray As18;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue; As16 = jshortArrayValue; As17 = jshortArrayValue; As18 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00377_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15, As16, As17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00378_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15, As16, As17, As18);
     }
 }
 
@@ -20389,14 +20403,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00378_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00378_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00379_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15; jshortArray As16; jshortArray As17; jshortArray As18;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue; As16 = jshortArrayValue; As17 = jshortArrayValue; As18 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15; jshortArray As16; jshortArray As17; jshortArray As18; jshortArray As19;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue; As16 = jshortArrayValue; As17 = jshortArrayValue; As18 = jshortArrayValue; As19 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00378_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15, As16, As17, As18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00379_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15, As16, As17, As18, As19);
     }
 }
 
@@ -20433,14 +20447,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00379_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00379_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00380_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15; jshortArray As16; jshortArray As17; jshortArray As18; jshortArray As19;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue; As16 = jshortArrayValue; As17 = jshortArrayValue; As18 = jshortArrayValue; As19 = jshortArrayValue;
+    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15; jshortArray As16; jshortArray As17; jshortArray As18; jshortArray As19; jshortArray As20;
+    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue; As16 = jshortArrayValue; As17 = jshortArrayValue; As18 = jshortArrayValue; As19 = jshortArrayValue; As20 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00379_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15, As16, As17, As18, As19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00380_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15, As16, As17, As18, As19, As20);
     }
 }
 
@@ -20477,14 +20491,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00380_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00380_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00381_run
 (JNIEnv *env, jobject instance) {
-    jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15; jshortArray As16; jshortArray As17; jshortArray As18; jshortArray As19; jshortArray As20;
-    As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue; As16 = jshortArrayValue; As17 = jshortArrayValue; As18 = jshortArrayValue; As19 = jshortArrayValue; As20 = jshortArrayValue;
+    jclass C1;
+    C1 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00380_nativemethod (env, instance, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15, As16, As17, As18, As19, As20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00381_nativemethod (env, instance, C1);
     }
 }
 
@@ -20521,14 +20535,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00381_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00381_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00382_run
 (JNIEnv *env, jobject instance) {
-    jclass C1;
-    C1 = jclassValue;
+    jclass C1; jclass C2;
+    C1 = jclassValue; C2 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00381_nativemethod (env, instance, C1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00382_nativemethod (env, instance, C1, C2);
     }
 }
 
@@ -20565,14 +20579,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00382_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00382_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00383_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2;
-    C1 = jclassValue; C2 = jclassValue;
+    jclass C1; jclass C2; jclass C3;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00382_nativemethod (env, instance, C1, C2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00383_nativemethod (env, instance, C1, C2, C3);
     }
 }
 
@@ -20609,14 +20623,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00383_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00383_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00384_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00383_nativemethod (env, instance, C1, C2, C3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00384_nativemethod (env, instance, C1, C2, C3, C4);
     }
 }
 
@@ -20653,14 +20667,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00384_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00384_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00385_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00384_nativemethod (env, instance, C1, C2, C3, C4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00385_nativemethod (env, instance, C1, C2, C3, C4, C5);
     }
 }
 
@@ -20697,14 +20711,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00385_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00385_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00386_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00385_nativemethod (env, instance, C1, C2, C3, C4, C5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00386_nativemethod (env, instance, C1, C2, C3, C4, C5, C6);
     }
 }
 
@@ -20741,14 +20755,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00386_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00386_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00387_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00386_nativemethod (env, instance, C1, C2, C3, C4, C5, C6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00387_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7);
     }
 }
 
@@ -20785,14 +20799,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00387_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00387_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00388_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00387_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00388_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8);
     }
 }
 
@@ -20829,14 +20843,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00388_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00388_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00389_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00388_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00389_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9);
     }
 }
 
@@ -20873,14 +20887,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00389_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00389_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00390_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00389_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00390_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10);
     }
 }
 
@@ -20917,14 +20931,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00390_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00390_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00391_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00390_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00391_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11);
     }
 }
 
@@ -20961,14 +20975,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00391_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00391_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00392_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00391_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00392_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12);
     }
 }
 
@@ -21005,14 +21019,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00392_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00392_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00393_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00392_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00393_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13);
     }
 }
 
@@ -21049,14 +21063,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00393_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00393_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00394_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00393_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00394_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14);
     }
 }
 
@@ -21093,14 +21107,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00394_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00394_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00395_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00394_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00395_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15);
     }
 }
 
@@ -21137,14 +21151,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00395_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00395_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00396_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15; jclass C16;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue; C16 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00395_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00396_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16);
     }
 }
 
@@ -21181,14 +21195,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00396_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00396_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00397_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15; jclass C16;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue; C16 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15; jclass C16; jclass C17;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue; C16 = jclassValue; C17 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00396_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00397_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17);
     }
 }
 
@@ -21225,14 +21239,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00397_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00397_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00398_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15; jclass C16; jclass C17;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue; C16 = jclassValue; C17 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15; jclass C16; jclass C17; jclass C18;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue; C16 = jclassValue; C17 = jclassValue; C18 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00397_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00398_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18);
     }
 }
 
@@ -21269,14 +21283,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00398_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00398_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00399_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15; jclass C16; jclass C17; jclass C18;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue; C16 = jclassValue; C17 = jclassValue; C18 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15; jclass C16; jclass C17; jclass C18; jclass C19;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue; C16 = jclassValue; C17 = jclassValue; C18 = jclassValue; C19 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00398_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00399_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19);
     }
 }
 
@@ -21313,14 +21327,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00399_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00399_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00400_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15; jclass C16; jclass C17; jclass C18; jclass C19;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue; C16 = jclassValue; C17 = jclassValue; C18 = jclassValue; C19 = jclassValue;
+    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15; jclass C16; jclass C17; jclass C18; jclass C19; jclass C20;
+    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue; C16 = jclassValue; C17 = jclassValue; C18 = jclassValue; C19 = jclassValue; C20 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00399_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00400_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20);
     }
 }
 
@@ -21357,14 +21371,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00400_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00400_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00401_run
 (JNIEnv *env, jobject instance) {
-    jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15; jclass C16; jclass C17; jclass C18; jclass C19; jclass C20;
-    C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue; C16 = jclassValue; C17 = jclassValue; C18 = jclassValue; C19 = jclassValue; C20 = jclassValue;
+    jdoubleArray Ad1;
+    Ad1 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00400_nativemethod (env, instance, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00401_nativemethod (env, instance, Ad1);
     }
 }
 
@@ -21401,14 +21415,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00401_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00401_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00402_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1;
-    Ad1 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00401_nativemethod (env, instance, Ad1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00402_nativemethod (env, instance, Ad1, Ad2);
     }
 }
 
@@ -21445,14 +21459,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00402_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00402_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00403_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00402_nativemethod (env, instance, Ad1, Ad2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00403_nativemethod (env, instance, Ad1, Ad2, Ad3);
     }
 }
 
@@ -21489,14 +21503,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00403_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00403_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00404_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00403_nativemethod (env, instance, Ad1, Ad2, Ad3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00404_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4);
     }
 }
 
@@ -21533,14 +21547,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00404_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00404_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00405_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00404_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00405_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5);
     }
 }
 
@@ -21577,14 +21591,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00405_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00405_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00406_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00405_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00406_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6);
     }
 }
 
@@ -21621,14 +21635,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00406_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00406_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00407_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00406_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00407_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7);
     }
 }
 
@@ -21665,14 +21679,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00407_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00407_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00408_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00407_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00408_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8);
     }
 }
 
@@ -21709,14 +21723,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00408_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00408_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00409_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00408_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00409_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9);
     }
 }
 
@@ -21753,14 +21767,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00409_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00409_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00410_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00409_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00410_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10);
     }
 }
 
@@ -21797,14 +21811,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00410_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00410_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00411_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00410_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00411_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11);
     }
 }
 
@@ -21841,14 +21855,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00411_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00411_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00412_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00411_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00412_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12);
     }
 }
 
@@ -21885,14 +21899,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00412_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00412_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00413_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00412_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00413_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13);
     }
 }
 
@@ -21929,14 +21943,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00413_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00413_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00414_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00413_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00414_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14);
     }
 }
 
@@ -21973,14 +21987,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00414_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00414_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00415_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00414_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00415_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15);
     }
 }
 
@@ -22017,14 +22031,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00415_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00415_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00416_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15; jdoubleArray Ad16;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue; Ad16 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00415_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00416_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15, Ad16);
     }
 }
 
@@ -22061,14 +22075,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00416_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00416_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00417_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15; jdoubleArray Ad16;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue; Ad16 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15; jdoubleArray Ad16; jdoubleArray Ad17;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue; Ad16 = jdoubleArrayValue; Ad17 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00416_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15, Ad16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00417_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15, Ad16, Ad17);
     }
 }
 
@@ -22105,14 +22119,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00417_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00417_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00418_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15; jdoubleArray Ad16; jdoubleArray Ad17;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue; Ad16 = jdoubleArrayValue; Ad17 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15; jdoubleArray Ad16; jdoubleArray Ad17; jdoubleArray Ad18;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue; Ad16 = jdoubleArrayValue; Ad17 = jdoubleArrayValue; Ad18 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00417_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15, Ad16, Ad17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00418_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15, Ad16, Ad17, Ad18);
     }
 }
 
@@ -22149,14 +22163,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00418_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00418_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00419_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15; jdoubleArray Ad16; jdoubleArray Ad17; jdoubleArray Ad18;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue; Ad16 = jdoubleArrayValue; Ad17 = jdoubleArrayValue; Ad18 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15; jdoubleArray Ad16; jdoubleArray Ad17; jdoubleArray Ad18; jdoubleArray Ad19;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue; Ad16 = jdoubleArrayValue; Ad17 = jdoubleArrayValue; Ad18 = jdoubleArrayValue; Ad19 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00418_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15, Ad16, Ad17, Ad18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00419_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15, Ad16, Ad17, Ad18, Ad19);
     }
 }
 
@@ -22193,14 +22207,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00419_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00419_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00420_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15; jdoubleArray Ad16; jdoubleArray Ad17; jdoubleArray Ad18; jdoubleArray Ad19;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue; Ad16 = jdoubleArrayValue; Ad17 = jdoubleArrayValue; Ad18 = jdoubleArrayValue; Ad19 = jdoubleArrayValue;
+    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15; jdoubleArray Ad16; jdoubleArray Ad17; jdoubleArray Ad18; jdoubleArray Ad19; jdoubleArray Ad20;
+    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue; Ad16 = jdoubleArrayValue; Ad17 = jdoubleArrayValue; Ad18 = jdoubleArrayValue; Ad19 = jdoubleArrayValue; Ad20 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00419_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15, Ad16, Ad17, Ad18, Ad19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00420_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15, Ad16, Ad17, Ad18, Ad19, Ad20);
     }
 }
 
@@ -22237,14 +22251,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00420_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00420_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00421_run
 (JNIEnv *env, jobject instance) {
-    jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15; jdoubleArray Ad16; jdoubleArray Ad17; jdoubleArray Ad18; jdoubleArray Ad19; jdoubleArray Ad20;
-    Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue; Ad16 = jdoubleArrayValue; Ad17 = jdoubleArrayValue; Ad18 = jdoubleArrayValue; Ad19 = jdoubleArrayValue; Ad20 = jdoubleArrayValue;
+    jstring S1;
+    S1 = jstringValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00420_nativemethod (env, instance, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15, Ad16, Ad17, Ad18, Ad19, Ad20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00421_nativemethod (env, instance, S1);
     }
 }
 
@@ -22281,14 +22295,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00421_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00421_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00422_run
 (JNIEnv *env, jobject instance) {
-    jstring S1;
-    S1 = jstringValue;
+    jstring S1; jcharArray Ac2;
+    S1 = jstringValue; Ac2 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00421_nativemethod (env, instance, S1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00422_nativemethod (env, instance, S1, Ac2);
     }
 }
 
@@ -22325,14 +22339,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00422_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00422_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00423_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2;
-    S1 = jstringValue; Ac2 = jcharArrayValue;
+    jstring S1; jcharArray Ac2; jchar c3;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00422_nativemethod (env, instance, S1, Ac2);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00423_nativemethod (env, instance, S1, Ac2, c3);
     }
 }
 
@@ -22369,14 +22383,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00423_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00423_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00424_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00423_nativemethod (env, instance, S1, Ac2, c3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00424_nativemethod (env, instance, S1, Ac2, c3, b4);
     }
 }
 
@@ -22413,14 +22427,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00424_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00424_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00425_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00424_nativemethod (env, instance, S1, Ac2, c3, b4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00425_nativemethod (env, instance, S1, Ac2, c3, b4, d5);
     }
 }
 
@@ -22457,14 +22471,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00425_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00425_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00426_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00425_nativemethod (env, instance, S1, Ac2, c3, b4, d5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00426_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6);
     }
 }
 
@@ -22501,14 +22515,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00426_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00426_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00427_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00426_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00427_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7);
     }
 }
 
@@ -22545,14 +22559,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00427_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00427_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00428_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00427_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00428_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8);
     }
 }
 
@@ -22589,14 +22603,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00428_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00428_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00429_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00428_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00429_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9);
     }
 }
 
@@ -22633,14 +22647,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00429_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00429_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00430_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00429_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00430_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10);
     }
 }
 
@@ -22677,14 +22691,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00430_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00430_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00431_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00430_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00431_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11);
     }
 }
 
@@ -22721,14 +22735,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00431_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00431_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00432_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00431_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00432_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12);
     }
 }
 
@@ -22765,14 +22779,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00432_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00432_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00433_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00432_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00433_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13);
     }
 }
 
@@ -22809,14 +22823,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00433_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00433_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00434_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00433_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00434_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14);
     }
 }
 
@@ -22853,14 +22867,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00434_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00434_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00435_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00434_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00435_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15);
     }
 }
 
@@ -22897,14 +22911,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00435_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00435_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00436_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00435_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00436_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16);
     }
 }
 
@@ -22941,14 +22955,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00436_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00436_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00437_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00436_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00437_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17);
     }
 }
 
@@ -22985,14 +22999,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00437_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00437_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00438_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00437_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00438_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18);
     }
 }
 
@@ -23029,14 +23043,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00438_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00438_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00439_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a';
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18; jshortArray As19;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a'; As19 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00438_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00439_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19);
     }
 }
 
@@ -23073,14 +23087,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00439_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00439_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00440_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18; jshortArray As19;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a'; As19 = jshortArrayValue;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18; jshortArray As19; jclass C20;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a'; As19 = jshortArrayValue; C20 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00439_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00440_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19, C20);
     }
 }
 
@@ -23117,14 +23131,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00440_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00440_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00441_run
 (JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18; jshortArray As19; jclass C20;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a'; As19 = jshortArrayValue; C20 = jclassValue;
+    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18; jshortArray As19; jclass C20; jdoubleArray Ad21;
+    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a'; As19 = jshortArrayValue; C20 = jclassValue; Ad21 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00440_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19, C20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00441_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19, C20, Ad21);
     }
 }
 
@@ -23161,50 +23175,6 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00441_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00441_run
-(JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18; jshortArray As19; jclass C20; jdoubleArray Ad21;
-    S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a'; As19 = jshortArrayValue; C20 = jclassValue; Ad21 = jdoubleArrayValue;
-
-    jlong i;
-    for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00441_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19, C20, Ad21);
-    }
-}
-
-
-
-JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00442_run
-(JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[442 - 1];
-
-    jint i1;
-    i1 = 102;
-
-    jlong i, refs = 0;
-
-    for (i = 0; i < repetitions; i++) {
-        if (refs == 0) {
-            refs = LOCAL_FRAME_SIZE;
-            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
-                __android_log_write(ANDROID_LOG_ERROR,                      
-                    "nativebenchmark", "can't ensure capacity");
-                return;
-            }
-        }
-
-        (*env)->CallIntMethod(env, instance, mid, i1);
-
-        if (--refs == 0) {
-            (*env)->PopLocalFrame(env, NULL);
-        }
-    }
-}
-
-
-
-JNIEXPORT void JNICALL
 Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00442_run
 (JNIEnv *env, jobject instance) {
     jint i1;
@@ -23219,9 +23189,9 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00442_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00443_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00442_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[443 - 1];
+    jmethodID mid = mids[442 - 1];
 
     jint i1;
     i1 = 102;
@@ -23263,9 +23233,9 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00443_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00444_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00443_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[444 - 1];
+    jmethodID mid = mids[443 - 1];
 
     jint i1;
     i1 = 102;
@@ -23307,9 +23277,9 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00444_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00445_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00444_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[445 - 1];
+    jmethodID mid = mids[444 - 1];
 
     jint i1;
     i1 = 102;
@@ -23351,9 +23321,9 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00445_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00446_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00445_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[446 - 1];
+    jmethodID mid = mids[445 - 1];
 
     jint i1;
     i1 = 102;
@@ -23395,9 +23365,9 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00446_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00447_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00446_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[447 - 1];
+    jmethodID mid = mids[446 - 1];
 
     jint i1;
     i1 = 102;
@@ -23439,9 +23409,9 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00447_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00448_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00447_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[448 - 1];
+    jmethodID mid = mids[447 - 1];
 
     jint i1;
     i1 = 102;
@@ -23458,7 +23428,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00448_run
             }
         }
 
-        (*env)->CallObjectMethod(env, instance, mid, i1);
+        (*env)->CallIntMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -23483,9 +23453,9 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00448_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00449_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00448_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[449 - 1];
+    jmethodID mid = mids[448 - 1];
 
     jint i1;
     i1 = 102;
@@ -23527,6 +23497,50 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00449_run
 
 
 JNIEXPORT void JNICALL
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00449_run
+(JNIEnv *env, jobject instance) {
+    jmethodID mid = mids[449 - 1];
+
+    jint i1;
+    i1 = 102;
+
+    jlong i, refs = 0;
+
+    for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
+        (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
+    }
+}
+
+
+
+JNIEXPORT void JNICALL
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00450_run
+(JNIEnv *env, jobject instance) {
+    jint i1;
+    i1 = 102;
+
+    jlong i;
+    for (i = 0; i < repetitions; i++) {
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00450_nativemethod (env, instance, i1);
+    }
+}
+
+
+
+JNIEXPORT void JNICALL
 Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00450_run
 (JNIEnv *env, jobject instance) {
     jmethodID mid = mids[450 - 1];
@@ -23557,14 +23571,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00450_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00450_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00451_run
 (JNIEnv *env, jobject instance) {
     jint i1;
     i1 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00450_nativemethod (env, instance, i1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00451_nativemethod (env, instance, i1);
     }
 }
 
@@ -23601,14 +23615,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00451_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00451_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00452_run
 (JNIEnv *env, jobject instance) {
     jint i1;
     i1 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00451_nativemethod (env, instance, i1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00452_nativemethod (env, instance, i1);
     }
 }
 
@@ -23645,14 +23659,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00452_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00452_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00453_run
 (JNIEnv *env, jobject instance) {
     jint i1;
     i1 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00452_nativemethod (env, instance, i1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00453_nativemethod (env, instance, i1);
     }
 }
 
@@ -23689,14 +23703,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00453_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00453_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00454_run
 (JNIEnv *env, jobject instance) {
     jint i1;
     i1 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00453_nativemethod (env, instance, i1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00454_nativemethod (env, instance, i1);
     }
 }
 
@@ -23733,14 +23747,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00454_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00454_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00455_run
 (JNIEnv *env, jobject instance) {
     jint i1;
     i1 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00454_nativemethod (env, instance, i1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00455_nativemethod (env, instance, i1);
     }
 }
 
@@ -23777,14 +23791,14 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00455_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00455_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00456_run
 (JNIEnv *env, jobject instance) {
     jint i1;
     i1 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00455_nativemethod (env, instance, i1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00456_nativemethod (env, instance, i1);
     }
 }
 
@@ -23821,50 +23835,6 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00456_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00456_run
-(JNIEnv *env, jobject instance) {
-    jint i1;
-    i1 = 102;
-
-    jlong i;
-    for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00456_nativemethod (env, instance, i1);
-    }
-}
-
-
-
-JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00457_run
-(JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[457 - 1];
-
-    jint i1;
-    i1 = 102;
-
-    jlong i, refs = 0;
-
-    for (i = 0; i < repetitions; i++) {
-        if (refs == 0) {
-            refs = LOCAL_FRAME_SIZE;
-            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
-                __android_log_write(ANDROID_LOG_ERROR,                      
-                    "nativebenchmark", "can't ensure capacity");
-                return;
-            }
-        }
-
-        (*env)->CallObjectMethod(env, instance, mid, i1);
-
-        if (--refs == 0) {
-            (*env)->PopLocalFrame(env, NULL);
-        }
-    }
-}
-
-
-
-JNIEXPORT void JNICALL
 Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00457_run
 (JNIEnv *env, jobject instance) {
     jint i1;
@@ -23879,9 +23849,9 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00457_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00458_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00457_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[458 - 1];
+    jmethodID mid = mids[457 - 1];
 
     jint i1;
     i1 = 102;
@@ -23923,9 +23893,9 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00458_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00459_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00458_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[459 - 1];
+    jmethodID mid = mids[458 - 1];
 
     jint i1;
     i1 = 102;
@@ -23967,6 +23937,50 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00459_run
 
 
 JNIEXPORT void JNICALL
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00459_run
+(JNIEnv *env, jobject instance) {
+    jmethodID mid = mids[459 - 1];
+
+    jint i1;
+    i1 = 102;
+
+    jlong i, refs = 0;
+
+    for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
+        (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
+    }
+}
+
+
+
+JNIEXPORT void JNICALL
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00460_run
+(JNIEnv *env, jobject instance) {
+    jint i1;
+    i1 = 102;
+
+    jlong i;
+    for (i = 0; i < repetitions; i++) {
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00460_nativemethod (env, instance, i1);
+    }
+}
+
+
+
+JNIEXPORT void JNICALL
 Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00460_run
 (JNIEnv *env, jobject instance) {
     jmethodID mid = mids[460 - 1];
@@ -23997,50 +24011,6 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00460_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00460_run
-(JNIEnv *env, jobject instance) {
-    jint i1;
-    i1 = 102;
-
-    jlong i;
-    for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00460_nativemethod (env, instance, i1);
-    }
-}
-
-
-
-JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00461_run
-(JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[461 - 1];
-
-    jint i1;
-    i1 = 102;
-
-    jlong i, refs = 0;
-
-    for (i = 0; i < repetitions; i++) {
-        if (refs == 0) {
-            refs = LOCAL_FRAME_SIZE;
-            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
-                __android_log_write(ANDROID_LOG_ERROR,                      
-                    "nativebenchmark", "can't ensure capacity");
-                return;
-            }
-        }
-
-        (*env)->CallObjectMethod(env, instance, mid, i1);
-
-        if (--refs == 0) {
-            (*env)->PopLocalFrame(env, NULL);
-        }
-    }
-}
-
-
-
-JNIEXPORT void JNICALL
 Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00461_run
 (JNIEnv *env, jobject instance) {
     jint i1;
@@ -24055,9 +24025,9 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00461_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00462_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00461_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[462 - 1];
+    jmethodID mid = mids[461 - 1];
 
     jint i1;
     i1 = 102;
@@ -24099,9 +24069,9 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00462_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00463_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00462_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[463 - 1];
+    jmethodID mid = mids[462 - 1];
 
     jint i1;
     i1 = 102;
@@ -24143,9 +24113,9 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00463_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00464_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00463_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[464 - 1];
+    jmethodID mid = mids[463 - 1];
 
     jint i1;
     i1 = 102;
@@ -24187,6 +24157,50 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00464_run
 
 
 JNIEXPORT void JNICALL
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00464_run
+(JNIEnv *env, jobject instance) {
+    jmethodID mid = mids[464 - 1];
+
+    jint i1;
+    i1 = 102;
+
+    jlong i, refs = 0;
+
+    for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
+        (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
+    }
+}
+
+
+
+JNIEXPORT void JNICALL
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00465_run
+(JNIEnv *env, jobject instance) {
+    jint i1;
+    i1 = 102;
+
+    jlong i;
+    for (i = 0; i < repetitions; i++) {
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00465_nativemethod (env, instance, i1);
+    }
+}
+
+
+
+JNIEXPORT void JNICALL
 Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00465_run
 (JNIEnv *env, jobject instance) {
     jmethodID mid = mids[465 - 1];
@@ -24217,50 +24231,6 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00465_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00465_run
-(JNIEnv *env, jobject instance) {
-    jint i1;
-    i1 = 102;
-
-    jlong i;
-    for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00465_nativemethod (env, instance, i1);
-    }
-}
-
-
-
-JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00466_run
-(JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[466 - 1];
-
-    jint i1;
-    i1 = 102;
-
-    jlong i, refs = 0;
-
-    for (i = 0; i < repetitions; i++) {
-        if (refs == 0) {
-            refs = LOCAL_FRAME_SIZE;
-            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
-                __android_log_write(ANDROID_LOG_ERROR,                      
-                    "nativebenchmark", "can't ensure capacity");
-                return;
-            }
-        }
-
-        (*env)->CallObjectMethod(env, instance, mid, i1);
-
-        if (--refs == 0) {
-            (*env)->PopLocalFrame(env, NULL);
-        }
-    }
-}
-
-
-
-JNIEXPORT void JNICALL
 Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00466_run
 (JNIEnv *env, jobject instance) {
     jint i1;
@@ -24275,9 +24245,9 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00466_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00467_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00466_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[467 - 1];
+    jmethodID mid = mids[466 - 1];
 
     jint i1;
     i1 = 102;
@@ -24319,9 +24289,9 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00467_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00468_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00467_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[468 - 1];
+    jmethodID mid = mids[467 - 1];
 
     jint i1;
     i1 = 102;
@@ -24357,6 +24327,36 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00468_run
     jlong i;
     for (i = 0; i < repetitions; i++) {
         Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00468_nativemethod (env, instance, i1);
+    }
+}
+
+
+
+JNIEXPORT void JNICALL
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00468_run
+(JNIEnv *env, jobject instance) {
+    jmethodID mid = mids[468 - 1];
+
+    jint i1;
+    i1 = 102;
+
+    jlong i, refs = 0;
+
+    for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
+        (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
