@@ -36,9 +36,23 @@ Java_{packagename}_{classname}_run
     {parameter_declarations};
     {parameter_initialisations};
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {{
+        if (refs == 0) {{
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {{
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }}
+        }}
+
         (*env)->Call{java_method_type}Method{call_variant}(env, instance, mid{arguments});
+
+        if (--refs == 0) {{
+            (*env)->PopLocalFrame(env, NULL);
+        }}
     }}
 }}
 

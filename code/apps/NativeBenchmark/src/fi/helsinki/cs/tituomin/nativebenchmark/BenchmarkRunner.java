@@ -19,6 +19,7 @@ import java.io.PrintWriter;
 import java.io.IOException;
 import android.os.Environment;
 import android.util.Log;
+import android.os.SystemClock;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -70,6 +71,7 @@ public class BenchmarkRunner {
 
         List<Benchmark> benchmarks = BenchmarkRegistry.getBenchmarks();
 
+        long endTime = 0, startTime = SystemClock.uptimeMillis();
         int j = 0;
         for (Benchmark benchmark : benchmarks) {
             mainUI.updateState(
@@ -92,6 +94,7 @@ public class BenchmarkRunner {
             md.addAll(inspectBenchmark(benchmark));
             compiledMetadata.add(md);
         }
+        endTime = SystemClock.uptimeMillis();
         Log.v("Runner", "compiledMetadata size " + compiledMetadata.size());
 
         File file = new File(dataDir, "testing_metadata.txt");
@@ -139,6 +142,26 @@ public class BenchmarkRunner {
         catch (IOException e) {
             Log.e("Nativebenchmark", "ioexception " + e);
         }
+
+        mainUI.updateState(
+            ApplicationState.State.MEASURING_FINISHED,
+            humanTime(endTime - startTime));
+        
+    }
+
+    private static String humanTime(long millis) {
+        String time;
+        long seconds = millis  / 1000;
+        long minutes = seconds / 60;
+        long hours   = minutes / 60;
+        long seconds_total = seconds;
+        seconds %= 60;
+        minutes %= 60;
+        return (
+            hours   + "h " +
+            minutes + "m " +
+            seconds + "s" +
+            "(" + seconds_total + " s tot.)");
     }
 
     private static BenchmarkMetadata inspectBenchmark(Benchmark benchmark) {

@@ -9,7 +9,7 @@ import java.util.Iterator;
 
 public class BenchmarkRegistry {
 
-    private static List<Benchmark> benchmarks = new LinkedList<Benchmark> ();
+    private static List<Benchmark> benchmarks;
 
     public static long repetitions;
 
@@ -19,6 +19,7 @@ public class BenchmarkRegistry {
 
     public static void init(long reps) throws ClassNotFoundException {
         repetitions = reps;
+        benchmarks = new LinkedList<Benchmark> ();
         Class jCounterparts = Class.forName("fi.helsinki.cs.tituomin.nativebenchmark.benchmark.JavaCounterparts");
         initNative(reps, jCounterparts);
     }

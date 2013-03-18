@@ -5,6 +5,8 @@ public class BenchmarkParameter {
     private native int initReturnvalues();
     private native void freeReturnvalues();
 
+    private static final String example = "Killer bee";
+
     public boolean[] retrieveBooleanArray() {
         return new boolean[] {true, false, true};
     }
@@ -39,7 +41,7 @@ public class BenchmarkParameter {
         return retrieveString().getClass();
     }
     public String retrieveString() {
-        return new String("Killer bee");
+        return example;
     }
     public Throwable retrieveThrowable() {
         return new Exception();

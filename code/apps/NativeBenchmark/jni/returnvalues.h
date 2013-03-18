@@ -5,6 +5,8 @@
 #define RETURN_VALUE(type) type type ## Value;
 #define NULL 0
 
+#define LOCAL_FRAME_SIZE 100
+
 RETURN_VALUE(jclass)
 RETURN_VALUE(jobject)
 RETURN_VALUE(jstring)

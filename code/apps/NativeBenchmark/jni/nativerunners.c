@@ -3778,9 +3778,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00001_run
     jstring S1;
     S1 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -3808,9 +3822,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00002_run
     jstring S1; jstring S2;
     S1 = jstringValue; S2 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -3838,9 +3866,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00003_run
     jstring S1; jstring S2; jstring S3;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -3868,9 +3910,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00004_run
     jstring S1; jstring S2; jstring S3; jstring S4;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -3898,9 +3954,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00005_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -3928,9 +3998,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00006_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5, S6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -3958,9 +4042,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00007_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5, S6, S7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -3988,9 +4086,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00008_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5, S6, S7, S8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4018,9 +4130,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00009_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5, S6, S7, S8, S9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4048,9 +4174,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00010_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4078,9 +4218,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00011_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4108,9 +4262,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00012_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4138,9 +4306,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00013_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4168,9 +4350,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00014_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4198,9 +4394,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00015_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4228,9 +4438,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00016_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15; jstring S16;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue; S16 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4258,9 +4482,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00017_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15; jstring S16; jstring S17;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue; S16 = jstringValue; S17 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4288,9 +4526,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00018_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15; jstring S16; jstring S17; jstring S18;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue; S16 = jstringValue; S17 = jstringValue; S18 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4318,9 +4570,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00019_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15; jstring S16; jstring S17; jstring S18; jstring S19;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue; S16 = jstringValue; S17 = jstringValue; S18 = jstringValue; S19 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4348,9 +4614,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00020_run
     jstring S1; jstring S2; jstring S3; jstring S4; jstring S5; jstring S6; jstring S7; jstring S8; jstring S9; jstring S10; jstring S11; jstring S12; jstring S13; jstring S14; jstring S15; jstring S16; jstring S17; jstring S18; jstring S19; jstring S20;
     S1 = jstringValue; S2 = jstringValue; S3 = jstringValue; S4 = jstringValue; S5 = jstringValue; S6 = jstringValue; S7 = jstringValue; S8 = jstringValue; S9 = jstringValue; S10 = jstringValue; S11 = jstringValue; S12 = jstringValue; S13 = jstringValue; S14 = jstringValue; S15 = jstringValue; S16 = jstringValue; S17 = jstringValue; S18 = jstringValue; S19 = jstringValue; S20 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19, S20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4378,9 +4658,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00021_run
     jcharArray Ac1;
     Ac1 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4408,9 +4702,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00022_run
     jcharArray Ac1; jcharArray Ac2;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4438,9 +4746,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00023_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4468,9 +4790,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00024_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4498,9 +4834,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00025_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4528,9 +4878,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00026_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4558,9 +4922,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00027_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4588,9 +4966,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00028_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4618,9 +5010,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00029_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4648,9 +5054,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00030_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4678,9 +5098,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00031_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4708,9 +5142,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00032_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4738,9 +5186,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00033_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4768,9 +5230,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00034_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4798,9 +5274,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00035_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4828,9 +5318,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00036_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15; jcharArray Ac16;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue; Ac16 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15, Ac16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4858,9 +5362,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00037_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15; jcharArray Ac16; jcharArray Ac17;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue; Ac16 = jcharArrayValue; Ac17 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15, Ac16, Ac17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4888,9 +5406,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00038_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15; jcharArray Ac16; jcharArray Ac17; jcharArray Ac18;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue; Ac16 = jcharArrayValue; Ac17 = jcharArrayValue; Ac18 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15, Ac16, Ac17, Ac18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4918,9 +5450,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00039_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15; jcharArray Ac16; jcharArray Ac17; jcharArray Ac18; jcharArray Ac19;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue; Ac16 = jcharArrayValue; Ac17 = jcharArrayValue; Ac18 = jcharArrayValue; Ac19 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15, Ac16, Ac17, Ac18, Ac19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4948,9 +5494,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00040_run
     jcharArray Ac1; jcharArray Ac2; jcharArray Ac3; jcharArray Ac4; jcharArray Ac5; jcharArray Ac6; jcharArray Ac7; jcharArray Ac8; jcharArray Ac9; jcharArray Ac10; jcharArray Ac11; jcharArray Ac12; jcharArray Ac13; jcharArray Ac14; jcharArray Ac15; jcharArray Ac16; jcharArray Ac17; jcharArray Ac18; jcharArray Ac19; jcharArray Ac20;
     Ac1 = jcharArrayValue; Ac2 = jcharArrayValue; Ac3 = jcharArrayValue; Ac4 = jcharArrayValue; Ac5 = jcharArrayValue; Ac6 = jcharArrayValue; Ac7 = jcharArrayValue; Ac8 = jcharArrayValue; Ac9 = jcharArrayValue; Ac10 = jcharArrayValue; Ac11 = jcharArrayValue; Ac12 = jcharArrayValue; Ac13 = jcharArrayValue; Ac14 = jcharArrayValue; Ac15 = jcharArrayValue; Ac16 = jcharArrayValue; Ac17 = jcharArrayValue; Ac18 = jcharArrayValue; Ac19 = jcharArrayValue; Ac20 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ac1, Ac2, Ac3, Ac4, Ac5, Ac6, Ac7, Ac8, Ac9, Ac10, Ac11, Ac12, Ac13, Ac14, Ac15, Ac16, Ac17, Ac18, Ac19, Ac20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -4978,9 +5538,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00041_run
     jchar c1;
     c1 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5008,9 +5582,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00042_run
     jchar c1; jchar c2;
     c1 = 12; c2 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5038,9 +5626,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00043_run
     jchar c1; jchar c2; jchar c3;
     c1 = 12; c2 = 12; c3 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5068,9 +5670,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00044_run
     jchar c1; jchar c2; jchar c3; jchar c4;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5098,9 +5714,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00045_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5128,9 +5758,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00046_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5, c6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5158,9 +5802,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00047_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5, c6, c7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5188,9 +5846,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00048_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5, c6, c7, c8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5218,9 +5890,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00049_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5, c6, c7, c8, c9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5248,9 +5934,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00050_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5278,9 +5978,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00051_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5308,9 +6022,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00052_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5338,9 +6066,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00053_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5368,9 +6110,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00054_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5398,9 +6154,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00055_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5428,9 +6198,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00056_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15; jchar c16;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12; c16 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5458,9 +6242,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00057_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15; jchar c16; jchar c17;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12; c16 = 12; c17 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5488,9 +6286,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00058_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15; jchar c16; jchar c17; jchar c18;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12; c16 = 12; c17 = 12; c18 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5518,9 +6330,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00059_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15; jchar c16; jchar c17; jchar c18; jchar c19;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12; c16 = 12; c17 = 12; c18 = 12; c19 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5548,9 +6374,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00060_run
     jchar c1; jchar c2; jchar c3; jchar c4; jchar c5; jchar c6; jchar c7; jchar c8; jchar c9; jchar c10; jchar c11; jchar c12; jchar c13; jchar c14; jchar c15; jchar c16; jchar c17; jchar c18; jchar c19; jchar c20;
     c1 = 12; c2 = 12; c3 = 12; c4 = 12; c5 = 12; c6 = 12; c7 = 12; c8 = 12; c9 = 12; c10 = 12; c11 = 12; c12 = 12; c13 = 12; c14 = 12; c15 = 12; c16 = 12; c17 = 12; c18 = 12; c19 = 12; c20 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15, c16, c17, c18, c19, c20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5578,9 +6418,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00061_run
     jboolean b1;
     b1 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5608,9 +6462,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00062_run
     jboolean b1; jboolean b2;
     b1 = 1; b2 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5638,9 +6506,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00063_run
     jboolean b1; jboolean b2; jboolean b3;
     b1 = 1; b2 = 1; b3 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5668,9 +6550,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00064_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5698,9 +6594,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00065_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5728,9 +6638,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00066_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5, b6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5758,9 +6682,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00067_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5, b6, b7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5788,9 +6726,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00068_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5, b6, b7, b8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5818,9 +6770,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00069_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5, b6, b7, b8, b9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5848,9 +6814,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00070_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5878,9 +6858,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00071_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5908,9 +6902,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00072_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5938,9 +6946,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00073_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5968,9 +6990,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00074_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -5998,9 +7034,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00075_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6028,9 +7078,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00076_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15; jboolean b16;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1; b16 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6058,9 +7122,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00077_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15; jboolean b16; jboolean b17;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1; b16 = 1; b17 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6088,9 +7166,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00078_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15; jboolean b16; jboolean b17; jboolean b18;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1; b16 = 1; b17 = 1; b18 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6118,9 +7210,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00079_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15; jboolean b16; jboolean b17; jboolean b18; jboolean b19;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1; b16 = 1; b17 = 1; b18 = 1; b19 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6148,9 +7254,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00080_run
     jboolean b1; jboolean b2; jboolean b3; jboolean b4; jboolean b5; jboolean b6; jboolean b7; jboolean b8; jboolean b9; jboolean b10; jboolean b11; jboolean b12; jboolean b13; jboolean b14; jboolean b15; jboolean b16; jboolean b17; jboolean b18; jboolean b19; jboolean b20;
     b1 = 1; b2 = 1; b3 = 1; b4 = 1; b5 = 1; b6 = 1; b7 = 1; b8 = 1; b9 = 1; b10 = 1; b11 = 1; b12 = 1; b13 = 1; b14 = 1; b15 = 1; b16 = 1; b17 = 1; b18 = 1; b19 = 1; b20 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6178,9 +7298,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00081_run
     jdouble d1;
     d1 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6208,9 +7342,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00082_run
     jdouble d1; jdouble d2;
     d1 = 105.1; d2 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6238,9 +7386,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00083_run
     jdouble d1; jdouble d2; jdouble d3;
     d1 = 105.1; d2 = 105.1; d3 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6268,9 +7430,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00084_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6298,9 +7474,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00085_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6328,9 +7518,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00086_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5, d6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6358,9 +7562,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00087_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5, d6, d7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6388,9 +7606,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00088_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5, d6, d7, d8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6418,9 +7650,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00089_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5, d6, d7, d8, d9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6448,9 +7694,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00090_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6478,9 +7738,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00091_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6508,9 +7782,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00092_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6538,9 +7826,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00093_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6568,9 +7870,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00094_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6598,9 +7914,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00095_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6628,9 +7958,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00096_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15; jdouble d16;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1; d16 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6658,9 +8002,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00097_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15; jdouble d16; jdouble d17;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1; d16 = 105.1; d17 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6688,9 +8046,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00098_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15; jdouble d16; jdouble d17; jdouble d18;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1; d16 = 105.1; d17 = 105.1; d18 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6718,9 +8090,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00099_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15; jdouble d16; jdouble d17; jdouble d18; jdouble d19;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1; d16 = 105.1; d17 = 105.1; d18 = 105.1; d19 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6748,9 +8134,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00100_run
     jdouble d1; jdouble d2; jdouble d3; jdouble d4; jdouble d5; jdouble d6; jdouble d7; jdouble d8; jdouble d9; jdouble d10; jdouble d11; jdouble d12; jdouble d13; jdouble d14; jdouble d15; jdouble d16; jdouble d17; jdouble d18; jdouble d19; jdouble d20;
     d1 = 105.1; d2 = 105.1; d3 = 105.1; d4 = 105.1; d5 = 105.1; d6 = 105.1; d7 = 105.1; d8 = 105.1; d9 = 105.1; d10 = 105.1; d11 = 105.1; d12 = 105.1; d13 = 105.1; d14 = 105.1; d15 = 105.1; d16 = 105.1; d17 = 105.1; d18 = 105.1; d19 = 105.1; d20 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6778,9 +8178,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00101_run
     jfloat f1;
     f1 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6808,9 +8222,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00102_run
     jfloat f1; jfloat f2;
     f1 = 104.1; f2 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6838,9 +8266,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00103_run
     jfloat f1; jfloat f2; jfloat f3;
     f1 = 104.1; f2 = 104.1; f3 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6868,9 +8310,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00104_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6898,9 +8354,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00105_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6928,9 +8398,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00106_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5, f6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6958,9 +8442,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00107_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5, f6, f7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -6988,9 +8486,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00108_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5, f6, f7, f8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7018,9 +8530,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00109_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5, f6, f7, f8, f9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7048,9 +8574,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00110_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7078,9 +8618,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00111_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7108,9 +8662,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00112_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7138,9 +8706,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00113_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7168,9 +8750,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00114_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7198,9 +8794,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00115_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7228,9 +8838,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00116_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15; jfloat f16;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1; f16 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7258,9 +8882,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00117_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15; jfloat f16; jfloat f17;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1; f16 = 104.1; f17 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7288,9 +8926,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00118_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15; jfloat f16; jfloat f17; jfloat f18;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1; f16 = 104.1; f17 = 104.1; f18 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7318,9 +8970,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00119_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15; jfloat f16; jfloat f17; jfloat f18; jfloat f19;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1; f16 = 104.1; f17 = 104.1; f18 = 104.1; f19 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18, f19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7348,9 +9014,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00120_run
     jfloat f1; jfloat f2; jfloat f3; jfloat f4; jfloat f5; jfloat f6; jfloat f7; jfloat f8; jfloat f9; jfloat f10; jfloat f11; jfloat f12; jfloat f13; jfloat f14; jfloat f15; jfloat f16; jfloat f17; jfloat f18; jfloat f19; jfloat f20;
     f1 = 104.1; f2 = 104.1; f3 = 104.1; f4 = 104.1; f5 = 104.1; f6 = 104.1; f7 = 104.1; f8 = 104.1; f9 = 104.1; f10 = 104.1; f11 = 104.1; f12 = 104.1; f13 = 104.1; f14 = 104.1; f15 = 104.1; f16 = 104.1; f17 = 104.1; f18 = 104.1; f19 = 104.1; f20 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18, f19, f20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7378,9 +9058,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00121_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7408,9 +9102,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00122_run
     jint i1; jint i2;
     i1 = 102; i2 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7438,9 +9146,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00123_run
     jint i1; jint i2; jint i3;
     i1 = 102; i2 = 102; i3 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7468,9 +9190,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00124_run
     jint i1; jint i2; jint i3; jint i4;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7498,9 +9234,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00125_run
     jint i1; jint i2; jint i3; jint i4; jint i5;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7528,9 +9278,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00126_run
     jint i1; jint i2; jint i3; jint i4; jint i5; jint i6;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5, i6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7558,9 +9322,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00127_run
     jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5, i6, i7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7588,9 +9366,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00128_run
     jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5, i6, i7, i8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7618,9 +9410,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00129_run
     jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5, i6, i7, i8, i9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7648,9 +9454,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00130_run
     jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7678,9 +9498,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00131_run
     jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7708,9 +9542,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00132_run
     jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7738,9 +9586,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00133_run
     jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7768,9 +9630,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00134_run
     jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7798,9 +9674,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00135_run
     jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7828,9 +9718,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00136_run
     jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15; jint i16;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102; i16 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7858,9 +9762,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00137_run
     jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15; jint i16; jint i17;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102; i16 = 102; i17 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7888,9 +9806,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00138_run
     jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15; jint i16; jint i17; jint i18;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102; i16 = 102; i17 = 102; i18 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7918,9 +9850,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00139_run
     jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15; jint i16; jint i17; jint i18; jint i19;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102; i16 = 102; i17 = 102; i18 = 102; i19 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7948,9 +9894,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00140_run
     jint i1; jint i2; jint i3; jint i4; jint i5; jint i6; jint i7; jint i8; jint i9; jint i10; jint i11; jint i12; jint i13; jint i14; jint i15; jint i16; jint i17; jint i18; jint i19; jint i20;
     i1 = 102; i2 = 102; i3 = 102; i4 = 102; i5 = 102; i6 = 102; i7 = 102; i8 = 102; i9 = 102; i10 = 102; i11 = 102; i12 = 102; i13 = 102; i14 = 102; i15 = 102; i16 = 102; i17 = 102; i18 = 102; i19 = 102; i20 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -7978,9 +9938,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00141_run
     jfloatArray Af1;
     Af1 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8008,9 +9982,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00142_run
     jfloatArray Af1; jfloatArray Af2;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8038,9 +10026,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00143_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8068,9 +10070,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00144_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8098,9 +10114,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00145_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8128,9 +10158,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00146_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5, Af6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8158,9 +10202,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00147_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5, Af6, Af7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8188,9 +10246,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00148_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8218,9 +10290,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00149_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8248,9 +10334,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00150_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8278,9 +10378,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00151_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8308,9 +10422,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00152_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8338,9 +10466,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00153_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8368,9 +10510,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00154_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8398,9 +10554,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00155_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8428,9 +10598,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00156_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15; jfloatArray Af16;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue; Af16 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15, Af16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8458,9 +10642,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00157_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15; jfloatArray Af16; jfloatArray Af17;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue; Af16 = jfloatArrayValue; Af17 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15, Af16, Af17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8488,9 +10686,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00158_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15; jfloatArray Af16; jfloatArray Af17; jfloatArray Af18;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue; Af16 = jfloatArrayValue; Af17 = jfloatArrayValue; Af18 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15, Af16, Af17, Af18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8518,9 +10730,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00159_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15; jfloatArray Af16; jfloatArray Af17; jfloatArray Af18; jfloatArray Af19;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue; Af16 = jfloatArrayValue; Af17 = jfloatArrayValue; Af18 = jfloatArrayValue; Af19 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15, Af16, Af17, Af18, Af19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8548,9 +10774,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00160_run
     jfloatArray Af1; jfloatArray Af2; jfloatArray Af3; jfloatArray Af4; jfloatArray Af5; jfloatArray Af6; jfloatArray Af7; jfloatArray Af8; jfloatArray Af9; jfloatArray Af10; jfloatArray Af11; jfloatArray Af12; jfloatArray Af13; jfloatArray Af14; jfloatArray Af15; jfloatArray Af16; jfloatArray Af17; jfloatArray Af18; jfloatArray Af19; jfloatArray Af20;
     Af1 = jfloatArrayValue; Af2 = jfloatArrayValue; Af3 = jfloatArrayValue; Af4 = jfloatArrayValue; Af5 = jfloatArrayValue; Af6 = jfloatArrayValue; Af7 = jfloatArrayValue; Af8 = jfloatArrayValue; Af9 = jfloatArrayValue; Af10 = jfloatArrayValue; Af11 = jfloatArrayValue; Af12 = jfloatArrayValue; Af13 = jfloatArrayValue; Af14 = jfloatArrayValue; Af15 = jfloatArrayValue; Af16 = jfloatArrayValue; Af17 = jfloatArrayValue; Af18 = jfloatArrayValue; Af19 = jfloatArrayValue; Af20 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Af1, Af2, Af3, Af4, Af5, Af6, Af7, Af8, Af9, Af10, Af11, Af12, Af13, Af14, Af15, Af16, Af17, Af18, Af19, Af20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8578,9 +10818,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00161_run
     jlong l1;
     l1 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8608,9 +10862,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00162_run
     jlong l1; jlong l2;
     l1 = 103; l2 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8638,9 +10906,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00163_run
     jlong l1; jlong l2; jlong l3;
     l1 = 103; l2 = 103; l3 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8668,9 +10950,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00164_run
     jlong l1; jlong l2; jlong l3; jlong l4;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8698,9 +10994,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00165_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8728,9 +11038,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00166_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5, l6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8758,9 +11082,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00167_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5, l6, l7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8788,9 +11126,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00168_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5, l6, l7, l8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8818,9 +11170,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00169_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5, l6, l7, l8, l9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8848,9 +11214,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00170_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8878,9 +11258,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00171_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8908,9 +11302,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00172_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8938,9 +11346,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00173_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8968,9 +11390,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00174_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -8998,9 +11434,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00175_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9028,9 +11478,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00176_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15; jlong l16;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103; l16 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9058,9 +11522,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00177_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15; jlong l16; jlong l17;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103; l16 = 103; l17 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9088,9 +11566,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00178_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15; jlong l16; jlong l17; jlong l18;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103; l16 = 103; l17 = 103; l18 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9118,9 +11610,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00179_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15; jlong l16; jlong l17; jlong l18; jlong l19;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103; l16 = 103; l17 = 103; l18 = 103; l19 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18, l19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9148,9 +11654,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00180_run
     jlong l1; jlong l2; jlong l3; jlong l4; jlong l5; jlong l6; jlong l7; jlong l8; jlong l9; jlong l10; jlong l11; jlong l12; jlong l13; jlong l14; jlong l15; jlong l16; jlong l17; jlong l18; jlong l19; jlong l20;
     l1 = 103; l2 = 103; l3 = 103; l4 = 103; l5 = 103; l6 = 103; l7 = 103; l8 = 103; l9 = 103; l10 = 103; l11 = 103; l12 = 103; l13 = 103; l14 = 103; l15 = 103; l16 = 103; l17 = 103; l18 = 103; l19 = 103; l20 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18, l19, l20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9178,9 +11698,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00181_run
     jobject O1;
     O1 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9208,9 +11742,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00182_run
     jobject O1; jobject O2;
     O1 = jobjectValue; O2 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9238,9 +11786,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00183_run
     jobject O1; jobject O2; jobject O3;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9268,9 +11830,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00184_run
     jobject O1; jobject O2; jobject O3; jobject O4;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9298,9 +11874,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00185_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9328,9 +11918,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00186_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5, O6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9358,9 +11962,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00187_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5, O6, O7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9388,9 +12006,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00188_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5, O6, O7, O8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9418,9 +12050,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00189_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5, O6, O7, O8, O9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9448,9 +12094,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00190_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9478,9 +12138,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00191_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9508,9 +12182,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00192_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9538,9 +12226,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00193_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9568,9 +12270,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00194_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9598,9 +12314,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00195_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9628,9 +12358,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00196_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15; jobject O16;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue; O16 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15, O16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9658,9 +12402,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00197_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15; jobject O16; jobject O17;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue; O16 = jobjectValue; O17 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15, O16, O17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9688,9 +12446,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00198_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15; jobject O16; jobject O17; jobject O18;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue; O16 = jobjectValue; O17 = jobjectValue; O18 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15, O16, O17, O18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9718,9 +12490,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00199_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15; jobject O16; jobject O17; jobject O18; jobject O19;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue; O16 = jobjectValue; O17 = jobjectValue; O18 = jobjectValue; O19 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15, O16, O17, O18, O19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9748,9 +12534,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00200_run
     jobject O1; jobject O2; jobject O3; jobject O4; jobject O5; jobject O6; jobject O7; jobject O8; jobject O9; jobject O10; jobject O11; jobject O12; jobject O13; jobject O14; jobject O15; jobject O16; jobject O17; jobject O18; jobject O19; jobject O20;
     O1 = jobjectValue; O2 = jobjectValue; O3 = jobjectValue; O4 = jobjectValue; O5 = jobjectValue; O6 = jobjectValue; O7 = jobjectValue; O8 = jobjectValue; O9 = jobjectValue; O10 = jobjectValue; O11 = jobjectValue; O12 = jobjectValue; O13 = jobjectValue; O14 = jobjectValue; O15 = jobjectValue; O16 = jobjectValue; O17 = jobjectValue; O18 = jobjectValue; O19 = jobjectValue; O20 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, O1, O2, O3, O4, O5, O6, O7, O8, O9, O10, O11, O12, O13, O14, O15, O16, O17, O18, O19, O20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9778,9 +12578,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00201_run
     jlongArray Al1;
     Al1 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9808,9 +12622,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00202_run
     jlongArray Al1; jlongArray Al2;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9838,9 +12666,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00203_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9868,9 +12710,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00204_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9898,9 +12754,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00205_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9928,9 +12798,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00206_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5, Al6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9958,9 +12842,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00207_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5, Al6, Al7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -9988,9 +12886,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00208_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10018,9 +12930,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00209_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10048,9 +12974,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00210_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10078,9 +13018,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00211_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10108,9 +13062,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00212_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10138,9 +13106,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00213_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10168,9 +13150,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00214_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10198,9 +13194,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00215_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10228,9 +13238,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00216_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15; jlongArray Al16;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue; Al16 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15, Al16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10258,9 +13282,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00217_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15; jlongArray Al16; jlongArray Al17;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue; Al16 = jlongArrayValue; Al17 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15, Al16, Al17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10288,9 +13326,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00218_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15; jlongArray Al16; jlongArray Al17; jlongArray Al18;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue; Al16 = jlongArrayValue; Al17 = jlongArrayValue; Al18 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15, Al16, Al17, Al18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10318,9 +13370,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00219_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15; jlongArray Al16; jlongArray Al17; jlongArray Al18; jlongArray Al19;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue; Al16 = jlongArrayValue; Al17 = jlongArrayValue; Al18 = jlongArrayValue; Al19 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15, Al16, Al17, Al18, Al19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10348,9 +13414,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00220_run
     jlongArray Al1; jlongArray Al2; jlongArray Al3; jlongArray Al4; jlongArray Al5; jlongArray Al6; jlongArray Al7; jlongArray Al8; jlongArray Al9; jlongArray Al10; jlongArray Al11; jlongArray Al12; jlongArray Al13; jlongArray Al14; jlongArray Al15; jlongArray Al16; jlongArray Al17; jlongArray Al18; jlongArray Al19; jlongArray Al20;
     Al1 = jlongArrayValue; Al2 = jlongArrayValue; Al3 = jlongArrayValue; Al4 = jlongArrayValue; Al5 = jlongArrayValue; Al6 = jlongArrayValue; Al7 = jlongArrayValue; Al8 = jlongArrayValue; Al9 = jlongArrayValue; Al10 = jlongArrayValue; Al11 = jlongArrayValue; Al12 = jlongArrayValue; Al13 = jlongArrayValue; Al14 = jlongArrayValue; Al15 = jlongArrayValue; Al16 = jlongArrayValue; Al17 = jlongArrayValue; Al18 = jlongArrayValue; Al19 = jlongArrayValue; Al20 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Al1, Al2, Al3, Al4, Al5, Al6, Al7, Al8, Al9, Al10, Al11, Al12, Al13, Al14, Al15, Al16, Al17, Al18, Al19, Al20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10378,9 +13458,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00221_run
     jintArray Ai1;
     Ai1 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10408,9 +13502,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00222_run
     jintArray Ai1; jintArray Ai2;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10438,9 +13546,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00223_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10468,9 +13590,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00224_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10498,9 +13634,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00225_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10528,9 +13678,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00226_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10558,9 +13722,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00227_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10588,9 +13766,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00228_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10618,9 +13810,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00229_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10648,9 +13854,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00230_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10678,9 +13898,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00231_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10708,9 +13942,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00232_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10738,9 +13986,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00233_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10768,9 +14030,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00234_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10798,9 +14074,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00235_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10828,9 +14118,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00236_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15; jintArray Ai16;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue; Ai16 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15, Ai16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10858,9 +14162,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00237_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15; jintArray Ai16; jintArray Ai17;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue; Ai16 = jintArrayValue; Ai17 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15, Ai16, Ai17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10888,9 +14206,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00238_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15; jintArray Ai16; jintArray Ai17; jintArray Ai18;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue; Ai16 = jintArrayValue; Ai17 = jintArrayValue; Ai18 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15, Ai16, Ai17, Ai18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10918,9 +14250,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00239_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15; jintArray Ai16; jintArray Ai17; jintArray Ai18; jintArray Ai19;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue; Ai16 = jintArrayValue; Ai17 = jintArrayValue; Ai18 = jintArrayValue; Ai19 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15, Ai16, Ai17, Ai18, Ai19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10948,9 +14294,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00240_run
     jintArray Ai1; jintArray Ai2; jintArray Ai3; jintArray Ai4; jintArray Ai5; jintArray Ai6; jintArray Ai7; jintArray Ai8; jintArray Ai9; jintArray Ai10; jintArray Ai11; jintArray Ai12; jintArray Ai13; jintArray Ai14; jintArray Ai15; jintArray Ai16; jintArray Ai17; jintArray Ai18; jintArray Ai19; jintArray Ai20;
     Ai1 = jintArrayValue; Ai2 = jintArrayValue; Ai3 = jintArrayValue; Ai4 = jintArrayValue; Ai5 = jintArrayValue; Ai6 = jintArrayValue; Ai7 = jintArrayValue; Ai8 = jintArrayValue; Ai9 = jintArrayValue; Ai10 = jintArrayValue; Ai11 = jintArrayValue; Ai12 = jintArrayValue; Ai13 = jintArrayValue; Ai14 = jintArrayValue; Ai15 = jintArrayValue; Ai16 = jintArrayValue; Ai17 = jintArrayValue; Ai18 = jintArrayValue; Ai19 = jintArrayValue; Ai20 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ai1, Ai2, Ai3, Ai4, Ai5, Ai6, Ai7, Ai8, Ai9, Ai10, Ai11, Ai12, Ai13, Ai14, Ai15, Ai16, Ai17, Ai18, Ai19, Ai20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -10978,9 +14338,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00241_run
     jshort s1;
     s1 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11008,9 +14382,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00242_run
     jshort s1; jshort s2;
     s1 = 101; s2 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11038,9 +14426,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00243_run
     jshort s1; jshort s2; jshort s3;
     s1 = 101; s2 = 101; s3 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11068,9 +14470,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00244_run
     jshort s1; jshort s2; jshort s3; jshort s4;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11098,9 +14514,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00245_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11128,9 +14558,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00246_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5, s6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11158,9 +14602,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00247_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5, s6, s7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11188,9 +14646,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00248_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5, s6, s7, s8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11218,9 +14690,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00249_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5, s6, s7, s8, s9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11248,9 +14734,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00250_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11278,9 +14778,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00251_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11308,9 +14822,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00252_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11338,9 +14866,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00253_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11368,9 +14910,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00254_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11398,9 +14954,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00255_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11428,9 +14998,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00256_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15; jshort s16;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101; s16 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11458,9 +15042,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00257_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15; jshort s16; jshort s17;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101; s16 = 101; s17 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11488,9 +15086,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00258_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15; jshort s16; jshort s17; jshort s18;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101; s16 = 101; s17 = 101; s18 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11518,9 +15130,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00259_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15; jshort s16; jshort s17; jshort s18; jshort s19;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101; s16 = 101; s17 = 101; s18 = 101; s19 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11548,9 +15174,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00260_run
     jshort s1; jshort s2; jshort s3; jshort s4; jshort s5; jshort s6; jshort s7; jshort s8; jshort s9; jshort s10; jshort s11; jshort s12; jshort s13; jshort s14; jshort s15; jshort s16; jshort s17; jshort s18; jshort s19; jshort s20;
     s1 = 101; s2 = 101; s3 = 101; s4 = 101; s5 = 101; s6 = 101; s7 = 101; s8 = 101; s9 = 101; s10 = 101; s11 = 101; s12 = 101; s13 = 101; s14 = 101; s15 = 101; s16 = 101; s17 = 101; s18 = 101; s19 = 101; s20 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11578,9 +15218,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00261_run
     jbooleanArray Ab1;
     Ab1 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11608,9 +15262,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00262_run
     jbooleanArray Ab1; jbooleanArray Ab2;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11638,9 +15306,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00263_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11668,9 +15350,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00264_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11698,9 +15394,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00265_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11728,9 +15438,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00266_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11758,9 +15482,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00267_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11788,9 +15526,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00268_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11818,9 +15570,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00269_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11848,9 +15614,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00270_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11878,9 +15658,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00271_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11908,9 +15702,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00272_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11938,9 +15746,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00273_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11968,9 +15790,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00274_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -11998,9 +15834,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00275_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12028,9 +15878,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00276_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15; jbooleanArray Ab16;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue; Ab16 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15, Ab16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12058,9 +15922,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00277_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15; jbooleanArray Ab16; jbooleanArray Ab17;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue; Ab16 = jbooleanArrayValue; Ab17 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15, Ab16, Ab17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12088,9 +15966,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00278_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15; jbooleanArray Ab16; jbooleanArray Ab17; jbooleanArray Ab18;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue; Ab16 = jbooleanArrayValue; Ab17 = jbooleanArrayValue; Ab18 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15, Ab16, Ab17, Ab18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12118,9 +16010,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00279_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15; jbooleanArray Ab16; jbooleanArray Ab17; jbooleanArray Ab18; jbooleanArray Ab19;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue; Ab16 = jbooleanArrayValue; Ab17 = jbooleanArrayValue; Ab18 = jbooleanArrayValue; Ab19 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15, Ab16, Ab17, Ab18, Ab19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12148,9 +16054,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00280_run
     jbooleanArray Ab1; jbooleanArray Ab2; jbooleanArray Ab3; jbooleanArray Ab4; jbooleanArray Ab5; jbooleanArray Ab6; jbooleanArray Ab7; jbooleanArray Ab8; jbooleanArray Ab9; jbooleanArray Ab10; jbooleanArray Ab11; jbooleanArray Ab12; jbooleanArray Ab13; jbooleanArray Ab14; jbooleanArray Ab15; jbooleanArray Ab16; jbooleanArray Ab17; jbooleanArray Ab18; jbooleanArray Ab19; jbooleanArray Ab20;
     Ab1 = jbooleanArrayValue; Ab2 = jbooleanArrayValue; Ab3 = jbooleanArrayValue; Ab4 = jbooleanArrayValue; Ab5 = jbooleanArrayValue; Ab6 = jbooleanArrayValue; Ab7 = jbooleanArrayValue; Ab8 = jbooleanArrayValue; Ab9 = jbooleanArrayValue; Ab10 = jbooleanArrayValue; Ab11 = jbooleanArrayValue; Ab12 = jbooleanArrayValue; Ab13 = jbooleanArrayValue; Ab14 = jbooleanArrayValue; Ab15 = jbooleanArrayValue; Ab16 = jbooleanArrayValue; Ab17 = jbooleanArrayValue; Ab18 = jbooleanArrayValue; Ab19 = jbooleanArrayValue; Ab20 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ab1, Ab2, Ab3, Ab4, Ab5, Ab6, Ab7, Ab8, Ab9, Ab10, Ab11, Ab12, Ab13, Ab14, Ab15, Ab16, Ab17, Ab18, Ab19, Ab20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12178,9 +16098,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00281_run
     jthrowable T1;
     T1 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12208,9 +16142,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00282_run
     jthrowable T1; jthrowable T2;
     T1 = jthrowableValue; T2 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12238,9 +16186,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00283_run
     jthrowable T1; jthrowable T2; jthrowable T3;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12268,9 +16230,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00284_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12298,9 +16274,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00285_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12328,9 +16318,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00286_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5, T6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12358,9 +16362,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00287_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5, T6, T7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12388,9 +16406,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00288_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5, T6, T7, T8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12418,9 +16450,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00289_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5, T6, T7, T8, T9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12448,9 +16494,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00290_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12478,9 +16538,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00291_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12508,9 +16582,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00292_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12538,9 +16626,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00293_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12568,9 +16670,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00294_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12598,9 +16714,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00295_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12628,9 +16758,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00296_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15; jthrowable T16;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue; T16 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12658,9 +16802,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00297_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15; jthrowable T16; jthrowable T17;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue; T16 = jthrowableValue; T17 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12688,9 +16846,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00298_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15; jthrowable T16; jthrowable T17; jthrowable T18;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue; T16 = jthrowableValue; T17 = jthrowableValue; T18 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12718,9 +16890,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00299_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15; jthrowable T16; jthrowable T17; jthrowable T18; jthrowable T19;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue; T16 = jthrowableValue; T17 = jthrowableValue; T18 = jthrowableValue; T19 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12748,9 +16934,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00300_run
     jthrowable T1; jthrowable T2; jthrowable T3; jthrowable T4; jthrowable T5; jthrowable T6; jthrowable T7; jthrowable T8; jthrowable T9; jthrowable T10; jthrowable T11; jthrowable T12; jthrowable T13; jthrowable T14; jthrowable T15; jthrowable T16; jthrowable T17; jthrowable T18; jthrowable T19; jthrowable T20;
     T1 = jthrowableValue; T2 = jthrowableValue; T3 = jthrowableValue; T4 = jthrowableValue; T5 = jthrowableValue; T6 = jthrowableValue; T7 = jthrowableValue; T8 = jthrowableValue; T9 = jthrowableValue; T10 = jthrowableValue; T11 = jthrowableValue; T12 = jthrowableValue; T13 = jthrowableValue; T14 = jthrowableValue; T15 = jthrowableValue; T16 = jthrowableValue; T17 = jthrowableValue; T18 = jthrowableValue; T19 = jthrowableValue; T20 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12778,9 +16978,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00301_run
     jobjectArray AO1;
     AO1 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12808,9 +17022,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00302_run
     jobjectArray AO1; jobjectArray AO2;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12838,9 +17066,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00303_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12868,9 +17110,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00304_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12898,9 +17154,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00305_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12928,9 +17198,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00306_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5, AO6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12958,9 +17242,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00307_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5, AO6, AO7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -12988,9 +17286,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00308_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13018,9 +17330,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00309_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13048,9 +17374,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00310_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13078,9 +17418,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00311_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13108,9 +17462,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00312_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13138,9 +17506,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00313_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13168,9 +17550,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00314_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13198,9 +17594,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00315_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13228,9 +17638,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00316_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15; jobjectArray AO16;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue; AO16 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15, AO16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13258,9 +17682,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00317_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15; jobjectArray AO16; jobjectArray AO17;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue; AO16 = jobjectArrayValue; AO17 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15, AO16, AO17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13288,9 +17726,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00318_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15; jobjectArray AO16; jobjectArray AO17; jobjectArray AO18;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue; AO16 = jobjectArrayValue; AO17 = jobjectArrayValue; AO18 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15, AO16, AO17, AO18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13318,9 +17770,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00319_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15; jobjectArray AO16; jobjectArray AO17; jobjectArray AO18; jobjectArray AO19;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue; AO16 = jobjectArrayValue; AO17 = jobjectArrayValue; AO18 = jobjectArrayValue; AO19 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15, AO16, AO17, AO18, AO19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13348,9 +17814,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00320_run
     jobjectArray AO1; jobjectArray AO2; jobjectArray AO3; jobjectArray AO4; jobjectArray AO5; jobjectArray AO6; jobjectArray AO7; jobjectArray AO8; jobjectArray AO9; jobjectArray AO10; jobjectArray AO11; jobjectArray AO12; jobjectArray AO13; jobjectArray AO14; jobjectArray AO15; jobjectArray AO16; jobjectArray AO17; jobjectArray AO18; jobjectArray AO19; jobjectArray AO20;
     AO1 = jobjectArrayValue; AO2 = jobjectArrayValue; AO3 = jobjectArrayValue; AO4 = jobjectArrayValue; AO5 = jobjectArrayValue; AO6 = jobjectArrayValue; AO7 = jobjectArrayValue; AO8 = jobjectArrayValue; AO9 = jobjectArrayValue; AO10 = jobjectArrayValue; AO11 = jobjectArrayValue; AO12 = jobjectArrayValue; AO13 = jobjectArrayValue; AO14 = jobjectArrayValue; AO15 = jobjectArrayValue; AO16 = jobjectArrayValue; AO17 = jobjectArrayValue; AO18 = jobjectArrayValue; AO19 = jobjectArrayValue; AO20 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, AO10, AO11, AO12, AO13, AO14, AO15, AO16, AO17, AO18, AO19, AO20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13378,9 +17858,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00321_run
     jbyteArray Ay1;
     Ay1 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13408,9 +17902,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00322_run
     jbyteArray Ay1; jbyteArray Ay2;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13438,9 +17946,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00323_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13468,9 +17990,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00324_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13498,9 +18034,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00325_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13528,9 +18078,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00326_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13558,9 +18122,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00327_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13588,9 +18166,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00328_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13618,9 +18210,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00329_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13648,9 +18254,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00330_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13678,9 +18298,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00331_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13708,9 +18342,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00332_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13738,9 +18386,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00333_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13768,9 +18430,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00334_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13798,9 +18474,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00335_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13828,9 +18518,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00336_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15; jbyteArray Ay16;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue; Ay16 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15, Ay16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13858,9 +18562,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00337_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15; jbyteArray Ay16; jbyteArray Ay17;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue; Ay16 = jbyteArrayValue; Ay17 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15, Ay16, Ay17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13888,9 +18606,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00338_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15; jbyteArray Ay16; jbyteArray Ay17; jbyteArray Ay18;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue; Ay16 = jbyteArrayValue; Ay17 = jbyteArrayValue; Ay18 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15, Ay16, Ay17, Ay18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13918,9 +18650,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00339_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15; jbyteArray Ay16; jbyteArray Ay17; jbyteArray Ay18; jbyteArray Ay19;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue; Ay16 = jbyteArrayValue; Ay17 = jbyteArrayValue; Ay18 = jbyteArrayValue; Ay19 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15, Ay16, Ay17, Ay18, Ay19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13948,9 +18694,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00340_run
     jbyteArray Ay1; jbyteArray Ay2; jbyteArray Ay3; jbyteArray Ay4; jbyteArray Ay5; jbyteArray Ay6; jbyteArray Ay7; jbyteArray Ay8; jbyteArray Ay9; jbyteArray Ay10; jbyteArray Ay11; jbyteArray Ay12; jbyteArray Ay13; jbyteArray Ay14; jbyteArray Ay15; jbyteArray Ay16; jbyteArray Ay17; jbyteArray Ay18; jbyteArray Ay19; jbyteArray Ay20;
     Ay1 = jbyteArrayValue; Ay2 = jbyteArrayValue; Ay3 = jbyteArrayValue; Ay4 = jbyteArrayValue; Ay5 = jbyteArrayValue; Ay6 = jbyteArrayValue; Ay7 = jbyteArrayValue; Ay8 = jbyteArrayValue; Ay9 = jbyteArrayValue; Ay10 = jbyteArrayValue; Ay11 = jbyteArrayValue; Ay12 = jbyteArrayValue; Ay13 = jbyteArrayValue; Ay14 = jbyteArrayValue; Ay15 = jbyteArrayValue; Ay16 = jbyteArrayValue; Ay17 = jbyteArrayValue; Ay18 = jbyteArrayValue; Ay19 = jbyteArrayValue; Ay20 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ay1, Ay2, Ay3, Ay4, Ay5, Ay6, Ay7, Ay8, Ay9, Ay10, Ay11, Ay12, Ay13, Ay14, Ay15, Ay16, Ay17, Ay18, Ay19, Ay20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -13978,9 +18738,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00341_run
     jbyte y1;
     y1 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14008,9 +18782,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00342_run
     jbyte y1; jbyte y2;
     y1 = 'a'; y2 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14038,9 +18826,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00343_run
     jbyte y1; jbyte y2; jbyte y3;
     y1 = 'a'; y2 = 'a'; y3 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14068,9 +18870,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00344_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14098,9 +18914,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00345_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14128,9 +18958,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00346_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5, y6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14158,9 +19002,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00347_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5, y6, y7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14188,9 +19046,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00348_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5, y6, y7, y8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14218,9 +19090,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00349_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5, y6, y7, y8, y9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14248,9 +19134,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00350_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14278,9 +19178,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00351_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14308,9 +19222,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00352_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14338,9 +19266,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00353_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14368,9 +19310,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00354_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14398,9 +19354,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00355_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14428,9 +19398,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00356_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15; jbyte y16;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a'; y16 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14458,9 +19442,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00357_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15; jbyte y16; jbyte y17;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a'; y16 = 'a'; y17 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14488,9 +19486,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00358_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15; jbyte y16; jbyte y17; jbyte y18;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a'; y16 = 'a'; y17 = 'a'; y18 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14518,9 +19530,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00359_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15; jbyte y16; jbyte y17; jbyte y18; jbyte y19;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a'; y16 = 'a'; y17 = 'a'; y18 = 'a'; y19 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18, y19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14548,9 +19574,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00360_run
     jbyte y1; jbyte y2; jbyte y3; jbyte y4; jbyte y5; jbyte y6; jbyte y7; jbyte y8; jbyte y9; jbyte y10; jbyte y11; jbyte y12; jbyte y13; jbyte y14; jbyte y15; jbyte y16; jbyte y17; jbyte y18; jbyte y19; jbyte y20;
     y1 = 'a'; y2 = 'a'; y3 = 'a'; y4 = 'a'; y5 = 'a'; y6 = 'a'; y7 = 'a'; y8 = 'a'; y9 = 'a'; y10 = 'a'; y11 = 'a'; y12 = 'a'; y13 = 'a'; y14 = 'a'; y15 = 'a'; y16 = 'a'; y17 = 'a'; y18 = 'a'; y19 = 'a'; y20 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18, y19, y20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14578,9 +19618,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00361_run
     jshortArray As1;
     As1 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14608,9 +19662,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00362_run
     jshortArray As1; jshortArray As2;
     As1 = jshortArrayValue; As2 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14638,9 +19706,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00363_run
     jshortArray As1; jshortArray As2; jshortArray As3;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14668,9 +19750,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00364_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14698,9 +19794,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00365_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14728,9 +19838,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00366_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5, As6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14758,9 +19882,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00367_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5, As6, As7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14788,9 +19926,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00368_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5, As6, As7, As8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14818,9 +19970,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00369_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5, As6, As7, As8, As9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14848,9 +20014,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00370_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14878,9 +20058,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00371_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14908,9 +20102,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00372_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14938,9 +20146,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00373_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14968,9 +20190,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00374_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -14998,9 +20234,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00375_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15028,9 +20278,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00376_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15; jshortArray As16;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue; As16 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15, As16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15058,9 +20322,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00377_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15; jshortArray As16; jshortArray As17;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue; As16 = jshortArrayValue; As17 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15, As16, As17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15088,9 +20366,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00378_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15; jshortArray As16; jshortArray As17; jshortArray As18;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue; As16 = jshortArrayValue; As17 = jshortArrayValue; As18 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15, As16, As17, As18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15118,9 +20410,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00379_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15; jshortArray As16; jshortArray As17; jshortArray As18; jshortArray As19;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue; As16 = jshortArrayValue; As17 = jshortArrayValue; As18 = jshortArrayValue; As19 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15, As16, As17, As18, As19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15148,9 +20454,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00380_run
     jshortArray As1; jshortArray As2; jshortArray As3; jshortArray As4; jshortArray As5; jshortArray As6; jshortArray As7; jshortArray As8; jshortArray As9; jshortArray As10; jshortArray As11; jshortArray As12; jshortArray As13; jshortArray As14; jshortArray As15; jshortArray As16; jshortArray As17; jshortArray As18; jshortArray As19; jshortArray As20;
     As1 = jshortArrayValue; As2 = jshortArrayValue; As3 = jshortArrayValue; As4 = jshortArrayValue; As5 = jshortArrayValue; As6 = jshortArrayValue; As7 = jshortArrayValue; As8 = jshortArrayValue; As9 = jshortArrayValue; As10 = jshortArrayValue; As11 = jshortArrayValue; As12 = jshortArrayValue; As13 = jshortArrayValue; As14 = jshortArrayValue; As15 = jshortArrayValue; As16 = jshortArrayValue; As17 = jshortArrayValue; As18 = jshortArrayValue; As19 = jshortArrayValue; As20 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, As1, As2, As3, As4, As5, As6, As7, As8, As9, As10, As11, As12, As13, As14, As15, As16, As17, As18, As19, As20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15178,9 +20498,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00381_run
     jclass C1;
     C1 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15208,9 +20542,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00382_run
     jclass C1; jclass C2;
     C1 = jclassValue; C2 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15238,9 +20586,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00383_run
     jclass C1; jclass C2; jclass C3;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15268,9 +20630,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00384_run
     jclass C1; jclass C2; jclass C3; jclass C4;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15298,9 +20674,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00385_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15328,9 +20718,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00386_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5, C6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15358,9 +20762,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00387_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5, C6, C7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15388,9 +20806,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00388_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5, C6, C7, C8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15418,9 +20850,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00389_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5, C6, C7, C8, C9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15448,9 +20894,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00390_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15478,9 +20938,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00391_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15508,9 +20982,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00392_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15538,9 +21026,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00393_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15568,9 +21070,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00394_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15598,9 +21114,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00395_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15628,9 +21158,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00396_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15; jclass C16;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue; C16 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15658,9 +21202,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00397_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15; jclass C16; jclass C17;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue; C16 = jclassValue; C17 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15688,9 +21246,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00398_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15; jclass C16; jclass C17; jclass C18;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue; C16 = jclassValue; C17 = jclassValue; C18 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15718,9 +21290,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00399_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15; jclass C16; jclass C17; jclass C18; jclass C19;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue; C16 = jclassValue; C17 = jclassValue; C18 = jclassValue; C19 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15748,9 +21334,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00400_run
     jclass C1; jclass C2; jclass C3; jclass C4; jclass C5; jclass C6; jclass C7; jclass C8; jclass C9; jclass C10; jclass C11; jclass C12; jclass C13; jclass C14; jclass C15; jclass C16; jclass C17; jclass C18; jclass C19; jclass C20;
     C1 = jclassValue; C2 = jclassValue; C3 = jclassValue; C4 = jclassValue; C5 = jclassValue; C6 = jclassValue; C7 = jclassValue; C8 = jclassValue; C9 = jclassValue; C10 = jclassValue; C11 = jclassValue; C12 = jclassValue; C13 = jclassValue; C14 = jclassValue; C15 = jclassValue; C16 = jclassValue; C17 = jclassValue; C18 = jclassValue; C19 = jclassValue; C20 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15778,9 +21378,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00401_run
     jdoubleArray Ad1;
     Ad1 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15808,9 +21422,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00402_run
     jdoubleArray Ad1; jdoubleArray Ad2;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15838,9 +21466,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00403_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15868,9 +21510,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00404_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15898,9 +21554,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00405_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15928,9 +21598,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00406_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15958,9 +21642,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00407_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -15988,9 +21686,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00408_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16018,9 +21730,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00409_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16048,9 +21774,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00410_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16078,9 +21818,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00411_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16108,9 +21862,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00412_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16138,9 +21906,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00413_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16168,9 +21950,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00414_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16198,9 +21994,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00415_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16228,9 +22038,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00416_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15; jdoubleArray Ad16;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue; Ad16 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15, Ad16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16258,9 +22082,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00417_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15; jdoubleArray Ad16; jdoubleArray Ad17;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue; Ad16 = jdoubleArrayValue; Ad17 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15, Ad16, Ad17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16288,9 +22126,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00418_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15; jdoubleArray Ad16; jdoubleArray Ad17; jdoubleArray Ad18;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue; Ad16 = jdoubleArrayValue; Ad17 = jdoubleArrayValue; Ad18 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15, Ad16, Ad17, Ad18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16318,9 +22170,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00419_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15; jdoubleArray Ad16; jdoubleArray Ad17; jdoubleArray Ad18; jdoubleArray Ad19;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue; Ad16 = jdoubleArrayValue; Ad17 = jdoubleArrayValue; Ad18 = jdoubleArrayValue; Ad19 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15, Ad16, Ad17, Ad18, Ad19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16348,9 +22214,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00420_run
     jdoubleArray Ad1; jdoubleArray Ad2; jdoubleArray Ad3; jdoubleArray Ad4; jdoubleArray Ad5; jdoubleArray Ad6; jdoubleArray Ad7; jdoubleArray Ad8; jdoubleArray Ad9; jdoubleArray Ad10; jdoubleArray Ad11; jdoubleArray Ad12; jdoubleArray Ad13; jdoubleArray Ad14; jdoubleArray Ad15; jdoubleArray Ad16; jdoubleArray Ad17; jdoubleArray Ad18; jdoubleArray Ad19; jdoubleArray Ad20;
     Ad1 = jdoubleArrayValue; Ad2 = jdoubleArrayValue; Ad3 = jdoubleArrayValue; Ad4 = jdoubleArrayValue; Ad5 = jdoubleArrayValue; Ad6 = jdoubleArrayValue; Ad7 = jdoubleArrayValue; Ad8 = jdoubleArrayValue; Ad9 = jdoubleArrayValue; Ad10 = jdoubleArrayValue; Ad11 = jdoubleArrayValue; Ad12 = jdoubleArrayValue; Ad13 = jdoubleArrayValue; Ad14 = jdoubleArrayValue; Ad15 = jdoubleArrayValue; Ad16 = jdoubleArrayValue; Ad17 = jdoubleArrayValue; Ad18 = jdoubleArrayValue; Ad19 = jdoubleArrayValue; Ad20 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, Ad1, Ad2, Ad3, Ad4, Ad5, Ad6, Ad7, Ad8, Ad9, Ad10, Ad11, Ad12, Ad13, Ad14, Ad15, Ad16, Ad17, Ad18, Ad19, Ad20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16378,9 +22258,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00421_run
     jstring S1;
     S1 = jstringValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16408,9 +22302,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00422_run
     jstring S1; jcharArray Ac2;
     S1 = jstringValue; Ac2 = jcharArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16438,9 +22346,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00423_run
     jstring S1; jcharArray Ac2; jchar c3;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16468,9 +22390,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00424_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16498,9 +22434,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00425_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16528,9 +22478,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00426_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16558,9 +22522,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00427_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16588,9 +22566,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00428_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7, Af8);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16618,9 +22610,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00429_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16648,9 +22654,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00430_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16678,9 +22698,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00431_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16708,9 +22742,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00432_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16738,9 +22786,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00433_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16768,9 +22830,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00434_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16798,9 +22874,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00435_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16828,9 +22918,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00436_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16858,9 +22962,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00437_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16888,9 +23006,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00438_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a';
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16918,9 +23050,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00439_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18; jshortArray As19;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a'; As19 = jshortArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16948,9 +23094,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00440_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18; jshortArray As19; jclass C20;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a'; As19 = jshortArrayValue; C20 = jclassValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19, C20);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -16978,9 +23138,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00441_run
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18; jshortArray As19; jclass C20; jdoubleArray Ad21;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a'; As19 = jshortArrayValue; C20 = jclassValue; Ad21 = jdoubleArrayValue;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19, C20, Ad21);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17008,9 +23182,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00442_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallIntMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17038,9 +23226,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00443_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallIntMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17068,9 +23270,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00444_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallIntMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17098,9 +23314,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00445_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallIntMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17128,9 +23358,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00446_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallIntMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17158,9 +23402,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00447_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallIntMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17188,9 +23446,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00448_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17218,9 +23490,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00449_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17248,9 +23534,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00450_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallCharMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17278,9 +23578,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00451_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallBooleanMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17308,9 +23622,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00452_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallDoubleMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17338,9 +23666,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00453_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallFloatMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17368,9 +23710,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00454_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallIntMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17398,9 +23754,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00455_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17428,9 +23798,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00456_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallLongMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17458,9 +23842,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00457_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17488,9 +23886,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00458_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17518,9 +23930,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00459_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17548,9 +23974,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00460_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallShortMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17578,9 +24018,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00461_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17608,9 +24062,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00462_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17638,9 +24106,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00463_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17668,9 +24150,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00464_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17698,9 +24194,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00465_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallByteMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17728,9 +24238,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00466_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17758,9 +24282,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00467_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 
@@ -17788,9 +24326,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00468_run
     jint i1;
     i1 = 102;
 
-    jlong i;
+    jlong i, refs = 0;
+
     for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
         (*env)->CallObjectMethod(env, instance, mid, i1);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
     }
 }
 

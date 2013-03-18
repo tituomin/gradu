@@ -101,9 +101,7 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
             case MILESTONE:
                 break;
             case MEASURING_FINISHED:
-                for (Pair<String,String> m : tool.getMeasurement()) {
-                    resultView.append(m.first + ": " + m.second + "\n");
-                }
+                // fallthrough
             case INITIALISED:
                 button.setEnabled(true);
                 break;
