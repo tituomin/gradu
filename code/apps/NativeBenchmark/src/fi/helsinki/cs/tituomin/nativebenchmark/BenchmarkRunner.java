@@ -203,6 +203,8 @@ public class BenchmarkRunner {
                     }
 
                     bdata.add("parameter_count", parameters.size() + "");
+                    Class returnType = m.getReturnType();
+                    bdata.add("return_type", returnType.getCanonicalName());
                 }
             }
             lastMetadata = bdata;

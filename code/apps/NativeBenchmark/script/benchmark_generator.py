@@ -166,7 +166,7 @@ def generate_benchmarks():
 
                         if to_lang == 'C':
                             counterpart_method_name = 'nativemethod'
-                        else:
+                        elif to_lang == 'J':
                             if from_lang == 'J':
                                 counterpart_method_name = '{classname}.benchmark{number}'.format(
                                     classname=java_counterpart_classname, number=sequence_no)
