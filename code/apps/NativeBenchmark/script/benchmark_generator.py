@@ -85,24 +85,29 @@ def specify_combinations():
                 size=20, typeset=[types[symbol]])})
 
     # all types, vary length to vary number of types
+    # ! start from 1 to avoid duplicates!
     all_combinations.append({
             'return_types' : [return_types['v']],
             'native_modifiers' : [('private', '')],
             'types' : jni_types.type_combinations(
-                typeset = types.values())
+                typeset = types.values()),
+            'skip' : 1
             })
 
     # modifiers
     all_combinations.append({
-            'return_types' : [return_types['i']],
+            'return_types' : [return_types['l']],
             'native_modifiers' : modifier_combinations(),
             'types' : [types['i']]
             })
 
     # return types
+    ret_types = filter(lambda x: x['symbol'] != 'l', jni_types.type_combinations(
+        typeset = types.values()))
+    
+
     all_combinations.append({
-            'return_types' : jni_types.type_combinations(
-                typeset = types.values()),
+            'return_types' : ret_types ,
             'native_modifiers' : [('private', '')],
             'types' : [types['i']]
             })
@@ -138,6 +143,7 @@ def generate_benchmarks():
                     first_param = 'jobject instance'
                 c_parameter_declarations = [first_param]
 
+
                 for i, type_data in enumerate(type_combination):
                     parameter_names.append(type_data['symbol'] + str(i+1))
 
@@ -153,8 +159,8 @@ def generate_benchmarks():
                     c_parameter_initialisations.append(
                         parameter_initialisation('c', type_data, parameter_names[-1]))
 
-
-                for i, __ in enumerate(type_combination):
+                skip = spec.get('skip', 0)
+                for i in range(skip, len(type_combination)):
 
                     sequence_no = next_sequence_no()
 
@@ -262,7 +268,8 @@ def generate_benchmarks():
                                     packagename = '_'.join(packagename),
                                     classname = classname,
                                     parameter_declarations = "; ".join(c_parameter_declarations[1:i+2]),
-                                    parameter_initialisations = "; ".join(c_parameter_initialisations[0:i+1]),                                   java_method_type = java_method_type,
+                                    parameter_initialisations = "; ".join(c_parameter_initialisations[0:i+1]),
+                                    java_method_type = java_method_type,
                                     call_variant= '', # todo test variants?
                                     arguments = ', ' + ', '.join(parameter_names[0:i+1])))
 

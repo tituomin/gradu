@@ -20,6 +20,9 @@ import java.io.File;
 import android.os.Environment;
 import android.content.res.Resources;
 import android.widget.NumberPicker;
+import android.view.WindowManager;
+import android.os.PowerManager;
+import android.content.Context;
 
 public class BenchmarkSelector extends Activity implements ApplicationState {
     /** Called when the activity is first created. */
@@ -52,6 +55,9 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
         expPick.setOnValueChangedListener(listener);
 
         this.resources  = getResources();
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Benchmarking");
     }
 
     public void setMessage(int id) {
@@ -96,11 +102,14 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
 
             switch (state) {
             case MEASURING:
+                wakeLock.acquire();
                 button.setEnabled(false);
                 break;
             case MILESTONE:
                 break;
             case MEASURING_FINISHED:
+                wakeLock.release();
+
                 // fallthrough
             case INITIALISED:
                 button.setEnabled(true);
@@ -117,6 +126,7 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
                 }
             });
         this.updateState(ApplicationState.State.MEASURING);
+
         measuringThread.start();
     }
 
@@ -137,6 +147,7 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
     private Resources resources;
     private long repetitions;
     private static final String TAG = "BenchmarkSelector";
+    private PowerManager.WakeLock wakeLock;
 
     static {
         System.loadLibrary("nativebenchmark");

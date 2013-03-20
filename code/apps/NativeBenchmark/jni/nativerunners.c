@@ -8,7 +8,7 @@
 
 static jlong repetitions;
 static jclass java_counterparts_class;
-static jmethodID mids[468];
+static jmethodID mids[466];
 
 static void init_methodids(JNIEnv *env) {
     jmethodID mid;
@@ -3373,388 +3373,372 @@ static void init_methodids(JNIEnv *env) {
     mids[420 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00421", "(Ljava/lang/String;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00421", "(Ljava/lang/String;[C)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[C)V not found.");
         return; /* method not found */
     }
     mids[421 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00422", "(Ljava/lang/String;[C)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00422", "(Ljava/lang/String;[CC)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[C)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CC)V not found.");
         return; /* method not found */
     }
     mids[422 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00423", "(Ljava/lang/String;[CC)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00423", "(Ljava/lang/String;[CCZ)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CC)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZ)V not found.");
         return; /* method not found */
     }
     mids[423 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00424", "(Ljava/lang/String;[CCZ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00424", "(Ljava/lang/String;[CCZD)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZ)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZD)V not found.");
         return; /* method not found */
     }
     mids[424 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00425", "(Ljava/lang/String;[CCZD)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00425", "(Ljava/lang/String;[CCZDF)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZD)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDF)V not found.");
         return; /* method not found */
     }
     mids[425 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00426", "(Ljava/lang/String;[CCZDF)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00426", "(Ljava/lang/String;[CCZDFI)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDF)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI)V not found.");
         return; /* method not found */
     }
     mids[426 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00427", "(Ljava/lang/String;[CCZDFI)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00427", "(Ljava/lang/String;[CCZDFI[F)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[F)V not found.");
         return; /* method not found */
     }
     mids[427 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00428", "(Ljava/lang/String;[CCZDFI[F)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00428", "(Ljava/lang/String;[CCZDFI[FJ)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[F)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJ)V not found.");
         return; /* method not found */
     }
     mids[428 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00429", "(Ljava/lang/String;[CCZDFI[FJ)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00429", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJ)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;)V not found.");
         return; /* method not found */
     }
     mids[429 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00430", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00430", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J)V not found.");
         return; /* method not found */
     }
     mids[430 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00431", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00431", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[I)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[I)V not found.");
         return; /* method not found */
     }
     mids[431 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00432", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[I)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00432", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[I)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS)V not found.");
         return; /* method not found */
     }
     mids[432 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00433", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00433", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[Z)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[Z)V not found.");
         return; /* method not found */
     }
     mids[433 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00434", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[Z)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00434", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[Z)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;)V not found.");
         return; /* method not found */
     }
     mids[434 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00435", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00435", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;)V not found.");
         return; /* method not found */
     }
     mids[435 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00436", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00436", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[B)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[B)V not found.");
         return; /* method not found */
     }
     mids[436 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00437", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[B)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00437", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[B)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB)V not found.");
         return; /* method not found */
     }
     mids[437 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00438", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00438", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[S)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[S)V not found.");
         return; /* method not found */
     }
     mids[438 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00439", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[S)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00439", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[S)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;)V not found.");
         return; /* method not found */
     }
     mids[439 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00440", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00440", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;[D)V");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;[D)V not found.");
         return; /* method not found */
     }
     mids[440 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00441", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;[D)V");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00441", "(I)J");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;[D)V not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)J not found.");
         return; /* method not found */
     }
     mids[441 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00442", "(I)I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00442", "(I)J");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)I not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)J not found.");
         return; /* method not found */
     }
     mids[442 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00443", "(I)I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00443", "(I)J");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)I not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)J not found.");
         return; /* method not found */
     }
     mids[443 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00444", "(I)I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00444", "(I)J");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)I not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)J not found.");
         return; /* method not found */
     }
     mids[444 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00445", "(I)I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00445", "(I)J");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)I not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)J not found.");
         return; /* method not found */
     }
     mids[445 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00446", "(I)I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00446", "(I)J");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)I not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)J not found.");
         return; /* method not found */
     }
     mids[446 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00447", "(I)I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00447", "(I)Ljava/lang/String;");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)I not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)Ljava/lang/String; not found.");
         return; /* method not found */
     }
     mids[447 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00448", "(I)Ljava/lang/String;");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00448", "(I)[C");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)Ljava/lang/String; not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[C not found.");
         return; /* method not found */
     }
     mids[448 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00449", "(I)[C");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00449", "(I)C");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[C not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)C not found.");
         return; /* method not found */
     }
     mids[449 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00450", "(I)C");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00450", "(I)Z");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)C not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)Z not found.");
         return; /* method not found */
     }
     mids[450 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00451", "(I)Z");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00451", "(I)D");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)Z not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)D not found.");
         return; /* method not found */
     }
     mids[451 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00452", "(I)D");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00452", "(I)F");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)D not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)F not found.");
         return; /* method not found */
     }
     mids[452 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00453", "(I)F");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00453", "(I)I");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)F not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)I not found.");
         return; /* method not found */
     }
     mids[453 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00454", "(I)I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00454", "(I)[F");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)I not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[F not found.");
         return; /* method not found */
     }
     mids[454 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00455", "(I)[F");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00455", "(I)Ljava/lang/Object;");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[F not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)Ljava/lang/Object; not found.");
         return; /* method not found */
     }
     mids[455 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00456", "(I)J");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00456", "(I)[J");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)J not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[J not found.");
         return; /* method not found */
     }
     mids[456 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00457", "(I)Ljava/lang/Object;");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00457", "(I)[I");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)Ljava/lang/Object; not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[I not found.");
         return; /* method not found */
     }
     mids[457 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00458", "(I)[J");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00458", "(I)S");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[J not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)S not found.");
         return; /* method not found */
     }
     mids[458 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00459", "(I)[I");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00459", "(I)[Z");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[I not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[Z not found.");
         return; /* method not found */
     }
     mids[459 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00460", "(I)S");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00460", "(I)Ljava/lang/Throwable;");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)S not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)Ljava/lang/Throwable; not found.");
         return; /* method not found */
     }
     mids[460 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00461", "(I)[Z");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00461", "(I)[Ljava/lang/Object;");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[Z not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[Ljava/lang/Object; not found.");
         return; /* method not found */
     }
     mids[461 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00462", "(I)Ljava/lang/Throwable;");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00462", "(I)[B");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)Ljava/lang/Throwable; not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[B not found.");
         return; /* method not found */
     }
     mids[462 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00463", "(I)[Ljava/lang/Object;");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00463", "(I)B");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[Ljava/lang/Object; not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)B not found.");
         return; /* method not found */
     }
     mids[463 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00464", "(I)[B");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00464", "(I)[S");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[B not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[S not found.");
         return; /* method not found */
     }
     mids[464 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00465", "(I)B");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00465", "(I)Ljava/lang/Class;");
     if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)B not found.");
+        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)Ljava/lang/Class; not found.");
         return; /* method not found */
     }
     mids[465 - 1] = mid;
 
 
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00466", "(I)[S");
-    if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[S not found.");
-        return; /* method not found */
-    }
-    mids[466 - 1] = mid;
-
-
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00467", "(I)Ljava/lang/Class;");
-    if (mid == NULL) {
-        __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)Ljava/lang/Class; not found.");
-        return; /* method not found */
-    }
-    mids[467 - 1] = mid;
-
-
-    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00468", "(I)[D");
+    mid = (*env)->GetStaticMethodID(env, java_counterparts_class, "benchmark00466", "(I)[D");
     if (mid == NULL) {
         __android_log_write(ANDROID_LOG_VERBOSE, "nativemethod", "(I)[D not found.");
         return; /* method not found */
     }
-    mids[468 - 1] = mid;
+    mids[466 - 1] = mid;
 
 
 }
@@ -22253,12 +22237,12 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00420_run
 JNIEXPORT void JNICALL
 Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00421_run
 (JNIEnv *env, jobject instance) {
-    jstring S1;
-    S1 = jstringValue;
+    jstring S1; jcharArray Ac2;
+    S1 = jstringValue; Ac2 = jcharArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00421_nativemethod (env, instance, S1);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00421_nativemethod (env, instance, S1, Ac2);
     }
 }
 
@@ -22268,50 +22252,6 @@ JNIEXPORT void JNICALL
 Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00421_run
 (JNIEnv *env, jobject instance) {
     jmethodID mid = mids[421 - 1];
-
-    jstring S1;
-    S1 = jstringValue;
-
-    jlong i, refs = 0;
-
-    for (i = 0; i < repetitions; i++) {
-        if (refs == 0) {
-            refs = LOCAL_FRAME_SIZE;
-            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
-                __android_log_write(ANDROID_LOG_ERROR,                      
-                    "nativebenchmark", "can't ensure capacity");
-                return;
-            }
-        }
-
-        (*env)->CallVoidMethod(env, instance, mid, S1);
-
-        if (--refs == 0) {
-            (*env)->PopLocalFrame(env, NULL);
-        }
-    }
-}
-
-
-
-JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00422_run
-(JNIEnv *env, jobject instance) {
-    jstring S1; jcharArray Ac2;
-    S1 = jstringValue; Ac2 = jcharArrayValue;
-
-    jlong i;
-    for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00422_nativemethod (env, instance, S1, Ac2);
-    }
-}
-
-
-
-JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00422_run
-(JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[422 - 1];
 
     jstring S1; jcharArray Ac2;
     S1 = jstringValue; Ac2 = jcharArrayValue;
@@ -22339,23 +22279,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00422_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00423_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00422_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00423_nativemethod (env, instance, S1, Ac2, c3);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00422_nativemethod (env, instance, S1, Ac2, c3);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00423_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00422_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[423 - 1];
+    jmethodID mid = mids[422 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12;
@@ -22383,23 +22323,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00423_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00424_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00423_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00424_nativemethod (env, instance, S1, Ac2, c3, b4);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00423_nativemethod (env, instance, S1, Ac2, c3, b4);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00424_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00423_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[424 - 1];
+    jmethodID mid = mids[423 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1;
@@ -22427,23 +22367,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00424_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00425_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00424_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00425_nativemethod (env, instance, S1, Ac2, c3, b4, d5);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00424_nativemethod (env, instance, S1, Ac2, c3, b4, d5);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00425_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00424_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[425 - 1];
+    jmethodID mid = mids[424 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1;
@@ -22471,23 +22411,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00425_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00426_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00425_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00426_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00425_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00426_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00425_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[426 - 1];
+    jmethodID mid = mids[425 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1;
@@ -22515,23 +22455,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00426_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00427_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00426_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00427_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00426_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00427_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00426_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[427 - 1];
+    jmethodID mid = mids[426 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102;
@@ -22559,23 +22499,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00427_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00428_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00427_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00428_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00427_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00428_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00427_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[428 - 1];
+    jmethodID mid = mids[427 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue;
@@ -22603,23 +22543,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00428_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00429_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00428_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00429_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00428_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00429_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00428_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[429 - 1];
+    jmethodID mid = mids[428 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103;
@@ -22647,23 +22587,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00429_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00430_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00429_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00430_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00429_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00430_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00429_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[430 - 1];
+    jmethodID mid = mids[429 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue;
@@ -22691,23 +22631,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00430_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00431_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00430_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00431_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00430_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00431_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00430_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[431 - 1];
+    jmethodID mid = mids[430 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue;
@@ -22735,23 +22675,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00431_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00432_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00431_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00432_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00431_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00432_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00431_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[432 - 1];
+    jmethodID mid = mids[431 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue;
@@ -22779,23 +22719,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00432_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00433_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00432_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00433_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00432_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00433_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00432_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[433 - 1];
+    jmethodID mid = mids[432 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101;
@@ -22823,23 +22763,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00433_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00434_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00433_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00434_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00433_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00434_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00433_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[434 - 1];
+    jmethodID mid = mids[433 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue;
@@ -22867,23 +22807,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00434_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00435_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00434_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00435_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00434_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00435_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00434_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[435 - 1];
+    jmethodID mid = mids[434 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue;
@@ -22911,23 +22851,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00435_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00436_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00435_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00436_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00435_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00436_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00435_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[436 - 1];
+    jmethodID mid = mids[435 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue;
@@ -22955,23 +22895,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00436_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00437_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00436_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00437_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00436_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00437_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00436_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[437 - 1];
+    jmethodID mid = mids[436 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue;
@@ -22999,23 +22939,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00437_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00438_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00437_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a';
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00438_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00437_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00438_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00437_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[438 - 1];
+    jmethodID mid = mids[437 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a';
@@ -23043,23 +22983,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00438_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00439_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00438_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18; jshortArray As19;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a'; As19 = jshortArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00439_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00438_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00439_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00438_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[439 - 1];
+    jmethodID mid = mids[438 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18; jshortArray As19;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a'; As19 = jshortArrayValue;
@@ -23087,23 +23027,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00439_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00440_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00439_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18; jshortArray As19; jclass C20;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a'; As19 = jshortArrayValue; C20 = jclassValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00440_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19, C20);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00439_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19, C20);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00440_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00439_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[440 - 1];
+    jmethodID mid = mids[439 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18; jshortArray As19; jclass C20;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a'; As19 = jshortArrayValue; C20 = jclassValue;
@@ -23131,23 +23071,23 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00440_run
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00441_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00440_run
 (JNIEnv *env, jobject instance) {
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18; jshortArray As19; jclass C20; jdoubleArray Ad21;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a'; As19 = jshortArrayValue; C20 = jclassValue; Ad21 = jdoubleArrayValue;
 
     jlong i;
     for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00441_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19, C20, Ad21);
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00440_nativemethod (env, instance, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19, C20, Ad21);
     }
 }
 
 
 
 JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00441_run
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00440_run
 (JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[441 - 1];
+    jmethodID mid = mids[440 - 1];
 
     jstring S1; jcharArray Ac2; jchar c3; jboolean b4; jdouble d5; jfloat f6; jint i7; jfloatArray Af8; jlong l9; jobject O10; jlongArray Al11; jintArray Ai12; jshort s13; jbooleanArray Ab14; jthrowable T15; jobjectArray AO16; jbyteArray Ay17; jbyte y18; jshortArray As19; jclass C20; jdoubleArray Ad21;
     S1 = jstringValue; Ac2 = jcharArrayValue; c3 = 12; b4 = 1; d5 = 105.1; f6 = 104.1; i7 = 102; Af8 = jfloatArrayValue; l9 = 103; O10 = jobjectValue; Al11 = jlongArrayValue; Ai12 = jintArrayValue; s13 = 101; Ab14 = jbooleanArrayValue; T15 = jthrowableValue; AO16 = jobjectArrayValue; Ay17 = jbyteArrayValue; y18 = 'a'; As19 = jshortArrayValue; C20 = jclassValue; Ad21 = jdoubleArrayValue;
@@ -23165,6 +23105,50 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00441_run
         }
 
         (*env)->CallVoidMethod(env, instance, mid, S1, Ac2, c3, b4, d5, f6, i7, Af8, l9, O10, Al11, Ai12, s13, Ab14, T15, AO16, Ay17, y18, As19, C20, Ad21);
+
+        if (--refs == 0) {
+            (*env)->PopLocalFrame(env, NULL);
+        }
+    }
+}
+
+
+
+JNIEXPORT void JNICALL
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00441_run
+(JNIEnv *env, jobject instance) {
+    jint i1;
+    i1 = 102;
+
+    jlong i;
+    for (i = 0; i < repetitions; i++) {
+        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00441_nativemethod (env, instance, i1);
+    }
+}
+
+
+
+JNIEXPORT void JNICALL
+Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00441_run
+(JNIEnv *env, jobject instance) {
+    jmethodID mid = mids[441 - 1];
+
+    jint i1;
+    i1 = 102;
+
+    jlong i, refs = 0;
+
+    for (i = 0; i < repetitions; i++) {
+        if (refs == 0) {
+            refs = LOCAL_FRAME_SIZE;
+            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
+                __android_log_write(ANDROID_LOG_ERROR,                      
+                    "nativebenchmark", "can't ensure capacity");
+                return;
+            }
+        }
+
+        (*env)->CallLongMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -23208,7 +23192,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00442_run
             }
         }
 
-        (*env)->CallIntMethod(env, instance, mid, i1);
+        (*env)->CallLongMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -23252,7 +23236,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00443_run
             }
         }
 
-        (*env)->CallIntMethod(env, instance, mid, i1);
+        (*env)->CallLongMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -23296,7 +23280,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00444_run
             }
         }
 
-        (*env)->CallIntMethod(env, instance, mid, i1);
+        (*env)->CallLongMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -23340,7 +23324,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00445_run
             }
         }
 
-        (*env)->CallIntMethod(env, instance, mid, i1);
+        (*env)->CallLongMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -23384,7 +23368,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00446_run
             }
         }
 
-        (*env)->CallIntMethod(env, instance, mid, i1);
+        (*env)->CallLongMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -23428,7 +23412,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00447_run
             }
         }
 
-        (*env)->CallIntMethod(env, instance, mid, i1);
+        (*env)->CallObjectMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -23516,7 +23500,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00449_run
             }
         }
 
-        (*env)->CallObjectMethod(env, instance, mid, i1);
+        (*env)->CallCharMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -23560,7 +23544,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00450_run
             }
         }
 
-        (*env)->CallCharMethod(env, instance, mid, i1);
+        (*env)->CallBooleanMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -23604,7 +23588,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00451_run
             }
         }
 
-        (*env)->CallBooleanMethod(env, instance, mid, i1);
+        (*env)->CallDoubleMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -23648,7 +23632,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00452_run
             }
         }
 
-        (*env)->CallDoubleMethod(env, instance, mid, i1);
+        (*env)->CallFloatMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -23692,7 +23676,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00453_run
             }
         }
 
-        (*env)->CallFloatMethod(env, instance, mid, i1);
+        (*env)->CallIntMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -23736,7 +23720,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00454_run
             }
         }
 
-        (*env)->CallIntMethod(env, instance, mid, i1);
+        (*env)->CallObjectMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -23824,7 +23808,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00456_run
             }
         }
 
-        (*env)->CallLongMethod(env, instance, mid, i1);
+        (*env)->CallObjectMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -23912,7 +23896,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00458_run
             }
         }
 
-        (*env)->CallObjectMethod(env, instance, mid, i1);
+        (*env)->CallShortMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -24000,7 +23984,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00460_run
             }
         }
 
-        (*env)->CallShortMethod(env, instance, mid, i1);
+        (*env)->CallObjectMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -24132,7 +24116,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00463_run
             }
         }
 
-        (*env)->CallObjectMethod(env, instance, mid, i1);
+        (*env)->CallByteMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -24220,7 +24204,7 @@ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00465_run
             }
         }
 
-        (*env)->CallByteMethod(env, instance, mid, i1);
+        (*env)->CallObjectMethod(env, instance, mid, i1);
 
         if (--refs == 0) {
             (*env)->PopLocalFrame(env, NULL);
@@ -24248,94 +24232,6 @@ JNIEXPORT void JNICALL
 Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00466_run
 (JNIEnv *env, jobject instance) {
     jmethodID mid = mids[466 - 1];
-
-    jint i1;
-    i1 = 102;
-
-    jlong i, refs = 0;
-
-    for (i = 0; i < repetitions; i++) {
-        if (refs == 0) {
-            refs = LOCAL_FRAME_SIZE;
-            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
-                __android_log_write(ANDROID_LOG_ERROR,                      
-                    "nativebenchmark", "can't ensure capacity");
-                return;
-            }
-        }
-
-        (*env)->CallObjectMethod(env, instance, mid, i1);
-
-        if (--refs == 0) {
-            (*env)->PopLocalFrame(env, NULL);
-        }
-    }
-}
-
-
-
-JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00467_run
-(JNIEnv *env, jobject instance) {
-    jint i1;
-    i1 = 102;
-
-    jlong i;
-    for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00467_nativemethod (env, instance, i1);
-    }
-}
-
-
-
-JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00467_run
-(JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[467 - 1];
-
-    jint i1;
-    i1 = 102;
-
-    jlong i, refs = 0;
-
-    for (i = 0; i < repetitions; i++) {
-        if (refs == 0) {
-            refs = LOCAL_FRAME_SIZE;
-            if ((*env)->PushLocalFrame(env, LOCAL_FRAME_SIZE) < 0) {
-                __android_log_write(ANDROID_LOG_ERROR,                      
-                    "nativebenchmark", "can't ensure capacity");
-                return;
-            }
-        }
-
-        (*env)->CallObjectMethod(env, instance, mid, i1);
-
-        if (--refs == 0) {
-            (*env)->PopLocalFrame(env, NULL);
-        }
-    }
-}
-
-
-
-JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00468_run
-(JNIEnv *env, jobject instance) {
-    jint i1;
-    i1 = 102;
-
-    jlong i;
-    for (i = 0; i < repetitions; i++) {
-        Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00468_nativemethod (env, instance, i1);
-    }
-}
-
-
-
-JNIEXPORT void JNICALL
-Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00468_run
-(JNIEnv *env, jobject instance) {
-    jmethodID mid = mids[468 - 1];
 
     jint i1;
     i1 = 102;

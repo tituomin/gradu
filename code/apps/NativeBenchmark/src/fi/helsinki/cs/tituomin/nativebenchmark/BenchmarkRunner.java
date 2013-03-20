@@ -182,6 +182,8 @@ public class BenchmarkRunner {
                 if (Modifier.isNative(modifiers)) {
                     bdata.add("native_static", Modifier.isStatic(modifiers) ? "1" : "0");
                     bdata.add("native_private", Modifier.isPrivate(modifiers) ? "1" : "0");
+                    bdata.add("native_protected", Modifier.isProtected(modifiers) ? "1" : "0");
+                    bdata.add("native_public", Modifier.isPublic(modifiers) ? "1" : "0");
 
                     Class [] parameter_arr = m.getParameterTypes();
                     List<Class> parameters = Arrays.asList(parameter_arr);
