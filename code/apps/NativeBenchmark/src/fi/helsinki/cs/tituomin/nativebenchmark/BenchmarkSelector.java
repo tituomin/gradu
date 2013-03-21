@@ -42,20 +42,13 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
 
         NumberPicker.OnValueChangeListener listener = new RepsListener();
 
-        numPick.setMaxValue(9);
-        expPick.setMaxValue(18);
-
-        numPick.setMinValue(1);
-        expPick.setMinValue(0);
-
-        numPick.setValue(1);
-        expPick.setValue(6);
+        numPick.setMinValue(1); numPick.setMaxValue(9); numPick.setValue(1);
+        expPick.setMinValue(0); expPick.setMaxValue(9); expPick.setValue(6);
 
         numPick.setOnValueChangedListener(listener);
         expPick.setOnValueChangedListener(listener);
 
         this.resources  = getResources();
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
         wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Benchmarking");
     }
@@ -103,16 +96,19 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
             switch (state) {
             case MEASURING:
                 wakeLock.acquire();
+                getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                numPick.setEnabled(false);
                 button.setEnabled(false);
                 break;
             case MILESTONE:
                 break;
             case MEASURING_FINISHED:
                 wakeLock.release();
-
-                // fallthrough
+                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                // intended fallthrough
             case INITIALISED:
                 button.setEnabled(true);
+                numPick.setEnabled(true);
                 break;
             }
         }

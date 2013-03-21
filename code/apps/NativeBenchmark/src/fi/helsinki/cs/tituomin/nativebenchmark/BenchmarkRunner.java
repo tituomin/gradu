@@ -4,6 +4,7 @@ package fi.helsinki.cs.tituomin.nativebenchmark;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.BasicOption;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.MeasuringTool;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.ResponseTimeRecorder;
+import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.LinuxPerfRecordTool;
 import fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRegistry;
 import java.util.List;
 import java.util.ArrayList;
@@ -21,22 +22,15 @@ import android.os.Environment;
 import android.util.Log;
 import android.os.SystemClock;
 import java.util.SortedSet;
+import java.util.Collections;
 import java.util.TreeSet;
-
 
 
 public class BenchmarkRunner {
     private static final String SEPARATOR     = ",";
     private static final String MISSING_VALUE = "-";
     private static BenchmarkParameter benchmarkParameter;
-
-    private static final MeasuringTool[] measuringTools = {
-        // new LinuxPerfRecordTool()
-        // .set(BasicOption.OUTPUT_FILEPATH, profileDir.getPath())
-        // .set(BasicOption.MEASURE_LENGTH, "10"),
-
-        new ResponseTimeRecorder()
-    };
+    private static MeasuringTool[] measuringTools; 
 
     public static BenchmarkParameter getBenchmarkParameter() {
         if (benchmarkParameter == null) {
@@ -45,11 +39,26 @@ public class BenchmarkRunner {
         return benchmarkParameter;
     }
 
+    public static void initTools(File dataDir) {
+        File perfDir = new File(dataDir, "perf");
+        perfDir.mkdir();
+
+        measuringTools = new MeasuringTool[2];
+        measuringTools[0] =
+            new LinuxPerfRecordTool()
+            .set(BasicOption.OUTPUT_FILEPATH, perfDir.getPath())
+            .set(BasicOption.MEASURE_LENGTH, "10");
+        measuringTools[1] = 
+            new ResponseTimeRecorder();
+    }
+
 
     public static void runBenchmarks(ApplicationState mainUI, long repetitions) {
         File sd = Environment.getExternalStorageDirectory();
         File dataDir = new File(sd, "results");
         dataDir.mkdir();
+
+        initTools(dataDir);
 
         for (MeasuringTool tool : measuringTools) {
             tool.addObserver(mainUI);
@@ -70,13 +79,14 @@ public class BenchmarkRunner {
         BenchmarkInitialiser.init(benchmarkParameter);
 
         List<Benchmark> benchmarks = BenchmarkRegistry.getBenchmarks();
+        Collections.shuffle(benchmarks);
 
         long endTime = 0, startTime = SystemClock.uptimeMillis();
         int j = 0;
+
+        final ApplicationState.State state = ApplicationState.State.MILESTONE;
         for (Benchmark benchmark : benchmarks) {
-            mainUI.updateState(
-                ApplicationState.State.MILESTONE,
-                "Benchmark " + ++j);
+            mainUI.updateState(state, "Benchmark " + ++j);
 
             BenchmarkMetadata md = new BenchmarkMetadata();
             for (int i = 0; i < measuringTools.length; i++) {
@@ -93,22 +103,36 @@ public class BenchmarkRunner {
             }
             md.addAll(inspectBenchmark(benchmark));
             compiledMetadata.add(md);
+            System.gc();
+            try {
+                Thread.sleep(300);
+            }
+            catch (InterruptedException e) {
+                Log.e("BenchmarkRunner", "Measuring thread was interrupted", e);
+                    mainUI.updateState(
+                        ApplicationState.State.ERROR,
+                        "Measuring was interrupted");
+            }
         }
+
         endTime = SystemClock.uptimeMillis();
         Log.v("Runner", "compiledMetadata size " + compiledMetadata.size());
 
-        File file = new File(dataDir, "testing_metadata.txt");
-        BufferedOutputStream out = null;
+        // 1. gather all labels
+        SortedSet<String> labels = new TreeSet<String> ();
+        for (MetadataContainer md : compiledMetadata) {
+            labels.addAll(md.labels());
+        }
+
+        File file = new File(dataDir, "benchmarks.csv");
+        PrintWriter writer = null;
 
         try {
-            out = new BufferedOutputStream(new FileOutputStream(file));
-            PrintWriter writer = new PrintWriter(out);
+            writer =
+                new PrintWriter(
+                    new BufferedOutputStream(
+                        new FileOutputStream(file)));
 
-            // 1. gather all labels
-            SortedSet<String> labels = new TreeSet<String> ();
-            for (MetadataContainer md : compiledMetadata) {
-                labels.addAll(md.labels());
-            }
             for (String label : labels) {
                 writer.print(label + SEPARATOR);
             }
@@ -120,7 +144,7 @@ public class BenchmarkRunner {
                 int i = 0;
                 for (String label : labels) {
                     String val = md.get(label);
-                    values[i++] = val != null ? val: MISSING_VALUE;
+                    values[i++] = (val == null ? MISSING_VALUE : val);
                 }
                 for (i = 0; i < values.length; i++) {
                     writer.print(values[i] + SEPARATOR);
@@ -134,15 +158,9 @@ public class BenchmarkRunner {
         catch (IOException e) {
             Log.e("Nativebenchmark", "ioexception " + e);
         }
-        try {
-            if (out != null) {
-                out.close();
-            }
+        if (writer != null) {
+            writer.close();
         }
-        catch (IOException e) {
-            Log.e("Nativebenchmark", "ioexception " + e);
-        }
-
         mainUI.updateState(
             ApplicationState.State.MEASURING_FINISHED,
             humanTime(endTime - startTime));

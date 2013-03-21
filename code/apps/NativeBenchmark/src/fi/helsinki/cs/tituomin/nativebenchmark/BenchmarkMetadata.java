@@ -51,6 +51,10 @@ public class BenchmarkMetadata implements MetadataContainer {
         }
     }
 
+    public void clear() {
+        compiledMetadata.clear();
+    }
+
     public String toString() {
         return compiledMetadata.toString();
     }
