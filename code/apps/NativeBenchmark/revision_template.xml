@@ -2,4 +2,5 @@
 <resources>
     <string name="app_revision">@REVISION@</string>
     <string name="app_checksum">@CHECKSUM@</string>
+    <string name="app_dirty">@DIRTY@</string>
 </resources>

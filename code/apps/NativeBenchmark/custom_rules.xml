@@ -63,6 +63,11 @@
       <arg value="HEAD"/>
     </exec>
 
+    <exec executable="git" logError="false" failonerror="false" resultproperty="app.dirty">
+      <arg value="diff"/>
+      <arg value="--exit-code"/>
+    </exec>
+
     <checksum totalproperty="sources.checksum">
       <path>
       <fileset dir="src">
@@ -86,11 +91,10 @@
       <filterset>
         <filter token="REVISION" value="${app.revision}"/>
         <filter token="CHECKSUM" value="${sources.checksum}"/>
+        <filter token="DIRTY" value="${app.dirty}"/>
       </filterset>
     </copy>
   </target>
-
-
 
 </project>
 
