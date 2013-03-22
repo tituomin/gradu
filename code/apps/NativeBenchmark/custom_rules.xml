@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
 
-  <target name="-post-compile" depends="build-ndk,update_revision" />
+  <target name="-post-compile" depends="build-ndk" />
   <target name="-pre-compile" depends="generate_benchmark_sources" />
+  <target name="-pre-build" depends="update_revision" />
 
   <target name="clean" depends="android_rules.clean">
     <exec executable="${ndk.dir}/ndk-build" failonerror="true">
@@ -61,7 +62,7 @@
       <arg value="rev-parse"/>
       <arg value="HEAD"/>
     </exec>
-    <copy file="revision_template.xml" tofile="res/values/revision.xml">
+    <copy file="revision_template.xml" tofile="res/values/revision.xml" overwrite="true">
       <filterset>
         <filter token="REVISION" value="${app.revision}"/>
       </filterset>

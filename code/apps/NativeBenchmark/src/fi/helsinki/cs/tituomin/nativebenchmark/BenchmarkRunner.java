@@ -181,7 +181,7 @@ public class BenchmarkRunner {
 
             sigs = context.getPackageManager().getPackageInfo(
             context.getPackageName(),
-            PackageManager.GET_SIGNATURES).signatures;    
+            PackageManager.GET_SIGNATURES).signatures;
 
         }
         catch (NameNotFoundException e) {
@@ -202,7 +202,7 @@ public class BenchmarkRunner {
             writer.println("code-revision:    " + resources.getText(R.string.app_revision));
             for (Signature sig : sigs)
                 {
-            writer.println("signatures: " + sig.hashCode());
+            writer.println("signatures: " + sig.toCharsString());
                 }
 
             writer.println("kernel-build-id:  " + "TODO");
