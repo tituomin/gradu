@@ -76,38 +76,44 @@ def modifier_combinations():
 def specify_combinations():
     all_combinations = []
 
+    all_combinations.append({
+            'description' : 'no arguments or return types',
+            'return_types': [return_types['v']],
+            'native_modifiers' : modifier_combinations(),
+            'types' : []})
+
     for symbol in types.keys():
-        # one type, varying length
         all_combinations.append({
+            'description' : 'type {s}, varying count'.format(s=symbol),
             'return_types' : [return_types['v']],
             'native_modifiers' : [('private', '')],
             'types' : jni_types.type_combinations(
                 size=20, typeset=[types[symbol]])})
 
-    # all types, vary length to vary number of types
     # ! start from 1 to avoid duplicates!
     all_combinations.append({
+            'skip' : 1,
+            'description' : 'all types, vary number of types',
             'return_types' : [return_types['v']],
             'native_modifiers' : [('private', '')],
             'types' : jni_types.type_combinations(
                 typeset = types.values()),
-            'skip' : 1
+
             })
 
-    # modifiers
     all_combinations.append({
+            'description' : 'modifier combinations',
             'return_types' : [return_types['l']],
             'native_modifiers' : modifier_combinations(),
             'types' : [types['i']]
             })
 
-    # return types
     ret_types = filter(lambda x: x['symbol'] != 'l', jni_types.type_combinations(
         typeset = types.values()))
-    
 
     all_combinations.append({
-            'return_types' : ret_types ,
+            'description' : 'return types',
+            'return_types' : ret_types,
             'native_modifiers' : [('private', '')],
             'types' : [types['i']]
             })
@@ -143,7 +149,6 @@ def generate_benchmarks():
                     first_param = 'jobject instance'
                 c_parameter_declarations = [first_param]
 
-
                 for i, type_data in enumerate(type_combination):
                     parameter_names.append(type_data['symbol'] + str(i+1))
 
@@ -160,7 +165,9 @@ def generate_benchmarks():
                         parameter_initialisation('c', type_data, parameter_names[-1]))
 
                 skip = spec.get('skip', 0)
-                for i in range(skip, len(type_combination)):
+                upper_bound = len(type_combination)
+                if upper_bound == 0: upper_bound = 1
+                for i in range(skip, upper_bound):
 
                     sequence_no = next_sequence_no()
 
@@ -207,6 +214,7 @@ def generate_benchmarks():
                                 'path'     : '/'.join(packagename),
                                 'code'     : java_benchmark.t.format(
                                     imports                      = '',
+                                    description                  = spec['description'],
                                     seq_no                       = class_counter,
                                     from_language                = from_lang,
                                     to_language                  = to_lang,
@@ -262,6 +270,9 @@ def generate_benchmarks():
                             else:
                                 java_method_type = return_type['java'].capitalize()
 
+                            arguments = ', '.join(parameter_names[0:i+1])
+                            if arguments != '':
+                                arguments = ', ' + arguments
                             c_runners.append(
                                 c_nativemethod.t_caller_java.format(
                                     seq_no = class_counter,
@@ -271,7 +282,7 @@ def generate_benchmarks():
                                     parameter_initialisations = "; ".join(c_parameter_initialisations[0:i+1]),
                                     java_method_type = java_method_type,
                                     call_variant= '', # todo test variants?
-                                    arguments = ', ' + ', '.join(parameter_names[0:i+1])))
+                                    arguments = arguments))
 
                             c_methodid_inits.append(
                                 c_module.mid_init_t.format(

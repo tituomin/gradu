@@ -92,11 +92,11 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
                 setMessage(state.stringId, message);
             }
 
-
             switch (state) {
             case MEASURING:
                 wakeLock.acquire();
                 getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                expPick.setEnabled(false);
                 numPick.setEnabled(false);
                 button.setEnabled(false);
                 break;
@@ -109,6 +109,7 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
             case INITIALISED:
                 button.setEnabled(true);
                 numPick.setEnabled(true);
+                expPick.setEnabled(true);
                 break;
             }
         }
@@ -118,7 +119,7 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
         Thread measuringThread = new Thread(
             new Runnable () {
                 public void run() {
-                    BenchmarkRunner.runBenchmarks(BenchmarkSelector.this, repetitions);
+                    BenchmarkRunner.runBenchmarks(BenchmarkSelector.this, repetitions, resources, getApplicationContext());
                 }
             });
         this.updateState(ApplicationState.State.MEASURING);

@@ -22,6 +22,10 @@ public class {classname} {class_relations} implements Benchmark {{
         return {seq_no};
     }}
 
+    public String description() {{
+        return "{description}";
+    }}
+
     private long repetitions;
     private BenchmarkParameter benchmarkParameter;
 

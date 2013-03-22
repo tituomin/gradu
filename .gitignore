@@ -27,3 +27,4 @@ paper/gen
 *.maf
 *.mtc
 *.mtc0
+/code/apps/NativeBenchmark/res/values/revision.xml

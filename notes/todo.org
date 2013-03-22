@@ -1,13 +1,32 @@
 
 Gradu: duunit
 * Benchmarks
+** DONE no call arguments !!!
+** TODO dynamic parameter variations
+** TODO useampi mittauskierros
+*** TODO mittausluettelo
+*** TODO mittausten tilastollinen tulkinta (truncated mean?)
+*** TODO warmup round
+*** TODO build: include git tag as resource
+**** git rev-parse HEAD
+     lisää custom ruleseihin ()
+** TODO lisätyökalut
+*** TODO perf
+**** TODO inspect build ids
+*** TODO oprofile
+** TODO lisätestit
+*** TODO jni functions
+*** TODO testaa call-variants (ellipsis, array, va_args)
+*** TODO modifiers
+** TODO siirrä koodi eri repoon kuin gradu
 ** TODO funktioiden paluuarvojen tallennus? (ehkä ei)
-** TODO warm up vm
 ** TODO java: final local variables?
 *** android designing for performance: Without a JIT, direct field access is about 3x faster than invoking a trivial getter. With the JIT (where direct field access is as cheap as accessing a local), direct field access is about 7x faster than invoking a trivial getter. This is true in Froyo, but will improve in the future when the JIT inlines getter methods.
-** TODO no call arguments !!!
 ** TODO lisää muut kuin jnienv-funktiot testiin? (tai perustele miksei)
-** TODO testaa call-variants (ellipsis, array, va_args)
+** TODO refactoring: metadatacontainer -> map
+** TODO turn off screen? (manually?)
+** TODO korjaa build dependencies
+   
 * Tarkista
 ** TODO gof-book: onko proxy oikea termi peer classille?
 ** TODO androidin jni-toteutus ei käytä funktiotauluja?

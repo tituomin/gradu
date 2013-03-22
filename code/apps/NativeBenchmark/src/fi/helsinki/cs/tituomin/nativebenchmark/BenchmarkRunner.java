@@ -6,6 +6,8 @@ import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.MeasuringTool;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.ResponseTimeRecorder;
 import fi.helsinki.cs.tituomin.nativebenchmark.measuringtool.LinuxPerfRecordTool;
 import fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRegistry;
+import fi.helsinki.cs.tituomin.nativebenchmark.Utils;
+import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
@@ -18,13 +20,18 @@ import java.io.FileOutputStream;
 import java.io.BufferedOutputStream;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.io.FileNotFoundException;
 import android.os.Environment;
 import android.util.Log;
 import android.os.SystemClock;
 import java.util.SortedSet;
 import java.util.Collections;
 import java.util.TreeSet;
-
+import android.content.res.Resources;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
+import android.content.pm.PackageManager.NameNotFoundException;
 
 public class BenchmarkRunner {
     private static final String SEPARATOR     = ",";
@@ -43,21 +50,23 @@ public class BenchmarkRunner {
         File perfDir = new File(dataDir, "perf");
         perfDir.mkdir();
 
-        measuringTools = new MeasuringTool[2];
-        measuringTools[0] =
-            new LinuxPerfRecordTool()
-            .set(BasicOption.OUTPUT_FILEPATH, perfDir.getPath())
-            .set(BasicOption.MEASURE_LENGTH, "10");
-        measuringTools[1] = 
+        measuringTools = new MeasuringTool[1];
+        // measuringTools[0] =
+        //     new LinuxPerfRecordTool()
+        //     .set(BasicOption.OUTPUT_FILEPATH, perfDir.getPath())
+        //     .set(BasicOption.MEASURE_LENGTH, "10");
+        measuringTools[0] = 
             new ResponseTimeRecorder();
     }
 
 
-    public static void runBenchmarks(ApplicationState mainUI, long repetitions) {
+    public static void runBenchmarks(ApplicationState mainUI, long repetitions, Resources resources, Context context) {
+        String measurementID = Utils.getUUID();
         File sd = Environment.getExternalStorageDirectory();
         File dataDir = new File(sd, "results");
         dataDir.mkdir();
 
+        Date start = new Date();
         initTools(dataDir);
 
         for (MeasuringTool tool : measuringTools) {
@@ -79,9 +88,10 @@ public class BenchmarkRunner {
         BenchmarkInitialiser.init(benchmarkParameter);
 
         List<Benchmark> benchmarks = BenchmarkRegistry.getBenchmarks();
-        Collections.shuffle(benchmarks);
+        //Collections.shuffle(benchmarks);
 
         long endTime = 0, startTime = SystemClock.uptimeMillis();
+        
         int j = 0;
 
         final ApplicationState.State state = ApplicationState.State.MILESTONE;
@@ -103,15 +113,18 @@ public class BenchmarkRunner {
             }
             md.addAll(inspectBenchmark(benchmark));
             compiledMetadata.add(md);
-            System.gc();
-            try {
-                Thread.sleep(300);
-            }
-            catch (InterruptedException e) {
-                Log.e("BenchmarkRunner", "Measuring thread was interrupted", e);
+
+            if (j % 50 == 0) {
+                System.gc();
+                try {
+                    Thread.sleep(200);
+                }
+                catch (InterruptedException e) {
+                    Log.e("BenchmarkRunner", "Measuring thread was interrupted", e);
                     mainUI.updateState(
                         ApplicationState.State.ERROR,
                         "Measuring was interrupted");
+                }
             }
         }
 
@@ -124,15 +137,10 @@ public class BenchmarkRunner {
             labels.addAll(md.labels());
         }
 
-        File file = new File(dataDir, "benchmarks.csv");
         PrintWriter writer = null;
 
         try {
-            writer =
-                new PrintWriter(
-                    new BufferedOutputStream(
-                        new FileOutputStream(file)));
-
+            writer = getWriter(new File(dataDir, "benchmarks-" + measurementID + ".csv"), false);
             for (String label : labels) {
                 writer.print(label + SEPARATOR);
             }
@@ -161,10 +169,65 @@ public class BenchmarkRunner {
         if (writer != null) {
             writer.close();
         }
+
+        Date end = new Date();
+        String toolNames = "";
+        for (int i = 0; i < measuringTools.length; i++) {
+            toolNames += measuringTools[i].getClass().getName() + " ";
+        }
+
+        Signature[] sigs = new Signature[1];
+        try {
+
+            sigs = context.getPackageManager().getPackageInfo(
+            context.getPackageName(),
+            PackageManager.GET_SIGNATURES).signatures;    
+
+        }
+        catch (NameNotFoundException e) {
+            Log.e("runner", "package name not found", e);
+        }
+        
+        try {
+            writer = getWriter(new File(dataDir, "measurements.txt"), true);
+            writer.println("");
+            writer.println("id:               " + measurementID);
+            writer.println("repetitions:      " + repetitions);
+            writer.println("rounds:           " + 1);
+            writer.println("start:            " + start);
+            writer.println("end:              " + end);
+            writer.println("duration:         " + humanTime(endTime - startTime));
+            writer.println("tools:            " + toolNames);
+            writer.println("benchmarks:       " + benchmarks.size());
+            writer.println("code-revision:    " + resources.getText(R.string.app_revision));
+            for (Signature sig : sigs)
+                {
+            writer.println("signatures: " + sig.hashCode());
+                }
+
+            writer.println("kernel-build-id:  " + "TODO");
+            writer.println("jni-lib-build-id: " + "TODO");
+            writer.println("");
+        }
+        catch (IOException e ) {
+            Log.e("Nativebenchmark", "ioexception", e);
+        }
+        finally {
+            writer.close();
+        }
+        
+            
         mainUI.updateState(
             ApplicationState.State.MEASURING_FINISHED,
             humanTime(endTime - startTime));
         
+        }
+
+    private static PrintWriter getWriter(File file, boolean append)
+    throws FileNotFoundException {
+        return new PrintWriter(
+            new BufferedOutputStream(
+                new FileOutputStream(file, append)));
     }
 
     private static String humanTime(long millis) {
@@ -193,6 +256,7 @@ public class BenchmarkRunner {
         // results are cached for other versions
         if (from.equals("J") && to.equals("C")) {
             bdata.add("no", "" + benchmark.sequenceNo());
+            bdata.add("description", benchmark.description());
             Method[] methods = c.getDeclaredMethods();
             for (int i = 0; i < methods.length; i++) {
                 Method m = methods[i];

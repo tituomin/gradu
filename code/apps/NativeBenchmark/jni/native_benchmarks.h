@@ -10,10 +10,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00001
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;)V
+ * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00001_nativemethod
-  (JNIEnv *, jobject, jstring);
+  (JNIEnv *, jclass);
 
 #ifdef __cplusplus
 }
@@ -78,10 +78,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00002
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00002_nativemethod
-  (JNIEnv *, jobject, jstring, jstring);
+  (JNIEnv *, jobject);
 
 #ifdef __cplusplus
 }
@@ -146,10 +146,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00003
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00003_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring);
+  (JNIEnv *, jclass);
 
 #ifdef __cplusplus
 }
@@ -214,10 +214,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00004
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00004_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject);
 
 #ifdef __cplusplus
 }
@@ -282,10 +282,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00005
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00005_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jclass);
 
 #ifdef __cplusplus
 }
@@ -350,10 +350,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00006
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00006_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject);
 
 #ifdef __cplusplus
 }
@@ -418,10 +418,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00007
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00007_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject, jstring);
 
 #ifdef __cplusplus
 }
@@ -486,10 +486,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00008
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00008_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -554,10 +554,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00009
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00009_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -622,10 +622,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00010
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00010_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -690,10 +690,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00011
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00011_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -758,10 +758,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00012
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00012_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -826,10 +826,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00013
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00013_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -894,10 +894,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00014
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00014_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -962,10 +962,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00015
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00015_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -1030,10 +1030,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00016
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00016_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -1098,10 +1098,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00017
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00017_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -1166,10 +1166,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00018
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00018_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -1234,10 +1234,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00019
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00019_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -1302,10 +1302,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00020
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00020_nativemethod
-  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -1370,10 +1370,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00021
  * Method:    nativemethod
- * Signature: ([C)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00021_nativemethod
-  (JNIEnv *, jobject, jcharArray);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -1438,10 +1438,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00022
  * Method:    nativemethod
- * Signature: ([C[C)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00022_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -1506,10 +1506,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00023
  * Method:    nativemethod
- * Signature: ([C[C[C)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00023_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -1574,10 +1574,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00024
  * Method:    nativemethod
- * Signature: ([C[C[C[C)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00024_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -1642,10 +1642,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00025
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00025_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -1710,10 +1710,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00026
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C[C)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00026_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }
@@ -1778,10 +1778,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00027
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C[C[C)V
+ * Signature: ([C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00027_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -1846,10 +1846,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00028
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C[C[C[C)V
+ * Signature: ([C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00028_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -1914,10 +1914,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00029
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C[C[C[C[C)V
+ * Signature: ([C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00029_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -1982,10 +1982,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00030
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C[C[C[C[C[C)V
+ * Signature: ([C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00030_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -2050,10 +2050,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00031
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C[C[C[C[C[C[C)V
+ * Signature: ([C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00031_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -2118,10 +2118,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00032
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C)V
+ * Signature: ([C[C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00032_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -2186,10 +2186,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00033
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C)V
+ * Signature: ([C[C[C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00033_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -2254,10 +2254,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00034
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C[C)V
+ * Signature: ([C[C[C[C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00034_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -2322,10 +2322,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00035
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V
+ * Signature: ([C[C[C[C[C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00035_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -2390,10 +2390,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00036
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V
+ * Signature: ([C[C[C[C[C[C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00036_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -2458,10 +2458,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00037
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V
+ * Signature: ([C[C[C[C[C[C[C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00037_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -2526,10 +2526,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00038
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V
+ * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00038_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -2594,10 +2594,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00039
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V
+ * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00039_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -2662,10 +2662,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00040
  * Method:    nativemethod
- * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V
+ * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00040_nativemethod
-  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -2730,10 +2730,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00041
  * Method:    nativemethod
- * Signature: (C)V
+ * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00041_nativemethod
-  (JNIEnv *, jobject, jchar);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -2798,10 +2798,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00042
  * Method:    nativemethod
- * Signature: (CC)V
+ * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00042_nativemethod
-  (JNIEnv *, jobject, jchar, jchar);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -2866,10 +2866,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00043
  * Method:    nativemethod
- * Signature: (CCC)V
+ * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00043_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -2934,10 +2934,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00044
  * Method:    nativemethod
- * Signature: (CCCC)V
+ * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00044_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -3002,10 +3002,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00045
  * Method:    nativemethod
- * Signature: (CCCCC)V
+ * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00045_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -3070,10 +3070,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00046
  * Method:    nativemethod
- * Signature: (CCCCCC)V
+ * Signature: ([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00046_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -3138,10 +3138,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00047
  * Method:    nativemethod
- * Signature: (CCCCCCC)V
+ * Signature: (C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00047_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jchar);
 
 #ifdef __cplusplus
 }
@@ -3206,10 +3206,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00048
  * Method:    nativemethod
- * Signature: (CCCCCCCC)V
+ * Signature: (CC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00048_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -3274,10 +3274,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00049
  * Method:    nativemethod
- * Signature: (CCCCCCCCC)V
+ * Signature: (CCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00049_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -3342,10 +3342,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00050
  * Method:    nativemethod
- * Signature: (CCCCCCCCCC)V
+ * Signature: (CCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00050_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -3410,10 +3410,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00051
  * Method:    nativemethod
- * Signature: (CCCCCCCCCCC)V
+ * Signature: (CCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00051_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -3478,10 +3478,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00052
  * Method:    nativemethod
- * Signature: (CCCCCCCCCCCC)V
+ * Signature: (CCCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00052_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -3546,10 +3546,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00053
  * Method:    nativemethod
- * Signature: (CCCCCCCCCCCCC)V
+ * Signature: (CCCCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00053_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -3614,10 +3614,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00054
  * Method:    nativemethod
- * Signature: (CCCCCCCCCCCCCC)V
+ * Signature: (CCCCCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00054_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -3682,10 +3682,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00055
  * Method:    nativemethod
- * Signature: (CCCCCCCCCCCCCCC)V
+ * Signature: (CCCCCCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00055_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -3750,10 +3750,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00056
  * Method:    nativemethod
- * Signature: (CCCCCCCCCCCCCCCC)V
+ * Signature: (CCCCCCCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00056_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -3818,10 +3818,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00057
  * Method:    nativemethod
- * Signature: (CCCCCCCCCCCCCCCCC)V
+ * Signature: (CCCCCCCCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00057_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -3886,10 +3886,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00058
  * Method:    nativemethod
- * Signature: (CCCCCCCCCCCCCCCCCC)V
+ * Signature: (CCCCCCCCCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00058_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -3954,10 +3954,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00059
  * Method:    nativemethod
- * Signature: (CCCCCCCCCCCCCCCCCCC)V
+ * Signature: (CCCCCCCCCCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00059_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -4022,10 +4022,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00060
  * Method:    nativemethod
- * Signature: (CCCCCCCCCCCCCCCCCCCC)V
+ * Signature: (CCCCCCCCCCCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00060_nativemethod
-  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -4090,10 +4090,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00061
  * Method:    nativemethod
- * Signature: (Z)V
+ * Signature: (CCCCCCCCCCCCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00061_nativemethod
-  (JNIEnv *, jobject, jboolean);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -4158,10 +4158,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00062
  * Method:    nativemethod
- * Signature: (ZZ)V
+ * Signature: (CCCCCCCCCCCCCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00062_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -4226,10 +4226,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00063
  * Method:    nativemethod
- * Signature: (ZZZ)V
+ * Signature: (CCCCCCCCCCCCCCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00063_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -4294,10 +4294,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00064
  * Method:    nativemethod
- * Signature: (ZZZZ)V
+ * Signature: (CCCCCCCCCCCCCCCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00064_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -4362,10 +4362,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00065
  * Method:    nativemethod
- * Signature: (ZZZZZ)V
+ * Signature: (CCCCCCCCCCCCCCCCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00065_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -4430,10 +4430,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00066
  * Method:    nativemethod
- * Signature: (ZZZZZZ)V
+ * Signature: (CCCCCCCCCCCCCCCCCCCC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00066_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar, jchar);
 
 #ifdef __cplusplus
 }
@@ -4498,10 +4498,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00067
  * Method:    nativemethod
- * Signature: (ZZZZZZZ)V
+ * Signature: (Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00067_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jboolean);
 
 #ifdef __cplusplus
 }
@@ -4566,10 +4566,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00068
  * Method:    nativemethod
- * Signature: (ZZZZZZZZ)V
+ * Signature: (ZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00068_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -4634,10 +4634,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00069
  * Method:    nativemethod
- * Signature: (ZZZZZZZZZ)V
+ * Signature: (ZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00069_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -4702,10 +4702,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00070
  * Method:    nativemethod
- * Signature: (ZZZZZZZZZZ)V
+ * Signature: (ZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00070_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -4770,10 +4770,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00071
  * Method:    nativemethod
- * Signature: (ZZZZZZZZZZZ)V
+ * Signature: (ZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00071_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -4838,10 +4838,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00072
  * Method:    nativemethod
- * Signature: (ZZZZZZZZZZZZ)V
+ * Signature: (ZZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00072_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -4906,10 +4906,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00073
  * Method:    nativemethod
- * Signature: (ZZZZZZZZZZZZZ)V
+ * Signature: (ZZZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00073_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -4974,10 +4974,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00074
  * Method:    nativemethod
- * Signature: (ZZZZZZZZZZZZZZ)V
+ * Signature: (ZZZZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00074_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -5042,10 +5042,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00075
  * Method:    nativemethod
- * Signature: (ZZZZZZZZZZZZZZZ)V
+ * Signature: (ZZZZZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00075_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -5110,10 +5110,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00076
  * Method:    nativemethod
- * Signature: (ZZZZZZZZZZZZZZZZ)V
+ * Signature: (ZZZZZZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00076_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -5178,10 +5178,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00077
  * Method:    nativemethod
- * Signature: (ZZZZZZZZZZZZZZZZZ)V
+ * Signature: (ZZZZZZZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00077_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -5246,10 +5246,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00078
  * Method:    nativemethod
- * Signature: (ZZZZZZZZZZZZZZZZZZ)V
+ * Signature: (ZZZZZZZZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00078_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -5314,10 +5314,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00079
  * Method:    nativemethod
- * Signature: (ZZZZZZZZZZZZZZZZZZZ)V
+ * Signature: (ZZZZZZZZZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00079_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -5382,10 +5382,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00080
  * Method:    nativemethod
- * Signature: (ZZZZZZZZZZZZZZZZZZZZ)V
+ * Signature: (ZZZZZZZZZZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00080_nativemethod
-  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -5450,10 +5450,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00081
  * Method:    nativemethod
- * Signature: (D)V
+ * Signature: (ZZZZZZZZZZZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00081_nativemethod
-  (JNIEnv *, jobject, jdouble);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -5518,10 +5518,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00082
  * Method:    nativemethod
- * Signature: (DD)V
+ * Signature: (ZZZZZZZZZZZZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00082_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -5586,10 +5586,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00083
  * Method:    nativemethod
- * Signature: (DDD)V
+ * Signature: (ZZZZZZZZZZZZZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00083_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -5654,10 +5654,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00084
  * Method:    nativemethod
- * Signature: (DDDD)V
+ * Signature: (ZZZZZZZZZZZZZZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00084_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -5722,10 +5722,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00085
  * Method:    nativemethod
- * Signature: (DDDDD)V
+ * Signature: (ZZZZZZZZZZZZZZZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00085_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -5790,10 +5790,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00086
  * Method:    nativemethod
- * Signature: (DDDDDD)V
+ * Signature: (ZZZZZZZZZZZZZZZZZZZZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00086_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean, jboolean);
 
 #ifdef __cplusplus
 }
@@ -5858,10 +5858,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00087
  * Method:    nativemethod
- * Signature: (DDDDDDD)V
+ * Signature: (D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00087_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jdouble);
 
 #ifdef __cplusplus
 }
@@ -5926,10 +5926,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00088
  * Method:    nativemethod
- * Signature: (DDDDDDDD)V
+ * Signature: (DD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00088_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -5994,10 +5994,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00089
  * Method:    nativemethod
- * Signature: (DDDDDDDDD)V
+ * Signature: (DDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00089_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -6062,10 +6062,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00090
  * Method:    nativemethod
- * Signature: (DDDDDDDDDD)V
+ * Signature: (DDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00090_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -6130,10 +6130,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00091
  * Method:    nativemethod
- * Signature: (DDDDDDDDDDD)V
+ * Signature: (DDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00091_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -6198,10 +6198,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00092
  * Method:    nativemethod
- * Signature: (DDDDDDDDDDDD)V
+ * Signature: (DDDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00092_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -6266,10 +6266,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00093
  * Method:    nativemethod
- * Signature: (DDDDDDDDDDDDD)V
+ * Signature: (DDDDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00093_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -6334,10 +6334,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00094
  * Method:    nativemethod
- * Signature: (DDDDDDDDDDDDDD)V
+ * Signature: (DDDDDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00094_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -6402,10 +6402,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00095
  * Method:    nativemethod
- * Signature: (DDDDDDDDDDDDDDD)V
+ * Signature: (DDDDDDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00095_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -6470,10 +6470,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00096
  * Method:    nativemethod
- * Signature: (DDDDDDDDDDDDDDDD)V
+ * Signature: (DDDDDDDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00096_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -6538,10 +6538,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00097
  * Method:    nativemethod
- * Signature: (DDDDDDDDDDDDDDDDD)V
+ * Signature: (DDDDDDDDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00097_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -6606,10 +6606,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00098
  * Method:    nativemethod
- * Signature: (DDDDDDDDDDDDDDDDDD)V
+ * Signature: (DDDDDDDDDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00098_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -6674,10 +6674,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00099
  * Method:    nativemethod
- * Signature: (DDDDDDDDDDDDDDDDDDD)V
+ * Signature: (DDDDDDDDDDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00099_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -6742,10 +6742,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00100
  * Method:    nativemethod
- * Signature: (DDDDDDDDDDDDDDDDDDDD)V
+ * Signature: (DDDDDDDDDDDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00100_nativemethod
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -6810,10 +6810,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00101
  * Method:    nativemethod
- * Signature: (F)V
+ * Signature: (DDDDDDDDDDDDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00101_nativemethod
-  (JNIEnv *, jobject, jfloat);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -6878,10 +6878,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00102
  * Method:    nativemethod
- * Signature: (FF)V
+ * Signature: (DDDDDDDDDDDDDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00102_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -6946,10 +6946,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00103
  * Method:    nativemethod
- * Signature: (FFF)V
+ * Signature: (DDDDDDDDDDDDDDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00103_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -7014,10 +7014,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00104
  * Method:    nativemethod
- * Signature: (FFFF)V
+ * Signature: (DDDDDDDDDDDDDDDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00104_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -7082,10 +7082,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00105
  * Method:    nativemethod
- * Signature: (FFFFF)V
+ * Signature: (DDDDDDDDDDDDDDDDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00105_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -7150,10 +7150,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00106
  * Method:    nativemethod
- * Signature: (FFFFFF)V
+ * Signature: (DDDDDDDDDDDDDDDDDDDD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00106_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble);
 
 #ifdef __cplusplus
 }
@@ -7218,10 +7218,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00107
  * Method:    nativemethod
- * Signature: (FFFFFFF)V
+ * Signature: (F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00107_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jfloat);
 
 #ifdef __cplusplus
 }
@@ -7286,10 +7286,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00108
  * Method:    nativemethod
- * Signature: (FFFFFFFF)V
+ * Signature: (FF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00108_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -7354,10 +7354,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00109
  * Method:    nativemethod
- * Signature: (FFFFFFFFF)V
+ * Signature: (FFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00109_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -7422,10 +7422,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00110
  * Method:    nativemethod
- * Signature: (FFFFFFFFFF)V
+ * Signature: (FFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00110_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -7490,10 +7490,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00111
  * Method:    nativemethod
- * Signature: (FFFFFFFFFFF)V
+ * Signature: (FFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00111_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -7558,10 +7558,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00112
  * Method:    nativemethod
- * Signature: (FFFFFFFFFFFF)V
+ * Signature: (FFFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00112_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -7626,10 +7626,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00113
  * Method:    nativemethod
- * Signature: (FFFFFFFFFFFFF)V
+ * Signature: (FFFFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00113_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -7694,10 +7694,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00114
  * Method:    nativemethod
- * Signature: (FFFFFFFFFFFFFF)V
+ * Signature: (FFFFFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00114_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -7762,10 +7762,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00115
  * Method:    nativemethod
- * Signature: (FFFFFFFFFFFFFFF)V
+ * Signature: (FFFFFFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00115_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -7830,10 +7830,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00116
  * Method:    nativemethod
- * Signature: (FFFFFFFFFFFFFFFF)V
+ * Signature: (FFFFFFFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00116_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -7898,10 +7898,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00117
  * Method:    nativemethod
- * Signature: (FFFFFFFFFFFFFFFFF)V
+ * Signature: (FFFFFFFFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00117_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -7966,10 +7966,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00118
  * Method:    nativemethod
- * Signature: (FFFFFFFFFFFFFFFFFF)V
+ * Signature: (FFFFFFFFFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00118_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -8034,10 +8034,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00119
  * Method:    nativemethod
- * Signature: (FFFFFFFFFFFFFFFFFFF)V
+ * Signature: (FFFFFFFFFFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00119_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -8102,10 +8102,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00120
  * Method:    nativemethod
- * Signature: (FFFFFFFFFFFFFFFFFFFF)V
+ * Signature: (FFFFFFFFFFFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00120_nativemethod
-  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -8170,10 +8170,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00121
  * Method:    nativemethod
- * Signature: (I)V
+ * Signature: (FFFFFFFFFFFFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00121_nativemethod
-  (JNIEnv *, jobject, jint);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -8238,10 +8238,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00122
  * Method:    nativemethod
- * Signature: (II)V
+ * Signature: (FFFFFFFFFFFFFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00122_nativemethod
-  (JNIEnv *, jobject, jint, jint);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -8306,10 +8306,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00123
  * Method:    nativemethod
- * Signature: (III)V
+ * Signature: (FFFFFFFFFFFFFFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00123_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -8374,10 +8374,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00124
  * Method:    nativemethod
- * Signature: (IIII)V
+ * Signature: (FFFFFFFFFFFFFFFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00124_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -8442,10 +8442,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00125
  * Method:    nativemethod
- * Signature: (IIIII)V
+ * Signature: (FFFFFFFFFFFFFFFFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00125_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -8510,10 +8510,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00126
  * Method:    nativemethod
- * Signature: (IIIIII)V
+ * Signature: (FFFFFFFFFFFFFFFFFFFF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00126_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat, jfloat);
 
 #ifdef __cplusplus
 }
@@ -8578,10 +8578,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00127
  * Method:    nativemethod
- * Signature: (IIIIIII)V
+ * Signature: (I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00127_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
 }
@@ -8646,10 +8646,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00128
  * Method:    nativemethod
- * Signature: (IIIIIIII)V
+ * Signature: (II)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00128_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -8714,10 +8714,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00129
  * Method:    nativemethod
- * Signature: (IIIIIIIII)V
+ * Signature: (III)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00129_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -8782,10 +8782,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00130
  * Method:    nativemethod
- * Signature: (IIIIIIIIII)V
+ * Signature: (IIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00130_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -8850,10 +8850,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00131
  * Method:    nativemethod
- * Signature: (IIIIIIIIIII)V
+ * Signature: (IIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00131_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -8918,10 +8918,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00132
  * Method:    nativemethod
- * Signature: (IIIIIIIIIIII)V
+ * Signature: (IIIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00132_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -8986,10 +8986,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00133
  * Method:    nativemethod
- * Signature: (IIIIIIIIIIIII)V
+ * Signature: (IIIIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00133_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -9054,10 +9054,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00134
  * Method:    nativemethod
- * Signature: (IIIIIIIIIIIIII)V
+ * Signature: (IIIIIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00134_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -9122,10 +9122,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00135
  * Method:    nativemethod
- * Signature: (IIIIIIIIIIIIIII)V
+ * Signature: (IIIIIIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00135_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -9190,10 +9190,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00136
  * Method:    nativemethod
- * Signature: (IIIIIIIIIIIIIIII)V
+ * Signature: (IIIIIIIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00136_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -9258,10 +9258,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00137
  * Method:    nativemethod
- * Signature: (IIIIIIIIIIIIIIIII)V
+ * Signature: (IIIIIIIIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00137_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -9326,10 +9326,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00138
  * Method:    nativemethod
- * Signature: (IIIIIIIIIIIIIIIIII)V
+ * Signature: (IIIIIIIIIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00138_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -9394,10 +9394,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00139
  * Method:    nativemethod
- * Signature: (IIIIIIIIIIIIIIIIIII)V
+ * Signature: (IIIIIIIIIIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00139_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -9462,10 +9462,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00140
  * Method:    nativemethod
- * Signature: (IIIIIIIIIIIIIIIIIIII)V
+ * Signature: (IIIIIIIIIIIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00140_nativemethod
-  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -9530,10 +9530,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00141
  * Method:    nativemethod
- * Signature: ([F)V
+ * Signature: (IIIIIIIIIIIIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00141_nativemethod
-  (JNIEnv *, jobject, jfloatArray);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -9598,10 +9598,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00142
  * Method:    nativemethod
- * Signature: ([F[F)V
+ * Signature: (IIIIIIIIIIIIIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00142_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -9666,10 +9666,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00143
  * Method:    nativemethod
- * Signature: ([F[F[F)V
+ * Signature: (IIIIIIIIIIIIIIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00143_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -9734,10 +9734,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00144
  * Method:    nativemethod
- * Signature: ([F[F[F[F)V
+ * Signature: (IIIIIIIIIIIIIIIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00144_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -9802,10 +9802,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00145
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F)V
+ * Signature: (IIIIIIIIIIIIIIIIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00145_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -9870,10 +9870,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00146
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F[F)V
+ * Signature: (IIIIIIIIIIIIIIIIIIII)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00146_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus
 }
@@ -9938,10 +9938,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00147
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F[F[F)V
+ * Signature: ([F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00147_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -10006,10 +10006,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00148
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F[F[F[F)V
+ * Signature: ([F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00148_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -10074,10 +10074,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00149
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F[F[F[F[F)V
+ * Signature: ([F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00149_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -10142,10 +10142,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00150
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F[F[F[F[F[F)V
+ * Signature: ([F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00150_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -10210,10 +10210,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00151
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F[F[F[F[F[F[F)V
+ * Signature: ([F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00151_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -10278,10 +10278,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00152
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F)V
+ * Signature: ([F[F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00152_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -10346,10 +10346,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00153
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F)V
+ * Signature: ([F[F[F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00153_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -10414,10 +10414,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00154
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F[F)V
+ * Signature: ([F[F[F[F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00154_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -10482,10 +10482,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00155
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V
+ * Signature: ([F[F[F[F[F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00155_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -10550,10 +10550,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00156
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V
+ * Signature: ([F[F[F[F[F[F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00156_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -10618,10 +10618,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00157
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V
+ * Signature: ([F[F[F[F[F[F[F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00157_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -10686,10 +10686,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00158
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V
+ * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00158_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -10754,10 +10754,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00159
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V
+ * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00159_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -10822,10 +10822,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00160
  * Method:    nativemethod
- * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V
+ * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00160_nativemethod
-  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -10890,10 +10890,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00161
  * Method:    nativemethod
- * Signature: (J)V
+ * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00161_nativemethod
-  (JNIEnv *, jobject, jlong);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -10958,10 +10958,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00162
  * Method:    nativemethod
- * Signature: (JJ)V
+ * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00162_nativemethod
-  (JNIEnv *, jobject, jlong, jlong);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -11026,10 +11026,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00163
  * Method:    nativemethod
- * Signature: (JJJ)V
+ * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00163_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -11094,10 +11094,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00164
  * Method:    nativemethod
- * Signature: (JJJJ)V
+ * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00164_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -11162,10 +11162,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00165
  * Method:    nativemethod
- * Signature: (JJJJJ)V
+ * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00165_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -11230,10 +11230,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00166
  * Method:    nativemethod
- * Signature: (JJJJJJ)V
+ * Signature: ([F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00166_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -11298,10 +11298,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00167
  * Method:    nativemethod
- * Signature: (JJJJJJJ)V
+ * Signature: (J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00167_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jlong);
 
 #ifdef __cplusplus
 }
@@ -11366,10 +11366,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00168
  * Method:    nativemethod
- * Signature: (JJJJJJJJ)V
+ * Signature: (JJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00168_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -11434,10 +11434,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00169
  * Method:    nativemethod
- * Signature: (JJJJJJJJJ)V
+ * Signature: (JJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00169_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -11502,10 +11502,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00170
  * Method:    nativemethod
- * Signature: (JJJJJJJJJJ)V
+ * Signature: (JJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00170_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -11570,10 +11570,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00171
  * Method:    nativemethod
- * Signature: (JJJJJJJJJJJ)V
+ * Signature: (JJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00171_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -11638,10 +11638,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00172
  * Method:    nativemethod
- * Signature: (JJJJJJJJJJJJ)V
+ * Signature: (JJJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00172_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -11706,10 +11706,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00173
  * Method:    nativemethod
- * Signature: (JJJJJJJJJJJJJ)V
+ * Signature: (JJJJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00173_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -11774,10 +11774,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00174
  * Method:    nativemethod
- * Signature: (JJJJJJJJJJJJJJ)V
+ * Signature: (JJJJJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00174_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -11842,10 +11842,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00175
  * Method:    nativemethod
- * Signature: (JJJJJJJJJJJJJJJ)V
+ * Signature: (JJJJJJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00175_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -11910,10 +11910,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00176
  * Method:    nativemethod
- * Signature: (JJJJJJJJJJJJJJJJ)V
+ * Signature: (JJJJJJJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00176_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -11978,10 +11978,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00177
  * Method:    nativemethod
- * Signature: (JJJJJJJJJJJJJJJJJ)V
+ * Signature: (JJJJJJJJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00177_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -12046,10 +12046,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00178
  * Method:    nativemethod
- * Signature: (JJJJJJJJJJJJJJJJJJ)V
+ * Signature: (JJJJJJJJJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00178_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -12114,10 +12114,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00179
  * Method:    nativemethod
- * Signature: (JJJJJJJJJJJJJJJJJJJ)V
+ * Signature: (JJJJJJJJJJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00179_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -12182,10 +12182,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00180
  * Method:    nativemethod
- * Signature: (JJJJJJJJJJJJJJJJJJJJ)V
+ * Signature: (JJJJJJJJJJJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00180_nativemethod
-  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -12250,10 +12250,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00181
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;)V
+ * Signature: (JJJJJJJJJJJJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00181_nativemethod
-  (JNIEnv *, jobject, jobject);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -12318,10 +12318,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00182
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (JJJJJJJJJJJJJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00182_nativemethod
-  (JNIEnv *, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -12386,10 +12386,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00183
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (JJJJJJJJJJJJJJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00183_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -12454,10 +12454,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00184
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (JJJJJJJJJJJJJJJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00184_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -12522,10 +12522,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00185
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (JJJJJJJJJJJJJJJJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00185_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -12590,10 +12590,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00186
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (JJJJJJJJJJJJJJJJJJJJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00186_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong, jlong);
 
 #ifdef __cplusplus
 }
@@ -12658,10 +12658,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00187
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00187_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -12726,10 +12726,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00188
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00188_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -12794,10 +12794,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00189
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00189_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -12862,10 +12862,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00190
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00190_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -12930,10 +12930,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00191
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00191_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -12998,10 +12998,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00192
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00192_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -13066,10 +13066,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00193
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00193_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -13134,10 +13134,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00194
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00194_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -13202,10 +13202,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00195
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00195_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -13270,10 +13270,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00196
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00196_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -13338,10 +13338,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00197
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00197_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -13406,10 +13406,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00198
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00198_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -13474,10 +13474,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00199
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00199_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -13542,10 +13542,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00200
  * Method:    nativemethod
- * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00200_nativemethod
-  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -13610,10 +13610,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00201
  * Method:    nativemethod
- * Signature: ([J)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00201_nativemethod
-  (JNIEnv *, jobject, jlongArray);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -13678,10 +13678,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00202
  * Method:    nativemethod
- * Signature: ([J[J)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00202_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -13746,10 +13746,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00203
  * Method:    nativemethod
- * Signature: ([J[J[J)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00203_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -13814,10 +13814,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00204
  * Method:    nativemethod
- * Signature: ([J[J[J[J)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00204_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -13882,10 +13882,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00205
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00205_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -13950,10 +13950,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00206
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J[J)V
+ * Signature: (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00206_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject, jobject);
 
 #ifdef __cplusplus
 }
@@ -14018,10 +14018,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00207
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J[J[J)V
+ * Signature: ([J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00207_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -14086,10 +14086,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00208
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J[J[J[J)V
+ * Signature: ([J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00208_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -14154,10 +14154,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00209
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J[J[J[J[J)V
+ * Signature: ([J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00209_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -14222,10 +14222,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00210
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J[J[J[J[J[J)V
+ * Signature: ([J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00210_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -14290,10 +14290,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00211
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J[J[J[J[J[J[J)V
+ * Signature: ([J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00211_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -14358,10 +14358,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00212
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J)V
+ * Signature: ([J[J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00212_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -14426,10 +14426,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00213
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J)V
+ * Signature: ([J[J[J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00213_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -14494,10 +14494,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00214
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J[J)V
+ * Signature: ([J[J[J[J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00214_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -14562,10 +14562,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00215
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V
+ * Signature: ([J[J[J[J[J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00215_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -14630,10 +14630,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00216
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V
+ * Signature: ([J[J[J[J[J[J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00216_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -14698,10 +14698,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00217
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V
+ * Signature: ([J[J[J[J[J[J[J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00217_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -14766,10 +14766,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00218
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V
+ * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00218_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -14834,10 +14834,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00219
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V
+ * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00219_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -14902,10 +14902,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00220
  * Method:    nativemethod
- * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V
+ * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00220_nativemethod
-  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -14970,10 +14970,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00221
  * Method:    nativemethod
- * Signature: ([I)V
+ * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00221_nativemethod
-  (JNIEnv *, jobject, jintArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -15038,10 +15038,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00222
  * Method:    nativemethod
- * Signature: ([I[I)V
+ * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00222_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -15106,10 +15106,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00223
  * Method:    nativemethod
- * Signature: ([I[I[I)V
+ * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00223_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -15174,10 +15174,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00224
  * Method:    nativemethod
- * Signature: ([I[I[I[I)V
+ * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00224_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -15242,10 +15242,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00225
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I)V
+ * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00225_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -15310,10 +15310,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00226
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I[I)V
+ * Signature: ([J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00226_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -15378,10 +15378,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00227
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I[I[I)V
+ * Signature: ([I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00227_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jintArray);
 
 #ifdef __cplusplus
 }
@@ -15446,10 +15446,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00228
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I[I[I[I)V
+ * Signature: ([I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00228_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -15514,10 +15514,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00229
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I[I[I[I[I)V
+ * Signature: ([I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00229_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -15582,10 +15582,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00230
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I[I[I[I[I[I)V
+ * Signature: ([I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00230_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -15650,10 +15650,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00231
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I[I[I[I[I[I[I)V
+ * Signature: ([I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00231_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -15718,10 +15718,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00232
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I)V
+ * Signature: ([I[I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00232_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -15786,10 +15786,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00233
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I)V
+ * Signature: ([I[I[I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00233_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -15854,10 +15854,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00234
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I[I)V
+ * Signature: ([I[I[I[I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00234_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -15922,10 +15922,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00235
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V
+ * Signature: ([I[I[I[I[I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00235_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -15990,10 +15990,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00236
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V
+ * Signature: ([I[I[I[I[I[I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00236_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -16058,10 +16058,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00237
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V
+ * Signature: ([I[I[I[I[I[I[I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00237_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -16126,10 +16126,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00238
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V
+ * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00238_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -16194,10 +16194,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00239
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V
+ * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00239_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -16262,10 +16262,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00240
  * Method:    nativemethod
- * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V
+ * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00240_nativemethod
-  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -16330,10 +16330,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00241
  * Method:    nativemethod
- * Signature: (S)V
+ * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00241_nativemethod
-  (JNIEnv *, jobject, jshort);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -16398,10 +16398,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00242
  * Method:    nativemethod
- * Signature: (SS)V
+ * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00242_nativemethod
-  (JNIEnv *, jobject, jshort, jshort);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -16466,10 +16466,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00243
  * Method:    nativemethod
- * Signature: (SSS)V
+ * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00243_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -16534,10 +16534,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00244
  * Method:    nativemethod
- * Signature: (SSSS)V
+ * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00244_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -16602,10 +16602,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00245
  * Method:    nativemethod
- * Signature: (SSSSS)V
+ * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00245_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -16670,10 +16670,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00246
  * Method:    nativemethod
- * Signature: (SSSSSS)V
+ * Signature: ([I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00246_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -16738,10 +16738,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00247
  * Method:    nativemethod
- * Signature: (SSSSSSS)V
+ * Signature: (S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00247_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jshort);
 
 #ifdef __cplusplus
 }
@@ -16806,10 +16806,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00248
  * Method:    nativemethod
- * Signature: (SSSSSSSS)V
+ * Signature: (SS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00248_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -16874,10 +16874,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00249
  * Method:    nativemethod
- * Signature: (SSSSSSSSS)V
+ * Signature: (SSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00249_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -16942,10 +16942,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00250
  * Method:    nativemethod
- * Signature: (SSSSSSSSSS)V
+ * Signature: (SSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00250_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -17010,10 +17010,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00251
  * Method:    nativemethod
- * Signature: (SSSSSSSSSSS)V
+ * Signature: (SSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00251_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -17078,10 +17078,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00252
  * Method:    nativemethod
- * Signature: (SSSSSSSSSSSS)V
+ * Signature: (SSSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00252_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -17146,10 +17146,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00253
  * Method:    nativemethod
- * Signature: (SSSSSSSSSSSSS)V
+ * Signature: (SSSSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00253_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -17214,10 +17214,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00254
  * Method:    nativemethod
- * Signature: (SSSSSSSSSSSSSS)V
+ * Signature: (SSSSSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00254_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -17282,10 +17282,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00255
  * Method:    nativemethod
- * Signature: (SSSSSSSSSSSSSSS)V
+ * Signature: (SSSSSSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00255_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -17350,10 +17350,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00256
  * Method:    nativemethod
- * Signature: (SSSSSSSSSSSSSSSS)V
+ * Signature: (SSSSSSSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00256_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -17418,10 +17418,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00257
  * Method:    nativemethod
- * Signature: (SSSSSSSSSSSSSSSSS)V
+ * Signature: (SSSSSSSSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00257_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -17486,10 +17486,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00258
  * Method:    nativemethod
- * Signature: (SSSSSSSSSSSSSSSSSS)V
+ * Signature: (SSSSSSSSSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00258_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -17554,10 +17554,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00259
  * Method:    nativemethod
- * Signature: (SSSSSSSSSSSSSSSSSSS)V
+ * Signature: (SSSSSSSSSSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00259_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -17622,10 +17622,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00260
  * Method:    nativemethod
- * Signature: (SSSSSSSSSSSSSSSSSSSS)V
+ * Signature: (SSSSSSSSSSSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00260_nativemethod
-  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -17690,10 +17690,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00261
  * Method:    nativemethod
- * Signature: ([Z)V
+ * Signature: (SSSSSSSSSSSSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00261_nativemethod
-  (JNIEnv *, jobject, jbooleanArray);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -17758,10 +17758,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00262
  * Method:    nativemethod
- * Signature: ([Z[Z)V
+ * Signature: (SSSSSSSSSSSSSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00262_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -17826,10 +17826,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00263
  * Method:    nativemethod
- * Signature: ([Z[Z[Z)V
+ * Signature: (SSSSSSSSSSSSSSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00263_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -17894,10 +17894,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00264
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z)V
+ * Signature: (SSSSSSSSSSSSSSSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00264_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -17962,10 +17962,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00265
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z)V
+ * Signature: (SSSSSSSSSSSSSSSSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00265_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -18030,10 +18030,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00266
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z[Z)V
+ * Signature: (SSSSSSSSSSSSSSSSSSSS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00266_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort, jshort);
 
 #ifdef __cplusplus
 }
@@ -18098,10 +18098,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00267
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z[Z[Z)V
+ * Signature: ([Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00267_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -18166,10 +18166,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00268
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z)V
+ * Signature: ([Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00268_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -18234,10 +18234,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00269
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z)V
+ * Signature: ([Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00269_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -18302,10 +18302,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00270
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
+ * Signature: ([Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00270_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -18370,10 +18370,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00271
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
+ * Signature: ([Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00271_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -18438,10 +18438,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00272
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
+ * Signature: ([Z[Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00272_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -18506,10 +18506,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00273
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
+ * Signature: ([Z[Z[Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00273_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -18574,10 +18574,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00274
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
+ * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00274_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -18642,10 +18642,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00275
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
+ * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00275_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -18710,10 +18710,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00276
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
+ * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00276_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -18778,10 +18778,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00277
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
+ * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00277_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -18846,10 +18846,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00278
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
+ * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00278_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -18914,10 +18914,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00279
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
+ * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00279_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -18982,10 +18982,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00280
  * Method:    nativemethod
- * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
+ * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00280_nativemethod
-  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -19050,10 +19050,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00281
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;)V
+ * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00281_nativemethod
-  (JNIEnv *, jobject, jthrowable);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -19118,10 +19118,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00282
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00282_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -19186,10 +19186,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00283
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00283_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -19254,10 +19254,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00284
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00284_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -19322,10 +19322,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00285
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00285_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -19390,10 +19390,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00286
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: ([Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00286_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -19458,10 +19458,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00287
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: (Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00287_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -19526,10 +19526,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00288
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00288_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -19594,10 +19594,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00289
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00289_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -19662,10 +19662,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00290
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00290_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -19730,10 +19730,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00291
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00291_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -19798,10 +19798,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00292
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00292_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -19866,10 +19866,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00293
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00293_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -19934,10 +19934,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00294
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00294_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -20002,10 +20002,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00295
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00295_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -20070,10 +20070,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00296
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00296_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -20138,10 +20138,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00297
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00297_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -20206,10 +20206,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00298
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00298_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -20274,10 +20274,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00299
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00299_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -20342,10 +20342,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00300
  * Method:    nativemethod
- * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00300_nativemethod
-  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -20410,10 +20410,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00301
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00301_nativemethod
-  (JNIEnv *, jobject, jobjectArray);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -20478,10 +20478,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00302
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00302_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -20546,10 +20546,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00303
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00303_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -20614,10 +20614,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00304
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00304_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -20682,10 +20682,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00305
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00305_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -20750,10 +20750,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00306
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00306_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -20818,10 +20818,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00307
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: ([Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00307_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -20886,10 +20886,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00308
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00308_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -20954,10 +20954,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00309
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00309_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -21022,10 +21022,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00310
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00310_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -21090,10 +21090,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00311
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00311_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -21158,10 +21158,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00312
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00312_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -21226,10 +21226,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00313
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00313_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -21294,10 +21294,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00314
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00314_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -21362,10 +21362,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00315
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00315_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -21430,10 +21430,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00316
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00316_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -21498,10 +21498,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00317
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00317_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -21566,10 +21566,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00318
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00318_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -21634,10 +21634,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00319
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00319_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -21702,10 +21702,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00320
  * Method:    nativemethod
- * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00320_nativemethod
-  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -21770,10 +21770,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00321
  * Method:    nativemethod
- * Signature: ([B)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00321_nativemethod
-  (JNIEnv *, jobject, jbyteArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -21838,10 +21838,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00322
  * Method:    nativemethod
- * Signature: ([B[B)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00322_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -21906,10 +21906,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00323
  * Method:    nativemethod
- * Signature: ([B[B[B)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00323_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -21974,10 +21974,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00324
  * Method:    nativemethod
- * Signature: ([B[B[B[B)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00324_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -22042,10 +22042,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00325
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00325_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -22110,10 +22110,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00326
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B[B)V
+ * Signature: ([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00326_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -22178,10 +22178,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00327
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B[B[B)V
+ * Signature: ([B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00327_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -22246,10 +22246,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00328
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B[B[B[B)V
+ * Signature: ([B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00328_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -22314,10 +22314,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00329
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B[B[B[B[B)V
+ * Signature: ([B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00329_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -22382,10 +22382,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00330
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B[B[B[B[B[B)V
+ * Signature: ([B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00330_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -22450,10 +22450,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00331
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B[B[B[B[B[B[B)V
+ * Signature: ([B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00331_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -22518,10 +22518,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00332
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B)V
+ * Signature: ([B[B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00332_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -22586,10 +22586,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00333
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B)V
+ * Signature: ([B[B[B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00333_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -22654,10 +22654,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00334
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B[B)V
+ * Signature: ([B[B[B[B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00334_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -22722,10 +22722,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00335
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V
+ * Signature: ([B[B[B[B[B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00335_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -22790,10 +22790,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00336
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V
+ * Signature: ([B[B[B[B[B[B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00336_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -22858,10 +22858,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00337
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V
+ * Signature: ([B[B[B[B[B[B[B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00337_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -22926,10 +22926,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00338
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V
+ * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00338_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -22994,10 +22994,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00339
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V
+ * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00339_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -23062,10 +23062,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00340
  * Method:    nativemethod
- * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V
+ * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00340_nativemethod
-  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -23130,10 +23130,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00341
  * Method:    nativemethod
- * Signature: (B)V
+ * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00341_nativemethod
-  (JNIEnv *, jobject, jbyte);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -23198,10 +23198,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00342
  * Method:    nativemethod
- * Signature: (BB)V
+ * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00342_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -23266,10 +23266,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00343
  * Method:    nativemethod
- * Signature: (BBB)V
+ * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00343_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -23334,10 +23334,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00344
  * Method:    nativemethod
- * Signature: (BBBB)V
+ * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00344_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -23402,10 +23402,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00345
  * Method:    nativemethod
- * Signature: (BBBBB)V
+ * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00345_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -23470,10 +23470,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00346
  * Method:    nativemethod
- * Signature: (BBBBBB)V
+ * Signature: ([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00346_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -23538,10 +23538,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00347
  * Method:    nativemethod
- * Signature: (BBBBBBB)V
+ * Signature: (B)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00347_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyte);
 
 #ifdef __cplusplus
 }
@@ -23606,10 +23606,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00348
  * Method:    nativemethod
- * Signature: (BBBBBBBB)V
+ * Signature: (BB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00348_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -23674,10 +23674,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00349
  * Method:    nativemethod
- * Signature: (BBBBBBBBB)V
+ * Signature: (BBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00349_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -23742,10 +23742,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00350
  * Method:    nativemethod
- * Signature: (BBBBBBBBBB)V
+ * Signature: (BBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00350_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -23810,10 +23810,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00351
  * Method:    nativemethod
- * Signature: (BBBBBBBBBBB)V
+ * Signature: (BBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00351_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -23878,10 +23878,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00352
  * Method:    nativemethod
- * Signature: (BBBBBBBBBBBB)V
+ * Signature: (BBBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00352_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -23946,10 +23946,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00353
  * Method:    nativemethod
- * Signature: (BBBBBBBBBBBBB)V
+ * Signature: (BBBBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00353_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -24014,10 +24014,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00354
  * Method:    nativemethod
- * Signature: (BBBBBBBBBBBBBB)V
+ * Signature: (BBBBBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00354_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -24082,10 +24082,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00355
  * Method:    nativemethod
- * Signature: (BBBBBBBBBBBBBBB)V
+ * Signature: (BBBBBBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00355_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -24150,10 +24150,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00356
  * Method:    nativemethod
- * Signature: (BBBBBBBBBBBBBBBB)V
+ * Signature: (BBBBBBBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00356_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -24218,10 +24218,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00357
  * Method:    nativemethod
- * Signature: (BBBBBBBBBBBBBBBBB)V
+ * Signature: (BBBBBBBBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00357_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -24286,10 +24286,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00358
  * Method:    nativemethod
- * Signature: (BBBBBBBBBBBBBBBBBB)V
+ * Signature: (BBBBBBBBBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00358_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -24354,10 +24354,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00359
  * Method:    nativemethod
- * Signature: (BBBBBBBBBBBBBBBBBBB)V
+ * Signature: (BBBBBBBBBBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00359_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -24422,10 +24422,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00360
  * Method:    nativemethod
- * Signature: (BBBBBBBBBBBBBBBBBBBB)V
+ * Signature: (BBBBBBBBBBBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00360_nativemethod
-  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -24490,10 +24490,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00361
  * Method:    nativemethod
- * Signature: ([S)V
+ * Signature: (BBBBBBBBBBBBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00361_nativemethod
-  (JNIEnv *, jobject, jshortArray);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -24558,10 +24558,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00362
  * Method:    nativemethod
- * Signature: ([S[S)V
+ * Signature: (BBBBBBBBBBBBBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00362_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -24626,10 +24626,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00363
  * Method:    nativemethod
- * Signature: ([S[S[S)V
+ * Signature: (BBBBBBBBBBBBBBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00363_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -24694,10 +24694,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00364
  * Method:    nativemethod
- * Signature: ([S[S[S[S)V
+ * Signature: (BBBBBBBBBBBBBBBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00364_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -24762,10 +24762,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00365
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S)V
+ * Signature: (BBBBBBBBBBBBBBBBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00365_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -24830,10 +24830,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00366
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S[S)V
+ * Signature: (BBBBBBBBBBBBBBBBBBBB)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00366_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte, jbyte);
 
 #ifdef __cplusplus
 }
@@ -24898,10 +24898,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00367
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S[S[S)V
+ * Signature: ([S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00367_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -24966,10 +24966,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00368
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S[S[S[S)V
+ * Signature: ([S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00368_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -25034,10 +25034,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00369
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S[S[S[S[S)V
+ * Signature: ([S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00369_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -25102,10 +25102,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00370
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S[S[S[S[S[S)V
+ * Signature: ([S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00370_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -25170,10 +25170,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00371
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S[S[S[S[S[S[S)V
+ * Signature: ([S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00371_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -25238,10 +25238,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00372
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S)V
+ * Signature: ([S[S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00372_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -25306,10 +25306,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00373
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S)V
+ * Signature: ([S[S[S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00373_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -25374,10 +25374,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00374
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S[S)V
+ * Signature: ([S[S[S[S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00374_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -25442,10 +25442,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00375
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V
+ * Signature: ([S[S[S[S[S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00375_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -25510,10 +25510,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00376
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V
+ * Signature: ([S[S[S[S[S[S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00376_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -25578,10 +25578,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00377
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V
+ * Signature: ([S[S[S[S[S[S[S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00377_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -25646,10 +25646,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00378
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V
+ * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00378_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -25714,10 +25714,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00379
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V
+ * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00379_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -25782,10 +25782,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00380
  * Method:    nativemethod
- * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V
+ * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00380_nativemethod
-  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -25850,10 +25850,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00381
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;)V
+ * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00381_nativemethod
-  (JNIEnv *, jobject, jclass);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -25918,10 +25918,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00382
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00382_nativemethod
-  (JNIEnv *, jobject, jclass, jclass);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -25986,10 +25986,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00383
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00383_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -26054,10 +26054,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00384
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00384_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -26122,10 +26122,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00385
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00385_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -26190,10 +26190,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00386
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: ([S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S[S)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00386_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -26258,10 +26258,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00387
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: (Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00387_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jclass);
 
 #ifdef __cplusplus
 }
@@ -26326,10 +26326,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00388
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00388_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -26394,10 +26394,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00389
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00389_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -26462,10 +26462,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00390
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00390_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -26530,10 +26530,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00391
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00391_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -26598,10 +26598,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00392
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00392_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -26666,10 +26666,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00393
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00393_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -26734,10 +26734,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00394
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00394_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -26802,10 +26802,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00395
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00395_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -26870,10 +26870,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00396
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00396_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -26938,10 +26938,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00397
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00397_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -27006,10 +27006,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00398
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00398_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -27074,10 +27074,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00399
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00399_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -27142,10 +27142,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00400
  * Method:    nativemethod
- * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00400_nativemethod
-  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -27210,10 +27210,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00401
  * Method:    nativemethod
- * Signature: ([D)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00401_nativemethod
-  (JNIEnv *, jobject, jdoubleArray);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -27278,10 +27278,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00402
  * Method:    nativemethod
- * Signature: ([D[D)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00402_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -27346,10 +27346,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00403
  * Method:    nativemethod
- * Signature: ([D[D[D)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00403_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -27414,10 +27414,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00404
  * Method:    nativemethod
- * Signature: ([D[D[D[D)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00404_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -27482,10 +27482,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00405
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00405_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -27550,10 +27550,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00406
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D[D)V
+ * Signature: (Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00406_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass, jclass);
 
 #ifdef __cplusplus
 }
@@ -27618,10 +27618,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00407
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D[D[D)V
+ * Signature: ([D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00407_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -27686,10 +27686,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00408
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D[D[D[D)V
+ * Signature: ([D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00408_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -27754,10 +27754,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00409
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D[D[D[D[D)V
+ * Signature: ([D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00409_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -27822,10 +27822,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00410
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D[D[D[D[D[D)V
+ * Signature: ([D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00410_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -27890,10 +27890,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00411
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D[D[D[D[D[D[D)V
+ * Signature: ([D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00411_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -27958,10 +27958,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00412
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D)V
+ * Signature: ([D[D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00412_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -28026,10 +28026,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00413
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D)V
+ * Signature: ([D[D[D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00413_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -28094,10 +28094,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00414
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D[D)V
+ * Signature: ([D[D[D[D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00414_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -28162,10 +28162,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00415
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V
+ * Signature: ([D[D[D[D[D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00415_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -28230,10 +28230,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00416
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V
+ * Signature: ([D[D[D[D[D[D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00416_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -28298,10 +28298,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00417
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V
+ * Signature: ([D[D[D[D[D[D[D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00417_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -28366,10 +28366,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00418
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V
+ * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00418_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -28434,10 +28434,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00419
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V
+ * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00419_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -28502,10 +28502,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00420
  * Method:    nativemethod
- * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V
+ * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00420_nativemethod
-  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -28570,10 +28570,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00421
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[C)V
+ * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00421_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -28638,10 +28638,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00422
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CC)V
+ * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00422_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -28706,10 +28706,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00423
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZ)V
+ * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00423_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -28774,10 +28774,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00424
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZD)V
+ * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00424_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -28842,10 +28842,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00425
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDF)V
+ * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00425_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -28910,10 +28910,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00426
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDFI)V
+ * Signature: ([D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00426_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint);
+  (JNIEnv *, jobject, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -28978,10 +28978,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00427
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDFI[F)V
+ * Signature: (Ljava/lang/String;[C)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00427_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray);
+  (JNIEnv *, jobject, jstring, jcharArray);
 
 #ifdef __cplusplus
 }
@@ -29046,10 +29046,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00428
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDFI[FJ)V
+ * Signature: (Ljava/lang/String;[CC)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00428_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong);
+  (JNIEnv *, jobject, jstring, jcharArray, jchar);
 
 #ifdef __cplusplus
 }
@@ -29114,10 +29114,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00429
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;)V
+ * Signature: (Ljava/lang/String;[CCZ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00429_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject);
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean);
 
 #ifdef __cplusplus
 }
@@ -29182,10 +29182,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00430
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J)V
+ * Signature: (Ljava/lang/String;[CCZD)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00430_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray);
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble);
 
 #ifdef __cplusplus
 }
@@ -29250,10 +29250,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00431
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[I)V
+ * Signature: (Ljava/lang/String;[CCZDF)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00431_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray);
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat);
 
 #ifdef __cplusplus
 }
@@ -29318,10 +29318,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00432
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS)V
+ * Signature: (Ljava/lang/String;[CCZDFI)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00432_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort);
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint);
 
 #ifdef __cplusplus
 }
@@ -29386,10 +29386,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00433
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[Z)V
+ * Signature: (Ljava/lang/String;[CCZDFI[F)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00433_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray);
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray);
 
 #ifdef __cplusplus
 }
@@ -29454,10 +29454,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00434
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;)V
+ * Signature: (Ljava/lang/String;[CCZDFI[FJ)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00434_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray, jthrowable);
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong);
 
 #ifdef __cplusplus
 }
@@ -29522,10 +29522,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00435
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;)V
+ * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00435_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray, jthrowable, jobjectArray);
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject);
 
 #ifdef __cplusplus
 }
@@ -29590,10 +29590,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00436
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[B)V
+ * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00436_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray, jthrowable, jobjectArray, jbyteArray);
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray);
 
 #ifdef __cplusplus
 }
@@ -29658,10 +29658,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00437
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB)V
+ * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[I)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00437_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray, jthrowable, jobjectArray, jbyteArray, jbyte);
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray);
 
 #ifdef __cplusplus
 }
@@ -29726,10 +29726,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00438
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[S)V
+ * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00438_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray, jthrowable, jobjectArray, jbyteArray, jbyte, jshortArray);
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort);
 
 #ifdef __cplusplus
 }
@@ -29794,10 +29794,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00439
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;)V
+ * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[Z)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00439_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray, jthrowable, jobjectArray, jbyteArray, jbyte, jshortArray, jclass);
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray);
 
 #ifdef __cplusplus
 }
@@ -29862,10 +29862,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00440
  * Method:    nativemethod
- * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;[D)V
+ * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;)V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00440_nativemethod
-  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray, jthrowable, jobjectArray, jbyteArray, jbyte, jshortArray, jclass, jdoubleArray);
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray, jthrowable);
 
 #ifdef __cplusplus
 }
@@ -29930,10 +29930,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00441
  * Method:    nativemethod
- * Signature: (I)J
+ * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;)V
  */
-JNIEXPORT jlong JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00441_nativemethod
-  (JNIEnv *, jclass, jint);
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00441_nativemethod
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray, jthrowable, jobjectArray);
 
 #ifdef __cplusplus
 }
@@ -29998,10 +29998,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00442
  * Method:    nativemethod
- * Signature: (I)J
+ * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[B)V
  */
-JNIEXPORT jlong JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00442_nativemethod
-  (JNIEnv *, jobject, jint);
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00442_nativemethod
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray, jthrowable, jobjectArray, jbyteArray);
 
 #ifdef __cplusplus
 }
@@ -30066,10 +30066,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00443
  * Method:    nativemethod
- * Signature: (I)J
+ * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB)V
  */
-JNIEXPORT jlong JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00443_nativemethod
-  (JNIEnv *, jclass, jint);
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00443_nativemethod
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray, jthrowable, jobjectArray, jbyteArray, jbyte);
 
 #ifdef __cplusplus
 }
@@ -30134,10 +30134,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00444
  * Method:    nativemethod
- * Signature: (I)J
+ * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[S)V
  */
-JNIEXPORT jlong JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00444_nativemethod
-  (JNIEnv *, jobject, jint);
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00444_nativemethod
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray, jthrowable, jobjectArray, jbyteArray, jbyte, jshortArray);
 
 #ifdef __cplusplus
 }
@@ -30202,10 +30202,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00445
  * Method:    nativemethod
- * Signature: (I)J
+ * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;)V
  */
-JNIEXPORT jlong JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00445_nativemethod
-  (JNIEnv *, jclass, jint);
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00445_nativemethod
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray, jthrowable, jobjectArray, jbyteArray, jbyte, jshortArray, jclass);
 
 #ifdef __cplusplus
 }
@@ -30270,10 +30270,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00446
  * Method:    nativemethod
- * Signature: (I)J
+ * Signature: (Ljava/lang/String;[CCZDFI[FJLjava/lang/Object;[J[IS[ZLjava/lang/Throwable;[Ljava/lang/Object;[BB[SLjava/lang/Class;[D)V
  */
-JNIEXPORT jlong JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00446_nativemethod
-  (JNIEnv *, jobject, jint);
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00446_nativemethod
+  (JNIEnv *, jobject, jstring, jcharArray, jchar, jboolean, jdouble, jfloat, jint, jfloatArray, jlong, jobject, jlongArray, jintArray, jshort, jbooleanArray, jthrowable, jobjectArray, jbyteArray, jbyte, jshortArray, jclass, jdoubleArray);
 
 #ifdef __cplusplus
 }
@@ -30338,10 +30338,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00447
  * Method:    nativemethod
- * Signature: (I)Ljava/lang/String;
+ * Signature: (I)J
  */
-JNIEXPORT jstring JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00447_nativemethod
-  (JNIEnv *, jobject, jint);
+JNIEXPORT jlong JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00447_nativemethod
+  (JNIEnv *, jclass, jint);
 
 #ifdef __cplusplus
 }
@@ -30406,9 +30406,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00448
  * Method:    nativemethod
- * Signature: (I)[C
+ * Signature: (I)J
  */
-JNIEXPORT jcharArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00448_nativemethod
+JNIEXPORT jlong JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00448_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -30474,10 +30474,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00449
  * Method:    nativemethod
- * Signature: (I)C
+ * Signature: (I)J
  */
-JNIEXPORT jchar JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00449_nativemethod
-  (JNIEnv *, jobject, jint);
+JNIEXPORT jlong JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00449_nativemethod
+  (JNIEnv *, jclass, jint);
 
 #ifdef __cplusplus
 }
@@ -30542,9 +30542,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00450
  * Method:    nativemethod
- * Signature: (I)Z
+ * Signature: (I)J
  */
-JNIEXPORT jboolean JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00450_nativemethod
+JNIEXPORT jlong JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00450_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -30610,10 +30610,10 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00451
  * Method:    nativemethod
- * Signature: (I)D
+ * Signature: (I)J
  */
-JNIEXPORT jdouble JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00451_nativemethod
-  (JNIEnv *, jobject, jint);
+JNIEXPORT jlong JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00451_nativemethod
+  (JNIEnv *, jclass, jint);
 
 #ifdef __cplusplus
 }
@@ -30678,9 +30678,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00452
  * Method:    nativemethod
- * Signature: (I)F
+ * Signature: (I)J
  */
-JNIEXPORT jfloat JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00452_nativemethod
+JNIEXPORT jlong JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00452_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -30746,9 +30746,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00453
  * Method:    nativemethod
- * Signature: (I)I
+ * Signature: (I)Ljava/lang/String;
  */
-JNIEXPORT jint JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00453_nativemethod
+JNIEXPORT jstring JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00453_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -30814,9 +30814,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00454
  * Method:    nativemethod
- * Signature: (I)[F
+ * Signature: (I)[C
  */
-JNIEXPORT jfloatArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00454_nativemethod
+JNIEXPORT jcharArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00454_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -30882,9 +30882,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00455
  * Method:    nativemethod
- * Signature: (I)Ljava/lang/Object;
+ * Signature: (I)C
  */
-JNIEXPORT jobject JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00455_nativemethod
+JNIEXPORT jchar JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00455_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -30950,9 +30950,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00456
  * Method:    nativemethod
- * Signature: (I)[J
+ * Signature: (I)Z
  */
-JNIEXPORT jlongArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00456_nativemethod
+JNIEXPORT jboolean JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00456_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -31018,9 +31018,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00457
  * Method:    nativemethod
- * Signature: (I)[I
+ * Signature: (I)D
  */
-JNIEXPORT jintArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00457_nativemethod
+JNIEXPORT jdouble JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00457_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -31086,9 +31086,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00458
  * Method:    nativemethod
- * Signature: (I)S
+ * Signature: (I)F
  */
-JNIEXPORT jshort JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00458_nativemethod
+JNIEXPORT jfloat JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00458_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -31154,9 +31154,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00459
  * Method:    nativemethod
- * Signature: (I)[Z
+ * Signature: (I)I
  */
-JNIEXPORT jbooleanArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00459_nativemethod
+JNIEXPORT jint JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00459_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -31222,9 +31222,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00460
  * Method:    nativemethod
- * Signature: (I)Ljava/lang/Throwable;
+ * Signature: (I)[F
  */
-JNIEXPORT jthrowable JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00460_nativemethod
+JNIEXPORT jfloatArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00460_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -31290,9 +31290,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00461
  * Method:    nativemethod
- * Signature: (I)[Ljava/lang/Object;
+ * Signature: (I)Ljava/lang/Object;
  */
-JNIEXPORT jobjectArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00461_nativemethod
+JNIEXPORT jobject JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00461_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -31358,9 +31358,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00462
  * Method:    nativemethod
- * Signature: (I)[B
+ * Signature: (I)[J
  */
-JNIEXPORT jbyteArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00462_nativemethod
+JNIEXPORT jlongArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00462_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -31426,9 +31426,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00463
  * Method:    nativemethod
- * Signature: (I)B
+ * Signature: (I)[I
  */
-JNIEXPORT jbyte JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00463_nativemethod
+JNIEXPORT jintArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00463_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -31494,9 +31494,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00464
  * Method:    nativemethod
- * Signature: (I)[S
+ * Signature: (I)S
  */
-JNIEXPORT jshortArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00464_nativemethod
+JNIEXPORT jshort JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00464_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -31562,9 +31562,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00465
  * Method:    nativemethod
- * Signature: (I)Ljava/lang/Class;
+ * Signature: (I)[Z
  */
-JNIEXPORT jclass JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00465_nativemethod
+JNIEXPORT jbooleanArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00465_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -31630,9 +31630,9 @@ extern "C" {
 /*
  * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00466
  * Method:    nativemethod
- * Signature: (I)[D
+ * Signature: (I)Ljava/lang/Throwable;
  */
-JNIEXPORT jdoubleArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00466_nativemethod
+JNIEXPORT jthrowable JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00466_nativemethod
   (JNIEnv *, jobject, jint);
 
 #ifdef __cplusplus
@@ -31682,6 +31682,414 @@ extern "C" {
  * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00466_run
+  (JNIEnv *, jobject);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00467 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00467
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00467
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00467
+ * Method:    nativemethod
+ * Signature: (I)[Ljava/lang/Object;
+ */
+JNIEXPORT jobjectArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00467_nativemethod
+  (JNIEnv *, jobject, jint);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00467 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00467
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00467
+#ifdef __cplusplus
+extern "C" {
+#endif
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00467 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00467
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00467
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00467
+ * Method:    run
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00467_run
+  (JNIEnv *, jobject);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00467 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00467
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00467
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00467
+ * Method:    run
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00467_run
+  (JNIEnv *, jobject);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00468 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00468
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00468
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00468
+ * Method:    nativemethod
+ * Signature: (I)[B
+ */
+JNIEXPORT jbyteArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00468_nativemethod
+  (JNIEnv *, jobject, jint);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00468 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00468
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00468
+#ifdef __cplusplus
+extern "C" {
+#endif
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00468 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00468
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00468
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00468
+ * Method:    run
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00468_run
+  (JNIEnv *, jobject);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00468 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00468
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00468
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00468
+ * Method:    run
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00468_run
+  (JNIEnv *, jobject);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00469 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00469
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00469
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00469
+ * Method:    nativemethod
+ * Signature: (I)B
+ */
+JNIEXPORT jbyte JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00469_nativemethod
+  (JNIEnv *, jobject, jint);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00469 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00469
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00469
+#ifdef __cplusplus
+extern "C" {
+#endif
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00469 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00469
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00469
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00469
+ * Method:    run
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00469_run
+  (JNIEnv *, jobject);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00469 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00469
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00469
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00469
+ * Method:    run
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00469_run
+  (JNIEnv *, jobject);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00470 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00470
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00470
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00470
+ * Method:    nativemethod
+ * Signature: (I)[S
+ */
+JNIEXPORT jshortArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00470_nativemethod
+  (JNIEnv *, jobject, jint);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00470 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00470
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00470
+#ifdef __cplusplus
+extern "C" {
+#endif
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00470 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00470
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00470
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00470
+ * Method:    run
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00470_run
+  (JNIEnv *, jobject);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00470 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00470
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00470
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00470
+ * Method:    run
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00470_run
+  (JNIEnv *, jobject);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00471 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00471
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00471
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00471
+ * Method:    nativemethod
+ * Signature: (I)Ljava/lang/Class;
+ */
+JNIEXPORT jclass JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00471_nativemethod
+  (JNIEnv *, jobject, jint);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00471 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00471
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00471
+#ifdef __cplusplus
+extern "C" {
+#endif
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00471 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00471
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00471
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00471
+ * Method:    run
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00471_run
+  (JNIEnv *, jobject);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00471 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00471
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00471
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00471
+ * Method:    run
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00471_run
+  (JNIEnv *, jobject);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00472 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00472
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00472
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00472
+ * Method:    nativemethod
+ * Signature: (I)[D
+ */
+JNIEXPORT jdoubleArray JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2CBenchmark00472_nativemethod
+  (JNIEnv *, jobject, jint);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00472 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00472
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_J2JBenchmark00472
+#ifdef __cplusplus
+extern "C" {
+#endif
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00472 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00472
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00472
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00472
+ * Method:    run
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CBenchmark00472_run
+  (JNIEnv *, jobject);
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+/* Header for class fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00472 */
+
+#ifndef _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00472
+#define _Included_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00472
+#ifdef __cplusplus
+extern "C" {
+#endif
+/*
+ * Class:     fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00472
+ * Method:    run
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00472_run
   (JNIEnv *, jobject);
 
 #ifdef __cplusplus
