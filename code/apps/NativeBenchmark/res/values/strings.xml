@@ -9,4 +9,5 @@
     <string name="base_val">Reps:</string>
     <string name="exponent">Exponent:</string>
     <string name="repetitions">repetitions</string>
+    <string name="warning_changed">Warning: app version contains uncommitted changes.</string>
 </resources>

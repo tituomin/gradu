@@ -51,6 +51,10 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
         this.resources  = getResources();
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
         wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Benchmarking");
+
+        if (resources.getString(R.string.app_dirty).equals("1")) {
+            this.resultView.setText(R.string.warning_changed);
+        }
     }
 
     public void setMessage(int id) {

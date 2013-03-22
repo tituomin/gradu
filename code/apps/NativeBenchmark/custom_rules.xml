@@ -65,6 +65,7 @@
 
     <exec executable="git" logError="false" failonerror="false" resultproperty="app.dirty">
       <arg value="diff"/>
+      <arg value=">/dev/null"/>
       <arg value="--exit-code"/>
     </exec>
 
