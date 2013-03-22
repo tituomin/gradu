@@ -11,6 +11,8 @@
 # python compiled
 *.pyc
 
+*.MD5
+
 # generated files
 bin/
 gen/

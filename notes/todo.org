@@ -4,15 +4,17 @@ Gradu: duunit
 ** DONE no call arguments !!!
 ** TODO dynamic parameter variations
 ** TODO useampi mittauskierros
-*** TODO mittausluettelo
-*** TODO mittausten tilastollinen tulkinta (truncated mean?)
+*** TODO ne kierrokset
+*** TODO mittausten tilastollinen tulkinta (truncated mean? (THIS >> or assume lower limit...))
 *** TODO warmup round
-*** TODO build: include git tag as resource
+*** DONE mittausluettelo
+*** DONE build: include git tag as resource
 **** git rev-parse HEAD
      lisää custom ruleseihin ()
 ** TODO lisätyökalut
 *** TODO perf
 **** TODO inspect build ids
+***** eu-readelf -n (elfutils) (should be done in analyze part...)
 *** TODO oprofile
 ** TODO lisätestit
 *** TODO jni functions

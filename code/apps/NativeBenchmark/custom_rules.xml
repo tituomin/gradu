@@ -62,12 +62,35 @@
       <arg value="rev-parse"/>
       <arg value="HEAD"/>
     </exec>
+
+    <checksum totalproperty="sources.checksum">
+      <path>
+      <fileset dir="src">
+        <include name="**/*.java"/>
+      </fileset>
+      <fileset dir="script">
+        <include name="**/*.py"/>
+      </fileset>
+      <fileset dir="jni">
+        <include name="**/*.mk"/>
+        <include name="returnvalues.c"/>
+        <include name="returnvalues.h"/>
+      </fileset>
+      <fileset dir=".">
+        <include name="AndroidManifest.xml"/>
+      </fileset>
+      </path>
+    </checksum>
+
     <copy file="revision_template.xml" tofile="res/values/revision.xml" overwrite="true">
       <filterset>
         <filter token="REVISION" value="${app.revision}"/>
+        <filter token="CHECKSUM" value="${sources.checksum}"/>
       </filterset>
     </copy>
   </target>
+
+
 
 </project>
 

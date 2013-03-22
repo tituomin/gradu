@@ -176,37 +176,19 @@ public class BenchmarkRunner {
             toolNames += measuringTools[i].getClass().getName() + " ";
         }
 
-        Signature[] sigs = new Signature[1];
-        try {
-
-            sigs = context.getPackageManager().getPackageInfo(
-            context.getPackageName(),
-            PackageManager.GET_SIGNATURES).signatures;
-
-        }
-        catch (NameNotFoundException e) {
-            Log.e("runner", "package name not found", e);
-        }
-        
         try {
             writer = getWriter(new File(dataDir, "measurements.txt"), true);
             writer.println("");
-            writer.println("id:               " + measurementID);
-            writer.println("repetitions:      " + repetitions);
-            writer.println("rounds:           " + 1);
-            writer.println("start:            " + start);
-            writer.println("end:              " + end);
-            writer.println("duration:         " + humanTime(endTime - startTime));
-            writer.println("tools:            " + toolNames);
-            writer.println("benchmarks:       " + benchmarks.size());
-            writer.println("code-revision:    " + resources.getText(R.string.app_revision));
-            for (Signature sig : sigs)
-                {
-            writer.println("signatures: " + sig.toCharsString());
-                }
-
-            writer.println("kernel-build-id:  " + "TODO");
-            writer.println("jni-lib-build-id: " + "TODO");
+            writer.println("id: "               + measurementID);
+            writer.println("repetitions: "      + repetitions);
+            writer.println("rounds: "           + 1);
+            writer.println("start: "            + start);
+            writer.println("end: "              + end);
+            writer.println("duration: "         + humanTime(endTime - startTime));
+            writer.println("tools: "            + toolNames);
+            writer.println("benchmarks: "       + benchmarks.size());
+            writer.println("code-revision: "    + resources.getText(R.string.app_revision));
+            writer.println("code-checksum: "    + resources.getText(R.string.app_checksum));
             writer.println("");
         }
         catch (IOException e ) {
