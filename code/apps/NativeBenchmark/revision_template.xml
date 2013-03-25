@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_revision">@REVISION@</string>
-    <string name="app_checksum">@CHECKSUM@</string>
-    <string name="app_dirty">@DIRTY@</string>
-</resources>
