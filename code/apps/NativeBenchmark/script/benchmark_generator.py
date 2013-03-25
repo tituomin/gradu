@@ -84,7 +84,7 @@ def specify_combinations():
 
     for symbol in types.keys():
         all_combinations.append({
-            'description' : 'type {s}, varying count'.format(s=symbol),
+            'description' : 'varying count {s}'.format(s=symbol),
             'return_types' : [return_types['v']],
             'native_modifiers' : [('private', '')],
             'types' : jni_types.type_combinations(
@@ -93,7 +93,7 @@ def specify_combinations():
     # ! start from 1 to avoid duplicates!
     all_combinations.append({
             'skip' : 1,
-            'description' : 'all types, vary number of types',
+            'description' : 'vary number of types',
             'return_types' : [return_types['v']],
             'native_modifiers' : [('private', '')],
             'types' : jni_types.type_combinations(

@@ -47,6 +47,7 @@ public class BenchmarkSelector extends Activity implements ApplicationState {
 
         numPick.setOnValueChangedListener(listener);
         expPick.setOnValueChangedListener(listener);
+        listener.onValueChange(numPick, 0, 0);
 
         this.resources  = getResources();
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
