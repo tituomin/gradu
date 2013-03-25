@@ -3,25 +3,27 @@ Gradu: duunit
 * Benchmarks
 ** DONE no call arguments !!!
 ** TODO useampi mittauskierros
-*** TODO mittausten tilastollinen tulkinta (truncated mean? (THIS >> or assume lower limit...))
-**** >> mittaa vasteaikojen tilastollinen jakauma > mallinna
+*** TODO UI
+*** TODO mittausten tilastollinen tulkinta
+    (truncated mean? (THIS >> or assume lower limit...))
+**** TODO >> mittaa vasteaikojen tilastollinen jakauma > mallinna
 *** TODO warmup round
 *** DONE ne kierrokset
 *** DONE mittausluettelo
 *** DONE build: include git tag as resource
 **** git rev-parse HEAD
      lisää custom ruleseihin ()
-** TODO dynamic parameter variations
 ** TODO lisätyökalut
 *** TODO perf
 **** TODO inspect build ids
 ***** eu-readelf -n (elfutils) (should be done in analyze part...)
 *** TODO oprofile
+** TODO dynamic parameter variations
 ** TODO lisätestit
 *** TODO jni functions
 *** TODO testaa call-variants (ellipsis, array, va_args)
 *** TODO modifiers
-** TODO siirrä koodi eri repoon kuin gradu
+** DONE siirrä koodi eri repoon kuin gradu
 ** TODO funktioiden paluuarvojen tallennus? (ehkä ei)
 ** TODO java: final local variables?
     android designing for performance: Without a JIT, direct field
@@ -33,8 +35,8 @@ Gradu: duunit
 ** TODO lisää muut kuin jnienv-funktiot testiin? (tai perustele miksei)
 ** TODO refactoring: metadatacontainer -> map
 ** TODO turn off screen? (manually?)
-** TODO korjaa build dependencies
-   
+** DONE korjaa build dependencies
+** TODO erottele android-spesifi osa jni-benchmarkeista
 * Tarkista
 ** TODO gof-book: onko proxy oikea termi peer classille?
 ** TODO androidin jni-toteutus ei käytä funktiotauluja?
