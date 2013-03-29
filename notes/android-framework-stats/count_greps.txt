@@ -1,0 +1,7 @@
+
+jgrep '\(public\|private\|protected\).*[(]' | sed -re 's/:[0-9]+://'  | sed -re 's/ [ ]+/\t/g' | cut -f 1 | uniq -c | sort -n | egrep -v test > all_methods_count.txt
+jgrep '\(public\|private\|protected\).*[(]' | egrep 'static' | sed -re 's/:[0-9]+://'  | sed -re 's/ [ ]+/\t/g' | cut -f 1 | uniq -c | sort -n | egrep -v test 
+jgrep '\(public\|private\|protected\).*[(]' | egrep 'static' | sed -re 's/:[0-9]+://'  | sed -re 's/ [ ]+/\t/g' | cut -f 1 | uniq -c | sort -n | egrep -v test >static_method_count.txt
+jgrep '\(public\|private\|protected\).*[(]' | egrep -v 'static' | sed -re 's/:[0-9]+://'  | sed -re 's/ [ ]+/\t/g' | cut -f 1 | uniq -c | sort -n | egrep -v test >non_static_method_count.txt
+jgrep '\(public\|private\|protected\)[^(]\+$' | egrep  'static' | egrep -v 'class|interface' | sed -re 's/:[0-9]+://'  | sed -re 's/ [ ]+/\t/g' | cut -f 1 | uniq -c | sort -n | egrep -v test >static_field_count.txt
+jgrep '\(public\|private\|protected\)[^(]\+$' | egrep -v 'static' | egrep -v 'class|interface' | sed -re 's/:[0-9]+://'  | sed -re 's/ [ ]+/\t/g' | cut -f 1 | uniq -c | sort -n | egrep -v test >non_static_field_count.txt

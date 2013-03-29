@@ -1,29 +1,33 @@
 
 Gradu: duunit
 * Benchmarks
-** DONE no call arguments !!!
-** TODO useampi mittauskierros
-*** TODO UI
-*** TODO mittausten tilastollinen tulkinta
-    (truncated mean? (THIS >> or assume lower limit...))
+** TODO perf init: cat >kptr_restrict, paranoid etc. (run as root?) + cpu scaling
+** TODO poista stdio c-koodista (android string logging formatting)
+** TODO JNI error checking! (käy koodi läpi vielä kerran)
+** TODO mittausten tilastollinen tulkinta
+     (truncated mean? (THIS >> or assume lower limit...))
 **** TODO >> mittaa vasteaikojen tilastollinen jakauma > mallinna
-*** TODO warmup round
+**** git rev-parse HEAD
+     lisää custom ruleseihin ()
+** DONE UI mittausten keskeyttäminen -> ei tarvitse määrittää rounds..
+** DONE zip
+** DONE useampi mittauskierros
+*** DONE warmup round
+*** DONE UI
 *** DONE ne kierrokset
 *** DONE mittausluettelo
 *** DONE build: include git tag as resource
-**** git rev-parse HEAD
-     lisää custom ruleseihin ()
-** TODO lisätyökalut
-*** TODO perf
+** DONE perf
+**** TODO analyze part -> latex tables etc.
 **** TODO inspect build ids
 ***** eu-readelf -n (elfutils) (should be done in analyze part...)
-*** TODO oprofile
+**** TODO huom! löydä oikea kerneli, systematisoi
+** TODO oprofile (?)
 ** TODO dynamic parameter variations
 ** TODO lisätestit
 *** TODO jni functions
 *** TODO testaa call-variants (ellipsis, array, va_args)
-*** TODO modifiers
-** DONE siirrä koodi eri repoon kuin gradu
+*** DONE modifiers
 ** TODO funktioiden paluuarvojen tallennus? (ehkä ei)
 ** TODO java: final local variables?
     android designing for performance: Without a JIT, direct field
@@ -33,10 +37,38 @@ Gradu: duunit
  getter. This is true in Froyo, but will improve in the future when
  the JIT inlines getter methods. !!!! yes but used only once
 ** TODO lisää muut kuin jnienv-funktiot testiin? (tai perustele miksei)
-** TODO refactoring: metadatacontainer -> map
-** TODO turn off screen? (manually?)
-** DONE korjaa build dependencies
+** TODO turn off screen? (manually?) (can be done during warmup)
 ** TODO erottele android-spesifi osa jni-benchmarkeista
+** DONE refactoring: metadatacontainer -> map
+** DONE no call arguments !!!
+** DONE siirrä koodi eri repoon kuin gradu
+** DONE korjaa build dependencies
+* JNI-funktiot, use caset, kilpakumppanit
+** MUST
+*** access fields vs calling methods
+**** erottele: find id , call
+**** variaatiot: static, nonvirtual (nonvirtual: tarvitsee perintäpuun?
+*** string, array, nio, variaatiot !!
+*** löytämismetodit, reflektionomaiset
+**** findclass, getobjectclass, getmethodid, getfieldid
+**** isinstanceof, issameobject
+*** viitteidenhallinta
+**** new + delete : global, local, weak global
+**** new local, ensurecapacity vs push/pop localframe
+** MAYBE
+*** poikkeukset:
+**** hallinta java -> c
+***** check / occurred / clear
+**** heittäminen c -> java
+***** throw, throw new
+*** reflektio:
+    jos käsitellään niin pitäisi verrata getmethodid vs
+    javan reflektio-eroja...
+*** threadit
+**** monitorenter
+** NOT
+**** getsuperclass, isassignablefrom
+**** defineclass, fatalerror, registernatives
 * Tarkista
 ** TODO gof-book: onko proxy oikea termi peer classille?
 ** TODO androidin jni-toteutus ei käytä funktiotauluja?
