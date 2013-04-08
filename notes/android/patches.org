@@ -85,3 +85,47 @@ index 7c39751..72919ba 100644
 +LOCAL_LDFLAGS += -Wl,--build-id
 # todo: are the above necessary? probably not ?
 # removed from trunk
+
+* problem with first version, full build
+target thumb C++: omx_tests <= frameworks/av/media/libstagefright/omx/tests/OMXHarness.cpp
+target thumb C: openssl <= external/openssl/apps/app_rand.c
+target thumb C: openssl <= external/openssl/apps/apps.c
+target thumb C: openssl <= external/openssl/apps/asn1pars.c
+target thumb C: openssl <= external/openssl/apps/ca.c
+target thumb C: openssl <= external/openssl/apps/ciphers.c
+target thumb C: openssl <= external/openssl/apps/crl.c
+target thumb C: openssl <= external/openssl/apps/crl2p7.c
+target thumb C: openssl <= external/openssl/apps/dgst.c
+target thumb C: openssl <= external/openssl/apps/dh.c
+target thumb C: openssl <= external/openssl/apps/dhparam.c
+target thumb C: openssl <= external/openssl/apps/dsa.c
+target thumb C: openssl <= external/openssl/apps/dsaparam.c
+target thumb C: openssl <= external/openssl/apps/ecparam.c
+target thumb C: openssl <= external/openssl/apps/ec.c
+target thumb C: openssl <= external/openssl/apps/enc.c
+target thumb C: openssl <= external/openssl/apps/engine.c
+target thumb C: openssl <= external/openssl/apps/errstr.c
+target thumb C: openssl <= external/openssl/apps/gendh.c
+target thumb C: openssl <= external/openssl/apps/gendsa.c
+target thumb C: openssl <= external/openssl/apps/genpkey.c
+target thumb C: openssl <= external/openssl/apps/genrsa.c
+target thumb C: openssl <= external/openssl/apps/nseq.c
+target thumb C: openssl <= external/openssl/apps/ocsp.c
+target thumb C: openssl <= external/openssl/apps/openssl.c
+target thumb C: openssl <= external/openssl/apps/passwd.c
+target thumb C: openssl <= external/openssl/apps/pkcs12.c
+target thumb C: openssl <= external/openssl/apps/pkcs7.c
+target thumb C: openssl <= external/openssl/apps/pkcs8.c
+target thumb C: openssl <= external/openssl/apps/pkey.c
+target thumb C: openssl <= external/openssl/apps/pkeyparam.c
+target thumb C: openssl <= external/openssl/apps/pkeyutl.c
+/tmp/cc0Ke546.s: Assembler messages:
+/tmp/cc0Ke546.s:439: Error: can't resolve `.LC4' {.rodata.str1.1 section} - `.LPIC5' {*UND* section}
+make: *** [out/target/product/crespo/obj/EXECUTABLES/openssl_intermediates/apps/pkeyparam.o] Error 1
+make: *** Waiting for unfinished jobs....
+http://www.mail-archive.com/gcc-bugs@gcc.gnu.org/msg322384.html
+
+ <2013-04-04 Thu>
+tarkoittaa ilmeisesti että esim libopenssl ei osaa kääntyä
+muuhun kuin thumb-modeen
+-- note: bionicin debug-hommat vielä mukana

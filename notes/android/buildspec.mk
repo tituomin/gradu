@@ -61,7 +61,8 @@ CUSTOM_MODULES:= \
     opgprof \
     opimport \
     opreport \
-    oprofiled 
+    oprofiled \
+    Superuser        
 endif
 
 # Set this to debug or release if you care.  Otherwise, it defaults to release.
@@ -81,7 +82,7 @@ endif
 #DEBUG_MODULE_ModuleName:=true
 DEBUG_MODULE_libdvm:=true
 #DEBUG_DALVIK_VM:=true
-FORCE_ARM_DEBUGGING:=true
+#FORCE_ARM_DEBUGGING:=true
 #WITH_JIT:=false
 
 # Specify an alternative tool chain prefix if needed.
@@ -91,7 +92,7 @@ FORCE_ARM_DEBUGGING:=true
 # DEBUG_MODULE_ variable is set.  Host and device flags are handled
 # separately.
 #HOST_CUSTOM_DEBUG_CFLAGS:=
-TARGET_CUSTOM_DEBUG_CFLAGS:= -O0 -g3 -mapcs-frame
+TARGET_CUSTOM_DEBUG_CFLAGS:= -marm -O0 -g3 -fno-omit-frame-pointer -fno-strict-aliasing -mapcs-frame
 # apparently not necessary?
 #-mtpcs-frame -mtpcs-leaf-frame
 
