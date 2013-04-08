@@ -1,6 +1,13 @@
 
 Gradu: duunit
 * Benchmarks
+** GC_FOR_ALLOC -- muisti ilmeisesti loppuu?
+   korjattu: map vie älyttömästi muistia
+** for loopista pois?
+int i = reps + 1;
+while (--i != 0) ...
+** varmista että kaikissa on side effect
+
 ** TODO perf init: cat >kptr_restrict, paranoid etc. (run as root?) + cpu scaling
 ** TODO poista stdio c-koodista (android string logging formatting)
 ** TODO JNI error checking! (käy koodi läpi vielä kerran)
