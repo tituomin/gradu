@@ -81,6 +81,7 @@ endif
 # will be added to LOCAL_CFLAGS when building the module.
 #DEBUG_MODULE_ModuleName:=true
 DEBUG_MODULE_libdvm:=true
+DEBUG_MODULE_libc:=true
 #DEBUG_DALVIK_VM:=true
 #FORCE_ARM_DEBUGGING:=true
 #WITH_JIT:=false
