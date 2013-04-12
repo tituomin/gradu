@@ -1,6 +1,7 @@
 
 Gradu: duunit
 * Benchmarks
+** TODO kallsyms pitää tallentaa perf-pakettiin
 ** TODO mittausten tilastollinen tulkinta
      (truncated mean? (THIS >> or assume lower limit...))
 **** TODO >> mittaa vasteaikojen tilastollinen jakauma > mallinna

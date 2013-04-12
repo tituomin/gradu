@@ -1,101 +1,125 @@
 
 /* puuttuu!!! makroversiot...) */
 
-/* 1 */
-jboolean       ExceptionCheck (                JNIEnv* env )
-jint           GetVersion (                    JNIEnv* env )
-jthrowable     ExceptionOccurred (             JNIEnv* env )
-void           ExceptionClear (                JNIEnv* env )
-void           ExceptionDescribe (             JNIEnv* env )
+/* OK arrays, strings */
 
-/* 2 */
-void           DeleteGlobalRef (               JNIEnv* env,           jobject jglobalRef )
-void           DeleteLocalRef (                JNIEnv* env,           jobject jlocalRef )
-void           DeleteWeakGlobalRef (           JNIEnv* env,           jweak wref )
-void           FatalError (                    JNIEnv* env,           const char* msg )
+jsizeIn = (*env)->GetArrayLength(env, jarray jarr);
+jsizeIn = (*env)->GetStringLength(env, jstring jstr);
+jsizeIn = (*env)->GetStringUTFLength(env, jstring jstr);
 
-jint           EnsureLocalCapacity (           JNIEnv* env,           jint capacity )
-jint           GetJavaVM (                     JNIEnv* env,           JavaVM** vm )
-jint           MonitorEnter (                  JNIEnv* env,           jobject jobj )
-jint           MonitorExit (                   JNIEnv* env,           jobject jobj )
-jint           PushLocalFrame (                JNIEnv* env,           jint capacity )
-jint           Throw (                         JNIEnv* env,           jthrowable jobj )
-jint           UnregisterNatives (             JNIEnv* env,           jclass jclazz )
-jlong          GetDirectBufferCapacity (       JNIEnv* env,           jobject jbuf )
-jsize          GetArrayLength (                JNIEnv* env,           jarray jarr )
-jsize          GetStringLength (               JNIEnv* env,           jstring jstr )
-jsize          GetStringUTFLength (            JNIEnv* env,           jstring jstr )
+const char_ptrIn = (*env)->GetStringUTFChars(env, jstring jstr, jboolean* isCopy);
+const jchar_ptrIn = (*env)->GetStringChars(env, jstring jstr, jboolean* isCopy);
+const jchar_ptrIn = (*env)->GetStringCritical(env, jstring jstr, jboolean* isCopy);
+(*env)->ReleaseStringChars(env, jstring jstr, const jchar* chars);
+(*env)->ReleaseStringCritical(env, jstring jstr, const jchar* carray);
+(*env)->ReleaseStringUTFChars(env, jstring jstr, const char* utf);
 
-jobject        AllocObject (                   JNIEnv* env,           jclass jclazz )
-jobject        NewGlobalRef (                  JNIEnv* env,           jobject jobj )
-jobject        NewLocalRef (                   JNIEnv* env,           jobject jobj )
-jobject        PopLocalFrame (                 JNIEnv* env,           jobject jresult )
-jclass         FindClass (                     JNIEnv* env,           const char* name )
-jclass         GetObjectClass (                JNIEnv* env,           jobject jobj )
-jclass         GetSuperclass (                 JNIEnv* env,           jclass jclazz )
+(*env)->GetStringRegion(env, jstring jstr, jsize start, jsize len, jchar* buf);
 
-jstring        NewStringUTF (                  JNIEnv* env,           const char* bytes )
+void*In = (*env)->GetPrimitiveArrayCritical(env, jarray jarr, jboolean* isCopy);
+(*env)->ReleasePrimitiveArrayCritical(env, jarray jarr, void* carray, jint mode);
 
-jfieldID       FromReflectedField (            JNIEnv* env,           jobject jfield )
-jmethodID      FromReflectedMethod (           JNIEnv* env,           jobject jmethod )
+jobjectIn = (*env)->GetObjectArrayElement(env, jobjectArray jarr, jsize index);
+(*env)->SetObjectArrayElement(env, jobjectArray jarr, jsize index, jobject jobj);
 
-jobjectRefType GetObjectRefType (              JNIEnv* env,           jobject jobj )
+/* nio */
+jlongIn = (*env)->GetDirectBufferCapacity(env, jobject jbuf);
+void_ptrIn = (*env)->GetDirectBufferAddress(env, jobject jbuf);
 
-jweak          NewWeakGlobalRef (              JNIEnv* env,           jobject jobj )
+/* OK id search */
 
-void*          GetDirectBufferAddress (        JNIEnv* env,           jobject jbuf )
+jclassIn = (*env)->GetObjectClass(env, jobjectValue);
+jclassIn = (*env)->FindClass(env, const char* name);
+jfieldIDIn = (*env)->GetFieldID(env, jclass jclazz, const char* name, const char* sig);
+jfieldIDIn = (*env)->GetStaticFieldID(env, jclass jclazz, const char* name, const char* sig);
+jmethodIDIn = (*env)->GetMethodID(env, jclass jclazz, const char* name, const char* sig);
+jmethodIDIn = (*env)->GetStaticMethodID(env, jclass jclazz, const char* name, const char* sig);
 
-/* 3 */
-const char*    GetStringUTFChars (             JNIEnv* env,           jstring jstr,              jboolean* isCopy )
-const jchar*   GetStringChars (                JNIEnv* env,           jstring jstr,              jboolean* isCopy )
-const jchar*   GetStringCritical (             JNIEnv* env,           jstring jstr,              jboolean* isCopy )
-jboolean       IsAssignableFrom (              JNIEnv* env,           jclass jclazz1,            jclass jclazz2 )
-jboolean       IsInstanceOf (                  JNIEnv* env,           jobject jobj,              jclass jclazz )
-jboolean       IsSameObject (                  JNIEnv* env,           jobject jref1,             jobject jref2 )
-jint           ThrowNew (                      JNIEnv* env,           jclass jclazz,             const char* message )
-jobject        GetObjectArrayElement (         JNIEnv* env,           jobjectArray jarr,         jsize index )
-jobject        NewDirectByteBuffer (           JNIEnv* env,           void* address,             jlong capacity )
-jstring        NewString (                     JNIEnv* env,           const jchar* unicodeChars, jsize len )
-void           ReleaseStringChars (            JNIEnv* env,           jstring jstr,              const jchar* chars )
-void           ReleaseStringCritical (         JNIEnv* env,           jstring jstr,              const jchar* carray )
-void           ReleaseStringUTFChars (         JNIEnv* env,           jstring jstr,              const char* utf )
-void*          GetPrimitiveArrayCritical (     JNIEnv* env,           jarray jarr,               jboolean* isCopy )
+/* OK ... allocation */
+jobjectIn = (*env)->AllocObject(env, jclass jclazz); // todo: ignore?
 
-/* 4 */
-jfieldID       GetFieldID (                    JNIEnv* env,           jclass jclazz,             const char* name,               const char* sig )
-jfieldID       GetStaticFieldID (              JNIEnv* env,           jclass jclazz,             const char* name,               const char* sig )
-jint           RegisterNatives (               JNIEnv* env,           jclass jclazz,             const JNINativeMethod* methods, jint nMethods )
-jint           attachThread (                  JavaVM* vm,            JNIEnv** p_env,            void* thr_args,                 bool isDaemon )
-jmethodID      GetMethodID (                   JNIEnv* env,           jclass jclazz,             const char* name,               const char* sig )
-jmethodID      GetStaticMethodID (             JNIEnv* env,           jclass jclazz,             const char* name,               const char* sig )
-jobject        ToReflectedField (              JNIEnv* env,           jclass jcls,               jfieldID fieldID,               jboolean isStatic )
-jobject        ToReflectedMethod (             JNIEnv* env,           jclass jcls,               jmethodID methodID,             jboolean isStatic )
-jobjectArray   NewObjectArray (                JNIEnv* env,           jsize length,              jclass jelementClass,           jobject jinitialElement )
-void           ReleasePrimitiveArrayCritical ( JNIEnv* env,           jarray jarr,               void* carray,                   jint mode )
-void           SetObjectArrayElement (         JNIEnv* env,           jobjectArray jarr,         jsize index,                    jobject jobj )
-void           throwArrayRegionOutOfBounds (   ArrayObject* arrayObj, jsize start,               jsize len,                      const char* arrayIdentifier )
+jstringIn = (*env)->NewStringUTF(env, const char* bytes);
+jstringIn = (*env)->NewString(env, const jchar* unicodeChars, jsize len);
 
-/* 5 */
-jclass         DefineClass (                   JNIEnv* env,           const char *name,          jobject loader,                 const jbyte* buf, jsize bufLen )
-void           GetStringRegion (               JNIEnv* env,           jstring jstr,              jsize start,                    jsize len,        jchar* buf )
-void           GetStringUTFRegion (            JNIEnv* env,           jstring jstr,              jsize start,                    jsize len,        char* buf )
+jobjectArrayIn = (*env)->NewObjectArray(env, jsize length, jclass jelementClass, jobject jinitialElement);
+jobjectIn = (*env)->NewDirectByteBuffer(env, void* address, jlong capacity);
 
-jobject        NewObject (                     JNIEnv* env,           jclass jclazz,             jmethodID methodID,             ... )
-jobject        NewObjectV (                    JNIEnv* env,           jclass jclazz,             jmethodID methodID,             va_list args )
-jobject        NewObjectA (                    JNIEnv* env,           jclass jclazz,             jmethodID methodID,             jvalue* args )
+// todo: impossible to make generic -> examples or generate intelligently?
+// "make database of classes and objects" ..
+// or: reflect and get the object fields etc before measuring
+jobjectIn = (*env)->NewObject(env, jclass jclazz, jmethodID methodID, ...);
+jobjectIn = (*env)->NewObjectV(env, jclass jclazz, jmethodID methodID, va_list args);
+jobjectIn = (*env)->NewObjectA(env, jclass jclazz, jmethodID methodID, jvalue* args);
 
-/* -- */
+/* references */
+jobjectIn = (*env)->NewGlobalRef(env, jobject jobj);
+(*env)->DeleteGlobalRef(env, jobject jglobalRef);
 
-jint           AttachCurrentThread (           JavaVM* vm,            JNIEnv** p_env,            void* thr_args )
-jint           AttachCurrentThreadAsDaemon (   JavaVM* vm,            JNIEnv** p_env,            void* thr_args )
-jint           GetEnv (                        JavaVM* vm,            void** env,                jint version )
+jobjectIn = (*env)->NewLocalRef(env, jobject jobj);
+(*env)->DeleteLocalRef(env, jobject jlocalRef);
 
-jint           DetachCurrentThread (           JavaVM* vm )
-jint           DestroyJavaVM (                 JavaVM* vm )
+jweakIn = (*env)->NewWeakGlobalRef(env, jobject jobj);
+(*env)->DeleteWeakGlobalRef(env, jweak wref);
 
+jintIn = (*env)->PushLocalFrame(env, jint capacity);
+jobjectIn = (*env)->PopLocalFrame(env, jobject jresult);
+
+jintIn = (*env)->EnsureLocalCapacity(env, jint capacity); // todo: how to test
+jobjectRefTypeIn = (*env)->GetObjectRefType(env, jobject jobj); // todo: ignore?
+
+/* register */
+
+jintIn = (*env)->RegisterNatives(env, jclass jclazz, const JNINativeMethod* methods, jint nMethods);
+jintIn = (*env)->UnregisterNatives(env, jclass jclazz);
+
+
+/* reflection */
+jfieldIDIn = (*env)->FromReflectedField(env, jobject jfield);
+jmethodIDIn = (*env)->FromReflectedMethod(env, jobject jmethod);
+jobjectIn = (*env)->ToReflectedField(env, jclass jcls, jfieldID fieldID, jboolean isStatic);
+jobjectIn = (*env)->ToReflectedMethod(env, jclass jcls, jmethodID methodID, jboolean isStatic);
+
+/* misc utils */
+jbooleanIn = (*env)->IsAssignableFrom(env, jclass jclazz1, jclass jclazz2);
+jbooleanIn = (*env)->IsInstanceOf(env, jobject jobj, jclass jclazz);
+jbooleanIn = (*env)->IsSameObject(env, jobject jref1, jobject jref2);
+jclassIn = (*env)->GetSuperclass(env, jclass jclazz);
+
+/* exceptions */
+
+jintIn = (*env)->Throw(env, jthrowable jobj);
+jintIn = (*env)->ThrowNew(env, jclass jclazz, const char* message);
+jbooleanIn = (*env)->ExceptionCheck(env);
+jthrowableIn = (*env)->ExceptionOccurred(env);
+(*env)->ExceptionClear(env);
+(*env)->ExceptionDescribe(env);
+(*env)->FatalError(env, const char* msg);
+
+/* threads */
+
+jintIn = (*env)->MonitorEnter(env, jobject jobj);
+jintIn = (*env)->MonitorExit(env, jobject jobj);
+jintIn = (*env)->attachThread (JavaVM* vm, JNIEnv** p_env, void* thr_args, bool isDaemon);
+jintIn = (*env)->AttachCurrentThread (JavaVM* vm, JNIEnv** p_env, void* thr_args);
+jintIn = (*env)->AttachCurrentThreadAsDaemon (JavaVM* vm, JNIEnv** p_env, void* thr_args);
+jintIn = (*env)->DetachCurrentThread (JavaVM* vm);
+
+/* create class */
+jclassIn = (*env)->DefineClass(env, const char *name, jobject loader, const jbyte* buf, jsize bufLen);
+
+
+/* environment */
+
+jintIn = (*env)->DestroyJavaVM (JavaVM* vm);
+jintIn = (*env)->GetJavaVM(env, JavaVM** vm);
+jintIn = (*env)->GetVersion(env);
+jintIn = (*env)->GetEnv (JavaVM* vm, void** env, jint version);
+
+
+/* todo */
 
 // makrot:
-/* GET_STATIC_TYPE_FIELD(_ctype, _jname, _isref) */
+/*val = (*env)-> GET_STATIC_TYPE_FIELD(_ctype, _jname, _isref) */
 /* SET_STATIC_TYPE_FIELD(_ctype, _ctype2, _jname, _isref) */
 /* GET_TYPE_FIELD(_ctype, _jname, _isref) */
 /* SET_TYPE_FIELD(_ctype, _ctype2, _jname, _isref) */
