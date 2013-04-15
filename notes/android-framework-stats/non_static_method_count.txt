@@ -1247,7 +1247,7 @@
       9 ./base/core/java/android/text/method/LinkMovementMethod.java
       9 ./base/core/java/android/text/method/MovementMethod.java
       9 ./base/core/java/android/text/style/BulletSpan.java
-      9 ./base/core/java/android/text/style/QuoteSpan.java
+      9 ./base/core/java/android/text/style/QuoteSpan.java   ** median 
       9 ./base/core/java/android/view/ContextThemeWrapper.java
       9 ./base/core/java/android/view/SubMenu.java
       9 ./base/core/java/android/view/textservice/TextServicesManager.java

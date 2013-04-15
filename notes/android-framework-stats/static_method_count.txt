@@ -541,7 +541,7 @@
       2 ./base/tools/layoutlib/bridge/src/android/graphics/PorterDuffXfermode_Delegate.java
       2 ./base/tools/layoutlib/bridge/src/android/graphics/Region_Delegate.java
       2 ./base/tools/layoutlib/bridge/src/android/graphics/Shader_Delegate.java
-      2 ./base/tools/layoutlib/bridge/src/android/view/accessibility/AccessibilityManager.java
+      2 ./base/tools/layoutlib/bridge/src/android/view/accessibility/AccessibilityManager.java ** median
       2 ./base/tools/layoutlib/bridge/src/android/view/AttachInfo_Accessor.java
       2 ./base/tools/preload/MemoryUsage.java
       2 ./base/voip/java/com/android/server/sip/SipService.java

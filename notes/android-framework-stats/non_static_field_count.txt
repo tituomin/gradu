@@ -925,7 +925,7 @@
       4 ./base/media/mca/filterpacks/java/android/filterpacks/imageproc/CrossProcessFilter.java
       4 ./base/media/mca/filterpacks/java/android/filterpacks/imageproc/NegativeFilter.java
       4 ./base/media/mca/filterpacks/java/android/filterpacks/imageproc/PosterizeFilter.java
-      4 ./base/media/mca/filterpacks/java/android/filterpacks/imageproc/SepiaFilter.java
+      4 ./base/media/mca/filterpacks/java/android/filterpacks/imageproc/SepiaFilter.java  *** median
       4 ./base/media/mca/filterpacks/java/android/filterpacks/performance/Throughput.java
       4 ./base/media/mca/samples/CameraEffectsRecordingSample/java/android/media/filterfw/samples/CameraEffectsRecordingSample.java
       4 ./base/obex/javax/obex/PrivateInputStream.java
