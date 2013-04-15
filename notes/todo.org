@@ -1,34 +1,58 @@
 
 Gradu: duunit
-* Benchmarks
-** TODO kallsyms pitää tallentaa perf-pakettiin
-** TODO mittausten tilastollinen tulkinta
-     (truncated mean? (THIS >> or assume lower limit...))
+* Koodi
+** generator
+*** TODO lisätestit
+**** TODO jni functions
+**** TODO testaa call-variants (ellipsis, array, va_args)
+**** TODO lisää muut kuin jnienv-funktiot testiin? (tai perustele miksei)
+*** TODO lisää eri kutsutyypit (virtual, nonvirtual) benchmarkkeihin?
+*** TODO mittausoverheadin mittaus: reversible composable bijection
+*** TODO java: params -> fields? local variables?
+     android designing for performance: Without a JIT, direct field
+  access is about 3x faster than invoking a trivial getter. With the
+  JIT (where direct field access is as cheap as accessing a local),
+  direct field access is about 7x faster than invoking a trivial
+  getter. This is true in Froyo, but will improve in the future when
+  the JIT inlines getter methods. !!!! yes but used only once
+*** TODO varmista että kaikissa on side effect
+**** TODO funktioiden paluuarvojen tallennus? (ehkä ei)
+*** TODO JNI error checking! (käy koodi läpi vielä kerran)
+*** TODO poista stdio c-koodista (android string logging formatting)
+*** TODO sopivassa vaiheessa, sopivilla perusteluilla vähennä tyyppien määrää benchmarkeissa
+** nativebenchmark
+*** runner
+**** TODO lisää ja arvioi oikea perf event spesifikaatio
+**** TODO deletoi perf-data? (tehty?)
+**** TODO benchmarkrunner: yhdistä eri size-variaatiota vaativat bm:t
+**** TODO kallsyms pitää tallentaa perf-pakettiin
+**** TODO oprofile (?)
+**** TODO erottele android-spesifi osa jni-benchmarkeista
+*** param
+**** TODO BenchmarkParam: set custom params (context)
+***** TODO init a \0 terminated string
+*** native
+**** TODO c-koodissa: mikä on check interrupted-overheadi, korvaa muuttujalla?
+
+** analyzer
+*** TODO tulosta jokaiseen pdf:ään id, jolla löytää metatiedot
+*** TODO metatiedot erilliseen tekstitiedostoon?
+*** TODO any-logiikka ei toimi (0-arvoilla)
+*** TODO primitiivityypit puuttuu ploteista (return_type)
+
+*** TODO mittausten tilastollinen tulkinta
+      (truncated mean? (THIS >> or assume lower limit...))
 **** TODO >> mittaa vasteaikojen tilastollinen jakauma > mallinna
 **** git rev-parse HEAD
      lisää custom ruleseihin ()
-** TODO lisätestit
-*** TODO jni functions
-*** TODO testaa call-variants (ellipsis, array, va_args)
-*** DONE modifiers
-** TODO for loopista pois?
+
+
+
+* Benchmarks
+** DONE erikokoiset Object-instanssit
+** DONE for loopista pois?
    int i = reps + 1;
    while (--i != 0) ...
-** TODO varmista että kaikissa on side effect
-*** TODO funktioiden paluuarvojen tallennus? (ehkä ei)
-** TODO poista stdio c-koodista (android string logging formatting)
-** TODO JNI error checking! (käy koodi läpi vielä kerran)
-** TODO erikokoiset Object-instanssit
-** TODO oprofile (?)
-** TODO java: final local variables?
-    android designing for performance: Without a JIT, direct field
- access is about 3x faster than invoking a trivial getter. With the
- JIT (where direct field access is as cheap as accessing a local),
- direct field access is about 7x faster than invoking a trivial
- getter. This is true in Froyo, but will improve in the future when
- the JIT inlines getter methods. !!!! yes but used only once
-** TODO lisää muut kuin jnienv-funktiot testiin? (tai perustele miksei)
-** TODO erottele android-spesifi osa jni-benchmarkeista
 ** DONE turn off screen? (manually?) (can be done during warmup)
 ** DONE GC_FOR_ALLOC -- muisti ilmeisesti loppuu?
    korjattu: map vie älyttömästi muistia
