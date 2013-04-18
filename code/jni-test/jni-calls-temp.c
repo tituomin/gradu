@@ -1,42 +1,80 @@
 
 /* puuttuu!!! makroversiot...) */
 
-GET_STATIC_TYPE_FIELD(jobject, Object, true);
-GET_STATIC_TYPE_FIELD(jboolean, Boolean, false);
-GET_STATIC_TYPE_FIELD(jbyte, Byte, false);
-GET_STATIC_TYPE_FIELD(jchar, Char, false);
-GET_STATIC_TYPE_FIELD(jshort, Short, false);
-GET_STATIC_TYPE_FIELD(jint, Int, false);
-GET_STATIC_TYPE_FIELD(jlong, Long, false);
-GET_STATIC_TYPE_FIELD(jfloat, Float, false);
-GET_STATIC_TYPE_FIELD(jdouble, Double, false);
-SET_STATIC_TYPE_FIELD(jobject, Object*, Object, true);
-SET_STATIC_TYPE_FIELD(jboolean, bool, Boolean, false);
-SET_STATIC_TYPE_FIELD(jbyte, s1, Byte, false);
-SET_STATIC_TYPE_FIELD(jchar, u2, Char, false);
-SET_STATIC_TYPE_FIELD(jshort, s2, Short, false);
-SET_STATIC_TYPE_FIELD(jint, s4, Int, false);
-SET_STATIC_TYPE_FIELD(jlong, s8, Long, false);
-SET_STATIC_TYPE_FIELD(jfloat, float, Float, false);
-SET_STATIC_TYPE_FIELD(jdouble, double, Double, false);
-GET_TYPE_FIELD(jobject, Object, true);
-GET_TYPE_FIELD(jboolean, Boolean, false);
-GET_TYPE_FIELD(jbyte, Byte, false);
-GET_TYPE_FIELD(jchar, Char, false);
-GET_TYPE_FIELD(jshort, Short, false);
-GET_TYPE_FIELD(jint, Int, false);
-GET_TYPE_FIELD(jlong, Long, false);
-GET_TYPE_FIELD(jfloat, Float, false);
-GET_TYPE_FIELD(jdouble, Double, false);
-SET_TYPE_FIELD(jobject, Object*, Object, true);
-SET_TYPE_FIELD(jboolean, bool, Boolean, false);
-SET_TYPE_FIELD(jbyte, s1, Byte, false);
-SET_TYPE_FIELD(jchar, u2, Char, false);
-SET_TYPE_FIELD(jshort, s2, Short, false);
-SET_TYPE_FIELD(jint, s4, Int, false);
-SET_TYPE_FIELD(jlong, s8, Long, false);
-SET_TYPE_FIELD(jfloat, float, Float, false);
-SET_TYPE_FIELD(jdouble, double, Double, false);
+GET_STATIC_TYPE_FIELD(jobject,           Object,  true);
+
+GET_STATIC_TYPE_FIELD(jboolean,          Boolean, false);
+GET_STATIC_TYPE_FIELD(jbyte,             Byte,    false);
+GET_STATIC_TYPE_FIELD(jchar,             Char,    false);
+GET_STATIC_TYPE_FIELD(jshort,            Short,   false);
+GET_STATIC_TYPE_FIELD(jint,              Int,     false);
+GET_STATIC_TYPE_FIELD(jlong,             Long,    false);
+GET_STATIC_TYPE_FIELD(jfloat,            Float,   false);
+GET_STATIC_TYPE_FIELD(jdouble,           Double,  false);
+
+
+SET_STATIC_TYPE_FIELD(jobject,           Object*, Object,  true);
+
+SET_STATIC_TYPE_FIELD(jboolean,          bool,    Boolean, false);
+SET_STATIC_TYPE_FIELD(jbyte,             s1,      Byte,    false);
+SET_STATIC_TYPE_FIELD(jchar,             u2,      Char,    false);
+SET_STATIC_TYPE_FIELD(jshort,            s2,      Short,   false);
+SET_STATIC_TYPE_FIELD(jint,              s4,      Int,     false);
+SET_STATIC_TYPE_FIELD(jlong,             s8,      Long,    false);
+SET_STATIC_TYPE_FIELD(jfloat,            float,   Float,   false);
+SET_STATIC_TYPE_FIELD(jdouble,           double,  Double,  false);
+
+
+GET_TYPE_FIELD(jobject,                  Object,  true);
+
+GET_TYPE_FIELD(jboolean,                 Boolean, false);
+GET_TYPE_FIELD(jbyte,                    Byte,    false);
+GET_TYPE_FIELD(jchar,                    Char,    false);
+GET_TYPE_FIELD(jshort,                   Short,   false);
+GET_TYPE_FIELD(jint,                     Int,     false);
+GET_TYPE_FIELD(jlong,                    Long,    false);
+GET_TYPE_FIELD(jfloat,                   Float,   false);
+GET_TYPE_FIELD(jdouble,                  Double,  false);
+
+
+SET_TYPE_FIELD(jobject,                  Object*, Object,  true);
+
+SET_TYPE_FIELD(jboolean,                 bool,    Boolean, false);
+SET_TYPE_FIELD(jbyte,                    s1,      Byte,    false);
+SET_TYPE_FIELD(jchar,                    u2,      Char,    false);
+SET_TYPE_FIELD(jshort,                   s2,      Short,   false);
+SET_TYPE_FIELD(jint,                     s4,      Int,     false);
+SET_TYPE_FIELD(jlong,                    s8,      Long,    false);
+SET_TYPE_FIELD(jfloat,                   float,   Float,   false);
+SET_TYPE_FIELD(jdouble,                  double,  Double,  false);
+
+
+NEW_PRIMITIVE_ARRAY(jbooleanArray,       Boolean, 'Z');
+NEW_PRIMITIVE_ARRAY(jbyteArray,          Byte,    'B');
+NEW_PRIMITIVE_ARRAY(jcharArray,          Char,    'C');
+NEW_PRIMITIVE_ARRAY(jshortArray,         Short,   'S');
+NEW_PRIMITIVE_ARRAY(jintArray,           Int,     'I');
+NEW_PRIMITIVE_ARRAY(jlongArray,          Long,    'J');
+NEW_PRIMITIVE_ARRAY(jfloatArray,         Float,   'F');
+NEW_PRIMITIVE_ARRAY(jdoubleArray,        Double,  'D');
+
+GET_PRIMITIVE_ARRAY_ELEMENTS(_ctype,     _jname); 
+RELEASE_PRIMITIVE_ARRAY_ELEMENTS(_ctype, _jname); 
+GET_PRIMITIVE_ARRAY_REGION(_ctype,       _jname); 
+SET_PRIMITIVE_ARRAY_REGION(_ctype,       _jname);
+
+PRIMITIVE_ARRAY_FUNCTIONS(jboolean,      Boolean);
+PRIMITIVE_ARRAY_FUNCTIONS(jbyte,         Byte);
+PRIMITIVE_ARRAY_FUNCTIONS(jchar,         Char);
+PRIMITIVE_ARRAY_FUNCTIONS(jshort,        Short);
+PRIMITIVE_ARRAY_FUNCTIONS(jint,          Int);
+PRIMITIVE_ARRAY_FUNCTIONS(jlong,         Long);
+PRIMITIVE_ARRAY_FUNCTIONS(jfloat,        Float);
+PRIMITIVE_ARRAY_FUNCTIONS(jdouble,       Double);
+
+// -- tod: these call variations might
+// be integrated into the non-custom benchmarks
+
 CALL_VIRTUAL(jobject, Object, NULL, (jobject) result.l, true);
 CALL_VIRTUAL(jboolean, Boolean, 0, result.z, false);
 CALL_VIRTUAL(jbyte, Byte, 0, result.b, false);
@@ -47,6 +85,7 @@ CALL_VIRTUAL(jlong, Long, 0, result.j, false);
 CALL_VIRTUAL(jfloat, Float, 0.0f, result.f, false);
 CALL_VIRTUAL(jdouble, Double, 0.0, result.d, false);
 CALL_VIRTUAL(void, Void, , , false);
+
 CALL_NONVIRTUAL(jobject, Object, NULL, (jobject) result.l, true);
 CALL_NONVIRTUAL(jboolean, Boolean, 0, result.z, false);
 CALL_NONVIRTUAL(jbyte, Byte, 0, result.b, false);
@@ -57,6 +96,7 @@ CALL_NONVIRTUAL(jlong, Long, 0, result.j, false);
 CALL_NONVIRTUAL(jfloat, Float, 0.0f, result.f, false);
 CALL_NONVIRTUAL(jdouble, Double, 0.0, result.d, false);
 CALL_NONVIRTUAL(void, Void, , , false);
+
 CALL_STATIC(jobject, Object, NULL, (jobject) result.l, true);
 CALL_STATIC(jboolean, Boolean, 0, result.z, false);
 CALL_STATIC(jbyte, Byte, 0, result.b, false);
@@ -67,29 +107,7 @@ CALL_STATIC(jlong, Long, 0, result.j, false);
 CALL_STATIC(jfloat, Float, 0.0f, result.f, false);
 CALL_STATIC(jdouble, Double, 0.0, result.d, false);
 CALL_STATIC(void, Void, , , false);
-NEW_PRIMITIVE_ARRAY(jbooleanArray, Boolean, 'Z');
-NEW_PRIMITIVE_ARRAY(jbyteArray, Byte, 'B');
-NEW_PRIMITIVE_ARRAY(jcharArray, Char, 'C');
-NEW_PRIMITIVE_ARRAY(jshortArray, Short, 'S');
-NEW_PRIMITIVE_ARRAY(jintArray, Int, 'I');
-NEW_PRIMITIVE_ARRAY(jlongArray, Long, 'J');
-NEW_PRIMITIVE_ARRAY(jfloatArray, Float, 'F');
-NEW_PRIMITIVE_ARRAY(jdoubleArray, Double, 'D');
 
-    GET_PRIMITIVE_ARRAY_ELEMENTS(_ctype, _jname);                           \
-    RELEASE_PRIMITIVE_ARRAY_ELEMENTS(_ctype, _jname);                       \
-    GET_PRIMITIVE_ARRAY_REGION(_ctype, _jname);                             \
-    SET_PRIMITIVE_ARRAY_REGION(_ctype, _jname);
- 
-
-PRIMITIVE_ARRAY_FUNCTIONS(jboolean, Boolean);
-PRIMITIVE_ARRAY_FUNCTIONS(jbyte, Byte);
-PRIMITIVE_ARRAY_FUNCTIONS(jchar, Char);
-PRIMITIVE_ARRAY_FUNCTIONS(jshort, Short);
-PRIMITIVE_ARRAY_FUNCTIONS(jint, Int);
-PRIMITIVE_ARRAY_FUNCTIONS(jlong, Long);
-PRIMITIVE_ARRAY_FUNCTIONS(jfloat, Float);
-PRIMITIVE_ARRAY_FUNCTIONS(jdouble, Double);
 
 
 /* TODO */

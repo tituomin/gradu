@@ -2,12 +2,19 @@
 Gradu: duunit
 * Koodi
 ** generator
-*** TODO lisätestit
-**** TODO jni functions
-**** TODO testaa call-variants (ellipsis, array, va_args)
-**** TODO lisää muut kuin jnienv-funktiot testiin? (tai perustele miksei)
-*** TODO lisää eri kutsutyypit (virtual, nonvirtual) benchmarkkeihin?
-*** TODO mittausoverheadin mittaus: reversible composable bijection
+*** TODO jni functions
+***** TODO c>c hitaampi kuin j>j (johtunee interrupt-checkistä) ??
+***** TODO 10^6 lienee minimi jolla j>j saadaan järkeväksi ?
+***** TODO java-versiot / analogiset mittaukset
+***** TODO tarkempi säätö, tarvitaanko local frame push / pop
+      toisaalta vaikuttaa testien yhteismitallisuuteen !!
+***** DONE taulukot
+***** DONE taulukot par
+***** DONE taulukot test
+***** DONE vary-size -> välitä java runnerille
+***** DONE perusinfra (generator)
+*** TODO varmista että kaikissa on side effect (java)
+**** TODO funktioiden paluuarvojen tallennus? (ehkä ei)
 *** TODO java: params -> fields? local variables?
      android designing for performance: Without a JIT, direct field
   access is about 3x faster than invoking a trivial getter. With the
@@ -15,26 +22,35 @@ Gradu: duunit
   direct field access is about 7x faster than invoking a trivial
   getter. This is true in Froyo, but will improve in the future when
   the JIT inlines getter methods. !!!! yes but used only once
-*** TODO varmista että kaikissa on side effect
-**** TODO funktioiden paluuarvojen tallennus? (ehkä ei)
+*** TODO checkaa const-asiat
 *** TODO JNI error checking! (käy koodi läpi vielä kerran)
-*** TODO poista stdio c-koodista (android string logging formatting)
+*** TODO testaa call-variants (ellipsis, array, va_args)
+*** TODO lisää eri kutsutyypit (virtual, nonvirtual) benchmarkkeihin?
+*** TODO (?) poista stdio c-koodista (android string logging formatting + null) ?
 *** TODO sopivassa vaiheessa, sopivilla perusteluilla vähennä tyyppien määrää benchmarkeissa
+*** TODO sopivassa vaiheessa poista interrupt check kokonaan, ehkä ui-päivityskin
+*** DONE mittausoverheadin mittaus: reversible composable bijection
 ** nativebenchmark
+*** param
+**** DONE BenchmarkParam: set custom params (context)
+***** native code
+***** java code
+**** DONE init a \0 terminated string
 *** runner
+**** TODO default != 0 != the first iterator value ...
+**** TODO shuffle takaisin päälle
 **** TODO lisää ja arvioi oikea perf event spesifikaatio
-**** TODO deletoi perf-data? (tehty?)
-**** TODO benchmarkrunner: yhdistä eri size-variaatiota vaativat bm:t
 **** TODO kallsyms pitää tallentaa perf-pakettiin
 **** TODO oprofile (?)
+**** TODO benchmarkrunner: yhdistä eri size-variaatiota vaativat bm:t
 **** TODO erottele android-spesifi osa jni-benchmarkeista
-*** param
-**** TODO BenchmarkParam: set custom params (context)
-***** TODO init a \0 terminated string
+**** DONE deletoi perf-data? (tehty?)
 *** native
 **** TODO c-koodissa: mikä on check interrupted-overheadi, korvaa muuttujalla?
-
+     tai poista koko interrupt-homma  (>kill process in terminal)
 ** analyzer
+*** TODO directions labelit menee väärin
+*** TODO uudet jni-benchmarkit
 *** TODO tulosta jokaiseen pdf:ään id, jolla löytää metatiedot
 *** TODO metatiedot erilliseen tekstitiedostoon?
 *** TODO any-logiikka ei toimi (0-arvoilla)
@@ -45,6 +61,29 @@ Gradu: duunit
 **** TODO >> mittaa vasteaikojen tilastollinen jakauma > mallinna
 **** git rev-parse HEAD
      lisää custom ruleseihin ()
+
+
+* Tarkista / huomioi
+** TODO huomaa, että getfieldin tyypit yms. voisi parametrisoida
+** TODO gof-book: onko proxy oikea termi peer classille?
+** TODO androidin jni-toteutus ei käytä funktiotauluja?
+** TODO register natives?
+   The RegisterNatives function is useful for a number of purposes:
+   - It is sometimes more convenient and *more efficient* to register
+     a large number of native method implementations eagerly, as
+     opposed to letting the virtual machine link these entries lazily.
+   - You may call RegisterNatives multiple times on a method, allowing the
+   native method implementation to be updated at runtime.
+   - RegisterNatives is particularly useful when a native application embeds a
+   virtual machine implementation and needs to link with a native
+   method implementation defined in the native application. The
+   virtual machine would not be able to find this native method
+   implementation automatically because it only searches in native
+   libraries, not the application itself.
+* Korjaa
+** TODO perustele miksei lisätty muut kuin jnienv-funktiot testiin
+** TODO frameworks/native/libs/utils/Timers.cpp
+*** rivi 35 uptimemillis toteutus, ei aina käytä gettimeofdayta
 
 
 
@@ -101,26 +140,6 @@ Gradu: duunit
 ** NOT
 **** getsuperclass, isassignablefrom
 **** defineclass, fatalerror, registernatives
-* Tarkista
-** TODO gof-book: onko proxy oikea termi peer classille?
-** TODO androidin jni-toteutus ei käytä funktiotauluja?
-** TODO register natives?
-   The RegisterNatives function is useful for a number of purposes:
-   - It is sometimes more convenient and *more efficient* to register
-     a large number of native method implementations eagerly, as
-     opposed to letting the virtual machine link these entries lazily.
-   - You may call RegisterNatives multiple times on a method, allowing the
-   native method implementation to be updated at runtime.
-   - RegisterNatives is particularly useful when a native application embeds a
-   virtual machine implementation and needs to link with a native
-   method implementation defined in the native application. The
-   virtual machine would not be able to find this native method
-   implementation automatically because it only searches in native
-   libraries, not the application itself.
-
-* Korjaa
-** TODO frameworks/native/libs/utils/Timers.cpp
-*** rivi 35 uptimemillis toteutus, ei aina käytä gettimeofdayta
 * DONE Peruskutsutestit
 
 | java | c    | suunta | java | NOTES                                                                    |
