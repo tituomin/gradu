@@ -2,12 +2,14 @@
 Gradu: duunit
 * Koodi
 ** generator
+*** TODO java custom infra
+*** TODO variations on array traversal, read + write
 *** TODO jni functions
 ***** TODO c>c hitaampi kuin j>j (johtunee interrupt-checkistä) ??
 ***** TODO 10^6 lienee minimi jolla j>j saadaan järkeväksi ?
 ***** TODO java-versiot / analogiset mittaukset
 ***** TODO tarkempi säätö, tarvitaanko local frame push / pop
-      toisaalta vaikuttaa testien yhteismitallisuuteen !!
+      !! toisaalta vaikuttaa testien yhteismitallisuuteen !!
 ***** DONE taulukot
 ***** DONE taulukot par
 ***** DONE taulukot test
@@ -42,26 +44,24 @@ Gradu: duunit
 **** TODO lisää ja arvioi oikea perf event spesifikaatio
 **** TODO kallsyms pitää tallentaa perf-pakettiin
 **** TODO oprofile (?)
-**** TODO benchmarkrunner: yhdistä eri size-variaatiota vaativat bm:t
+**** TODO benchmarkrunner: yhdistä eri size-variaatiota vaativat bm:t (?)
 **** TODO erottele android-spesifi osa jni-benchmarkeista
 **** DONE deletoi perf-data? (tehty?)
 *** native
 **** TODO c-koodissa: mikä on check interrupted-overheadi, korvaa muuttujalla?
      tai poista koko interrupt-homma  (>kill process in terminal)
 ** analyzer
-*** TODO directions labelit menee väärin
-*** TODO uudet jni-benchmarkit
 *** TODO tulosta jokaiseen pdf:ään id, jolla löytää metatiedot
-*** TODO metatiedot erilliseen tekstitiedostoon?
-*** TODO any-logiikka ei toimi (0-arvoilla)
-*** TODO primitiivityypit puuttuu ploteista (return_type)
-
+*** TODO metatiedot erilliseen tekstitiedostoon
+*** TODO any-logiikka ei toimi (0-arvoilla, reference types)
+*** DONE primitiivityypit puuttuu ploteista (return_type)
+*** DONE uudet jni-benchmarkit
+*** DONE directions labelit menee väärin
 *** TODO mittausten tilastollinen tulkinta
       (truncated mean? (THIS >> or assume lower limit...))
 **** TODO >> mittaa vasteaikojen tilastollinen jakauma > mallinna
 **** git rev-parse HEAD
      lisää custom ruleseihin ()
-
 
 * Tarkista / huomioi
 ** TODO huomaa, että getfieldin tyypit yms. voisi parametrisoida
