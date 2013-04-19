@@ -46,6 +46,9 @@ Gradu: duunit
 **** TODO oprofile (?)
 **** TODO benchmarkrunner: yhdistä eri size-variaatiota vaativat bm:t (?)
 **** TODO erottele android-spesifi osa jni-benchmarkeista
+***** TODO logging
+***** TODO sdcard path
+***** TODO system clock
 **** DONE deletoi perf-data? (tehty?)
 *** native
 **** TODO c-koodissa: mikä on check interrupted-overheadi, korvaa muuttujalla?
@@ -54,14 +57,14 @@ Gradu: duunit
 *** TODO tulosta jokaiseen pdf:ään id, jolla löytää metatiedot
 *** TODO metatiedot erilliseen tekstitiedostoon
 *** TODO any-logiikka ei toimi (0-arvoilla, reference types)
-*** DONE primitiivityypit puuttuu ploteista (return_type)
-*** DONE uudet jni-benchmarkit
-*** DONE directions labelit menee väärin
 *** TODO mittausten tilastollinen tulkinta
       (truncated mean? (THIS >> or assume lower limit...))
 **** TODO >> mittaa vasteaikojen tilastollinen jakauma > mallinna
 **** git rev-parse HEAD
      lisää custom ruleseihin ()
+*** DONE primitiivityypit puuttuu ploteista (return_type)
+*** DONE uudet jni-benchmarkit
+*** DONE directions labelit menee väärin
 
 * Tarkista / huomioi
 ** TODO huomaa, että getfieldin tyypit yms. voisi parametrisoida
