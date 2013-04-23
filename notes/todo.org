@@ -32,6 +32,7 @@ Gradu: duunit
 *** TODO (?) poista stdio c-koodista (android string logging formatting + null) ?
 *** TODO sopivassa vaiheessa, sopivilla perusteluilla vähennä tyyppien määrää benchmarkeissa
 *** TODO sopivassa vaiheessa poista interrupt check kokonaan, ehkä ui-päivityskin
+    Ei muuten voi poistaa koska linux perf tool.
 *** DONE mittausoverheadin mittaus: reversible composable bijection
 ** nativebenchmark
 *** param
@@ -55,14 +56,15 @@ Gradu: duunit
 **** TODO c-koodissa: mikä on check interrupted-overheadi, korvaa muuttujalla?
      tai poista koko interrupt-homma  (>kill process in terminal)
 ** analyzer
+*** TODO tsekkaa automaattisesti datasta columnien määrä?
 *** TODO tulosta jokaiseen pdf:ään id, jolla löytää metatiedot
 *** TODO metatiedot erilliseen tekstitiedostoon
 *** TODO any-logiikka ei toimi (0-arvoilla, reference types)
 *** TODO mittausten tilastollinen tulkinta
       (truncated mean? (THIS >> or assume lower limit...))
 **** TODO >> mittaa vasteaikojen tilastollinen jakauma > mallinna
-**** git rev-parse HEAD
-     lisää custom ruleseihin ()
+*** DONE git rev-parse HEAD
+    lisää custom ruleseihin ()
 *** DONE primitiivityypit puuttuu ploteista (return_type)
 *** DONE uudet jni-benchmarkit
 *** DONE directions labelit menee väärin
