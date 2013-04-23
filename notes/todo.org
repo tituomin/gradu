@@ -25,6 +25,7 @@ Gradu: duunit
   getter. This is true in Froyo, but will improve in the future when
   the JIT inlines getter methods. !!!! yes but used only once
 *** TODO checkaa const-asiat
+*** TODO Benchmark = abstract class, not interface
 *** TODO JNI error checking! (käy koodi läpi vielä kerran)
 *** TODO testaa call-variants (ellipsis, array, va_args)
 *** TODO lisää eri kutsutyypit (virtual, nonvirtual) benchmarkkeihin?
