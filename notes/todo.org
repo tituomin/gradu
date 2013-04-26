@@ -2,37 +2,43 @@
 Gradu: duunit
 * Koodi
 ** generator
-*** TODO java custom infra
+*** TODO check-interrupted-interval ja max-repetitions, oikeat arvot
+*** TODO java-versiot / analogiset mittaukset loppuun
 *** TODO variations on array traversal, read + write
-*** TODO jni functions
-***** TODO c>c hitaampi kuin j>j (johtunee interrupt-checkistä) ??
-***** TODO 10^6 lienee minimi jolla j>j saadaan järkeväksi ?
-***** TODO java-versiot / analogiset mittaukset
-***** TODO tarkempi säätö, tarvitaanko local frame push / pop
-      !! toisaalta vaikuttaa testien yhteismitallisuuteen !!
-***** DONE taulukot
-***** DONE taulukot par
-***** DONE taulukot test
-***** DONE vary-size -> välitä java runnerille
-***** DONE perusinfra (generator)
 *** TODO varmista että kaikissa on side effect (java)
-**** TODO funktioiden paluuarvojen tallennus? (ehkä ei)
-*** TODO java: params -> fields? local variables?
-     android designing for performance: Without a JIT, direct field
-  access is about 3x faster than invoking a trivial getter. With the
-  JIT (where direct field access is as cheap as accessing a local),
-  direct field access is about 7x faster than invoking a trivial
-  getter. This is true in Froyo, but will improve in the future when
-  the JIT inlines getter methods. !!!! yes but used only once
-*** TODO checkaa const-asiat
-*** TODO Benchmark = abstract class, not interface
-*** TODO JNI error checking! (käy koodi läpi vielä kerran)
-*** TODO testaa call-variants (ellipsis, array, va_args)
-*** TODO lisää eri kutsutyypit (virtual, nonvirtual) benchmarkkeihin?
-*** TODO (?) poista stdio c-koodista (android string logging formatting + null) ?
+    varmista overhead-tsekkiin vertaamalla
+    minimaalinen "summaava" tallennus ?
+    tai yksinkertainen "tsekkaa onko null / 0 vai ei", säädä result-muuttuja
 *** TODO sopivassa vaiheessa, sopivilla perusteluilla vähennä tyyppien määrää benchmarkeissa
+*** TODO jni functions
+**** TODO c>c hitaampi kuin j>j (johtunee interrupt-checkistä) ??
+**** TODO 10^6 lienee minimi jolla j>j saadaan järkeväksi ?
+**** DONE tarkempi säätö, tarvitaanko local frame push / pop
+     !! toisaalta vaikuttaa testien yhteismitallisuuteen !!
+**** DONE taulukot
+**** DONE taulukot par
+**** DONE taulukot test
+**** DONE vary-size -> välitä java runnerille
+**** DONE perusinfra (generator)
+*** TODO checkaa const-asiat (gcc warning)
+*** TODO JNI error checking! (käy koodi läpi vielä kerran)
+*** TODO lisää eri kutsutyypit (virtual, nonvirtual) benchmarkkeihin?
+*** TODO testaa call-variants (ellipsis, array, va_args)
 *** TODO sopivassa vaiheessa poista interrupt check kokonaan, ehkä ui-päivityskin
     Ei muuten voi poistaa koska linux perf tool.
+    Pitäisi refaktoroida omiksi benchmarkeiksi?
+    (Generoida 2 versiota?)
+*** DONE wontfix java: params -> fields? local variables?
+    android designing for performance: Without a JIT, direct field
+    access is about 3x faster than invoking a trivial getter. With the
+    JIT (where direct field access is as cheap as accessing a local),
+    direct field access is about 7x faster than invoking a trivial
+    getter. This is true in Froyo, but will improve in the future when
+    the JIT inlines getter methods. !!!!
+     - yes but used only once
+*** DONE (?) poista stdio c-koodista (android string logging formatting + null) ?
+*** DONE java custom infra
+*** DONE Benchmark = abstract class, not interface
 *** DONE mittausoverheadin mittaus: reversible composable bijection
 ** nativebenchmark
 *** param
@@ -41,6 +47,7 @@ Gradu: duunit
 ***** java code
 **** DONE init a \0 terminated string
 *** runner
+**** TODO thread priority ? 
 **** TODO default != 0 != the first iterator value ...
 **** TODO shuffle takaisin päälle
 **** TODO lisää ja arvioi oikea perf event spesifikaatio
