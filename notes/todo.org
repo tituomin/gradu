@@ -2,6 +2,7 @@
 Gradu: duunit
 * Koodi
 ** generator
+*** TODO persistentvalue first local then save to field
 *** TODO check-interrupted-interval ja max-repetitions, oikeat arvot
 *** TODO java-versiot / analogiset mittaukset loppuun
 *** TODO variations on array traversal, read + write
@@ -9,6 +10,7 @@ Gradu: duunit
     varmista overhead-tsekkiin vertaamalla
     minimaalinen "summaava" tallennus ?
     tai yksinkertainen "tsekkaa onko null / 0 vai ei", säädä result-muuttuja
+    otettu käyttöön array -iteraatioissa, muihinkin ?
 *** TODO sopivassa vaiheessa, sopivilla perusteluilla vähennä tyyppien määrää benchmarkeissa
 *** TODO jni functions
 **** TODO c>c hitaampi kuin j>j (johtunee interrupt-checkistä) ??
