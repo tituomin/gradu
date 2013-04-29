@@ -1,27 +1,21 @@
+#+TODO: TODO PLAN CODE TEST | WONTFIX DONE
 
 Gradu: duunit
 * Koodi
 ** generator
-*** TODO persistentvalue first local then save to field
-*** TODO check-interrupted-interval ja max-repetitions, oikeat arvot
+*** TEST check-interrupted-interval ja max-repetitions, oikeat arvot
+    - ok: maxreps 100, bmparameter 8 * 8
+      - mock command line: vieläkin wait for concurrent
+*** TEST variations on array traversal, read + write
+*** TEST c>c hitaampi kuin j>j (johtunee interrupt-checkistä) ??
 *** TODO java-versiot / analogiset mittaukset loppuun
-*** TODO variations on array traversal, read + write
+*** TODO NIO complete read write
+*** TODO poista turhat log-viestit
 *** TODO varmista että kaikissa on side effect (java)
     varmista overhead-tsekkiin vertaamalla
     minimaalinen "summaava" tallennus ?
     tai yksinkertainen "tsekkaa onko null / 0 vai ei", säädä result-muuttuja
-    otettu käyttöön array -iteraatioissa, muihinkin ?
-*** TODO sopivassa vaiheessa, sopivilla perusteluilla vähennä tyyppien määrää benchmarkeissa
-*** TODO jni functions
-**** TODO c>c hitaampi kuin j>j (johtunee interrupt-checkistä) ??
-**** TODO 10^6 lienee minimi jolla j>j saadaan järkeväksi ?
-**** DONE tarkempi säätö, tarvitaanko local frame push / pop
-     !! toisaalta vaikuttaa testien yhteismitallisuuteen !!
-**** DONE taulukot
-**** DONE taulukot par
-**** DONE taulukot test
-**** DONE vary-size -> välitä java runnerille
-**** DONE perusinfra (generator)
+    - otettu käyttöön array -iteraatioissa, muihinkin ?
 *** TODO checkaa const-asiat (gcc warning)
 *** TODO JNI error checking! (käy koodi läpi vielä kerran)
 *** TODO lisää eri kutsutyypit (virtual, nonvirtual) benchmarkkeihin?
@@ -30,26 +24,11 @@ Gradu: duunit
     Ei muuten voi poistaa koska linux perf tool.
     Pitäisi refaktoroida omiksi benchmarkeiksi?
     (Generoida 2 versiota?)
-*** DONE wontfix java: params -> fields? local variables?
-    android designing for performance: Without a JIT, direct field
-    access is about 3x faster than invoking a trivial getter. With the
-    JIT (where direct field access is as cheap as accessing a local),
-    direct field access is about 7x faster than invoking a trivial
-    getter. This is true in Froyo, but will improve in the future when
-    the JIT inlines getter methods. !!!!
-     - yes but used only once
-*** DONE (?) poista stdio c-koodista (android string logging formatting + null) ?
-*** DONE java custom infra
-*** DONE Benchmark = abstract class, not interface
-*** DONE mittausoverheadin mittaus: reversible composable bijection
+*** WONTFIX refactor tempating to oo style
 ** nativebenchmark
 *** param
-**** DONE BenchmarkParam: set custom params (context)
-***** native code
-***** java code
-**** DONE init a \0 terminated string
 *** runner
-**** TODO thread priority ? 
+**** TEST thread priority ? 
 **** TODO default != 0 != the first iterator value ...
 **** TODO shuffle takaisin päälle
 **** TODO lisää ja arvioi oikea perf event spesifikaatio
@@ -60,11 +39,11 @@ Gradu: duunit
 ***** TODO logging
 ***** TODO sdcard path
 ***** TODO system clock
-**** DONE deletoi perf-data? (tehty?)
 *** native
 **** TODO c-koodissa: mikä on check interrupted-overheadi, korvaa muuttujalla?
-     tai poista koko interrupt-homma  (>kill process in terminal)
 ** analyzer
+*** TODO kaikki custom-benchmarkit mukaan
+*** TODO filtteröi representative
 *** TODO tsekkaa automaattisesti datasta columnien määrä?
 *** TODO tulosta jokaiseen pdf:ään id, jolla löytää metatiedot
 *** TODO metatiedot erilliseen tekstitiedostoon
@@ -72,11 +51,6 @@ Gradu: duunit
 *** TODO mittausten tilastollinen tulkinta
       (truncated mean? (THIS >> or assume lower limit...))
 **** TODO >> mittaa vasteaikojen tilastollinen jakauma > mallinna
-*** DONE git rev-parse HEAD
-    lisää custom ruleseihin ()
-*** DONE primitiivityypit puuttuu ploteista (return_type)
-*** DONE uudet jni-benchmarkit
-*** DONE directions labelit menee väärin
 
 * Tarkista / huomioi
 ** TODO huomaa, että getfieldin tyypit yms. voisi parametrisoida
@@ -103,32 +77,7 @@ Gradu: duunit
 
 
 * Benchmarks
-** DONE erikokoiset Object-instanssit
-** DONE for loopista pois?
-   int i = reps + 1;
-   while (--i != 0) ...
-** DONE turn off screen? (manually?) (can be done during warmup)
-** DONE GC_FOR_ALLOC -- muisti ilmeisesti loppuu?
-   korjattu: map vie älyttömästi muistia
-** DONE perf init: cat >kptr_restrict, paranoid etc. (run as root?) + cpu scaling
-** DONE UI mittausten keskeyttäminen -> ei tarvitse määrittää rounds..
-** DONE zip
-** DONE useampi mittauskierros
-*** DONE warmup round
-*** DONE UI
-*** DONE ne kierrokset
-*** DONE mittausluettelo
-*** DONE build: include git tag as resource
-** DONE perf
-**** TODO analyze part -> latex tables etc.
-**** TODO inspect build ids
-***** eu-readelf -n (elfutils) (should be done in analyze part...)
-**** TODO huom! löydä oikea kerneli, systematisoi
-** DONE dynamic parameter variations
 ** DONE refactoring: metadatacontainer -> map
-** DONE no call arguments !!!
-** DONE siirrä koodi eri repoon kuin gradu
-** DONE korjaa build dependencies
 * JNI-funktiot, use caset, kilpakumppanit
 ** MUST
 *** access fields vs calling methods
@@ -155,26 +104,3 @@ Gradu: duunit
 ** NOT
 **** getsuperclass, isassignablefrom
 **** defineclass, fatalerror, registernatives
-* DONE Peruskutsutestit
-
-| java | c    | suunta | java | NOTES                                                                    |
-|------+------+--------+------+--------------------------------------------------------------------------|
-| :.   | :.   | ->     | :.   | C2JBenchmarkNNNN -> t_caller_java(classname) -> javacounterparts         |
-| :.   | :.:: | <<     | ---- | C2CBenchmarkNNNN -> t_caller_native(methodname)                          |
-| ---- | ::   | <-     | ::   | J2CBenchmarkNNNN -> c_nativemethod.t                                     |
-| ---- | ---- | >>     | :.   | J2JBenchmarkNNNN -> javacounterparts                                     |
-|------+------+--------+------+--------------------------------------------------------------------------|
-
-Native2JavaBenchmark:
-native run method, method name derived from Native2JavaBenchmark_X_run
- - callee name derived from benchmark number NNNN
-
-Native2NativeBenchmark:
-native run method, method name derived from Native2NativeBenchmark_X_run
- - callee name derived from benchmark number NNNN
-
-Benchmark:
-native counterpart, method name derived from Benchmark_nativemethod
-
-Java2JavaBenchmark:
-java run method, callee name derived from benchmark number NNNN
