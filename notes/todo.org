@@ -3,14 +3,13 @@
 Gradu: duunit
 * Koodi
 ** generator
+*** TODO java-versiot / analogiset mittaukset loppuun
+**** TODO NIO complete read write
 *** TEST check-interrupted-interval ja max-repetitions, oikeat arvot
     - ok: maxreps 100, bmparameter 8 * 8
       - mock command line: vieläkin wait for concurrent
 *** TEST variations on array traversal, read + write
 *** TEST c>c hitaampi kuin j>j (johtunee interrupt-checkistä) ??
-*** TODO java-versiot / analogiset mittaukset loppuun
-*** TODO NIO complete read write
-*** TODO poista turhat log-viestit
 *** TODO varmista että kaikissa on side effect (java)
     varmista overhead-tsekkiin vertaamalla
     minimaalinen "summaava" tallennus ?
@@ -20,6 +19,7 @@ Gradu: duunit
 *** TODO JNI error checking! (käy koodi läpi vielä kerran)
 *** TODO lisää eri kutsutyypit (virtual, nonvirtual) benchmarkkeihin?
 *** TODO testaa call-variants (ellipsis, array, va_args)
+*** TODO poista turhat log-viestit
 *** TODO sopivassa vaiheessa poista interrupt check kokonaan, ehkä ui-päivityskin
     Ei muuten voi poistaa koska linux perf tool.
     Pitäisi refaktoroida omiksi benchmarkeiksi?
@@ -32,7 +32,8 @@ Gradu: duunit
 **** TODO default != 0 != the first iterator value ...
 **** TODO shuffle takaisin päälle
 **** TODO lisää ja arvioi oikea perf event spesifikaatio
-**** TODO kallsyms pitää tallentaa perf-pakettiin
+**** WONTFIX kallsyms pitää tallentaa perf-pakettiin
+     System.map sisältää samat.
 **** TODO oprofile (?)
 **** TODO benchmarkrunner: yhdistä eri size-variaatiota vaativat bm:t (?)
 **** TODO erottele android-spesifi osa jni-benchmarkeista
