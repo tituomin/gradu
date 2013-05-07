@@ -43,6 +43,7 @@ Gradu: duunit
 *** native
 **** TODO c-koodissa: mikä on check interrupted-overheadi, korvaa muuttujalla?
 ** analyzer
+*** TODO mieti tarkemmin dynamic-non-dynamic keskinäinen vertailu
 *** TODO kaikki custom-benchmarkit mukaan
 *** TODO filtteröi representative
 *** TODO tsekkaa automaattisesti datasta columnien määrä?
