@@ -35,6 +35,7 @@ Gradu: duunit
 **** WONTFIX kallsyms pitää tallentaa perf-pakettiin
      System.map sisältää samat.
 **** TODO oprofile (?)
+**** TODO warmup: tulosten stabiloituminen?
 **** TODO benchmarkrunner: yhdistä eri size-variaatiota vaativat bm:t (?)
 **** TODO erottele android-spesifi osa jni-benchmarkeista
 ***** TODO logging
@@ -43,6 +44,9 @@ Gradu: duunit
 *** native
 **** TODO c-koodissa: mikä on check interrupted-overheadi, korvaa muuttujalla?
 ** analyzer
+*** TODO overhead-normalisointi
+    - mittausvariaatioiden tunnistus (-> lisäkenttä?)
+*** TODO multiplication-skaalaus
 *** TODO mieti tarkemmin dynamic-non-dynamic keskinäinen vertailu
 *** TODO kaikki custom-benchmarkit mukaan
 *** TODO filtteröi representative
