@@ -1,0 +1,23 @@
+#+TODO: VERIFY FIX EXPLAIN | VERIFIED
+* fb0b8890-4dde-4d18-ae29-14ae38c64277
+** ei korrelaatiota
+  - arrayden koot
+** varying no of params
+  - double ja long: hyppy J > C n .12
+  - type grouping j j:
+    - outo alku
+    - double ja long isommat
+  - c to j : float on vaativampi kuin 64-bittiset
+** custom dynamic j c
+   - hyppy 50 kohdalla (gc for alloc... ?) double ja long
+   - c-kielessä float vaativampi kuin double ??
+   - newint/floatarray 0:ssa?
+** custom dynamic c j
+   - newobjectarray lievästi lineaarinen? samoin newstring?
+   - readutf ainoa lineaarinen?
+** custom dynamic j j
+   - readobjectarrayelement vakio?
+** dynamic j j
+   - allocaatiot vakiollisia?
+   - newstring ja newobjectarray nollassa? (optimoitu pois?)
+     

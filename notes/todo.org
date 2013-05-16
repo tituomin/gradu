@@ -5,6 +5,19 @@ Gradu: duunit
 ** generator
 *** TODO java-versiot / analogiset mittaukset loppuun
 **** TODO NIO complete read write
+*** PLAN potentiaalisesti puuttuvat benchmarkit
+**** PLAN measuring-overhead: kaikki variaatiot ! (merkkaa benchmarkkeihin loop-variaatio)
+**** JNI-vastinparit
+***** TEST J>J puuttuu (non-dynamic)
+****** kaikki paitsi
+       - writeobjectarrayelement
+       - getobjectclass
+       - accessdirectbuffer
+       - weakglobalref
+       - findclass
+****** newstringutf 0:ssa?
+****** createobjectref minimissä?
+         
 *** TEST check-interrupted-interval ja max-repetitions, oikeat arvot
     - ok: maxreps 100, bmparameter 8 * 8
       - mock command line: vieläkin wait for concurrent
@@ -49,6 +62,7 @@ Gradu: duunit
 *** TODO multiplication-skaalaus
 *** TODO mieti tarkemmin dynamic-non-dynamic keskinäinen vertailu
 *** TODO kaikki custom-benchmarkit mukaan
+*** TODO akselien labelit
 *** TODO filtteröi representative
 *** TODO tsekkaa automaattisesti datasta columnien määrä?
 *** TODO tulosta jokaiseen pdf:ään id, jolla löytää metatiedot
