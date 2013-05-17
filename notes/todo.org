@@ -37,6 +37,8 @@ Gradu: duunit
     Pitäisi refaktoroida omiksi benchmarkeiksi?
     (Generoida 2 versiota?)
 ** nativebenchmark
+*** TODO tsekkaa vielä kerran millis/micros/ym. ..
+    android_os_SystemClock.cpp
 *** param
 *** runner
 **** TEST thread priority ? 
