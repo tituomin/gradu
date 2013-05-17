@@ -563,6 +563,25 @@ java run method, callee name derived from benchmark number NNNN
   :ARCHIVE_CATEGORY: todo
   :ARCHIVE_TODO: DONE
   :END:
+* WONTFIX kallsyms pitää tallentaa perf-pakettiin
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2013-05-16 Thu 18:58
+  :ARCHIVE_FILE: ~/gradu/notes/todo.org
+  :ARCHIVE_OLPATH: Koodi/nativebenchmark/runner
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: WONTFIX
+  :END:
+  System.map sisältää samat.
+* WONTFIX refactor tempating to oo style
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2013-05-16 Thu 18:58
+  :ARCHIVE_FILE: ~/gradu/notes/todo.org
+  :ARCHIVE_OLPATH: Koodi/generator
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: WONTFIX
+  :END:
+
+
 
 
 

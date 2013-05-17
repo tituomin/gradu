@@ -6,7 +6,7 @@ Gradu: duunit
 *** TODO java-versiot / analogiset mittaukset loppuun
 **** TODO NIO complete read write
 *** PLAN potentiaalisesti puuttuvat benchmarkit
-**** PLAN measuring-overhead: kaikki variaatiot ! (merkkaa benchmarkkeihin loop-variaatio)
+**** TEST measuring-overhead: kaikki variaatiot ! (merkkaa benchmarkkeihin loop-variaatio)
 **** JNI-vastinparit
 ***** TEST J>J puuttuu (non-dynamic)
 ****** kaikki paitsi
@@ -17,7 +17,6 @@ Gradu: duunit
        - findclass
 ****** newstringutf 0:ssa?
 ****** createobjectref minimissä?
-         
 *** TEST check-interrupted-interval ja max-repetitions, oikeat arvot
     - ok: maxreps 100, bmparameter 8 * 8
       - mock command line: vieläkin wait for concurrent
@@ -37,7 +36,6 @@ Gradu: duunit
     Ei muuten voi poistaa koska linux perf tool.
     Pitäisi refaktoroida omiksi benchmarkeiksi?
     (Generoida 2 versiota?)
-*** WONTFIX refactor tempating to oo style
 ** nativebenchmark
 *** param
 *** runner
@@ -45,8 +43,6 @@ Gradu: duunit
 **** TODO default != 0 != the first iterator value ...
 **** TODO shuffle takaisin päälle
 **** TODO lisää ja arvioi oikea perf event spesifikaatio
-**** WONTFIX kallsyms pitää tallentaa perf-pakettiin
-     System.map sisältää samat.
 **** TODO oprofile (?)
 **** TODO warmup: tulosten stabiloituminen?
 **** TODO benchmarkrunner: yhdistä eri size-variaatiota vaativat bm:t (?)
@@ -57,20 +53,19 @@ Gradu: duunit
 *** native
 **** TODO c-koodissa: mikä on check interrupted-overheadi, korvaa muuttujalla?
 ** analyzer
-*** TODO overhead-normalisointi
-    - mittausvariaatioiden tunnistus (-> lisäkenttä?)
-*** TODO multiplication-skaalaus
-*** TODO mieti tarkemmin dynamic-non-dynamic keskinäinen vertailu
-*** TODO kaikki custom-benchmarkit mukaan
-*** TODO akselien labelit
+*** TEST kaikki custom-benchmarkit mukaan
 *** TODO filtteröi representative
-*** TODO tsekkaa automaattisesti datasta columnien määrä?
+*** TODO akselien labelit
 *** TODO tulosta jokaiseen pdf:ään id, jolla löytää metatiedot
-*** TODO metatiedot erilliseen tekstitiedostoon
+**** TODO metatiedot erilliseen tekstitiedostoon
+*** TODO overhead-normalisointi
+*** TODO multiplication-skaalaus
 *** TODO any-logiikka ei toimi (0-arvoilla, reference types)
+*** TODO mieti tarkemmin dynamic-non-dynamic keskinäinen vertailu
 *** TODO mittausten tilastollinen tulkinta
       (truncated mean? (THIS >> or assume lower limit...))
 **** TODO >> mittaa vasteaikojen tilastollinen jakauma > mallinna
+*** DONE tsekkaa automaattisesti datasta columnien määrä?
 
 * Tarkista / huomioi
 ** TODO huomaa, että getfieldin tyypit yms. voisi parametrisoida
