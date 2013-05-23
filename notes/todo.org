@@ -3,6 +3,7 @@
 Gradu: duunit
 * Koodi
 ** generator
+*** TODO j2jglobalweakreference aiheuttaa gc:tä...
 *** TODO java-versiot / analogiset mittaukset loppuun
 **** TODO NIO complete read write
 *** PLAN potentiaalisesti puuttuvat benchmarkit
