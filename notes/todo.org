@@ -6,7 +6,7 @@ Gradu: duunit
 *** TODO java-versiot / analogiset mittaukset loppuun
 **** TODO NIO complete read write
 *** PLAN potentiaalisesti puuttuvat benchmarkit
-**** TEST measuring-overhead: kaikki variaatiot ! (merkkaa benchmarkkeihin loop-variaatio)
+**** DONE measuring-overhead: kaikki variaatiot ! (merkkaa benchmarkkeihin loop-variaatio)
 **** JNI-vastinparit
 ***** TEST J>J puuttuu (non-dynamic)
 ****** kaikki paitsi
@@ -21,7 +21,7 @@ Gradu: duunit
     - ok: maxreps 100, bmparameter 8 * 8
       - mock command line: vieläkin wait for concurrent
 *** TEST variations on array traversal, read + write
-*** TEST c>c hitaampi kuin j>j (johtunee interrupt-checkistä) ??
+*** WONTFIX c>c hitaampi kuin j>j (johtunee interrupt-checkistä) ??
 *** TODO varmista että kaikissa on side effect (java)
     varmista overhead-tsekkiin vertaamalla
     minimaalinen "summaava" tallennus ?
@@ -39,11 +39,13 @@ Gradu: duunit
 ** nativebenchmark
 *** TODO tsekkaa vielä kerran millis/micros/ym. ..
     android_os_SystemClock.cpp
+    micros käyttää gettimeofdayta,
+    millis käyttää (parempaa?) clock_gettime(MONOTONIC):ia
 *** param
 *** runner
 **** TEST thread priority ? 
 **** TODO default != 0 != the first iterator value ...
-**** TODO shuffle takaisin päälle
+**** TEST shuffle takaisin päälle
 **** TODO lisää ja arvioi oikea perf event spesifikaatio
 **** TODO oprofile (?)
 **** TODO warmup: tulosten stabiloituminen?
@@ -55,18 +57,18 @@ Gradu: duunit
 *** native
 **** TODO c-koodissa: mikä on check interrupted-overheadi, korvaa muuttujalla?
 ** analyzer
-*** TEST kaikki custom-benchmarkit mukaan
-*** TODO filtteröi representative
-*** TODO akselien labelit
-*** TODO tulosta jokaiseen pdf:ään id, jolla löytää metatiedot
-**** TODO metatiedot erilliseen tekstitiedostoon
+*** DONE kaikki custom-benchmarkit mukaan
+*** DONE filtteröi representative
+*** DONE akselien labelit
+*** DONE tulosta jokaiseen pdf:ään id, jolla löytää metatiedot
+**** DONE metatiedot erilliseen tekstitiedostoon
+*** TODO mittausten tilastollinen tulkinta
+      (truncated mean? (THIS >> or assume lower limit...))
+**** TODO >> mittaa vasteaikojen tilastollinen jakauma > mallinna
 *** TODO overhead-normalisointi
 *** TODO multiplication-skaalaus
 *** TODO any-logiikka ei toimi (0-arvoilla, reference types)
 *** TODO mieti tarkemmin dynamic-non-dynamic keskinäinen vertailu
-*** TODO mittausten tilastollinen tulkinta
-      (truncated mean? (THIS >> or assume lower limit...))
-**** TODO >> mittaa vasteaikojen tilastollinen jakauma > mallinna
 *** DONE tsekkaa automaattisesti datasta columnien määrä?
 
 * Tarkista / huomioi
