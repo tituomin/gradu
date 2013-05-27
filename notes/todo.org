@@ -44,7 +44,8 @@ Gradu: duunit
     millis käyttää (parempaa?) clock_gettime(MONOTONIC):ia
 *** param
 *** runner
-**** TODO triplaheaderit pois!
+**** TODO delete temp files ?
+**** DONE triplaheaderit pois!
 **** TEST thread priority ? 
 **** TODO default != 0 != the first iterator value ...
 **** TEST shuffle takaisin päälle
