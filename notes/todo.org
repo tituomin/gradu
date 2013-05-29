@@ -33,7 +33,7 @@ Gradu: duunit
 *** TODO lisää eri kutsutyypit (virtual, nonvirtual) benchmarkkeihin?
 *** TODO testaa call-variants (ellipsis, array, va_args)
 *** TODO poista turhat log-viestit
-*** TODO sopivassa vaiheessa poista interrupt check kokonaan, ehkä ui-päivityskin
+*** WONTFIX sopivassa vaiheessa poista interrupt check kokonaan, ehkä ui-päivityskin
     Ei muuten voi poistaa koska linux perf tool.
     Pitäisi refaktoroida omiksi benchmarkeiksi?
     (Generoida 2 versiota?)
@@ -42,6 +42,7 @@ Gradu: duunit
     android_os_SystemClock.cpp
     micros käyttää gettimeofdayta,
     millis käyttää (parempaa?) clock_gettime(MONOTONIC):ia
+    nanos (java.lang.System) käyttää myös MONOTONIC:ia !!
 *** param
 *** runner
 **** TODO delete temp files ?
@@ -58,7 +59,7 @@ Gradu: duunit
 ***** TODO sdcard path
 ***** TODO system clock
 *** native
-**** TODO c-koodissa: mikä on check interrupted-overheadi, korvaa muuttujalla?
+**** TEST c-koodissa: mikä on check interrupted-overheadi, korvaa muuttujalla?
 ** analyzer
 *** DONE kaikki custom-benchmarkit mukaan
 *** DONE filtteröi representative
