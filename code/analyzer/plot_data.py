@@ -94,6 +94,8 @@ def extract_data(benchmarks,
         info.append('class')
     if 'description' in benchmarks[0]:
         info.append('description')
+    if 'lineno' in benchmarks[0]:
+        info.append('lineno')
     if re.match('parameter_type_.+count', variable):
         info.append('parameter_count')
     if variable != 'id':
@@ -298,35 +300,42 @@ def plot_distributions(all_benchmarks, output, plotpath, gnuplotcommands, bid, m
     gnuplot.init(gnuplotcommands, output, bid)
     measure = 'response_time'
 
-    keyset = set(all_benchmarks[0].keys()) - set([measure])
+    keyset = set(all_benchmarks[0].keys()) - set([measure, 'lineno'])
     comparison_function = functools.partial(comp_function, keyset)
     sorted_benchmarks = sorted(all_benchmarks, cmp=comparison_function)
 
     for group in group_by_keys(sorted_benchmarks, keyset):
+        values = [b[measure] for b in sorted(group, key=lambda x:x['lineno'])]
+        max_val = max(values)
         minimum = min(values)
-        values = [b[measure] for b in group]
         value_range = max(values) - minimum
         resolution = len(values) / 1
         binwidth = value_range / resolution
         binwidth = max(1,binwidth)
 
-#        metadata_file.write(textualtable.make_textual_table(["%f - %f"]))
-        # todo here
+        gnuplotcommands.write(gnuplot.templates['binned_init'].format(
+                title='%s %s' % (group[0]['id'], group[0]['direction']),
+                binwidth= binwidth,min_x=minimum,max_x=max_val/3))
 
-        left_bin_edges = [minimum + i * binwidth for i in range(0, len(values))]
-        bin_amounts = [0 for i in range(0, len(values))]
-        for value in values:
-            i = 0
-            while value > left_bin_edges[i]:
-                i += 1
-            bin_amounts[i - 1] += 1
-        metadata_file.write
-            
+        for i in range(1, len(values) + 1):
 
-        gnuplot.output_plot(
-            [''], [[b[measure]] for b in group],
-            plotpath, gnuplotcommands, '%s %s' % (group[0]['id'], group[0]['direction']),
-            {}, 'binned', 1, 'foo', additional_data={'binwidth': binwidth})
+    #        metadata_file.write(textualtable.make_textual_table(["%f - %f"]))
+            # todo here
+
+    #        left_bin_edges = [minimum + i * binwidth for i in range(0, len(values))]
+            # bin_amounts = [0 for i in range(0, len(values))]
+            # for value in values:
+            #     i = 0
+            #     while value > left_bin_edges[i]:
+            #         i += 1
+            #     bin_amounts[i - 1] += 1
+            # metadata_file.write
+
+            gnuplot.output_plot(
+                [''], [[b[measure]] for b in group],
+                plotpath, gnuplotcommands, '%s %s' % (group[0]['id'], group[0]['direction']),
+                {}, 'binned_frame', 1, 'foo', additional_data={'binwidth': binwidth, 'upto':i, 'max_x':max_val/3,
+                                                         'min_x': minimum})
 
 def plot_benchmarks(all_benchmarks, output, plotpath, gnuplotcommands, bid, metadata_file):
     gnuplot.init(gnuplotcommands, output, bid)
@@ -517,7 +526,7 @@ def sync_measurements(dev_path, host_path, filename, update=True):
 if __name__ == '__main__':
     if len(argv) < 4 or len(argv) > 5:
         print argv[0]
-        print "\n    Usage: %s input_path output_path limit [pdfviewer]\n".format(argv[0])
+        print "\n    Usage: {0} input_path output_path limit [pdfviewer]\n".format(argv[0].split('/')[-1])
         exit(1)
 
     method = argv[0]

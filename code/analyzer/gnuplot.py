@@ -21,31 +21,50 @@ set label 2 "page {page}" at graph 0.01, graph 1.06
 binwidth={binwidth}
 set boxwidth binwidth
 set style fill solid 1.0
+set xrange [{min_x}:{max_x}]
+set yrange [0:*]
 # border lt -1
 bin(x,width)=width*floor(x/width) + width/2.0
-plot '{filename}' using (bin($1,binwidth)):(1.0) notitle smooth freq with boxes lt rgb "dark-olivegreen"
+plot '-' every 1:1:0:0:{upto}:0 using (bin($1,binwidth)):(1.0) notitle smooth freq with boxes lt rgb "dark-olivegreen"
+#plot '-' using (bin($1,binwidth)):(1.0) notitle smooth freq with boxes lt rgb "dark-olivegreen"
 """
+
+templates['binned_init'] = """
+set title '{title}
+binwidth={binwidth}
+set boxwidth binwidth
+set style fill solid 1.0
+set xrange [{min_x}:{max_x}]
+set yrange [0:*]
+# border lt -1
+bin(x,width)=width*floor(x/width) + width/2.0
+"""
+
+templates['binned_frame'] = """
+plot '-' every 1:1:0:0:{upto}:0 using (bin($1,binwidth)):(1.0) notitle smooth freq with boxes lt rgb "dark-olivegreen"
+"""
+
 
 templates['simple_groups'] = """
 set title '{title}'
 set label 2 "page {page}" at graph 0.01, graph 1.06
 set xlabel "{xlabel}"
-plot for [I=2:{last_column}] '{filename}' index {index} using 1:I title columnhead with linespoints
+plot for [I=2:{last_column}] '-' using 1:I title columnhead with linespoints
 """
 
 templates['fitted_lines'] = """
 set title '{title}'
 set label 2 "page {page}" at graph 0.01, graph 1.06
 set xlabel "{xlabel}"
-plot for [I=2:{last_real_column}] '{filename}' index {index} using 1:I title columnhead with points, \
-for [I={first_fitted_column}:{last_column}] '{filename}' index {index} using 1:I title columnhead with lines
+plot for [I=2:{last_real_column}] '-' using 1:I title columnhead with points, \
+for [I={first_fitted_column}:{last_column}] '' using 1:I title columnhead with lines
 """
 
 templates['named_columns'] = """
 set title '{title}'
 set label 2 "page {page}" at graph 0.01, graph 1.06
 set xlabel "{xlabel}"
-plot for [I=2:{last_column}] '{filename}' index {index} using I:xtic(1) title columnhead with linespoints
+plot for [I=2:{last_column}] '-' using I:xtic(1) title columnhead with linespoints
 """
 
 templates['histogram'] = """
@@ -58,7 +77,7 @@ set xtics rotate
 set style data histograms
 set style histogram clustered
 set style fill solid 1.0 border lt -1
-plot [] [{miny}:*] for [I=2:{last_column}] '{filename}' index {index} using I:xtic(1) title columnhead with histogram
+plot [] [{miny}:*] for [I=2:{last_column}] '-' using I:xtic(1) title columnhead with histogram
 """
 
 def init(plotscript, filename, measurement_id):
@@ -67,9 +86,10 @@ def init(plotscript, filename, measurement_id):
 
 def output_plot(data_headers, data_rows, plotpath, plotscript, title, specs, style, page, xlabel, additional_data=None):
     template = templates[style]
-    filename = os.path.join(plotpath, "plot-" + str(uuid.uuid4()) + ".data")
-    plotdata = open(filename, 'w')
-    plotdata.write(print_benchmarks(data_headers, data_rows, title, **specs))
+    # filename = os.path.join(plotpath, "plot-" + str(uuid.uuid4()) + ".data")
+    # plotdata = open(filename, 'w')
+    # plotdata.write()
+    filename = ''
 
     miny = 0
     for row in data_rows:
@@ -84,6 +104,11 @@ def output_plot(data_headers, data_rows, plotpath, plotscript, title, specs, sty
            title = title, page = page, filename = filename, index = 0, last_column = len(data_rows[0]),
            xlabel = xlabel, miny=miny, **additional_data))
 
+    if style == 'binned_frame':
+        plotscript.write(template.format(
+           filename = filename, index = 0, last_column = len(data_rows[0]),
+           xlabel = xlabel, miny=miny, **additional_data))
+
     elif style == 'fitted_lines':
         length = len(data_headers) - 1
         last_real_column = 1 + length / 2
@@ -96,7 +121,12 @@ def output_plot(data_headers, data_rows, plotpath, plotscript, title, specs, sty
         plotscript.write(template.format(
            title = title, page = page, filename = filename, index = 0, last_column = len(data_rows[0]),
            xlabel = xlabel, miny=miny))
+
+    plotscript.write(print_benchmarks(data_headers, data_rows, title, **specs) + "e\n")
     
+def print_inline(data_headers, data_rows, title, group=None, variable=None, measure=None):
+    result = '#{0}\n'.format(title)
+    result = 
 
 def print_benchmarks(data_headers, data_rows, title, group=None, variable=None, measure=None):
     result = '#{0}\n'.format(title)
@@ -110,7 +140,6 @@ def print_benchmarks(data_headers, data_rows, title, group=None, variable=None, 
     for row in data_rows:
         result += ' '.join([format_value(v) for v in row])
         result += '\n'
-    result += '\n\n'
 
     return result
 
