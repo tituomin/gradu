@@ -1,13 +1,15 @@
 #+TODO: TODO PLAN CODE TEST | WONTFIX DONE
-
 Gradu: duunit
+
 * Koodi
 ** generator
 *** TODO j2jglobalweakreference aiheuttaa gc:tä...
 *** TODO java-versiot / analogiset mittaukset loppuun
 **** TODO NIO complete read write
 *** PLAN potentiaalisesti puuttuvat benchmarkit
-**** DONE measuring-overhead: kaikki variaatiot ! (merkkaa benchmarkkeihin loop-variaatio)
+    DEADLINE: <2013-06-05 Wed>
+**** DONE measuring-overhead: kaikki variaatiot !
+     (merkkaa benchmarkkeihin loop-variaatio)
 **** JNI-vastinparit
 ***** TEST J>J puuttuu (non-dynamic)
 ****** kaikki paitsi
@@ -45,6 +47,9 @@ Gradu: duunit
     nanos (java.lang.System) käyttää myös MONOTONIC:ia !!
 *** param
 *** runner
+**** TODO check
+**** TODO run c c first, then j j ?
+**** TODO maybe remove explicit gc? > check statistically...
 **** TODO delete temp files ?
 **** DONE triplaheaderit pois!
 **** TEST thread priority ? 
@@ -61,11 +66,8 @@ Gradu: duunit
 *** native
 **** TEST c-koodissa: mikä on check interrupted-overheadi, korvaa muuttujalla?
 ** analyzer
-*** DONE kaikki custom-benchmarkit mukaan
-*** DONE filtteröi representative
-*** DONE akselien labelit
-*** DONE tulosta jokaiseen pdf:ään id, jolla löytää metatiedot
-**** DONE metatiedot erilliseen tekstitiedostoon
+*** TODO Tutki jakaumien numeroarvot.
+    DEADLINE: <2013-06-04 Tue>
 *** TODO mittausten tilastollinen tulkinta
       (truncated mean? (THIS >> or assume lower limit...))
 **** TODO >> mittaa vasteaikojen tilastollinen jakauma > mallinna
@@ -73,9 +75,14 @@ Gradu: duunit
 *** TODO multiplication-skaalaus
 *** TODO any-logiikka ei toimi (0-arvoilla, reference types)
 *** TODO mieti tarkemmin dynamic-non-dynamic keskinäinen vertailu
+*** DONE kaikki custom-benchmarkit mukaan
+*** DONE filtteröi representative
+*** DONE akselien labelit
+*** DONE tulosta jokaiseen pdf:ään id, jolla löytää metatiedot
+**** DONE metatiedot erilliseen tekstitiedostoon
 *** DONE tsekkaa automaattisesti datasta columnien määrä?
 
-* Tarkista / huomioi
+* Tarkista / huomioi / perustele
 ** TODO huomaa, että getfieldin tyypit yms. voisi parametrisoida
 ** TODO gof-book: onko proxy oikea termi peer classille?
 ** TODO androidin jni-toteutus ei käytä funktiotauluja?
@@ -92,38 +99,6 @@ Gradu: duunit
    virtual machine would not be able to find this native method
    implementation automatically because it only searches in native
    libraries, not the application itself.
-* Korjaa
 ** TODO perustele miksei lisätty muut kuin jnienv-funktiot testiin
 ** TODO frameworks/native/libs/utils/Timers.cpp
 *** rivi 35 uptimemillis toteutus, ei aina käytä gettimeofdayta
-
-
-
-* Benchmarks
-** DONE refactoring: metadatacontainer -> map
-* JNI-funktiot, use caset, kilpakumppanit
-** MUST
-*** access fields vs calling methods
-**** erottele: find id , call
-**** variaatiot: static, nonvirtual (nonvirtual: tarvitsee perintäpuun?
-*** string, array, nio, variaatiot !!
-*** löytämismetodit, reflektionomaiset
-**** findclass, getobjectclass, getmethodid, getfieldid
-**** isinstanceof, issameobject
-*** viitteidenhallinta
-**** new + delete : global, local, weak global
-**** new local, ensurecapacity vs push/pop localframe
-** MAYBE
-*** poikkeukset:
-**** hallinta java -> c
-***** check / occurred / clear
-**** heittäminen c -> java
-***** throw, throw new
-*** reflektio:
-    jos käsitellään niin pitäisi verrata getmethodid vs
-    javan reflektio-eroja...
-*** threadit
-**** monitorenter
-** NOT
-**** getsuperclass, isassignablefrom
-**** defineclass, fatalerror, registernatives
