@@ -1,0 +1,28 @@
+* Benchmarks
+** DONE refactoring: metadatacontainer -> map
+* JNI-funktiot, use caset, kilpakumppanit
+** MUST
+*** access fields vs calling methods
+**** erottele: find id , call
+**** variaatiot: static, nonvirtual (nonvirtual: tarvitsee perintäpuun?
+*** string, array, nio, variaatiot !!
+*** löytämismetodit, reflektionomaiset
+**** findclass, getobjectclass, getmethodid, getfieldid
+**** isinstanceof, issameobject
+*** viitteidenhallinta
+**** new + delete : global, local, weak global
+**** new local, ensurecapacity vs push/pop localframe
+** MAYBE
+*** poikkeukset:
+**** hallinta java -> c
+***** check / occurred / clear
+**** heittäminen c -> java
+***** throw, throw new
+*** reflektio:
+    jos käsitellään niin pitäisi verrata getmethodid vs
+    javan reflektio-eroja...
+*** threadit
+**** monitorenter
+** NOT
+**** getsuperclass, isassignablefrom
+**** defineclass, fatalerror, registernatives
