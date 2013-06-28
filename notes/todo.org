@@ -102,3 +102,4 @@ Gradu: duunit
 ** TODO perustele miksei lisätty muut kuin jnienv-funktiot testiin
 ** TODO frameworks/native/libs/utils/Timers.cpp
 *** rivi 35 uptimemillis toteutus, ei aina käytä gettimeofdayta
+* TODO Tee näin? http://toyoizumilab.brain.riken.jp/hideaki/res/histogram.html#OptBin
