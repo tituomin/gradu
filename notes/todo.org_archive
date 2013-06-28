@@ -580,6 +580,25 @@ java run method, callee name derived from benchmark number NNNN
   :ARCHIVE_CATEGORY: todo
   :ARCHIVE_TODO: WONTFIX
   :END:
+* DONE measuring-overhead: kaikki variaatiot !
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2013-06-28 Fri 16:42
+  :ARCHIVE_FILE: ~/gradu/notes/todo.org
+  :ARCHIVE_OLPATH: Koodi/generator/potentiaalisesti puuttuvat benchmarkit
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+  (merkkaa benchmarkkeihin loop-variaatio)
+* DONE triplaheaderit pois!
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2013-06-28 Fri 16:45
+  :ARCHIVE_FILE: ~/gradu/notes/todo.org
+  :ARCHIVE_OLPATH: Koodi/nativebenchmark/runner
+  :ARCHIVE_CATEGORY: todo
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
 
 
 

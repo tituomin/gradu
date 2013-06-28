@@ -3,21 +3,28 @@ Gradu: duunit
 
 * Koodi
 ** generator
-*** TODO j2jglobalweakreference aiheuttaa gc:tä...
+*** TODO j2jweakglobalreference aiheuttaa gc:tä
 *** TODO java-versiot / analogiset mittaukset loppuun
 **** TODO NIO complete read write
 *** PLAN potentiaalisesti puuttuvat benchmarkit
     DEADLINE: <2013-06-05 Wed>
-**** DONE measuring-overhead: kaikki variaatiot !
-     (merkkaa benchmarkkeihin loop-variaatio)
 **** JNI-vastinparit
+***** TODO fix read/writeobjectarrayelement
 ***** TEST J>J puuttuu (non-dynamic)
 ****** kaikki paitsi
-       - writeobjectarrayelement
-       - getobjectclass
        - accessdirectbuffer
-       - weakglobalref
        - findclass
+       - getobjectclass
+       - writeobjectarrayelement
+       - weakglobalref
+****** todo
+******* TODO get<static><type>field ?
+******* TODO set<static><type>field ?
+****** perustelut
+       - globalref ei ole
+       - localframe ei ole
+       - localref ei ole
+       - newstringutf
 ****** newstringutf 0:ssa?
 ****** createobjectref minimissä?
 *** TEST check-interrupted-interval ja max-repetitions, oikeat arvot
@@ -51,7 +58,6 @@ Gradu: duunit
 **** TODO run c c first, then j j ?
 **** TODO maybe remove explicit gc? > check statistically...
 **** TODO delete temp files ?
-**** DONE triplaheaderit pois!
 **** TEST thread priority ? 
 **** TODO default != 0 != the first iterator value ...
 **** TEST shuffle takaisin päälle
@@ -102,4 +108,5 @@ Gradu: duunit
 ** TODO perustele miksei lisätty muut kuin jnienv-funktiot testiin
 ** TODO frameworks/native/libs/utils/Timers.cpp
 *** rivi 35 uptimemillis toteutus, ei aina käytä gettimeofdayta
-* TODO Tee näin? http://toyoizumilab.brain.riken.jp/hideaki/res/histogram.html#OptBin
+** TODO Tee näin? (testattu: muistisyöppö...)
+   http://toyoizumilab.brain.riken.jp/hideaki/res/histogram.html#OptBin
