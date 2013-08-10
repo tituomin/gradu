@@ -110,3 +110,4 @@ Gradu: duunit
 *** rivi 35 uptimemillis toteutus, ei aina käytä gettimeofdayta
 ** TODO Tee näin? (testattu: muistisyöppö...)
    http://toyoizumilab.brain.riken.jp/hideaki/res/histogram.html#OptBin
+** TODO Merkitse muistiin loggauspohdinnat.
