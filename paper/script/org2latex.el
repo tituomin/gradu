@@ -12,7 +12,9 @@
  `("gradu"
 "\\documentclass[finnish]{tktltiki}
 \\usepackage[finnish]{babel}
-\\level{Pro gradu -tutkielma}"
+\\usepackage{chngcntr}
+\\counterwithin{figure}{section}
+\\level{Pro gradu -tutkielmasuunnitelma}"
 ("\\section{%s}" . "\\section*{%s}")
 ("\\subsection{%s}" . "\\subsection*{%s}")
 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
