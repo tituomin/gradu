@@ -112,6 +112,9 @@
     \fi
   \fi
 \fi
+\RequirePackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+
 \RequirePackage{geometry}[1999/10/07 v2.2 Page Geometry]
 \newcommand{\defaultsettings}{%
   \if@twoside
