@@ -88,12 +88,12 @@ järjestelmäpalvelutason: esimerkiksi ~Log~-luokka kutsuu suoraan
 # todo sisäinen viite
 
 Järjestelmäpalveluita matalammalla olevia arkkitehtuuritasoja,
-mukaanlukien dynaamisesti ladattavia natiivikirjastoja, en käsittele
+mukaan lukien dynaamisesti ladattavia natiivikirjastoja, en käsittele
 sen tarkemmin. Mainittakoon kuitenkin, että Native Development Kitin
 @@ndk vakaat natiivirajapinnat kuuluvat tälle tasolle
 arkkitehtuurissa.  Näitä dynaamisesti linkitettyjä natiivikirjastoja
 voi siis kutsua suoraan tavallisilla aliohjelmakutsuilla
-natiiviohjelmasta käsin, ohittaen
+natiiviohjelmasta käsin ohittaen
 järjestelmäpalvelukerroksen. Androidin Binder-komponentteihin ei
 natiiviohjelmoija pääse käsiksi. Natiivityökalujen ulottumattomiin
 jääkin suurin osa Androidin laajasta toiminnallisuudesta, mutta
@@ -139,10 +139,9 @@ noudattaa pinopohjaista käskyarkkitehtuuria, jossa konekäskyjen
 operandit sijaitsevat implisiittisesti virtuaalikoneen pinossa
 @@dvm-jit(15). Dalvik sen sijaan on rekisteripohjainen virtuaalikone,
 jossa konekäskyjen operandit viittaavat eksplisiittisesti
-virtuaalikoneen ylläpitämiin rekistereihin.[fn:vmarch]
+virtuaalikoneen ylläpitämiin rekistereihin. Lisätietoa
+virtuaalikoneratkaisuiden eroista lähteestä @@showdown.
 
-[fn:vmarch] Lisätietoa virtuaalikoneratkaisuiden eroista lähteestä
- @@showdown.
 # todo etsi ne lähteet
 
 Androidin kehitystyökalut kääntävätkin ohjelman Java-tavukoodista
@@ -171,8 +170,8 @@ Jos tarkastelemme Dalvikin suoritusaikaista toimintaa Java-ohjelman
 ulkopuolisesta näkökulmasta, havaitsemme siis, että Dalvik viettää
 ohjelman suoritusajan hieman yksinkertaistaen joko tulkissa,
 JIT-kääntäjässä tai jo kääntämänsä metodin konekielisessä
-ohjelmakoodissa. (Lisäksi virtuaalikoneella on toki muita,
-ylläpidollisia tehtäviä kuten luokkien lataaminen ja muistinhallinta.)
+ohjelmakoodissa. Lisäksi virtuaalikoneella on toki muita,
+ylläpidollisia tehtäviä kuten luokkien lataaminen ja muistinhallinta.
 
 Näiden suoritustilojen lisäksi Dalvikin
 Java-natiivirajapintatoteutuksen ansiosta virtuaalikoneen prosessi
@@ -183,6 +182,6 @@ takaisin ei-natiiviin suoritustilaansa. Siirtyminen normaalin
 suorituksen ja natiivisuorituksen välillä vaatii virtuaalikoneelta
 erityistoimenpiteitä esimerkiksi kutsukäytäntöjen yhteensovittamisen
 takia. Tämän tutkielman aihe on näiden erityistoimien aiheuttamien
-suorituskykyrasitteiden tarkastelu, käytännössä Dalvik-virtuaalikoneen
+suorituskykyrasitteiden tarkastelu eli käytännössä Dalvik-virtuaalikoneen
 suoritusaikaisen käyttäytymisen mittaaminen ja tulosten analyysi.
 # todo tuossa yllä ei ole esim optimointia, garbage collectionia, ym.
