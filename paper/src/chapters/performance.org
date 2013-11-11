@@ -4,22 +4,22 @@ ohjelmistolle, mutta millä tavalla suorituskyky tulisi ottaa huomioon
 ohjelmiston kehitysprosessissa? Ohjelmistotekniikan kirjallisuudessa
 kysymykseen on vastattu hyvin eri tavoin.
 
+* Suorituskyvyn hallinta tuotantoprosessissa
+
 Donald Knuthilta on peräisin tunnettu lainaus: "Ennenaikainen
 optimointi on kaiken pahan alku ja juuri @@goto(268)."  Knuth
 korostaa, ettei varsinaisessa ohjelmointityössä kannata käyttää aikaa
-suorituskykyä parantaviin manuaalisiin optimointeihin ennen kuin
+suorituskykyä parantaviin manuaalisiin optimointeihin, ennen kuin
 ohjelman suoritusaikaista käyttäytymistä on tutkittu ja löydetty
 ohjelman osat, joiden suoritusaika on merkittävä osa ohjelman
 kokonaissuoritusajasta.
 # todo: mitä knuthin artikkeli itse asiassa käsittelee?
 
-
-
 Periaatteeseen on kaksi syytä. Ensinnäkin ohjelmoijan intuitio johtaa
 yleensä harhaan, kun etsitään ohjelman suorituskyvyn kannalta
 keskeisiä osia. Lisäksi käsityönä tehdyt optimoinnit tekevät
 ohjelmakoodista vaikeammin ymmärrettävää ja ylläpidettävää, joten
-niitä kannattaa välttää aina kun niitä ei todistetusti tarvita.
+niitä kannattaa välttää aina, kun niitä ei todistetusti tarvita.
 
 Knuthin tueksi voi nykynäkökulmasta todeta, että
 laitteistoarkkitehtuurien, optimoivien kääntäjien, virtuaalikoneiden
@@ -58,9 +58,9 @@ jossa suorituskykyvaatimukset kvantifioidaan ja otetaan huomioon
 vaatimusanalyysistä lähtien aina ylläpitoon asti @@spe(1). Alan
 kehittäjän Connie U. Smithin mukaan puutteelliset
 suorituskykyominaisuudet ovat olleet keskeisessä osassa
-epäonnistuneissa ohjelmistoprojekteissa, ja ne voitaisiin välttää
-/mallintamalla/ ohjelmistoja suorituskykynäkökulmasta jo ennen
-toteutusvaihetta.
+epäonnistuneissa ohjelmistoprojekteissa ja Smithin mukaan ne
+voitaisiin usein välttää /mallintamalla/ ohjelmistoja
+suorituskykynäkökulmasta jo ennen toteutusvaihetta.
 
 * Suorituskyvyn arvioiminen
 # todo: arvioiminen &mallintaminen vs. mittaaminen/mittari
@@ -82,20 +82,21 @@ on toki oleellinen suorituskykytekijä, mutta tutkimme ainoastaan sen
 vaikutuksia sovelluksen ajalliseen käyttäytymiseen.
 
 Jotta järjestelmän suorituskykyä voisi arvioida täsmällisesti, käsite
-on purettava kvantitatiivisiksi /mittareiksi/.  Ne arvioivat
-järjestelmän /tuottavuutta/ tai /responsiivisuutta/, tai valitun
-ohjelmisto- tai laitteistoresurssin /käyttöastetta/ @@ferrari(12).
-Käytän mittarin käsitettä kuvaamaan suorituskyvyn kvantitatiivisia
-osatekijöitä, oli ne sitten johdettu ohjelmistoa kuvaavista malleista
-tai saatu todellisista mittauksista.
+on purettava kvantitatiivisiksi /mittareiksi/. Tällaisia mittareita
+ovat järjestelmän /tuottavuus/, /responsiivisuus/ ja /käyttöaste/
+@@ferrari(12). Tutkielmassa mittari tarkoittaa suorituskyvyn
+kvantitatiivisia osatekijöitä, oli ne sitten johdettu ohjelmistoa
+kuvaavista malleista tai saatu todellisista mittauksista.
 
 Tässä tutkielmassa käsitellään ensisijaisesti mobiilisovellusten
 responsiivisuutta. Sitä arvioidaan /vasteajalla/: aikavälillä syötteen
-saamisesta siihen hetkeen kun ohjelman tai ohjelmakomponentin tuloste
+saamisesta siihen hetkeen, kun ohjelman tai ohjelmakomponentin tuloste
 on palautettu käyttäjälle tai kutsuvalle komponentille
 @@ferrari(13). Vasteajan perussuure on aika, ja vasteaikaa voi
-arvioida eri mittaluokissa jopa yksittäisestä konekäskystä koko
+arvioida eri tarkkuusasteilla jopa yksittäisestä konekäskystä koko
 ohjelmistoon.
+
+# todo here selvennä ylempi
 
 Myös tuottavuutta käsitellään tutkielmassa sikäli kuin komponenttien
 tuottavuus vaikuttaa käyttäjän kokemiin vasteaikoihin. Tuottavuus
