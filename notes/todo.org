@@ -1,6 +1,10 @@
 #+TODO: TODO PLAN CODE TEST | WONTFIX DONE
 Gradu: duunit
 
+* Teksti
+** TODO poista minä-muodot
+
+
 * Koodi
 ** generator
 *** TODO j2jweakglobalreference aiheuttaa gc:tä
