@@ -1,5 +1,5 @@
 
-Annan aluksi lyhyen yleiskuvauksen Android-järjestelmästä ennen
+Aluksi esitetään  lyhyt yleiskuvaus Android-järjestelmästä ennen
 siirtymistä tutkielman varsinaiseen aiheeseen, suorituskyvyn
 mittaamiseen ja mallintamiseen sekä Androidin
 Java-natiivirajapintaan.[fn:version]

@@ -2,8 +2,11 @@
 Gradu: duunit
 
 * Teksti
-** TODO poista minä-muodot
+** Vihavaisen kommentit maaliskuu 2013
+*** TODO poista minä-muodot
 
+*** TODO sivun 3 kaavio: lisää nimiavaruus
+*** 
 
 * Koodi
 ** generator
