@@ -96,9 +96,9 @@ on palautettu käyttäjälle tai kutsuvalle komponentille
 arvioida eri tarkkuusasteilla jopa yksittäisestä konekäskystä koko
 ohjelmistoon.
 
-# todo here selvennä ylempi
+# todo selvennä ylempi id-tarkkuusaste
 
-Myös tuottavuutta käsitellään tutkielmassa sikäli kuin komponenttien
+Myös tuottavuutta käsitellään tutkielmassa, sikäli kuin komponenttien
 tuottavuus vaikuttaa käyttäjän kokemiin vasteaikoihin. Tuottavuus
 tarkoittaa käsittelytehoa, jolla ohjelma suoriutuu tietyn työkuorman
 käsittelystä, ja tuottavuusmittarit ilmaistaan yksiköllä /kuorma
@@ -117,6 +117,8 @@ vaikea mallintaa tyhjentävästi ja järjestelmäriippumattomasti
 @@ferrari(14). Varsinaiset suoritusaikamittaukset puolestaan koskevat
 aina /ohjelma--syöte/-pareja, eivät puhtaasti ohjelmaa sellaisenaan
 @@ferrari(455).
+
+# todo selvennä yllä id-käyttötapaus ja myös alle sama selvennys
 
 Lisäksi moniajojärjestelmän, kuten Android-järjestelmän, kokonaistila
 vaikuttaa yksittäisiin mitattuihin vasteaikoihin. Näistä syistä
@@ -155,20 +157,20 @@ suorituskykyvaatimuksille ja viime kädessä käyttäjien subjektiiviselle
 kokemukselle.
 
 # todo: varmista lopuksi että tämä on näin
-Mittaan tutkielmassa Dalvik-virtuaalikoneen
+Tutkielmassa mitataan Dalvik-virtuaalikoneen
 Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
 suhteessa toisiinsa ja vastaaviin operaatioihin Java-kielisessä
 ohjelmassa. Tuloksista johdetaan tilastollinen malli, joka ennustaa
 ohjelmiston JNI-operaatioista aiheutuvia rasitteita eri
-tilanteissa. Mallin parametreinä on käytettyjen JNI-kutsujen määrä,
-tyyppi, sekä niissä käytettyjen kutsuparametrien määrät ja tyypit.
+tilanteissa. Mallin parametreina ovat kutsuttu JNI-funktio sekä
+kutsuissa käytettyjen parametrien määrät ja tyypit.
 
 JNI- ja Java-kutsujen rasitteiden keskinäisestä vertailusta on hyötyä
 mille tahansa natiivikomponentteja sisältävälle sovellukselle, koska
 sen avulla voidaan välttää tunnettuja ongelmakohtia komponenttien
 välisessä kommunikaatiossa. Kysymys, onko natiivirajapinnan käytöstä
 ylipäätään etua tietyn sovelluksen suorituskyvylle, saa puolestaan
-lisävalaistusta vasta kun natiivirajapinnasta koituvat kustannukset
+lisävalaistusta vasta, kun natiivirajapinnasta koituvat kustannukset
 suhteutetaan siihen hyötyyn, joka natiivikomponentin käytöstä on
 verrattuna vastaavaan Java-komponenttiin.
 # end todo
@@ -187,13 +189,13 @@ ollaakseen /validi/ @@ferrari(161--162).
 Tässä tutkielmassa lähdetään oletuksesta, että Dalvik-virtuaalikoneen
 natiivirajapinta on kokonaisjärjestelmän osana riittävän
 yksinkertainen, jotta siitä on mahdollista melko suoraviivaisesti
-luoda malli joka perustuu rajapinnasta tehtyihin mittauksiin
+luoda malli, joka perustuu rajapinnasta tehtyihin mittauksiin
 kontrolloidulla syötejoukolla. Mittaus- ja mallintamisnäkökulmaa ei
 ole saatu yhdistettyä toisiinsa riittävän yleispätevästi
-@@future-spe(172); tämän tutkielman lähestymistapana on rajata
+@@future-spe(172). Tämän tutkielman lähestymistapana on rajata
 näkökulma spesifisti Java-virtuaalikoneen ja natiivikoodin väliseen
-viestintään, ja konstruoida malli natiivirajapinnasta mittausten
-perusteella. Käsittelenkin seuraavaksi ohjelmiston suorituskyvyn
+viestintään ja konstruoida malli natiivirajapinnasta mittausten
+perusteella. Seuraavaksi käsitelläänkin ohjelmiston suorituskyvyn
 mittaamiseen käytettäviä tekniikoita ennen mallinnusformalismien
 esittelyä.
    
@@ -213,11 +215,14 @@ sovelluksen roolit on erotettavissa @@ferrari(14--16), @@spe(114).
 # tehokkuuden arviointi / käytettävyys jää tämän ulkopuolelle
 
 Erilaiset keinot mitata aikaa koskevat erilaisia osia
-kokonaisajasta. Järjestelmän ulkopuoliselle käyttäjälle havainnot ovat
-riippuvaisia todellisesta kuluneesta ajasta, /tosiajasta/ (/real
+kokonaisajasta. Järjestelmän ulkopuolisen käyttäjän havainnot kytkeytyvät
+todelliseen kuluneeseen aikaan, /tosiaikaan/ (/real
 time/, /wall clock time/), jota vastaa sekuntikellolla mitattu
-aikaväli @@ferrari(463), @@advanced-unix(20).[fn:bar]
-UNIX-käyttöjärjestelmissä tätä mittaa järjestelmäkutsu =gettimeofday=
+aikaväli @@ferrari(463), @@advanced-unix(20). Toisaalta on myös osoitettu,
+ että käyttäjä voi subjektiivisesti kokea jopa yhtäsuuriksi mitatut
+vasteajat erilaisiksi, jos työn etenemistä osoittava
+käyttöliittymäelementti etenee eri tavalla @@progressbar.
+UNIX-käyttöjärjestelmissä tosiaikaa mittaa järjestelmäkutsu =gettimeofday=
 @@advanced-unix(173), joka lukee laitteiston kelloa. Jos
 sovellusohjelma kutsuu sitä tavallisena käyttöjärjestelmäkutsuna,
 saattaa ohjelman suoritus häiriintyä tarkkuutta vaativissa
@@ -232,10 +237,8 @@ tilastolliseksi varianssiksi ja pyritään minimoimaan.
 # todo tarkista onko androidissa tarkka userspace gettimeofday (arm)
 # todo tosiaika?
 
-[fn:bar] Toisaalta käyttäjä voi kokea jopa yhtäsuuriksi mitatut
-vasteajat erilaisiksi, jos työn etenemistä osoittava
-käyttöliittymäelementti etenee eri tavalla @@progressbar.
-# todo lue ja varmista että lähde sanoo näin ;)
+
+# todo lue ja varmista että lähde progressbar sanoo näin ;) ^
 
 #[fn:gettimeofday] Joissakin laitteistoissa kyseistä Linuxin palvelua
 #voi kutsua vähäisellä rasitteella siirtymättä kernelin suoritustilaan.
@@ -280,7 +283,7 @@ suorituksella on kokonaisuuden kannalta suurin vaikutus
 Yksittäisen ohjelmiston ajonaikaista käyttäytymistä on
 käytännöllisintä ja järkevintä mitata ohjelmallisesti eikä
 erillisillä mittaamiseen käytetyillä laitteistolla. Fyysiset
-mittauslaittet ovat tarkkoja ja häiritsevät järjestelmän toimintaa
+mittauslaitteet ovat tarkkoja ja häiritsevät järjestelmän toimintaa
 minimaalisesti, mutta laitteiston tasolla tapahtuvien mikrotason
 tapahtumien havaitseminen on käsitteellisesti kaukana ohjelmiston
 sisäisestä suorituskontekstista @@ferrari(32). Käytännön
@@ -322,7 +325,7 @@ näytteenottomenetelmiä.
 Näytteenoton tavoite on kerätä ohjelman suoritustiloista edustava
 otanta kirjaamatta jokaista tilanmuutosta ohjelman sisältä käsin
 @@spe(328).  Yksittäinen näyte voidaan ottaa esimerkiksi
-tosiaikakellon aiheuttaman keskeytyksen laukaisemana, ja näytteeseen
+laitteiston tosiaikakellon aiheuttaman keskeytyksen laukaisemana, ja näytteeseen
 voidaan tallentaa esimerkiksi suorituksessa olleen konekäskyn osoite.
 
 \newpage
@@ -330,14 +333,14 @@ Instrumentoinnin ja näytteenoton avulla ohjelman suoritusajan
 jakautumisesta aliohjelmiin tai jopa yksittäisiin konekäskyihin
 voidaan siis periaatteessa saada hyvinkin tarkkoja mittauksia.
 Ennenaikaista optimointia loppuun asti vältelleet ohjelmistokehittäjät
-voivat näin tutkia vaikkapa missä aliohjelmissa suoritin viettää
+voivat näin tutkia vaikkapa, missä aliohjelmissa suoritin viettää
 suurimman osan ajastaan. Algoritmeja muuttamalla, tietorakenteita
 vaihtamalla tai ohjelmaa muuten muokkaamalla näitä /kuumia kohtia/
 (/hot spot/) voidaan optimoida -- tai vähentää niiden kutsukohtia.
 
 ** Mittausten toteuttaminen
 Instrumentoitua ohjelmaa voi suorittaa normaalisti samassa
-ympäristössä, jossa tuotantosovellukset tavallisestikin suoritetaan,
+ympäristössä, jossa tuotantosovellukset tavallisestikin suoritetaan
 eli Android-laitteessa. Täysipainoinen näytteenotto sen sijaan vaatii
 käyttöjärjestelmältä tukea näytteenoton suorittamiselle tiettyjen
 laitteistokeskeytysten tapahtuessa. Tämä käyttöjärjestelmän toiminto
@@ -388,7 +391,7 @@ Valgrind-virtuaalikoneessa on merkittävästi normaalia hitaampaa.
 
 
 ** Mittaustekniikoiden valintaperusteista
-Eri mittaustekniikoilla on hyvät ja huonot puolensa. Instrumentointi
+Eri mittaustekniikoilla on vahvuutensa ja heikkoutensa. Instrumentointi
 ei vaadi minkäänlaista erityistukea järjestelmältä, mutta edellyttää
 kuitenkin instrumentoitavien ohjelmien uudelleen kääntämistä ja usein
 myös niiden muokkaamista käsin. Käsin tai metaohjelmoinnin avulla
@@ -417,7 +420,7 @@ vähentäisikin tuloksista.
 
 Toisaalta, jos ohjelmiston suorituskyvyn seuraaminen katsotaan osaksi
 sen normaalia toimintaa, ja instrumentointikäskyt ovat oleellinen osa
-tuontakäytössä suoritettavaa ohjelmistoa, häirinnän ongelma
+tuotantokäytössä suoritettavaa ohjelmistoa, häirinnän ongelma
 katoaa. Tämä lienee käytännöllisintä laajoissa palvelinohjelmistoissa
 tai käyttöjärjestelmissä -- yksittäisten käyttäjien mobiililaitteissa
 suoritettavien sovellusohjelmien jatkuva suorituskykyseuranta ei usein
@@ -432,18 +435,16 @@ pitää kuitenkin tulkita ohjelmiston itsensä ulkopuolelta, joten
 käytännössä analyysin pohjana on suorittimen tila
 näytteenottohetkellä: erityisesti käskyosoittimen (/program counter/)
 sekä pinon sisällöt @@du(3), @@dunlavey(4).
-# todo edellisellä rivillä here here
 
 Pelkän käskyosoittimen käyttöä suorituskykyanalyysin perustana on
 kritisoitu @@dunlavey, @@ammons. Käskyosoitinnäytteiden avulla saadaan
 kyllä selville, missä ohjelman osassa suoritin viettää eniten
 aikaa. Näin on kuitenkin vaikea hahmottaa laajempaa
-suorituskontekstia, joka selittäisi mistä eniten suoritusaikaa
+suorituskontekstia, joka selittäisi, mistä eniten suoritusaikaa
 käyttävää aliohjelmaa on kutsuttu. Suorituskykypullonkaulojen syiden
 merkityksellisempi analyysi vaatii lähtökohdakseen oikean
-abstraktiotason. Käytännössä yhden yksittäisen kutsuja aiheuttavan
-kohdan muuttaminen korkeammalla kutsupinossa voi siirtää matalamman
-tason suorituskriittiset kohdat aivan muualle.
+abstraktiotason. 
+
 # dunlavey
 
 Tämän vuoksi käyttökelpoinen näytteenotto vaatii kutsupinon
@@ -464,7 +465,7 @@ Profilointityökaluissa aliohjelman suoritusaikaa kutsutaan usein
 /inklusiiviseksi/, jos siihen lasketaan mukaan myös aliohjelman
 kutsumien muiden aliohjelmien ajat @@android-tracing. Pelkkään
 käskyosoittimeen perustuva raaka suoritusaika on tässä tutkielmassa
-/eksklusiivinen/ suoritusaika, usein myös /self time/.
+/eksklusiivinen/ suoritusaika, jota usein kutsutaan nimellä /self time/.
 # gprof, oprofile, etc.
 
 Näytteenotto ei ole mittausmenetelmänä kytketty tarkalleen tiettyihin
@@ -472,12 +473,16 @@ ohjelmakohtiin.  Suorittimen keskeytyksen laukeamisen jälkeen ohjelman
 suoritus saattaa edetä joitakin konekäskyjä ennen näytteen ottamista
 @@perfwiki. Vaikka periaatteessa työkalut saattavat raportoida jopa
 yksittäisten konekäskyjen suhteelliset kustannukset, kannattaa näihin
-suhtautua pienellä varauksella. Korkealla kutsupinossa olevien
+suhtautua pienellä varauksella. Tällä epätarkkuudella ei ole käytännön
+vaikutusta, jos mittauksen kohteena on suurempien kokonaisuuksien kuten
+kokonaisten aliohjelmien inklusiiviset suoritusajat.
+
+Korkealla kutsupinossa olevien
 aliohjelmien inklusiiviisiin aikoihin tällä epätarkkuudella ei ole
 käytännön vaikutusta.
 #oprofile
 
-Käytän tutkielman mittauksiin lähinnä /perf/-työkalun
+Tutkielmassa mittauksiin käytetään lähinnä /perf/-työkalun
 näytteenottotekniikkaa, sillä siinä mittauskohteena on mahdollisimman
 paljon tuotantoversiota vastaava sovellus. Näytteenoton avulla ei
 kuitenkaan saada selville aliohjelmakutsujen /määriä/, jotka ovat yksi
@@ -524,7 +529,7 @@ tosiajan suhteen. Esimerkiksi monet yleisesti käytetyt Java-profilointityökalu
 kykenevät saamaan näytteitä ainoastaan ohjelman ns. luovutuskohdista
 (/yield point/), eivät mistä tahansa suorituskohdasta @@java-acc(193).
 
-Tutkielman mittauksissa näytteenotto tapahtuu aina kun ARM-suorittimen
+Tutkielman mittauksissa näytteenotto tapahtuu aina, kun ARM-suorittimen
 kellosyklejä on tapahtunut ennalta valittu määrä (tapahtuma /cycle
 count/ @@cortex(3-86)). Tietokoneen suorittimen kellotaajuus (syklien
 määrä sekunnissa) ei kuitenkaan tyypillisesti ole vakio, vaan mukautuu
@@ -584,7 +589,7 @@ ja koordinoinnista esimerkiksi fyysisesti hajautetuissa prosesseissa
 
 Tässä tutkielmassa keskitytään kuitenkin sovelluksiin, joissa
 suoritetaan laskentaa /paikallisesti/ yksittäisessä
-mobiilaitteessa. Kun osaa sovelluksesta suoritetaan virtuaalikoneen
+mobiililaitteessa. Kun osaa sovelluksesta suoritetaan virtuaalikoneen
 välityksellä ja toista konekielisenä suoraan prosessorissa, näiden
 osien sijoittelu ja niiden välinen kommunikaatio on kuitenkin edelleen
 oleellinen suorituskykytekijä.
@@ -603,6 +608,8 @@ suhteessa vaatimuksiin.
 # development
 # + use case
 \newpage
+# todo selvennä 4+1 vihavaiselle alla
+
 Mallit voivat perustua esimerkiksi 4+1-arkkitehtuurimallien kehikkoon
 @@4plus1 ja UML-malleihin täydennettynä suorituskykyyn liittyvillä
 laajennuksilla. Toisaalta UML-mallit ja monet ohjelmistoprosessissa
@@ -611,8 +618,8 @@ halutaan /analysoida/ ohjelmiston ei-funktionaalisia ominaisuuksia,
 kuten suorituskykyä, käytetään usein kvantitatiiviseen analyysiin
 paremmin sopivia malleja @@rethink(2--3). On tärkeää, että mallin ja
 lopullisen ohjelmiston välillä säilyy yhteys, jotta todellisessa
-käytössä tehdyt mittaukset voivat korjata mallien oletuksia kun
-ohjelmistoa kehitetään inkrementaalisesti ja evoluutiivisesti
+käytössä tehdyt mittaukset voivat korjata mallien oletuksia, kun
+ohjelmistoa kehitetään jatkuvasti vähittäisin muutoksin
 @@rethink(3).
 
 Varhaisvaiheen suorituskykymallit sijoittuvat kolmeen päätyyppiin
@@ -634,11 +641,21 @@ Ohjelmistojen suorituskykytekniikan metodeissa käytetään usein
 jonotusmalleja (/Queing Network Models/). Ne soveltuvat
 rinnakkaislaskentaa hyödyntäviin tilanteisiin, joissa esimerkiksi
 yksittäisen palvelimen resursseista kilpailee monta asiakasta
-@@spe(227--228). Tämän tutkielman keskiössä ovat kuitenkin
-suhteellisen pienen mittakaavan Android-sovellukset. Vaikka Android on
+@@spe(227--228).
+
+Tämän tutkielman keskiössä ovat kuitenkin suhteellisen pienen
+mittakaavan Android-sovellukset. Vaikka Android on
 moniajokäyttöjärjestelmä, se on tyypillisesti yhden käyttäjän käytössä
-kerrallaan, ja optimitilanteessa käyttöjärjestelmä rajoittaa
-samanaikaisesti suoritettavien prosessien määrää.
+kerrallaan. Tässä tutkielmassa tehdäänkin yksinkertaistava oletus,
+etteivät muut käynnissä olevat prosessit oleellisesti vaikuta
+mitattavan prosessin JNI-operaatioiden suorituskykyyn. Lisäksi, koska
+jokaisella prosessilla on oma Dalvik-virtuaalikoneensa, ei
+jonotusmalli ole luonteva tapa hahmottaa samanaikaistenkaan prosessien
+toimintaa virtuaalikoneen tasolla. Käytännön mittauksissa
+Android-laitteeseen ei ole asennettu ylimääräisiä sovelluksia ja
+muiden prosessien toiminta tulkitaan satunnaisiksi mittaushäiriöiksi,
+jotka huomioidaan tilastollisesti.
+
 
 Simulaatiomallit ovat /suoritettavia/ malleja järjestelmästä, usein
 karkeammalla tasolla kuin lopullinen järjestelmä.
@@ -677,13 +694,14 @@ JNI-operaatioiden käyttäytymistä vaihtelevilla syöteparametreilla.
 #Myös simulaatiomalleja hyödynnetään rajatusti, sillä
 #Android-ohjelmia suoritetaan 
 
-Tutkielman hypoteesi on, että Java- ja C-kieliä yhdistävän sovelluksen
-erilaiset arkkitehtuuriratkaisut johtavat erilaisiin suoritusaikoihin,
-vaikka sovellukset suorittaisivat saman tehtävän.  Tutkielma rajataan
-sovelluksiin, joiden suoritusaikaa määrittää oleellisesti sovelluksen
-prosessointi keskusyksikössä sekä keskusmuistihaut, eivät esimerkiksi
-I/O-operaatiot @@ferrari(168). Tällöin analyysin kohteeksi tuleekin,
-/mihin/ Android-sovellus kuluttaa suoritusaikansa.  Tätä mallinnetaan
+Tutkielman hypoteesi on, että erilaiset arkkitehtuuriratkaisut johtavat
+erilaisiin suoritusaikoihin sovelluksissa, jotka on toteutettu Java- ja
+C-kieliä yhdistämällä, vaikka sovellukset suorittaisivat saman
+tehtävän. Tutkielma rajataan sovelluksiin, joiden suoritusaikaa
+määrittää oleellisesti sovelluksen prosessointi keskusyksikössä sekä
+keskusmuistihaut, eivät esimerkiksi I/O-operaatiot
+@@ferrari(168). Tällöin analyysin kohteeksi tuleekin, /mihin/
+Android-sovellus kuluttaa suoritusaikansa.  Tätä mallinnetaan
 Markov-ketjuilla.
 # todo tarkista että em. pitää paikkansa lopulta
 # todo onko tämä nyt se keskeinen hypoteesi? ehkä mutta tsekkaa lopuksi
@@ -694,7 +712,7 @@ Markov-ketjuilla.
    :CUSTOM_ID: Markov
    :END:
 
-Hyödynnän Beizerin @@beizer esittelemää yksinkertaista Markov-mallia
+Hyödynnän Beizerin @@beizer esittelemää yksinkertaista Markov-mallia,
 jolla ohjelman kokonaisvasteajan saa laskettua sen osien
 suoritusajoista @@ferrari. Mallinnustavan etuna on yksinkertaisuuden
 lisäksi se, että mittaustuloksina saatavat vasteaikojen jakautumat voi
@@ -709,7 +727,7 @@ vastaavat hetkellisiä diskreettejä suoritustiloja, ja solmujen väliset
 /kaaret/ vastaavat siirtymiä tilasta toiseen sekä myös laskentaa joka
 siirtymässä tapahtuu. Yhdestä tilasta voi lähteä ja siihen voi saapua
 monta kaarta, ja kaariin kytketyt todennäköisyydet ilmaisevat
-todennäköisyyttä että kyseinen siirtymä tapahtuu.
+todennäköisyyttä, että kyseinen siirtymä tapahtuu.
 
 \begin{figure}[h!]
 \centerline{
@@ -733,7 +751,7 @@ tutkielmassa on parametrisoida mallin vasteaika-arvot JNI-rajapintaan
 kohdistuvilla työkuormilla.
 
 Ohjelmiston kokonaisvasteaika ratkaistaan Beizerin mallinnustavassa
-algortimilla, joka eliminoi verkosta yhden solmun
+algoritmilla, joka eliminoi verkosta yhden solmun
 kerrallaan. Algoritmissa on eri yhtälöt /sarjaan/ ja /rinnan/
 kytkettyjen solmujen sekä /silmukoiden/ poistoon @@beizer(521--522).
 

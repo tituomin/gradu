@@ -6,7 +6,19 @@ Gradu: duunit
 *** TODO poista minä-muodot
 
 *** TODO sivun 3 kaavio: lisää nimiavaruus
-*** 
+*** TODO id-tarkkuusaste tarkista vielä, onko selvä nyt
+*** TODO id-käyttötapaus mitä tarkoittaa
+**** ilmeisesti yleinen suoritustilanne?
+*** TODO sivu 9 vihavaisen kommentti mitä tarkoittaa
+*** TODO vihavainen sivu 13 selvennä/kysy miten erikoiseen
+    sivunumerointiin pitäisi suhtautua
+*** TODO sivu 15 overflow
+*** TODO tarkenna perf-työkalun käyttöä s. 16
+*** TODO ss. 18 4+1 pitäisi avata tai poistaa
+
+
+
+
 
 * Koodi
 ** generator
