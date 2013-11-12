@@ -15,6 +15,15 @@ Gradu: duunit
 *** TODO sivu 15 overflow
 *** TODO tarkenna perf-työkalun käyttöä s. 16
 *** TODO ss. 18 4+1 pitäisi avata tai poistaa
+*** TODO s. 23, 4.1.2 pitää kirjoittaa uudelleen
+**** esimerkkejä, ym.
+*** TODO yleishuomio: esittele ensin JNI, sitten
+    vasta toteutushuomiot? 
+*** TODO s. 25 mitä tarkoittaa ARM-kysymysmerkki?
+*** TODO korjaa sivun 27 esimerkki
+*** TODO overflowt (s.27)
+*** TODO esimerkit s.28
+*** TODO tarkista tavutus vasteajoissa s. 29
 
 
 
