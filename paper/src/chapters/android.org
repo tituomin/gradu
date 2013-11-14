@@ -28,7 +28,7 @@ abstraktissa virtuaalikoneessa eikä suoraan laitteistotason natiiville
 konekielelle käännettynä, kuten C- ja C++-kieliä.
 
 Natiivirajapinnan käyttö C++-kielellä ei oleellisesti eroa sen
-käytöstä C-kielellä eikä suorituskykyeroa tapausten välillä ole sillä
+käytöstä C-kielellä eikä suorituskykyeroa tapausten välillä ole, sillä
 molemmat käyttävät täsmälleen samaa virtuaalikoneen JNI-toteutusta
 @@jnibook(106). Tutkielmassa käsitellään rajapinnan C-kielistä
 versiota.
