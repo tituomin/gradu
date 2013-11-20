@@ -1,11 +1,7 @@
 
 Kaikki Android-järjestelmään asennettavat tavalliset sovellukset
 suoritetaan omassa prosessissaan Dalvik-virtuaalikoneessa, vaikka ne
-sisältäisivätkin natiivikomponentteja. Jos sovelluksen ohjelmoisi
-esimerkiksi C-kielellä komentoriviltä käynnistettäväksi ohjelmaksi ja
-kääntäisi osaksi itse Android-käyttöjärjestelmää, tällainen sovellus
-jäisi Androidin normaalien julkaisukäytäntöjen ulkopuolelle ja siten
-käyttäjien ulottumattomiin.
+sisältäisivätkin natiivikomponentteja.
 
 Tehtyjen tutkimusten mukaan @@benchmark-ndk @@kicheol-bad
 @@eval-android-ndk natiivikomponenttien käytöstä joskus todella on
