@@ -1,13 +1,12 @@
 
 Kaikki Android-järjestelmään asennettavat tavalliset sovellukset
 suoritetaan omassa prosessissaan Dalvik-virtuaalikoneessa, vaikka ne
-sisältäisivätkin natiivikomponentteja.
-
-Tehtyjen tutkimusten mukaan @@benchmark-ndk @@kicheol-bad
-@@eval-android-ndk natiivikomponenttien käytöstä joskus todella on
-suorituskykyetua: korkean tason kielenä Javan suoritusmekanismi johtaa
-yleisrasitteisiin verrattuna suoraan konekielellä suoritettavaan
-ohjelmaan. Kuinka siis korkean tason kielestä on mahdollista siirtyä
+sisältäisivätkin natiivikomponentteja.  Tehtyjen tutkimusten mukaan
+@@benchmark-ndk @@kicheol-bad @@eval-android-ndk natiivikomponenttien
+käytöstä joskus todella on suorituskykyetua: koska Java-ohjelmaa
+suoritetaan välikielelle käännettynä virtuaalikoneessa, seuraa tästä
+yleisrasitteita verrattuna suoraan konekielellä suoritettavaan
+ohjelmaan.  Kuinka siis korkean tason kielestä on mahdollista siirtyä
 suorittamaan konekielistä ohjelmaa?
 # todo tähän kerää kaikki mittaukset aiheesta
 
@@ -16,23 +15,16 @@ suorittamaan konekielistä ohjelmaa?
 jonka kautta korkean tason ohjelmointikielestä käsin voidaan kutsua
 matalamman tason kielellä ohjelmoituja aliohjelmia @@jeannie. Java
 Native Interface on tällaisen vieraskutsurajapinnan spesifikaatio
-@@jnibook. Sen avulla Java-ohjelma voi kutsua C- tai C++-kielellä
-toteutettuja natiiveja aliohjelmia ja vastaavasti natiiviohjelma voi
-kutsua Java-ohjelman metodeita ja käyttää sen tietorakenteita. Java
-on korkean tason kieli, sillä Java-ohjelmia suoritetaan välikielen muodossa
-abstraktissa virtuaalikoneessa eikä suoraan laitteistotason natiiville
-konekielelle käännettynä, kuten C- ja C++-kieliä.
+@@jnibook. Sovellusohjelmoijan näkökulmasta Java-ohjelma voi JNI:n
+avulla kutsua C- tai C++-kielellä toteutettuja natiiveja aliohjelmia
+ja vastaavasti natiiviohjelma voi kutsua Java-ohjelman metodeita ja
+käyttää sen tietorakenteita.
 
-Natiivirajapinnan käyttö C++-kielellä ei oleellisesti eroa sen
-käytöstä C-kielellä eikä suorituskykyeroa tapausten välillä ole, sillä
-molemmat käyttävät täsmälleen samaa virtuaalikoneen JNI-toteutusta
-@@jnibook(106). Tutkielmassa käsitellään rajapinnan C-kielistä
-versiota.
-
-Vieraskutsurajapinnan on aina huolehdittava kielten erilaisten
-kutsukäytäntöjen yhteensovittamisesta sekä kutsuparametrien ja
-palautusarvojen muuntamisesta lähdekielen tyypeistä kohdekielen
-hyödynnettävissä olevaan muotoon ja päin vastoin.
+Suoritustason näkökulmasta vieraskutsurajapinnan toteutus huolehtii
+kielten erilaisten kutsukäytäntöjen yhteensovittamisesta sekä
+kutsuparametrien ja palautusarvojen muuntamisesta lähdekielen
+tyypeistä kohdekielen hyödynnettävissä olevaan muotoon ja päin
+vastoin.
 
 # todo: mainitse java-c-spesifit tehtävät vielä toisessa listassa
 \begin{figure}[h!]
@@ -50,6 +42,12 @@ merkkijonojen ja taulukoiden käsittelyyn natiiviohjelmassa JNI tarjoaa
 omat apufunktionsa.
 # lähteet jeannie ja reppy
 # vaihtoehdot jni:lle androidissa?
+
+Natiivirajapinnan käyttö C++-kielellä ei oleellisesti eroa sen
+käytöstä C-kielellä eikä suorituskykyeroa tapausten välillä ole, sillä
+molemmat käyttävät täsmälleen samaa virtuaalikoneen JNI-toteutusta
+@@jnibook(106). Tutkielmassa käsitellään rajapinnan C-kielistä
+versiota.
 
 ** Natiivirajapinnan suunnitteluperiaatteet
 Javan natiivirajapinnan suunnittelussa on tavoiteltu tasapainoa kahden
