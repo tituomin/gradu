@@ -11,10 +11,10 @@ Linux-käyttö\-jär\-jes\-tel\-mä\-y\-ti\-mes\-tä. Siinä on mukana
 joitakin mobiililaitteille räätälöityjä ominaisuuksia, jotka
 esimerkiksi vähentävät muistin- ja virrankulutusta @@embedded(49--53).
 
-Kokonaisuutena Android ei muistuta tyypillistä Linux-pohjais\-ta
-työpöytä- tai palvelinkäyttöjärjestelmää @@embedded(48). Se on
-läheisempää sukua riisutummille /upotetuille/ Linux-järjestelmille,
-mutta eroaa niistäkin. Ensinnäkin merkittävä osa sovelluksista ja koko
+Android ei muistuta tyypillistä Linux-pohjais\-ta työpöytä- tai
+palvelinkäyttöjärjestelmää @@embedded(48). Se on läheisempää sukua
+riisutummille /upotetuille/ Linux-järjestelmille, mutta eroaa
+niistäkin. Ensinnäkin merkittävä osa sovelluksista ja koko
 järjestelmästä on ohjelmoitu Javalla ja suoritetaan
 virtuaalikoneessa. Järjestelmän rakenne ei muutenkaan noudata
 esimerkiksi POSIX-standardia vaan perustuu hajautettuun
