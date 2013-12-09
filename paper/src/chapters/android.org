@@ -43,11 +43,6 @@ omat apufunktionsa.
 # lähteet jeannie ja reppy
 # vaihtoehdot jni:lle androidissa?
 
-Natiivirajapinnan käyttö C++-kielellä ei oleellisesti eroa sen
-käytöstä C-kielellä eikä suorituskykyeroa tapausten välillä ole, sillä
-molemmat käyttävät täsmälleen samaa virtuaalikoneen JNI-toteutusta
-@@jnibook(106). Tutkielmassa käsitellään rajapinnan C-kielistä
-versiota.
 
 ** Natiivirajapinta sovellusohjelmoijan näkökulmasta
 # todo tuo otsikko huono
@@ -59,17 +54,56 @@ joka kutsuu silloin tällöin /natiivikirjaston/ tarjoamia palveluita
 tason kielellä ja sovellukseen /upotetaan/ Java-virtuaalikone, jonka
 avulla sovellus voi suorittaa Java-kielisiä ohjelmia.
 
-Android-sovellukset ovat aina lähtökohtaisesti Java-kielellä
-toteutettuja, joten ainoastaan ensimmäinen integraatiomekanismi on
-käytettävissä sovellusohjelmoijalle. Käytännössä nativiikirjasto
-otetaan Java-sovelluksen käyttöön seuraavasti.
-# lähde embedded
+Android-sovellukset ovat lähtökohtaisesti Java-kielellä toteutettuja,
+joten ainoastaan ensimmäinen integraatiomekanismi on käytettävissä
+sovellusohjelmoijalle. Natiivikomponentit toteutetaan siis
+dynaamisesti linkitettävinä kirjastoina, jotka Dalvik-virtuaalikone
+lataa Java-ohjelman käyttöön.
 
-Natiiivimetodi esitellään Java-kielessä luokan sisällä, kuten
-tavallista, mutta metodin määreeksi lisätään varattu sana
+/Java-kieli/ tarjoaa /Java-ohjelmoijalle/
+- varatun sanan ~native~, jolla voi esitellä /natiivimetodeja/
+  antamatta niille toteutusta sekä
+- järjestelmäkutsun ~System.loadLibrary~, jolla ladataan
+  natiivikirjasto, joka sisältää natiivimetodien toteutukset.
+
+Näitä mekanismeja käytettyään ohjelmoija voi kutsua natiivimetodeja
+aivan kuin tavallisiakin metodeja. Natiivimetodien parametrien ja
+paluuarvojen tyyppeinä on käytettävä Java-tyyppejä. C-funktioita
+edustavat natiivimetodit ovat siis natiivikoodin /ainoita/
+vastinpareja Java-ohjelmassa -- vaikkapa C-kielen tietueita tai
+C++-kielen olioita ei voi käsitellä Java-kielellä.
+
+/C-ohjelmoijalle/ Java- ja Dalvik- virtuaalikone sen sijaan tarjoaa
+rajapinnan, jonka funktioiden avulla C-ohjelmoija voi monipuolisesti
+käsitellä Java-ohjelman tietorakenteita pääsemättä kuitenkaan suoraan
+käsiksi näiden rakenteiden sisäiseen toteutukseen tai virtuaalikoneen
+hallitsemille muistialueille. Rajapinta myös määrittelee, mitä
+C-kielen primitiivityyppejä Javan primitiivityypit vastavaat, joten
+Javan primitiivityypejä voi C-kielessä käsitellä suoraan.
+
+Lisäksi merkittävä osa JNI-rajapinnan toteutuksesta koostuu
+erilaisista viitteiden ja nimien hallintaan liittyvistä
+apufunktioista, joita tarvitaan kielten erilaisten
+suoritusympäristöjen yhteensovittamiseksi.
+
+Natiivirajapinnan käyttö C++-kielellä ei oleellisesti eroa sen
+käytöstä C-kielellä eikä suorituskykyeroa tapausten välillä ole, sillä
+molemmat käyttävät täsmälleen samaa virtuaalikoneen JNI-toteutusta
+@@jnibook(106). Tutkielmassa käsitellään rajapinnan C-kielistä
+versiota.
+
+# todo here
+
+** Natiivirajapinnan käyttöönotto
+
+Käytännössä nativiikirjasto otetaan Java-sovelluksen käyttöön
+seuraavasti. Natiiivimetodi esitellään Java-kielessä luokan sisällä,
+kuten tavallista, mutta metodin määreeksi lisätään varattu sana
 ~native~. Esittely riittää, eikä metodille anneta toteutusta
 Java-luokan sisällä. Seuraava esimerkki kuvaa tilannetta
 @@jnibook(13).
+# lähde embedded
+
 
 #+begin_src java -n -r
 class HelloWorld {
@@ -394,12 +428,9 @@ eksplisiittisesti kutsuttavan lopetusmetodin.
 # todo: onko finalize  tarpeen joskus?
 # todo: edustaolio vs. peer object
 
-JNI ei tarjoa automaattista tukea edustaluokkien
-tekemiseen natiivitietorakenteille, vaan ohjelmoijan on itse
-määriteltävä sidonnat Java-luokan metodeihin -- aliohjelma eli
-natiivimetodi on siis natiivikomponentin ainoa ilmentymä
-Java-ohjelmassa.
-
+JNI ei tarjoa automaattista tukea edustaluokkien tekemiseen
+natiivitietorakenteille, vaan ohjelmoijan on itse määriteltävä
+sidonnat Java-luokan metodeihin.
 # todo määrittele tarkemmin
 # huom, vielä ei ole määritelty natiivimetodia
 
