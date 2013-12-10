@@ -60,7 +60,7 @@ sovellusohjelmoijalle. Natiivikomponentit toteutetaan siis
 dynaamisesti linkitettävinä kirjastoina, jotka Dalvik-virtuaalikone
 lataa Java-ohjelman käyttöön.
 
-/Java-kieli/ tarjoaa /Java-ohjelmoijalle/
+/Java-kieli/ tarjoaa ohjelmoijalle
 - varatun sanan ~native~, jolla voi esitellä /natiivimetodeja/
   antamatta niille toteutusta sekä
 - järjestelmäkutsun ~System.loadLibrary~, jolla ladataan
@@ -73,13 +73,13 @@ edustavat natiivimetodit ovat siis natiivikoodin /ainoita/
 vastinpareja Java-ohjelmassa -- vaikkapa C-kielen tietueita tai
 C++-kielen olioita ei voi käsitellä Java-kielellä.
 
-/C-ohjelmoijalle/ Java- ja Dalvik- virtuaalikone sen sijaan tarjoaa
+/C-ohjelmoijalle/ Java-virtuaalikone -- sekä Dalvik -- tarjoaa laajan
 rajapinnan, jonka funktioiden avulla C-ohjelmoija voi monipuolisesti
 käsitellä Java-ohjelman tietorakenteita pääsemättä kuitenkaan suoraan
 käsiksi näiden rakenteiden sisäiseen toteutukseen tai virtuaalikoneen
 hallitsemille muistialueille. Rajapinta myös määrittelee, mitä
 C-kielen primitiivityyppejä Javan primitiivityypit vastavaat, joten
-Javan primitiivityypejä voi C-kielessä käsitellä suoraan.
+Javan primitiivityyppisiä arvoja voi C-kielessä käsitellä suoraan.
 
 Lisäksi merkittävä osa JNI-rajapinnan toteutuksesta koostuu
 erilaisista viitteiden ja nimien hallintaan liittyvistä
@@ -116,8 +116,8 @@ class HelloWorld {
     }
 }
 #+end_src
-Natiivin metodin ~print~ (esittely rivillä [[(nativedecl)]]) toteutus on
-osa kirjastoa, joka on ladattava erillisellä ~System.loadLibrary~
+Natiivin metodin ~print~ (rivi [[(nativedecl)]]) toteutus kuuluu
+kirjastoon, joka on ladattava erillisellä ~System.loadLibrary~
 -kutsulla (rivi [[(loadlib)]]). Tässä lataaminen tapahtuu /staattisessa
 alustuslohkossa/ luokan ~HelloWorld~ lataamisen yhteydessä.
 # todo ennen vai yhteydessä
@@ -127,25 +127,29 @@ luokkamäärittelyn perusteella C-otsaketiedoston, joka sisältää
 natiivimetodia vastaavan C-kielisen funktion esittelyn. Tästä
 huolehtii komento ~javah -jni HelloWorld~, joka ottaa syötteekseen
 luokkatiedoston. Natiivimetodia ~print~ vastaavan funktion esittely
-otsaketiedostossa näyttää seuraavalta.
+näyttää C-kielessä seuraavalta.
 
 #+begin_src c 
 JNIEXPORT void JNICALL
 Java_HelloWorld_print (JNIEnv *, jobject, jint);
 #+end_src
 # jnienv: kuva sivulta 23 jnibook
-Ensimmäinen, ~JNIEnv~ -tyyppinen parametri on mukana kaikissa
-natiivimetodeissa. Se osoittaa natiivirajapinnan suorituskontekstia
-edustavaan tietueeseen, jonka funktio-osoittimien kautta
-natiivirajapinnan palveluita kutsutaan. Tyyppi ~jobject~ on epäsuora
-viite ~HelloWorld~-olioon -- tässä tapauksessa kyseessä on
-ilmentymämetodi, joka saattaa käyttää ilmentymän
-palveluita. Luokkametodin tapauksessa natiivifunktio saisi vastaavasti
-luokkaa edustavan ~jclass~-tyyppisen parametrin. Loput funktion
-parametreista noudattavat natiivimetodille määriteltyjä
-kutsuparametreja: ~jint~ vastaa Javan primitiivityyppiä ~int~.
-~JNIEXPORT~- ja ~JNICALL~ -makrot määrittävät natiivimetoditoteutusten
-sekä JNI-funktioiden kutsu- ja linkityskäytännöt @@jnibook(170).
+Funktiomäärityksen ~JNIEXPORT~- ja ~JNICALL~ -makrot piilottavat
+natiivimetoditoteutusten kutsu- ja linkityskäytäntöjen mahdolliset
+yksityiskohdat @@jnibook(170).
+
+Funktion kutsuparametreista ensimmäinen, ~JNIEnv~ -tyyppinen parametri
+kuuluu kaikkiin natiivimetodeihin. Se on osoitin virtuaalikoneen
+suorituskontekstia edustavaan tietueeseen, joka myös sisältää
+natiivirajapinnan kaikki palvelut funktio-osoittimien muodossa.
+
+Koska ~print~ on ilmentymämetodi, on seuraavan parametrin, tyyppi
+~jobject~. Parametri vastaa Java-kielen ilmentymämetodien
+implisiittistä ~this~-viitettä luokan kulloiseenkin ilmentymään.
+Luokkametodin tapauksessa natiivifunktio saisi vastaavasti luokkaa
+edustavan ~jclass~-tyyppisen parametrin. Loput funktion parametreista
+ovat vastinpareja natiivimetodille määritellyille parametreille:
+~jint~ vastaa Javan primitiivityyppiä ~int~.
 
 Lopuksi natiivifunktiolle on vielä kirjoitettava toteutus C- tai
 C++-kielellä ja käännettävä se osaksi dynaamisesti ladattavaa
