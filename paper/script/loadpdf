@@ -1,0 +1,12 @@
+#!/bin/bash
+PDF_PATH=/home/tituomin/u1/gradu/fulltext
+BIB_PATH=/home/tituomin/gradu/paper/bib
+FILE=`bibtool -q -X ".*$1" $BIB_PATH/main.bib | egrep file | egrep -o '\{ *.*\ *}' | tr -d '{}'`
+
+if [ -f $PDF_PATH/$FILE ];
+then
+    evince "$PDF_PATH/$FILE";
+else
+    echo "Source not found $1: $PDF_PATH/$FILE"
+fi
+
