@@ -1,7 +1,7 @@
 
 Kaikki Android-järjestelmään asennettavat tavalliset sovellukset
 suoritetaan omassa prosessissaan Dalvik-virtuaalikoneessa, vaikka ne
-sisältäisivätkin natiivikomponentteja.  Tehtyjen tutkimusten mukaan
+sisältäisivätkin natiivikomponentteja.  Tutkimusten mukaan
 @@benchmark-ndk @@kicheol-bad @@eval-android-ndk natiivikomponenttien
 käytöstä joskus todella on suorituskykyetua: koska Java-ohjelmaa
 suoritetaan välikielelle käännettynä virtuaalikoneessa, seuraa tästä
@@ -9,56 +9,55 @@ yleisrasitteita verrattuna suoraan konekielellä suoritettavaan
 ohjelmaan.  Kuinka siis korkean tason kielestä on mahdollista siirtyä
 suorittamaan konekielistä ohjelmaa?
 # todo tähän kerää kaikki mittaukset aiheesta
+# lisäksi luokittele rasitteiden syyt
 
 * Java Native Interface ja vieraskutsurajapinnat
 /Vieraskutsurajapinta/ (/Foreign Function Interface/) on rajapinta,
 jonka kautta korkean tason ohjelmointikielestä käsin voidaan kutsua
-matalamman tason kielellä ohjelmoituja aliohjelmia @@jeannie. Java
-Native Interface on tällaisen vieraskutsurajapinnan spesifikaatio
-@@jnibook. Sovellusohjelmoijan näkökulmasta Java-ohjelma voi JNI:n
-avulla kutsua C- tai C++-kielellä toteutettuja natiiveja aliohjelmia
-ja vastaavasti natiiviohjelma voi kutsua Java-ohjelman metodeita ja
-käyttää sen tietorakenteita.
+matalan tason kielellä ohjelmoituja aliohjelmia @@jeannie. Java Native
+Interface on tällaisen vieraskutsurajapinnan spesifikaatio @@jnibook.
 
-Suoritustason näkökulmasta vieraskutsurajapinnan toteutus huolehtii
-kielten erilaisten kutsukäytäntöjen yhteensovittamisesta sekä
-kutsuparametrien ja palautusarvojen muuntamisesta lähdekielen
-tyypeistä kohdekielen hyödynnettävissä olevaan muotoon ja päin
-vastoin.
+Minimaalisin mahdollinen vieraskutsurajapinta mahdollistaa matalan
+tason aliohjelmien kutsumisen ja mekanismin, jolla korkeamman tason
+datan esitysmuodot voidaan muuttaa matalamman tason esitysmuotoihin ja
+päinvastoin @@reppy(49). JNI tarjoaa lisäksi takaisinkutsumekanismin,
+jonka avulla natiiviohjelmasta voi kutsua Java-ohjelman metodeja ja
+myös käsitellä Java-ohjelman dataa @@jnibook(41).
 
-# todo: mainitse java-c-spesifit tehtävät vielä toisessa listassa
-\begin{figure}[h!]
-\centerline{
+\begin{figure}[h!]  \centerline{
 \includegraphics[scale=1]{figures/jni_basic.pdf}
-}\caption{Natiivirajapinnan asema \cite[s. 5]{jnibook}}\label{fig:jnibasic}
+}\caption{Natiivirajapinnan asema
+\cite[s. 5]{jnibook}}\label{fig:jnibasic}
 \end{figure}
 
-JNI:n integraatiomekanismit ovat kahdensuuntaisia (kuva
-\ref{fig:jnibasic}): se tarjoaa natiiviohjelmoijalle myös
-takaisinkutsurajapinnan, jonka avulla natiiviohjelmasta voi kutsua
-Java-ohjelman metodeita ja lukea Javan tietorakenteita, esimerkiksi
-olioiden kenttiä. Ei-primitiivisten tietorakenteiden kuten
-merkkijonojen ja taulukoiden käsittelyyn natiiviohjelmassa JNI tarjoaa
-omat apufunktionsa.
-# lähteet jeannie ja reppy
-# vaihtoehdot jni:lle androidissa?
-
-
-** Natiivirajapinta sovellusohjelmoijan näkökulmasta
-# todo tuo otsikko huono
-Javan natiivirajapinta tukee kahdenlaista integraatiota
-natiivikomponentin ja virtuaalikoneen välillä. Ensimmäisessä
-vaihtoehdossa suorituksen kontrolli on Java-kielisellä sovelluksella,
-joka kutsuu silloin tällöin /natiivikirjaston/ tarjoamia palveluita
-@@jnibook(5). Toisessa vaihtoehdossa pääsovellus toteutetaan matalan
-tason kielellä ja sovellukseen /upotetaan/ Java-virtuaalikone, jonka
-avulla sovellus voi suorittaa Java-kielisiä ohjelmia.
+Kuva \ref{fig:jnibasic} antaa kokonaiskäsityksen JNI:n
+roolista. Sovelluksen kokonaisarkkitehtuurin kannalta Javan
+natiivirajapinta tukee kahdenlaista integraatiota natiivikomponentin
+ja virtuaalikoneen välillä. Ensimmäisessä vaihtoehdossa suorituksen
+kontrolli on Java-kielisellä sovelluksella, joka kutsuu ajoittain
+/natiivikirjaston/ tarjoamia palveluita @@jnibook(5). Toisessa
+vaihtoehdossa pääsovellus toteutetaan matalan tason kielellä ja
+sovellukseen /upotetaan/ Java-virtuaalikone, jonka avulla sovellus voi
+suorittaa Java-kielisiä ohjelmia.
 
 Android-sovellukset ovat lähtökohtaisesti Java-kielellä toteutettuja,
 joten ainoastaan ensimmäinen integraatiomekanismi on käytettävissä
 sovellusohjelmoijalle. Natiivikomponentit toteutetaan siis
-dynaamisesti linkitettävinä kirjastoina, jotka Dalvik-virtuaalikone
+/dynaamisesti linkitettävinä kirjastoina/, jotka Dalvik-virtuaalikone
 lataa Java-ohjelman käyttöön.
+
+# todo: mainitse java-c-spesifit tehtävät vielä toisessa listassa
+
+# lähteet jeannie ja reppy
+# vaihtoehdot jni:lle androidissa?
+
+
+* Natiivirajapinta sovellusohjelmoijan näkökulmasta
+# todo tuo otsikko huono
+
+Java-sovellus voi JNI:n avulla kutsua C- tai C++-kielellä toteutettuja
+natiiveja aliohjelmia ja vastaavasti natiiviohjelma voi kutsua
+Java-ohjelman metodeita ja käyttää sen tietorakenteita. 
 
 /Java-kieli/ tarjoaa ohjelmoijalle
 - varatun sanan ~native~, jolla voi esitellä /natiivimetodeja/
@@ -67,7 +66,7 @@ lataa Java-ohjelman käyttöön.
   natiivikirjasto, joka sisältää natiivimetodien toteutukset.
 
 Näitä mekanismeja käytettyään ohjelmoija voi kutsua natiivimetodeja
-aivan kuin tavallisiakin metodeja. Natiivimetodien parametrien ja
+aivan kuten tavallisiakin metodeja. Natiivimetodien parametrien ja
 paluuarvojen tyyppeinä on käytettävä Java-tyyppejä. C-funktioita
 edustavat natiivimetodit ovat siis natiivikoodin /ainoita/
 vastinpareja Java-ohjelmassa -- vaikkapa C-kielen tietueita tai
@@ -76,15 +75,15 @@ C++-kielen olioita ei voi käsitellä Java-kielellä.
 /C-ohjelmoijalle/ Java-virtuaalikone -- sekä Dalvik -- tarjoaa laajan
 rajapinnan, jonka funktioiden avulla C-ohjelmoija voi monipuolisesti
 käsitellä Java-ohjelman tietorakenteita pääsemättä kuitenkaan suoraan
-käsiksi näiden rakenteiden sisäiseen toteutukseen tai virtuaalikoneen
-hallitsemille muistialueille. Rajapinta myös määrittelee, mitä
-C-kielen primitiivityyppejä Javan primitiivityypit vastavaat, joten
-Javan primitiivityyppisiä arvoja voi C-kielessä käsitellä suoraan.
+käsiksi näiden rakenteiden sisäiseen toteutukseen tai käsittelemään
+suoraan virtuaalikoneen hallitsemia muistialueita. Rajapinta myös
+määrittelee, mitä C-kielen primitiivityyppejä Javan primitiivityypit
+vastavaat, joten Javan primitiivityyppisiä arvoja voi C-kielessä
+käsitellä suoraan.
 
-Lisäksi merkittävä osa JNI-rajapinnan toteutuksesta koostuu
-erilaisista viitteiden ja nimien hallintaan liittyvistä
-apufunktioista, joita tarvitaan kielten erilaisten
-suoritusympäristöjen yhteensovittamiseksi.
+Lisäksi merkittävä osa JNI-rajapinnasta koostuu erilaisista viitteiden
+ja nimien hallintaan liittyvistä apufunktioista, joita tarvitaan
+kielten erilaisten suoritusympäristöjen yhteensovittamiseksi.
 
 Natiivirajapinnan käyttö C++-kielellä ei oleellisesti eroa sen
 käytöstä C-kielellä eikä suorituskykyeroa tapausten välillä ole, sillä
@@ -94,7 +93,7 @@ versiota.
 
 # todo here
 
-** Natiivirajapinnan käyttöönotto
+** Natiivimetodin luonti
 
 Käytännössä nativiikirjasto otetaan Java-sovelluksen käyttöön
 seuraavasti. Natiiivimetodi esitellään Java-kielessä luokan sisällä,
@@ -136,7 +135,13 @@ Java_HelloWorld_print (JNIEnv *, jobject, jint);
 # jnienv: kuva sivulta 23 jnibook
 Funktiomäärityksen ~JNIEXPORT~- ja ~JNICALL~ -makrot piilottavat
 natiivimetoditoteutusten kutsu- ja linkityskäytäntöjen mahdolliset
-yksityiskohdat @@jnibook(170).
+yksityiskohdat @@jnibook(170). Automaattisesti generoitu metodinimi
+~Java_HelloWorld_print~ takaa, että virtuaalikone osaa kytkeä
+toteutuksen ~HelloWorld~-luokan ~print~-natiivimetodiin. Jos tätä
+automaattista nimeämiskäytäntöä ei halua noudattaa, voi
+natiivimetodeita rekisteröidä joustavammin ja ajonaikaisesti
+rajapinnan tarjoamalla ~RegisterNatives~-funktiolla
+@@jnibook(101--102).
 
 Funktion kutsuparametreista ensimmäinen, ~JNIEnv~ -tyyppinen parametri
 kuuluu kaikkiin natiivimetodeihin. Se on osoitin virtuaalikoneen
@@ -161,13 +166,14 @@ rakennusmääritysten mukaisesti Androidin Native Development Kit
 -työkalut yhdellä komentorivikäskyllä ~ndk-build~. Lopputulos on
 Java-ohjelma, joka voi kutsua natiivimetodia aivan kuten tavallista
 Java-metodia.
+
 # todo käännös ristiinkääntäminen? parempi käännös?
-# todo: lisää tähän c++-eroavaisuudet
-# todo: mainitse Android.mk?
+# todo: lisää tähän c++-eroavaisuudet # todo: mainitse Android.mk?
 # todo: mainitse jni.h, ym.
 
-Seuraavaksi esitellään oleelliset tietotyypit ja palvelut, joihin
-JNI-ohjelmointi perustuu.
+Natiivimetodin esittelyn lisäksi kaikki varsinainen JNI-ohjelmointi
+tapahtuu natiivikielen puolella. Seuraavaksi esitellään oleelliset
+tietotyypit ja palvelut, joiden avulla nativiimetodit totetutetaan.
 
 ** Tietotyypit
 Javan primitiivityypit kuvautuvat suoraviivaisesti C- ja
@@ -190,31 +196,37 @@ C++-tyypeille seuraavan taulukon mukaisesti @@jnibook(166).
 
 C-kieliset tyyppinimet ovat peräisin
 ~jni.h~-otsaketiedostosta. Primitiiviparametrien arvot välitetään
-natiivirajapinnan yli kopioimalla, mihin siihenkin liittyy omat
-rasitteensa kielten erilaisten kutsukäytäntöjen takia.
+natiivirajapinnan yli kopioimalla.
 
 # todo selvennä mitä kutsukäytännöt tarkoittavat
 
-Viitetyyppiset parametrit sitä vastoin välitetään kopioimalla epäsuora
-viite tyyppiä ~jobject~. Sitä käsitellään natiivikomponentissa aina
-JNI:n apufunktioiden avulla. C-kielessä ~jobject~-tyypille on
-tyyppimäärittelyillä annettu joukko aliaksia, joten käytännössä
-yleisimmille Java-tyypeille on omat tyyppinimensä C-ohjelmassa:
-luokkatyypille, merkkijonotyypille, erityyppisille taulukoille sekä
-~Throwable~ -tyypille. C++-natiivikoodia varten JNI määrittelee myös
-näiden tyyppien keskinäiset perintäsuhteet käännösaikaista
-tyyppitarkistusta varten.
+Viitetyyppiset parametrit sitä vastoin välitetään kopioimalla
+~jobject~-tyyppinen osoitinparametri. Se ei osoita suoraan
+virtuaalikoneen oliotietorakenteeseen, vaan oliota edustavaan
+tietorakenteeseen joka on osa JNI:n toteteutusta. Kaikkia
+JNI-viitetyyppejä käsitellään natiivikomponentissa aina JNI:n
+apufunktioiden avulla, jotka ottavat viitteen parametrinaan --
+osoitinta ei koskaan suoraan ~dereferencata~ sovelluksessa.
+
+# todo dereference suomeksi
+
+C-kielessä ~jobject~-tyypille on tyyppimäärittelyillä annettu joukko
+aliaksia, joten käytännössä yleisimmille Java-tyypeille on omat
+tyyppinimensä C-ohjelmassa: luokkatyypille, merkkijonotyypille,
+erityyppisille taulukoille sekä ~Throwable~
+-tyypille. C++-natiivikoodia varten JNI määrittelee myös näiden
+tyyppien keskinäiset perintäsuhteet käännösaikaista tyyppitarkistusta
+varten.
 
 # todo selvennä perintäsuhteet
 
 ** Oliot ja luokat
 # todo: selitä itse tekstissä että metodi on ainoa java->c-integraatio-
 # menetelmä
-Yksittäistä mielivaltaisen tyyppistä Java-oliota käsitellään
-samankaltaisesti kuin perustietorakenteita. Olion kenttiä käsitellään
-ja metodeja kutsutaan tavalla, joka muistuttaa epäsuoruudessaan
-Java-kielen reflektiorajapintaa. Esimerkiksi olion instanssimetodin
-kutsuminen vaatii seuraavat vaiheet.
+Olioiden ja luokkien kenttien käsittely ja metodien kutsuminen
+muistuttaa epäsuoruudessaan Java-kielen
+reflektiorajapintaa. Esimerkiksi olion ilmentymämetodin kutsuminen
+vaatii seuraavat vaiheet.
 
 Aluksi haetaan viite olion luokkaan funktiolla ~GetObjectClass~:
 #+begin_src c
@@ -224,20 +236,29 @@ jclass GetObjectClass(JNIEnv *env, jobject obj);
 Sitten hateaan luokasta metodin tunniste metodin nimen ja tyypin
 perusteella funktiolla ~GetMethodId~:
 #+begin_src c
-jmethodID GetMethodID(JNIEnv *env, jclass clazz,
-                      const char *name, const char *sig);
+jmethodID GetMethodID(JNIEnv *env, jclass clazz, const char
+                            *name, const char *sig);
 #+end_src
 
 Lopuksi metodia on vielä kutsuttava olioviitteen ja metoditunnisteen
-perusteella funktiolla ~Call<Type>Method~. Edellä
-tyyppiparametrit ~<NativeType>~ ja ~<Type>~ eivät liity geneeriseen
-C++-ohjelmointiin, funktiosta todella on oma versionsa
-jokaiselle JNI:ssä määritellylle Java-tyypille.
+perusteella funktiolla ~Call[JAVATYPE]Method~, josta valitaan metodin
+paluuarvon mukainen versio.
 
 #+begin_src c
-<NativeType> Call<Type>Method(JNIEnv *env, jobject obj,
-                              jmethodID methodID, ...);
+[CTYPE] Call[JAVATYPE]Method(JNIEnv *env, jobject obj, jmethodID
+methodID, ...);
 #+end_src
+
+Edellä ~[JAVATYPE]~ korvataan Javan tyyppinimellä, joten esimerkiksi
+kokonaislukuversio funktiosta on nimeltään ~CallIntMethod~. ~[CTYPE]~
+korvataan edellä kuvatulla vastaavalla C-kielisellä tyypillä, joten
+kokonaisluvun tapauksessa kutsuttava funktio näyttää seuraavalta.
+
+#+begin_src c
+jint CallIntMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...);
+#+end_src
+
+# todo kokonaiskoodi (ei declaraatiot)
 
 Vastaava prosessi vaaditaan oliokenttien läpikäymiseen.  On selvää,
 että metodin tai kentän etsiminen symbolisen nimen ja
@@ -247,12 +268,12 @@ säilyttämään metodien ja kenttien tunnisteet natiivimuuttujissa, mikä
 ihanteellisesti tapahtuu luokan latauksen yhteydessä.
 
 Alkuperäisessä natiivirajapinnan spesifikaatiossa arvioidaan, että
-tunnisteiden tallentamisesta huolimatta natiivi--Java
--takaisinkutsurajapinnan käyttäminen on tyypillisissä toteutuksissa
-hitaampaa kuin natiivimetodien kutsuminen juuri funktiokutsujen
-epäsuoruuden takia ja siksi, ettei tätä käyttötapausta yleensä ole
-optimoitu @@jnibook(58). Dalvikin tapauksessa todelliset
-suorituskykytulokset tulevat nähtäväksi mittausten myötä.
+tunnisteiden tallentamisesta huolimatta takaisinkutsurajapinnan
+käyttäminen on tyypillisissä toteutuksissa hitaampaa kuin
+natiivimetodien kutsuminen Javasta juuri funktiokutsujen epäsuoruuden
+takia ja siksi, ettei tätä käyttötapausta yleensä ole optimoitu
+@@jnibook(58). Dalvikin tapauksessa todelliset suorituskykytulokset
+tulevat nähtäväksi mittausten myötä.
 
 ** Merkkijonot ja taulukot
 Ohjelmointityössä ehkä yleisimpien tietotyyppien, merkkijonojen ja
@@ -367,6 +388,13 @@ paikallisten viitteiden edellyttämät muistivaraukset käytössä hyvinkin
 pitkään, ellei viitteitä erikseen vapauteta.
 
 ** Natiivirajapinnan suunnitteluperiaatteet
+
+# Natiivilla suoritustasolla virtuaalikoneen vieraskutsurajapinnan
+# toteutus huolehtii kielten mahdollisesti erilaisten kutsukäytäntöjen
+# yhteensovittamisesta sekä kutsuparametrien ja palautusarvojen
+# muuntamisesta lähdekielen tyypeistä kohdekielen hyödynnettävissä
+# olevaan muotoon ja päin vastoin.
+
 Javan natiivirajapinnan suunnittelussa on tavoiteltu tasapainoa kahden
 keskenään ristiriitaisen vaatimuksen kanssa
 @@jnibook(145--146). Toinen on /binääriyhteensopivuus/: saman
