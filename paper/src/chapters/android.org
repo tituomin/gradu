@@ -25,7 +25,7 @@ jonka avulla natiiviohjelmasta voi kutsua Java-ohjelman metodeja ja
 myös käsitellä Java-ohjelman dataa @@jnibook(41).
 
 \begin{figure}[h!]  \centerline{
-\includegraphics[scale=1]{figures/jni_basic.pdf}
+\includegraphics[scale=1]{figures/jni-basic.pdf}
 }\caption{Natiivirajapinnan asema
 \cite[s. 5]{jnibook}}\label{fig:jnibasic}
 \end{figure}
@@ -72,14 +72,16 @@ edustavat natiivimetodit ovat siis natiivikoodin /ainoita/
 vastinpareja Java-ohjelmassa -- vaikkapa C-kielen tietueita tai
 C++-kielen olioita ei voi käsitellä Java-kielellä.
 
-/C-ohjelmoijalle/ Java-virtuaalikone -- sekä Dalvik -- tarjoaa laajan
-rajapinnan, jonka funktioiden avulla C-ohjelmoija voi monipuolisesti
-käsitellä Java-ohjelman tietorakenteita pääsemättä kuitenkaan suoraan
-käsiksi näiden rakenteiden sisäiseen toteutukseen tai käsittelemään
-suoraan virtuaalikoneen hallitsemia muistialueita. Rajapinta myös
-määrittelee, mitä C-kielen primitiivityyppejä Javan primitiivityypit
-vastavaat, joten Javan primitiivityyppisiä arvoja voi C-kielessä
-käsitellä suoraan.
+Käytännössä suurin osa JNI:n edellyttämästä integraatiokoodista
+toteutetaan siis matalan tason kielellä. /C-ohjelmoijalle/
+Java-virtuaalikone -- sekä Dalvik -- tarjoaa laajan rajapinnan, jonka
+funktioiden avulla C-ohjelmoija voi monipuolisesti käsitellä
+Java-ohjelman tietorakenteita pääsemättä kuitenkaan suoraan käsiksi
+näiden rakenteiden sisäiseen toteutukseen tai käsittelemään suoraan
+virtuaalikoneen hallitsemia muistialueita. Rajapinta myös määrittelee,
+mitä C-kielen primitiivityyppejä Javan primitiivityypit vastavaat,
+joten Javan primitiivityyppisiä arvoja voi C-kielessä käsitellä
+suoraan.
 
 Lisäksi merkittävä osa JNI-rajapinnasta koostuu erilaisista viitteiden
 ja nimien hallintaan liittyvistä apufunktioista, joita tarvitaan
@@ -115,10 +117,10 @@ class HelloWorld {
     }
 }
 #+end_src
-Natiivin metodin ~print~ (rivi [[(nativedecl)]]) toteutus kuuluu
-kirjastoon, joka on ladattava erillisellä ~System.loadLibrary~
--kutsulla (rivi [[(loadlib)]]). Tässä lataaminen tapahtuu /staattisessa
-alustuslohkossa/ luokan ~HelloWorld~ lataamisen yhteydessä.
+Natiivimetodin ~print~ (rivi [[(nativedecl)]]) toteutus kuuluu kirjastoon,
+joka on ladattava erillisellä ~System.loadLibrary~ -kutsulla (rivi
+[[(loadlib)]]). Tässä lataaminen tapahtuu /staattisessa alustuslohkossa/
+luokan ~HelloWorld~ lataamisen yhteydessä.
 # todo ennen vai yhteydessä
 
 Javan käännöstyökalut tulostavat natiivimetodeja sisältävän
@@ -138,15 +140,16 @@ natiivimetoditoteutusten kutsu- ja linkityskäytäntöjen mahdolliset
 yksityiskohdat @@jnibook(170). Automaattisesti generoitu metodinimi
 ~Java_HelloWorld_print~ takaa, että virtuaalikone osaa kytkeä
 toteutuksen ~HelloWorld~-luokan ~print~-natiivimetodiin. Jos tätä
-automaattista nimeämiskäytäntöä ei halua noudattaa, voi
-natiivimetodeita rekisteröidä joustavammin ja ajonaikaisesti
-rajapinnan tarjoamalla ~RegisterNatives~-funktiolla
+automaattista nimeämiskäytäntöä ei halua noudattaa, tai toteutuksia
+täytyy vaihtaa ajonaikaisesti, voi natiivimetodeita rekisteröidä
+joustavammin rajapinnan tarjoamalla ~RegisterNatives~-funktiolla
 @@jnibook(101--102).
 
-Funktion kutsuparametreista ensimmäinen, ~JNIEnv~ -tyyppinen parametri
-kuuluu kaikkiin natiivimetodeihin. Se on osoitin virtuaalikoneen
-suorituskontekstia edustavaan tietueeseen, joka myös sisältää
-natiivirajapinnan kaikki palvelut funktio-osoittimien muodossa.
+Funktion ~print~ kutsuparametreista ensimmäinen, ~JNIEnv~ -tyyppinen
+parametri välitetään kaikkiin natiivimetodeihin. Se on osoitin
+virtuaalikoneen suorituskontekstia edustavaan tietueeseen, joka myös
+sisältää natiivirajapinnan kaikki palvelut funktio-osoittimien
+muodossa.
 
 Koska ~print~ on ilmentymämetodi, on seuraavan parametrin, tyyppi
 ~jobject~. Parametri vastaa Java-kielen ilmentymämetodien
@@ -162,7 +165,7 @@ kirjastoa. Androidin tapauksessa tämä käännösvaihe edellyttää
 /ristiinkääntämistä/ (/cross compiling/), koska kohdelaitteiston
 ARM-suoritin ja suoritusympäristö eroavat kehitysympäristön
 vastaavista. Käännösvaiheesta yksityiskohtineen huolehtivat
-rakennusmääritysten mukaisesti Androidin Native Development Kit
+rakennusskriptien mukaisesti Androidin Native Development Kit
 -työkalut yhdellä komentorivikäskyllä ~ndk-build~. Lopputulos on
 Java-ohjelma, joka voi kutsua natiivimetodia aivan kuten tavallista
 Java-metodia.
@@ -202,21 +205,24 @@ natiivirajapinnan yli kopioimalla.
 
 Viitetyyppiset parametrit sitä vastoin välitetään kopioimalla
 ~jobject~-tyyppinen osoitinparametri. Se ei osoita suoraan
-virtuaalikoneen oliotietorakenteeseen, vaan oliota edustavaan
-tietorakenteeseen joka on osa JNI:n toteteutusta. Kaikkia
+virtuaalikoneen oliotietorakenteeseen, vaan oliota /edustavaan/,
+JNI-toteutuksen hallitsemaan tietorakenteeseen. Kaikkia
 JNI-viitetyyppejä käsitellään natiivikomponentissa aina JNI:n
-apufunktioiden avulla, jotka ottavat viitteen parametrinaan --
-osoitinta ei koskaan suoraan ~dereferencata~ sovelluksessa.
+apufunktioiden avulla, jotka ottavat tällaisen epäsuoran viitteen
+parametrinaan -- osoitinta ei koskaan suoraan ~dereferencata~
+sovelluksessa.
 
 # todo dereference suomeksi
 
 C-kielessä ~jobject~-tyypille on tyyppimäärittelyillä annettu joukko
 aliaksia, joten käytännössä yleisimmille Java-tyypeille on omat
 tyyppinimensä C-ohjelmassa: luokkatyypille, merkkijonotyypille,
-erityyppisille taulukoille sekä ~Throwable~
--tyypille. C++-natiivikoodia varten JNI määrittelee myös näiden
-tyyppien keskinäiset perintäsuhteet käännösaikaista tyyppitarkistusta
-varten.
+erityyppisille taulukoille sekä ~Throwable~ -tyypille.
+
+#C++-natiivikoodia varten JNI määrittelee myös näiden tyyppien
+# keskinäiset perintäsuhteet käännösaikaista tyyppitarkistusta varten.
+
+#todo yllä takaisin?
 
 # todo selvennä perintäsuhteet
 
@@ -240,14 +246,15 @@ jmethodID GetMethodID(JNIEnv *env, jclass clazz, const char
                             *name, const char *sig);
 #+end_src
 
-Lopuksi metodia on vielä kutsuttava olioviitteen ja metoditunnisteen
-perusteella funktiolla ~Call[JAVATYPE]Method~, josta valitaan metodin
-paluuarvon mukainen versio.
+\newcommand{\parm}{\mathord{\color{black!33}\bullet}}
 
-#+begin_src c
-[CTYPE] Call[JAVATYPE]Method(JNIEnv *env, jobject obj, jmethodID
-methodID, ...);
-#+end_src
+Lopuksi metodia on vielä kutsuttava olioviitteen ja metoditunnisteen
+perusteella funktiolla \verb|Call|\bullet\verb|Method|, josta valitaan
+metodin paluuarvon tyypin \bullet mukainen versio.
+
+# todo here
+
+SYMBOLHERE \verb|Call|\bullet\verb|Method(JNIEnv *env, jobject obj, jmethodID methodID, ...);|
 
 Edellä ~[JAVATYPE]~ korvataan Javan tyyppinimellä, joten esimerkiksi
 kokonaislukuversio funktiosta on nimeltään ~CallIntMethod~. ~[CTYPE]~
@@ -387,7 +394,7 @@ natiivikomponenttiin, joten kyseinen metodikutsu saattaa pitää
 paikallisten viitteiden edellyttämät muistivaraukset käytössä hyvinkin
 pitkään, ellei viitteitä erikseen vapauteta.
 
-** Natiivirajapinnan suunnitteluperiaatteet
+* Natiivirajapinnan suunnitteluperiaatteet
 
 # Natiivilla suoritustasolla virtuaalikoneen vieraskutsurajapinnan
 # toteutus huolehtii kielten mahdollisesti erilaisten kutsukäytäntöjen
