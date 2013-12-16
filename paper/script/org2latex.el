@@ -6,6 +6,12 @@
 (require 'org-latex)
 (unless (boundp 'org-export-latex-classes)
   (setq org-export-latex-classes nil))
+(setq org-export-latex-listings t)
+(setq org-export-latex-listings-options
+      '(("basicstyle" "\\scriptsize\\ttfamily")
+        ("aboveskip" "1em")
+        ("numbers" "left")
+        ("numberstyle" "\\tiny\\color\{gray\}")))
 
 (add-to-list
  'org-export-latex-classes
@@ -13,7 +19,10 @@
 "\\documentclass[finnish]{tktltiki}
 \\usepackage[finnish]{babel}
 \\usepackage{chngcntr}
+\\usepackage{xcolor}
+\\usepackage{listings}
 \\counterwithin{figure}{section}
+\\counterwithin{table}{section}
 \\level{Pro gradu -tutkielmasuunnitelma}"
 ("\\section{%s}" . "\\section*{%s}")
 ("\\subsection{%s}" . "\\subsection*{%s}")
