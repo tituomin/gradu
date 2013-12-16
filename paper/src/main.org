@@ -18,7 +18,7 @@
 * Suorituskyky ohjelmistokehityksessä
 #+INCLUDE: "../gen/chapters/performance.org" :minlevel 1
 * Java-natiivirajapinta
-#+INCLUDE: "../gen/chapters/android.org" :minlevel 1
+#+INCLUDE: "../gen/chapters/jni.org" :minlevel 1
 
 #+LATEX: \newpage
 #+LATEX: \bibliographystyle{templates/tktl}
