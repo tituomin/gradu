@@ -51,6 +51,47 @@ lataa Java-ohjelman käyttöön.
 # lähteet jeannie ja reppy
 # vaihtoehdot jni:lle androidissa?
 
+* Natiivirajapinnan suunnitteluperiaatteet
+
+# Natiivilla suoritustasolla virtuaalikoneen vieraskutsurajapinnan
+# toteutus huolehtii kielten mahdollisesti erilaisten kutsukäytäntöjen
+# yhteensovittamisesta sekä kutsuparametrien ja palautusarvojen
+# muuntamisesta lähdekielen tyypeistä kohdekielen hyödynnettävissä
+# olevaan muotoon ja päin vastoin.
+
+Javan natiivirajapinnan suunnittelussa on tavoiteltu tasapainoa kahden
+keskenään ristiriitaisen vaatimuksen kanssa
+@@jnibook(145--146). Toinen on /binääriyhteensopivuus/: saman
+binäärimuotoisen natiivikirjaston tulee toimia eri virtuaalikoneiden
+kanssa ilman uudelleenkääntämistä.  Tämän vuoksi JNI ei voi tehdä
+mitään oletuksia virtuaalikoneen sisäisestä toteutuksesta. Periaate on
+tärkeä ennen kaikkea siksi, että virtuaalikoneen on aina kyettävä
+järjestämään uudelleen omia tietorakenteitaan esimerkiksi
+automaattisen muistinhallinnan, JIT-kääntämisen ja erilaisten
+optimointien toteuttamiseksi. JNI:tä edeltänyt varhainen Javan
+natiivirajapintatoteutus oli suoraviivaisempi ja asettikin rajoituksia
+virtuaalikoneen roskienkeruualgoritmeille @@jnibook(8).
+
+Yhteensopivuuden vaatimus on ristiriidassa toisen keskeisen
+vaatimuksen, /hyvän suorituskyvyn/ kanssa. Yhteensopivuus on
+mahdollista saavuttaa ainoastaan piilottamalla natiiviohjelman pääsy
+virtuaalikoneen tietorakenteisiin abstraktin rajapinnan taakse. Sen
+sijaan, että C-kieliselle natiiviohjelmalle välitettäisiin esimerkiksi
+suoraan osoitin Java-taulukon toteutukseen, natiiviohjelma lukee
+taulukon alkioita aina natiivirajapinnan apufunktioiden
+kautta. Yksinkertaisen taulukkotietorakenteenkin käsittely
+natiivikoodissa edellyttää siis pahimmillaan useita epäsuoria kutsuja
+JNI:n tarjoaman rajapinnan kautta.
+
+Yhdessä suhteessa Javan natiivirajapinta ei ole toteutusriippumaton:
+se ei kykene estämään synkronointiongelmia tilanteessa, jossa
+virtuaalikone ja natiivikomponentti käyttävät eri säietoteutuksia
+@@jnibook(97--98). Onnistunut rajapinnan ylittävä säikeiden
+koordinointi edellyttääkin, että virtuaalikoneen säikeet käyttävät
+perustanaan natiivialustan säikeitä. Dalvikin tapauksessa näin onkin
+@@jnitips; kannattaa huomata, että natiivimetodit suoritetaan aina
+virtuaalikoneen prosessissa ja säikeessä, joka natiivikutsun suorittaa.
+# todo tarkista vielä lähteestä
 
 * Natiivirajapinta sovellusohjelmoijan näkökulmasta
 # todo tuo otsikko huono
@@ -393,50 +434,7 @@ kutsuhan voi siirtää ohjelman suorituksen pitkäksikin aikaa syvälle
 natiivikomponenttiin, joten kyseinen metodikutsu saattaa pitää
 paikallisten viitteiden edellyttämät muistivaraukset käytössä hyvinkin
 pitkään, ellei viitteitä erikseen vapauteta.
-
-* Natiivirajapinnan suunnitteluperiaatteet
-
-# Natiivilla suoritustasolla virtuaalikoneen vieraskutsurajapinnan
-# toteutus huolehtii kielten mahdollisesti erilaisten kutsukäytäntöjen
-# yhteensovittamisesta sekä kutsuparametrien ja palautusarvojen
-# muuntamisesta lähdekielen tyypeistä kohdekielen hyödynnettävissä
-# olevaan muotoon ja päin vastoin.
-
-Javan natiivirajapinnan suunnittelussa on tavoiteltu tasapainoa kahden
-keskenään ristiriitaisen vaatimuksen kanssa
-@@jnibook(145--146). Toinen on /binääriyhteensopivuus/: saman
-binäärimuotoisen natiivikirjaston tulee toimia eri virtuaalikoneiden
-kanssa ilman uudelleenkääntämistä.  Tämän vuoksi JNI ei voi tehdä
-mitään oletuksia virtuaalikoneen sisäisestä toteutuksesta. Periaate on
-tärkeä ennen kaikkea siksi, että virtuaalikoneen on aina kyettävä
-järjestämään uudelleen omia tietorakenteitaan esimerkiksi
-automaattisen muistinhallinnan, JIT-kääntämisen ja erilaisten
-optimointien toteuttamiseksi. JNI:tä edeltänyt varhainen Javan
-natiivirajapintatoteutus oli suoraviivaisempi ja asettikin rajoituksia
-virtuaalikoneen roskienkeruualgoritmeille @@jnibook(8).
-
-Yhteensopivuuden vaatimus on ristiriidassa toisen keskeisen
-vaatimuksen, /hyvän suorituskyvyn/ kanssa. Yhteensopivuus on
-mahdollista saavuttaa ainoastaan piilottamalla natiiviohjelman pääsy
-virtuaalikoneen tietorakenteisiin abstraktin rajapinnan taakse. Sen
-sijaan, että C-kieliselle natiiviohjelmalle välitettäisiin esimerkiksi
-suoraan osoitin Java-taulukon toteutukseen, natiiviohjelma lukee
-taulukon alkioita aina natiivirajapinnan apufunktioiden
-kautta. Yksinkertaisen taulukkotietorakenteenkin käsittely
-natiivikoodissa edellyttää siis pahimmillaan useita epäsuoria kutsuja
-JNI:n tarjoaman rajapinnan kautta.
-
-Yhdessä suhteessa Javan natiivirajapinta ei ole toteutusriippumaton:
-se ei kykene estämään synkronointiongelmia tilanteessa, jossa
-virtuaalikone ja natiivikomponentti käyttävät eri säietoteutuksia
-@@jnibook(97--98). Onnistunut rajapinnan ylittävä säikeiden
-koordinointi edellyttääkin, että virtuaalikoneen säikeet käyttävät
-perustanaan natiivialustan säikeitä. Dalvikin tapauksessa näin onkin
-@@jnitips; kannattaa huomata, että natiivimetodit suoritetaan aina
-virtuaalikoneen prosessissa ja säikeessä, joka natiivikutsun suorittaa.
-# todo tarkista vielä lähteestä
-
-** Muistinhallinta natiiviohjelmoinnissa
+* Muistinhallinta natiiviohjelmoinnissa
 Yhteensopivuuden takaaminen edellyttää osapuolten erilaisten
 muistinhallintamenetelmien yhteensovittamista. Java-komponentti
 hyödyntää virtuaalikoneen automaattista roskienkeruuta, kun taas
@@ -493,7 +491,7 @@ Seuraavaksi käyn yksityiskohtaisemmin läpi, miten natiivirajapinnan
 palveluita käytetään ja kommentoin alustavasti palveluiden mahdollisia
 kustannuksia.
 
-** Natiivirajapinnan suorituskykyrasitteista
+* Natiivirajapinnan suorituskykyrasitteista
 Ennakoimme, että natiivirajapinnan ylittäminen voi aiheuttaa
 ylimääräisiä suorituskykyrasitteita aivan tavallisissa
 laskentatehtävissä kuten merkkijonojen ja taulukoiden käsittelyssä,
