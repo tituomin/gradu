@@ -417,47 +417,6 @@ virtuaalikoneeseen voi pyytää osoittimen. Sen sijaan olioalkioita
 sisältäviä taulukoita ei voi käsitellä kokonaisuuksina
 natiivipuolelta, vaan JNI sallii pääsyn vain yksittäiseen alkioon
 kerrallaan palauttaen siihen ~jobject~ -tyyppisen viitteen.
-
-** Viitteiden hallinta ja olioiden elinkaari
-Erityistapauksissa natiiviohjelmoinnin muistinhallinta edellyttää
-natiiviohjelman sisältämien erityyppisten Java-viitteiden
-eksplisiittistä hallintaa. Natiivirajapinta tarjoaa
-natiivikomponentille kolmentyyppisiä viitteitä virtuaalikoneen
-olioihin: /paikallisia viitteitä/, /globaaleja viitteitä/ ja /heikkoja
-globaaleja viitteitä/ (/local references/, /global references/, /weak
-global references/).
-
-Kuten mainittu, JNI:n palauttamat suorat osoittimet virtuaalikoneen
-merkkijonoihin ja taulukoihin tulee aina eksplisiittisesti myös
-vapauttaa, jotta niiden virtuaalikoneessa käyttämät muistialueet
-voidaan vapauttaa. Oletuksena kaikki muut olioviitteet, jotka JNI antaa
-natiiviohjelman käyttöön, ovat paikallisia viitteitä: niitä ei
-/yleensä/ tarvitse manuaalisesti vapauttaa, sillä niiden elinkaari on
-automaattisesti sidottu natiivimetodin kutsun alkamiseen ja
-päättymiseen @@jnibook(62). Niiden käyttö ei ole
-säieturvallista. Globaalit viitteet on eksplisiittisesti luotava
-~NewGlobalRef~ -kutsulla; ne estävät olion roskienkeruun ja
-mahdollistavat olioihin viittaamisen yli eri natiivimetodien kutsujen
-myös eri säikeistä.
-
-JNI:n ohjelmoijalta edellyttämä eksplisiittinen viitteidenhallinta ja
-virtuaalikoneen varaamasta muistista huolehtiminen tarkoittaa, että
-ohjelmoija on vastuussa muistinkäytön tehokkuudesta ja muistivuotojen
-välttämisestä. Erilaisilla viitteidenhallintastrategioilla on
-potentiaalisesti myös erilaisia rasitteita, jotka näkyvät
-vaste\-ajoissa. Virtuaalikoneen suorittama roskienkeruukin on osa
-ohjelman suoritusaikaa, ja käytetyt viitetyypit vaikuttavat siihen,
-milloin roskienkeruuta voidaan suorittaa.
-
-Paikalliset viitteet eivät vaadi roskienkeruuta, mutta sisältävät
-nekin omat rasitteensa. JNI-spesifikaatio tarjoaa niiden
-eksplisiittiseen hallintaan funktioparin ~PushLocalFrame~ ja
-~PopLocalFrame~, joita väitetään tehokkaaksi tavaksi hallita lokaaleja
-viitteitä useampi viite kerrallaan @@jnibook(68). Yhden natiivimetodin
-kutsuhan voi siirtää ohjelman suorituksen pitkäksikin aikaa syvälle
-natiivikomponenttiin, joten kyseinen metodikutsu saattaa pitää
-paikallisten viitteiden edellyttämät muistivaraukset käytössä hyvinkin
-pitkään, ellei viitteitä erikseen vapauteta.
 * Muistinhallinta natiiviohjelmoinnissa
 Yhteensopivuuden takaaminen edellyttää osapuolten erilaisten
 muistinhallintamenetelmien yhteensovittamista. Java-komponentti
@@ -511,9 +470,46 @@ suorituskykyrasitteita, mitä kysymystä tutkimme myöhemmässä vaiheessa.
 
 # entäs threadit?
 
-Seuraavaksi käyn yksityiskohtaisemmin läpi, miten natiivirajapinnan
-palveluita käytetään ja kommentoin alustavasti palveluiden mahdollisia
-kustannuksia.
+** Viitteiden hallinta ja olioiden elinkaari
+Erityistapauksissa natiiviohjelmoinnin muistinhallinta edellyttää
+natiiviohjelman sisältämien erityyppisten Java-viitteiden
+eksplisiittistä hallintaa. Natiivirajapinta tarjoaa
+natiivikomponentille kolmentyyppisiä viitteitä virtuaalikoneen
+olioihin: /paikallisia viitteitä/, /globaaleja viitteitä/ ja /heikkoja
+globaaleja viitteitä/ (/local references/, /global references/, /weak
+global references/).
+
+Kuten mainittu, JNI:n palauttamat suorat osoittimet virtuaalikoneen
+merkkijonoihin ja taulukoihin tulee aina eksplisiittisesti myös
+vapauttaa, jotta niiden virtuaalikoneessa käyttämät muistialueet
+voidaan vapauttaa. Oletuksena kaikki muut olioviitteet, jotka JNI antaa
+natiiviohjelman käyttöön, ovat paikallisia viitteitä: niitä ei
+/yleensä/ tarvitse manuaalisesti vapauttaa, sillä niiden elinkaari on
+automaattisesti sidottu natiivimetodin kutsun alkamiseen ja
+päättymiseen @@jnibook(62). Niiden käyttö ei ole
+säieturvallista. Globaalit viitteet on eksplisiittisesti luotava
+~NewGlobalRef~ -kutsulla; ne estävät olion roskienkeruun ja
+mahdollistavat olioihin viittaamisen yli eri natiivimetodien kutsujen
+myös eri säikeistä.
+
+JNI:n ohjelmoijalta edellyttämä eksplisiittinen viitteidenhallinta ja
+virtuaalikoneen varaamasta muistista huolehtiminen tarkoittaa, että
+ohjelmoija on vastuussa muistinkäytön tehokkuudesta ja muistivuotojen
+välttämisestä. Erilaisilla viitteidenhallintastrategioilla on
+potentiaalisesti myös erilaisia rasitteita, jotka näkyvät
+vaste\-ajoissa. Virtuaalikoneen suorittama roskienkeruukin on osa
+ohjelman suoritusaikaa, ja käytetyt viitetyypit vaikuttavat siihen,
+milloin roskienkeruuta voidaan suorittaa.
+
+Paikalliset viitteet eivät vaadi roskienkeruuta, mutta sisältävät
+nekin omat rasitteensa. JNI-spesifikaatio tarjoaa niiden
+eksplisiittiseen hallintaan funktioparin ~PushLocalFrame~ ja
+~PopLocalFrame~, joita väitetään tehokkaaksi tavaksi hallita lokaaleja
+viitteitä useampi viite kerrallaan @@jnibook(68). Yhden natiivimetodin
+kutsuhan voi siirtää ohjelman suorituksen pitkäksikin aikaa syvälle
+natiivikomponenttiin, joten kyseinen metodikutsu saattaa pitää
+paikallisten viitteiden edellyttämät muistivaraukset käytössä hyvinkin
+pitkään, ellei viitteitä erikseen vapauteta.
 
 * Natiivirajapinnan suorituskykyrasitteista
 Ennakoimme, että natiivirajapinnan ylittäminen voi aiheuttaa
