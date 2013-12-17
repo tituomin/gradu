@@ -21,8 +21,8 @@ Minimaalisin mahdollinen vieraskutsurajapinta mahdollistaa matalan
 tason aliohjelmien kutsumisen ja mekanismin, jolla korkeamman tason
 datan esitysmuodot voidaan muuttaa matalamman tason esitysmuotoihin ja
 päinvastoin @@reppy(49). JNI tarjoaa lisäksi takaisinkutsumekanismin,
-jonka avulla natiiviohjelmasta voi kutsua Java-ohjelman metodeja ja
-myös käsitellä Java-ohjelman dataa @@jnibook(41).
+jonka avulla natiiviohjelmasta voi kutsua Java-ohjelman metodeja sekä
+käsitellä Java-ohjelman dataa @@jnibook(41).
 
 \begin{figure}[h!]  \centerline{
 \includegraphics[scale=1]{figures/jni-basic.pdf}
@@ -34,7 +34,7 @@ Kuva \ref{fig:jnibasic} antaa kokonaiskäsityksen JNI:n
 roolista. Sovelluksen kokonaisarkkitehtuurin kannalta Javan
 natiivirajapinta tukee kahdenlaista integraatiota natiivikomponentin
 ja virtuaalikoneen välillä. Ensimmäisessä vaihtoehdossa suorituksen
-kontrolli on Java-kielisellä sovelluksella, joka kutsuu ajoittain
+pääkontrolli on Java-kielisellä sovelluksella, joka kutsuu ajoittain
 /natiivikirjaston/ tarjoamia palveluita @@jnibook(5). Toisessa
 vaihtoehdossa pääsovellus toteutetaan matalan tason kielellä ja
 sovellukseen /upotetaan/ Java-virtuaalikone, jonka avulla sovellus voi
@@ -80,8 +80,8 @@ sijaan, että C-kieliselle natiiviohjelmalle välitettäisiin esimerkiksi
 suoraan osoitin Java-taulukon toteutukseen, natiiviohjelma lukee
 taulukon alkioita aina natiivirajapinnan apufunktioiden
 kautta. Yksinkertaisen taulukkotietorakenteenkin käsittely
-natiivikoodissa edellyttää siis pahimmillaan useita epäsuoria kutsuja
-JNI:n tarjoaman rajapinnan kautta.
+natiivikoodissa edellyttää siis useita kutsuja JNI:n tarjoaman
+rajapinnan kautta.
 
 Yhdessä suhteessa Javan natiivirajapinta ei ole toteutusriippumaton:
 se ei kykene estämään synkronointiongelmia tilanteessa, jossa
@@ -90,7 +90,10 @@ virtuaalikone ja natiivikomponentti käyttävät eri säietoteutuksia
 koordinointi edellyttääkin, että virtuaalikoneen säikeet käyttävät
 perustanaan natiivialustan säikeitä. Dalvikin tapauksessa näin onkin
 @@jnitips; kannattaa huomata, että natiivimetodit suoritetaan aina
-virtuaalikoneen prosessissa ja säikeessä, joka natiivikutsun suorittaa.
+samassa virtuaalikoneen prosessissa ja säikeessä, joka natiivikutsun
+suorittaa.
+
+
 # todo tarkista vielä lähteestä
 
 * Natiivirajapinta sovellusohjelmoijan näkökulmasta
@@ -139,52 +142,51 @@ versiota.
 ** Natiivimetodin luonti
 
 Käytännössä nativiikirjasto otetaan Java-sovelluksen käyttöön
-seuraavasti. Natiiivimetodi esitellään Java-kielessä luokan sisällä,
+seuraavasti. Natiivimetodi esitellään Java-kielessä luokan sisällä,
 kuten tavallista, mutta metodin määreeksi lisätään varattu sana
 ~native~. Esittely riittää, eikä metodille anneta toteutusta
 Java-luokan sisällä. Seuraava esimerkki kuvaa tilannetta
 @@jnibook(13).
 # lähde embedded
 
-
 #+begin_src java -r
-class HelloWorld {
-    private native void print(int num); (ref:nativedecl)
+class NativeExample {
+
+    private native void print(int num); (*@\ding{202}@*)
+
     public static void main(String[] args) {
-        new HelloWorld().print(5);
+        new NativeExample().print(5);
     }
-    public int sum(int a, int b) {
-        return a + b;
-    }
+
     static {
-        System.loadLibrary("HelloWorld"); (ref:loadlib)
+        System.loadLibrary("native_example"); (*@\ding{203}@*)
     }
 }
 #+end_src
 
-Natiivimetodin ~print~ (rivi [[(nativedecl)]]) toteutus kuuluu kirjastoon,
-joka on ladattava erillisellä ~System.loadLibrary~ -kutsulla (rivi
-[[(loadlib)]]). Tässä lataaminen tapahtuu /staattisessa alustuslohkossa/
-luokan ~HelloWorld~ lataamisen yhteydessä.
+Natiivimetodin ~print~ \ding{202} toteutus kuuluu kirjastoon
+~native_example~, joka on ladattava erillisellä ~System.loadLibrary~
+-kutsulla \ding{203}.  Tässä lataaminen tapahtuu /staattisessa
+alustuslohkossa/ luokan ~NativeExample~ lataamisen yhteydessä.
 # todo ennen vai yhteydessä
 
 Javan käännöstyökalut tulostavat natiivimetodeja sisältävän
 luokkamäärittelyn perusteella C-otsaketiedoston, joka sisältää
 natiivimetodia vastaavan C-kielisen funktion esittelyn. Tästä
-huolehtii komento ~javah -jni HelloWorld~, joka ottaa syötteekseen
+huolehtii komento ~javah -jni NativeExample~, joka ottaa syötteekseen
 luokkatiedoston. Natiivimetodia ~print~ vastaavan funktion esittely
 näyttää C-kielessä seuraavalta.
 
 #+begin_src c 
 JNIEXPORT void JNICALL
-Java_HelloWorld_print (JNIEnv *, jobject, jint);
+Java_NativeExample_print (JNIEnv *, jobject, jint);
 #+end_src
 # jnienv: kuva sivulta 23 jnibook
 Funktiomäärityksen ~JNIEXPORT~- ja ~JNICALL~ -makrot piilottavat
 natiivimetoditoteutusten kutsu- ja linkityskäytäntöjen mahdolliset
 yksityiskohdat @@jnibook(170). Automaattisesti generoitu metodinimi
-~Java_HelloWorld_print~ takaa, että virtuaalikone osaa kytkeä
-toteutuksen ~HelloWorld~-luokan ~print~-natiivimetodiin. Jos tätä
+~Java_NativeExample_print~ takaa, että virtuaalikone osaa kytkeä
+toteutuksen ~NativeExample~-luokan ~print~-natiivimetodiin. Jos tätä
 nimeämiskäytäntöä ei halua noudattaa, tai toteutuksia täytyy voida
 vaihtaa ajonaikaisesti, voi natiivimetodeita rekisteröidä joustavammin
 rajapinnan tarjoamalla ~RegisterNatives~-funktiolla
@@ -210,10 +212,9 @@ ladattavaa kirjastoa. Androidin tapauksessa tämä käännösvaihe
 edellyttää /ristiinkääntämistä/ (/cross compiling/), koska
 kohdelaitteiston ARM-suoritin ja suoritusympäristö eroavat
 kehitysympäristön vastaavista. Käännösvaiheesta yksityiskohtineen
-huolehtivat rakennusskriptien mukaisesti Androidin Native Development
-Kit -työkalut komentorivikäskyllä ~ndk-build~. Lopputulos on
-Java-ohjelma, joka voi kutsua natiivimetodia aivan kuten tavallista
-Java-metodia.
+Androidin Native Development Kit -rakennusskriptit komentorivikäskyllä
+~ndk-build~. Lopputulos on Java-ohjelma, joka voi kutsua
+natiivimetodia aivan kuten tavallista Java-metodia.
 
 # todo käännös ristiinkääntäminen? parempi käännös?
 # todo: lisää tähän c++-eroavaisuudet # todo: mainitse Android.mk?
@@ -290,11 +291,18 @@ Aluksi haetaan viite olion luokkaan funktiolla ~GetObjectClass~:
 jclass GetObjectClass(JNIEnv *env, jobject obj);
 #+end_src
 
-Sitten hateaan luokasta metodin tunniste metodin nimen ja tyypin
-perusteella funktiolla ~GetMethodId~:
+Sitten luokasta haetaan metodin tunniste metodin nimen ja tyypin
+perusteella funktiolla ~GetMethodId~. Metodin tyyppi on
+JVM-tyyppisyntaksia noudattava merkkijono. Esimerkiksi kokonaisluvun
+palauttavan ja kaksi merkkijonoa parametreinaan ottavan metodin
+tyyppimääritys on ~(Ljava/lang/StringLjava/lang/String])I~.
+# lähde
+
 #+begin_src c
-jmethodID GetMethodID(JNIEnv *env, jclass clazz, const char *name, const char *sig);
+jmethodID
+GetMethodID(JNIEnv *env, jclass clazz, const char *name, const char *sig);
 #+end_src
+
 
 Vasta lopuksi metodia varsinaisesti /kutsutaan/ funktiolla
 \verb|Call|\bullet\verb|Method|. Funktiosta on oma versionsa
@@ -310,15 +318,14 @@ jint CallIntMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...);
 
 # todo kokonaiskoodi (ei declaraatiot)
 Vastaava prosessi vaaditaan olion kenttien
-läpikäymiseen. Kokonaisuudessaan ~sum~-nimisen metodin
-kutsuminen voisi näyttää seuraavalta:
+läpikäymiseen. Kokonaisuudessaan ~sum~-nimisen Java-metodin kutsuminen
+natiivimetodista käsin voisi näyttää seuraavalta:
 
-\newpage
 #+begin_src c
 #include <jni.h>
-...
+
 JNIEXPORT void JNICALL
-Java_Helloworld_print (JNIENv *env, jobject receiver_object, jint num) {
+Java_CallBackExample_callsum (JNIEnv *env, jobject receiver_object, jint num) {
     jclass receiver_class = (*env)->GetObjectClass(env, receiver_object);
 
     jmethodID sum_method_id =
@@ -331,7 +338,6 @@ Java_Helloworld_print (JNIENv *env, jobject receiver_object, jint num) {
 }
 
 #+end_src
-
 
 On selvää, että metodin tai kentän etsiminen symbolisen nimen ja
 tyyppimäärityksen perusteella on raskas operaatio käytettäväksi
