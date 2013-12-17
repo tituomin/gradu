@@ -10,7 +10,13 @@
 (setq org-export-latex-listings-options
       '(("basicstyle" "\\scriptsize\\ttfamily")
         ("aboveskip" "1em")
-        ("numbers" "left")
+;        ("numbers" "left")
+        ("frame" "l")
+        ("xleftmargin" "3em")
+        ("framexleftmargin" "1em")
+        ("framerule" "2pt")
+        ("rulecolor" "\\color\{gray\}")
+        ("escapeinside" "{(*@}{@*)}")
         ("numberstyle" "\\tiny\\color\{gray\}")))
 
 (add-to-list
@@ -20,6 +26,7 @@
 \\usepackage[finnish]{babel}
 \\usepackage{chngcntr}
 \\usepackage{xcolor}
+\\usepackage{pifont}
 \\usepackage{listings}
 \\counterwithin{figure}{section}
 \\counterwithin{table}{section}
