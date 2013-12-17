@@ -708,9 +708,6 @@ Markov-ketjuilla.
 
 ** Vasteaikojen mallintaminen Markov-ketjuilla
 # <<Markov>>
-   :PROPERTIES:
-   :CUSTOM_ID: Markov
-   :END:
 
 Hyödynnän Beizerin @@beizer esittelemää yksinkertaista Markov-mallia,
 jolla ohjelman kokonaisvasteajan saa laskettua sen osien
