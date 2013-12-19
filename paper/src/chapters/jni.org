@@ -18,8 +18,8 @@ matalan tason kielellä ohjelmoituja aliohjelmia @@jeannie. Java Native
 Interface on tällaisen vieraskutsurajapinnan spesifikaatio @@jnibook.
 
 Minimaalisin mahdollinen vieraskutsurajapinta mahdollistaa matalan
-tason aliohjelmien kutsumisen ja mekanismin, jolla korkeamman tason
-datan esitysmuodot voidaan muuttaa matalamman tason esitysmuotoihin ja
+tason aliohjelmien kutsumisen ja mekanismin, jolla korkean tason datan
+esitysmuodot voidaan muuttaa matalan tason esitysmuotoihin ja
 päinvastoin @@reppy(49). JNI tarjoaa lisäksi takaisinkutsumekanismin,
 jonka avulla natiiviohjelmasta voi kutsua Java-ohjelman metodeja sekä
 käsitellä Java-ohjelman dataa @@jnibook(41).
@@ -74,14 +74,15 @@ virtuaalikoneen roskienkeruualgoritmeille @@jnibook(8).
 
 Yhteensopivuuden vaatimus on ristiriidassa toisen keskeisen
 vaatimuksen, /hyvän suorituskyvyn/ kanssa. Yhteensopivuus on
-mahdollista saavuttaa ainoastaan piilottamalla natiiviohjelman pääsy
-virtuaalikoneen tietorakenteisiin abstraktin rajapinnan taakse. Sen
-sijaan, että C-kieliselle natiiviohjelmalle välitettäisiin esimerkiksi
-suoraan osoitin Java-taulukon toteutukseen, natiiviohjelma lukee
-taulukon alkioita aina natiivirajapinnan apufunktioiden
-kautta. Yksinkertaisen taulukkotietorakenteenkin käsittely
-natiivikoodissa edellyttää siis useita kutsuja JNI:n tarjoaman
-rajapinnan kautta.
+mahdollista saavuttaa ainoastaan piilottamalla virtuaalikoneen
+tietorakenteet natiiviohjelmalta rajapinnan taakse. Sen sijaan, että
+C-kieliselle natiiviohjelmalle välitettäisiin esimerkiksi suoraan
+osoitin Java-taulukon toteutukseen, natiiviohjelma lukee taulukon
+alkioita aina natiivirajapinnan apufunktioiden kautta. Yksinkertaisen
+taulukkotietorakenteenkin käsittely natiivikoodissa edellyttää siis
+useita kutsuja JNI:n tarjoaman rajapinnan kautta.
+
+# todo begin poistetaanko kappale?
 
 Yhdessä suhteessa Javan natiivirajapinta ei ole toteutusriippumaton:
 se ei kykene estämään synkronointiongelmia tilanteessa, jossa
@@ -93,6 +94,7 @@ perustanaan natiivialustan säikeitä. Dalvikin tapauksessa näin onkin
 samassa virtuaalikoneen prosessissa ja säikeessä, joka natiivikutsun
 suorittaa.
 
+# todo end
 
 # todo tarkista vielä lähteestä
 
@@ -116,22 +118,19 @@ paluuarvojen tyyppeinä on käytettävä Java-tyyppejä.
 C-funktioita edustavat natiivimetodit ovat natiivikoodin /ainoita/
 kielen tasolla tuettuja vastinpareja Java-ohjelmassa. Vaikkapa
 C-kielen tietueita tai C++-kielen olioita ei voi käsitellä ja välittää
-arvoina Java-kielessä. Eräs tapa säilyttää Java-ohjelmassa viite
-natiivitietorakenteeseen on sen osoitteen tallentaminen
-~long~-tyyppiseen kenttään; osoitteen hyödyntäminen edellyttää lopulta
-sen välittämistä C-koodille joka muuntaa sen osoitintyyppiseksi
-arvoksi @@jnibook(123--130).
+arvoina tai osoitinarvoina Java-kielessä. Eräs tapa säilyttää
+Java-ohjelmassa viite natiivitietorakenteeseen onkin sen osoitteen
+tallentaminen ~long~-kenttään; osoitteen tulkitseminen osoitteeksi on
+tietenkin mahdollista ainoastaan natiivikoodissa @@jnibook(123--130).
 
 Käytännössä suurin osa JNI:n edellyttämästä integraatiokoodista
 toteutetaan matalan tason kielellä. /C-ohjelmoijalle/
-Java-virtuaalikone -- sekä Dalvik -- tarjoaa laajan rajapinnan, jonka
-funktioiden avulla C-ohjelmoija voi monipuolisesti käsitellä
-Java-ohjelman tietorakenteita pääsemättä kuitenkaan käsiksi näiden
-rakenteiden sisäiseen toteutukseen tai käsittelemään suoraan
-virtuaalikoneen hallitsemia muistialueita. Rajapinta myös määrittelee,
-mitä C-kielen primitiivityyppejä Javan primitiivityypit vastavaat,
-joten Javan primitiivityyppisiä arvoja voi C-kielessä käsitellä
-suoraan.
+Java-virtuaalikone -- sekä Dalvik -- tarjoaakin laajan rajapinnan,
+jonka funktioiden avulla C-ohjelmoija voi monipuolisesti käsitellä
+Java-ohjelman tietorakenteita. Rajapinta myös määrittelee, mitä
+C-kielen primitiivityyppejä Javan primitiivityypit vastavaat, joten
+natiivimetodille välitettyjä primitiivityyppisiä parametreja voi
+C-kielessä käsitellä suoraan.
 
 Lisäksi merkittävä osa JNI-rajapinnasta koostuu erilaisista viitteiden
 ja nimien hallintaan liittyvistä apufunktioista, joita tarvitaan
@@ -145,7 +144,7 @@ versiota.
 
 # todo here
 
-** Natiivimetodin luonti
+** Natiivimetodien käyttöönotto
 
 Käytännössä nativiikirjasto otetaan Java-sovelluksen käyttöön
 seuraavasti. Natiivimetodi esitellään Java-kielessä luokan sisällä,
