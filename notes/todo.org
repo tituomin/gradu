@@ -2,28 +2,44 @@
 Gradu: duunit
 
 * Teksti
-** Vihavaisen kommentit maaliskuu 2013
-*** TODO poista minä-muodot
+** formatointi
+*** TODO http://tex.stackexchange.com/questions/18910/multiple-citations-with-pages-using-biblatex
+*** TODO aivan lopuksi säädä overfull-korjaukset
+    http://www.tex.ac.uk/cgi-bin/texfaq2html?label=overfull
 
-*** TODO sivun 3 kaavio: lisää nimiavaruus
-*** TODO id-tarkkuusaste tarkista vielä, onko selvä nyt
-*** TODO id-käyttötapaus mitä tarkoittaa
-**** ilmeisesti yleinen suoritustilanne?
+** kysy vihavaiselta
+*** TODO ja-sana ja pilkutus
 *** TODO sivu 9 vihavaisen kommentti mitä tarkoittaa
+    [[file:~/gradu/paper/src/chapters/performance.org::outo%20kommentti][file:~/gradu/paper/src/chapters/performance.org::outo kommentti]]
 *** TODO vihavainen sivu 13 selvennä/kysy miten erikoiseen
     sivunumerointiin pitäisi suhtautua
-*** TODO sivu 15 overflow
-*** TODO tarkenna perf-työkalun käyttöä s. 16
-*** TODO ss. 18 4+1 pitäisi avata tai poistaa
-*** TODO s. 23, 4.1.2 pitää kirjoittaa uudelleen
-**** esimerkkejä, ym.
-*** TODO yleishuomio: esittele ensin JNI, sitten
-    vasta toteutushuomiot? 
+
 *** TODO s. 25 mitä tarkoittaa ARM-kysymysmerkki?
-*** TODO korjaa sivun 27 esimerkki
-*** TODO overflowt (s.27)
-*** TODO esimerkit s.28
-*** TODO tarkista tavutus vasteajoissa s. 29
+
+** muuta grafiikkaa
+*** TODO sivun 3 kaavio: lisää nimiavaruus
+
+
+** Vihavaisen kommentit maaliskuu 2013
+*** TODO mitä tarkoittaa käyttötapaus
+    [[file:~/gradu/paper/src/chapters/performance.org::k%C3%A4ytt%C3%B6tapaus][file:~/gradu/paper/src/chapters/performance.org::käyttötapaus]]
+**** ilmeisesti yleinen suoritustilanne?
+*** TODO ss. 18 4+1-malli pitäisi avata tai poistaa
+*** TODO tarkenna perf-työkalun käyttöä vastaamaan lopullista benchmarkkausta
+    [[file:~/gradu/paper/src/chapters/performance.org::fix-benchmarking]]
+
+*** TEST tarkista vielä, onko selvä nyt
+    [[file:~/gradu/paper/src/chapters/performance.org::tarkkuusaste]]
+*** TEST korjaa sivun 27 esimerkki - korjattu mutta pitäisikö laajentaa?
+    [[file:../paper/src/chapters/jni.org::GetStringChars]]
+*** TEST tarkista tavutus vasteajoissa s. 29
+*** DONE overflowt (s.27)
+*** DONE esimerkit s.28
+*** DONE s. 23, 4.1.2 pitää kirjoittaa uudelleen
+**** siirretty eri kohtaan, selvennetty
+*** DONE sivu 15 overflow
+*** DONE poista minä-muodot
+*** DONE yleishuomio: esittele ensin JNI, sitten    vasta toteutushuomiot? 
 
 
 

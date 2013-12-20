@@ -96,7 +96,9 @@ on palautettu käyttäjälle tai kutsuvalle komponentille
 arvioida eri tarkkuusasteilla jopa yksittäisestä konekäskystä koko
 ohjelmistoon.
 
-# todo selvennä ylempi id-tarkkuusaste
+# <<tarkkuusaste>>
+# todo selvennä ylempi
+
 
 Myös tuottavuutta käsitellään tutkielmassa, sikäli kuin komponenttien
 tuottavuus vaikuttaa käyttäjän kokemiin vasteaikoihin. Tuottavuus
@@ -118,7 +120,8 @@ vaikea mallintaa tyhjentävästi ja järjestelmäriippumattomasti
 aina /ohjelma--syöte/-pareja, eivät puhtaasti ohjelmaa sellaisenaan
 @@ferrari(455).
 
-# todo selvennä yllä id-käyttötapaus ja myös alle sama selvennys
+# <<käyttötapaus>>
+# todo selvennä yllä ja myös alle sama selvennys
 
 Lisäksi moniajojärjestelmän, kuten Android-järjestelmän, kokonaistila
 vaikuttaa yksittäisiin mitattuihin vasteaikoihin. Näistä syistä
@@ -156,6 +159,7 @@ mittaukset täytyy lopulta suhteuttaa ohjelmiston
 suorituskykyvaatimuksille ja viime kädessä käyttäjien subjektiiviselle
 kokemukselle.
 
+# <<outo kommentti>>
 # todo: varmista lopuksi että tämä on näin
 Tutkielmassa mitataan Dalvik-virtuaalikoneen
 Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
@@ -215,24 +219,24 @@ sovelluksen roolit on erotettavissa @@ferrari(14--16), @@spe(114).
 # tehokkuuden arviointi / käytettävyys jää tämän ulkopuolelle
 
 Erilaiset keinot mitata aikaa koskevat erilaisia osia
-kokonaisajasta. Järjestelmän ulkopuolisen käyttäjän havainnot kytkeytyvät
-todelliseen kuluneeseen aikaan, /tosiaikaan/ (/real
-time/, /wall clock time/), jota vastaa sekuntikellolla mitattu
-aikaväli @@ferrari(463), @@advanced-unix(20). Toisaalta on myös osoitettu,
- että käyttäjä voi subjektiivisesti kokea jopa yhtäsuuriksi mitatut
+kokonaisajasta. Järjestelmän ulkopuolisen käyttäjän havainnot
+kytkeytyvät todelliseen kuluneeseen aikaan, /tosiaikaan/ (/real time/,
+/wall clock time/), jota vastaa sekuntikellolla mitattu aikaväli
+@@ferrari(463), @@advanced-unix(20). Toisaalta on myös osoitettu, että
+käyttäjä voi subjektiivisesti kokea jopa yhtäsuuriksi mitatut
 vasteajat erilaisiksi, jos työn etenemistä osoittava
 käyttöliittymäelementti etenee eri tavalla @@progressbar.
-UNIX-käyttöjärjestelmissä tosiaikaa mittaa järjestelmäkutsu =gettimeofday=
-@@advanced-unix(173), joka lukee laitteiston kelloa. Jos
-sovellusohjelma kutsuu sitä tavallisena käyttöjärjestelmäkutsuna,
-saattaa ohjelman suoritus häiriintyä tarkkuutta vaativissa
-mittauksissa @@ferrari(472). Tässä tutkielmassa
+UNIX-käyttöjärjestelmissä tosiaikaa mittaa järjestelmäkutsu
+=gettimeofday= @@advanced-unix(173), joka lukee laitteiston
+kelloa. Jos sovellusohjelma kutsuu sitä tavallisena
+käyttöjärjestelmäkutsuna, saattaa ohjelman suoritus häiriintyä
+tarkkuutta vaativissa mittauksissa @@ferrari(472). Tässä tutkielmassa
 kyseistä rutiinia käytetään ainoastaan tarpeeksi pitkien
 kokonaisvasteaikojen mittaamiseen, jolloin pienet häiriöt eivät ole
 kriittisiä. Moniajojärjestelmissä tosiaikaa käyttävät mittaukset ovat
 myös riippuvaisia järjestelmän kokonaistilasta @@ferrari(455);
-tutkielman mittauksissa muiden prosessien vaikutus tulkitaan
-tilastolliseksi varianssiksi ja pyritään minimoimaan.
+tutkielman mittauksissa muiden prosessien määrä pyritään minimoimaan
+ja niiden vaikutus tulkitaan mittausten satunnaisvirheeksi.
 # todo luetaan piiriin
 # todo tarkista onko androidissa tarkka userspace gettimeofday (arm)
 # todo tosiaika?
@@ -378,8 +382,8 @@ virtuaalikonetta.
 Tutkielman mittaukset suoritetaan näytteenottotekniikalla, Linuxin
 /perf/-työkalun avulla @@du(13). Android-laitteeseen on asennettu
 räätälöity Linux-ydin joka tukee suorituskykylaskurien käyttöä. Itse
-mittaukset käynnistetään ja raportit tulostetaan /perf/-työkalujen
-ytimen ulkopuolisilla komentorivityökaluilla.
+mittaukset käynnistetään ja raportit tulostetaan ytimen ulkopuolisilla
+/perf/-komentorivityökaluilla.
 
 [fn:vm] Esimerkki virtualisoinnista on Androidin oma /emulaattori/,
 joka perustuu QEMU-virtuaalikoneeseen. Se on emulaattori, sillä se
@@ -437,9 +441,9 @@ näytteenottohetkellä: erityisesti käskyosoittimen (/program counter/)
 sekä pinon sisällöt @@du(3), @@dunlavey(4).
 
 Pelkän käskyosoittimen käyttöä suorituskykyanalyysin perustana on
-kritisoitu @@dunlavey, @@ammons. Käskyosoitinnäytteiden avulla saadaan
-kyllä selville, missä ohjelman osassa suoritin viettää eniten
-aikaa. Näin on kuitenkin vaikea hahmottaa laajempaa
+kritisoitu \linebreak@@dunlavey, @@ammons. Käskyosoitinnäytteiden
+avulla saadaan kyllä selville, missä ohjelman osassa suoritin viettää
+eniten aikaa. Näin on kuitenkin vaikea hahmottaa laajempaa
 suorituskontekstia, joka selittäisi, mistä eniten suoritusaikaa
 käyttävää aliohjelmaa on kutsuttu. Suorituskykypullonkaulojen syiden
 merkityksellisempi analyysi vaatii lähtökohdakseen oikean
@@ -482,14 +486,12 @@ aliohjelmien inklusiiviisiin aikoihin tällä epätarkkuudella ei ole
 käytännön vaikutusta.
 #oprofile
 
+# <<fix-benchmarking>>
 Tutkielmassa mittauksiin käytetään lähinnä /perf/-työkalun
 näytteenottotekniikkaa, sillä siinä mittauskohteena on mahdollisimman
 paljon tuotantoversiota vastaava sovellus. Näytteenoton avulla ei
-kuitenkaan saada selville aliohjelmakutsujen /määriä/, jotka ovat yksi
-osatekijä käyttämissäni mallinnusmenetelmissä. Kutsumääriä
-kontrolloidaan mahdollisuuksien mukaan mitattavan ohjelman avulla ja
-staattisella ohjelmakoodin analyysilla. /gcc/-kääntäjän automaattista
-instrumentointia käytetään tarvittaessa tähän tarkoitukseen.
+saada selville aliohjelmakutsujen /määriä/, mutta niitä kontrolloidaan
+benchmark-mittauksissa mitattavan ohjelmakoodin tasolla.
 
 ** Näytteenoton tilastollinen edustavuus
 Kaikenlaisessa näytteenotossa on varmistettava, että otanta on
@@ -644,7 +646,7 @@ yksittäisen palvelimen resursseista kilpailee monta asiakasta
 @@spe(227--228).
 
 Tämän tutkielman keskiössä ovat kuitenkin suhteellisen pienen
-mittakaavan Android-sovellukset. Vaikka Android on
+mittakaavan \linebreak Android-sovellukset. Vaikka Android on
 moniajokäyttöjärjestelmä, se on tyypillisesti yhden käyttäjän käytössä
 kerrallaan. Tässä tutkielmassa tehdäänkin yksinkertaistava oletus,
 etteivät muut käynnissä olevat prosessit oleellisesti vaikuta

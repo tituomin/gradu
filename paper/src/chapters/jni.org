@@ -261,13 +261,12 @@ kopioimalla.
 # todo selvennä mitä kutsukäytännöt tarkoittavat
 
 Viitetyyppiset parametrit sitä vastoin välitetään kopioimalla
-~jobject~-tyyppinen osoitinparametri. Se ei osoita suoraan
+~jobject~-tyyppinen osoitinparametri. Parametri ei osoita suoraan
 virtuaalikoneen oliotietorakenteeseen, vaan oliota /edustavaan/,
-JNI-toteutuksen hallitsemaan tietorakenteeseen. Kaikkia
-JNI-viitetyyppejä käsitellään natiivikomponentissa aina JNI:n
-apufunktioiden avulla, jotka ottavat tällaisen epäsuoran viitteen
-parametrinaan -- osoitinta ei koskaan suoraan ~dereferencata~
-sovelluksessa.
+JNI-toteutuksen hallitsemaan tietorakenteeseen. Tällaista
+osoitinparametria voi käyttää ainoastaan välittämällä se parametriksi
+JNI:n apufunktioille -- osoitinta ei koskaan suoraan ~dereferencata~
+natiivikomponentissa.
 
 # todo dereference suomeksi
 
@@ -389,8 +388,10 @@ tallentuu tieto, johtiko operaatio kopioimiseen. Merkkijonoresurssi on
 aina lopuksi vapautettava eksplisiittisellä kutsulla, mikä pätee myös
 Java-taulukoille:
 
+# <<GetStringChars>>
+
 #+begin_src c
-(*env)->ReleaseStringChars(env, jstring_variable, str);
+(*env)->ReleaseStringChars(JNIEnv* env, jstring string, jchar *cstr);
 #+end_src
 
 JNI-spesifikaatio kuitenkin sallii virtuaalikoneen luoda merkkijonon
@@ -445,7 +446,7 @@ elinkaari estäisi toisella puolella tapahtuvan rakenteen käsittelyn.
 Primitiivityyppisten parametrien arvot välitetään rajapinnan yli
 kopioimalla, joten ongelmaksi jäävät viitteet allokoituihin
 rakenteisiin. Viitetyyppiset parametrit kuten taulukot ja
-olioinstanssit välitetään natiivikomponentille JNI:n viitetyyppien
+olioinstanssit välitetään natiivikomponentille JNI:n osoitintyyppien
 muodossa @@jnibook(23). Jos Java-ohjelmaan ei jää viitteitä olioon,
 josta välitetään viite natiivipuolelle, saattaisi virtuaalikoneen
 roskienkeräys poistaa olion. JNI:ssä tämä on estetty: oletuksena
@@ -477,16 +478,16 @@ JNI ei tarjoa automaattista tukea edustaluokkien tekemiseen
 natiivitietorakenteille, vaan ohjelmoijan on itse määriteltävä
 sidonnat Java-luokan metodeihin.
 # todo määrittele tarkemmin
-# huom, vielä ei ole määritelty natiivimetodia
 
 Koska JNI-spesifikaatio ei ota kantaa virtuaalikoneen sisäiseen
-toteutukseen, se ei myöskään määrittele, miten virtuaalikone toteuttaa
-spesifikaation määräämät takuut tietorakenteiden elinkaarille.
-Dalvik-virtuaalikoneen muistinhallinta tukee allokoitujen kohteiden
-/kiinnikytkemistä/ (/pinning/) eli niiden roskienkeruun estämistä
-@@aosp, mutta JNI sallii virtuaalikoneen myös /kopioida/ kohteen arvon
-natiivikomponenttia varten. Tästä seuraisi merkittäviä
-suorituskykyrasitteita, mitä kysymystä tutkimme myöhemmässä vaiheessa.
+toteutukseen, se ei myöskään sanele, miten virtuaalikoneen tulee
+toteuttaa spesifikaation määräämät takuut tietorakenteiden
+elinkaarille.  Dalvik-virtuaalikoneen muistinhallinta tukee
+allokoitujen kohteiden /kiinnikytkemistä/ (/pinning/) eli niiden
+roskienkeruun estämistä @@aosp, mutta JNI sallii virtuaalikoneen myös
+/kopioida/ kohteen arvon natiivikomponenttia varten. Tästä seuraisi
+merkittäviä suorituskykyrasitteita, mitä kysymystä tutkimme
+myöhemmässä vaiheessa.
 # todo: huom ! tämän takia yksittäiset olioviitteet pitää yksitellen poimia
 # taulukoista ? (check)
 
@@ -506,13 +507,13 @@ global references/).
 Kuten mainittu, JNI:n palauttamat suorat osoittimet virtuaalikoneen
 merkkijonoihin ja taulukoihin tulee aina eksplisiittisesti myös
 vapauttaa, jotta niiden virtuaalikoneessa käyttämät muistialueet
-voidaan vapauttaa. Oletuksena kaikki muut olioviitteet, jotka JNI antaa
-natiiviohjelman käyttöön, ovat paikallisia viitteitä: niitä ei
+voidaan vapauttaa. Oletuksena kaikki muut olioviitteet, jotka JNI
+antaa natiiviohjelman käyttöön, ovat paikallisia viitteitä: niitä ei
 /yleensä/ tarvitse manuaalisesti vapauttaa, sillä niiden elinkaari on
 automaattisesti sidottu natiivimetodin kutsun alkamiseen ja
 päättymiseen @@jnibook(62). Niiden käyttö ei ole
 säieturvallista. Globaalit viitteet on eksplisiittisesti luotava
-~NewGlobalRef~ -kutsulla; ne estävät olion roskienkeruun ja
+~NewGlobalRef~-kutsulla; ne estävät olion roskienkeruun ja
 mahdollistavat olioihin viittaamisen yli eri natiivimetodien kutsujen
 myös eri säikeistä.
 
