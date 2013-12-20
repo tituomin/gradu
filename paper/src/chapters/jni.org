@@ -387,7 +387,6 @@ natiivifunktiolle parametrina. Parametriin ~jboolean is_copy~
 tallentuu tieto, johtiko operaatio kopioimiseen. Merkkijonoresurssi on
 aina lopuksi vapautettava eksplisiittisellä kutsulla, mikä pätee myös
 Java-taulukoille:
-
 # <<GetStringChars>>
 
 #+begin_src c

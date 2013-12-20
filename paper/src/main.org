@@ -11,6 +11,8 @@
 #+LATEX: \onehalfspacing
 #+LATEX: \newpage
 
+#+LATEX: \definecolor{listingc}{rgb}{0.98,0.98,0.98}
+
 * Johdanto
 #+INCLUDE: "../gen/chapters/intro.org" :minlevel 1
 * Yleiskatsaus Android-j‰rjestelm‰‰n
