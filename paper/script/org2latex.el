@@ -10,14 +10,15 @@
 (setq org-export-latex-listings-options
       '(("basicstyle" "\\scriptsize\\ttfamily")
         ("aboveskip" "1em")
-;        ("numbers" "left")
+;       ("numbers" "left")
         ("frame" "l")
-        ("xleftmargin" "3em")
+        ("framesep" "0pt")
+        ("xleftmargin" "4em")
         ("framexleftmargin" "1em")
-        ("framerule" "2pt")
-        ("rulecolor" "\\color\{gray\}")
+        ("framerule" "3em")
+        ("rulecolor" "\\color\{lightgray\}")
         ("escapeinside" "{(*@}{@*)}")
-        ("numberstyle" "\\tiny\\color\{gray\}")))
+        ("numberstyle" "\\tiny\\color\{red\}")))
 
 (add-to-list
  'org-export-latex-classes
