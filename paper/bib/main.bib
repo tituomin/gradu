@@ -1,4 +1,134 @@
 * lähteet
+
+** uuden aallon lähteet
+
+*** java benchmarking jvm
+
+@Article{BMG+:08,
+  author = {Stephen M. Blackburn and Kathryn S. McKinley and Robin Garner and Chris Hoffmann and Asjad M. Khan and Rotem Bentzur and Amer Diwan and Daniel Feinberg and Daniel Frampton and Samuel Z. Guyer and Martin Hirzel and Antony Hosking and Maria Jump and Han Lee and J. Eliot and B. Moss and Aashish Phansalkar and Darko Stefanovic and Thomas VanDrunen and Daniel von Dincklage and Ben Wiedermann},
+  title = {{Wake Up and Smell the Coffee: Evaluation Methodology for the 21st Century}},
+  journal = {Communications of the ACM},
+  year = {2008},
+  month = {August},
+  publisher = {ACM Press},
+  address = {New York, NY, USA},
+  doi = {http://doi.acm.org/10.1145/1378704.1378723},
+  note = {Invited paper. CACM Research Highlights.},
+  }
+
+file elo dacapo-cacm-2008.pdf
+
+@Inproceedings{BGH+:06,
+  author = {Stephen M. Blackburn and Robin Garner and Chris Hoffmann and Asjad M. Khang and Kathryn S. McKinley and Rotem Bentzur and Amer Diwan and Daniel Feinberg and Daniel Frampton and Samuel Z. Guyer and Martin Hirzel and Antony Hosking and Maria Jump and Han Lee and J. Eliot and B. Moss and Aashish Phansalkar and Darko Stefanovic and Thomas VanDrunen and Daniel von Dincklage and Ben Wiedermann},
+  title = {{The DaCapo benchmarks: Java benchmarking development and analysis}},
+  booktitle = {OOPSLA '06: Proceedings of the 21st annual ACM SIGPLAN conference on Object-oriented programming systems, languages, and applications},
+  year = {2006},
+  isbn = {1-59593-348-4},
+  pages = {169--190},
+  location = {Portland, Oregon, USA},
+  doi = {http://doi.acm.org/10.1145/1167473.1167488},
+  publisher = {ACM Press},
+  address = {New York, NY, USA},
+  }
+
+file elo dacapo-oopsla-2006.pdf
+
+
+@inproceedings{Blackburn:2006:DBJ:1167473.1167488,
+ author = {Blackburn, Stephen M. and Garner, Robin and Hoffmann, Chris and Khang, Asjad M. and McKinley, Kathryn S. and Bentzur, Rotem and Diwan, Amer and Feinberg, Daniel and Frampton, Daniel and Guyer, Samuel Z. and Hirzel, Martin and Hosking, Antony and Jump, Maria and Lee, Han and Moss, J. Eliot B. and Phansalkar, Aashish and Stefanovi\'{c}, Darko and VanDrunen, Thomas and von Dincklage, Daniel and Wiedermann, Ben},
+ title = {The DaCapo Benchmarks: Java Benchmarking Development and Analysis},
+ booktitle = {Proceedings of the 21st Annual ACM SIGPLAN Conference on Object-oriented Programming Systems, Languages, and Applications},
+ series = {OOPSLA '06},
+ year = {2006},
+ isbn = {1-59593-348-4},
+ location = {Portland, Oregon, USA},
+ pages = {169--190},
+ numpages = {22},
+ url = {http://doi.acm.org/10.1145/1167473.1167488},
+ doi = {10.1145/1167473.1167488},
+ acmid = {1167488},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {DaCapo, Java, SPEC, benchmark, methodology},
+} 
+
+file elo p169-blackburn.pdf
+
+Since benchmarks drive computer science research and industry product development, which ones we use and how we evaluate them are key questions for the community. Despite complex runtime tradeoffs due to dynamic compilation and garbage collection required for Java programs, many evaluations still use methodologies developed for C, C++, and Fortran. SPEC, the dominant purveyor of benchmarks, compounded this problem by institutionalizing these methodologies for their Java benchmark suite. This paper recommends benchmarking selection and evaluation methodologies, and introduces the DaCapo benchmarks, a set of open source, client-side Java benchmarks. We demonstrate that the complex interactions of (1) architecture, (2) compiler, (3) virtual machine, (4) memory management, and (5) application require more extensive evaluation than C, C++, and Fortran which stress (4) much less, and do not require (3). We use and introduce new value, time-series, and statistical metrics for static and dynamic properties such as code complexity, code size, heap composition, and pointer mutations. No benchmark suite is definitive, but these metrics show that DaCapo improves over SPEC Java in a variety of ways, including more complex code, richer object behaviors, and more demanding memory system requirements. This paper takes a step towards improving methodologies for choosing and evaluating benchmarks to foster innovation in system design and implementation for Java and other managed languages.
+
+
+
+seuraava vaikuttaa tosi hyvältä
+
+@inproceedings{Eeckhout:2003:JPI:949305.949321,
+ author = {Eeckhout, Lieven and Georges, Andy and De Bosschere, Koen},
+ title = {How Java Programs Interact with Virtual Machines at the Microarchitectural Level},
+ booktitle = {Proceedings of the 18th Annual ACM SIGPLAN Conference on Object-oriented Programing, Systems, Languages, and Applications},
+ series = {OOPSLA '03},
+ year = {2003},
+ isbn = {1-58113-712-5},
+ location = {Anaheim, California, USA},
+ pages = {169--186},
+ numpages = {18},
+ url = {http://doi.acm.org/10.1145/949305.949321},
+ doi = {10.1145/949305.949321},
+ acmid = {949321},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Java workloads, performance analysis, statistical data analysis, virtual machine technology, workload characterization},
+}
+
+file elo
+
+@inproceedings{Grimmer:2013:ENF:2500828.2500832,
+ author = {Grimmer, Matthias and Rigger, Manuel and Stadler, Lukas and Schatz, Roland and M\"{o}ssenb\"{o}ck, Hanspeter},
+ title = {An Efficient Native Function Interface for Java},
+ booktitle = {Proceedings of the 2013 International Conference on Principles and Practices of Programming on the Java Platform: Virtual Machines, Languages, and Tools},
+ series = {PPPJ '13},
+ year = {2013},
+ isbn = {978-1-4503-2111-2},
+ location = {Stuttgart, Germany},
+ pages = {35--44},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/2500828.2500832},
+ doi = {10.1145/2500828.2500832},
+ acmid = {2500832},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Graal, JNA, JNI, Java, Truffle, jblas, native code, native function interface, optimization},
+} 
+
+eräs esimerkki benchmarkin käytöstä
+file: elo p35-grimmer.pdf
+
+@article{Saavedra:1996:ABC:235543.235545,
+ author = {Saavedra, Rafael H. and Smith, Alan J.},
+ title = {Analysis of Benchmark Characteristics and Benchmark Performance Prediction},
+ journal = {ACM Trans. Comput. Syst.},
+ issue_date = {Nov. 1996},
+ volume = {14},
+ number = {4},
+ month = nov,
+ year = {1996},
+ issn = {0734-2071},
+ pages = {344--384},
+ numpages = {41},
+ url = {http://doi.acm.org/10.1145/235543.235545},
+ doi = {10.1145/235543.235545},
+ acmid = {235545},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {abstract machine performance model, benchmark analysis, execution time prediction, microbenchmarking},
+} 
+
+file elo p344-saavedra.pdf
+
+Standard benchmarking provides to run-times for given programs on given machines, but fails to provide insight as to why those results were obtained (either in terms of machine or program characteristics) and fails to provide run-times for that program on some other machine, or some other programs on that machine. We have developed a machine-imdependent model of program execution to characterize both machine performance and program execution. By merging these machine and program characterizations, we can estimate execution time for arbitrary machine/program combinations. Our technique allows us to identify those operations, either on the machine or in the programs, which dominate the benchmark results. This information helps designers in improving the performance of future machines and users in tuning their applications to better utilize the performance of existing machines. Here we apply our methodology to characterize benchmarks and predict their execution times. We present extensive run-time statistics for a large set of benchmarks including the SPEC and Perfect Club suites. We show how these statistics can be used to identify important shortcoming in the programs. In addition, we give execution time estimates for a large sample of programs and machines and compare these against benchmark results. Finally, we develop a metric for program similarity that makes it possible to classify benchmarks with respect to a large set of characteristics.
+
+
+
+
+
 ** päälähteet
 *** android
 
@@ -1039,6 +1169,8 @@ file={00469759.pdf}
  architecture, virtual machine},
  file = {a21-shi.pdf},
 } 
+
+huom, showdown käyttää java grandea ja sitä toista benchmark suitea... SPECjbb2000 :a
 
 @article{Prechelt:1999:TOC:317665.317683,
  author = {Prechelt, Lutz},

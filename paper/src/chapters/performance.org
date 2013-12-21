@@ -40,9 +40,8 @@ rajoittavat usein myöhempiä yksityiskohtia. Merkittäviä
 seurannaisvaikutuksia on esimerkiksi
 
 - käytetyillä ohjelmointikielillä,
-- käytetyillä valmiskomponenteilla ja ohjelmakirjastoilla,
-- komponenttien toteutuskielillä sekä
-- ohjelmiston yleisarkkitehtuurilla ja komponenttien sijoittumisesta
+- käytetyillä valmiskomponenteilla ja ohjelmakirjastoilla sekä
+- ohjelmiston yleisarkkitehtuurilla ja komponenttien sijoittumisella
   suoritusympäristön eri osiin.
   
 Kaikkia näitä valintoja voi toki periaatteessa muuttaa milloin
@@ -62,6 +61,8 @@ epäonnistuneissa ohjelmistoprojekteissa ja Smithin mukaan ne
 voitaisiin usein välttää /mallintamalla/ ohjelmistoja
 suorituskykynäkökulmasta jo ennen toteutusvaihetta.
 
+# todo tähän skeptinen lausahdus
+
 * Suorituskyvyn arvioiminen
 # todo: arvioiminen &mallintaminen vs. mittaaminen/mittari
 # todo: another indice: memory use!
@@ -74,7 +75,7 @@ käyttäjän näkökulmasta: miten tyydyttävät sen vasteajat ovat ja miten
 tehokkaasti se käsittelee syötedataa.
 
 Ohjelmiston tehokkuus ja nopeus kuvaavat sen käyttäytymistä /ajan
-suhteen/, johon myös tutkielma keskittyy. Toinen keskeinen
+suhteen/, mihin myös tutkielma keskittyy. Toinen keskeinen
 suorituskykymittareiden luokka tutkii ohjelmiston muistinkäyttöä
 @@ferrari(457). Tässä tutkielmassa aikaulottuvuus on ensisijainen ja
 sitä tutkitaan kvantitatiivisesti; mobiilisovellusten muistinkulutus
@@ -96,7 +97,7 @@ on palautettu käyttäjälle tai kutsuvalle komponentille
 arvioida eri tarkkuusasteilla jopa yksittäisestä konekäskystä koko
 ohjelmistoon.
 
-# <<tarkkuusaste>>
+\todo{<<tarkkuusaste>>}
 # todo selvennä ylempi
 
 
@@ -120,7 +121,9 @@ vaikea mallintaa tyhjentävästi ja järjestelmäriippumattomasti
 aina /ohjelma--syöte/-pareja, eivät puhtaasti ohjelmaa sellaisenaan
 @@ferrari(455).
 
-# <<käyttötapaus>>
+\todo{<<käyttötapaus>>}
+
+\todo{<<benchmark>>}
 # todo selvennä yllä ja myös alle sama selvennys
 
 Lisäksi moniajojärjestelmän, kuten Android-järjestelmän, kokonaistila
@@ -159,7 +162,7 @@ mittaukset täytyy lopulta suhteuttaa ohjelmiston
 suorituskykyvaatimuksille ja viime kädessä käyttäjien subjektiiviselle
 kokemukselle.
 
-# <<outo kommentti>>
+\todo{<<outo kommentti>>}
 # todo: varmista lopuksi että tämä on näin
 Tutkielmassa mitataan Dalvik-virtuaalikoneen
 Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
@@ -269,8 +272,11 @@ järjestelmäaika yhdessä vastaavat sovelluksen /suoritinaikaa/ (/CPU
 time/), koska niihin kuuluu ainoastaan prosessin aktiivinen
 suoritusaika @@advanced-unix(20). Tutkielmassa oletetaan, että
 suoritinaika on natiivirajapinnan rasitteiden oleellisin osatekijä,
-mutta tosiaikaa mittaamalla varmistetaan, etteivät suoritinajan
-ulkopuoliset merkittävät viiveet jää huomiotta.
+sillä rajapintatoteutuksen tehtävät liittyvät puhtaasti
+keskusmuistissa olevan datan esitysmuotojen muuntamiseen ja
+tietorakenteiden kirjanpitoon mutta tosiaikaa mittaamalla
+varmistetaan, etteivät suoritinajan ulkopuoliset merkittävät viiveet
+jää huomiotta.
 
 Kuten aina, vasteaikojen mittaamisen kohde on aina
 ohjelma--syöte -pari, joten sopivien syötteiden käyttäminen
@@ -332,7 +338,6 @@ otanta kirjaamatta jokaista tilanmuutosta ohjelman sisältä käsin
 laitteiston tosiaikakellon aiheuttaman keskeytyksen laukaisemana, ja näytteeseen
 voidaan tallentaa esimerkiksi suorituksessa olleen konekäskyn osoite.
 
-\newpage
 Instrumentoinnin ja näytteenoton avulla ohjelman suoritusajan
 jakautumisesta aliohjelmiin tai jopa yksittäisiin konekäskyihin
 voidaan siis periaatteessa saada hyvinkin tarkkoja mittauksia.
@@ -481,12 +486,13 @@ suhtautua pienellä varauksella. Tällä epätarkkuudella ei ole käytännön
 vaikutusta, jos mittauksen kohteena on suurempien kokonaisuuksien kuten
 kokonaisten aliohjelmien inklusiiviset suoritusajat.
 
-Korkealla kutsupinossa olevien
-aliohjelmien inklusiiviisiin aikoihin tällä epätarkkuudella ei ole
-käytännön vaikutusta.
+Korkealla kutsupinossa olevien aliohjelmien inklusiiviisiin aikoihin
+tällä epätarkkuudella ei ole käytännön vaikutusta.
+
 #oprofile
 
-# <<fix-benchmarking>>
+\todo{<<fix-benchmarking>>}
+
 Tutkielmassa mittauksiin käytetään lähinnä /perf/-työkalun
 näytteenottotekniikkaa, sillä siinä mittauskohteena on mahdollisimman
 paljon tuotantoversiota vastaava sovellus. Näytteenoton avulla ei
@@ -609,7 +615,7 @@ suhteessa vaatimuksiin.
 # physical
 # development
 # + use case
-\newpage
+
 # todo selvennä 4+1 vihavaiselle alla
 
 Mallit voivat perustua esimerkiksi 4+1-arkkitehtuurimallien kehikkoon
@@ -709,7 +715,7 @@ Markov-ketjuilla.
 # todo onko tämä nyt se keskeinen hypoteesi? ehkä mutta tsekkaa lopuksi
 
 ** Vasteaikojen mallintaminen Markov-ketjuilla
-# <<Markov>>
+\todo{<<Markov>>}
 
 Hyödynnän Beizerin @@beizer esittelemää yksinkertaista Markov-mallia,
 jolla ohjelman kokonaisvasteajan saa laskettua sen osien

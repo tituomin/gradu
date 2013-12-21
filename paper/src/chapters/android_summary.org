@@ -20,8 +20,11 @@ virtuaalikoneessa. Järjestelmän rakenne ei muutenkaan noudata
 esimerkiksi POSIX-standardia vaan perustuu hajautettuun
 komponenttiarkkitehtuuriin, joka on nimeltään /Binder/ @@embedded(79).
 Arkkitehtuurin infrastruktuuri, Dalvik-virtuaalikone sekä suuri osa
-järjestelmän matalamman tason palveluista on toteutettu C- ja
+järjestelmän matalan tason palveluista on toteutettu C- ja
 C++-kielillä @@embedded(138).
+
+
+\todo{Yllä: POSIX ei liity userspacen järjestämiseen <<posix>>}
 
 \begin{figure}[h!]
 \centerline{
@@ -50,11 +53,11 @@ suoritetaan sekä sovellusohjelmat että järjestelmän sisäiset
 komponentit -- siltä osin kun ne on toteutettu Javalla.
 
 Android on alusta lähtien suunniteltu tukemaan moniajoa. Jokaista
-Android-sovellusta suoritetaan omassa virtuaalikoneessaan ja jokaista
-virtuaalikonetta omassa Linux-prosessissaan @@embedded(43--45). Tällä
-tavoin sovellukset on eristetty omiin hiekkalaatikoihinsa, ja
-esimerkiksi sovellusten käyttöoikeuksista voidaan pitää kirjaa
-prosessitasolla.
+Android-sovellusta suoritetaan omalla käyttäjätunnuksellaan, omassa
+Linux-prosessissaan ja omassa virtuaalikoneessaan
+@@embedded(43--45). Tällä tavoin sovellukset on eristetty omiin
+hiekkalaatikoihinsa, ja esimerkiksi sovellusten käyttöoikeuksista
+voidaan pitää kirjaa käyttöjärjestelmän käyttäjänhallinnan avulla.
 
 Android-ohjelmointirajapinnan luokat antavat sovellusohjelmoijalle
 yksinkertaisen näkymän käyttöjärjestelmän palveluihin. Valtaosa
@@ -87,10 +90,10 @@ järjestelmäpalvelutason: esimerkiksi ~Log~-luokka kutsuu suoraan
 # lähde: binder.pdf (? voiko käyttää)
 # todo sisäinen viite
 
-Järjestelmäpalveluita matalammalla olevia arkkitehtuuritasoja,
-mukaan lukien dynaamisesti ladattavia natiivikirjastoja, en käsittele
-sen tarkemmin. Mainittakoon kuitenkin, että Native Development Kitin
-@@ndk vakaat natiivirajapinnat kuuluvat tälle tasolle
+Järjestelmäpalveluita matalammalla olevia arkkitehtuuritasoja, mukaan
+lukien dynaamisesti ladattavia natiivikirjastoja, en käsittele
+yksityiskohtaisesti. Mainittakoon kuitenkin, että Native Development
+Kitin @@ndk vakaat natiivirajapinnat kuuluvat tälle tasolle
 arkkitehtuurissa.  Näitä dynaamisesti linkitettyjä natiivikirjastoja
 voi siis kutsua suoraan tavallisilla aliohjelmakutsuilla
 natiiviohjelmasta käsin ohittaen
@@ -140,7 +143,7 @@ operandit sijaitsevat implisiittisesti virtuaalikoneen pinossa
 @@dvm-jit(15). Dalvik sen sijaan on rekisteripohjainen virtuaalikone,
 jossa konekäskyjen operandit viittaavat eksplisiittisesti
 virtuaalikoneen ylläpitämiin rekistereihin. Lisätietoa
-virtuaalikoneratkaisuiden eroista lähteestä @@showdown.
+virtuaalikoneratkaisuiden eroista antaa lähde @@showdown.
 
 # todo etsi ne lähteet
 
@@ -153,12 +156,13 @@ luokat ja niiden sisältämät Dalvik-käskykannan mukaiset käskyt.
 Dalvik-virtuaalikone nykyisessä muodossaan on /jäljittävä Just-In-Time
 -kääntäjä/ (/tracing JIT compiler/) @@dvm-jit(15-16). Näin ollen
 Dalvikin /tulkki/ suorittaa Dalvik-käskykannan mukaista ohjelmaa ja
-pitää samalla kirjaa metodeista, joiden kääntäminen suoraan
-laitteistoalustan konekielelle nopeuttaisi todennäköisimmin ohjelman
-suoritusta. Tällaiset metodit Dalvik kääntää konekielelle ja suorittaa
-konekielisinä. Ne myös tallennetaan JIT-kääntäjän välimuistiin ja
-Androidin tiedostojärjestelmään, joten kääntäminen tapahtuu vain
-kerran @@embedded(197).
+pitää samalla kirjaa koodialueista, usein silmukoista, joiden
+kääntäminen suoraan laitteistoalustan konekielelle nopeuttaisi
+todennäköisimmin ohjelman suoritusta. Tällaiset ohjelmakohdat Dalvik
+kääntää konekielelle ja suorittaa konekielisinä. Ne myös tallennetaan
+JIT-kääntäjän välimuistiin @@embedded(197).
+
+\todo{<<ashmem>> onko jit-cache persistoitu -- poistettu nyt}
 
 Dalvik on ohjelmoitu C++-kielellä, mutta sen tulkki koostuu pääosin
 hyvin pitkälle optimoidusta symbolisesta konekielestä, jonka avulla

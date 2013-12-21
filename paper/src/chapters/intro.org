@@ -47,7 +47,7 @@ ratkaisuista. SPE:n keskeisiä väitteitä onkin, että ohjelmiston
 makrotason /arkkitehtuurin/ suunnittelu on usein suorituskyvyn
 kannalta vähintään yhtä oleellinen tekijä kuin mikrotason
 optimoinnit. Toki suorituskyvyn huomioiminen varhaisessa
-kehitysvaiheessa sallii myös myös myöhäisen vaiheen lisäoptimoinnit.
+kehitysvaiheessa ei estä myöhäisen vaiheen lisäoptimointia.
 
 Tutkielmassa keskitytään siihen, mitä erityisvaatimuksia
 /monikielinen/ Android-ohjelmointi asettaa sovelluksen

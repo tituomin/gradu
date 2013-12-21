@@ -19,7 +19,15 @@ Gradu: duunit
 ** muuta grafiikkaa
 *** TODO sivun 3 kaavio: lisää nimiavaruus
 
+** lisäykset
+*** motivoi benchmarkien käyttöä tässä kohtaa
+    [[file:~/gradu/paper/src/chapters/performance.org::benchmark]]
+** korjaukset / tarkennukset
 
+*** ashmem-onko persistoitu
+    [[file:~/gradu/paper/src/chapters/android_summary.org::ashmem]]
+*** posix väärä merkitys
+    [[file:~/gradu/paper/src/chapters/android_summary.org::posix]]
 ** Vihavaisen kommentit maaliskuu 2013
 *** TODO mitä tarkoittaa käyttötapaus
     [[file:~/gradu/paper/src/chapters/performance.org::k%C3%A4ytt%C3%B6tapaus][file:~/gradu/paper/src/chapters/performance.org::käyttötapaus]]

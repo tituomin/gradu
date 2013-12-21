@@ -12,6 +12,7 @@
 #+LATEX: \newpage
 
 #+LATEX: \definecolor{listingc}{rgb}{0.98,0.98,0.98}
+#+LATEX: \newcommand{\todo}[1]{}
 
 * Johdanto
 #+INCLUDE: "../gen/chapters/intro.org" :minlevel 1
