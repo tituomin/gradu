@@ -69,7 +69,7 @@ suorituskykynäkökulmasta jo ennen toteutusvaihetta.
 # (kielenkäyttö)
 Suorituskyky on pohjimmiltaan subjektiivinen käsite, joka ilmaisee
 miten /hyvin/ järjestelmä toteuttaa tehtävänsä @@ferrari(2). Tässä
-tutkielmassa määritellään suorituskyky ohjelmiston laadulliseksi
+tutkielmassa suorituskyky määritellään ohjelmiston laadulliseksi
 ominaisuudeksi, joka kuvaa, miten /nopeasti/ ohjelmisto toimii
 käyttäjän näkökulmasta: miten tyydyttävät sen vasteajat ovat ja miten
 tehokkaasti se käsittelee syötedataa.
@@ -83,8 +83,8 @@ on toki oleellinen suorituskykytekijä, mutta tutkimme ainoastaan sen
 vaikutuksia sovelluksen ajalliseen käyttäytymiseen.
 
 Jotta järjestelmän suorituskykyä voisi arvioida täsmällisesti, käsite
-on purettava kvantitatiivisiksi /mittareiksi/. Tällaisia mittareita
-ovat järjestelmän /tuottavuus/, /responsiivisuus/ ja /käyttöaste/
+on purettava kvantitatiivisiksi /mittareiksi/. Näitä ovat järjestelmän
+/tuottavuus/, /responsiivisuus/ ja /käyttöaste/
 @@ferrari(12). Tutkielmassa mittari tarkoittaa suorituskyvyn
 kvantitatiivisia osatekijöitä, oli ne sitten johdettu ohjelmistoa
 kuvaavista malleista tai saatu todellisista mittauksista.
@@ -114,12 +114,12 @@ suorituskyvyn arvioinnissa @@spe(115), @@ferrari(221).
 Sama universaalisuusongelma koskee kaikkia suorituskykymittareita.
 Vaikka suorituskyvyn eri osatekijöitä voi arvioida kvantitatiivisilla
 mittareilla, tulosten objektiivisuus on aina rajallinen. Esimerkiksi
-vasteaikamittarit ovat merkityksellisiä vain suhteessa kulloiseenkin
-käyttötapaukseen ja kokonaistyömäärään, joista molemmat on hyvin
-vaikea mallintaa tyhjentävästi ja järjestelmäriippumattomasti
-@@ferrari(14). Varsinaiset suoritusaikamittaukset puolestaan koskevat
-aina /ohjelma--syöte/-pareja, eivät puhtaasti ohjelmaa sellaisenaan
-@@ferrari(455).
+vasteaika ilmaisee aina tietyn operaation vasteajan tietyllä
+syötteellä eli kuormituksella, ja näitä vasteajan osatekijöitä on
+hyvin vaikea analysoida tavalla joka olisi riippumaton käsiteltävän
+järjestelmän ominaisuuksista @@ferrari(14). Varsinaiset
+suoritusaikamittaukset koskevat aina /ohjelma--syöte/-pareja, eivät
+puhtaasti ohjelmaa sellaisenaan @@ferrari(455).
 
 \todo{<<käyttötapaus>>}
 
@@ -129,12 +129,13 @@ aina /ohjelma--syöte/-pareja, eivät puhtaasti ohjelmaa sellaisenaan
 Lisäksi moniajojärjestelmän, kuten Android-järjestelmän, kokonaistila
 vaikuttaa yksittäisiin mitattuihin vasteaikoihin. Näistä syistä
 mittariksi tulee ottaa vasteaikojen tilastollinen jakauma tietyn
-ajanjakson sisällä ja tietyn käyttötapausluokan sisällä, jotta
-vaihtelut molempien suhteen voidaan ottaa huomioon tilastollisesti
-@@ferrari(14--15). Silloinkin ohjelman suoritusaikaan perustuvat
-mittarit ovat riippuvaisia järjestelmästä ja laitteistoalustasta,
-esimerkiksi mobiililaitemallista ja Android-versiosta
-@@ferrari(454).
+ajanjakson sisällä, jotta ympäristöstä aiheutuvat satunnaisvirheet
+voidaan ottaa huomioon tilastollisesti @@ferrari(14--15). Silloinkin
+ohjelman suoritusaikaan perustuvat mittarit ovat riippuvaisia
+järjestelmästä ja laitteistoalustasta, esimerkiksi
+mobiililaitemallista ja Android-versiosta @@ferrari(454).
+
+\todo{<<ajattele-uudelleen>>}
 
 #viite: android moniajo
 # mainitse vielä mittaus vs. mallinnus
@@ -221,25 +222,26 @@ sovelluksen roolit on erotettavissa @@ferrari(14--16), @@spe(114).
 # todo footnote mainitse että järjestelmä-käyttäjä-parin 
 # tehokkuuden arviointi / käytettävyys jää tämän ulkopuolelle
 
-Erilaiset keinot mitata aikaa koskevat erilaisia osia
-kokonaisajasta. Järjestelmän ulkopuolisen käyttäjän havainnot
-kytkeytyvät todelliseen kuluneeseen aikaan, /tosiaikaan/ (/real time/,
-/wall clock time/), jota vastaa sekuntikellolla mitattu aikaväli
-@@ferrari(463), @@advanced-unix(20). Toisaalta on myös osoitettu, että
-käyttäjä voi subjektiivisesti kokea jopa yhtäsuuriksi mitatut
-vasteajat erilaisiksi, jos työn etenemistä osoittava
-käyttöliittymäelementti etenee eri tavalla @@progressbar.
-UNIX-käyttöjärjestelmissä tosiaikaa mittaa järjestelmäkutsu
-=gettimeofday= @@advanced-unix(173), joka lukee laitteiston
-kelloa. Jos sovellusohjelma kutsuu sitä tavallisena
+Käyttöjärjestelmän erilaiset keinot mitata aikaa koskevat erilaisia
+osia kokonaisvasteajasta. Järjestelmän käyttäjä voi mitata
+sekuntikellolla operaatioihin objektiivisesti kuluvaa kokonaisaikaa,
+/tosiaikaa/ (/real time/, /wall clock time/) @@ferrari(463),
+@@advanced-unix(20). UNIX-käyttöjärjestelmissä tosiaikaa mittaa
+järjestelmäkutsu =gettimeofday= @@advanced-unix(173), joka lukee
+laitteiston kelloa. Jos sovellusohjelma kutsuu sitä tavallisena
 käyttöjärjestelmäkutsuna, saattaa ohjelman suoritus häiriintyä
 tarkkuutta vaativissa mittauksissa @@ferrari(472). Tässä tutkielmassa
-kyseistä rutiinia käytetään ainoastaan tarpeeksi pitkien
-kokonaisvasteaikojen mittaamiseen, jolloin pienet häiriöt eivät ole
-kriittisiä. Moniajojärjestelmissä tosiaikaa käyttävät mittaukset ovat
-myös riippuvaisia järjestelmän kokonaistilasta @@ferrari(455);
-tutkielman mittauksissa muiden prosessien määrä pyritään minimoimaan
-ja niiden vaikutus tulkitaan mittausten satunnaisvirheeksi.
+kyseistä rutiinia käytetään ainoastaan niin pitkien
+kokonaisvasteaikojen mittaamiseen, ettei käyttöjärjestelmäkutsujen
+aiheuttamilla häiriöillä ole merkitystä. Moniajojärjestelmissä
+tosiaikaa käyttävät mittaukset ovat myös riippuvaisia järjestelmän
+kokonaistilasta @@ferrari(455); tutkielman mittauksissa muiden
+prosessien määrä pyritään minimoimaan ja niiden vaikutus tulkitaan
+mittausten satunnaisvirheeksi. Kvantitatiivisten mittausten rinnalla
+kannattaa pitää mielessä käyttäjän subjektiivinen kokemus: käyttäjä
+voi kokea jopa yhtäsuuriksi mitatut vasteajat erilaisiksi, jos
+esimerkiksi työn etenemistä osoittava käyttöliittymäelementti etenee
+eri tavalla @@progressbar.
 # todo luetaan piiriin
 # todo tarkista onko androidissa tarkka userspace gettimeofday (arm)
 # todo tosiaika?
@@ -251,12 +253,13 @@ ja niiden vaikutus tulkitaan mittausten satunnaisvirheeksi.
 #voi kutsua vähäisellä rasitteella siirtymättä kernelin suoritustilaan.
 # lähde vdso etc. sitten vasta julkiseksi todo
 
-Tässä tutkielmassa kaikki suorituskykyä parantavat ratkaisut tähtäävät
-/oleellisten käyttötapausten lyhentyneeseen vasteaikaan tosiaikana
-mitattuna/. Tarkemman suorituskykyanalyysin kannalta pelkkä tosiajan
-käyttäminen ei kuitenkaan aina ole riittävää. UNIX-käyttöjärjestelmät
-pitävät kirjaa myös /sovellusajasta/ (/user time/), eli ajasta, jonka
-sovellusprosessi viettää aktiivisesti tavallisessa suoritustilassa
+Tässä tutkielmassa kaikki suorituskykyä parantavat ratkaisut
+tavoittelevat /oleellisten käyttötapausten vasteajan lyhentämistä
+tosiaikana mitattuna/. Tarkemman suorituskykyanalyysin kannalta pelkkä
+tosiajan käyttäminen ei kuitenkaan aina ole
+riittävää. UNIX-käyttöjärjestelmät pitävät kirjaa myös
+/sovellusajasta/ (/user time/), eli ajasta, jonka sovellusprosessi
+viettää aktiivisesti tavallisessa suoritustilassa
 käyttöjärjestelmäytimen ulkopuolella (/unprivileged mode/, /user
 mode/) @@advanced-unix(20). Toinen osa sovellusprosessin
 suoritusajasta, järjestelmäaika (/system time/), vietetään
@@ -272,11 +275,10 @@ järjestelmäaika yhdessä vastaavat sovelluksen /suoritinaikaa/ (/CPU
 time/), koska niihin kuuluu ainoastaan prosessin aktiivinen
 suoritusaika @@advanced-unix(20). Tutkielmassa oletetaan, että
 suoritinaika on natiivirajapinnan rasitteiden oleellisin osatekijä,
-sillä rajapintatoteutuksen tehtävät liittyvät puhtaasti
-keskusmuistissa olevan datan esitysmuotojen muuntamiseen ja
-tietorakenteiden kirjanpitoon mutta tosiaikaa mittaamalla
-varmistetaan, etteivät suoritinajan ulkopuoliset merkittävät viiveet
-jää huomiotta.
+sillä rajapintatoteutus oleellisesti käsittelee keskusmuistissa ja
+rekistereissä olevaa dataa ja tietorakenteita ja pitää niistä
+kirjaa. Tosiaikaa mittaamalla varmistetaan kuitenkin, etteivät
+suoritinajan ulkopuoliset merkittävät viiveet jää huomiotta.
 
 Kuten aina, vasteaikojen mittaamisen kohde on aina
 ohjelma--syöte -pari, joten sopivien syötteiden käyttäminen
@@ -304,12 +306,14 @@ ole mahdollista.
 Mittaustekniikat jakaantuvat menetelmiin, jotka joko /kirjaavat/
 (/record/) kiinnostavia /tapahtumia/ tai /tarkkailevat/ (/monitor/)
 järjestelmän tai ohjelmiston /tiloja/@@spe(328). Tapahtumien
-kirjaaminen tarkoittaa, että joka kerta kun valittu tapahtuma
-esiintyy, tieto tapahtumasta ja siihen liittyvä oleellinen informaatio
-kerätään ja tallennetaan. Tarkkailumenetelmät puolestaan perustuvat
-yleensä toistuvaan /näytteidenottoon/: tasaisin väliajoin, satunnaisin
-väliajoin tai tietyn tapahtuman sattuessa otetaan näyte ohjelmiston
-tilasta.
+kirjaaminen tarkoittaa, että aina kiinnostavan tapahtuman esiintyessä
+oleellinen informaatio tapahtumasta kerätään ja
+tallennetaan. Kirjaamistoimet käynnistetään mitattavan ohjelman omasta
+toimesta, kun taas tarkkailussa mittaamisen kontrolli on ohjelman
+ulkopuolella käyttöjärjestelmässä tai
+laitteistossa. Tarkkailumenetelmät perustuvat yleensä toistuvaan
+/näytteidenottoon/: tasaisin väliajoin, satunnaisin väliajoin tai
+tietyn tapahtuman sattuessa otetaan näyte ohjelmiston tilasta. 
 
 Tyypillinen kirjaamismenetelmä on ohjelman /instrumentointi/:
 suoritettava ohjelma kirjaa mittauksen kohteena olevat tapahtumat
@@ -328,7 +332,8 @@ nykyisessä käytössä ja tässä tutkielmassa profiloinnilla tarkoitetaan
 yleisemmin ohjelman osien suorituskäyttäytymisen mittaamista, jolloin
 suorituskertojen sijaan usein tutkitaan osien suoritukseen käytettyä
 aikaa. Se hyödyntää usein instrumentoinnin sijaan tai sen lisäksi
-näytteenottomenetelmiä.
+näytteenottomenetelmiä ja tutkii yleensä ohjelman suoritusaikaa
+aliohjelmien tarkkuudella.
 #todo profile kutsu vs lausetason?  plus lähde tähän
 # knuth irrallinen > siirrä myöhemmäksi
 
@@ -485,9 +490,6 @@ yksittäisten konekäskyjen suhteelliset kustannukset, kannattaa näihin
 suhtautua pienellä varauksella. Tällä epätarkkuudella ei ole käytännön
 vaikutusta, jos mittauksen kohteena on suurempien kokonaisuuksien kuten
 kokonaisten aliohjelmien inklusiiviset suoritusajat.
-
-Korkealla kutsupinossa olevien aliohjelmien inklusiiviisiin aikoihin
-tällä epätarkkuudella ei ole käytännön vaikutusta.
 
 #oprofile
 

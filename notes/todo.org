@@ -23,7 +23,8 @@ Gradu: duunit
 *** motivoi benchmarkien käyttöä tässä kohtaa
     [[file:~/gradu/paper/src/chapters/performance.org::benchmark]]
 ** korjaukset / tarkennukset
-
+*** analysoi benchmark-ajattelua suhteessa edelliseen kappaleeseen
+    [[file:~/gradu/paper/src/chapters/performance.org::ajattele-uudelleen]]
 *** ashmem-onko persistoitu
     [[file:~/gradu/paper/src/chapters/android_summary.org::ashmem]]
 *** posix väärä merkitys
