@@ -1,0 +1,26 @@
+
+# todo iske yleispätevyys-luvun loppuun
+
+Eräs tapa saavuttaa astetta yleispätevämpiä tuloksia
+suorituskykymittauksista on laatia mitattavalle järjestelmälle sarja
+ennalta laadittuja syötteitä, jotka on suunniteltu edustamaan
+todellisuudessa kohdattavia syötteitä tai ovat peräisin todellisista
+työkuormista. Menetelmää kutsutaan nimellä /benchmarking/ ja sitä voi
+hyödyntää silloin, kun tutkittava järjestelmä toteuttaa jonkin
+spesifikaation tai rajapinnan, joka mahdollistaa testisyötteiden
+laatimisen yksittäisestä toteutuksesta riippumatta. Tällöin
+järjestelmän suorituskykymittauksia voi /verrata/ toisten sellaisten
+järjestelmien mittaustuloksiin, jotka toteuttavat saman
+spesifikaation. Lisäksi järjestelmien erot eri syötteillä tulevat
+näkyviin ja eroista voi päätellä, minkälaisia syötteitä mikäkin
+järjestelmä prosessoi tehokkaasti.
+
+Esimerkiksi tietyn ohjelmointikielen kääntäjille laadittu
+benchmark-sarja koostuisi erilaisista tarkkaan valituista
+käännettävistä ohjelmista. Vastaavalla kokoelmalla voisi tutkia
+virtuaalikoneen toimintaa ja verrata sitä muihin. 
+
+# todo here
+
+
+
