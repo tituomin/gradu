@@ -1,6 +1,6 @@
 
 Riittävä suorituskyky on keskeinen laatuvaatimus mille tahansa
-ohjelmistolle, mutta millä tavalla suorituskyky tulisi ottaa huomioon
+ohjelmistolle, mutta miten suorituskyky tulisi ottaa huomioon
 ohjelmiston kehitysprosessissa? Ohjelmistotekniikan kirjallisuudessa
 kysymykseen on vastattu hyvin eri tavoin.
 
@@ -16,10 +16,11 @@ kokonaissuoritusajasta.
 # todo: mitä knuthin artikkeli itse asiassa käsittelee?
 
 Periaatteeseen on kaksi syytä. Ensinnäkin ohjelmoijan intuitio johtaa
-yleensä harhaan, kun etsitään ohjelman suorituskyvyn kannalta
-keskeisiä osia. Lisäksi käsityönä tehdyt optimoinnit tekevät
-ohjelmakoodista vaikeammin ymmärrettävää ja ylläpidettävää, joten
-niitä kannattaa välttää aina, kun niitä ei todistetusti tarvita.
+yleensä harhaan, kun etsitään suorituskykyyn eniten vaikuttavia
+ohjelman osia. Toiseksi äärimmilleen optimoitu ohjelmakoodi on
+vaikeammin ymmärrettävää ja ylläpidettävää, joten on perusteltua
+jättää suurin osa ohjelmakoodista selkeämmäksi suorituskyvyn
+kustannuksella.
 
 Knuthin tueksi voi nykynäkökulmasta todeta, että
 laitteistoarkkitehtuurien, optimoivien kääntäjien, virtuaalikoneiden
@@ -119,7 +120,10 @@ syötteellä eli kuormituksella, ja näitä vasteajan osatekijöitä on
 hyvin vaikea analysoida tavalla joka olisi riippumaton käsiteltävän
 järjestelmän ominaisuuksista @@ferrari(14). Varsinaiset
 suoritusaikamittaukset koskevat aina /ohjelma--syöte/-pareja, eivät
-puhtaasti ohjelmaa sellaisenaan @@ferrari(455).
+puhtaasti ohjelmaa sellaisenaan @@ferrari(455). Nämä seikat vähentävät
+saatujen tulosten yleistettävyyttä. Tarkoistakin mittauksista on
+vaikeaa tehdä sellaisia /yleisiä/ päätelmiä tulosten syistä, joita
+voisi soveltaa myös muihin kuin juuri mitattavaan järjestelmään.
 
 \todo{<<käyttötapaus>>}
 
