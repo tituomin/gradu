@@ -7,8 +7,8 @@ ennalta laadittuja syötteitä, jotka on suunniteltu edustamaan
 todellisuudessa kohdattavia syötteitä tai ovat peräisin todellisista
 työkuormista. Menetelmää kutsutaan nimellä /benchmarking/ ja sitä voi
 hyödyntää silloin, kun tutkittava järjestelmä toteuttaa jonkin
-spesifikaation tai rajapinnan, joka mahdollistaa testisyötteiden
-laatimisen yksittäisestä toteutuksesta riippumatta. Tällöin
+spesifikaation tai rajapinnan, joka mahdollistaa samojen
+testisyötteiden käytön useiden toteutusten kanssa. Tällöin
 järjestelmän suorituskykymittauksia voi /verrata/ toisten sellaisten
 järjestelmien mittaustuloksiin, jotka toteuttavat saman
 spesifikaation. Lisäksi järjestelmien erot eri syötteillä tulevat
@@ -18,9 +18,29 @@ järjestelmä prosessoi tehokkaasti.
 Esimerkiksi tietyn ohjelmointikielen kääntäjille laadittu
 benchmark-sarja koostuisi erilaisista tarkkaan valituista
 käännettävistä ohjelmista. Vastaavalla kokoelmalla voisi tutkia
-virtuaalikoneen toimintaa ja verrata sitä muihin. 
+joukkoa virtuaalikoneita, esimerkiksi eri JVM-toteutusten
+suoriutumista JNI-rajapintaa hyödyntävien sovellusten ajamisesta.
 
-# todo here
+Toinen mahdollinen koeasetelma olisi verrata eri versioita ohjelmasta,
+jotka toteuttavat saman spesifikaation eli prosessoivat samanmuotoista
+dataa. Yksi versio hyödyntäisi laajasti JNI-rajapintaa, toinen olisi
+puhdas natiiviohjelma ja kolmas puhdas Java-ohjelma. Asetelman etuna
+olisi ohjelmien realistisuus ja testien kokonaisvaltaisuus - toisaalta
+esimerkiksi eri tavalla JNI:tä hyödyntävien versioiden tekeminen olisi
+hyvin työlästä ei-triviaaleille ohjelmille, ja tulokset saattaisivat
+kertoa enemmän käsillä olevien toteutusten ominaispiirteistä kuin
+yleispätevästi JNI-rajapinnan käytön vaikutuksesta. Koeasetelma olisi
+tavallaan analyyttinen: valmiiden kokonaisten ohjelmien
+suorituskykyominaisuudet analysoitaisiin kokonaisuudesta tehtyjen
+mittausten perusteella.
+
+Toinen, tutkielmassa käytetty lähtökohta JNI:n
+suorituskykyominaisuuksien tutkimiseen on ikään kuin synteettinen:
+yritämme tutkia JNI-rajapinnan yksittäisten rakenneosien
+suorituskykyominaisuuksia
+
+ #
+todohere
 
 
 
