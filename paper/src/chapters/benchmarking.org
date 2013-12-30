@@ -37,10 +37,11 @@ mittausten perusteella.
 Toinen, tutkielmassa käytetty lähtökohta JNI:n
 suorituskykyominaisuuksien tutkimiseen on ikään kuin synteettinen:
 yritämme tutkia JNI-rajapinnan yksittäisten rakenneosien
-suorituskykyominaisuuksia
+suorituskykyominaisuuksia ja päätellä niistä, miten osista rakennettu
+kokonaisuus mahdollisesti toimisi. Välittömästi on todettava, ettei
+tämä lähestymistapa suinkaan ole ongelmaton.
 
- #
-todohere
+# todohere
 
 
 

@@ -20,6 +20,8 @@
 #+INCLUDE: "../gen/chapters/android_summary.org" :minlevel 1
 * Suorituskyky ohjelmistokehityksessä
 #+INCLUDE: "../gen/chapters/performance.org" :minlevel 1
+* foo
+#+INCLUDE: "../gen/chapters/benchmarking.org" :minlevel 1
 * Java-natiivirajapinta
 #+INCLUDE: "../gen/chapters/jni.org" :minlevel 1
 
