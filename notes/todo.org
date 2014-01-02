@@ -1,6 +1,10 @@
 #+TODO: TODO PLAN CODE TEST | WONTFIX DONE
 Gradu: duunit
 
+Missä mennään:
+[[file:~/gradu/paper/bib/main.bib::saavedra]]
+(hyvä peruslähde benchmarkeista)
+
 * Teksti
 ** formatointi
 *** TODO http://tex.stackexchange.com/questions/18910/multiple-citations-with-pages-using-biblatex

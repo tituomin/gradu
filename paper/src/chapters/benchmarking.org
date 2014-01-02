@@ -15,6 +15,10 @@ spesifikaation. Lisäksi järjestelmien erot eri syötteillä tulevat
 näkyviin ja eroista voi päätellä, minkälaisia syötteitä mikäkin
 järjestelmä prosessoi tehokkaasti.
 
+Benchmarking is the process of running a specific program or workload
+on a specific machine or system and measuring the resulting
+performance.  @@saavedra(345)
+
 Esimerkiksi tietyn ohjelmointikielen kääntäjille laadittu
 benchmark-sarja koostuisi erilaisista tarkkaan valituista
 käännettävistä ohjelmista. Vastaavalla kokoelmalla voisi tutkia
