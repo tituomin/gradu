@@ -146,6 +146,9 @@ Missä mennään:
 *** DONE tsekkaa automaattisesti datasta columnien määrä?
 
 * Tarkista / huomioi / perustele
+** TODO kokeile jit-koodin disassembloimista
+   https://groups.google.com/d/msg/android-platform/nn5RbCm7Fd4/5fDVsZENtvcJ
+** TODO ashmem on shared memory, ei persistent (disk api on virtuaalinen)
 ** TODO huomaa, että getfieldin tyypit yms. voisi parametrisoida
 ** TODO gof-book: onko proxy oikea termi peer classille?
 ** TODO androidin jni-toteutus ei käytä funktiotauluja?
