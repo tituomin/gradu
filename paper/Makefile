@@ -43,8 +43,8 @@ main.tex: main.org gen/chapters_generated
 
 main.pdf: main.tex
 	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/tituomin-gradu -pdf -pdflatex="pdflatex -interaction nonstopmode" -use-make gen/main.tex
-	chmod a+r build/tituomin-gradu.pdf
-	cp build/tituomin-gradu.pdf ~/public_html/
+#	chmod a+r build/tituomin-gradu.pdf
+#	cp build/tituomin-gradu.pdf ~/public_html/
 
 clean:
 	latexmk -CA
