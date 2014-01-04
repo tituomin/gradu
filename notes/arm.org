@@ -1,0 +1,7 @@
+
+Resources for ARM assembly
+
+* Whirlwind Tour of ARM Assembly
+  http://www.coranac.com/tonc/text/asm.htm
+  - lisää linkkejä sivulla
+
