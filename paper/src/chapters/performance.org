@@ -172,35 +172,35 @@ mittaukset täytyy lopulta suhteuttaa ohjelmiston
 suorituskykyvaatimuksille ja viime kädessä käyttäjien subjektiiviselle
 kokemukselle.
 
-\todo{<<outo kommentti>>} # vihavaiselta
+\todo{<<outo kommentti>>}
+# vihavaiselta
 
 # todo: varmista lopuksi että tämä on näin
 
 # start integrate
 
+* Vakioidut mittaukset
+
 Eräs tapa saavuttaa astetta yleispätevämpiä tuloksia
 suorituskykymittauksista on laatia mitattavalle järjestelmälle sarja
 ennalta laadittuja syötteitä, jotka on suunniteltu edustamaan
 todellisuudessa kohdattavia syötteitä tai ovat peräisin todellisista
-työkuormista. Menetelmää kutsutaan nimellä /benchmarking/ ja sitä voi
-hyödyntää silloin, kun tutkittava järjestelmä toteuttaa jonkin
-spesifikaation tai rajapinnan, joka mahdollistaa samojen
-testisyötteiden käytön useiden toteutusten kanssa. Tällöin
+työkuormista, ja mitata järjestelmän suoriutumista syötteistä. Kutsun
+tätä yleistä menetelmää /vakioiduksi mittaamiseksi/
+(/benchmarking/). Menetelmää voi hyödyntää, kun tutkittava järjestelmä
+toteuttaa jonkin spesifikaation tai rajapinnan, joka mahdollistaa
+samojen testisyötteiden käytön useiden toteutusten kanssa. Tällöin
 järjestelmän suorituskykymittauksia voi /verrata/ toisten sellaisten
 järjestelmien mittaustuloksiin, jotka toteuttavat saman
-spesifikaation. Lisäksi järjestelmien erot eri syötteillä tulevat
-näkyviin ja eroista voi päätellä, minkälaisia syötteitä mikäkin
-järjestelmä prosessoi tehokkaasti.
+spesifikaation. Lisäksi järjestelmien erot erilaisilla syötteillä
+tulevat näkyviin ja eroista voi päätellä, minkälaisia syötteitä
+mikäkin järjestelmä prosessoi tehokkaasti.
 
-Benchmarking is the process of running a specific program or workload
-on a specific machine or system and measuring the resulting
-performance.  @@saavedra(345)
-
-Esimerkiksi tietyn ohjelmointikielen kääntäjille laadittu
-benchmark-sarja koostuisi erilaisista tarkkaan valituista
-käännettävistä ohjelmista. Vastaavalla kokoelmalla voisi tutkia
-joukkoa virtuaalikoneita, esimerkiksi eri JVM-toteutusten
-suoriutumista JNI-rajapintaa hyödyntävien sovellusten ajamisesta.
+Esimerkiksi tietyn ohjelmointikielen kääntäjille laadittu vakioitu
+mittaussarja koostuisi erilaisista tarkkaan valituista käännettävistä
+ohjelmista. Vastaavalla kokoelmalla voisi tutkia joukkoa
+virtuaalikoneita, esimerkiksi eri JVM-toteutusten suoriutumista
+JNI-rajapintaa hyödyntävien sovellusten ajamisesta.
 
 Toinen mahdollinen koeasetelma olisi verrata eri versioita ohjelmasta,
 jotka toteuttavat saman spesifikaation eli prosessoivat samanmuotoista
@@ -217,12 +217,22 @@ mittausten perusteella.
 
 Toinen, tutkielmassa käytetty lähtökohta JNI:n
 suorituskykyominaisuuksien tutkimiseen on ikään kuin synteettinen:
-yritämme tutkia JNI-rajapinnan yksittäisten rakenneosien
+yritämme tutkia JNI-rajapinnan yksittäisten operaatioiden
 suorituskykyominaisuuksia ja päätellä niistä, miten osista rakennettu
-kokonaisuus mahdollisesti toimisi. Välittömästi on todettava, ettei
-tämä lähestymistapa suinkaan ole ongelmaton.
+kokonaisuus mahdollisesti toimisi. Kutsun /synteettiseksi
+mittaamiseksi/ (/microbenchmarking/) tällaista mittausmenetelmää,
+jossa verrataan kielen tai järjestelmän yksittäisten
+perusoperaatioiden rasitteita toisiinsa. Menetelmän etuna on että
+mittaustuloksista saadaan periaatteessa suuri määrä suoraviivaisesti
+tulkittavaa sovellettavaa dataa esimerkiksi siitä, mitkä operaatiot
+ovat erityisen raskaita. Lähestymistavassa on kuitenkin myös vakavia
+puutteita, joita käsitellään seuraavaksi.
 
 # end integrate
+
+* Synteettisen mittaamisen sudenkuopat
+
+# todo kirjoita auki
 
 Tutkielmassa mitataan Dalvik-virtuaalikoneen
 Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
@@ -256,15 +266,15 @@ ollaakseen /validi/ @@ferrari(161--162).
 Tässä tutkielmassa lähdetään oletuksesta, että Dalvik-virtuaalikoneen
 natiivirajapinta on kokonaisjärjestelmän osana riittävän
 yksinkertainen, jotta siitä on mahdollista melko suoraviivaisesti
-luoda malli, joka perustuu rajapinnasta tehtyihin mittauksiin
-kontrolloidulla syötejoukolla. Mittaus- ja mallintamisnäkökulmaa ei
-ole saatu yhdistettyä toisiinsa riittävän yleispätevästi
-@@future-spe(172). Tämän tutkielman lähestymistapana on rajata
-näkökulma spesifisti Java-virtuaalikoneen ja natiivikoodin väliseen
-viestintään ja konstruoida malli natiivirajapinnasta mittausten
-perusteella. Seuraavaksi käsitelläänkin ohjelmiston suorituskyvyn
-mittaamiseen käytettäviä tekniikoita ennen mallinnusformalismien
-esittelyä.
+luoda malli, joka perustuu rajapinnasta tehtyihin synteettisiin
+mittauksiin kontrolloidulla syötejoukolla. Mittaus- ja
+mallintamisnäkökulmaa ei ole saatu yhdistettyä toisiinsa riittävän
+yleispätevästi @@future-spe(172). Tämän tutkielman lähestymistapana on
+rajata näkökulma spesifisti Java-virtuaalikoneen ja natiivikoodin
+väliseen viestintään ja konstruoida malli natiivirajapinnasta
+mittausten perusteella. Seuraavaksi käsitelläänkin ohjelmiston
+suorituskyvyn mittaamiseen käytettäviä tekniikoita ennen
+mallinnusformalismien esittelyä.
    
 * Suorituskyvyn mittaaminen
 Tietyn käyttötapauksen kokonaisvasteajan mittaaminen on
@@ -621,7 +631,7 @@ jokainen alkaa satunnaisella ajanhetkellä, ja vaihtelemme jakson
 pituutta syklimäärässä.
 # todo: analysoi linuxin timeria ja schedulointia..
 # todo: onko dalvikissa ym. muissa komponenteissa jaksollisia ilmiöitä?
-* Arkkitehtuurin mallintaminen 
+* Arkkitehtuurin mallintaminen :noexport:
 # todo OHJELMISTON mallintaminen vai arkkitehtuurin?
 
 # todo vanhaa tekstiä tästä alaspäin ---------===========----
