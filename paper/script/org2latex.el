@@ -29,6 +29,7 @@
 \\usepackage{xcolor}
 \\usepackage{pifont}
 \\usepackage{listings}
+\\usepackage{tablefont}
 \\counterwithin{figure}{section}
 \\counterwithin{table}{section}
 \\level{Pro gradu -tutkielmasuunnitelma}"
