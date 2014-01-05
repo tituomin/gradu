@@ -51,7 +51,7 @@ jälkikäteen mahdotonta.
   
 # comment: lähde edelliseen?
 
-Suorituskykyvaatimuksien täyttymistä ohjelmistoprosessin näkökulmasta
+Suorituskykyvaatimusten täyttymistä ohjelmistoprosessin näkökulmasta
 tavoitellaan /ohjelmistojen suorituskykytekniikan/ alalla (/Software
 Performance Engineering/, /SPE/). Se on ohjelmistotekniikan osa-alue,
 jossa suorituskykyvaatimukset kvantifioidaan ja otetaan huomioon
@@ -101,29 +101,35 @@ ohjelmistoon.
 \todo{<<tarkkuusaste>>}
 # todo selvennä ylempi
 
-
 Myös tuottavuutta käsitellään tutkielmassa, sikäli kuin komponenttien
 tuottavuus vaikuttaa käyttäjän kokemiin vasteaikoihin. Tuottavuus
-tarkoittaa käsittelytehoa, jolla ohjelma suoriutuu tietyn työkuorman
-käsittelystä, ja tuottavuusmittarit ilmaistaan yksiköllä /kuorma
-aikayksikköä kohti/. Kuormalle ei yleensä ole löydettävissä
-universaalia, laitteisto- tai sovellusalueriippumatonta mittayksikköä
-@@ferrari(12). Työkuorman mallintaminen onkin keskeisiä haasteita
-suorituskyvyn arvioinnissa @@spe(115), @@ferrari(221).
+tarkoittaa käsittelytehoa, jolla järjestelmä suoriutuu tietyn
+työkuorman (/workload/) käsittelystä, ja tuottavuusmittarit ilmaistaan
+yksiköllä /kuorma aikayksikköä kohti/. Kuormalle ei yleensä ole
+löydettävissä universaalia, laitteisto- tai sovellusalueriippumatonta
+mittayksikköä @@ferrari(12). Työkuorman mallintaminen onkin keskeisiä
+haasteita suorituskyvyn arvioinnissa @@spe(115), @@ferrari(221).
 #todo oikea syntaksi monelle viitteelle?
 
-Sama universaalisuusongelma koskee kaikkia suorituskykymittareita.
-Vaikka suorituskyvyn eri osatekijöitä voi arvioida kvantitatiivisilla
-mittareilla, tulosten objektiivisuus on aina rajallinen. Esimerkiksi
-vasteaika ilmaisee aina tietyn operaation vasteajan tietyllä
-syötteellä eli kuormituksella, ja näitä vasteajan osatekijöitä on
-hyvin vaikea analysoida tavalla joka olisi riippumaton käsiteltävän
-järjestelmän ominaisuuksista @@ferrari(14). Varsinaiset
-suoritusaikamittaukset koskevat aina /ohjelma--syöte/-pareja, eivät
-puhtaasti ohjelmaa sellaisenaan @@ferrari(455). Nämä seikat vähentävät
-saatujen tulosten yleistettävyyttä. Tarkoistakin mittauksista on
-vaikeaa tehdä sellaisia /yleisiä/ päätelmiä tulosten syistä, joita
-voisi soveltaa myös muihin kuin juuri mitattavaan järjestelmään.
+* Suorituskyvyn arvioimisen yleispätevyys
+
+Vaikka suorituskyvyn eri osatekijöitä voi arvioida ja mitata
+näennäisen tarkoilla kvantitatiivisilla mittareilla, tulosten
+objektiivisuus, toistettavuus ja erityisesti yleistettäväyys on aina
+rajallinen. Esimerkiksi vasteaika ilmaisee aina tietyn operaation
+vasteajan tietyllä syötteellä eli kuormituksella, ja näitä vasteajan
+osatekijöitä on hyvin vaikea analysoida tavalla joka olisi riippumaton
+käsiteltävän järjestelmän ominaisuuksista @@ferrari(14). Varsinaiset
+suoritusaikamittaukset koskevat aina /ohjelma--syöte/-paria, eivät
+puhtaasti ohjelmaa sellaisenaan @@ferrari(455). Yksittäisen
+mittaustulokseen eniten vaikuttavat kausaaliset syyt saattavat olla
+kulloisenkin ohjelman, laitteiston tai syötteen sattumanvaraisia
+ominaispiirteitä, 
+
+Nämä seikat vähentävät yksittäisten mittaustulosten
+hyötyä. Tarkoistakin mittauksista on vaikeaa tehdä sellaisia /yleisiä/
+päätelmiä tulosten syistä, joita voisi soveltaa myös muissa
+konteksteissa kuin konkreettisessa mittaustilanteessa.
 
 \todo{<<käyttötapaus>>}
 
@@ -144,10 +150,9 @@ mobiililaitemallista ja Android-versiosta @@ferrari(454).
 #viite: android moniajo
 # mainitse vielä mittaus vs. mallinnus
 
-* Arvioimisen tavoitteet ja yleispätevyys
 # todo: käsittelee oikeastaan /mittaamisen/ tavoitteita
-Objektiivisuuden puute voi vaikeuttaa mittausten tieteellistä
-toistettavuutta. Käytännön kehitystyössä tämä ei välttämättä ole
+Yleispätevyyden puute voi vaikeuttaa mittausten ja arvioiden
+tieteellistä arvoa. Käytännön kehitystyössä tämä ei välttämättä ole
 ongelma, jos tuloksista vedetään vain rajallisia johtopäätöksiä. Kun
 tavoitteena on tietyn järjestelmän suorituskyvyn /parantaminen/,
 riittää että mittauksista löydetään suorituskyvyn kannalta
@@ -167,8 +172,58 @@ mittaukset täytyy lopulta suhteuttaa ohjelmiston
 suorituskykyvaatimuksille ja viime kädessä käyttäjien subjektiiviselle
 kokemukselle.
 
-\todo{<<outo kommentti>>}
+\todo{<<outo kommentti>>} # vihavaiselta
+
 # todo: varmista lopuksi että tämä on näin
+
+# start integrate
+
+Eräs tapa saavuttaa astetta yleispätevämpiä tuloksia
+suorituskykymittauksista on laatia mitattavalle järjestelmälle sarja
+ennalta laadittuja syötteitä, jotka on suunniteltu edustamaan
+todellisuudessa kohdattavia syötteitä tai ovat peräisin todellisista
+työkuormista. Menetelmää kutsutaan nimellä /benchmarking/ ja sitä voi
+hyödyntää silloin, kun tutkittava järjestelmä toteuttaa jonkin
+spesifikaation tai rajapinnan, joka mahdollistaa samojen
+testisyötteiden käytön useiden toteutusten kanssa. Tällöin
+järjestelmän suorituskykymittauksia voi /verrata/ toisten sellaisten
+järjestelmien mittaustuloksiin, jotka toteuttavat saman
+spesifikaation. Lisäksi järjestelmien erot eri syötteillä tulevat
+näkyviin ja eroista voi päätellä, minkälaisia syötteitä mikäkin
+järjestelmä prosessoi tehokkaasti.
+
+Benchmarking is the process of running a specific program or workload
+on a specific machine or system and measuring the resulting
+performance.  @@saavedra(345)
+
+Esimerkiksi tietyn ohjelmointikielen kääntäjille laadittu
+benchmark-sarja koostuisi erilaisista tarkkaan valituista
+käännettävistä ohjelmista. Vastaavalla kokoelmalla voisi tutkia
+joukkoa virtuaalikoneita, esimerkiksi eri JVM-toteutusten
+suoriutumista JNI-rajapintaa hyödyntävien sovellusten ajamisesta.
+
+Toinen mahdollinen koeasetelma olisi verrata eri versioita ohjelmasta,
+jotka toteuttavat saman spesifikaation eli prosessoivat samanmuotoista
+dataa. Yksi versio hyödyntäisi laajasti JNI-rajapintaa, toinen olisi
+puhdas natiiviohjelma ja kolmas puhdas Java-ohjelma. Asetelman etuna
+olisi ohjelmien realistisuus ja testien kokonaisvaltaisuus - toisaalta
+esimerkiksi eri tavalla JNI:tä hyödyntävien versioiden tekeminen olisi
+hyvin työlästä ei-triviaaleille ohjelmille, ja tulokset saattaisivat
+kertoa enemmän käsillä olevien toteutusten ominaispiirteistä kuin
+yleispätevästi JNI-rajapinnan käytön vaikutuksesta. Koeasetelma olisi
+tavallaan analyyttinen: valmiiden kokonaisten ohjelmien
+suorituskykyominaisuudet analysoitaisiin kokonaisuudesta tehtyjen
+mittausten perusteella.
+
+Toinen, tutkielmassa käytetty lähtökohta JNI:n
+suorituskykyominaisuuksien tutkimiseen on ikään kuin synteettinen:
+yritämme tutkia JNI-rajapinnan yksittäisten rakenneosien
+suorituskykyominaisuuksia ja päätellä niistä, miten osista rakennettu
+kokonaisuus mahdollisesti toimisi. Välittömästi on todettava, ettei
+tämä lähestymistapa suinkaan ole ongelmaton.
+
+# end integrate
+
 Tutkielmassa mitataan Dalvik-virtuaalikoneen
 Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
 suhteessa toisiinsa ja vastaaviin operaatioihin Java-kielisessä
