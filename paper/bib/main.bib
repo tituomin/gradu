@@ -237,6 +237,79 @@ and compare these against benchmark results. Finally, we develop a
 metric for program similarity that makes it possible to classify
 benchmarks with respect to a large set of characteristics.
 
+*** modern computer architectures
+
+@book{HELKA:1601042 ,
+  author    = {Allen, Randy.},
+  author    = {Kennedy, Ken.},
+  title     = {Optimizing compilers for modern architectures : : a dependence-based approach /},
+  isbn      = {1-55860-286-0},
+  address   = {San Francisco (CA) :},
+  publisher = {Morgan Kaufmann,},
+  year      = {2002.},
+  bibdate   = {20120403065007}
+}
+
+Kirjasto: Kumpulan kampuskirjasto, laina-aika 28 vrk
+Sijainti: Hs 004.04 Allen
+
+@inproceedings{Ailamaki:1999:DMP:645925.671662,
+ author = {Ailamaki, Anastassia and DeWitt, David J. and Hill, Mark D. and Wood, David A.},
+ title = {DBMSs on a Modern Processor: Where Does Time Go?},
+ booktitle = {Proceedings of the 25th International Conference on Very Large Data Bases},
+ series = {VLDB '99},
+ year = {1999},
+ isbn = {1-55860-615-7},
+ pages = {266--277},
+ numpages = {12},
+ url = {http://dl.acm.org/citation.cfm?id=645925.671662},
+ acmid = {671662},
+ publisher = {Morgan Kaufmann Publishers Inc.},
+ address = {San Francisco, CA, USA},
+ file = {P28.pdf},
+} 
+
+
+@article{Wilhelm:2008:WEP:1347375.1347389,
+ author = {Wilhelm, Reinhard and Engblom, Jakob and Ermedahl, Andreas and Holsti, Niklas and Thesing, Stephan and Whalley, David and Bernat, Guillem and Ferdinand, Christian and Heckmann, Reinhold and Mitra, Tulika and Mueller, Frank and Puaut, Isabelle and Puschner, Peter and Staschulat, Jan and Stenstr\"{o}m, Per},
+ title = {The Worst-case Execution-time Problem\&Mdash;Overview of Methods and Survey of Tools},
+ journal = {ACM Trans. Embed. Comput. Syst.},
+ issue_date = {April 2008},
+ volume = {7},
+ number = {3},
+ month = may,
+ year = {2008},
+ issn = {1539-9087},
+ pages = {36:1--36:53},
+ articleno = {36},
+ numpages = {53},
+ url = {http://doi.acm.org/10.1145/1347375.1347389},
+ doi = {10.1145/1347375.1347389},
+ acmid = {1347389},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Hard real time, worst-case execution times},
+ file = {a36-wilhelm.pdf},
+} 
+
+yllä oleva on erittäin hyvä! s. 17!
+sieltä löytyi tämä:
+
+@ARTICLE{1215685,
+author={Heckmann, R. and Langenbach, M. and Thesing, S. and Wilhelm, R.},
+journal={Proceedings of the IEEE},
+title={The influence of processor architecture on the design and the results of WCET tools},
+year={2003},
+volume={91},
+number={7},
+pages={1038-1054},
+abstract={The architecture of tools for the determination of worst case execution times (WCETs) as well as the precision of the results of WCET analyses strongly depend on the architecture of the employed processor. The cache replacement strategy influences the results of cache behavior prediction; out-of-order execution and control speculation introduce interferences between processor components, e.g., caches, pipelines, and branch prediction units. These interferences forbid modular designs of WCET tools, which would execute the subtasks of WCET analysis consecutively. Instead, complex integrated designs are needed, resulting in high demand for memory space and analysis time. We have implemented WCET tools for a series of increasingly complex processors: SuperSPARC, Motorola ColdFire 5307, and Motorola PowerPC 755. In this paper, we describe the designs of these tools, report our results and the lessons learned, and give some advice as to the predictability of processor architectures.},
+keywords={cache storage;parallel architectures;performance evaluation;Motorola ColdFire 5307;Motorola PowerPC 755;SuperSPARC;WCETs;architecture;branch prediction;cache behavior prediction;cache replacement;control speculation;out-of-order execution;static analysis;worst case execution times;Bridges;Computer architecture;Microprocessors;Out of order;Performance analysis;Pipelines;Power system modeling;Processor scheduling;Real time systems;Timing},
+doi={10.1109/JPROC.2003.814618},
+ISSN={0018-9219},
+file={01215685.pdf}
+}
+
 
 ** päälähteet
 *** microbenchmarking
@@ -825,6 +898,24 @@ file={01667162.pdf}
   OPTnote =      {},
   OPTannote =    {}
 }
+
+16.1
+
+Other pipeline-dependent latencies
+
+In addition to the time taken for the scheduling and issuing of
+instructions, there are other sources of latencies that effect the
+time of a program sequence. The two most common examples are a branch
+mispredict and a memory system stall such as a data cache miss of a
+load instruction. These cases are the most difficult to predict and
+often must be ignored or estimated using statistical analysis
+techniques. Fortunately, you can ignore most of these additional
+latencies when creating an optimal hand scheduling for a code
+sequence. Hand scheduling is the most useful application of this cycle
+timing information.
+
+
+
 
 *** pelit
 @article{Phelps:2004:FGM:971564.971592,
