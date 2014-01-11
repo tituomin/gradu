@@ -233,6 +233,9 @@ puutteita, joita käsitellään seuraavaksi.
 
 # todo kirjoita auki
 
+*** Java-spesifit
+*** Yleiset
+
 Tutkielmassa mitataan Dalvik-virtuaalikoneen
 Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
 suhteessa toisiinsa ja vastaaviin operaatioihin Java-kielisessä

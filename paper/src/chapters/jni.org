@@ -477,6 +477,7 @@ natiivitietorakenteille, vaan ohjelmoijan on itse määriteltävä
 sidonnat Java-luokan metodeihin.
 # todo määrittele tarkemmin
 
+
 Koska JNI-spesifikaatio ei ota kantaa virtuaalikoneen sisäiseen
 toteutukseen, se ei myöskään sanele, miten virtuaalikoneen tulee
 toteuttaa spesifikaation määräämät takuut tietorakenteiden
