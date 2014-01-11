@@ -23,7 +23,12 @@ Missä mennään:
 ** muuta grafiikkaa
 *** TODO sivun 3 kaavio: lisää nimiavaruus
 
+** poistot
+*** Poista mittauksesta mallintamiseen?
+    [[file:~/gradu/paper/src/chapters/performance.org::necessary-section]]
 ** lisäykset
+*** uusi android-virtuaalikone
+    [[file:~/gradu/paper/src/chapters/android_summary.org::kappale-art-aot]]
 *** motivoi benchmarkien käyttöä tässä kohtaa
     [[file:~/gradu/paper/src/chapters/performance.org::benchmark]]
 ** korjaukset / tarkennukset

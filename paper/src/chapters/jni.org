@@ -304,19 +304,17 @@ jmethodID
 GetMethodID(JNIEnv *env, jclass clazz, const char *name, const char *signature);
 #+end_src
 
-Metodin tyyppi ~signature~ on JVM-tyyppisyntaksia noudattava
-merkkijono @@jnibook(48). Esimerkiksi kokonaisluvun palauttavan ja
-kaksi merkkijonoa parametreinaan ottavan metodin tyyppimääritys on
-~(Ljava/lang/StringLjava/lang/String])I~.
-
+Etsittävän metodin tyypin ilmaisee merkkijonoparametri ~signature~,
+joka noudattaa JVM-tyyppisyntaksia @@jnibook(48). Esimerkiksi
+kokonaisluvun palauttavan ja kaksi merkkijonoa parametreinaan ottavan
+metodin tyyppimääritys on ~(Ljava/lang/StringLjava/lang/String])I~.
 
 Vasta lopuksi metodia varsinaisesti /kutsutaan/ funktiolla
-\verb|Call|\bullet\verb|Method|. Funktiosta on oma versionsa
-jokaiselle mahdolliselle paluuarvon tyypille, joten varsinaisen
-funktion nimi saadaan korvaamalla symboli \bullet taulukon
-\ref{tab-primitives} ensimmäisen sarakkeen sisällöllä. Esimerkiksi
-kokonaisluvun palauttavaa Java-metodia kutsutaan seuraavalla
-funktiolla.
+\verb|Call|\tau\verb|Method|. Funktiosta on oma versionsa jokaiselle
+mahdolliselle paluuarvon tyypille, joten varsinaisen funktion nimi
+saadaan korvaamalla symboli \tau taulukon \ref{tab-primitives}
+ensimmäisen sarakkeen sisällöllä. Esimerkiksi kokonaisluvun
+palauttavaa Java-metodia kutsutaan seuraavalla funktiolla.
 
 #+begin_src c
 jint CallIntMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...);
@@ -346,12 +344,11 @@ Java_CallBackExample_callsum (JNIEnv *env, jobject receiver_object, jint num) {
 
 #+end_src
 
-On selvää, että metodin tai kentän etsiminen symbolisen nimen ja
-tyyppimäärityksen perusteella on raskas operaatio käytettäväksi
-toistuvasti silmukassa @@jnibook(56--57). Siksi natiiviohjelmaa
-suositellaan säilyttämään metodien ja kenttien tunnisteet
-natiivimuuttujissa, mikä ihanteellisesti tapahtuu, kun Java-luokka
-ladataan.
+Metodin tai kentän etsiminen symbolisen nimen ja tyyppimäärityksen
+perusteella on raskas operaatio käytettäväksi toistuvasti silmukassa
+@@jnibook(56--57). Siksi natiiviohjelmaa suositellaan säilyttämään
+metodien ja kenttien tunnisteet natiivimuuttujissa, mikä
+ihanteellisesti tapahtuu, kun Java-luokka ladataan.
 
 Alkuperäisessä natiivirajapinnan spesifikaatiossa arvioidaan, että
 tunnisteiden tallentamisesta huolimatta takaisinkutsurajapinnan
@@ -446,15 +443,15 @@ elinkaari estäisi toisella puolella tapahtuvan rakenteen käsittelyn.
 Primitiivityyppisten parametrien arvot välitetään rajapinnan yli
 kopioimalla, joten ongelmaksi jäävät viitteet allokoituihin
 rakenteisiin. Viitetyyppiset parametrit kuten taulukot ja
-olioinstanssit välitetään natiivikomponentille JNI:n osoitintyyppien
+olioinstanssit välitetään natiivikomponentille JNI-osoitintyyppien
 muodossa @@jnibook(23). Jos Java-ohjelmaan ei jää viitteitä olioon,
 josta välitetään viite natiivipuolelle, saattaisi virtuaalikoneen
 roskienkeräys poistaa olion. JNI:ssä tämä on estetty: oletuksena
 oliosta välitetään /paikallinen viite/ (/local reference/), jonka
-voimassaolo taataan natiivimetodin kutsun ajaksi. Pidempiaikaiset
-viittaukset edellyttävät natiiviohjelmoijalta eksplisiittistä
-/globaalien/ viitteiden luomista ja vapauttamista natiivirajapinnan
-funktioiden avulla.
+voimassaolo taataan natiivimetodin kutsun ajaksi. Viitearvojen
+pidempiaikainen säilyttäminen edellyttää natiiviohjelmoijalta
+eksplisiittistä /globaalien/ viitteiden luomista ja vapauttamista
+natiivirajapinnan funktioiden avulla.
 # todo: korjaa, ei elinkaaren ajaksi vaan jotkut vaativat myös
 # eksplisiittiset lopetuskutsut
 
@@ -465,11 +462,12 @@ edustaa jotain yksittäistä natiivipuolen resurssia, tietorakennetta
 tai olioinstanssia. Tällöin natiiviresurssista on tallennettava
 implisiittinen viite, kuten muistiosoite, vertaisluokan yksityiseen
 kenttään. Vertaisolion konstruktorista voidaan kutsua natiivimetodia,
-joka vastaa natiiviresurssin luomisesta, mutta tämän lisäksi
-vertaisolion käyttäjän on yleensä itse kutsuttava natiivimetodia, joka
-vapauttaa natiiviresurssin @@jnibook(125--126). Muussa tapauksessa
-roskienkeruu poistaisi vertaisolion, kun siihen ei enää ole viitteitä,
-mutta jäljelle jäänyt natiiviresurssi aiheuttaisi muistivuodon.
+joka vastaa natiiviresurssin luomisesta, esimekiksi
+muistinvarauksista, mutta vertaisolion käyttäjän on yleensä itse
+eksplisiittisesti kutsuttava natiivimetodia, joka vapauttaa
+natiiviresurssin @@jnibook(125--126). Muussa tapauksessa roskienkeruu
+poistaisi vertaisolion, kun siihen ei enää ole viitteitä, mutta
+jäljelle jäänyt natiiviresurssi aiheuttaisi muistivuodon.
 
 # todo: onko finalize  tarpeen joskus?
 # todo: edustaolio vs. peer object

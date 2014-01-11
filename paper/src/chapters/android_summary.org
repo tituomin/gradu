@@ -6,6 +6,8 @@ Java-natiivirajapintaan.[fn:version]
 
 [fn:version] Tämä tutkielma perustuu Androidin versioon 4.1.2.
 
+* Androidin rakenne
+
 Android on mobiilikäyttöjärjestelmä, johon kuuluu oma versionsa
 Linux-käyttö\-jär\-jes\-tel\-mä\-y\-ti\-mes\-tä. Siinä on mukana
 joitakin mobiililaitteille räätälöityjä ominaisuuksia, jotka
@@ -186,6 +188,10 @@ takaisin ei-natiiviin suoritustilaansa. Siirtyminen normaalin
 suorituksen ja natiivisuorituksen välillä vaatii virtuaalikoneelta
 erityistoimenpiteitä esimerkiksi kutsukäytäntöjen yhteensovittamisen
 takia. Tämän tutkielman aihe on näiden erityistoimien aiheuttamien
-suorituskykyrasitteiden tarkastelu eli käytännössä Dalvik-virtuaalikoneen
-suoritusaikaisen käyttäytymisen mittaaminen ja tulosten analyysi.
+suorituskykyrasitteiden tarkastelu eli käytännössä
+Dalvik-virtuaalikoneen suoritusaikaisen käyttäytymisen mittaaminen ja
+tulosten analyysi.
+
 # todo tuossa yllä ei ole esim optimointia, garbage collectionia, ym.
+
+\todo{<<kappale-art-aot>>}

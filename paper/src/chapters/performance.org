@@ -90,13 +90,12 @@ on purettava kvantitatiivisiksi /mittareiksi/. Näitä ovat järjestelmän
 kvantitatiivisia osatekijöitä, oli ne sitten johdettu ohjelmistoa
 kuvaavista malleista tai saatu todellisista mittauksista.
 
-Tässä tutkielmassa käsitellään ensisijaisesti mobiilisovellusten
-responsiivisuutta. Sitä arvioidaan /vasteajalla/: aikavälillä syötteen
-saamisesta siihen hetkeen, kun ohjelman tai ohjelmakomponentin tuloste
-on palautettu käyttäjälle tai kutsuvalle komponentille
-@@ferrari(13). Vasteajan perussuure on aika, ja vasteaikaa voi
-arvioida eri tarkkuusasteilla jopa yksittäisestä konekäskystä koko
-ohjelmistoon.
+Tutkielmassa keskitytään mobiilisovellusten responsiivisuuteen. Sitä
+arvioidaan /vasteajalla/: aikavälillä syötteen saamisesta siihen
+hetkeen, kun ohjelman tai ohjelmakomponentin tuloste on palautettu
+käyttäjälle tai kutsuvalle komponentille @@ferrari(13). Vasteajan
+perussuure on aika, ja vasteaikaa voi arvioida eri tarkkuusasteilla
+jopa yksittäisestä konekäskystä koko ohjelmistoon.
 
 \todo{<<tarkkuusaste>>}
 # todo selvennä ylempi
@@ -111,11 +110,11 @@ mittayksikköä @@ferrari(12). Työkuorman mallintaminen onkin keskeisiä
 haasteita suorituskyvyn arvioinnissa @@spe(115), @@ferrari(221).
 #todo oikea syntaksi monelle viitteelle?
 
-* Suorituskyvyn arvioimisen yleispätevyys
+** Arvioimisen yleispätevyys
 
 Vaikka suorituskyvyn eri osatekijöitä voi arvioida ja mitata
 näennäisen tarkoilla kvantitatiivisilla mittareilla, tulosten
-objektiivisuus, toistettavuus ja erityisesti yleistettäväyys on aina
+objektiivisuus, toistettavuus ja erityisesti yleistettävyys on aina
 rajallinen. Esimerkiksi vasteaika ilmaisee aina tietyn operaation
 vasteajan tietyllä syötteellä eli kuormituksella, ja näitä vasteajan
 osatekijöitä on hyvin vaikea analysoida tavalla joka olisi riippumaton
@@ -156,8 +155,8 @@ tieteellistä arvoa. Käytännön kehitystyössä tämä ei välttämättä ole
 ongelma, jos tuloksista vedetään vain rajallisia johtopäätöksiä. Kun
 tavoitteena on tietyn järjestelmän suorituskyvyn /parantaminen/,
 riittää että mittauksista löydetään suorituskyvyn kannalta
-ongelmalliset suorituskohdat ja /validoidaan/ lopullinen
-suorituskykyparannus vertailemalla alkuperäistä ja muokattua
+ongelmalliset suorituskohdat ja lopullinen
+suorituskykyparannus /validoidaan/ vertailemalla alkuperäistä ja muokattua
 järjestelmää @@ferrari(336).
 
 # ferrari 224: arvioidaan kriteereitä (workload-) malleille
@@ -179,7 +178,7 @@ kokemukselle.
 
 # start integrate
 
-* Vakioidut mittaukset
+** Vakioidut mittaukset
 
 Eräs tapa saavuttaa astetta yleispätevämpiä tuloksia
 suorituskykymittauksista on laatia mitattavalle järjestelmälle sarja
@@ -230,7 +229,7 @@ puutteita, joita käsitellään seuraavaksi.
 
 # end integrate
 
-* Synteettisen mittaamisen sudenkuopat
+** Synteettisen mittaamisen sudenkuopat
 
 # todo kirjoita auki
 
@@ -253,6 +252,9 @@ verrattuna vastaavaan Java-komponenttiin.
 # end todo
 
 * Mittaamisesta mallintamiseen
+
+\todo{<<necessary-section>>}
+
 Suorituskykyä käsittelevä kirjallisuus keskittyy usein joko myöhäisen
 vaiheen diagnosointiin /mittausten/ avulla tai ohjelmiston
 /mallintamiseen/ varhaisessa kehitysvaiheessa @@future-spe(172). Tämä
