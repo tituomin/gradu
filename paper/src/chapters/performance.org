@@ -66,8 +66,8 @@ suorituskykynäkökulmasta jo ennen toteutusvaihetta.
 \todo{<<necessary-section>>}
 
 Suorituskykyä käsittelevä kirjallisuus keskittyykin usein joko
-myöhäisen vaiheen diagnosointiin /mittausten/ avulla tai ohjelmiston
-/mallintamiseen/ varhaisessa kehitysvaiheessa
+myöhäisen vaiheen diagnosointiin mittausten avulla tai ohjelmiston
+mallintamiseen varhaisessa kehitysvaiheessa
 @@future-spe(172). Mittaamista voidaan tehdä vasta, kun ohjelmisto tai
 sen osa on jo olemassa. Mallintamista hankaloittaa puolestaan, että
 käyttökelpoiselta mallilta vaaditaan abstraktisuutta ja
@@ -85,7 +85,7 @@ Seuraavaksi käsittelemme tutkielmassa käytettyjä
 suorituskykymittareita yleisellä tasolla, ohjelmiston suorituskyvyn
 mittaamiseen käytettäviä konkreettisia tekniikoita, ja lopuksi itse
 mittauskohteena olevaa ohjelmistoa sekä mittausten järjestämiseen ja
-tuloksen tulkintaan liittyviin haasteisiin.
+tulosten tulkintaan liittyviä haasteita.
 
 # todo kaikki 
 
@@ -173,11 +173,12 @@ aiheuttamilla häiriöillä ole merkitystä. Moniajojärjestelmissä
 tosiaikaa käyttävät mittaukset ovat myös riippuvaisia järjestelmän
 kokonaistilasta @@ferrari(455); tutkielman mittauksissa muiden
 prosessien määrä pyritään minimoimaan ja niiden vaikutus tulkitaan
-mittausten satunnaisvirheeksi. Kvantitatiivisten mittausten rinnalla
-kannattaa pitää mielessä käyttäjän subjektiivinen kokemus: käyttäjä
-voi kokea jopa yhtäsuuriksi mitatut vasteajat erilaisiksi, jos
-esimerkiksi työn etenemistä osoittava käyttöliittymäelementti etenee
-eri tavalla @@progressbar.
+mittausten satunnaisvirheeksi.
+
+ Kvantitatiivisten mittausten rinnalla kannattaa pitää mielessä
+käyttäjän subjektiivinen kokemus: käyttäjä voi kokea jopa yhtäsuuriksi
+mitatut vasteajat erilaisiksi, jos esimerkiksi työn etenemistä
+osoittava käyttöliittymäelementti etenee eri tavalla @@progressbar.
 # todo luetaan piiriin
 # todo tarkista onko androidissa tarkka userspace gettimeofday (arm)
 # todo tosiaika?
@@ -190,12 +191,11 @@ eri tavalla @@progressbar.
 # lähde vdso etc. sitten vasta julkiseksi todo
 
 Tässä tutkielmassa kaikki suorituskykyä parantavat ratkaisut
-tavoittelevat /oleellisten käyttötapausten vasteajan lyhentämistä
-tosiaikana mitattuna/. Tarkemman suorituskykyanalyysin kannalta pelkkä
-tosiajan käyttäminen ei kuitenkaan aina ole
-riittävää. UNIX-käyttöjärjestelmät pitävät kirjaa myös
-/sovellusajasta/ (/user time/), eli ajasta, jonka sovellusprosessi
-viettää aktiivisesti tavallisessa suoritustilassa
+tavoittelevat ohjelman /vasteaikojen lyhentämistä tosiaikana
+mitattuna/. Tarkemman suorituskykyanalyysin kannalta pelkkä tosiajan
+käyttäminen ei kuitenkaan aina ole riittävää. UNIX-käyttöjärjestelmät
+pitävät kirjaa myös /sovellusajasta/ (/user time/), eli ajasta, jonka
+sovellusprosessi viettää aktiivisesti tavallisessa suoritustilassa
 käyttöjärjestelmäytimen ulkopuolella (/unprivileged mode/, /user
 mode/) @@advanced-unix(20). Toinen osa sovellusprosessin
 suoritusajasta, järjestelmäaika (/system time/), vietetään
@@ -216,9 +216,9 @@ rekistereissä olevaa dataa ja tietorakenteita ja pitää niistä
 kirjaa. Tosiaikaa mittaamalla varmistetaan kuitenkin, etteivät
 suoritinajan ulkopuoliset merkittävät viiveet jää huomiotta.
 
-Kuten aina, vasteaikojen mittaamisen kohde on aina
-ohjelma--syöte -pari, joten sopivien syötteiden käyttäminen
-mittauksissa on tärkeää @@ferrari(455).
+# Kuten aina, vasteaikojen mittaamisen kohde on aina
+# ohjelma--syöte -pari, joten sopivien syötteiden käyttäminen
+# mittauksissa on tärkeää @@ferrari(455).
 
 ** Vasteajan jakautuminen
 Kokonaisvasteajalla on merkitystä ohjelmiston käyttäjälle sekä
@@ -238,6 +238,7 @@ sisäisestä suorituskontekstista @@ferrari(32). Käytännön
 ohjelmistokehityksessä mittauslaitteiden hyödyntäminen ei usein
 ole mahdollista.
 #todo: suorituskonteksti hyvä pointti mutta ferrari ei sano tuota suoraan
+# mainitse että arm-prosessorissa on hardwaretukea asialle
 
 Mittaustekniikat jakaantuvat menetelmiin, jotka joko /kirjaavat/
 (/record/) kiinnostavia /tapahtumia/ tai /tarkkailevat/ (/monitor/)
@@ -246,7 +247,7 @@ kirjaaminen tarkoittaa, että aina kiinnostavan tapahtuman esiintyessä
 oleellinen informaatio tapahtumasta kerätään ja
 tallennetaan. Kirjaamistoimet käynnistetään mitattavan ohjelman omasta
 toimesta, kun taas tarkkailussa mittaamisen kontrolli on ohjelman
-ulkopuolella käyttöjärjestelmässä tai
+ulkopuolella esimerkiksi käyttöjärjestelmässä tai
 laitteistossa. Tarkkailumenetelmät perustuvat yleensä toistuvaan
 /näytteidenottoon/: tasaisin väliajoin, satunnaisin väliajoin tai
 tietyn tapahtuman sattuessa otetaan näyte ohjelmiston tilasta. 
@@ -265,11 +266,12 @@ kohdeohjelmaan tarvittaessa automaattisesti @@gprof(2).
 Ohjelman profiilin käsitteen loi Donald Knuth @@fortran. Alunperin se
 tarkoitti taulukkoa ohjelman jokaisen lauseen /suorituskerroista/;
 nykyisessä käytössä ja tässä tutkielmassa profiloinnilla tarkoitetaan
-yleisemmin ohjelman osien suorituskäyttäytymisen mittaamista, jolloin
-suorituskertojen sijaan usein tutkitaan osien suoritukseen käytettyä
-aikaa. Se hyödyntää usein instrumentoinnin sijaan tai sen lisäksi
-näytteenottomenetelmiä ja tutkii yleensä ohjelman suoritusaikaa
-aliohjelmien tarkkuudella.
+yleisemmin sellaista ohjelman suorituskäyttäytymisen mittaamista,
+jossa tuloksena on esitys mittausarvojen jakautumisesta ohjelman eri
+osille, yleensä aliohjelmille. Suorituskertojen sijaan usein tutkitaan
+osien suoritukseen käytettyä aikaa. Se hyödyntää usein
+instrumentoinnin sijaan tai sen lisäksi näytteenottomenetelmiä ja
+tutkii yleensä ohjelman suoritusaikaa aliohjelmien tarkkuudella.
 #todo profile kutsu vs lausetason?  plus lähde tähän
 # knuth irrallinen > siirrä myöhemmäksi
 
@@ -519,7 +521,7 @@ ominaisuuksista @@ferrari(14).
 Nämä seikat vähentävät yksittäisten mittaustulosten
 hyötyä. Tarkoistakin mittauksista on vaikeaa tehdä sellaisia /yleisiä/
 päätelmiä tulosten syistä, joita voisi soveltaa myös muissa
-konteksteissa kuin konkreettisessa mittaustilanteessa.
+konteksteissa kuin konkreettisessa mittaustilanteessa @@saavedra(69).
 
 \todo{<<käyttötapaus>>}
 
@@ -567,9 +569,8 @@ käyttäjien subjektiiviselle kokemukselle.
 
 # todo: varmista lopuksi että tämä on näin
 
-# start integrate
-
 ** Vakioidut mittaukset
+
 
 Eräs tapa saavuttaa astetta yleispätevämpiä tuloksia
 suorituskykymittauksista on laatia mitattavalle järjestelmälle sarja
@@ -577,23 +578,26 @@ ennalta laadittuja syötteitä, jotka on suunniteltu edustamaan
 todellisuudessa kohdattavia syötteitä tai ovat peräisin todellisista
 työkuormista, ja mitata järjestelmän suoriutumista
 syötteistä. Kutsumme tätä yleistä menetelmää /vakioiduksi
-mittaamiseksi/ (/benchmarking/). Menetelmää voi hyödyntää, kun
-tutkittava järjestelmä toteuttaa jonkin spesifikaation tai rajapinnan,
-joka mahdollistaa samojen testisyötteiden käytön useiden toteutusten
-kanssa. Tällöin järjestelmän suorituskykymittauksia voi /verrata/
-toisten sellaisten järjestelmien mittaustuloksiin, jotka toteuttavat
-saman spesifikaation. Lisäksi järjestelmien erot erilaisilla
-syötteillä tulevat näkyviin ja eroista voi päätellä, minkälaisia
-syötteitä mikäkin järjestelmä prosessoi tehokkaasti.
+mittaamiseksi/ (/benchmarking/) @@dependability-benchmarking(69-71),
+@@curnow, @@saavedra. Menetelmää voi hyödyntää, kun tutkittava
+järjestelmä toteuttaa jonkin spesifikaation tai rajapinnan, joka
+mahdollistaa samojen testisyötteiden käytön useiden toteutusten
+kanssa. Tällöin järjestelmän tuloksia voi /verrata/ toisten sellaisten
+järjestelmien tuloksiin, jotka toteuttavat saman
+spesifikaation. Menetelmää käytetään muidenkin kuin
+suorituskykyominaisuuksien arvioimiseen. Lisäksi järjestelmien erot
+erilaisilla syötteillä tulevat näkyviin ja eroista voi päätellä,
+minkälaisia syötteitä mikäkin järjestelmä prosessoi tehokkaasti.
 
 Esimerkiksi tietyn ohjelmointikielen kääntäjille laadittu vakioitu
 mittaussarja koostuisi erilaisista tarkkaan valituista käännettävistä
-ohjelmista. Vastaavalla kokoelmalla voisi tutkia joukkoa
+ohjelmista. Vastaavalla menetelmällä voisi tutkia joukkoa
 virtuaalikoneita, esimerkiksi eri JVM-toteutusten suoriutumista
 JNI-rajapintaa hyödyntävien sovellusten ajamisesta.
 
-Toinen mahdollinen koeasetelma olisi verrata eri versioita ohjelmasta,
-jotka toteuttavat saman spesifikaation eli prosessoivat samanmuotoista
+Tämän tutkielman kannalta mahdollinen koeasetelma olisi verrata
+samankaltaisen sovellusohjelman vaihtoehtoisia versioita, jotka kaikki
+toteuttavat saman spesifikaation eli prosessoivat samanmuotoista
 dataa. Yksi versio hyödyntäisi laajasti JNI-rajapintaa, toinen olisi
 puhdas natiiviohjelma ja kolmas puhdas Java-ohjelma. Asetelman etuna
 olisi ohjelmien realistisuus ja testien kokonaisvaltaisuus - toisaalta
@@ -614,11 +618,11 @@ suorituskykyominaisuuksia ja päätellä niistä, miten osista rakennettu
 kokonaisuus mahdollisesti toimisi. Kutsun /alkeisoperaatioden
 mittaamiseksi/ (/microbenchmarking/) tällaista menetelmää, jossa
 verrataan kielen tai järjestelmän yksittäisten perusoperaatioiden
-rasitteita toisiinsa. Menetelmän etuna on että mittaustuloksista
-saadaan periaatteessa suuri määrä suoraviivaisesti tulkittavaa dataa
-siitä, mitkä operaatiot ovat suhteessa erityisen raskaita
-ohjelmistoissa käytettäviksi. Lähestymistavassa on kuitenkin myös
-vakavia puutteita.
+rasitteita toisiinsa @@saavedra(347). Menetelmän etuna on että
+mittaustuloksista saadaan periaatteessa suuri määrä suoraviivaisesti
+tulkittavaa dataa siitä, mitkä operaatiot ovat suhteessa erityisen
+raskaita ohjelmistoissa käytettäviksi. Lähestymistavassa on kuitenkin
+myös vakavia puutteita @@goetz-benchmark.
 
 Koska kielen tai järjestelmän alkeisoperaatioiden suoritusaika on
 minimaalinen, käytännössä niiden suorituskykyä mitataan toistamalla
@@ -626,15 +630,16 @@ operaatioita pitkäkestoisessa silmukassa. Alkeisoperaatioiden
 mittaaminen (microbenchmarking) on siis vakioitua mittaamista
 (benchmarking), jossa työkuormana on yhtä operaatiota toistava
 ohjelma. Koska vakioitujen mittausten työkuormat tulisi suunnitella
-edustamaan todellisuudessa kohdattavia ohjelmia, ei alkeisoperaatioita
-mittaamalla tavoitetta selvästikään saavuteta.
+edustamaan todellisuudessa kohdattavia ohjelmia
+@@dependability-benchmarking(69), ei alkeisoperaatioita mittaamalla
+tavoitetta selvästikään saavuteta.
 
 Mittaustavan ongelma johtuu siitä, ettei nykyaikaisessa
 suoritusympäristössä alkeisosista c_0 ... c_i koostuvan ohjelman
-kokonaissuoritusaikaa ei voi laskea deterministisesti osien
-suoritusajan perusteella @@wilhelm-wcet(5-6). Todellisuudessa
-suoritusaika riippuu myös suorittimen sekä ohjelmallisen
-suoritusympäristön kuten virtuaalikoneen tiloista.
+kokonaissuoritusaikaa voi laskea deterministisesti osien suoritusajan
+perusteella @@wilhelm-wcet(5-6). Todellisuudessa suoritusaika riippuu
+myös suorittimen sekä ohjelmallisen suoritusympäristön kuten
+virtuaalikoneen tiloista.
 
 Suorittimessa tämän epädeterministisyyden aiheuttavat välimuistit,
 käskyliukuhihnat (/pipelines/) sekä kontrollivuon ennustaminen
@@ -652,11 +657,11 @@ kuin alkeisoperaatiota mittaavassa silmukassa.
 Lisää haasteita kohdataan, kun siirrytään astetta korkeammalle,
 tarkastelemaan matalan tason kielen kääntäjää. Tyypillisesti
 mitattavalla alkeisoperaatiolla ei välttämättä ole sivuvaikutuksia,
-joten kääntäjä saattaa optimointina poistaa mitattavan
-operaation. Ratkaisuna on poistaa optimoinnit käytöstä mittauksia
-varten -- Java-kääntäjän tapauksessa tätä ei yleensä kuitenkaan voi
-tehdä, jolloin mitattavaan koodiin on joskus keinotekoisesti lisättävä
-sivuvaikutuksia.
+joten kääntäjä saattaa optimointina poistaa mitattavan operaation
+@@goetz-benchmark. Ratkaisuna on poistaa optimoinnit käytöstä
+mittauksia varten -- Java-kääntäjän tapauksessa tämä ei yleensä
+kuitenkaan ole yksinkertaista, jolloin mitattavaan koodiin on joskus
+keinotekoisesti lisättävä sivuvaikutuksia.
 
 Korkean tason kielellä tehtävät vakioidutkin mittaukset ovat erityisen
 virhealttiita, sillä niitä monimutkaistavat /automaattinen
@@ -665,13 +670,6 @@ sekä /järjestelmän lämmitysviiveet/ jotka johtuvat luokkien
 lataamisesta ja JIT-kääntämisestä @@coffee(83). Näiden hallitsemiseksi
 on omat mittausmenetelmänsä sekä tilastolliset työkalunsa, joita
 käsittelemme tarkemmin luvussa [[sec-5][5]]. 
-# todo kirjoita auki
-
-Tässä tutkielmassa lähdetään oletuksesta, että Dalvik-virtuaalikoneen
-natiivirajapinta on kokonaisjärjestelmän osana riittävän
-yksinkertainen, jotta siitä on mahdollista melko suoraviivaisesti
-luoda malli, joka perustuu rajapinnasta tehtyihin synteettisiin
-mittauksiin kontrolloidulla syötejoukolla.
 
 Tutkielmassa mitataan Dalvik-virtuaalikoneen
 Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
@@ -693,19 +691,19 @@ suhteutetaan siihen hyötyyn, joka natiivikomponentin käytöstä on
 verrattuna vastaavaan Java-komponenttiin.
 
 Tutkielman koeasetelma pyrkii parhaansa mukaan ottamaan huomioon
-Java-ympäristössä tapahtuvan mittaamisen haasteet, mutta jättää
-osittain lisätutkimuksen aiheeksi, missä määrin mainitut
+Java-ym\-pä\-ris\-tös\-sä tapahtuvan mittaamisen haasteet, mutta
+jättää osittain lisätutkimuksen aiheeksi, missä määrin mainitut
 prosessoriarkkitehtuurin ominaisuudet vähentävät tulosten relevanssia
 todellisten sovellusten näkökulmasta. Tulokset ovat siis suuntaa
-antavia, mutta lisätukea tulosten oikeellisuudelle antavat
-kuitenkin seuraavat huomiot.
+antavia, mutta lisätukea tulosten oikeellisuudelle antavat kuitenkin
+seuraavat huomiot.
 
 1. Pääasiallisena mittauskohteena on C++-kielellä ja konekielellä
    toteutetun Dalvik-virtuaalikoneen sisäiset osat, joihin
    virtuaalikoneen kääntäjän suorittamat optimoinnit eivät ulotu.
    Erityisesti kääntäjä ei voi optimoida JNI-kutsuja pois Java-koodista,
    koska sillä ei ole tietoa natiivikomponentin mahdollisesti
-   aiheuttamista sivuvaikutuksista. Vertailukohteina mitattavan puhtaan
+   aiheuttamista sivuvaikutuksista. Vertailukohteena mitattavan puhtaan
    Java-koodin oikeellisuus pyritään tarkistamaan virtuaalikoneen
    kääntäjän välimuistin konekäskyjä tutkimalla.
 2. Koska JNI:tä käyttävät ohjelmakohdat rasittavat käytännössä
