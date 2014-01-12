@@ -6,10 +6,14 @@ Missä mennään:
 (hyvä peruslähde benchmarkeista)
 
 * Teksti
+** huomiot hardcopy <2014-01-12 Sun>
+*** poista väite tekstin kulusta
+    [[file:~/gradu/paper/src/chapters/performance.org::poista-seuraavaksi]]
 ** formatointi
 *** TODO http://tex.stackexchange.com/questions/18910/multiple-citations-with-pages-using-biblatex
 *** TODO aivan lopuksi säädä overfull-korjaukset
     http://www.tex.ac.uk/cgi-bin/texfaq2html?label=overfull
+*** TODO oikea syntaksi useall viitteelle
 
 ** kysy vihavaiselta
 *** TODO ja-sana ja pilkutus

@@ -64,196 +64,6 @@ suorituskykynäkökulmasta jo ennen toteutusvaihetta.
 
 # todo tähän skeptinen lausahdus
 
-* Suorituskyvyn arvioiminen
-# todo: arvioiminen &mallintaminen vs. mittaaminen/mittari
-# todo: another indice: memory use!
-# (kielenkäyttö)
-Suorituskyky on pohjimmiltaan subjektiivinen käsite, joka ilmaisee
-miten /hyvin/ järjestelmä toteuttaa tehtävänsä @@ferrari(2). Tässä
-tutkielmassa suorituskyky määritellään ohjelmiston laadulliseksi
-ominaisuudeksi, joka kuvaa, miten /nopeasti/ ohjelmisto toimii
-käyttäjän näkökulmasta: miten tyydyttävät sen vasteajat ovat ja miten
-tehokkaasti se käsittelee syötedataa.
-
-Ohjelmiston tehokkuus ja nopeus kuvaavat sen käyttäytymistä /ajan
-suhteen/, mihin myös tutkielma keskittyy. Toinen keskeinen
-suorituskykymittareiden luokka tutkii ohjelmiston muistinkäyttöä
-@@ferrari(457). Tässä tutkielmassa aikaulottuvuus on ensisijainen ja
-sitä tutkitaan kvantitatiivisesti; mobiilisovellusten muistinkulutus
-on toki oleellinen suorituskykytekijä, mutta tutkimme ainoastaan sen
-vaikutuksia sovelluksen ajalliseen käyttäytymiseen.
-
-Jotta järjestelmän suorituskykyä voisi arvioida täsmällisesti, käsite
-on purettava kvantitatiivisiksi /mittareiksi/. Näitä ovat järjestelmän
-/tuottavuus/, /responsiivisuus/ ja /käyttöaste/
-@@ferrari(12). Tutkielmassa mittari tarkoittaa suorituskyvyn
-kvantitatiivisia osatekijöitä, oli ne sitten johdettu ohjelmistoa
-kuvaavista malleista tai saatu todellisista mittauksista.
-
-Tutkielmassa keskitytään mobiilisovellusten responsiivisuuteen. Sitä
-arvioidaan /vasteajalla/: aikavälillä syötteen saamisesta siihen
-hetkeen, kun ohjelman tai ohjelmakomponentin tuloste on palautettu
-käyttäjälle tai kutsuvalle komponentille @@ferrari(13). Vasteajan
-perussuure on aika, ja vasteaikaa voi arvioida eri tarkkuusasteilla
-jopa yksittäisestä konekäskystä koko ohjelmistoon.
-
-\todo{<<tarkkuusaste>>}
-# todo selvennä ylempi
-
-Myös tuottavuutta käsitellään tutkielmassa, sikäli kuin komponenttien
-tuottavuus vaikuttaa käyttäjän kokemiin vasteaikoihin. Tuottavuus
-tarkoittaa käsittelytehoa, jolla järjestelmä suoriutuu tietyn
-työkuorman (/workload/) käsittelystä, ja tuottavuusmittarit ilmaistaan
-yksiköllä /kuorma aikayksikköä kohti/. Kuormalle ei yleensä ole
-löydettävissä universaalia, laitteisto- tai sovellusalueriippumatonta
-mittayksikköä @@ferrari(12). Työkuorman mallintaminen onkin keskeisiä
-haasteita suorituskyvyn arvioinnissa @@spe(115), @@ferrari(221).
-#todo oikea syntaksi monelle viitteelle?
-
-** Arvioimisen yleispätevyys
-
-Vaikka suorituskyvyn eri osatekijöitä voi arvioida ja mitata
-näennäisen tarkoilla kvantitatiivisilla mittareilla, tulosten
-objektiivisuus, toistettavuus ja erityisesti yleistettävyys on aina
-rajallinen. Esimerkiksi vasteaika ilmaisee aina tietyn operaation
-vasteajan tietyllä syötteellä eli kuormituksella, ja näitä vasteajan
-osatekijöitä on hyvin vaikea analysoida tavalla joka olisi riippumaton
-käsiteltävän järjestelmän ominaisuuksista @@ferrari(14). Varsinaiset
-suoritusaikamittaukset koskevat aina /ohjelma--syöte/-paria, eivät
-puhtaasti ohjelmaa sellaisenaan @@ferrari(455). Yksittäisen
-mittaustulokseen eniten vaikuttavat kausaaliset syyt saattavat olla
-kulloisenkin ohjelman, laitteiston tai syötteen sattumanvaraisia
-ominaispiirteitä, 
-
-Nämä seikat vähentävät yksittäisten mittaustulosten
-hyötyä. Tarkoistakin mittauksista on vaikeaa tehdä sellaisia /yleisiä/
-päätelmiä tulosten syistä, joita voisi soveltaa myös muissa
-konteksteissa kuin konkreettisessa mittaustilanteessa.
-
-\todo{<<käyttötapaus>>}
-
-\todo{<<benchmark>>}
-# todo selvennä yllä ja myös alle sama selvennys
-
-Lisäksi moniajojärjestelmän, kuten Android-järjestelmän, kokonaistila
-vaikuttaa yksittäisiin mitattuihin vasteaikoihin. Näistä syistä
-mittariksi tulee ottaa vasteaikojen tilastollinen jakauma tietyn
-ajanjakson sisällä, jotta ympäristöstä aiheutuvat satunnaisvirheet
-voidaan ottaa huomioon tilastollisesti @@ferrari(14--15). Silloinkin
-ohjelman suoritusaikaan perustuvat mittarit ovat riippuvaisia
-järjestelmästä ja laitteistoalustasta, esimerkiksi
-mobiililaitemallista ja Android-versiosta @@ferrari(454).
-
-\todo{<<ajattele-uudelleen>>}
-
-#viite: android moniajo
-# mainitse vielä mittaus vs. mallinnus
-
-# todo: käsittelee oikeastaan /mittaamisen/ tavoitteita
-Yleispätevyyden puute voi vaikeuttaa mittausten ja arvioiden
-tieteellistä arvoa. Käytännön kehitystyössä tämä ei välttämättä ole
-ongelma, jos tuloksista vedetään vain rajallisia johtopäätöksiä. Kun
-tavoitteena on tietyn järjestelmän suorituskyvyn /parantaminen/,
-riittää että mittauksista löydetään suorituskyvyn kannalta
-ongelmalliset suorituskohdat ja lopullinen
-suorituskykyparannus /validoidaan/ vertailemalla alkuperäistä ja muokattua
-järjestelmää @@ferrari(336).
-
-# ferrari 224: arvioidaan kriteereitä (workload-) malleille
-
-Jos tavoitteena on uuden ohjelmistojärjestelmän tuottaminen,
-mittauksia käytetään validoimaan suorituskykyarvioita, jotka on
-johdettu määrittely- ja suunnitteluvaiheiden malleista
-@@spe(18). Ohjelmistoprosessissa näitä validoituja malleja verrataan
-lopulta alkuperäisiin suorituskykyvaatimuksiin, joita niitäkin voidaan
-joskus jopa muuttaa @@spe(18). Siten kvantifioidutkin mallit ja
-mittaukset täytyy lopulta suhteuttaa ohjelmiston
-suorituskykyvaatimuksille ja viime kädessä käyttäjien subjektiiviselle
-kokemukselle.
-
-\todo{<<outo kommentti>>}
-# vihavaiselta
-
-# todo: varmista lopuksi että tämä on näin
-
-# start integrate
-
-** Vakioidut mittaukset
-
-Eräs tapa saavuttaa astetta yleispätevämpiä tuloksia
-suorituskykymittauksista on laatia mitattavalle järjestelmälle sarja
-ennalta laadittuja syötteitä, jotka on suunniteltu edustamaan
-todellisuudessa kohdattavia syötteitä tai ovat peräisin todellisista
-työkuormista, ja mitata järjestelmän suoriutumista syötteistä. Kutsun
-tätä yleistä menetelmää /vakioiduksi mittaamiseksi/
-(/benchmarking/). Menetelmää voi hyödyntää, kun tutkittava järjestelmä
-toteuttaa jonkin spesifikaation tai rajapinnan, joka mahdollistaa
-samojen testisyötteiden käytön useiden toteutusten kanssa. Tällöin
-järjestelmän suorituskykymittauksia voi /verrata/ toisten sellaisten
-järjestelmien mittaustuloksiin, jotka toteuttavat saman
-spesifikaation. Lisäksi järjestelmien erot erilaisilla syötteillä
-tulevat näkyviin ja eroista voi päätellä, minkälaisia syötteitä
-mikäkin järjestelmä prosessoi tehokkaasti.
-
-Esimerkiksi tietyn ohjelmointikielen kääntäjille laadittu vakioitu
-mittaussarja koostuisi erilaisista tarkkaan valituista käännettävistä
-ohjelmista. Vastaavalla kokoelmalla voisi tutkia joukkoa
-virtuaalikoneita, esimerkiksi eri JVM-toteutusten suoriutumista
-JNI-rajapintaa hyödyntävien sovellusten ajamisesta.
-
-Toinen mahdollinen koeasetelma olisi verrata eri versioita ohjelmasta,
-jotka toteuttavat saman spesifikaation eli prosessoivat samanmuotoista
-dataa. Yksi versio hyödyntäisi laajasti JNI-rajapintaa, toinen olisi
-puhdas natiiviohjelma ja kolmas puhdas Java-ohjelma. Asetelman etuna
-olisi ohjelmien realistisuus ja testien kokonaisvaltaisuus - toisaalta
-esimerkiksi eri tavalla JNI:tä hyödyntävien versioiden tekeminen olisi
-hyvin työlästä ei-triviaaleille ohjelmille, ja tulokset saattaisivat
-kertoa enemmän käsillä olevien toteutusten ominaispiirteistä kuin
-yleispätevästi JNI-rajapinnan käytön vaikutuksesta. Koeasetelma olisi
-tavallaan analyyttinen: valmiiden kokonaisten ohjelmien
-suorituskykyominaisuudet analysoitaisiin kokonaisuudesta tehtyjen
-mittausten perusteella.
-
-Toinen, tutkielmassa käytetty lähtökohta JNI:n
-suorituskykyominaisuuksien tutkimiseen on ikään kuin synteettinen:
-yritämme tutkia JNI-rajapinnan yksittäisten operaatioiden
-suorituskykyominaisuuksia ja päätellä niistä, miten osista rakennettu
-kokonaisuus mahdollisesti toimisi. Kutsun /synteettiseksi
-mittaamiseksi/ (/microbenchmarking/) tällaista mittausmenetelmää,
-jossa verrataan kielen tai järjestelmän yksittäisten
-perusoperaatioiden rasitteita toisiinsa. Menetelmän etuna on että
-mittaustuloksista saadaan periaatteessa suuri määrä suoraviivaisesti
-tulkittavaa sovellettavaa dataa esimerkiksi siitä, mitkä operaatiot
-ovat erityisen raskaita. Lähestymistavassa on kuitenkin myös vakavia
-puutteita, joita käsitellään seuraavaksi.
-
-# end integrate
-
-** Synteettisen mittaamisen sudenkuopat
-
-# todo kirjoita auki
-
-*** Java-spesifit
-*** Yleiset
-
-Tutkielmassa mitataan Dalvik-virtuaalikoneen
-Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
-suhteessa toisiinsa ja vastaaviin operaatioihin Java-kielisessä
-ohjelmassa. Tuloksista johdetaan tilastollinen malli, joka ennustaa
-ohjelmiston JNI-operaatioista aiheutuvia rasitteita eri
-tilanteissa. Mallin parametreina ovat kutsuttu JNI-funktio sekä
-kutsuissa käytettyjen parametrien määrät ja tyypit.
-
-JNI- ja Java-kutsujen rasitteiden keskinäisestä vertailusta on hyötyä
-mille tahansa natiivikomponentteja sisältävälle sovellukselle, koska
-sen avulla voidaan välttää tunnettuja ongelmakohtia komponenttien
-välisessä kommunikaatiossa. Kysymys, onko natiivirajapinnan käytöstä
-ylipäätään etua tietyn sovelluksen suorituskyvylle, saa puolestaan
-lisävalaistusta vasta, kun natiivirajapinnasta koituvat kustannukset
-suhteutetaan siihen hyötyyn, joka natiivikomponentin käytöstä on
-verrattuna vastaavaan Java-komponenttiin.
-# end todo
-
 * Mittaamisesta mallintamiseen
 
 \todo{<<necessary-section>>}
@@ -280,11 +90,84 @@ väliseen viestintään ja konstruoida malli natiivirajapinnasta
 mittausten perusteella. Seuraavaksi käsitelläänkin ohjelmiston
 suorituskyvyn mittaamiseen käytettäviä tekniikoita ennen
 mallinnusformalismien esittelyä.
-   
-* Suorituskyvyn mittaaminen
-Tietyn käyttötapauksen kokonaisvasteajan mittaaminen on
-käsitteellisesti yksinkertaista: mitataan aikaväli syötteen saamisesta
-siihen hetkeen, kun haluttu tulos on tulostettu käyttäjälle.
+
+\todo{<<poista-seuraavaksi>>}
+
+Tutkielmassa mitataan Dalvik-virtuaalikoneen
+Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
+suhteessa toisiinsa ja vastaaviin alkeisoperaatioihin Java- ja
+C-kielisessä ohjelmassa. Tuloksista johdetaan tilastollinen malli,
+joka ennustaa ohjelmiston JNI-operaatioista aiheutuvia rasitteita eri
+tilanteissa. Mallin parametreina ovat kutsuttu JNI-funktio sekä
+kutsuissa käytettyjen parametrien määrät ja tyypit.
+
+JNI- ja Java-kutsujen rasitteiden keskinäisestä vertailusta on hyötyä
+mille tahansa natiivikomponentteja sisältävälle sovellukselle, koska
+sen avulla voidaan välttää tunnettuja ongelmakohtia komponenttien
+välisessä kommunikaatiossa. Kysymys, onko natiivirajapinnan käytöstä
+ylipäätään etua tietyn sovelluksen suorituskyvylle, saa puolestaan
+lisävalaistusta vasta, kun natiivirajapinnasta koituvat kustannukset
+suhteutetaan siihen hyötyyn, joka natiivikomponentin käytöstä on
+verrattuna vastaavaan Java-komponenttiin.
+
+* Suorituskykymittarit
+# todo: arvioiminen &mallintaminen vs. mittaaminen/mittari
+# todo: another indice: memory use!
+# (kielenkäyttö)
+Suorituskyky on pohjimmiltaan subjektiivinen käsite, joka ilmaisee
+miten /hyvin/ järjestelmä toteuttaa tehtävänsä @@ferrari(2). Tässä
+tutkielmassa suorituskyky määritellään ohjelmiston laadulliseksi
+ominaisuudeksi, joka kuvaa, miten /nopeasti/ ohjelmisto toimii
+käyttäjän näkökulmasta: miten tyydyttävät sen vasteajat ovat ja miten
+tehokkaasti se käsittelee syötedataa.
+
+Ohjelmiston tehokkuus ja nopeus kuvaavat sen käyttäytymistä /ajan
+suhteen/, mihin myös tutkielma keskittyy. Toinen keskeinen
+suorituskykymittareiden luokka tutkii ohjelmiston /muistinkäyttöä/
+@@ferrari(457). Tässä tutkielmassa aikaulottuvuus on ensisijainen ja
+sitä tutkitaan kvantitatiivisesti; mobiilisovellusten muistinkulutus
+on toki oleellinen suorituskykytekijä, mutta tutkimme ainoastaan sen
+vaikutuksia sovelluksen ajalliseen käyttäytymiseen.
+
+Jotta järjestelmän suorituskykyä voisi arvioida täsmällisesti, käsite
+on purettava kvantitatiivisiksi /mittareiksi/. Näitä ovat järjestelmän
+/tuottavuus/, /responsiivisuus/ ja /käyttöaste/
+@@ferrari(12). Tutkielmassa mittari tarkoittaa suorituskyvyn
+kvantitatiivisia osatekijöitä, oli ne sitten johdettu ohjelmistoa
+kuvaavista malleista tai saatu todellisista mittauksista.
+
+Tutkielmassa keskitytään mobiilisovellusten responsiivisuuteen. Sitä
+arvioidaan /vasteajalla/: aikavälillä syötteen saamisesta siihen
+hetkeen, kun ohjelman tai ohjelmakomponentin tuloste on palautettu
+käyttäjälle tai kutsuvalle komponentille @@ferrari(13). Vasteajan
+perussuure on aika, ja vasteaikaa voi arvioida eri tarkkuusasteilla
+jopa yksittäisestä konekäskystä koko ohjelmistoon.
+
+\todo{<<tarkkuusaste>>}
+# todo selvennä ylempi
+
+Myös tuottavuutta käsitellään tutkielmassa, sillä komponenttien
+tuottavuus vaikuttaa käyttäjän kokemiin vasteaikoihin. Tuottavuus
+tarkoittaa käsittelytehoa, jolla järjestelmä suoriutuu tietyn
+työkuorman (/workload/) käsittelystä, ja tuottavuusmittarit ilmaistaan
+yksiköllä /kuorma aikayksikköä kohti/. Kuormalle ei yleensä ole
+löydettävissä universaalia, laitteisto- tai sovellusalueriippumatonta
+mittayksikköä @@ferrari(12). Työkuorman mallintaminen onkin keskeisiä
+haasteita suorituskyvyn arvioinnissa @@spe(115), @@ferrari(221).
+#todo oikea syntaksi monelle viitteelle?
+
+* Mittausmenetelmät
+
+Seuraavaksi käsittelemme ohjelmiston vasteaikojen mittaamiseen
+käytettäviä konkreettisia mittausmenetelmiä, joilla saadaan mitattua
+kokonaisvasteikoja sekä vasteaikojen jakautumista ohjelmiston eri
+osiin.
+
+** Vasteajan mittaaminen
+
+Tietyn operaation kokonaisvasteajan mittaaminen on käsitteellisesti
+yksinkertaista: mitataan aikaväli syötteen saamisesta siihen hetkeen,
+kun haluttu tulos on tulostettu käyttäjälle.
 # lähde: ferrari alkusivut? spe-book?
 Toisaalta vuorovaikutteisen sovelluksen suorittaman laskennan ja
 käyttäjän syötteiden vuorottelu voi olla vilkasta. Käyttäjän toiminta
@@ -477,7 +360,6 @@ tavallisella mikrotietokoneella.
 [fn:valgrind] Sovelluksen suorittaminen esimerkiksi
 Valgrind-virtuaalikoneessa on merkittävästi normaalia hitaampaa.
 
-
 ** Mittaustekniikoiden valintaperusteista
 Eri mittaustekniikoilla on vahvuutensa ja heikkoutensa. Instrumentointi
 ei vaadi minkäänlaista erityistukea järjestelmältä, mutta edellyttää
@@ -636,6 +518,134 @@ jokainen alkaa satunnaisella ajanhetkellä, ja vaihtelemme jakson
 pituutta syklimäärässä.
 # todo: analysoi linuxin timeria ja schedulointia..
 # todo: onko dalvikissa ym. muissa komponenteissa jaksollisia ilmiöitä?
+* Mittauskohteen edustavuus ja tulosten yleistettävyys
+
+Vaikka suorituskyvyn eri osatekijöitä voi arvioida ja mitata
+näennäisen tarkoilla kvantitatiivisilla mittareilla, tulosten
+objektiivisuus, toistettavuus ja erityisesti yleistettävyys on aina
+rajallinen. Esimerkiksi vasteaika ilmaisee aina tietyn operaation
+vasteajan tietyllä syötteellä eli kuormituksella, ja näitä vasteajan
+osatekijöitä on hyvin vaikea analysoida tavalla joka olisi riippumaton
+käsiteltävän järjestelmän ominaisuuksista @@ferrari(14). Varsinaiset
+suoritusaikamittaukset koskevat aina /ohjelma--syöte/-paria, eivät
+puhtaasti ohjelmaa sellaisenaan @@ferrari(455). Yksittäisen
+mittaustulokseen eniten vaikuttavat kausaaliset syyt saattavat olla
+kulloisenkin ohjelman, laitteiston tai syötteen sattumanvaraisia
+ominaispiirteitä.
+
+Nämä seikat vähentävät yksittäisten mittaustulosten
+hyötyä. Tarkoistakin mittauksista on vaikeaa tehdä sellaisia /yleisiä/
+päätelmiä tulosten syistä, joita voisi soveltaa myös muissa
+konteksteissa kuin konkreettisessa mittaustilanteessa.
+
+\todo{<<käyttötapaus>>}
+
+\todo{<<benchmark>>}
+# todo selvennä yllä ja myös alle sama selvennys
+
+Lisäksi moniajojärjestelmän, kuten Android-järjestelmän, kokonaistila
+vaikuttaa yksittäisiin mitattuihin vasteaikoihin. Näistä syistä
+mittariksi tulee ottaa vasteaikojen tilastollinen jakauma tietyn
+ajanjakson sisällä, jotta ympäristöstä aiheutuvat satunnaisvirheet
+voidaan ottaa huomioon tilastollisesti @@ferrari(14--15). Silloinkin
+ohjelman suoritusaikaan perustuvat mittarit ovat riippuvaisia
+järjestelmästä ja laitteistoalustasta, esimerkiksi
+mobiililaitemallista ja Android-versiosta @@ferrari(454).
+
+\todo{<<ajattele-uudelleen>>}
+
+#viite: android moniajo
+# mainitse vielä mittaus vs. mallinnus
+
+# todo: käsittelee oikeastaan /mittaamisen/ tavoitteita
+Yleispätevyyden puute voi vaikeuttaa mittausten ja arvioiden
+tieteellistä arvoa. Käytännön kehitystyössä tämä ei välttämättä ole
+ongelma, jos tuloksista vedetään vain rajallisia johtopäätöksiä. Kun
+tavoitteena on tietyn järjestelmän suorituskyvyn /parantaminen/,
+riittää että mittauksista löydetään suorituskyvyn kannalta
+ongelmalliset suorituskohdat ja lopullinen
+suorituskykyparannus /validoidaan/ vertailemalla alkuperäistä ja muokattua
+järjestelmää @@ferrari(336).
+
+# ferrari 224: arvioidaan kriteereitä (workload-) malleille
+
+Jos tavoitteena on uuden ohjelmistojärjestelmän tuottaminen,
+mittauksia käytetään validoimaan suorituskykyarvioita, jotka on
+johdettu määrittely- ja suunnitteluvaiheiden malleista
+@@spe(18). Ohjelmistoprosessissa näitä validoituja malleja verrataan
+lopulta alkuperäisiin suorituskykyvaatimuksiin, joita niitäkin voidaan
+joskus jopa muuttaa @@spe(18). Siten kvantifioidutkin mallit ja
+mittaukset täytyy lopulta suhteuttaa ohjelmiston
+suorituskykyvaatimuksille ja viime kädessä käyttäjien subjektiiviselle
+kokemukselle.
+
+\todo{<<outo kommentti>>}
+# vihavaiselta
+
+# todo: varmista lopuksi että tämä on näin
+
+# start integrate
+
+** Vakioidut mittaukset
+
+Eräs tapa saavuttaa astetta yleispätevämpiä tuloksia
+suorituskykymittauksista on laatia mitattavalle järjestelmälle sarja
+ennalta laadittuja syötteitä, jotka on suunniteltu edustamaan
+todellisuudessa kohdattavia syötteitä tai ovat peräisin todellisista
+työkuormista, ja mitata järjestelmän suoriutumista
+syötteistä. Kutsumme tätä yleistä menetelmää /vakioiduksi
+mittaamiseksi/ (/benchmarking/). Menetelmää voi hyödyntää, kun
+tutkittava järjestelmä toteuttaa jonkin spesifikaation tai rajapinnan,
+joka mahdollistaa samojen testisyötteiden käytön useiden toteutusten
+kanssa. Tällöin järjestelmän suorituskykymittauksia voi /verrata/
+toisten sellaisten järjestelmien mittaustuloksiin, jotka toteuttavat
+saman spesifikaation. Lisäksi järjestelmien erot erilaisilla
+syötteillä tulevat näkyviin ja eroista voi päätellä, minkälaisia
+syötteitä mikäkin järjestelmä prosessoi tehokkaasti.
+
+Esimerkiksi tietyn ohjelmointikielen kääntäjille laadittu vakioitu
+mittaussarja koostuisi erilaisista tarkkaan valituista käännettävistä
+ohjelmista. Vastaavalla kokoelmalla voisi tutkia joukkoa
+virtuaalikoneita, esimerkiksi eri JVM-toteutusten suoriutumista
+JNI-rajapintaa hyödyntävien sovellusten ajamisesta.
+
+Toinen mahdollinen koeasetelma olisi verrata eri versioita ohjelmasta,
+jotka toteuttavat saman spesifikaation eli prosessoivat samanmuotoista
+dataa. Yksi versio hyödyntäisi laajasti JNI-rajapintaa, toinen olisi
+puhdas natiiviohjelma ja kolmas puhdas Java-ohjelma. Asetelman etuna
+olisi ohjelmien realistisuus ja testien kokonaisvaltaisuus - toisaalta
+esimerkiksi eri tavalla JNI:tä hyödyntävien versioiden tekeminen olisi
+hyvin työlästä ei-triviaaleille ohjelmille, ja tulokset saattaisivat
+kertoa enemmän käsillä olevien toteutusten ominaispiirteistä kuin
+yleispätevästi JNI-rajapinnan käytön vaikutuksesta. Koeasetelma olisi
+tavallaan analyyttinen: valmiiden kokonaisten ohjelmien
+suorituskykyominaisuudet analysoitaisiin kokonaisuudesta tehtyjen
+mittausten perusteella.
+
+** Synteettinen mittaaminen
+
+Toinen, tutkielmassa käytetty lähtökohta JNI:n
+suorituskykyominaisuuksien tutkimiseen on ikään kuin synteettinen:
+yritämme tutkia JNI-rajapinnan yksittäisten operaatioiden
+suorituskykyominaisuuksia ja päätellä niistä, miten osista rakennettu
+kokonaisuus mahdollisesti toimisi. Kutsun /synteettiseksi
+mittaamiseksi/ (/microbenchmarking/) tällaista mittausmenetelmää,
+jossa verrataan kielen tai järjestelmän yksittäisten
+perusoperaatioiden rasitteita toisiinsa. Menetelmän etuna on että
+mittaustuloksista saadaan periaatteessa suuri määrä suoraviivaisesti
+tulkittavaa dataa esimerkiksi siitä, mitkä operaatiot ovat erityisen
+raskaita. Lähestymistavassa on kuitenkin myös vakavia puutteita.
+
+
+
+# todo kirjoita auki
+
+*** Java-spesifit
+*** Yleiset
+
+
+# end todo
+
 * Arkkitehtuurin mallintaminen :noexport:
 # todo OHJELMISTON mallintaminen vai arkkitehtuurin?
 
@@ -858,12 +868,10 @@ varianssineen jo ennen ohjelman laatimista.
 
 
 * Tehtäviä                                                         :noexport:
-** TODO [#A] mainitse tilavaativuus
+** DONE [#A] mainitse tilavaativuus
 ** DONE [#B] käsittele lyhyesti (max 2 kpl) O-algoritmianalyysi?
-** TODO CPU time vs. other time: viittaa mittausten yhteydessäa
-** TODO ferrari luku 5.2.3 objektiivisuus?? mikä tämä oli
+** TODO CPU time vs. other time: viittaa mittausten yhteydessä
 ** TODO mahdollista profilointi-sanan käyttö nykykäytön mukaisesti
-** TODO mainitse renderscript
 ** TODO oikeastaan mittausten avulla mallinnetaan aika lailla /työkuormaa/
 ** Aliluvut
 *** Työkuorman mallintaminen                                       :noexport:

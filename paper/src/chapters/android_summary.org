@@ -194,4 +194,7 @@ tulosten analyysi.
 
 # todo tuossa yllä ei ole esim optimointia, garbage collectionia, ym.
 
-\todo{<<kappale-art-aot>>}
+\todo{<<kappale-art-aot>>} 
+
+* todo :noexport:
+** TODO mainitse renderscript ja muut vaihtoehdot jni:lle?
