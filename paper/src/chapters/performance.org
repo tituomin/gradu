@@ -63,53 +63,31 @@ voitaisiin usein välttää /mallintamalla/ ohjelmistoja
 suorituskykynäkökulmasta jo ennen toteutusvaihetta.
 
 # todo tähän skeptinen lausahdus
-
-* Mittaamisesta mallintamiseen
-
 \todo{<<necessary-section>>}
 
-Suorituskykyä käsittelevä kirjallisuus keskittyy usein joko myöhäisen
-vaiheen diagnosointiin /mittausten/ avulla tai ohjelmiston
-/mallintamiseen/ varhaisessa kehitysvaiheessa @@future-spe(172). Tämä
-heijastelee johdannossa hahmoteltua näkemyseroa. Mittaamista voidaan
-tehdä vasta, kun ohjelmisto tai sen osa on jo olemassa. Mallintamista
-hankaloittaa puolestaan, että käyttökelpoiselta mallilta vaaditaan
-abstraktisuutta ja yksinkertaisuutta, mutta samalla riittävää
-/tarkkuutta/ suhteessa määriteltyyn syötejoukkoon sekä reunaehtoihin
-ollaakseen /validi/ @@ferrari(161--162).
-
-Tässä tutkielmassa lähdetään oletuksesta, että Dalvik-virtuaalikoneen
-natiivirajapinta on kokonaisjärjestelmän osana riittävän
-yksinkertainen, jotta siitä on mahdollista melko suoraviivaisesti
-luoda malli, joka perustuu rajapinnasta tehtyihin synteettisiin
-mittauksiin kontrolloidulla syötejoukolla.
+Suorituskykyä käsittelevä kirjallisuus keskittyykin usein joko
+myöhäisen vaiheen diagnosointiin /mittausten/ avulla tai ohjelmiston
+/mallintamiseen/ varhaisessa kehitysvaiheessa
+@@future-spe(172). Mittaamista voidaan tehdä vasta, kun ohjelmisto tai
+sen osa on jo olemassa. Mallintamista hankaloittaa puolestaan, että
+käyttökelpoiselta mallilta vaaditaan abstraktisuutta ja
+yksinkertaisuutta, mutta samalla riittävää /tarkkuutta/ suhteessa
+määriteltyyn syötejoukkoon sekä reunaehtoihin ollaakseen /validi/
+@@ferrari(161--162).
 
 Mittaus- ja mallintamisnäkökulmaa ei ole saatu yhdistettyä toisiinsa
 riittävän yleispätevästi @@future-spe(172). Tämän tutkielman
 lähestymistapana on rajata näkökulma spesifisti Java-virtuaalikoneen
-ja natiivikoodin väliseen viestintään ja konstruoida malli
-natiivirajapinnasta mittausten perusteella. Seuraavaksi käsitelläänkin
-ohjelmiston suorituskyvyn mittaamiseen käytettäviä tekniikoita ennen
-mallinnusformalismien esittelyä.
+ja natiivikoodin väliseen viestintään ja konstruoida yksinkertaistettu
+malli natiivirajapinnasta mittausten perusteella. 
 
-\todo{<<poista-seuraavaksi>>}
+Seuraavaksi käsittelemme tutkielmassa käytettyjä
+suorituskykymittareita yleisellä tasolla, ohjelmiston suorituskyvyn
+mittaamiseen käytettäviä konkreettisia tekniikoita, ja lopuksi itse
+mittauskohteena olevaa ohjelmistoa sekä mittausten järjestämiseen ja
+tuloksen tulkintaan liittyviin haasteisiin.
 
-Tutkielmassa mitataan Dalvik-virtuaalikoneen
-Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
-suhteessa toisiinsa ja vastaaviin alkeisoperaatioihin Java- ja
-C-kielisessä ohjelmassa. Tuloksista johdetaan tilastollinen malli,
-joka ennustaa ohjelmiston JNI-operaatioista aiheutuvia rasitteita eri
-tilanteissa. Mallin parametreina ovat kutsuttu JNI-funktio sekä
-kutsuissa käytettyjen parametrien määrät ja tyypit.
-
-JNI- ja Java-kutsujen rasitteiden keskinäisestä vertailusta on hyötyä
-mille tahansa natiivikomponentteja sisältävälle sovellukselle, koska
-sen avulla voidaan välttää tunnettuja ongelmakohtia komponenttien
-välisessä kommunikaatiossa. Kysymys, onko natiivirajapinnan käytöstä
-ylipäätään etua tietyn sovelluksen suorituskyvylle, saa puolestaan
-lisävalaistusta vasta, kun natiivirajapinnasta koituvat kustannukset
-suhteutetaan siihen hyötyyn, joka natiivikomponentin käytöstä on
-verrattuna vastaavaan Java-komponenttiin.
+# todo kaikki 
 
 * Suorituskykymittarit
 # todo: arvioiminen &mallintaminen vs. mittaaminen/mittari
@@ -536,9 +514,7 @@ ominaispiirteitä ja toteutusyksityiskohtia.
 Esimerkiksi vasteaika ilmaisee aina tietyn operaation vasteajan
 tietyllä syötteellä eli kuormituksella, jota on hyvin vaikea
 spesifioida tavalla joka olisi riippumaton käsiteltävän järjestelmän
-ominaisuuksista @@ferrari(14). Varsinaiset suoritusaikamittaukset
-koskevat aina /ohjelma--syöte/-paria, eivät puhtaasti ohjelmaa
-sellaisenaan @@ferrari(455). 
+ominaisuuksista @@ferrari(14).
 
 Nämä seikat vähentävät yksittäisten mittaustulosten
 hyötyä. Tarkoistakin mittauksista on vaikeaa tehdä sellaisia /yleisiä/
@@ -663,38 +639,103 @@ suoritusympäristön kuten virtuaalikoneen tiloista.
 Suorittimessa tämän epädeterministisyyden aiheuttavat välimuistit,
 käskyliukuhihnat (/pipelines/) sekä kontrollivuon ennustaminen
 (/branch prediction/) @@cpu-influence(1038),
-@@wilhelm-wcet(5-6). Suorituskyvyn kannalta suorittimen välimuistissa
-olevan datan käyttö on merkittävästi nopeampaa kuin keskusmuistissa
-olevan. Se, miten optimaalisesti suoritin onnistuu välimuistiaan
-täyttämään, riippuu kuitenkin järjestelmän toiminnasta
-kokonaisuudessaan eikä yksittäisistä ohjelman osista. Suorittimen
-käskyliukuhihnat taas mahdollistavat useamman konekäskyn rinnakkaisen
-suorittamisen -- menetelmä edellyttää ohjelman suoritushaarojen
-ennustamista ja käskyjen ajoitusta, mitkä molemmat toimivat
-todennäköisesti eri tavalla todellisessa ohjelmassa kuin
-alkeisoperaatiota mittaavassa silmukassa.
+@@wilhelm-wcet(5-6). Suorittimen välimuistissa olevan datan käyttö on
+merkittävästi nopeampaa kuin keskusmuistissa olevan. Se, miten
+optimaalisesti suoritin onnistuu välimuistiaan täyttämään, riippuu
+kuitenkin järjestelmän toiminnasta kokonaisuudessaan eikä irrallisista
+ohjelman osista. Suorittimen käskyliukuhihnat taas mahdollistavat
+useamman konekäskyn rinnakkaisen suorittamisen -- menetelmä edellyttää
+ohjelman suoritushaarojen ennustamista ja käskyjen aikataulutusta,
+mitkä toimivat todennäköisesti eri tavalla todellisessa ohjelmassa
+kuin alkeisoperaatiota mittaavassa silmukassa.
 
 Lisää haasteita kohdataan, kun siirrytään astetta korkeammalle,
-tarkastelemaan matalan tason kielen kääntäjää. Alkeisoperaatioiden
-mittauksille tyypillistä on, ettei suoritettavalla operaatiolla
-välttämättä ole sivuvaikutuksia, jolloin kääntäjä saattaisi
-optimointina poistaa mitattavan operaation. Ratkaisuna on poistaa
-optimoinnit käytöstä mittauksia varten -- Java-kääntäjän tapauksessa
-tätä ei yleensä kuitenkaan voi tehdä, jolloin mitattavaa koodia on
-muokattava sivuvaikutukselliseksi.
+tarkastelemaan matalan tason kielen kääntäjää. Tyypillisesti
+mitattavalla alkeisoperaatiolla ei välttämättä ole sivuvaikutuksia,
+joten kääntäjä saattaa optimointina poistaa mitattavan
+operaation. Ratkaisuna on poistaa optimoinnit käytöstä mittauksia
+varten -- Java-kääntäjän tapauksessa tätä ei yleensä kuitenkaan voi
+tehdä, jolloin mitattavaan koodiin on joskus keinotekoisesti lisättävä
+sivuvaikutuksia.
 
 Korkean tason kielellä tehtävät vakioidutkin mittaukset ovat erityisen
 virhealttiita, sillä niitä monimutkaistavat /automaattinen
 muistinhallinta/, /dynaamisen optimoinnin/ aiheuttama epädeterminismi
 sekä /järjestelmän lämmitysviiveet/ jotka johtuvat luokkien
 lataamisesta ja JIT-kääntämisestä @@coffee(83). Näiden hallitsemiseksi
-on omat mittausmenetelmät ja tilastolliset työkalut, joita
-käsittelemme tarkemmin luvussa [[sec-5][5]]
+on omat mittausmenetelmänsä sekä tilastolliset työkalunsa, joita
+käsittelemme tarkemmin luvussa [[sec-5][5]]. 
 # todo kirjoita auki
 
+Tässä tutkielmassa lähdetään oletuksesta, että Dalvik-virtuaalikoneen
+natiivirajapinta on kokonaisjärjestelmän osana riittävän
+yksinkertainen, jotta siitä on mahdollista melko suoraviivaisesti
+luoda malli, joka perustuu rajapinnasta tehtyihin synteettisiin
+mittauksiin kontrolloidulla syötejoukolla.
+
+Tutkielmassa mitataan Dalvik-virtuaalikoneen
+Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
+suhteessa toisiinsa ja vastaaviin alkeisoperaatioihin Java- ja
+C-kielisessä ohjelmassa. Esimerkiksi JNI:n läpi tehtäviä metodikutsuja
+verrataan tavallisiin metodikutsuihin Java- ja C-kielissä. Tuloksista
+johdetaan tilastollinen malli, joka ennustaa ohjelmiston
+JNI-operaatioista aiheutuvia rasitteita eri tilanteissa. Mallin
+parametreina ovat kutsuttu JNI-funktio sekä kutsuissa käytettyjen
+parametrien määrät ja tyypit.
+
+JNI- ja Java-kutsujen rasitteiden keskinäisestä vertailusta on hyötyä
+mille tahansa natiivikomponentteja sisältävälle sovellukselle, koska
+sen avulla voidaan välttää tunnettuja ongelmakohtia komponenttien
+välisessä kommunikaatiossa. Kysymys, onko natiivirajapinnan käytöstä
+ylipäätään etua tietyn sovelluksen suorituskyvylle, saa puolestaan
+lisävalaistusta vasta, kun natiivirajapinnasta koituvat kustannukset
+suhteutetaan siihen hyötyyn, joka natiivikomponentin käytöstä on
+verrattuna vastaavaan Java-komponenttiin.
+
+Tutkielman koeasetelma pyrkii parhaansa mukaan ottamaan huomioon
+Java-ympäristössä tapahtuvan mittaamisen haasteet, mutta jättää
+osittain lisätutkimuksen aiheeksi, missä määrin mainitut
+prosessoriarkkitehtuurin ominaisuudet vähentävät tulosten relevanssia
+todellisten sovellusten näkökulmasta. Tulokset ovat siis suuntaa
+antavia, mutta lisätukea tulosten oikeellisuudelle antavat
+kuitenkin seuraavat huomiot.
+
+1. Pääasiallisena mittauskohteena on C++-kielellä ja konekielellä
+   toteutetun Dalvik-virtuaalikoneen sisäiset osat, joihin
+   virtuaalikoneen kääntäjän suorittamat optimoinnit eivät ulotu.
+   Erityisesti kääntäjä ei voi optimoida JNI-kutsuja pois Java-koodista,
+   koska sillä ei ole tietoa natiivikomponentin mahdollisesti
+   aiheuttamista sivuvaikutuksista. Vertailukohteina mitattavan puhtaan
+   Java-koodin oikeellisuus pyritään tarkistamaan virtuaalikoneen
+   kääntäjän välimuistin konekäskyjä tutkimalla.
+2. Koska JNI:tä käyttävät ohjelmakohdat rasittavat käytännössä
+   pelkästään pienehköä käskyaluetta eli Dalvikin JNI-toteutusta, voidaan
+   arvioida, että suorittimen välimuistien ja ennakoivan heuristiikan
+   kannalta käyttötapaukset edustavat JNI:n käyttöä tehokkaimmillaan, sillä
+   koodin ja datan lokaalisuus on suuri. Saadut tulokset voidaan
+   JNI:n osalta tulkita optimistisiksi, mikä huomioidaan tulosten
+   arvioinnissa.
+3. Koska mittauksissa yhdistetään kokonaisvasteaikojen mittaaminen
+   profilointiin, saadaan JNI-toteutuksen suoritusaikaisesta
+   käyttäytymisestä yksityiskohtaista tietoa mallien pohjaksi, jolloin
+   voimme päätellä, mitkä JNI:n osat ovat suorituskyvyn kannalta kriittisimpiä.
+4. Mittauksissa alkeisoperaatioille annettavia mahdollisia parametreja
+   varioidaan hallitusti. Yksittäisten epävarmojen vasteaika-arvojen
+   sijaan saamme kuvaajia, joissa vasteaika vaihtelee halutun
+   muuttujan funktiona. Regressioanalyysin avulla saamme varmistusta
+   mittausten oikeellisuudelle, sikäli kuin mittauksissa on näkyvissä
+   selviä esimerkiksi lineaarisia korrelaatioita. Yhdistettynä
+   profilointiin menetelmillä saadaan joka tapauksessa
+   mielenkiintoista tietoa JNI-rajapinnan toiminnasta vähintäänkin
+   kvalitatiivisella tasolla, vaikka numeeristen mittausarvojen
+   relevanssi jää epävarmaksi.
+
+Tutkielman analyysivaiheessa esitämme ehdotuksia täydentävistä
+mittauksista ja vaihtoehtoisista tavoista saada luotettavampia tuloksia
+tutkimuskohteesta.
 
 
-# end todo
+
 
 * Arkkitehtuurin mallintaminen :noexport:
 # todo OHJELMISTON mallintaminen vai arkkitehtuurin?
