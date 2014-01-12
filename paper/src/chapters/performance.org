@@ -82,13 +82,14 @@ Tässä tutkielmassa lähdetään oletuksesta, että Dalvik-virtuaalikoneen
 natiivirajapinta on kokonaisjärjestelmän osana riittävän
 yksinkertainen, jotta siitä on mahdollista melko suoraviivaisesti
 luoda malli, joka perustuu rajapinnasta tehtyihin synteettisiin
-mittauksiin kontrolloidulla syötejoukolla. Mittaus- ja
-mallintamisnäkökulmaa ei ole saatu yhdistettyä toisiinsa riittävän
-yleispätevästi @@future-spe(172). Tämän tutkielman lähestymistapana on
-rajata näkökulma spesifisti Java-virtuaalikoneen ja natiivikoodin
-väliseen viestintään ja konstruoida malli natiivirajapinnasta
-mittausten perusteella. Seuraavaksi käsitelläänkin ohjelmiston
-suorituskyvyn mittaamiseen käytettäviä tekniikoita ennen
+mittauksiin kontrolloidulla syötejoukolla.
+
+Mittaus- ja mallintamisnäkökulmaa ei ole saatu yhdistettyä toisiinsa
+riittävän yleispätevästi @@future-spe(172). Tämän tutkielman
+lähestymistapana on rajata näkökulma spesifisti Java-virtuaalikoneen
+ja natiivikoodin väliseen viestintään ja konstruoida malli
+natiivirajapinnasta mittausten perusteella. Seuraavaksi käsitelläänkin
+ohjelmiston suorituskyvyn mittaamiseen käytettäviä tekniikoita ennen
 mallinnusformalismien esittelyä.
 
 \todo{<<poista-seuraavaksi>>}
@@ -522,16 +523,22 @@ pituutta syklimäärässä.
 
 Vaikka suorituskyvyn eri osatekijöitä voi arvioida ja mitata
 näennäisen tarkoilla kvantitatiivisilla mittareilla, tulosten
-objektiivisuus, toistettavuus ja erityisesti yleistettävyys on aina
-rajallinen. Esimerkiksi vasteaika ilmaisee aina tietyn operaation
-vasteajan tietyllä syötteellä eli kuormituksella, ja näitä vasteajan
-osatekijöitä on hyvin vaikea analysoida tavalla joka olisi riippumaton
-käsiteltävän järjestelmän ominaisuuksista @@ferrari(14). Varsinaiset
-suoritusaikamittaukset koskevat aina /ohjelma--syöte/-paria, eivät
-puhtaasti ohjelmaa sellaisenaan @@ferrari(455). Yksittäisen
+objektiivisuus, toistettavuus ja erityisesti yleistettävyys vaatii
+mittausjärjestelyn tarkkaa suunnittelua ja tulosten
+tulkintaa. Yksittäinen suoritusaikamittaus tuottaa mittausarvon
+tietylle /ohjelma--syöte/-parille tietyllä laitteistolla
+@@ferrari(455), muttei sinänsä kerro mitään yleistä esimerkiksi juuri
+monikielisten Android-ohjelmien ominaisuuksista. Yksittäisen
 mittaustulokseen eniten vaikuttavat kausaaliset syyt saattavat olla
 kulloisenkin ohjelman, laitteiston tai syötteen sattumanvaraisia
-ominaispiirteitä.
+ominaispiirteitä ja toteutusyksityiskohtia.
+
+Esimerkiksi vasteaika ilmaisee aina tietyn operaation vasteajan
+tietyllä syötteellä eli kuormituksella, jota on hyvin vaikea
+spesifioida tavalla joka olisi riippumaton käsiteltävän järjestelmän
+ominaisuuksista @@ferrari(14). Varsinaiset suoritusaikamittaukset
+koskevat aina /ohjelma--syöte/-paria, eivät puhtaasti ohjelmaa
+sellaisenaan @@ferrari(455). 
 
 Nämä seikat vähentävät yksittäisten mittaustulosten
 hyötyä. Tarkoistakin mittauksista on vaikeaa tehdä sellaisia /yleisiä/
@@ -569,15 +576,15 @@ järjestelmää @@ferrari(336).
 
 # ferrari 224: arvioidaan kriteereitä (workload-) malleille
 
-Jos tavoitteena on uuden ohjelmistojärjestelmän tuottaminen,
-mittauksia käytetään validoimaan suorituskykyarvioita, jotka on
-johdettu määrittely- ja suunnitteluvaiheiden malleista
-@@spe(18). Ohjelmistoprosessissa näitä validoituja malleja verrataan
-lopulta alkuperäisiin suorituskykyvaatimuksiin, joita niitäkin voidaan
-joskus jopa muuttaa @@spe(18). Siten kvantifioidutkin mallit ja
-mittaukset täytyy lopulta suhteuttaa ohjelmiston
-suorituskykyvaatimuksille ja viime kädessä käyttäjien subjektiiviselle
-kokemukselle.
+Jos tavoitteena on uuden ohjelmistojärjestelmän tuottaminen
+suorituskykytekniikan menetelmillä, mittauksia käytetään validoimaan
+suorituskykyarvioita, jotka on johdettu määrittely- ja
+suunnitteluvaiheiden malleista @@spe(18). Ohjelmistoprosessissa näitä
+validoituja malleja verrataan lopulta alkuperäisiin
+suorituskykyvaatimuksiin, joita niitäkin voidaan joskus jopa muuttaa
+@@spe(18). Siten kvantifioidutkin mallit ja mittaukset täytyy lopulta
+suhteuttaa ohjelmiston suorituskykyvaatimuksille ja viime kädessä
+käyttäjien subjektiiviselle kokemukselle.
 
 \todo{<<outo kommentti>>}
 # vihavaiselta
@@ -622,26 +629,69 @@ tavallaan analyyttinen: valmiiden kokonaisten ohjelmien
 suorituskykyominaisuudet analysoitaisiin kokonaisuudesta tehtyjen
 mittausten perusteella.
 
-** Synteettinen mittaaminen
+** Alkeisoperaatioiden mittaaminen
 
 Toinen, tutkielmassa käytetty lähtökohta JNI:n
 suorituskykyominaisuuksien tutkimiseen on ikään kuin synteettinen:
 yritämme tutkia JNI-rajapinnan yksittäisten operaatioiden
 suorituskykyominaisuuksia ja päätellä niistä, miten osista rakennettu
-kokonaisuus mahdollisesti toimisi. Kutsun /synteettiseksi
-mittaamiseksi/ (/microbenchmarking/) tällaista mittausmenetelmää,
-jossa verrataan kielen tai järjestelmän yksittäisten
-perusoperaatioiden rasitteita toisiinsa. Menetelmän etuna on että
-mittaustuloksista saadaan periaatteessa suuri määrä suoraviivaisesti
-tulkittavaa dataa esimerkiksi siitä, mitkä operaatiot ovat erityisen
-raskaita. Lähestymistavassa on kuitenkin myös vakavia puutteita.
+kokonaisuus mahdollisesti toimisi. Kutsun /alkeisoperaatioden
+mittaamiseksi/ (/microbenchmarking/) tällaista menetelmää, jossa
+verrataan kielen tai järjestelmän yksittäisten perusoperaatioiden
+rasitteita toisiinsa. Menetelmän etuna on että mittaustuloksista
+saadaan periaatteessa suuri määrä suoraviivaisesti tulkittavaa dataa
+siitä, mitkä operaatiot ovat suhteessa erityisen raskaita
+ohjelmistoissa käytettäviksi. Lähestymistavassa on kuitenkin myös
+vakavia puutteita.
 
+Koska kielen tai järjestelmän alkeisoperaatioiden suoritusaika on
+minimaalinen, käytännössä niiden suorituskykyä mitataan toistamalla
+operaatioita pitkäkestoisessa silmukassa. Alkeisoperaatioiden
+mittaaminen (microbenchmarking) on siis vakioitua mittaamista
+(benchmarking), jossa työkuormana on yhtä operaatiota toistava
+ohjelma. Koska vakioitujen mittausten työkuormat tulisi suunnitella
+edustamaan todellisuudessa kohdattavia ohjelmia, ei alkeisoperaatioita
+mittaamalla tavoitetta selvästikään saavuteta.
 
+Mittaustavan ongelma johtuu siitä, ettei nykyaikaisessa
+suoritusympäristössä alkeisosista c_0 ... c_i koostuvan ohjelman
+kokonaissuoritusaikaa ei voi laskea deterministisesti osien
+suoritusajan perusteella @@wilhelm-wcet(5-6). Todellisuudessa
+suoritusaika riippuu myös suorittimen sekä ohjelmallisen
+suoritusympäristön kuten virtuaalikoneen tiloista.
 
+Suorittimessa tämän epädeterministisyyden aiheuttavat välimuistit,
+käskyliukuhihnat (/pipelines/) sekä kontrollivuon ennustaminen
+(/branch prediction/) @@cpu-influence(1038),
+@@wilhelm-wcet(5-6). Suorituskyvyn kannalta suorittimen välimuistissa
+olevan datan käyttö on merkittävästi nopeampaa kuin keskusmuistissa
+olevan. Se, miten optimaalisesti suoritin onnistuu välimuistiaan
+täyttämään, riippuu kuitenkin järjestelmän toiminnasta
+kokonaisuudessaan eikä yksittäisistä ohjelman osista. Suorittimen
+käskyliukuhihnat taas mahdollistavat useamman konekäskyn rinnakkaisen
+suorittamisen -- menetelmä edellyttää ohjelman suoritushaarojen
+ennustamista ja käskyjen ajoitusta, mitkä molemmat toimivat
+todennäköisesti eri tavalla todellisessa ohjelmassa kuin
+alkeisoperaatiota mittaavassa silmukassa.
+
+Lisää haasteita kohdataan, kun siirrytään astetta korkeammalle,
+tarkastelemaan matalan tason kielen kääntäjää. Alkeisoperaatioiden
+mittauksille tyypillistä on, ettei suoritettavalla operaatiolla
+välttämättä ole sivuvaikutuksia, jolloin kääntäjä saattaisi
+optimointina poistaa mitattavan operaation. Ratkaisuna on poistaa
+optimoinnit käytöstä mittauksia varten -- Java-kääntäjän tapauksessa
+tätä ei yleensä kuitenkaan voi tehdä, jolloin mitattavaa koodia on
+muokattava sivuvaikutukselliseksi.
+
+Korkean tason kielellä tehtävät vakioidutkin mittaukset ovat erityisen
+virhealttiita, sillä niitä monimutkaistavat /automaattinen
+muistinhallinta/, /dynaamisen optimoinnin/ aiheuttama epädeterminismi
+sekä /järjestelmän lämmitysviiveet/ jotka johtuvat luokkien
+lataamisesta ja JIT-kääntämisestä @@coffee(83). Näiden hallitsemiseksi
+on omat mittausmenetelmät ja tilastolliset työkalut, joita
+käsittelemme tarkemmin luvussa [[sec-5][5]]
 # todo kirjoita auki
 
-*** Java-spesifit
-*** Yleiset
 
 
 # end todo

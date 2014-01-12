@@ -26,7 +26,8 @@
 
 #+LATEX: \newpage
 
-* Koeasetelman kuvaus
+* Koeasetelman kuvaus 
+
 ** Mittaussovellus
    Tutkielmaa varten ohjelmoidun synteettisen mittausovelluksen (microbenchmarking suite)
    esittely.
