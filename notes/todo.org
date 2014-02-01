@@ -113,6 +113,11 @@ Missä mennään:
     Pitäisi refaktoroida omiksi benchmarkeiksi?
     (Generoida 2 versiota?)
 ** nativebenchmark
+*** miksi superuser kaatuu ensimmäiseen promptiin
+    toimiiko kuitenkin oikein (ilmeisesti)
+    "userspace" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
+    cpufreq  > /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed"
+
 *** TODO tsekkaa vielä kerran millis/micros/ym. ..
     android_os_SystemClock.cpp
     micros käyttää gettimeofdayta,
