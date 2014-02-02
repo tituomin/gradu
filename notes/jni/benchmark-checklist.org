@@ -1,98 +1,101 @@
-#+TODO: CHECK IMPLEMENT | EXCLUDE DONE
+#+TODO: CHECK IMPLEMENT COUNTERPOINT | EXCLUDE SUPPORT DONE
+# done: on benchmark
+# exclude: päätetty jättää
+# support: osa muita benchmarkeja
 
 * Functions
 ** String Operations
-*** CHECK NewString                                                   :alloc:
-*** CHECK NewStringUTF                                                :alloc:
-*** CHECK GetStringLength                                         :util:read:
-*** CHECK GetStringUTFLength                                      :util:read:
-*** CHECK GetStringChars                                              :group:
-*** CHECK GetStringUTFChars                                           :group:
-*** CHECK GetStringCritical, ReleaseStringCritical                    :group:
-*** CHECK ReleaseStringChars                                          :group:
-*** CHECK ReleaseStringUTFChars                                       :group:
-*** CHECK GetStringRegion                                              :copy:
-*** CHECK GetStringUTFRegion                                           :copy:
+*** DONE NewString                                                    :alloc:
+*** DONE NewStringUTF                                                 :alloc:
+*** SUPPORT GetStringLength                                       :util:read:
+*** SUPPORT GetStringUTFLength                                    :util:read:
+*** DONE GetStringChars                                               :group:
+*** SUPPORT ReleaseStringChars                                        :group:
+*** DONE GetStringUTFChars                                            :group:
+*** SUPPORT ReleaseStringUTFChars                                     :group:
+*** DONE GetStringCritical, ReleaseStringCritical                     :group:
+*** DONE GetStringRegion                                               :copy:
+*** IMPLEMENT GetStringUTFRegion                                       :copy:
 ** Array Operations
-*** CHECK NewObjectArray                                              :alloc:
-*** CHECK New<PrimitiveType>Array Routines                            :alloc:
-*** CHECK GetArrayLength                                          :util:read:
-*** CHECK GetObjectArrayElement                                        :read:
-*** CHECK SetObjectArrayElement                                       :write:
-*** CHECK Get<PrimitiveType>ArrayElements Routines                   :group1:
-*** CHECK Release<PrimitiveType>ArrayElements Routines               :group1:
-*** CHECK GetPrimitiveArrayCritical, ReleasePrimitiveArrayCritical   :group3:
-*** CHECK Get<PrimitiveType>ArrayRegion Routines                :group2:copy:
-*** CHECK Set<PrimitiveType>ArrayRegion Routines                :group2:copy:
+*** DONE NewObjectArray                                               :alloc:
+*** DONE New<PrimitiveType>Array Routines                             :alloc:
+*** IMPLEMENT GetArrayLength                                      :util:read:
+*** DONE GetObjectArrayElement                                         :read:
+*** DONE SetObjectArrayElement                                        :write:
+*** DONE Get<PrimitiveType>ArrayElements Routines                    :group1:
+*** SUPPORT Release<PrimitiveType>ArrayElements Routines             :group1:
+*** DONE GetPrimitiveArrayCritical, ReleasePrimitiveArrayCritical    :group3:
+*** DONE Get<PrimitiveType>ArrayRegion Routines                 :group2:copy:
+*** DONE Set<PrimitiveType>ArrayRegion Routines                 :group2:copy:
 ** Calling Instance Methods                                             :dep:
-*** CHECK GetMethodID                                                :search:
-*** CHECK Call<type>Method(A/V) Routines                              :comp2:
-*** CHECK CallNonvirtual<type>Method(A/V) Routines                    :comp2:
+*** DONE GetMethodID                                                 :search:
+*** DONE Call<type>Method(A/V) Routines                               :comp2:
+*** IMPLEMENT CallNonvirtual<type>Method(A/V) Routines                :comp2:
 ** Calling Static Methods                                               :dep:
-*** CHECK GetStaticMethodID                                          :search:
-*** CHECK CallStatic<type>Method(A/V) Routines
+*** DONE GetStaticMethodID                                           :search:
+*** DONE CallStatic<type>Method(A/V) Routines
 ** Accessing Fields of Objects                                          :dep:
-*** CHECK GetFieldID                                                 :search:
-*** CHECK Get<type>Field Routines
-*** CHECK Set<type>Field Routines
+*** DONE GetFieldID                                                  :search:
+*** COUNTERPOINT Get<type>Field Routines
+*** COUNTERPOINT Set<type>Field Routines
 ** Accessing Static Fields                                              :dep:
-*** CHECK GetStaticFieldID                                           :search:
-*** CHECK GetStatic<type>Field Routines
-*** CHECK SetStatic<type>Field Routines
+*** DONE GetStaticFieldID                                            :search:
+*** COUNTERPOINT GetStatic<type>Field Routines
+*** COUNTERPOINT SetStatic<type>Field Routines
 ** Object Operations
 *** CHECK AllocObject                                                 :alloc:
-*** CHECK NewObject, NewObjectA, NewObjectV                     :comp2:alloc:
-*** CHECK GetObjectClass                                               :read:
-*** CHECK GetObjectRefType                                             :read:
-*** CHECK IsInstanceOf                                        :read:traverse:
-*** CHECK IsSameObject                                                 :read:
+*** DONE NewObject, NewObjectA, NewObjectV                      :comp2:alloc:
+*** DONE GetObjectClass                                                :read:
+*** EXCLUDE GetObjectRefType                                           :read:
+*** EXCLUDE IsInstanceOf                                      :read:traverse:
+*** EXCLUDE IsSameObject                                               :read:
 ** Global and Local References
 *** Global References
-**** CHECK NewGlobalRef                                                  :gc:
-**** CHECK DeleteGlobalRef                                               :gc:
+**** COUNTERPOINT NewGlobalRef                                           :gc:
+**** COUNTERPOINT DeleteGlobalRef                                        :gc:
 *** Local References
 **** CHECK EnsureLocalCapacity                                     :allocref:
-**** CHECK NewLocalRef                                    :comp1:gc:allocref:
-**** CHECK DeleteLocalRef                                 :comp1:gc:allocref:
-**** CHECK PushLocalFrame                                    :comp1:allocref:
-**** CHECK PopLocalFrame                                     :comp1:allocref:
+**** COUNTERPOINT NewLocalRef                             :comp1:gc:allocref:
+**** COUNTERPOINT DeleteLocalRef                          :comp1:gc:allocref:
+**** DONE PushLocalFrame                                     :comp1:allocref:
+**** DONE PopLocalFrame                                      :comp1:allocref:
 *** Weak Global References                                     :unclear:rtfm:
-**** CHECK NewWeakGlobalRef                                        :allocref:
-**** CHECK DeleteWeakGlobalRef                                     :allocref:
+**** DONE NewWeakGlobalRef                                         :allocref:
+**** DONE DeleteWeakGlobalRef                                      :allocref:
 ** Exceptions
-*** CHECK Throw                                                     :special:
-*** CHECK ThrowNew                                            :special:alloc:
+*** EXCLUDE Throw                                                   :special:
+*** EXCLUDE ThrowNew                                          :special:alloc:
 *** CHECK ExceptionOccurred                                            :read:
 *** CHECK ExceptionCheck                                               :read:
 *** CHECK ExceptionClear
-*** CHECK ExceptionDescribe                                         :exclude:
-*** CHECK FatalError                                                :exclude:
+*** EXCLUDE ExceptionDescribe                                       :exclude:
+*** EXCLUDE FatalError                                              :exclude:
 ** Registering Native Methods
-*** CHECK RegisterNatives                                           :exclude:
-*** CHECK UnregisterNatives                                         :exclude:
+*** EXCLUDE RegisterNatives                                         :exclude:
+*** EXCLUDE UnregisterNatives                                       :exclude:
 ** Monitor Operations
-*** CHECK MonitorEnter                                                :synch:
-*** CHECK MonitorExit                                                 :synch:
+*** EXCLUDE MonitorEnter                                              :synch:
+*** EXCLUDE MonitorExit                                               :synch:
 ** NIO Support                                                    :important:
-*** CHECK NewDirectByteBuffer                                     :important:
-*** CHECK GetDirectBufferAddress                                  :important:
-*** CHECK GetDirectBufferCapacity                                      :read:
+*** DONE NewDirectByteBuffer                                      :important:
+*** DONE GetDirectBufferAddress                                   :important:
+*** DONE GetDirectBufferCapacity                                       :read:
 
 
 ** Class Operations                                           :exclude:maybe:
-*** CHECK DefineClass                                               :exclude:
-*** CHECK FindClass                                    :exclude:maybe:search:
-*** CHECK GetSuperclass                              :exclude:maybe:traverse:
-*** CHECK IsAssignableFrom                           :exclude:maybe:traverse:
+*** DONE FindClass                                     :exclude:maybe:search:
+*** EXCLUDE DefineClass                                             :exclude:
+*** EXCLUDE GetSuperclass                            :exclude:maybe:traverse:
+*** EXCLUDE IsAssignableFrom                         :exclude:maybe:traverse:
 
 
 ** Reflection Support                                               :exclude:
-*** CHECK FromReflectedMethod
-*** CHECK FromReflectedField
-*** CHECK ToReflectedMethod
-*** CHECK ToReflectedField
+*** EXCLUDE FromReflectedMethod
+*** EXCLUDE FromReflectedField
+*** EXCLUDE ToReflectedMethod
+*** EXCLUDE ToReflectedField
 ** Java VM Interface                                                :exclude:
-*** CHECK GetJavaVM                                                 :exclude:
+*** EXCLUDE GetJavaVM                                               :exclude:
 ** Version Information                                              :exclude:
-*** CHECK GetVersion                                                :exclude:
-*** CHECK Constants                                                 :exclude:
+*** EXCLUDE GetVersion                                              :exclude:
+*** EXCLUDE Constants                                               :exclude:
