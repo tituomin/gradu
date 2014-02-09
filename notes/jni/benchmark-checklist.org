@@ -1,4 +1,4 @@
-#+TODO: CHECK IMPLEMENT COUNTERPOINT | EXCLUDE SUPPORT DONE
+#+TODO: CHECK IMPLEMENT COUNTERPOINT REDO | EXCLUDE SUPPORT DONE
 # done: on benchmark
 # exclude: päätetty jättää
 # support: osa muita benchmarkeja
@@ -7,15 +7,15 @@
 ** String Operations
 *** DONE NewString                                                    :alloc:
 *** DONE NewStringUTF                                                 :alloc:
-*** SUPPORT GetStringLength                                       :util:read:
-*** SUPPORT GetStringUTFLength                                    :util:read:
+*** REDO GetStringLength                                          :util:read:
+*** REDO GetStringUTFLength                                       :util:read:
 *** DONE GetStringChars                                               :group:
 *** SUPPORT ReleaseStringChars                                        :group:
 *** DONE GetStringUTFChars                                            :group:
 *** SUPPORT ReleaseStringUTFChars                                     :group:
 *** DONE GetStringCritical, ReleaseStringCritical                     :group:
 *** DONE GetStringRegion                                               :copy:
-*** IMPLEMENT GetStringUTFRegion                                       :copy:
+*** DONE GetStringUTFRegion                                            :copy:
 ** Array Operations
 *** DONE NewObjectArray                                               :alloc:
 *** DONE New<PrimitiveType>Array Routines                             :alloc:
