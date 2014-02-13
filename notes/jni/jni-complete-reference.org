@@ -783,72 +783,6 @@ Returns the result of calling the Java method.
 
 THROWS:
 Exceptions raised during the execution of the Java method.
-
-* Accessing Static Fields
-** GetStaticFieldID
-jfieldID GetStaticFieldID(JNIEnv *env, jclass clazz, const char *name, const char *sig);
-
-Returns the field ID for a static field of a class. The field is
-specified by its name and signature. The GetStatic<type>Field and
-SetStatic<type>Field families of accessor functions use field IDs to
-retrieve static fields.
-
-GetStaticFieldID() causes an uninitialized class to be initialized.
-
-PARAMETERS:
-- env: the JNI interface pointer.
-- clazz: a Java class object.
-- name: the static field name in a 0-terminated modified UTF-8 string.
-- sig: the field signature in a 0-terminated modified UTF-8 string.
-
-RETURNS:
-Returns a field ID, or NULL if the specified static field cannot be found.
-
-THROWS:
-- NoSuchFieldError: if the specified static field cannot be found.
-- ExceptionInInitializerError: if the class initializer fails due to an exception.
-- OutOfMemoryError: if the system runs out of memory.
-
-** GetStatic<type>Field Routines
-NativeType GetStatic<type>Field(JNIEnv *env, jclass clazz, jfieldID fieldID);
-
-This family of accessor routines returns the value of a static field
-of an object. The field to access is specified by a field ID, which is
-obtained by calling GetStaticFieldID().
-
-The following table describes the family of get routine names and
-result types. You should replace type in GetStatic<type>Field with the
-Java type of the field, or one of the actual static field accessor
-routine names from the table, and replace NativeType with the
-corresponding native type for that routine.
-
-PARAMETERS:
-- env: the JNI interface pointer.
-- clazz: a Java class object.
-- fieldID: a static field ID.
-
-RETURNS:
-Returns the content of the static field.
-
-** SetStatic<type>Field Routines
-void SetStatic<type>Field(JNIEnv *env, jclass clazz, jfieldID fieldID, NativeType value);
-
-This family of accessor routines sets the value of a static field of
-an object. The field to access is specified by a field ID, which is
-obtained by calling GetStaticFieldID().
-
-The following table describes the set routine name and value
-types. You should replace type in SetStatic<type>Field with the Java
-type of the field, or one of the actual set static field routine names
-from the table, and replace NativeType with the corresponding native
-type for that routine.
-
-PARAMETERS:
-- env: the JNI interface pointer.
-- clazz: a Java class object.
-- fieldID: a static field ID.
-- value: the new value of the field.
-
 * Calling Static Methods
 ** GetStaticMethodID
 jmethodID GetStaticMethodID(JNIEnv *env, jclass clazz, const char *name, const char *sig);
@@ -926,6 +860,70 @@ Returns the result of calling the static Java method.
 THROWS:
 Exceptions raised during the execution of the Java method.
 
+* Accessing Static Fields
+** GetStaticFieldID
+jfieldID GetStaticFieldID(JNIEnv *env, jclass clazz, const char *name, const char *sig);
+
+Returns the field ID for a static field of a class. The field is
+specified by its name and signature. The GetStatic<type>Field and
+SetStatic<type>Field families of accessor functions use field IDs to
+retrieve static fields.
+
+GetStaticFieldID() causes an uninitialized class to be initialized.
+
+PARAMETERS:
+- env: the JNI interface pointer.
+- clazz: a Java class object.
+- name: the static field name in a 0-terminated modified UTF-8 string.
+- sig: the field signature in a 0-terminated modified UTF-8 string.
+
+RETURNS:
+Returns a field ID, or NULL if the specified static field cannot be found.
+
+THROWS:
+- NoSuchFieldError: if the specified static field cannot be found.
+- ExceptionInInitializerError: if the class initializer fails due to an exception.
+- OutOfMemoryError: if the system runs out of memory.
+
+** GetStatic<type>Field Routines
+NativeType GetStatic<type>Field(JNIEnv *env, jclass clazz, jfieldID fieldID);
+
+This family of accessor routines returns the value of a static field
+of an object. The field to access is specified by a field ID, which is
+obtained by calling GetStaticFieldID().
+
+The following table describes the family of get routine names and
+result types. You should replace type in GetStatic<type>Field with the
+Java type of the field, or one of the actual static field accessor
+routine names from the table, and replace NativeType with the
+corresponding native type for that routine.
+
+PARAMETERS:
+- env: the JNI interface pointer.
+- clazz: a Java class object.
+- fieldID: a static field ID.
+
+RETURNS:
+Returns the content of the static field.
+
+** SetStatic<type>Field Routines
+void SetStatic<type>Field(JNIEnv *env, jclass clazz, jfieldID fieldID, NativeType value);
+
+This family of accessor routines sets the value of a static field of
+an object. The field to access is specified by a field ID, which is
+obtained by calling GetStaticFieldID().
+
+The following table describes the set routine name and value
+types. You should replace type in SetStatic<type>Field with the Java
+type of the field, or one of the actual set static field routine names
+from the table, and replace NativeType with the corresponding native
+type for that routine.
+
+PARAMETERS:
+- env: the JNI interface pointer.
+- clazz: a Java class object.
+- fieldID: a static field ID.
+- value: the new value of the field.
 * String Operations
 ** NewString
 jstring NewString(JNIEnv *env, const jchar *unicodeChars, jsize len);

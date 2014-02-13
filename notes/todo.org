@@ -69,9 +69,11 @@ Missä mennään:
 
 * Koodi
 ** generator
-*** TODO j2jweakglobalreference aiheuttaa gc:tä
+*** TODO tärkeä! tsekkaa voiko Class-tyyppisiä
+    parametreja välittää JNI-natiivimetodille jclasseina
 *** TODO java-versiot / analogiset mittaukset loppuun
 **** TODO NIO complete read write
+*** TODO j2jweakglobalreference aiheuttaa gc:tä
 *** PLAN potentiaalisesti puuttuvat benchmarkit
     DEADLINE: <2013-06-05 Wed>
 **** JNI-vastinparit

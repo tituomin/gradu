@@ -7,8 +7,8 @@
 ** String Operations
 *** DONE NewString                                                    :alloc:
 *** DONE NewStringUTF                                                 :alloc:
-*** REDO GetStringLength                                          :util:read:
-*** REDO GetStringUTFLength                                       :util:read:
+*** DONE GetStringLength                                          :util:read:
+*** DONE GetStringUTFLength                                       :util:read:
 *** DONE GetStringChars                                               :group:
 *** SUPPORT ReleaseStringChars                                        :group:
 *** DONE GetStringUTFChars                                            :group:
@@ -19,7 +19,7 @@
 ** Array Operations
 *** DONE NewObjectArray                                               :alloc:
 *** DONE New<PrimitiveType>Array Routines                             :alloc:
-*** IMPLEMENT GetArrayLength                                      :util:read:
+*** DONE GetArrayLength                                           :util:read:
 *** DONE GetObjectArrayElement                                         :read:
 *** DONE SetObjectArrayElement                                        :write:
 *** DONE Get<PrimitiveType>ArrayElements Routines                    :group1:
@@ -29,8 +29,15 @@
 *** DONE Set<PrimitiveType>ArrayRegion Routines                 :group2:copy:
 ** Calling Instance Methods                                             :dep:
 *** DONE GetMethodID                                                 :search:
-*** DONE Call<type>Method(A/V) Routines                               :comp2:
+*** IMPLEMENT Call<type>Method(A/V) Routines                          :comp2:
+**** DONE JavaCounterparts method implementation
+**** DONE J runners JavaCounterparts instance
+**** DONE C runners different kind of MID
+**** DONE C runners JavaCounterparts instance
+**** DONE C runners different kind of call site
 *** IMPLEMENT CallNonvirtual<type>Method(A/V) Routines                :comp2:
+**** CHECK C runners MID extraction point
+**** IMPLEMENT C runners different kind of call site
 ** Calling Static Methods                                               :dep:
 *** DONE GetStaticMethodID                                           :search:
 *** DONE CallStatic<type>Method(A/V) Routines
@@ -43,7 +50,7 @@
 *** COUNTERPOINT GetStatic<type>Field Routines
 *** COUNTERPOINT SetStatic<type>Field Routines
 ** Object Operations
-*** CHECK AllocObject                                                 :alloc:
+*** DONE AllocObject                                                  :alloc:
 *** DONE NewObject, NewObjectA, NewObjectV                      :comp2:alloc:
 *** DONE GetObjectClass                                                :read:
 *** EXCLUDE GetObjectRefType                                           :read:
@@ -51,23 +58,23 @@
 *** EXCLUDE IsSameObject                                               :read:
 ** Global and Local References
 *** Global References
-**** COUNTERPOINT NewGlobalRef                                           :gc:
-**** COUNTERPOINT DeleteGlobalRef                                        :gc:
+**** EXCLUDE NewGlobalRef                                                :gc:
+**** EXCLUDE DeleteGlobalRef                                             :gc:
 *** Local References
-**** CHECK EnsureLocalCapacity                                     :allocref:
-**** COUNTERPOINT NewLocalRef                             :comp1:gc:allocref:
-**** COUNTERPOINT DeleteLocalRef                          :comp1:gc:allocref:
+**** EXCLUDE EnsureLocalCapacity                                   :allocref:
+**** EXCLUDE NewLocalRef                                  :comp1:gc:allocref:
+**** EXCLUDE DeleteLocalRef                               :comp1:gc:allocref:
 **** DONE PushLocalFrame                                     :comp1:allocref:
 **** DONE PopLocalFrame                                      :comp1:allocref:
 *** Weak Global References                                     :unclear:rtfm:
-**** DONE NewWeakGlobalRef                                         :allocref:
-**** DONE DeleteWeakGlobalRef                                      :allocref:
+**** EXCLUDE NewWeakGlobalRef                                      :allocref:
+**** EXCLUDE DeleteWeakGlobalRef                                   :allocref:
 ** Exceptions
 *** EXCLUDE Throw                                                   :special:
 *** EXCLUDE ThrowNew                                          :special:alloc:
-*** CHECK ExceptionOccurred                                            :read:
-*** CHECK ExceptionCheck                                               :read:
-*** CHECK ExceptionClear
+*** DONE ExceptionCheck                                                :read:
+*** EXCLUDE ExceptionOccurred                                          :read:
+*** EXCLUDE ExceptionClear
 *** EXCLUDE ExceptionDescribe                                       :exclude:
 *** EXCLUDE FatalError                                              :exclude:
 ** Registering Native Methods
