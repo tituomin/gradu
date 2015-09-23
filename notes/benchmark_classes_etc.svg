@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1052.3622"
+   height="744.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="benchmark_classes_etc.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         id="path3826"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Send"
+       style="overflow:visible;">
+      <path
+         id="path3832"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.2) rotate(180) translate(6,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3820"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="509.93796"
+     inkscape:cy="348.26299"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1139"
+     inkscape:window-height="998"
+     inkscape:window-x="537"
+     inkscape:window-y="24"
+     inkscape:window-maximized="0"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.2677)">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3777"
+       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Staccato222 BT;-inkscape-font-specification:Staccato222 BT;opacity:1"
+       transform="translate(0,308.2677)"><flowRegion
+         id="flowRegion3779"><rect
+           id="rect3781"
+           width="250"
+           height="120"
+           x="91.428574"
+           y="52.665909" /></flowRegion><flowPara
+         id="flowPara3783" /></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:14.91248798px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="434.28036"
+       y="771.77484"
+       id="text4527"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan4531"
+         sodipodi:role="line"
+         x="434.28036"
+         y="771.77484" /></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5004"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Lohit Bengali;font-style:normal;font-weight:normal;font-size:30px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:Lohit Bengali;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr"><flowRegion
+         id="flowRegion5006"><rect
+           id="rect5008"
+           width="98.5"
+           height="61"
+           x="290.5"
+           y="341.09448" /></flowRegion><flowPara
+         id="flowPara5010"></flowPara></flowRoot>    <rect
+       style="fill:none;stroke:#000000;stroke-width:1.00230432;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75"
+       id="rect5851"
+       width="230.3884"
+       height="119.81651"
+       x="193.24879"
+       y="431.20016" />
+    <text
+       xml:space="preserve"
+       style="font-size:19.27097893px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="203.89735"
+       y="461.66357"
+       id="text5853"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5855"
+         x="203.89735"
+         y="461.66357"
+         style="font-weight:bold">CLASS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.27097893px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="204.0563"
+       y="510.56622"
+       id="text5857"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5859"
+         x="204.0563"
+         y="510.56622" /><tspan
+         sodipodi:role="line"
+         x="204.0563"
+         y="539.61627"
+         id="tspan5861">NATIVE STUB METHOD</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.27097893px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="531.63184"
+       y="539.60034"
+       id="text5863"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5865"
+         x="531.63184"
+         y="539.60034">NATIVE STUB</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.27097893px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="198.57033"
+       y="584.07574"
+       id="text5867"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5869"
+         x="198.57033"
+         y="584.07574"
+         style="font-weight:bold">CLASS</tspan><tspan
+         sodipodi:role="line"
+         x="198.57033"
+         y="608.16443"
+         id="tspan5905" /><tspan
+         sodipodi:role="line"
+         x="198.57033"
+         y="632.25323"
+         id="tspan5871">NATIVE LOOP METHOD</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.27097893px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="530.10309"
+       y="631.94659"
+       id="text5873"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5875"
+         x="530.10309"
+         y="631.94659">NATIVE LOOP</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.27097893px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="752.04474"
+       y="630.94855"
+       id="text5877"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5879"
+         x="752.04474"
+         y="630.94855">STUB METHOD</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text5881"
+       y="721.81744"
+       x="200.90257"
+       style="font-size:19.27097893px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       xml:space="preserve"><tspan
+         y="721.81744"
+         x="200.90257"
+         id="tspan5883"
+         sodipodi:role="line"
+         style="font-weight:bold">CLASS</tspan><tspan
+         y="745.90613"
+         x="200.90257"
+         sodipodi:role="line"
+         id="tspan5907" /><tspan
+         id="tspan5885"
+         y="769.99493"
+         x="200.90257"
+         sodipodi:role="line">NATIVE LOOP METHOD</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.27097893px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="523.14197"
+       y="814.68634"
+       id="text5887"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5889"
+         x="523.14197"
+         y="814.68634">NATIVE STUB METHOD</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.27097893px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="203.29192"
+       y="866.13782"
+       id="text5891"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5893"
+         x="203.29192"
+         y="866.13782"
+         style="font-weight:bold">CLASS</tspan><tspan
+         sodipodi:role="line"
+         x="203.29192"
+         y="890.22656"
+         style="font-weight:bold"
+         id="tspan5961" /><tspan
+         sodipodi:role="line"
+         x="203.29192"
+         y="914.31525"
+         id="tspan5895">LOOP METHOD</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19.27097893px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="759.31525"
+       y="913.17505"
+       id="text5897"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5899"
+         x="759.31525"
+         y="913.17505">STUB METHOD</tspan></text>
+    <rect
+       y="561.38342"
+       x="188.27998"
+       height="119.81651"
+       width="236.37695"
+       id="rect5901"
+       style="fill:none;stroke:#000000;stroke-width:1.01524734;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:1.00886667;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75"
+       id="rect5903"
+       width="233.41507"
+       height="119.81651"
+       x="192.25505"
+       y="694.5481" />
+    <rect
+       y="829.7002"
+       x="187.28624"
+       height="103.33478"
+       width="241.34515"
+       id="rect5917"
+       style="fill:none;stroke:#000000;stroke-width:0.95269418;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75" />
+    <text
+       xml:space="preserve"
+       style="font-size:42.16191101px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="58.519489"
+       y="472.22574"
+       id="text5919"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5921"
+         x="58.519489"
+         y="472.22574">J&gt;C</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text5923"
+       y="641.16595"
+       x="58.519489"
+       style="font-size:42.16191101px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       xml:space="preserve"><tspan
+         y="641.16595"
+         x="58.519489"
+         id="tspan5925"
+         sodipodi:role="line">C&gt;J</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:42.16191101px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="58.519489"
+       y="762.4054"
+       id="text5927"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5929"
+         x="58.519489"
+         y="762.4054">C&gt;C</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text5931"
+       y="894.57629"
+       x="58.519489"
+       style="font-size:42.16191101px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       xml:space="preserve"><tspan
+         y="894.57629"
+         x="58.519489"
+         id="tspan5933"
+         sodipodi:role="line">J&gt;J</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.28880012px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 427.79707,532.85793 94.43556,0.99377"
+       id="path5935"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:42.16191101px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="244.35365"
+       y="395.70578"
+       id="text5937"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5939"
+         x="244.35365"
+         y="395.70578">JAVA</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:42.16191101px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="575.58936"
+       y="400.67462"
+       id="text5941"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5943"
+         x="575.58936"
+         y="400.67462">C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:42.16191101px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="746.96222"
+       y="402.67462"
+       id="text5945"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5947"
+         x="746.96222"
+         y="402.67462">JAVA</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.889449px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 419.25644,629.23451 102.38377,-1.98753"
+       id="path5949"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:42.16191101px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="203.60922"
+       y="498.06366"
+       id="text5951"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5953"
+         x="203.60922"
+         y="498.06366"
+         style="font-size:18.27016068px">LOOP METHOD</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text5955"
+       y="764.0675"
+       x="529.19037"
+       style="font-size:19.27097893px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       xml:space="preserve"><tspan
+         y="764.0675"
+         x="529.19037"
+         id="tspan5957"
+         sodipodi:role="line">NATIVE LOOP</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 270,193.09448 0,20"
+       id="path5963"
+       inkscape:connector-curvature="0"
+       transform="translate(0,308.2677)" />
+    <text
+       xml:space="preserve"
+       style="font-size:12.30286694px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="422.0264"
+       y="531.20929"
+       id="text6151"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0111296,0.9889929)"><tspan
+         sodipodi:role="line"
+         id="tspan6153"
+         x="422.0264"
+         y="531.20929">IMPLEMENTS</tspan></text>
+    <text
+       transform="scale(1.0111296,0.9889929)"
+       sodipodi:linespacing="125%"
+       id="text6155"
+       y="628.27771"
+       x="427.96036"
+       style="font-size:12.30286694px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       xml:space="preserve"><tspan
+         y="628.27771"
+         x="427.96036"
+         id="tspan6157"
+         sodipodi:role="line">IMPLEMENTS</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path6159"
+       d="m 426.25644,763.23451 102.38377,-1.98753"
+       style="fill:none;stroke:#000000;stroke-width:1.889449px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-size:12.30286694px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="434.8833"
+       y="763.7691"
+       id="text6161"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0111296,0.9889929)"><tspan
+         sodipodi:role="line"
+         id="tspan6163"
+         x="434.8833"
+         y="763.7691">IMPLEMENTS</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path6165"
+       d="m 576,772.36218 0,20"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.9894309px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 662.00775,624.96855 79.09536,0.78726"
+       id="path6167"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path6169"
+       d="m 387.00775,907.96855 352.4141,0.78726"
+       style="fill:none;stroke:#000000;stroke-width:1.299;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend);stroke-miterlimit:4;stroke-dasharray:none" />
+    <text
+       transform="scale(1.0111296,0.9889929)"
+       sodipodi:linespacing="125%"
+       id="text6171"
+       y="520.08685"
+       x="276.64447"
+       style="font-size:12.30286694px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       xml:space="preserve"><tspan
+         y="520.08685"
+         x="276.64447"
+         id="tspan6173"
+         sodipodi:role="line">CALLS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.30286694px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="664.32971"
+       y="619.17755"
+       id="text6175"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0111296,0.9889929)"><tspan
+         sodipodi:role="line"
+         id="tspan6177"
+         x="664.32971"
+         y="619.17755">CALLS</tspan></text>
+    <text
+       transform="scale(1.0111296,0.9889929)"
+       sodipodi:linespacing="125%"
+       id="text6179"
+       y="794.10297"
+       x="578.28735"
+       style="font-size:12.30286694px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       xml:space="preserve"><tspan
+         y="794.10297"
+         x="578.28735"
+         id="tspan6181"
+         sodipodi:role="line">CALLS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12.30286694px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="520.92578"
+       y="905.32721"
+       id="text6183"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0111296,0.9889929)"><tspan
+         sodipodi:role="line"
+         id="tspan6185"
+         x="520.92578"
+         y="905.32721">CALLS</tspan></text>
+  </g>
+</svg>

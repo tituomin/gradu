@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1052.3622"
+   height="744.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="benchmark_generation.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         id="path3826"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Send"
+       style="overflow:visible;">
+      <path
+         id="path3832"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.2) rotate(180) translate(6,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3820"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="634.49399"
+     inkscape:cy="217.88129"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1188"
+     inkscape:window-height="998"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.2677)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:9.53051567;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Send)"
+       d="m 218.50079,427.60393 4.42767,153.30735"
+       id="path3811"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4469"
+       d="M 415.1388,426.5941 402.06937,579.40752"
+       style="fill:none;stroke:#000000;stroke-width:9.53051567;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Send)" />
+    <rect
+       style="fill:#c7c7c7;fill-opacity:1;stroke:#000000;stroke-width:0.67507595"
+       id="rect3769"
+       width="255.46239"
+       height="31.84866"
+       x="198.14595"
+       y="470.89655" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2987"
+       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       transform="matrix(0.38741933,0,0,0.38741933,136.03583,396.13101)"><flowRegion
+         id="flowRegion2989"><rect
+           id="rect2991"
+           width="601.64539"
+           height="121.73153"
+           x="191.42857"
+           y="212.66591"
+           style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali" /></flowRegion><flowPara
+         style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+         id="flowPara3775">BENCHMARK GENERATOR</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3777"
+       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Staccato222 BT;-inkscape-font-specification:Staccato222 BT;opacity:1"
+       transform="translate(0,308.2677)"><flowRegion
+         id="flowRegion3779"><rect
+           id="rect3781"
+           width="250"
+           height="120"
+           x="91.428574"
+           y="52.665909" /></flowRegion><flowPara
+         id="flowPara3783" /></flowRoot>    <rect
+       style="fill:#c7c7c7;fill-opacity:1;stroke:#000000;stroke-width:0.38999638;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75"
+       id="rect3799"
+       width="101.42107"
+       height="22.138248"
+       x="170.26714"
+       y="409.24533" />
+    <text
+       xml:space="preserve"
+       style="font-size:11.62257957px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="176.16168"
+       y="423.41382"
+       id="text3789"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3791"
+         x="176.16168"
+         y="423.41382">JNI TYPE SPECS</tspan></text>
+    <rect
+       style="fill:#c7c7c7;fill-opacity:1;stroke:#000000;stroke-width:0.46267226;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75"
+       id="rect3801"
+       width="149.15811"
+       height="42.062672"
+       x="345.38104"
+       y="405.92587" />
+    <text
+       xml:space="preserve"
+       style="font-size:11.62257957px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="352.57599"
+       y="425.29681"
+       id="text3793"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="352.57599"
+         y="425.29681"
+         id="tspan3797">CUSTOM BENCHMARKS</tspan><tspan
+         sodipodi:role="line"
+         x="352.57599"
+         y="439.82504"
+         id="tspan4445">FOR JNI OPERATIONS</tspan></text>
+    <rect
+       style="fill:#c7c7c7;fill-opacity:1;stroke:#000000;stroke-width:0.4949308;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75"
+       id="rect3809"
+       width="211.05894"
+       height="35.974651"
+       x="212.16055"
+       y="494.97998" />
+    <text
+       xml:space="preserve"
+       style="font-size:11.62257957px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="226.35089"
+       y="515.97437"
+       id="text3803"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="226.35089"
+         y="515.97437"
+         id="tspan3807">CODE GENERATION TEMPLATES</tspan></text>
+    <rect
+       style="fill:#c7c7c7;fill-opacity:1;stroke:#000000;stroke-width:0.32748932;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75"
+       id="rect4577"
+       width="123.86162"
+       height="26.83917"
+       x="64.58316"
+       y="602.47284" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.67521083px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 273.87057,702.35992 390.29772,629.48824"
+       id="path5806"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.67521083px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 387.7849,703.19752 281.40902,626.97543"
+       id="path5808"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.67521083px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 276.38338,702.35992 5.02564,-74.54688"
+       id="path5810"
+       inkscape:connector-curvature="0" />
+    <rect
+       y="597.48627"
+       x="186.07507"
+       height="35.974651"
+       width="141.79196"
+       id="rect4447"
+       style="fill:#c7c7c7;fill-opacity:1;stroke:#000000;stroke-width:0.40566576;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.67521083px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 386.1097,700.6847 5.02562,-69.52124"
+       id="path5812"
+       inkscape:connector-curvature="0" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4449"
+       y="612.41846"
+       x="192.7332"
+       style="font-size:11.62257957px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       xml:space="preserve"><tspan
+         id="tspan4453"
+         y="612.41846"
+         x="192.7332"
+         sodipodi:role="line">PROCEDURE CALLING</tspan><tspan
+         y="626.94666"
+         x="192.7332"
+         sodipodi:role="line"
+         id="tspan4457">BENCHMARKS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:11.69078541px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="239.48647"
+       y="561.61194"
+       id="text4459"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4461"
+         x="239.48647"
+         y="561.61194">TYPE</tspan><tspan
+         sodipodi:role="line"
+         x="239.48647"
+         y="576.22546"
+         id="tspan4463">COMBINATIONS</tspan></text>
+    <rect
+       style="fill:#c7c7c7;fill-opacity:1;stroke:#000000;stroke-width:0.36923349;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75"
+       id="rect4471"
+       width="103.37508"
+       height="40.878769"
+       x="349.20334"
+       y="593.62848" />
+    <text
+       xml:space="preserve"
+       style="font-size:11.62257957px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="355.86145"
+       y="608.56073"
+       id="text4473"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan4477"
+         sodipodi:role="line"
+         x="355.86145"
+         y="608.56073">JNI OPERATION</tspan><tspan
+         sodipodi:role="line"
+         x="355.86145"
+         y="623.08893"
+         id="tspan4587">BENCHMARKS</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.50517863;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75"
+       id="rect4485"
+       width="530.2417"
+       height="72.53688"
+       x="36.498432"
+       y="582.55402" />
+    <text
+       xml:space="preserve"
+       style="font-size:23.38157082px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="477.72272"
+       y="609.00732"
+       id="text4487"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4489"
+         x="477.72272"
+         y="609.00732">C+JAVA</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path4549"
+       d="M 304.14475,802.48717 291.41091,734.39649"
+       style="fill:none;stroke:#000000;stroke-width:3.88946199;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Send)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3.88946199;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Send)"
+       d="m 331.38892,798.73122 12.76352,-68.06823"
+       id="path4553"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:#c7c7c7;fill-opacity:1;stroke:#000000;stroke-width:0.40566576;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75"
+       id="rect4491"
+       width="141.79196"
+       height="35.974651"
+       x="232.74625"
+       y="784.71588" />
+    <text
+       xml:space="preserve"
+       style="font-size:11.62257957px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="235.17267"
+       y="808.22314"
+       id="text4493"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan4497"
+         sodipodi:role="line"
+         x="235.17267"
+         y="808.22314">BENCHMARK RUNNER</tspan></text>
+    <rect
+       y="693.20209"
+       x="171.26277"
+       height="35.974651"
+       width="141.79196"
+       id="rect4509"
+       style="fill:#c7c7c7;fill-opacity:1;stroke:#000000;stroke-width:0.40566576;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4511"
+       y="707.0321"
+       x="176.26767"
+       style="font-size:11.62257957px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       xml:space="preserve"><tspan
+         y="707.0321"
+         x="176.26767"
+         sodipodi:role="line"
+         id="tspan4513">LONG RUNNING</tspan><tspan
+         y="721.5603"
+         x="176.26767"
+         sodipodi:role="line"
+         id="tspan4515">BENCHMARKS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14.91248798px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="434.28036"
+       y="771.77484"
+       id="text4527"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan4531"
+         sodipodi:role="line"
+         x="434.28036"
+         y="771.77484" /></text>
+    <rect
+       style="fill:#c7c7c7;fill-opacity:1;stroke:#000000;stroke-width:0.36173093;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75"
+       id="rect4535"
+       width="112.7421"
+       height="35.974651"
+       x="320.06216"
+       y="693.75317" />
+    <text
+       xml:space="preserve"
+       style="font-size:11.62257957px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="326.72037"
+       y="708.68536"
+       id="text4537"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan4541"
+         sodipodi:role="line"
+         x="326.72037"
+         y="708.68536">RESPONSE TIME</tspan><tspan
+         sodipodi:role="line"
+         x="326.72037"
+         y="723.21362"
+         id="tspan4545">BENCHMARKS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:11.62257957px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="70.442818"
+       y="617.02533"
+       id="text4579"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan4583"
+         sodipodi:role="line"
+         x="70.442818"
+         y="617.02533">METHOD STUBS</tspan></text>
+    <rect
+       y="669.77985"
+       x="147.21629"
+       height="181.2469"
+       width="401.34036"
+       id="rect4965"
+       style="fill:none;stroke:#000000;stroke-width:0.6947369;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4971"
+       y="696.95587"
+       x="488.61151"
+       style="font-size:23.38157082px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       xml:space="preserve"><tspan
+         y="696.95587"
+         x="488.61151"
+         id="tspan4973"
+         sodipodi:role="line">JAVA</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3.14454317px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="M 218.93963,765.97171 219.944,940.08842"
+       id="path5030"
+       inkscape:connector-curvature="0" />
+    <rect
+       y="747.31738"
+       x="333.1279"
+       height="20.401302"
+       width="141.79196"
+       id="rect4975"
+       style="fill:#c7c7c7;fill-opacity:1;stroke:#000000;stroke-width:0.30549139;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4977"
+       y="762.6178"
+       x="335.55429"
+       style="font-size:11.62257957px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       xml:space="preserve"><tspan
+         y="762.6178"
+         x="335.55429"
+         sodipodi:role="line"
+         id="tspan5000">RESPONSE TIME TOOL</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5004"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Lohit Bengali;font-style:normal;font-weight:normal;font-size:30px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:Lohit Bengali;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr"><flowRegion
+         id="flowRegion5006"><rect
+           id="rect5008"
+           width="98.5"
+           height="61"
+           x="290.5"
+           y="341.09448" /></flowRegion><flowPara
+         id="flowPara5010" /></flowRoot>    <rect
+       style="fill:#c7c7c7;fill-opacity:1;stroke:#000000;stroke-width:0.24498823;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75"
+       id="rect5012"
+       width="104.37588"
+       height="17.823862"
+       x="195.7606"
+       y="747.33154" />
+    <text
+       xml:space="preserve"
+       style="font-size:11.62257957px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="198.18703"
+       y="760.94263"
+       id="text5014"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan5016"
+         sodipodi:role="line"
+         x="198.18703"
+         y="760.94263">PROFILER TOOL</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path5778"
+       d="m 391.48635,766.80932 1.00437,174.11671"
+       style="fill:none;stroke:#000000;stroke-width:3.14454317px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.6947369;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75"
+       id="rect5780"
+       width="401.34036"
+       height="181.2469"
+       x="132.13939"
+       y="364.05383" />
+    <text
+       xml:space="preserve"
+       style="font-size:24.60334969px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="386.28455"
+       y="423.655"
+       id="text5782"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0900683,0.9173737)"><tspan
+         sodipodi:role="line"
+         id="tspan5784"
+         x="386.28455"
+         y="423.655">PYTHON</tspan></text>
+    <rect
+       y="904.30933"
+       x="118.73769"
+       height="84.376877"
+       width="401.34036"
+       id="rect5788"
+       style="fill:none;stroke:#000000;stroke-width:0.47402018;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75" />
+    <text
+       transform="scale(1.0900683,0.9173737)"
+       sodipodi:linespacing="125%"
+       id="text5790"
+       y="1012.5704"
+       x="373.9902"
+       style="font-size:24.60334969px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       xml:space="preserve"><tspan
+         y="1012.5704"
+         x="373.9902"
+         id="tspan5792"
+         sodipodi:role="line">PYTHON</tspan></text>
+    <rect
+       style="fill:#c7c7c7;fill-opacity:1;stroke:#000000;stroke-width:0.48844442;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:1.75"
+       id="rect5796"
+       width="205.56314"
+       height="35.974651"
+       x="200.57898"
+       y="937.7829" />
+    <text
+       xml:space="preserve"
+       style="font-size:11.62257957px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Lohit Bengali;-inkscape-font-specification:Lohit Bengali"
+       x="230.71201"
+       y="955.80084"
+       id="text5798"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan5802"
+         sodipodi:role="line"
+         x="230.71201"
+         y="955.80084">ANALYSIS + PLOTTING</tspan></text>
+  </g>
+</svg>

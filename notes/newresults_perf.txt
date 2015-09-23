@@ -1,0 +1,1857 @@
+# ========
+# captured on: Fri Feb 14 10:45:52 2014
+# ========
+#
+# Events: 6K cycles
+#
+# Overhead          Command          Shared Object                                                                          Symbol
+# ........  ...............  .....................  ..............................................................................
+#
+    13.90%  nativebenchmark  libdvm.so              [.] IndirectRefTable::get(void*) const
+            |
+            --- dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+    10.10%  nativebenchmark  libdvm.so              [.] dvmDecodeIndirectRef(Thread*, _jobject*)
+            |
+            --- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     7.58%  nativebenchmark  libdvm.so              [.] dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+            |
+            --- CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     7.44%  nativebenchmark  libc.so                [.] pthread_mutex_unlock_impl
+            |
+            --- pthread_mutex_unlock
+                ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+                dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+                dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     7.37%  nativebenchmark  libc.so                [.] _normal_lock
+            |
+            --- pthread_mutex_lock_impl
+                pthread_mutex_lock
+                ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+                dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- pthread_mutex_lock
+                ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+                dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     6.29%  nativebenchmark  libc.so                [.] pthread_mutex_lock_impl
+            |
+            --- pthread_mutex_lock
+                ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+                dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+                dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     5.12%  nativebenchmark  libc.so                [.] _normal_unlock
+            |
+            --- pthread_mutex_unlock_impl
+                pthread_mutex_unlock
+                ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+                dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- pthread_mutex_unlock
+                ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+                dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     3.57%  nativebenchmark  libdvm.so              [.] indirectRefKind(void*)
+            |
+            --- dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- IndirectRefTable::get(void*) const
+                dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     3.51%  nativebenchmark  libdvm.so              [.] ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+            |
+            --- dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     3.08%  nativebenchmark  libdvm.so              [.] ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+            |
+            --- dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     3.08%  nativebenchmark  libc.so                [.] pthread_mutex_lock
+            |
+            --- ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+                dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     3.02%             ksmd  [kernel]               [k] v7_flush_kern_dcache_area
+                       |
+                       --- v7_flush_kern_dcache_area
+                           flush_dcache_page
+                           ksm_scan_thread
+                           kthread
+                           do_exit
+
+     2.77%  nativebenchmark  libdvm.so              [.] IndirectRefTable::extractIndex(void*)
+            |
+            --- IndirectRefTable::get(void*) const
+                dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     2.13%  nativebenchmark  libdvm.so              [.] IndirectRefTable::extractSerial(void*)
+            |
+            --- IndirectRefTable::get(void*) const
+                dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     2.05%  nativebenchmark  libc.so                [.] pthread_mutex_unlock
+            |
+            --- ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+                dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     1.72%             ksmd  [kernel]               [k] memcmp
+                       |
+                       --- memcmp
+                           memcmp_pages
+                           ksm_scan_thread
+                           kthread
+                           do_exit
+
+     1.64%  nativebenchmark  libdvm.so              [.] dvmInterpret(Thread*, Method const*, JValue*)
+            |
+            --- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     1.36%  nativebenchmark  libdvm.so              [.] 0x1f4c8         
+            |
+            --- dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.91%  nativebenchmark  libdvm.so              [.] dvmPushInterpFrame(Thread*, Method const*)
+            |
+            --- callPrep(Thread*, Method const*, Object*, bool)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.63%  nativebenchmark  libdvm.so              [.] dvmPopFrame(Thread*)
+            |
+            --- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.59%  nativebenchmark  libnativebenchmark.so  [.] 0xcd9c0         
+            |
+            --- dvmPlatformInvoke
+                0x539dfd1c
+
+     0.58%             perf  [kernel]               [k] kallsyms_expand_symbol
+                       |
+                       --- kallsyms_expand_symbol
+                           update_iter
+                           s_next
+                           seq_read
+                           proc_reg_read
+                           vfs_read
+                           sys_read
+                           ret_fast_syscall
+
+     0.56%             perf  libc.so                [.] dlfree
+                       |
+                       --- free
+                           getline
+
+                       |
+                       --- getline
+
+     0.53%  nativebenchmark  libdvm.so              [.] CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+            |
+            --- 0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- dvmPlatformInvoke
+                0x539dfd1c
+
+     0.50%  nativebenchmark  libdvm.so              [.] dvmChangeStatus(Thread*, ThreadStatus)
+            |
+            --- ScopedJniThreadState::~ScopedJniThreadState()
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.50%  nativebenchmark  libdvm.so              [.] dvmIsNativeMethod(Method const*)
+            |
+            --- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- dvmPopFrame(Thread*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- callPrep(Thread*, Method const*, Object*, bool)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.46%             perf  libc.so                [.] pthread_mutex_unlock_impl
+                       |
+                       --- pthread_mutex_unlock
+                          |          
+                          |--90.59%-- dlfree
+                          |          free
+                          |          getline
+                          |          
+                           --9.41%-- dlmalloc
+                                     malloc
+                                     getline
+
+                       |
+                       --- dlmalloc
+                           malloc
+                           getline
+
+     0.42%             perf  libc.so                [.] dlmalloc
+                       |
+                       --- malloc
+                           getline
+
+     0.40%  nativebenchmark  [kernel]               [k] __do_softirq
+            |
+            --- __do_softirq
+                irq_exit
+                asm_do_IRQ
+                __irq_usr
+               |          
+               |--28.94%-- dvmDecodeIndirectRef(Thread*, _jobject*)
+               |          dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+               |          CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+               |          0x52c1dac0
+               |          dvmPlatformInvoke
+               |          0x539dfd1c
+               |          
+               |--15.79%-- IndirectRefTable::get(void*) const
+               |          dvmDecodeIndirectRef(Thread*, _jobject*)
+               |          dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+               |          CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+               |          0x52c1dac0
+               |          dvmPlatformInvoke
+               |          0x539dfd1c
+               |          
+               |--13.16%-- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+               |          CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+               |          0x52c1dac0
+               |          dvmPlatformInvoke
+               |          0x539dfd1c
+               |          
+               |--13.16%-- pthread_mutex_lock_impl
+               |          pthread_mutex_lock
+               |          ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+               |          dvmDecodeIndirectRef(Thread*, _jobject*)
+               |          dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+               |          CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+               |          0x52c1dac0
+               |          dvmPlatformInvoke
+               |          0x539dfd1c
+               |          
+               |--7.90%-- pthread_mutex_unlock
+               |          ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+               |          dvmDecodeIndirectRef(Thread*, _jobject*)
+               |          dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+               |          CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+               |          0x52c1dac0
+               |          dvmPlatformInvoke
+               |          0x539dfd1c
+               |          
+               |--5.26%-- ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+               |          dvmDecodeIndirectRef(Thread*, _jobject*)
+               |          dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+               |          CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+               |          0x52c1dac0
+               |          dvmPlatformInvoke
+               |          0x539dfd1c
+               |          
+               |--2.63%-- pthread_mutex_unlock_impl
+               |          pthread_mutex_unlock
+               |          ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+               |          dvmDecodeIndirectRef(Thread*, _jobject*)
+               |          dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+               |          CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+               |          0x52c1dac0
+               |          dvmPlatformInvoke
+               |          0x539dfd1c
+               |          
+               |--2.63%-- ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+               |          CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+               |          0x52c1dac0
+               |          dvmPlatformInvoke
+               |          0x539dfd1c
+               |          
+               |--2.63%-- pthread_mutex_lock
+               |          ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+               |          dvmDecodeIndirectRef(Thread*, _jobject*)
+               |          dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+               |          CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+               |          0x52c1dac0
+               |          dvmPlatformInvoke
+               |          0x539dfd1c
+               |          
+               |--2.63%-- ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+               |          dvmDecodeIndirectRef(Thread*, _jobject*)
+               |          dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+               |          CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+               |          0x52c1dac0
+               |          dvmPlatformInvoke
+               |          0x539dfd1c
+               |          
+               |--2.63%-- dvmChangeStatus(Thread*, ThreadStatus)
+               |          ScopedJniThreadState::~ScopedJniThreadState()
+               |          CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+               |          0x52c1dac0
+               |          dvmPlatformInvoke
+               |          0x539dfd1c
+               |          
+                --2.63%-- CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                          0x52c1dac0
+                          dvmPlatformInvoke
+                          0x539dfd1c
+
+     0.38%             perf  libc.so                [.] free
+                       |
+                       --- getline
+
+     0.37%             perf  [kernel]               [k] vsnprintf
+                       |
+                       --- vsnprintf
+                           seq_printf
+                          |          
+                          |--94.20%-- s_show
+                          |          seq_read
+                          |          proc_reg_read
+                          |          vfs_read
+                          |          sys_read
+                          |          ret_fast_syscall
+                          |          
+                           --5.80%-- render_sigset_t
+                                     proc_pid_status
+                                     proc_single_show
+                                     seq_read
+                                     vfs_read
+                                     sys_read
+                                     ret_fast_syscall
+                                     (nil)
+
+     0.36%             perf  libc.so                [.] memchr
+                       |
+                       --- (nil)
+
+     0.35%             perf  [kernel]               [k] number
+                       |
+                       --- number
+                          |          
+                          |--96.99%-- pointer
+                          |          vsnprintf
+                          |          seq_printf
+                          |          s_show
+                          |          seq_read
+                          |          proc_reg_read
+                          |          vfs_read
+                          |          sys_read
+                          |          ret_fast_syscall
+                          |          
+                           --3.01%-- vsnprintf
+                                     seq_printf
+                                     s_show
+                                     seq_read
+                                     proc_reg_read
+                                     vfs_read
+                                     sys_read
+                                     ret_fast_syscall
+
+     0.34%             perf  libc.so                [.] _normal_unlock
+                       |
+                       --- pthread_mutex_unlock_impl
+                           pthread_mutex_unlock
+                          |          
+                          |--55.51%-- dlmalloc
+                          |          malloc
+                          |          getline
+                          |          
+                           --44.49%-- dlfree
+                                     free
+                                     getline
+
+     0.31%             perf  [kernel]               [k] format_decode
+                       |
+                       --- format_decode
+                          |          
+                          |--96.58%-- vsnprintf
+                          |          seq_printf
+                          |          |          
+                          |          |--89.46%-- s_show
+                          |          |          seq_read
+                          |          |          proc_reg_read
+                          |          |          vfs_read
+                          |          |          sys_read
+                          |          |          ret_fast_syscall
+                          |          |          
+                          |          |--7.02%-- proc_pid_status
+                          |          |          proc_single_show
+                          |          |          seq_read
+                          |          |          vfs_read
+                          |          |          sys_read
+                          |          |          ret_fast_syscall
+                          |          |          (nil)
+                          |          |          
+                          |           --3.51%-- render_sigset_t
+                          |                     proc_pid_status
+                          |                     proc_single_show
+                          |                     seq_read
+                          |                     vfs_read
+                          |                     sys_read
+                          |                     ret_fast_syscall
+                          |                     (nil)
+                          |          
+                           --3.42%-- seq_printf
+                                     s_show
+                                     seq_read
+                                     proc_reg_read
+                                     vfs_read
+                                     sys_read
+                                     ret_fast_syscall
+
+     0.30%             perf  perf                   [.] kallsyms__parse
+     0.28%             ksmd  [kernel]               [k] ksm_scan_thread
+                       |
+                       --- ksm_scan_thread
+                           kthread
+                           do_exit
+
+     0.27%  nativebenchmark  libdvm.so              [.] dvmMterpStd(Thread*)
+            |
+            --- dvmInterpret(Thread*, Method const*, JValue*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.24%             perf  [kernel]               [k] string
+                       |
+                       --- string
+                          |          
+                          |--95.49%-- vsnprintf
+                          |          seq_printf
+                          |          s_show
+                          |          seq_read
+                          |          proc_reg_read
+                          |          vfs_read
+                          |          sys_read
+                          |          ret_fast_syscall
+                          |          
+                           --4.51%-- seq_printf
+                                     s_show
+                                     seq_read
+                                     proc_reg_read
+                                     vfs_read
+                                     sys_read
+                                     ret_fast_syscall
+
+     0.23%  nativebenchmark  libdvm.so              [.] ScopedJniThreadState::~ScopedJniThreadState()
+            |
+            --- CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- 0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.23%  nativebenchmark  libdvm.so              [.] ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+            |
+            --- CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- PushLocalFrame(_JNIEnv*, int)
+                0x52c1d9f0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.22%             perf  libc.so                [.] memcpy
+     0.21%             perf  [kernel]               [k] strnlen
+                       |
+                       --- strnlen
+                           string
+                           vsnprintf
+                           seq_printf
+                           s_show
+                           seq_read
+                           proc_reg_read
+                           vfs_read
+                           sys_read
+                           ret_fast_syscall
+
+     0.21%             perf  libc.so                [.] _normal_lock
+                       |
+                       --- pthread_mutex_lock_impl
+                           pthread_mutex_lock
+                          |          
+                          |--69.70%-- dlfree
+                          |          free
+                          |          |          
+                          |          |--92.23%-- getline
+                          |          |          
+                          |           --7.77%-- closedir
+                          |          
+                          |--21.70%-- dlmalloc
+                          |          malloc
+                          |          getline
+                          |          
+                           --8.59%-- readdir_r
+
+                       |
+                       --- pthread_mutex_lock
+                           readdir_r
+
+     0.20%  nativebenchmark  libdvm.so              [.] common_returnFromMethod
+            |
+            --- dvmInterpret(Thread*, Method const*, JValue*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.19%  nativebenchmark  libdvm.so              [.] callPrep(Thread*, Method const*, Object*, bool)
+            |
+            --- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.16%             perf  perf                   [.] hex2u64
+     0.16%  nativebenchmark  libdvm.so              [.] android_atomic_release_store
+            |
+            --- dvmChangeStatus(Thread*, ThreadStatus)
+                ScopedJniThreadState::~ScopedJniThreadState()
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- ScopedJniThreadState::~ScopedJniThreadState()
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.15%             perf  [kernel]               [k] seq_read
+                       |
+                       --- seq_read
+                           proc_reg_read
+                           vfs_read
+                           sys_read
+                           ret_fast_syscall
+
+     0.14%  nativebenchmark  libdvm.so              [.] android_memory_barrier
+            |
+            --- android_atomic_release_store
+                dvmChangeStatus(Thread*, ThreadStatus)
+                ScopedJniThreadState::~ScopedJniThreadState()
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- android_atomic_acquire_store
+                dvmChangeStatus(Thread*, ThreadStatus)
+                ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- dvmChangeStatus(Thread*, ThreadStatus)
+                ScopedJniThreadState::~ScopedJniThreadState()
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.14%             perf  libc.so                [.] pthread_mutex_lock
+                       |
+                       --- free
+                           getline
+
+                       |
+                       --- dlfree
+                           free
+                           getline
+
+                       |
+                       --- dlmalloc
+                           malloc
+                           getline
+
+                       |
+                       --- malloc
+                           getline
+
+     0.10%  nativebenchmark  libdvm.so              [.] dvmIsStaticMethod(Method const*)
+            |
+            --- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.10%             perf  libc.so                [.] fgetln
+     0.09%  nativebenchmark  libdvm.so              [.] dvmPrintNativeBackTrace()
+            |
+            --- android_atomic_acquire_store
+                dvmChangeStatus(Thread*, ThreadStatus)
+                ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- android_atomic_release_store
+                dvmChangeStatus(Thread*, ThreadStatus)
+                ScopedJniThreadState::~ScopedJniThreadState()
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- android_memory_barrier
+                android_atomic_acquire_store
+                dvmChangeStatus(Thread*, ThreadStatus)
+                ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.09%  nativebenchmark  libdvm.so              [.] dvmGetRawDexFileCacheFileName(RawDexFile*)
+            |
+            --- CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- 0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.09%             perf  libc.so                [.] pthread_mutex_lock_impl
+                       |
+                       --- pthread_mutex_lock
+                          |          
+                          |--65.93%-- dlfree
+                          |          free
+                          |          getline
+                          |          
+                           --34.07%-- dlmalloc
+                                     malloc
+                                     getline
+
+     0.09%  nativebenchmark  libdvm.so              [.] android_atomic_acquire_store
+            |
+            --- dvmChangeStatus(Thread*, ThreadStatus)
+                ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.09%  nativebenchmark  libdvm.so              [.] dvmMterpStdRun
+            |
+            --- dvmInterpret(Thread*, Method const*, JValue*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.09%             perf  [kernel]               [k] memcpy
+                       |
+                       --- memcpy
+                           seq_printf
+                          |          
+                          |--87.62%-- s_show
+                          |          seq_read
+                          |          proc_reg_read
+                          |          vfs_read
+                          |          sys_read
+                          |          ret_fast_syscall
+                          |          
+                           --12.38%-- proc_pid_status
+                                     proc_single_show
+                                     seq_read
+                                     vfs_read
+                                     sys_read
+                                     ret_fast_syscall
+                                     (nil)
+
+     0.09%  nativebenchmark  libdvm.so              [.] dvmJitCheckTraceRequest
+            |
+            --- common_selectTrace
+                dvmInterpret(Thread*, Method const*, JValue*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.08%  nativebenchmark  libdvm.so              [.] common_invokeMethodNoRange
+            |
+            --- dvmInterpret(Thread*, Method const*, JValue*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticObjectMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52b90bc4
+                0x52c1db28
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.07%  nativebenchmark  libdvm.so              [.] common_updateProfile
+            |
+            --- dvmInterpret(Thread*, Method const*, JValue*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+               |          
+               |--84.63%-- CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+               |          0x52c1dac0
+               |          dvmPlatformInvoke
+               |          0x539dfd1c
+               |          
+                --15.37%-- CallStaticObjectMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                          0x52b90bc4
+                          0x52c1db28
+                          dvmPlatformInvoke
+                          0x539dfd1c
+
+     0.07%             perf  [kernel]               [k] update_iter
+                       |
+                       --- update_iter
+                           s_next
+                           seq_read
+                           proc_reg_read
+                           vfs_read
+                           sys_read
+                           ret_fast_syscall
+
+     0.06%  nativebenchmark  libdvm.so              [.] getCodeAddrCommon(unsigned short const*, bool)
+            |
+            --- dvmJitGetTraceAddrThread
+                common_updateProfile
+                dvmInterpret(Thread*, Method const*, JValue*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.06%             perf  [kernel]               [k] __do_softirq
+                       |
+                       --- __do_softirq
+                           irq_exit
+                           asm_do_IRQ
+                          |          
+                          |--50.00%-- __irq_svc
+                          |          |          
+                          |          |--33.34%-- update_iter
+                          |          |          s_next
+                          |          |          seq_read
+                          |          |          proc_reg_read
+                          |          |          vfs_read
+                          |          |          sys_read
+                          |          |          ret_fast_syscall
+                          |          |          
+                          |          |--33.33%-- proc_reg_read
+                          |          |          vfs_read
+                          |          |          sys_read
+                          |          |          ret_fast_syscall
+                          |          |          
+                          |           --33.33%-- seq_printf
+                          |                     s_show
+                          |                     seq_read
+                          |                     proc_reg_read
+                          |                     vfs_read
+                          |                     sys_read
+                          |                     ret_fast_syscall
+                          |          
+                           --50.00%-- __irq_usr
+                                     |          
+                                      --100.00%-- pthread_mutex_lock_impl
+                                                pthread_mutex_lock
+                                                dlfree
+                                                free
+                                                getline
+
+     0.06%             perf  [kernel]               [k] seq_printf
+                       |
+                       --- seq_printf
+                          |          
+                          |--81.20%-- s_show
+                          |          seq_read
+                          |          proc_reg_read
+                          |          vfs_read
+                          |          sys_read
+                          |          ret_fast_syscall
+                          |          
+                           --18.80%-- seq_read
+                                     proc_reg_read
+                                     vfs_read
+                                     sys_read
+                                     ret_fast_syscall
+
+     0.05%             perf  libc.so                [.] pthread_mutex_unlock
+                       |
+                       --- dlfree
+                           free
+                           getline
+
+                       |
+                       --- free
+                           getline
+
+     0.05%             ksmd  [kernel]               [k] find_vma
+                       |
+                       --- find_vma
+                           ksm_scan_thread
+                           kthread
+                           do_exit
+
+     0.05%             ksmd  [kernel]               [k] __do_softirq
+                       |
+                       --- __do_softirq
+                           irq_exit
+                           asm_do_IRQ
+                           __irq_svc
+                          |          
+                          |--40.01%-- memcmp_pages
+                          |          ksm_scan_thread
+                          |          kthread
+                          |          do_exit
+                          |          
+                          |--39.99%-- flush_dcache_page
+                          |          ksm_scan_thread
+                          |          kthread
+                          |          do_exit
+                          |          
+                           --20.00%-- kthread
+                                     do_exit
+
+     0.05%             perf  [kernel]               [k] pointer
+                       |
+                       --- pointer
+                           vsnprintf
+                           seq_printf
+                           s_show
+                           seq_read
+                           proc_reg_read
+                           vfs_read
+                           sys_read
+                           ret_fast_syscall
+
+     0.04%  nativebenchmark  libdvm.so              [.] dvmJitFindEntry
+            |
+            --- dvmJitCheckTraceRequest
+                common_selectTrace
+                dvmInterpret(Thread*, Method const*, JValue*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.04%             ksmd  [kernel]               [k] __up_read
+                       |
+                       --- __up_read
+                           up_read
+                           ksm_scan_thread
+                           kthread
+                           do_exit
+
+     0.04%  nativebenchmark  libdvm.so              [.] dalvik_inst
+            |
+            --- dvmInterpret(Thread*, Method const*, JValue*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+               |          
+               |--74.95%-- CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+               |          0x52c1dac0
+               |          dvmPlatformInvoke
+               |          0x539dfd1c
+               |          
+                --25.05%-- CallStaticObjectMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                          0x52b90bc4
+                          0x52c1db28
+                          dvmPlatformInvoke
+                          0x539dfd1c
+
+     0.04%             perf  libc.so                [.] malloc
+                       |
+                       --- getline
+
+     0.04%             perf  [kernel]               [k] s_show
+                       |
+                       --- s_show
+                           seq_read
+                           proc_reg_read
+                           vfs_read
+                           sys_read
+                           ret_fast_syscall
+
+     0.04%      s3cfb-vsync  [kernel]               [k] __schedule
+                |
+                --- __schedule
+                    schedule
+                    schedule_timeout
+                    s3cfb_wait_for_vsync_thread
+                    kthread
+                    do_exit
+
+     0.03%             perf  [kernel]               [k] __copy_to_user_std
+                       |
+                       --- __copy_to_user_std
+                           proc_reg_read
+                           vfs_read
+                           sys_read
+                           ret_fast_syscall
+
+     0.03%  nativebenchmark  libdvm.so              [.] dvmJitHash(unsigned short const*)
+            |
+            --- dvmJitGetTraceAddrThread
+                common_updateProfile
+                dvmInterpret(Thread*, Method const*, JValue*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+            |
+            --- getCodeAddrCommon(unsigned short const*, bool)
+                dvmJitGetTraceAddrThread
+                common_updateProfile
+                dvmInterpret(Thread*, Method const*, JValue*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.03%             perf  perf                   [.] getline
+     0.03%             perf  libc.so                [.] strcmp
+     0.03%             ksmd  [kernel]               [k] follow_page
+                       |
+                       --- follow_page
+                           ksm_scan_thread
+                           kthread
+                           do_exit
+
+     0.03%  nativebenchmark  libdvm.so              [.] common_selectTrace
+            |
+            --- dvmInterpret(Thread*, Method const*, JValue*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.03%  nativebenchmark  libdvm.so              [.] common_gotoBail
+            |
+            --- dvmInterpret(Thread*, Method const*, JValue*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.02%             perf  [kernel]               [k] __copy_from_user
+                       |
+                       --- __copy_from_user
+                           generic_file_buffered_write
+                           __generic_file_aio_write
+                           generic_file_aio_write
+                           do_sync_write
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.02%             ksmd  [kernel]               [k] __down_read
+                       |
+                       --- __down_read
+                           down_read
+                           ksm_scan_thread
+                           kthread
+                           do_exit
+
+     0.02%             perf  [kernel]               [k] do_vfp
+                       |
+                       --- do_vfp
+
+     0.02%             ksmd  [kernel]               [k] __flush_dcache_page
+                       |
+                       --- __flush_dcache_page
+                           flush_dcache_page
+                           ksm_scan_thread
+                           kthread
+                           do_exit
+
+     0.02%  nativebenchmark  [kernel]               [k] check_for_new_grace_period
+            |
+            --- check_for_new_grace_period
+                __rcu_process_callbacks
+                rcu_process_callbacks
+                __do_softirq
+                irq_exit
+                asm_do_IRQ
+                __irq_usr
+               |          
+               |--50.00%-- dvmDecodeIndirectRef(Thread*, _jobject*)
+               |          dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+               |          CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+               |          0x52c1dac0
+               |          dvmPlatformInvoke
+               |          0x539dfd1c
+               |          
+                --50.00%-- pthread_mutex_unlock_impl
+                          pthread_mutex_unlock
+                          ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+                          dvmDecodeIndirectRef(Thread*, _jobject*)
+                          dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                          CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                          0x52c1dac0
+                          dvmPlatformInvoke
+                          0x539dfd1c
+
+     0.02%             ksmd  [kernel]               [k] get_ksm_page
+                       |
+                       --- get_ksm_page
+                           ksm_scan_thread
+                           kthread
+                           do_exit
+
+     0.02%  nativebenchmark  libdvm.so              [.] dvmJitHashMask(unsigned short const*, unsigned int)
+            |
+            --- dvmJitHash(unsigned short const*)
+               |          
+               |--50.02%-- dvmJitFindEntry
+               |          dvmJitCheckTraceRequest
+               |          common_selectTrace
+               |          dvmInterpret(Thread*, Method const*, JValue*)
+               |          dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+               |          CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+               |          0x52c1dac0
+               |          dvmPlatformInvoke
+               |          0x539dfd1c
+               |          
+                --49.98%-- getCodeAddrCommon(unsigned short const*, bool)
+                          dvmJitGetTraceAddrThread
+                          common_updateProfile
+                          dvmInterpret(Thread*, Method const*, JValue*)
+                          dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                          CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                          0x52c1dac0
+                          dvmPlatformInvoke
+                          0x539dfd1c
+
+     0.02%             ksmd  [kernel]               [k] flush_dcache_page
+                       |
+                       --- flush_dcache_page
+                           ksm_scan_thread
+                           kthread
+                           do_exit
+
+     0.02%             ksmd  [kernel]               [k] vm_normal_page
+                       |
+                       --- vm_normal_page
+                           follow_page
+                           ksm_scan_thread
+                           kthread
+                           do_exit
+
+     0.02%          kswapd0  [kernel]               [k] recalc_bh_state
+                    |
+                    --- recalc_bh_state
+                        free_buffer_head
+                        try_to_free_buffers
+                        try_to_release_page
+                        shrink_page_list
+                        shrink_inactive_list
+                        shrink_zone
+                        kswapd
+                        kthread
+                        do_exit
+
+     0.02%             ksmd  [kernel]               [k] rcu_note_context_switch
+                       |
+                       --- rcu_note_context_switch
+                           __schedule
+                           preempt_schedule
+                           memcmp_pages
+                           ksm_scan_thread
+                           kthread
+                           do_exit
+
+     0.01%             perf  [kernel]               [k] do_last
+                       |
+                       --- do_last
+                           path_openat
+                           do_filp_open
+                           do_sys_open
+                           sys_open
+                           ret_fast_syscall
+                           (nil)
+
+     0.01%             perf  libc.so                [.] strtol
+                       |
+                       --- (nil)
+
+     0.01%             perf  libc.so                [.] memset
+                       |
+                       --- (nil)
+
+     0.01%             perf  [kernel]               [k] __down_write_nested
+                       |
+                       --- __down_write_nested
+                           __down_write
+                           down_write
+                           sys_mprotect
+                           ret_fast_syscall
+                           (nil)
+
+     0.01%             perf  perf                   [.] find_symbol_cb
+     0.01%  nativebenchmark  libc.so                [.] pthread_getspecific
+            |
+            --- dvmThreadSelf()
+                dvmGetCurrentJNIMethod()
+                PushLocalFrame(_JNIEnv*, int)
+                0x52c1d9f0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.01%             perf  [kernel]               [k] seq_puts
+                       |
+                       --- seq_puts
+                           render_cap_t
+                           proc_pid_status
+                           proc_single_show
+                           seq_read
+                           vfs_read
+                           sys_read
+                           ret_fast_syscall
+                           (nil)
+
+     0.01%             perf  [kernel]               [k] do_lookup
+                       |
+                       --- do_lookup
+                           do_last
+                           path_openat
+                           do_filp_open
+                           do_sys_open
+                           sys_open
+                           ret_fast_syscall
+                           (nil)
+
+     0.01%             perf  [kernel]               [k] fsnotify
+                       |
+                       --- fsnotify
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.01%             perf  [kernel]               [k] kmem_cache_free
+                       |
+                       --- kmem_cache_free
+                           do_sys_open
+                           sys_open
+                           ret_fast_syscall
+                           (nil)
+
+     0.01%             perf  [kernel]               [k] flush_dcache_page
+                       |
+                       --- flush_dcache_page
+                           generic_file_buffered_write
+                           __generic_file_aio_write
+                           generic_file_aio_write
+                           do_sync_write
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.01%             perf  [kernel]               [k] __srcu_read_unlock
+                       |
+                       --- __srcu_read_unlock
+                           fsnotify
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.01%             perf  [kernel]               [k] vector_swi
+                       |
+                       --- vector_swi
+
+     0.01%             perf  [kernel]               [k] sys_close
+                       |
+                       --- sys_close
+                           ret_fast_syscall
+                           (nil)
+
+     0.01%             ksmd  [kernel]               [k] __switch_to
+                       |
+                       --- __switch_to
+                           preempt_schedule
+                           memcmp_pages
+                           ksm_scan_thread
+                           kthread
+                           do_exit
+
+     0.01%  nativebenchmark  libdvm.so              [.] dvmJitHideTranslation()
+            |
+            --- getCodeAddrCommon(unsigned short const*, bool)
+                dvmJitGetTraceAddrThread
+                common_updateProfile
+                dvmInterpret(Thread*, Method const*, JValue*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.01%             perf  [kernel]               [k] recalc_bh_state
+                       |
+                       --- recalc_bh_state
+                           alloc_buffer_head
+                           alloc_page_buffers
+                           create_empty_buffers
+                           __block_write_begin
+                           block_write_begin
+                           cont_write_begin
+                           fat_write_begin
+                           generic_file_buffered_write
+                           __generic_file_aio_write
+                           generic_file_aio_write
+                           do_sync_write
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.01%       yaffs-bg-1  [kernel]               [k] yaffs_calc_checkpt_blocks_required
+                 |
+                 --- yaffs_calc_checkpt_blocks_required
+                     yaffs_check_gc
+                     yaffs_bg_gc
+                     yaffs_bg_thread_fn
+                     kthread
+                     do_exit
+
+     0.01%             perf  [kernel]               [k] fat_bmap
+                       |
+                       --- fat_bmap
+                           fat_get_block
+                           __block_write_begin
+                           block_write_begin
+                           cont_write_begin
+                           fat_write_begin
+                           generic_file_buffered_write
+                           __generic_file_aio_write
+                           generic_file_aio_write
+                           do_sync_write
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.01%  nativebenchmark  libdvm.so              [.] dvmJitCalleeSave
+            |
+            --- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.01%  nativebenchmark  libdvm.so              [.] IndirectRefTable::add(unsigned int, Object*)
+            |
+            --- addLocalReference(Thread*, Object*)
+                CallStaticObjectMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52b90bc4
+                0x52c1db28
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.01%             ksmd  [kernel]               [k] memcmp_pages
+                       |
+                       --- memcmp_pages
+                           ksm_scan_thread
+                           kthread
+                           do_exit
+
+     0.01%             perf  [kernel]               [k] do_sync_write
+                       |
+                       --- do_sync_write
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.01%      flush-179:0  [kernel]               [k] pagevec_lru_move_fn
+                |
+                --- pagevec_lru_move_fn
+                    ____pagevec_lru_add
+                    lru_add_drain
+                    __pagevec_release
+                    write_cache_pages
+                    generic_writepages
+                    do_writepages
+                    writeback_single_inode
+                    writeback_sb_inodes
+                    writeback_inodes_wb
+                    wb_writeback
+                    wb_do_writeback
+                    bdi_writeback_thread
+                    kthread
+                    do_exit
+
+     0.01%             perf  [kernel]               [k] mark_buffer_dirty_inode
+                       |
+                       --- mark_buffer_dirty_inode
+                           fat_alloc_clusters
+                           fat_get_block
+                           __block_write_begin
+                           block_write_begin
+                           cont_write_begin
+                           fat_write_begin
+                           generic_file_buffered_write
+                           __generic_file_aio_write
+                           generic_file_aio_write
+                           do_sync_write
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.01%             perf  [kernel]               [k] vfs_read
+                       |
+                       --- vfs_read
+                           sys_read
+                           ret_fast_syscall
+
+     0.01%             ksmd  [kernel]               [k] __rcu_read_unlock
+                       |
+                       --- __rcu_read_unlock
+                           get_ksm_page
+                           ksm_scan_thread
+                           kthread
+                           do_exit
+
+     0.01%  nativebenchmark  [kernel]               [k] run_timer_softirq
+            |
+            --- run_timer_softirq
+                irq_exit
+                asm_do_IRQ
+                __irq_usr
+                dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.01%  nativebenchmark  [kernel]               [k] __rcu_process_callbacks
+            |
+            --- __rcu_process_callbacks
+                rcu_process_callbacks
+                __do_softirq
+                irq_exit
+                asm_do_IRQ
+                __irq_usr
+                ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+                dvmDecodeIndirectRef(Thread*, _jobject*)
+                dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.01%  nativebenchmark  [kernel]               [k] __schedule
+            |
+            --- __schedule
+                schedule
+                ret_to_user
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.01%  nativebenchmark  libdvm.so              [.] dvmJitCalleeRestore
+            |
+            --- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                CallStaticVoidMethod(_JNIEnv*, _jclass*, _jmethodID*, ...)
+                0x52c1dac0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.01%      s3cfb-vsync  [kernel]               [k] finish_wait
+                |
+                --- finish_wait
+                    s3cfb_wait_for_vsync_thread
+                    kthread
+                    do_exit
+
+     0.01%  nativebenchmark  libdvm.so              [.] dvmThreadSelf()
+            |
+            --- dvmGetCurrentJNIMethod()
+                PushLocalFrame(_JNIEnv*, int)
+                0x52c1d9f0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.01%             perf  [kernel]               [k] s_next
+                       |
+                       --- s_next
+                           seq_read
+                           proc_reg_read
+                           vfs_read
+                           sys_read
+                           ret_fast_syscall
+
+     0.01%             perf  [kernel]               [k] __find_get_block
+                       |
+                       --- __find_get_block
+                           __getblk
+                           fat_mirror_bhs
+                           fat_ent_write
+                           fat_chain_add
+                           fat_get_block
+                           __block_write_begin
+                           block_write_begin
+                           cont_write_begin
+                           fat_write_begin
+                           generic_file_buffered_write
+                           __generic_file_aio_write
+                           generic_file_aio_write
+                           do_sync_write
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.01%             perf  [kernel]               [k] fget_light
+                       |
+                       --- fget_light
+                           sys_read
+                           ret_fast_syscall
+
+     0.01%             perf  [kernel]               [k] hrtimer_run_pending
+                       |
+                       --- hrtimer_run_pending
+                           __do_softirq
+                           irq_exit
+                           asm_do_IRQ
+                           __irq_usr
+                           malloc
+                           getline
+
+     0.01%             perf  [kernel]               [k] alloc_fd
+                       |
+                       --- alloc_fd
+                           do_sys_open
+                           sys_open
+                           ret_fast_syscall
+                           (nil)
+
+     0.01%             perf  [kernel]               [k] grab_cache_page_write_begin
+                       |
+                       --- grab_cache_page_write_begin
+                           block_write_begin
+                           cont_write_begin
+                           fat_write_begin
+                           generic_file_buffered_write
+                           __generic_file_aio_write
+                           generic_file_aio_write
+                           do_sync_write
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.01%             perf  [kernel]               [k] __block_write_begin
+                       |
+                       --- __block_write_begin
+                           block_write_begin
+                           cont_write_begin
+                           fat_write_begin
+                           generic_file_buffered_write
+                           __generic_file_aio_write
+                           generic_file_aio_write
+                           do_sync_write
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.01%             perf  [kernel]               [k] __srcu_read_lock
+                       |
+                       --- __srcu_read_lock
+                           fsnotify
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.01%             perf  [kernel]               [k] perf_mmap_fault
+                       |
+                       --- perf_mmap_fault
+                           handle_pte_fault
+                           handle_mm_fault
+                           do_page_fault
+                           do_DataAbort
+                           __dabt_svc
+                           generic_file_buffered_write
+                           __generic_file_aio_write
+                           generic_file_aio_write
+                           do_sync_write
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.01%  nativebenchmark  libdvm.so              [.] ensureLocalCapacity(Thread*, int)
+            |
+            --- 0x52c1d9f0
+                dvmPlatformInvoke
+                0x539dfd1c
+
+     0.01%             perf  [kernel]               [k] get_page_from_freelist
+                       |
+                       --- get_page_from_freelist
+                           __alloc_pages_nodemask
+                           grab_cache_page_write_begin
+                           block_write_begin
+                           cont_write_begin
+                           fat_write_begin
+                           generic_file_buffered_write
+                           __generic_file_aio_write
+                           generic_file_aio_write
+                           do_sync_write
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.01%             perf  [kernel]               [k] mntput_no_expire
+                       |
+                       --- mntput_no_expire
+                           mntput
+                           path_put
+                           do_last
+                           path_openat
+                           do_filp_open
+                           do_sys_open
+                           sys_open
+                           ret_fast_syscall
+                           (nil)
+
+     0.01%             perf  [kernel]               [k] put_dec_trunc
+                       |
+                       --- put_dec_trunc
+                           put_dec
+                           number
+                           vsnprintf
+                           seq_printf
+                           proc_pid_status
+                           proc_single_show
+                           seq_read
+                           vfs_read
+                           sys_read
+                           ret_fast_syscall
+                           (nil)
+
+     0.01%             perf  [kernel]               [k] __block_commit_write
+                       |
+                       --- __block_commit_write
+                           block_write_end
+                           generic_write_end
+                           fat_write_end
+                           generic_file_buffered_write
+                           __generic_file_aio_write
+                           generic_file_aio_write
+                           do_sync_write
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.01%             perf  [kernel]               [k] v7wbi_flush_user_tlb_range
+                       |
+                       --- v7wbi_flush_user_tlb_range
+                           sys_mprotect
+                           ret_fast_syscall
+                           (nil)
+
+     0.01%             perf  [kernel]               [k] rw_verify_area
+                       |
+                       --- rw_verify_area
+                           vfs_write
+                           sys_write
+                           ret_fast_syscall
+
+     0.01%             perf  [kernel]               [k] __memzero
+                       |
+                       --- __memzero
+                           get_empty_filp
+                           path_openat
+                           do_filp_open
+                           do_sys_open
+                           sys_open
+                           ret_fast_syscall
+                           (nil)
+
+     0.01%             perf  [kernel]               [k] proc_task_readdir
+                       |
+                       --- proc_task_readdir
+                           vfs_readdir
+                           sys_getdents64
+                           ret_fast_syscall
+
+     0.01%             perf  perf                   [.] 0x4eb4          
+
+
+#
+# (For a higher level overview, try: perf report --sort comm,dso)
+#
