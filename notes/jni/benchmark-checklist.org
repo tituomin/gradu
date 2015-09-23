@@ -1,4 +1,4 @@
-#+TODO: CHECK IMPLEMENT COUNTERPOINT REDO | EXCLUDE SUPPORT DONE
+#+TODO: THINK IMPLEMENT COUNTERPOINT REDO TEST | EXCLUDE SUPPORT DONE
 # done: on benchmark
 # exclude: päätetty jättää
 # support: osa muita benchmarkeja
@@ -29,15 +29,15 @@
 *** DONE Set<PrimitiveType>ArrayRegion Routines                 :group2:copy:
 ** Calling Instance Methods                                             :dep:
 *** DONE GetMethodID                                                 :search:
-*** IMPLEMENT Call<type>Method(A/V) Routines                          :comp2:
+*** DONE Call<type>Method(A/V) Routines                               :comp2:
 **** DONE JavaCounterparts method implementation
 **** DONE J runners JavaCounterparts instance
 **** DONE C runners different kind of MID
 **** DONE C runners JavaCounterparts instance
 **** DONE C runners different kind of call site
-*** IMPLEMENT CallNonvirtual<type>Method(A/V) Routines                :comp2:
-**** CHECK C runners MID extraction point
-**** IMPLEMENT C runners different kind of call site
+*** DONE CallNonvirtual<type>Method(A/V) Routines                     :comp2:
+**** THINK C runners MID extraction point
+**** DONE C runners different kind of call site
 ** Calling Static Methods                                               :dep:
 *** DONE GetStaticMethodID                                           :search:
 *** DONE CallStatic<type>Method(A/V) Routines

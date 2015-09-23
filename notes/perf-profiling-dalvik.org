@@ -1,5 +1,7 @@
 
 Things to remember
+* report command
+perf report -i perf-7aa92cd9-1b8f-4190-a54a-68c476966d7d.data --symfs=/home/tituomin/droid/src/out/target/product/crespo/symbols --kallsyms=/home/tituomin/droid/linux-kernel/kallsyms
 * turn of gcc optimisation for trivial loops
 * inlining native functions? disable
 * java inline native invocations...
