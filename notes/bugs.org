@@ -1,0 +1,117 @@
+
+* perf benchmarks stopped working
+ (app crashes)
+  (<2014-04-12 Sat> can't reproduce)
+  (has to have full benchmarks before perf?)
+  (yes: reproduced for profile default)
+
+** errors:
+I/WindowState(  248): WIN DEATH: Window{41651fe8 com.android.launcher/com.android.launcher2.Launcher paused=false}
+I/ActivityManager(  248): Process com.android.launcher (pid 433) has died.
+I/ActivityManager(  248): Process com.android.inputmethod.latin (pid 399) has died.
+W/ActivityManager(  248): Scheduling restart of crashed service com.android.inputmethod.latin/.spellcheck.AndroidSpellCheckerService in 5000ms
+W/ActivityManager(  248): Scheduling restart of crashed service com.android.inputmethod.latin/.LatinIME in 14999ms
+W/InputMethodManagerService(  248): Session failed to close due to remote exception
+W/InputMethodManagerService(  248): android.os.DeadObjectException
+W/InputMethodManagerService(  248): 	at android.os.BinderProxy.transact(Native Method)
+W/InputMethodManagerService(  248): 	at com.android.internal.view.IInputMethodSession$Stub$Proxy.finishSession(IInputMethodSession.java:366)
+W/InputMethodManagerService(  248): 	at com.android.server.InputMethodManagerService.finishSession(InputMethodManagerService.java:1178)
+W/InputMethodManagerService(  248): 	at com.android.server.InputMethodManagerService.clearCurMethodLocked(InputMethodManagerService.java:1190)
+W/InputMethodManagerService(  248): 	at com.android.server.InputMethodManagerService.onServiceDisconnected(InputMethodManagerService.java:1210)
+W/InputMethodManagerService(  248): 	at android.app.LoadedApk$ServiceDispatcher.doDeath(LoadedApk.java:1102)
+W/InputMethodManagerService(  248): 	at android.app.LoadedApk$ServiceDispatcher$RunConnection.run(LoadedApk.java:1116)
+W/InputMethodManagerService(  248): 	at android.os.Handler.handleCallback(Handler.java:615)
+W/InputMethodManagerService(  248): 	at android.os.Handler.dispatchMessage(Handler.java:92)
+W/InputMethodManagerService(  248): 	at android.os.Looper.loop(Looper.java:137)
+W/InputMethodManagerService(  248): 	at com.android.server.ServerThread.run(SystemServer.java:891)
+W/InputMethodManagerService(  248): Session failed to close due to remote exception
+W/InputMethodManagerService(  248): android.os.DeadObjectException
+W/InputMethodManagerService(  248): 	at android.os.BinderProxy.transact(Native Method)
+W/InputMethodManagerService(  248): 	at com.android.internal.view.IInputMethodSession$Stub$Proxy.finishSession(IInputMethodSession.java:366)
+W/InputMethodManagerService(  248): 	at com.android.server.InputMethodManagerService.finishSession(InputMethodManagerService.java:1178)
+W/InputMethodManagerService(  248): 	at com.android.server.InputMethodManagerService.clearCurMethodLocked(InputMethodManagerService.java:1194)
+W/InputMethodManagerService(  248): 	at com.android.server.InputMethodManagerService.onServiceDisconnected(InputMethodManagerService.java:1210)
+W/InputMethodManagerService(  248): 	at android.app.LoadedApk$ServiceDispatcher.doDeath(LoadedApk.java:1102)
+W/InputMethodManagerService(  248): 	at android.app.LoadedApk$ServiceDispatcher$RunConnection.run(LoadedApk.java:1116)
+W/InputMethodManagerService(  248): 	at android.os.Handler.handleCallback(Handler.java:615)
+W/InputMethodManagerService(  248): 	at android.os.Handler.dispatchMessage(Handler.java:92)
+W/InputMethodManagerService(  248): 	at android.os.Looper.loop(Looper.java:137)
+W/InputMethodManagerService(  248): 	at com.android.server.ServerThread.run(SystemServer.java:891)
+I/ActivityManager(  248): Process com.android.smspush (pid 494) has died.
+W/ActivityManager(  248): Scheduling restart of crashed service com.android.smspush/.WapPushManager in 24464ms
+I/ActivityManager(  248): Start proc com.android.smspush for service com.android.smspush/.WapPushManager: pid=3049 uid=10042 gids={1028}
+I/WindowState(  248): WIN DEATH: Window{41714138 fi.helsinki.cs.tituomin.nativebenchmark/fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkSelector paused=false}
+W/AudioWatchdog(   90): Insufficient CPU for load: expected=50.0 actual=250.5 ms; underruns=2 logs=2
+D/SurfaceFlinger(   87): Screen about to return, flinger = 0x40ea9af0
+I/ActivityManager(  248): Process fi.helsinki.cs.tituomin.nativebenchmark (pid 2638) has died.
+D/dalvikvm( 3067): Late-enabling CheckJNI
+I/ActivityManager(  248): Start proc fi.helsinki.cs.tituomin.nativebenchmark for activity fi.helsinki.cs.tituomin.nativebenchmark/.BenchmarkSelector: pid=3067 uid=10043 gids={1015, 1028}
+I/ActivityManager(  248): Applications Memory Usage (kB):
+I/ActivityManager(  248): Uptime: 11496742 Realtime: 11604361
+I/ActivityManager(  248): Total PSS by OOM adjustment:
+I/ActivityManager(  248):     18630 kB: System
+I/ActivityManager(  248):                18630 kB: system (pid 248)
+I/ActivityManager(  248):     26701 kB: Persistent
+I/ActivityManager(  248):                15914 kB: com.android.systemui (pid 327)
+I/ActivityManager(  248):                 6219 kB: com.android.phone (pid 418)
+I/ActivityManager(  248):                 4568 kB: com.android.nfc (pid 424)
+I/ActivityManager(  248):    237181 kB: Foreground
+I/ActivityManager(  248):               237181 kB: fi.helsinki.cs.tituomin.nativebenchmark (pid 2638)
+I/ActivityManager(  248):      9415 kB: Visible
+I/ActivityManager(  248):                 5837 kB: com.android.inputmethod.latin (pid 399)
+I/ActivityManager(  248):                 3578 kB: com.android.smspush (pid 494)
+I/ActivityManager(  248): 
+I/ActivityManager(  248): Total PSS: 291927 kB
+I/ActivityManager(  248):       KSM: 199760 kB saved from shared 3928 kB
+I/ActivityManager(  248):            54936 kB unshared; 100756 kB volatile
+I/ActivityManager(  248):   PID      Vss      Rss      Pss      Uss  cmdline
+I/ActivityManager(  248):  2638  225864K  212412K   26386K   19888K  <unknown>
+I/ActivityManager(  248):   248   33872K   33852K   18099K   14780K  system_server
+I/ActivityManager(  248):   327   33140K   33032K   15702K   11412K  com.android.systemui
+I/ActivityManager(  248):    87   20240K   17240K   11544K    6832K  /system/bin/surfaceflinger
+I/ActivityManager(  248):   418   20808K   20700K    6404K    4000K  com.android.phone
+I/ActivityManager(  248):   424   19488K   19396K    5203K    2476K  com.android.nfc
+I/ActivityManager(  248):    88   17948K   17804K    3504K    1304K  zygote
+I/ActivityManager(  248):    90    2340K    2340K    1760K    1696K  /system/bin/mediaserver
+I/ActivityManager(  248):    94    1916K    1916K    1364K    1324K  /system/vendor/bin/gpsd
+I/ActivityManager(  248):    89    1176K    1176K     767K     740K  /system/bin/drmserver
+I/ActivityManager(  248):    86    1152K    1152K     554K     532K  /system/bin/rild
+I/ActivityManager(  248):  3047     732K     732K     499K     488K  procrank
+I/ActivityManager(  248):    84     732K     732K     415K     384K  /system/bin/netd
+I/ActivityManager(  248):    81     624K     624K     326K     308K  /system/bin/vold
+I/ActivityManager(  248):   358     572K     572K     305K     288K  /system/bin/bluetoothd
+I/ActivityManager(  248):    93     532K     532K     291K     280K  /system/bin/keystore
+I/ActivityManager(  248):    85     500K     500K     223K     204K  /system/bin/debuggerd
+I/ActivityManager(  248):    96     236K     236K     216K     212K  /sbin/adbd
+I/ActivityManager(  248):    91     424K     420K     175K     164K  /system/bin/dbus-daemon
+I/ActivityManager(  248):     1     236K     236K     160K     108K  /init
+I/ActivityManager(  248):    72     208K     208K     148K      96K  /sbin/ueventd
+I/ActivityManager(  248):    92     380K     376K     128K     116K  /system/bin/installd
+I/ActivityManager(  248):   314     320K     320K     117K     108K  /system/bin/brcm_patchram_plus
+I/ActivityManager(  248):    80     324K     324K     117K     108K  /system/bin/servicemanager
+I/ActivityManager(  248):    95     336K     332K     114K     104K  /system/bin/sh
+I/ActivityManager(  248):                           ------   ------  ------
+I/ActivityManager(  248):                           94533K   67952K  TOTAL
+I/ActivityManager(  248): RAM: 351344K total, 221680K free, 80K buffers, 16352K cached, 248K shmem, 10936K slab
+
+
+** guilty: one of these:
+commit 7f374b2d1d811ae856a4ed85baaaa9fc6cba0e0d
+Author: Timo Tuominen <tituomin@gmail.com>
+Date:   Fri Feb 14 01:31:28 2014 +0200
+
+    First version of java field custom benchmarks.
+
+commit 1fb6cf5c84c089039bbe8076976ed0aad03430e9
+Author: Timo Tuominen <tituomin@gmail.com>
+Date:   Fri Feb 14 01:30:25 2014 +0200
+
+    Prevent huge allocations on each create.
+
+commit c896820744f9906e3d58b54e624c30fffcb8acb3
+Author: Timo Tuominen <tituomin@gmail.com>
+Date:   Fri Feb 14 01:28:53 2014 +0200
+
+    Nonvirtuality accounted for in the results.
+
+* 
