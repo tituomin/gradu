@@ -96,6 +96,8 @@ I/ActivityManager(  248): RAM: 351344K total, 221680K free, 80K buffers, 16352K 
 
 
 ** guilty: one of these:
+   -- probably a memory run out error
+
 commit 7f374b2d1d811ae856a4ed85baaaa9fc6cba0e0d
 Author: Timo Tuominen <tituomin@gmail.com>
 Date:   Fri Feb 14 01:31:28 2014 +0200
@@ -114,4 +116,70 @@ Date:   Fri Feb 14 01:28:53 2014 +0200
 
     Nonvirtuality accounted for in the results.
 
-* 
+
+** history
+
+*** 1b3e440f8426a65eb543624c1a02c20b2c1f002d worked for mass measurements
+
+*** 5374441dfaec74c01c4f1c29fc11df1bd3134b11 was used with substring filter
+
+*** 842bf36041fdc1cd4841a9dfcd76b3ce1891f941 was last used thusly
+
+    
+* <2015-09-23 ke> new tests: another error: missing benchmark classes
+  -- probably fixed in 480870f -- why is old version in phone ? 
+  -- probably related to removed redundant benchmarks
+  -- missing build step before installing?
+
+E/BenchmarkRunner( 1566): Could not find class
+E/BenchmarkRunner( 1566): java.lang.ClassNotFoundException: fi.helsinki.cs.tituomin.nativebenchmark.benchmark.J2CBenchmark00454
+E/BenchmarkRunner( 1566): 	at java.lang.Class.classForName(Native Method)
+E/BenchmarkRunner( 1566): 	at java.lang.Class.forName(Class.java:217)
+E/BenchmarkRunner( 1566): 	at java.lang.Class.forName(Class.java:172)
+E/BenchmarkRunner( 1566): 	at fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRunner.inspectBenchmark(BenchmarkRunner.java:597)
+E/BenchmarkRunner( 1566): 	at fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRunner.runSeries(BenchmarkRunner.java:495)
+E/BenchmarkRunner( 1566): 	at fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRunner.runBenchmarks(BenchmarkRunner.java:254)
+E/BenchmarkRunner( 1566): 	at fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkSelector$5.run(BenchmarkSelector.java:316)
+E/BenchmarkRunner( 1566): 	at java.lang.Thread.run(Thread.java:856)
+E/BenchmarkRunner( 1566): Caused by: java.lang.NoClassDefFoundError: fi/helsinki/cs/tituomin/nativebenchmark/benchmark/J2CBenchmark00454
+E/BenchmarkRunner( 1566): 	... 8 more
+E/BenchmarkRunner( 1566): Caused by: java.lang.ClassNotFoundException: fi.helsinki.cs.tituomin.nativebenchmark.benchmark.J2CBenchmark00454
+E/BenchmarkRunner( 1566): 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java:61)
+E/BenchmarkRunner( 1566): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:501)
+E/BenchmarkRunner( 1566): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:461)
+E/BenchmarkRunner( 1566): 	... 8 more
+E/BenchmarkRunner( 1566): Could not find class
+E/BenchmarkRunner( 1566): java.lang.ClassNotFoundException: fi.helsinki.cs.tituomin.nativebenchmark.benchmark.J2CBenchmark00456
+E/BenchmarkRunner( 1566): 	at java.lang.Class.classForName(Native Method)
+E/BenchmarkRunner( 1566): 	at java.lang.Class.forName(Class.java:217)
+E/BenchmarkRunner( 1566): 	at java.lang.Class.forName(Class.java:172)
+E/BenchmarkRunner( 1566): 	at fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRunner.inspectBenchmark(BenchmarkRunner.java:597)
+E/BenchmarkRunner( 1566): 	at fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRunner.runSeries(BenchmarkRunner.java:495)
+E/BenchmarkRunner( 1566): 	at fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRunner.runBenchmarks(BenchmarkRunner.java:254)
+E/BenchmarkRunner( 1566): 	at fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkSelector$5.run(BenchmarkSelector.java:316)
+E/BenchmarkRunner( 1566): 	at java.lang.Thread.run(Thread.java:856)
+E/BenchmarkRunner( 1566): Caused by: java.lang.NoClassDefFoundError: fi/helsinki/cs/tituomin/nativebenchmark/benchmark/J2CBenchmark00456
+E/BenchmarkRunner( 1566): 	... 8 more
+E/BenchmarkRunner( 1566): Caused by: java.lang.ClassNotFoundException: fi.helsinki.cs.tituomin.nativebenchmark.benchmark.J2CBenchmark00456
+E/BenchmarkRunner( 1566): 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java:61)
+E/BenchmarkRunner( 1566): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:501)
+E/BenchmarkRunner( 1566): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:461)
+E/BenchmarkRunner( 1566): 	... 8 more
+E/BenchmarkRunner( 1566): Could not find class
+E/BenchmarkRunner( 1566): java.lang.ClassNotFoundException: fi.helsinki.cs.tituomin.nativebenchmark.benchmark.J2CBenchmark00458
+E/BenchmarkRunner( 1566): 	at java.lang.Class.classForName(Native Method)
+E/BenchmarkRunner( 1566): 	at java.lang.Class.forName(Class.java:217)
+E/BenchmarkRunner( 1566): 	at java.lang.Class.forName(Class.java:172)
+E/BenchmarkRunner( 1566): 	at fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRunner.inspectBenchmark(BenchmarkRunner.java:597)
+E/BenchmarkRunner( 1566): 	at fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRunner.runSeries(BenchmarkRunner.java:495)
+E/BenchmarkRunner( 1566): 	at fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkRunner.runBenchmarks(BenchmarkRunner.java:254)
+E/BenchmarkRunner( 1566): 	at fi.helsinki.cs.tituomin.nativebenchmark.BenchmarkSelector$5.run(BenchmarkSelector.java:316)
+E/BenchmarkRunner( 1566): 	at java.lang.Thread.run(Thread.java:856)
+E/BenchmarkRunner( 1566): Caused by: java.lang.NoClassDefFoundError: fi/helsinki/cs/tituomin/nativebenchmark/benchmark/J2CBenchmark00458
+E/BenchmarkRunner( 1566): 	... 8 more
+E/BenchmarkRunner( 1566): Caused by: java.lang.ClassNotFoundException: fi.helsinki.cs.tituomin.nativebenchmark.benchmark.J2CBenchmark00458
+E/BenchmarkRunner( 1566): 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java:61)
+E/BenchmarkRunner( 1566): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:501)
+E/BenchmarkRunner( 1566): 	at java.lang.ClassLoader.loadClass(ClassLoader.java:461)
+E/BenchmarkRunner( 1566): 	... 8 more
+
