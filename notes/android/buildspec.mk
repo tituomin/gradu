@@ -61,8 +61,7 @@ CUSTOM_MODULES:= \
     opgprof \
     opimport \
     opreport \
-    oprofiled \
-    Superuser        
+    oprofiled
 endif
 
 # Set this to debug or release if you care.  Otherwise, it defaults to release.
