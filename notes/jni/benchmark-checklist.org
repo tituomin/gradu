@@ -1,7 +1,3 @@
-#+TODO: THINK IMPLEMENT COUNTERPOINT REDO TEST | EXCLUDE SUPPORT DONE
-# done: on benchmark
-# exclude: päätetty jättää
-# support: osa muita benchmarkeja
 
 * Functions
 ** String Operations
