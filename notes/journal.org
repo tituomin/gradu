@@ -1,0 +1,7 @@
+* <2016-02-27 la 12:51> Aleksandria
+** Verified fix to npe in getFilter works
+** Ran whole series through :quick profile
+
+* <2016-01-21 to 19:06> last time compared to
+** installed new system image with hopefully correct su
+*** DONE verify su
