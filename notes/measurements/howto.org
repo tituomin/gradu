@@ -7,3 +7,6 @@
 * perf reporting:
   perf report -i *.data --symfs=/home/tituomin/droid-symbols --kallsyms=/home/tituomin/droid/linux-kernel/kallsyms -g graph,0.01,callee -G |less
   remember to copy libnativebenchmark.so to symbols dir, and see that dalvik &c. are there
+
+  very nice overview:
+  perf report -i *.data --symfs=/home/tituomin/droid-symbols --kallsyms=/home/tituomin/droid/linux-kernel/kallsyms -g graph,0.9,caller --stdio -s parent
