@@ -1,4 +1,8 @@
-* <2016-02-27 la 12:51> Aleksandria
+* <2016-02-28 su 00:09> perffien tutkintaa muista!
+  cp ~/NativeBenchmark/obj/local/armeabi/libnativebenchmark.so data/fi.helsinki.cs.tituomin.nativebenchmark/lib
+* <2016-02-27 la 23:15> IMPORTANT removed memory leak f29cf9b
+* <2016-02-27 la 20:39> added some certainty that j2j custom getfield side-effects actually working
+* <2016-02-27 la 12:51> fixes and formatting
 ** Verified fix to npe in getFilter works
 ** Ran whole series through :quick profile
 

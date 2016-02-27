@@ -1,5 +1,5 @@
 
-* perf benchmarks stopped working
+* DONE perf benchmarks stopped working
  (app crashes)
   (<2014-04-12 Sat> can't reproduce)
   (has to have full benchmarks before perf?)
@@ -126,7 +126,7 @@ Date:   Fri Feb 14 01:28:53 2014 +0200
 *** 842bf36041fdc1cd4841a9dfcd76b3ce1891f941 was last used thusly
 
     
-* <2015-09-23 ke> new tests: another error: missing benchmark classes
+* DONE <2015-09-23 ke> new tests: another error: missing benchmark classes
   -- probably fixed in 480870f -- why is old version in phone ? 
   -- probably related to removed redundant benchmarks
   -- missing build step before installing?
