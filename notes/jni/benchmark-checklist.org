@@ -7,13 +7,19 @@
 ** String Operations
 *** DONE NewString                                                    :alloc:
 *** DONE NewStringUTF                                                 :alloc:
+
 *** DONE GetStringLength                                          :util:read:
 *** DONE GetStringUTFLength                                       :util:read:
-*** DONE GetStringChars                                               :group:
-*** SUPPORT ReleaseStringChars                                        :group:
-*** DONE GetStringUTFChars                                            :group:
-*** SUPPORT ReleaseStringUTFChars                                     :group:
-*** DONE GetStringCritical, ReleaseStringCritical                     :group:
+
+*** DONE GetStringChars
+*** SUPPORT ReleaseStringChars                                        
+
+*** DONE GetStringUTFChars
+*** SUPPORT ReleaseStringUTFChars
+
+*** DONE GetStringCritical
+*** SUPPORT ReleaseStringCritical
+
 *** DONE GetStringRegion                                               :copy:
 *** DONE GetStringUTFRegion                                            :copy:
 ** Array Operations
@@ -22,11 +28,16 @@
 *** DONE GetArrayLength                                           :util:read:
 *** DONE GetObjectArrayElement                                         :read:
 *** DONE SetObjectArrayElement                                        :write:
-*** DONE Get<PrimitiveType>ArrayElements Routines                    :group1:
-*** SUPPORT Release<PrimitiveType>ArrayElements Routines             :group1:
-*** DONE GetPrimitiveArrayCritical, ReleasePrimitiveArrayCritical    :group3:
 *** DONE Get<PrimitiveType>ArrayRegion Routines                 :group2:copy:
 *** DONE Set<PrimitiveType>ArrayRegion Routines                 :group2:copy:
+
+
+*** DONE Get<PrimitiveType>ArrayElements Routines                    :group1:
+*** SUPPORT Release<PrimitiveType>ArrayElements Routines             :group1:
+
+*** DONE GetPrimitiveArrayCritical,                                  :group3:
+*** SUPPORT ReleasePrimitiveArrayCritical                            :group3:
+
 ** Calling Instance Methods                                             :dep:
 *** DONE GetMethodID                                                 :search:
 *** DONE Call<type>Method(A/V) Routines                               :comp2:
@@ -37,6 +48,7 @@
 **** DONE C runners different kind of call site
 *** DONE CallNonvirtual<type>Method(A/V) Routines                     :comp2:
 **** THINK C runners MID extraction point
+     WHAT DOES THIS NOTE MEAN?
 **** DONE C runners different kind of call site
 ** Calling Static Methods                                               :dep:
 *** DONE GetStaticMethodID                                           :search:
@@ -44,11 +56,27 @@
 ** Accessing Fields of Objects                                          :dep:
 *** DONE GetFieldID                                                  :search:
 *** COUNTERPOINT Get<type>Field Routines
+    - [X] C2J
+    - [X] J2J
+    - [ ] J2C
+    - [ ] C2C
 *** COUNTERPOINT Set<type>Field Routines
+    - [X] C2J
+    - [X] J2J
+    - [ ] J2C
+    - [ ] C2C
 ** Accessing Static Fields                                              :dep:
 *** DONE GetStaticFieldID                                            :search:
 *** COUNTERPOINT GetStatic<type>Field Routines
+    - [X] C2J
+    - [X] J2J
+    - [ ] J2C
+    - [ ] C2C
 *** COUNTERPOINT SetStatic<type>Field Routines
+    - [X] C2J
+    - [X] J2J
+    - [ ] J2C
+    - [ ] C2C
 ** Object Operations
 *** DONE AllocObject                                                  :alloc:
 *** DONE NewObject, NewObjectA, NewObjectV                      :comp2:alloc:
@@ -87,15 +115,11 @@
 *** DONE NewDirectByteBuffer                                      :important:
 *** DONE GetDirectBufferAddress                                   :important:
 *** DONE GetDirectBufferCapacity                                       :read:
-
-
 ** Class Operations                                           :exclude:maybe:
 *** DONE FindClass                                     :exclude:maybe:search:
 *** EXCLUDE DefineClass                                             :exclude:
 *** EXCLUDE GetSuperclass                            :exclude:maybe:traverse:
 *** EXCLUDE IsAssignableFrom                         :exclude:maybe:traverse:
-
-
 ** Reflection Support                                               :exclude:
 *** EXCLUDE FromReflectedMethod
 *** EXCLUDE FromReflectedField

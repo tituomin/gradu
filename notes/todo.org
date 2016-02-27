@@ -5,6 +5,99 @@ Missä mennään:
 [[file:~/gradu/paper/bib/main.bib::saavedra]]
 (hyvä peruslähde benchmarkeista)
 
+* Koodi
+** generator
+*** TODO poista turhat log-viestit (tämä on oma build-askeleensa)
+*** TODO tärkeä! tsekkaa voiko Class-tyyppisiä
+    parametreja välittää JNI-natiivimetodille jclasseina
+**** TÄRKEÄ MIKSI???
+*** TODO varmista että kaikissa on side effect (java)
+    varmista overhead-tsekkiin vertaamalla
+    minimaalinen "summaava" tallennus ?
+    tai yksinkertainen "tsekkaa onko null / 0 vai ei", säädä result-muuttuja
+    - otettu käyttöön array -iteraatioissa, muihinkin ?
+*** TODO java-versiot / analogiset mittaukset loppuun
+**** TODO NIO complete read write
+*** TODO j2jweakglobalreference aiheuttaa gc:tä
+*** PLAN potentiaalisesti puuttuvat benchmarkit
+**** JNI-vastinparit
+***** TODO fix read/writeobjectarrayelement
+***** TEST J>J puuttuu (non-dynamic)
+****** kaikki paitsi
+       - accessdirectbuffer
+       - findclass
+       - getobjectclass
+       - writeobjectarrayelement
+       - weakglobalref
+****** todo
+******* TODO get<static><type>field ?
+******* TODO set<static><type>field ?
+****** perustelut
+       - globalref ei ole
+       - localframe ei ole
+       - localref ei ole
+       - newstringutf
+****** newstringutf 0:ssa?
+****** createobjectref minimissä?
+*** TEST check-interrupted-interval ja max-repetitions, oikeat arvot
+    - ok: maxreps 100, bmparameter 8 * 8
+      - mock command line: vieläkin wait for concurrent
+*** TEST variations on array traversal, read + write
+*** WONTFIX c>c hitaampi kuin j>j (johtunee interrupt-checkistä) ??
+*** TODO checkaa const-asiat (gcc warning)
+*** TODO JNI error checking! (käy koodi läpi vielä kerran)
+*** TODO testaa call-variants (ellipsis, array, va_args) (?)
+*** DONE lisää eri kutsutyypit (virtual, nonvirtual) benchmarkkeihin?
+*** WONTFIX sopivassa vaiheessa poista interrupt check kokonaan, ehkä ui-päivityskin
+    Ei muuten voi poistaa koska linux perf tool.
+    Pitäisi refaktoroida omiksi benchmarkeiksi?
+    (Generoida 2 versiota?)
+** nativebenchmark
+*** DONE miksi superuser kaatuu ensimmäiseen promptiin
+    toimiiko kuitenkin oikein (ilmeisesti)
+    "userspace" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
+    cpufreq  > /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed"
+*** TODO tsekkaa vielä kerran millis/micros/ym. ..
+    android_os_SystemClock.cpp
+    micros käyttää gettimeofdayta,
+    millis käyttää (parempaa?) clock_gettime(MONOTONIC):ia
+    nanos (java.lang.System) käyttää myös MONOTONIC:ia !!
+*** param
+*** runner
+**** TODO check
+**** TODO run c c first, then j j ?
+**** TODO maybe remove explicit gc? > check statistically...
+**** TODO delete temp files ?
+**** TEST thread priority ?
+**** TODO default != 0 != the first iterator value ...
+**** TEST shuffle takaisin päälle
+**** TODO lisää ja arvioi oikea perf event spesifikaatio
+**** TODO oprofile (?)
+**** TODO warmup: tulosten stabiloituminen?
+**** TODO benchmarkrunner: yhdistä eri size-variaatiota vaativat bm:t (?)
+**** TODO erottele android-spesifi osa jni-benchmarkeista
+***** TODO logging
+***** TODO sdcard path
+***** TODO system clock
+*** native
+**** TEST c-koodissa: mikä on check interrupted-overheadi, korvaa muuttujalla?
+** analyzer
+*** TODO Tutki jakaumien numeroarvot.
+    DEADLINE: <2013-06-04 Tue>
+*** TODO mittausten tilastollinen tulkinta
+    (truncated mean? (THIS >> or assume lower limit...))
+**** TODO >> mittaa vasteaikojen tilastollinen jakauma > mallinna
+*** TODO overhead-normalisointi
+*** TODO multiplication-skaalaus
+*** TODO any-logiikka ei toimi (0-arvoilla, reference types)
+*** TODO mieti tarkemmin dynamic-non-dynamic keskinäinen vertailu
+*** DONE kaikki custom-benchmarkit mukaan
+*** DONE filtteröi representative
+*** DONE akselien labelit
+*** DONE tulosta jokaiseen pdf:ään id, jolla löytää metatiedot
+**** DONE metatiedot erilliseen tekstitiedostoon
+*** DONE tsekkaa automaattisesti datasta columnien määrä?
+
 * Teksti
 ** huomiot hardcopy <2014-01-12 Sun>
 *** poista väite tekstin kulusta
@@ -62,104 +155,6 @@ Missä mennään:
 *** DONE sivu 15 overflow
 *** DONE poista minä-muodot
 *** DONE yleishuomio: esittele ensin JNI, sitten    vasta toteutushuomiot? 
-
-
-
-
-
-* Koodi
-** generator
-*** TODO tärkeä! tsekkaa voiko Class-tyyppisiä
-    parametreja välittää JNI-natiivimetodille jclasseina
-*** TODO java-versiot / analogiset mittaukset loppuun
-**** TODO NIO complete read write
-*** TODO j2jweakglobalreference aiheuttaa gc:tä
-*** PLAN potentiaalisesti puuttuvat benchmarkit
-    DEADLINE: <2013-06-05 Wed>
-**** JNI-vastinparit
-***** TODO fix read/writeobjectarrayelement
-***** TEST J>J puuttuu (non-dynamic)
-****** kaikki paitsi
-       - accessdirectbuffer
-       - findclass
-       - getobjectclass
-       - writeobjectarrayelement
-       - weakglobalref
-****** todo
-******* TODO get<static><type>field ?
-******* TODO set<static><type>field ?
-****** perustelut
-       - globalref ei ole
-       - localframe ei ole
-       - localref ei ole
-       - newstringutf
-****** newstringutf 0:ssa?
-****** createobjectref minimissä?
-*** TEST check-interrupted-interval ja max-repetitions, oikeat arvot
-    - ok: maxreps 100, bmparameter 8 * 8
-      - mock command line: vieläkin wait for concurrent
-*** TEST variations on array traversal, read + write
-*** WONTFIX c>c hitaampi kuin j>j (johtunee interrupt-checkistä) ??
-*** TODO varmista että kaikissa on side effect (java)
-    varmista overhead-tsekkiin vertaamalla
-    minimaalinen "summaava" tallennus ?
-    tai yksinkertainen "tsekkaa onko null / 0 vai ei", säädä result-muuttuja
-    - otettu käyttöön array -iteraatioissa, muihinkin ?
-*** TODO checkaa const-asiat (gcc warning)
-*** TODO JNI error checking! (käy koodi läpi vielä kerran)
-*** TODO lisää eri kutsutyypit (virtual, nonvirtual) benchmarkkeihin?
-*** TODO testaa call-variants (ellipsis, array, va_args)
-*** TODO poista turhat log-viestit
-*** WONTFIX sopivassa vaiheessa poista interrupt check kokonaan, ehkä ui-päivityskin
-    Ei muuten voi poistaa koska linux perf tool.
-    Pitäisi refaktoroida omiksi benchmarkeiksi?
-    (Generoida 2 versiota?)
-** nativebenchmark
-*** miksi superuser kaatuu ensimmäiseen promptiin
-    toimiiko kuitenkin oikein (ilmeisesti)
-    "userspace" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
-    cpufreq  > /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed"
-
-*** TODO tsekkaa vielä kerran millis/micros/ym. ..
-    android_os_SystemClock.cpp
-    micros käyttää gettimeofdayta,
-    millis käyttää (parempaa?) clock_gettime(MONOTONIC):ia
-    nanos (java.lang.System) käyttää myös MONOTONIC:ia !!
-*** param
-*** runner
-**** TODO check
-**** TODO run c c first, then j j ?
-**** TODO maybe remove explicit gc? > check statistically...
-**** TODO delete temp files ?
-**** TEST thread priority ? 
-**** TODO default != 0 != the first iterator value ...
-**** TEST shuffle takaisin päälle
-**** TODO lisää ja arvioi oikea perf event spesifikaatio
-**** TODO oprofile (?)
-**** TODO warmup: tulosten stabiloituminen?
-**** TODO benchmarkrunner: yhdistä eri size-variaatiota vaativat bm:t (?)
-**** TODO erottele android-spesifi osa jni-benchmarkeista
-***** TODO logging
-***** TODO sdcard path
-***** TODO system clock
-*** native
-**** TEST c-koodissa: mikä on check interrupted-overheadi, korvaa muuttujalla?
-** analyzer
-*** TODO Tutki jakaumien numeroarvot.
-    DEADLINE: <2013-06-04 Tue>
-*** TODO mittausten tilastollinen tulkinta
-      (truncated mean? (THIS >> or assume lower limit...))
-**** TODO >> mittaa vasteaikojen tilastollinen jakauma > mallinna
-*** TODO overhead-normalisointi
-*** TODO multiplication-skaalaus
-*** TODO any-logiikka ei toimi (0-arvoilla, reference types)
-*** TODO mieti tarkemmin dynamic-non-dynamic keskinäinen vertailu
-*** DONE kaikki custom-benchmarkit mukaan
-*** DONE filtteröi representative
-*** DONE akselien labelit
-*** DONE tulosta jokaiseen pdf:ään id, jolla löytää metatiedot
-**** DONE metatiedot erilliseen tekstitiedostoon
-*** DONE tsekkaa automaattisesti datasta columnien määrä?
 
 * Tarkista / huomioi / perustele
 ** TODO kokeile jit-koodin disassembloimista
