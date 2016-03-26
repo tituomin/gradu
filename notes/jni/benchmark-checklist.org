@@ -48,7 +48,10 @@
 ** DONE CallStatic<type>Method(A/V) Routines
 * Accessing Fields of Objects                                                                  :dep:
 ** DONE GetFieldID                                                                          :search:
-** COUNTERPOINT Get<type>Field Routines
+** DONE COUNTERPOINT Get<type>Field Routines
+   skip others than J target, because
+   aim of measuring is to measure the jni call
+   overhead, which doesn't exist for j2c, c2c
    - [X] C2J
    - [X] J2J
    - [ ] J2C

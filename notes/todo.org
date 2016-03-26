@@ -5,17 +5,19 @@ Missä mennään:
 [[file:~/gradu/paper/bib/main.bib::saavedra]]
 (hyvä peruslähde benchmarkeista)
 
+* DONE tsekkaa tallentuuko memmap oikein profin dataan
+** erit. ashmem dalvik code cache
 * Koodi
 ** generator
-*** TODO poista turhat log-viestit (tämä on oma build-askeleensa)
-*** TODO tärkeä! tsekkaa voiko Class-tyyppisiä
-    parametreja välittää JNI-natiivimetodille jclasseina
-**** TÄRKEÄ MIKSI???
 *** TODO varmista että kaikissa on side effect (java)
     varmista overhead-tsekkiin vertaamalla
     minimaalinen "summaava" tallennus ?
     tai yksinkertainen "tsekkaa onko null / 0 vai ei", säädä result-muuttuja
     - otettu käyttöön array -iteraatioissa, muihinkin ?
+    - <2016-03-26 Sat 18:42> huomattu, että java-counterpartit ehkä vaativat myös?
+*** TODO tärkeä! tsekkaa voiko Class-tyyppisiä
+    parametreja välittää JNI-natiivimetodille jclasseina
+**** TÄRKEÄ MIKSI???
 *** TODO java-versiot / analogiset mittaukset loppuun
 **** TODO NIO complete read write
 *** TODO j2jweakglobalreference aiheuttaa gc:tä
@@ -43,6 +45,7 @@ Missä mennään:
     - ok: maxreps 100, bmparameter 8 * 8
       - mock command line: vieläkin wait for concurrent
 *** TEST variations on array traversal, read + write
+*** DONE poista turhat log-viestit (tämä on oma build-askeleensa)
 *** WONTFIX c>c hitaampi kuin j>j (johtunee interrupt-checkistä) ??
 *** TODO checkaa const-asiat (gcc warning)
 *** TODO JNI error checking! (käy koodi läpi vielä kerran)
@@ -53,15 +56,15 @@ Missä mennään:
     Pitäisi refaktoroida omiksi benchmarkeiksi?
     (Generoida 2 versiota?)
 ** nativebenchmark
-*** DONE miksi superuser kaatuu ensimmäiseen promptiin
-    toimiiko kuitenkin oikein (ilmeisesti)
-    "userspace" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
-    cpufreq  > /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed"
 *** TODO tsekkaa vielä kerran millis/micros/ym. ..
     android_os_SystemClock.cpp
     micros käyttää gettimeofdayta,
     millis käyttää (parempaa?) clock_gettime(MONOTONIC):ia
     nanos (java.lang.System) käyttää myös MONOTONIC:ia !!
+*** DONE miksi superuser kaatuu ensimmäiseen promptiin
+    toimiiko kuitenkin oikein (ilmeisesti)
+    "userspace" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
+    cpufreq  > /sys/devices/system/cpu/cpu0/cpufreq/scaling_setspeed"
 *** param
 *** runner
 **** TODO check
