@@ -1,0 +1,45 @@
+* Mittaussovellus
+   Tutkielmaa varten ohjelmoidun synteettisen mittausovelluksen (microbenchmarking suite)
+   esittely.
+*** Sovelluksen kokonaisarkkitehtuuri
+    2 sivua\newline 20. 1. 2014
+
+    Sovelluksen komponentit.
+    
+*** Toteutuksen ominaispiirteitä
+    4 sivua\newline 27. 1. 2014
+
+    Mittaussovellukseen kohdistuvia erityishaasteita ja
+    niiden ratkaisuja.
+
+* Mittauskohde
+*** Luokitellut JNI-operaatiot
+    5 sivua\newline 2. 2. 2014
+
+    JNI-operaatiot kategorisoidaan ja esitellään tiiviisti ja kommentoidaan
+    niiden mittaamiseen liittyviä haasteita. Kategoriat ovat:
+    - Viitteidenhallinta
+    - Olioiden käsittely
+    - Kenttien ja metodien löytäminen
+    - Kenttien ja metodien käyttö
+    - Merkkijonojen ja taulukoiden käsittely
+    - Tehostetut IO-operaatiot (NIO)
+    
+*** Sivuutetut operaatiot
+    1 sivu\newline 3. 2. 2014
+
+    Mittausten ulkopuolelle jääneet JNI-funktiot perusteluineen.
+    - Natiivimetodien rekisteröinti
+    - Luokkaoperaatiot
+    - Reflektio
+    - Virtuaalikone ja versiontarkistus
+
+* Tulosten käsittelymenetelmät
+*** Analyysiohjelma
+    2 sivua\newline 9. 2. 2014
+
+    Yleisesittely tulosten analysointiin käytettävästä ohjelmasta.
+*** Tilastolliset menetelmät
+    2 sivua\newline 10. 2. 2014
+
+    Käytetyt tilastolliset menetelmät.

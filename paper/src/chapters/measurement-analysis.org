@@ -1,0 +1,20 @@
+* JNI-kuormitusmalli
+   4 sivua\newline 17. 3. 2014
+
+   Yksinkertainen malli, joka kertoo miten JNI-rajapinnan aiheuttaman
+   kuormituksen voi ennustaa sen käyttötavasta.
+* Sovellusarkkitehtuurivaihtoehdot
+   5 sivua\newline 24. 3. 2014
+
+   Esitellään 2-3 vaihtoehtoa JNI-sovelluksen kokonaisrakenteelle.
+* Arkkitehtuurisuositukset
+   2 sivua\newline 31. 3. 2014
+
+   Analysoidaan mallin perusteella paras arkkitehtuurimalli.
+* Haasteet ja puutteet
+   4 sivua\newline 7. 4. 2014
+
+   Käsitellään tulosten tieteellistä luotettavuutta ja erityisesti
+   sitä, missä määrin mittaukset selviävät synteettisen mittaamisen
+   sudenkuopista, ja miten tutkimuskohdetta voisi paremmin mitata
+   tulevaisuudessa.
