@@ -10,3 +10,8 @@
 
   very nice overview:
   perf report -i *.data --symfs=/home/tituomin/droid-symbols --kallsyms=/home/tituomin/droid/linux-kernel/kallsyms -g graph,0.9,caller --stdio -s parent
+
+
+* shutting down phone
+  adb shell reboot -p
+  maybe not very graceful?
