@@ -133,7 +133,7 @@ yksiköllä /kuorma aikayksikköä kohti/. Kuormalle ei yleensä ole
 löydettävissä universaalia, laitteisto- tai sovellusalueriippumatonta
 mittayksikköä @@ferrari(12). Työkuorman mallintaminen onkin keskeisiä
 haasteita suorituskyvyn arvioinnissa @@spe(115), @@ferrari(221).
-#todo oikea syntaksi monelle viitteelle?
+# todo oikea syntaksi monelle viitteelle?
 
 * Mittausmenetelmät
 
@@ -186,8 +186,8 @@ osoittava käyttöliittymäelementti etenee eri tavalla @@progressbar.
 
 # todo lue ja varmista että lähde progressbar sanoo näin ;) ^
 
-#[fn:gettimeofday] Joissakin laitteistoissa kyseistä Linuxin palvelua
-#voi kutsua vähäisellä rasitteella siirtymättä kernelin suoritustilaan.
+# [fn:gettimeofday] Joissakin laitteistoissa kyseistä Linuxin palvelua
+# voi kutsua vähäisellä rasitteella siirtymättä kernelin suoritustilaan.
 # lähde vdso etc. sitten vasta julkiseksi todo
 
 Tässä tutkielmassa kaikki suorituskykyä parantavat ratkaisut
@@ -237,7 +237,7 @@ tapahtumien havaitseminen on käsitteellisesti kaukana ohjelmiston
 sisäisestä suorituskontekstista @@ferrari(32). Käytännön
 ohjelmistokehityksessä mittauslaitteiden hyödyntäminen ei usein
 ole mahdollista.
-#todo: suorituskonteksti hyvä pointti mutta ferrari ei sano tuota suoraan
+# todo: suorituskonteksti hyvä pointti mutta ferrari ei sano tuota suoraan
 # mainitse että arm-prosessorissa on hardwaretukea asialle
 
 Mittaustekniikat jakaantuvat menetelmiin, jotka joko /kirjaavat/
@@ -272,7 +272,7 @@ osille, yleensä aliohjelmille. Suorituskertojen sijaan usein tutkitaan
 osien suoritukseen käytettyä aikaa. Se hyödyntää usein
 instrumentoinnin sijaan tai sen lisäksi näytteenottomenetelmiä ja
 tutkii yleensä ohjelman suoritusaikaa aliohjelmien tarkkuudella.
-#todo profile kutsu vs lausetason?  plus lähde tähän
+# todo profile kutsu vs lausetason?  plus lähde tähän
 # knuth irrallinen > siirrä myöhemmäksi
 
 Näytteenoton tavoite on kerätä ohjelman suoritustiloista edustava
@@ -428,7 +428,7 @@ suhtautua pienellä varauksella. Tällä epätarkkuudella ei ole käytännön
 vaikutusta, jos mittauksen kohteena on suurempien kokonaisuuksien kuten
 kokonaisten aliohjelmien inklusiiviset suoritusajat.
 
-#oprofile
+# oprofile
 
 \todo{<<fix-benchmarking>>}
 
@@ -539,7 +539,7 @@ mobiililaitemallista ja Android-versiosta @@ferrari(454).
 
 \todo{<<ajattele-uudelleen>>}
 
-#viite: android moniajo
+# viite: android moniajo
 # mainitse vielä mittaus vs. mallinnus
 
 # todo: käsittelee oikeastaan /mittaamisen/ tavoitteita
@@ -866,7 +866,7 @@ JNI-operaatioiden käyttäytymistä vaihtelevilla syöteparametreilla.
 # Android-kehitystyökalujen /Android-emulaattori/ simuloi todellista
 # Android-laitetta ARM-käskyjen tasolla.[fn:emulator] Emulaattoria
 # hyödynnetään joidenkin mittaustulosten osalta.
-#todo: lähde
+# todo: lähde
 # [fn:emulator] Emulaattori-käsitteen syntyaikana @@emu puhtaan
 # ohjelmallisesti toteutettua vieraan suoritusympäristön täydellistä
 # toisinnosta kutsuttiin simulaattoriksi. Emulaattori perustui
@@ -874,8 +874,8 @@ JNI-operaatioiden käyttäytymistä vaihtelevilla syöteparametreilla.
 # ohjelmallistakin toisintamista usein kutsutaan emuloinniksi.
 
 # TODO: uncomment? v 
-#Myös simulaatiomalleja hyödynnetään rajatusti, sillä
-#Android-ohjelmia suoritetaan 
+# Myös simulaatiomalleja hyödynnetään rajatusti, sillä
+# Android-ohjelmia suoritetaan 
 
 Tutkielman hypoteesi on, että erilaiset arkkitehtuuriratkaisut johtavat
 erilaisiin suoritusaikoihin sovelluksissa, jotka on toteutettu Java- ja

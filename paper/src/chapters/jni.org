@@ -275,10 +275,10 @@ aliaksia, joten käytännössä yleisimmille Java-tyypeille on omat
 tyyppinimensä C-ohjelmassa: luokkatyypille, merkkijonotyypille,
 erityyppisille taulukoille sekä ~Throwable~ -tyypille.
 
-#C++-natiivikoodia varten JNI määrittelee myös näiden tyyppien
+# C++-natiivikoodia varten JNI määrittelee myös näiden tyyppien
 # keskinäiset perintäsuhteet käännösaikaista tyyppitarkistusta varten.
 
-#todo yllä takaisin?
+# todo yllä takaisin?
 
 # todo selvennä perintäsuhteet
 

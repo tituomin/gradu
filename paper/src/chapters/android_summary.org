@@ -121,10 +121,10 @@ valmiudet laitteen sensorien lukemiseen.
 
 # mainitse ndk:n stable apit??
 
-#Java-writ­ten sys­tem ser­vices, for in­stance, very often use JNI to
-#com­mu­ni­cate with match­ing na­tive code that in­ter­faces with a
-#given ser­vice's cor­re­spond­ing hard­ware.
-# lähteestä embedded android
+# Java-writ­ten sys­tem ser­vices, for in­stance, very often use JNI
+# to com­mu­ni­cate with match­ing na­tive code that in­ter­faces with
+# a given ser­vice's cor­re­spond­ing hard­ware.  lähteestä
+# embedded #android
 
 # binder : jokainen jvm omassa prosessissaan!
 # system services
