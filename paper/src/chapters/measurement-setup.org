@@ -1,19 +1,102 @@
-* Mittaussovellus
-   Tutkielmaa varten ohjelmoidun synteettisen mittausovelluksen (microbenchmarking suite)
-   esittely.
-*** Sovelluksen kokonaisarkkitehtuuri
-    2 sivua\newline 20. 1. 2014
+* Mittausohjelmisto
 
-    Sovelluksen komponentit.
+Tutkielmaa varten laadittiin synteettinen
+benchmarking-mittausohjelmisto (/microbenchmarking suite/)
+/NativeBenchmark/. Ohjelmiston avulla Android-laitteessa voidaan
+suorittaa kokoelma minimaalisia aliohjelmia, jotka harjoittavat
+kattavasti JNI-rajapinnan eri kutsuja.
+
+Kun aliohjelmia suoritetaan laitteessa, samojen aliohjelmien
+suoritusta mitataan kahdella toisiaan täydentävällä menetelmällä eri
+mittausajojen aikana: ensin yksittäisen aliohjelman suorituksen
+kokonaisvasteaika mitataan Javan ~System.nanoTime()~-metodilla, ja
+seuraavassa ajossa samoille aliohjelmille luodaan
+näytteenottomenetelmällä kutsuprofiilit Linuxin ~perf~-työkalun
+avulla.
+
+** Ohjelmiston tavoitteet
+
+# [[sec-5][5, s.]]
+# [[file:performance.org::*Mittauskohteen%20edustavuus%20ja%20tulosten%20yleistett%C3%A4vyys][Mittauskohteen edustavuus ja tulosten yleistettävyys]]
+# todo sisäinen viittaus tohon alle: miten ?
+
+Yksittäisen funktiokutsun mitattu vasteaika ei kerro mitään
+yleispätevää kyseisestä funktiosta. Siksi samaa funktiota
+kutsutaan varioiden kaikkia mahdollisia asioita, joita
+funktiokutsussa voi varioida: käytännössä kutsuparametrien
+määrää ja niiden tyyppiä. Lisäksi jos kyseessä on merkkijonoja,
+taulukoita tai muita vaihtelevankokoisia syötteitä käsittelevä
+funktio, varioidaan käsiteltävän syötteen kokoa.
+
+Esimerksi JNI-funktio ~CallVoidMethod~ ottaa parametrikseen
+vaihtelevan määrän kutsuparametreja. Mittausajoissa sitä kutsutaan eri
+määrillä eri tyyppisiä parametreja, jolloin saadaan selville
+esimerkiksi käyttäytyykö funktio eri tavalla käsitellessään
+primitiivityyppisiä ja viitetyyppisiä parametreja.
+
+Tämän ansiosta mittauksista piirtyy hieman kokonaisvaltaisempi kuva
+siitä, mitkä mittauksessa varioitavat muuttujat ovat oleellisia
+funktion suorituskyvyn kannalta.
+
+Toinen tapa lisätä tulosten hyödynnettävyyttä on seuraava periaate:
+jos jollekin JNI-kutsulle on keksitty analoginen kutsu tai operaatio
+JNI-rajapinnan ulkopuolelta -- operaatio, jonka voi toteuttaa
+puhtaasti C- tai Java-kielisessä ohjelmassa -- lisätään mittauksiin
+tällaiset benchmarkit. Siten esimerkiksi JNI-rajapinnan
+~CallVoidMethod~- perusfunktiokutsun kaikille variaatioille on
+laadittu vertailukohdaksi benchmarkit, joissa C-koodi yksinkertaisesti
+kutsuu tavallista ~void~-paluuarvollista funktiota, ja Java-koodi
+vastaavasti kutsuu ~void~-paluuarvollista metodia.
+
+Kolmas tapa saada syvempiä tuloksia JNI-rajapinnan käyttäytymisestä on
+mitata samoista benchmarkeista myös kutsuprofiilit. Kun
+vasteaikamittauksista on löytynyt mielenkiintoisia riippuvuuksia
+varioitavien mittausmuuttujien ja vasteaikojen väliltä, nähdään
+saman benchmarkin kutsuprofiileista usein selvästi, mikä
+JNI-toteutuksen osa aiheuttaa esimerkiksi lineaarisesti lisääntyvän
+vasteajan kun vaikkapa viitearvoisten kutsuparametrien määrää
+lisätään.
+
+** Toteutuksen haasteet ja reunaehdot
+
+Erilaisten kutsuvariaatioiden kokonaismäärä on suuri, eikä
+variaatioita voi yleensä toteuttaa ajonaikaisina muutoksina ohjelman
+syötteissä: esimerkiksi metodiparametrien määrät on Java-ohjelmassa
+lukittava käännösaikana. Variaatioista on vieläpä parhaimmillaan
+luotava 4 eri versiota:
+
+1. puhdas C-kielinen versio,
+2. puhdas Java-kielinen versio,
+3. Java-ohjelma, joka kutsuu natiivimetodia, sekä
+4. C-ohjelma, joka kutsuu Java-metodia.
+
+Variaatioiden hallitsemiseksi on hyödynnetään yksinkertaista
+staattista metaohjelmointia: benchmarkeja ei ohjelmoida käsin, vaan
+niiden lähdekoodi generoidaan tietorakenteista, joihin on kuvattu
+halutut tyyppivariaatiot.
+
+# Esimerkki ?  / bit of source
+
+Koska Java-kieli ei suoraan tue staattisen metaohjelmoinnin mahdollisuutta,
+eikä C++-kielen templateja voisi hyödyntää kuin nativiiversioiden
+ohjelmointiin, päätettiin lähdekoodin generointi tehdä täysin
+erillisellä Python-kielisellä ohjelmalla.
+
+Seuraavassa hahmotellaan tästä perusratkaisusta syntynyttä arkkitehtuuria.
+
+** TODO Ohjelmiston kokonaisarkkitehtuuri
+
+# TODO here i am  -- find a way to embed those uml diagrams directly here
     
-*** Toteutuksen ominaispiirteitä
+** Toteutuksen ominaispiirteitä
+   # näitä jo käsiteltiinkin
     4 sivua\newline 27. 1. 2014
 
     Mittaussovellukseen kohdistuvia erityishaasteita ja
     niiden ratkaisuja.
 
 * Mittauskohde
-*** Luokitellut JNI-operaatiot
+** Luokitellut JNI-operaatiot
     5 sivua\newline 2. 2. 2014
 
     JNI-operaatiot kategorisoidaan ja esitellään tiiviisti ja kommentoidaan
@@ -25,7 +108,7 @@
     - Merkkijonojen ja taulukoiden käsittely
     - Tehostetut IO-operaatiot (NIO)
     
-*** Sivuutetut operaatiot
+** Sivuutetut operaatiot
     1 sivu\newline 3. 2. 2014
 
     Mittausten ulkopuolelle jääneet JNI-funktiot perusteluineen.
