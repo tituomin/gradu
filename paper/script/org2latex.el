@@ -43,8 +43,9 @@
               depth)))
 
 (setq org-export-latex-format-toc-function 'org-export-latex-no-toc)
+(setq org-export-with-sub-superscripts nil)
 
 (prefer-coding-system 'iso-latin-9)
 (prefer-coding-system 'utf-8)
-(find-file "src/main.org" nil)
-(org-export-as-latex 3 nil nil nil nil "~/gradu/paper/gen")
+(find-file "~/gradu/paper/src/main.org" nil)
+(org-export-as-latex 3 nil nil nil "~/gradu/paper/gen")
