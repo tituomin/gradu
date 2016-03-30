@@ -1,5 +1,5 @@
 #+AUTHOR: Timo Tuominen
-#+TITLE: Suorituskykyinen sovellusarkkitehtuuri Java-natiivirajapintaa hyˆdynt‰v‰lle Android-sovellukselle
+#+TITLE: Suorituskykyinen sovellusarkkitehtuuri Java-natiivirajapintaa hy√∂dynt√§v√§lle Android-sovellukselle
 #+LaTeX_CLASS: gradu
 #+LaTeX_CLASS_OPTIONS: [gradu]
 
@@ -17,9 +17,9 @@
 
 * Johdanto
 #+INCLUDE: "../gen/chapters/intro.org" :minlevel 1
-* Yleiskatsaus Android-j‰rjestelm‰‰n
+* Yleiskatsaus Android-j√§rjestelm√§√§n
 #+INCLUDE: "../gen/chapters/android_summary.org" :minlevel 1
-* Suorituskyky ohjelmistokehityksess‰
+* Suorituskyky ohjelmistokehityksess√§
 #+INCLUDE: "../gen/chapters/performance.org" :minlevel 1
 * Java-natiivirajapinta
 #+INCLUDE: "../gen/chapters/jni.org" :minlevel 1
@@ -31,7 +31,7 @@
 #+INCLUDE: "../gen/chapters/measurement-results.org" :minlevel 1
 * Tulosten analyysi
 #+INCLUDE: "../gen/chapters/measurement-results.org" :minlevel 1
-* Johtop‰‰tˆkset
+* Johtop√§√§t√∂kset
 #+INCLUDE "../gen/chapters/conclusions.org" :minlevel 1
 
 #+LATEX: \newpage

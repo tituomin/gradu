@@ -20,6 +20,15 @@
         ("escapeinside" "{(*@}{@*)}")
         ("numberstyle" "\\tiny\\color\{red\}")))
 
+;; active Org-babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(;; other Babel languages
+   (plantuml . t)))
+
+(setq org-plantuml-jar-path
+      (expand-file-name "~/plantuml.jar"))
+
 (add-to-list
  'org-export-latex-classes
  `("gradu"
@@ -28,6 +37,7 @@
 \\usepackage{chngcntr}
 \\usepackage{xcolor}
 \\usepackage{pifont}
+\\usepackage{epstopdf}
 \\usepackage{listings}
 \\usepackage{tablefont}
 \\counterwithin{figure}{section}
@@ -42,10 +52,10 @@
       (format "%% Org-mode is exporting headings to %s levels.\n"
               depth)))
 
+(setq org-confirm-babel-evaluate nil)
 (setq org-export-latex-format-toc-function 'org-export-latex-no-toc)
 (setq org-export-with-sub-superscripts nil)
 
-(prefer-coding-system 'iso-latin-9)
 (prefer-coding-system 'utf-8)
 (find-file "~/gradu/paper/src/main.org" nil)
 (org-export-as-latex 3 nil nil nil "~/gradu/paper/gen")

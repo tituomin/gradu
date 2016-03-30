@@ -29,7 +29,7 @@ gen/chapters_generated: $(CHAPTERS)
 	for file in $(?F); do script/preprocess.sh src/chapters/$$file gen/chapters/$$file; done
 	touch gen/chapters_generated
 
-main.tex: main.org gen/chapters_generated
+main.tex: src/main.org gen/chapters_generated
 	emacs --batch --script script/org2latex.el
 
 # MAIN LATEXMK RULE
@@ -41,8 +41,11 @@ main.tex: main.org gen/chapters_generated
 # -interactive=nonstopmode keeps the pdflatex backend from stopping at a
 # missing file reference and interactively asking you for an alternative.
 
-main.pdf: main.tex
-	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/tituomin-gradu -pdf -pdflatex="pdflatex -interaction nonstopmode" -use-make gen/main.tex
+gen/main-latin.tex: main.tex
+	iconv -f UTF-8 -t ISO-8859-1 gen/main.tex -o gen/main-latin.tex
+
+main.pdf: gen/main-latin.tex
+	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/tituomin-gradu -pdf -pdflatex="pdflatex -interaction nonstopmode" -use-make gen/main-latin.tex
 #	chmod a+r build/tituomin-gradu.pdf
 #	cp build/tituomin-gradu.pdf ~/public_html/
 
