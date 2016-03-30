@@ -4,6 +4,7 @@
 ;(require 'org-exp)
 (require 'org-special-blocks)
 (require 'org-latex)
+(require 'org-export-latex)
 (unless (boundp 'org-export-latex-classes)
   (setq org-export-latex-classes nil))
 (setq org-export-latex-listings t)
@@ -55,6 +56,8 @@
 (setq org-confirm-babel-evaluate nil)
 (setq org-export-latex-format-toc-function 'org-export-latex-no-toc)
 (setq org-export-with-sub-superscripts nil)
+
+(add-to-list 'org-export-latex-inputenc-alist '("utf8" . "latin9"))
 
 (prefer-coding-system 'utf-8)
 (find-file "~/gradu/paper/src/main.org" nil)
