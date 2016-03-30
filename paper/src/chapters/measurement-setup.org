@@ -3,8 +3,8 @@
 Tutkielmaa varten laadittiin synteettinen
 benchmarking-mittausohjelmisto (/microbenchmarking suite/)
 /NativeBenchmark/. Ohjelmiston avulla Android-laitteessa voidaan
-suorittaa kokoelma minimaalisia aliohjelmia, jotka harjoittavat
-kattavasti JNI-rajapinnan eri kutsuja.
+suorittaa kokoelma minimaalisia aliohjelmia, jotka yhdessä
+harjoittavat kattavasti JNI-rajapinnan eri kutsuja.
 
 Kun aliohjelmia suoritetaan laitteessa, samojen aliohjelmien
 suoritusta mitataan kahdella toisiaan täydentävällä menetelmällä eri
@@ -14,7 +14,7 @@ seuraavassa ajossa samoille aliohjelmille luodaan
 näytteenottomenetelmällä kutsuprofiilit Linuxin ~perf~-työkalun
 avulla.
 
-** Ohjelmiston tavoitteet
+** Mittausten tavoitteet
 
 # [[sec-5][5, s.]]
 # [[file:performance.org::*Mittauskohteen%20edustavuus%20ja%20tulosten%20yleistett%C3%A4vyys][Mittauskohteen edustavuus ja tulosten yleistettävyys]]
@@ -44,9 +44,9 @@ JNI-rajapinnan ulkopuolelta -- operaatio, jonka voi toteuttaa
 puhtaasti C- tai Java-kielisessä ohjelmassa -- lisätään mittauksiin
 tällaiset benchmarkit. Siten esimerkiksi JNI-rajapinnan
 ~CallVoidMethod~- perusfunktiokutsun kaikille variaatioille on
-laadittu vertailukohdaksi benchmarkit, joissa C-koodi yksinkertaisesti
-kutsuu tavallista ~void~-paluuarvollista funktiota, ja Java-koodi
-vastaavasti kutsuu ~void~-paluuarvollista metodia.
+laadittu vertailukohdaksi benchmarkit, joissa C-ohjelma
+yksinkertaisesti kutsuu tavallista ~void~-paluuarvollista funktiota,
+ja Java-ohjelma vastaavasti kutsuu ~void~-paluuarvollista metodia.
 
 Kolmas tapa saada syvempiä tuloksia JNI-rajapinnan käyttäytymisestä on
 mitata samoista benchmarkeista myös kutsuprofiilit. Kun
@@ -82,11 +82,52 @@ eikä C++-kielen templateja voisi hyödyntää kuin nativiiversioiden
 ohjelmointiin, päätettiin lähdekoodin generointi tehdä täysin
 erillisellä Python-kielisellä ohjelmalla.
 
-Seuraavassa hahmotellaan tästä perusratkaisusta syntynyttä arkkitehtuuria.
+Seuraavassa hahmotellaan tästä perusratkaisusta syntynyttä
+arkkitehtuuria.
 
-** TODO Ohjelmiston kokonaisarkkitehtuuri
+** Ohjelmiston kokonaisarkkitehtuuri
 
-# TODO here i am  -- find a way to embed those uml diagrams directly here
+Ohjelmisto koostuu kolmesta komponentista, joista käännöstyökalut ja
+analyysityökalut ajetaan kehitysympäristössä PC-tietokoneessa ja
+mittaustyökalut Android-laitteessa.
+
+# TODO Include below from file
+
+#+NAME: fig:nativebenchmark_architecture
+#+begin_src plantuml :results file :file /tmp/architecture.png :exports results
+node "Android-laite" {
+  folder "Tiedostojärjestelmä" {
+    [mittaustulokset]
+  }
+  node "Linux" {
+    node "Dalvik" {
+      package "fi.helsinki.cs.tituomin.nativebenchmark" {
+        package "benchmark" {
+          () run
+          [Benchmark]
+          [Benchmark] - run
+        }
+        [NativeBenchmark] ..> run
+      }
+    }
+    [perf record] - exec
+    [NativeBenchmark] ..> exec
+  }
+}
+
+node "Käännöstyökalut" {
+  [BenchmarkGenerator] --> [Benchmark] : generoi
+}
+  [mittaustulokset] <- [perf record] : tulostaa
+  [mittaustulokset] <- [NativeBenchmark] : tulostaa
+
+node "Analyysi" {
+  [Benchmark analyzer] -> [mittaustulokset] : analysoi
+}
+#+end_src
+#+CAPTION: Arkkitehtuurin yleiskuvaus
+#+LABEL: fig:nativebenchmark_architecture
+#+RESULTS: fig:nativebenchmark_architecture
     
 ** Toteutuksen ominaispiirteitä
    # näitä jo käsiteltiinkin
