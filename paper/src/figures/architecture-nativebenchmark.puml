@@ -4,7 +4,17 @@ package "fi.helsinki.cs.tituomin.nativebenchmark" {
     [Benchmark]
     [Benchmark] - run
   }
-  [NativeBenchmark] ..> run
+  package "measuringtool" {
+    [JavaSystemNanoResponseTimeRecorder] -- () start
+    [LinuxPerfRecordTool] -- () start
+  }
+  [BenchmarkRunner] .> start
+  [LinuxPerfRecordTool] .> run
+  [JavaSystemNanoResponseTimeRecorder] .> run
 }
-[perf record] - exec
-[NativeBenchmark] ..> exec
+package "libnativebenchmark" {
+  [nativerunners.c] - runInternal
+  [nativebenchmark.c] - nativemethod
+}
+'[perf record] - exec
+'[LinuxPerfRecordTool] ..> exec

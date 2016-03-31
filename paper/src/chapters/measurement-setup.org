@@ -134,11 +134,29 @@ samanrakenteisella Java-kielisellä ~BenchMark~-luokan aliluokalla
 silloinkin, vaikka kyseessä olisi sellainen verrokkioperaatio, joka
 suoritetaan puhtaasti /libnativebenchmark/-natiivikirjaston
 sisällä. Tällaisessakin tapauksessa mittauksen kuitenkin aina
-käynnistää /BenchmarkRunner/ -java-olio.
+käynnistää /BenchmarkRunner/ -Java-olio.
 
 Tarkemmin ottaen BenchmarkRunner delegoi mittaamisen käynnistämisen
 /MeasuringTool/ -aliluokalle. Tämä johtuu siitä, että eri
-mittaustyökalut suorittavat samat kohdeoperaatiot eri tavoilla. 
+mittaustyökalut suorittavat samat kohdeoperaatiot eri tavoilla.
+
+# TODO terminologia alla "kohdesilmukka" (määrittele)
+
+Yksinkertaisempi tapaus on vasteaikojen mittaus työkalulla
+/JavaSystemNanoResponseTimeRecorder/: kohdesilmukkaa suoritetaan
+yhteensä aina täsmälleen ennalta määrätyn kierroslukumäärän verran.
+JavaSystemNanoResponseTimeRecorder ottaa talteen järjestelmän kellon
+arvon ennen kierrosten suoritusta ja sen jälkeen.
+
+Kutsuprofiilia luotaessa kaikkia kohdesilmukoita tulee sen sijaan
+suorittaa niin kauan, että perf record-työkalu on saanut kerättyä
+riittävän määrän näytteitä -- esimerkiksi 10 sekunnin ajan jokaista
+benchmarkia kohden. Näin ollen kohdesilmukoita ajetaan, kunnes
+mittaava komponentti /LinuxPerfRecordTool/ keskeyttää
+benchmark-säikeen suorituksen. Tämä monimutkaistaa kohdesilmukoiden
+ohjelmointia, sillä niiden on itse tutkittava onko mittaus
+keskeytetty. Tuloksiin tämä ei merkittävästi vaikuta, sillä säikeen
+keskeytys tutkitaan hyvin harvoin.
 
 ** Benchmark-generaattori Benchmark Generator
 
