@@ -22,7 +22,7 @@ package "fi.helsinki.cs.tituomin.nativebenchmark" {
     [Benchmark] <|-- [C2CBenchmark]
     [Benchmark] <|-- [C2JBenchmark]
 
-    note bottom of runInternalJava : Java-kielinen benchmark-silmukka,\njossa kutsutaan kohdemetodia tai -funktiota
+    note bottom of runInternalJava : Java-kielinen lähtösilmukka,\njossa kutsutaan kohdemetodia tai -funktiota
     note left of method_stub : Java-kielinen tyhjä kohdemetodi
 
   }
@@ -34,10 +34,10 @@ package "fi.helsinki.cs.tituomin.nativebenchmark" {
     () runInternal
     () method_stub as nativemethod_stub
     [nativerunners.c] -- runInternal
-    [nativebenchmark.c] -- nativemethod_stub
+    nativemethod_stub -- [nativebenchmark.c]
 
-    note bottom of runInternal : Natiivisilmukka, jossa kutsutaan\nkohdemetodia- tai funktiota
-    note bottom of nativemethod_stub : C-kielinen\ntyhjä kohdemetodi
+    note bottom of runInternal : Natiivilähtösilmukka, jossa kutsutaan\nkohdemetodia- tai funktiota
+    note top of nativemethod_stub : C-kielinen\ntyhjä kohdemetodi
 
   }
 }
@@ -45,6 +45,6 @@ package "fi.helsinki.cs.tituomin.nativebenchmark" {
 [C2CBenchmark] ..> runInternal
 [C2JBenchmark] ..> runInternal
 [J2CBenchmark] ..> nativemethod_stub
-[nativerunners.c] ..> nativemethod_stub
-[nativerunners.c] ..> method_stub
+[nativerunners.c] .> nativemethod_stub
+[nativerunners.c] .> method_stub
 [J2JBenchmark] ..> method_stub
