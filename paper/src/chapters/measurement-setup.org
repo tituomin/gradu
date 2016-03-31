@@ -3,10 +3,11 @@
 Tutkielmaa varten laadittiin synteettinen
 benchmarking-mittausohjelmisto (/microbenchmarking suite/)
 /NativeBenchmark/. Ohjelmiston avulla Android-laitteessa voidaan
-suorittaa kokoelma minimaalisia aliohjelmia, jotka yhdessä
-harjoittavat kattavasti JNI-rajapinnan eri kutsuja.
+suorittaa kokoelma minimaalisia aliohjelmia (jatkossa
+alkeisoperaatioita), jotka yhdessä harjoittavat kattavasti
+JNI-rajapinnan eri kutsuja.
 
-Kun aliohjelmia suoritetaan laitteessa, samojen aliohjelmien
+Kun alkeisoperaatioita suoritetaan laitteessa, samojen operaatioiden
 suoritusta mitataan kahdella toisiaan täydentävällä menetelmällä eri
 mittausajojen aikana: ensin yksittäisen aliohjelman suorituksen
 kokonaisvasteaika mitataan Javan ~System.nanoTime()~-metodilla, ja
@@ -28,11 +29,11 @@ määrää ja niiden tyyppiä. Lisäksi jos kyseessä on merkkijonoja,
 taulukoita tai muita vaihtelevankokoisia syötteitä käsittelevä
 funktio, varioidaan käsiteltävän syötteen kokoa.
 
-Esimerksi JNI-funktio ~CallVoidMethod~ ottaa parametrikseen
-vaihtelevan määrän kutsuparametreja. Mittausajoissa sitä kutsutaan eri
-määrillä eri tyyppisiä parametreja, jolloin saadaan selville
-esimerkiksi käyttäytyykö funktio eri tavalla käsitellessään
-primitiivityyppisiä ja viitetyyppisiä parametreja.
+Esimerksi JNI-funktio ~CallVoidMethod~ vastaanottaa vaihtelevan määrän
+kutsuparametreja. Mittausajoissa sitä kutsutaan eri määrillä eri
+tyyppisiä parametreja, jolloin saadaan selville muunmuassakäyttäytyykö
+funktio eri tavalla käsitellessään primitiivityyppisiä ja
+viitetyyppisiä parametreja.
 
 Tämän ansiosta mittauksista piirtyy hieman kokonaisvaltaisempi kuva
 siitä, mitkä mittauksessa varioitavat muuttujat ovat oleellisia
@@ -91,8 +92,6 @@ Ohjelmisto koostuu kolmesta komponentista, joista käännöstyökalut ja
 analyysityökalut ajetaan kehitysympäristössä työpöytä-Linux-järjestelmässä ja
 mittaustyökalut Android-laitteessa.
 
-# TODO Include below from file
-
 #+NAME: fig:nativebenchmark_architecture
 #+INCLUDE: "figures/architecture.puml" src plantuml :results file :file /tmp/architecture.png :exports results
 #+CAPTION: Arkkitehtuurin yleiskuvaus
@@ -108,6 +107,38 @@ Seuraavassa käydään lyhyesti läpi ohjelmiston eri pääkomponentit.
 #+CAPTION: NativeBenchmark
 #+LABEL: fig:nativebenchmark_architecture
 #+RESULTS: fig:nativebenchmark_architecture
+
+Android-sovellus NativeBenchmark sisältää kaiken Android-laitteessa
+suoritettavan ohjelmakoodin: sekä Java-kieliset että natiivikirjastoon
+kuuluvat benchmarkit, mutta myös niiden ympärille vaadittavan
+logiikan, joka suorittaa halutut benchmarkit valituilla
+mittaustyökaluilla.
+
+NativeBenchmark huolehtii mittausajoja koskevien asetustiedostojen
+lukemisesta ja tulostaa kaikki mittaustulokset ja niihin liittyvän
+metadatan tiedostoihin. Sovelluksessa on yksinkertainen graafinen
+Android-käyttöliittymä, mutta sovellusta voi ohjata myös laitteen
+ulkopuolelta tekstikomentojen avulla TCP-yhteyden välityksellä.
+
+Sovelluksen keskeisimmät osat ovat
+- /benchmark/ -paketin sisältämät generoidut benchmarkit,
+- /libnativebenchmark/ -natiivikirjasto, joka sisältää generoitujen benchmarkien natiiviosat,
+- /BenchmarkRunner/ -luokka,
+- /MeasuringTool/ -luokan kaksi aliluokkaa
+  /JavaSystemNanoResponseTimeRecorder/ sekä /LinuxPerfRecordTool/.
+
+Benchmarkit ovat yksinkertaistetusti vain monta kertaa toistettavia
+silmukoita, joiden sisällä kutsutaan tutkinnan kohteena olevaa
+JNI-palvelua tai sen verrokkia. Jokainen benchmark on ympäröity
+samanrakenteisella Java-kielisellä ~BenchMark~-luokan aliluokalla
+silloinkin, vaikka kyseessä olisi sellainen verrokkioperaatio, joka
+suoritetaan puhtaasti /libnativebenchmark/-natiivikirjaston
+sisällä. Tällaisessakin tapauksessa mittauksen kuitenkin aina
+käynnistää /BenchmarkRunner/ -java-olio.
+
+Tarkemmin ottaen BenchmarkRunner delegoi mittaamisen käynnistämisen
+/MeasuringTool/ -aliluokalle. Tämä johtuu siitä, että eri
+mittaustyökalut suorittavat samat kohdeoperaatiot eri tavoilla. 
 
 ** Benchmark-generaattori Benchmark Generator
 
