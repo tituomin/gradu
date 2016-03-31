@@ -1,0 +1,29 @@
+MeasuringTool -> J2JBenchmark00026 : run
+
+activate J2JBenchmark00026
+J2JBenchmark00026 -> J2JBenchmark00026 : runInternal
+
+activate J2JBenchmark00026
+loop
+
+J2JBenchmark00026 -> JavaCounterparts : benchmark00026
+activate JavaCounterparts
+J2JBenchmark00026 <-- JavaCounterparts
+deactivate JavaCounterparts
+
+
+  box "Dalvik"
+    participant MeasuringTool
+    participant J2JBenchmark00026
+    participant JavaCounterparts
+
+  end box
+
+  
+end
+
+J2JBenchmark00026 <-- J2JBenchmark00026
+deactivate J2JBenchmark00026
+MeasuringTool <-- J2JBenchmark00026
+deactivate J2JBenchmark00026
+

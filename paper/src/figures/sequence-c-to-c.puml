@@ -1,0 +1,43 @@
+MeasuringTool -> C2CBenchmark00026 : run
+
+activate C2CBenchmark00026
+C2CBenchmark00026 -> JNI : natiivimetodikutsu\nkohteena runInternal\n(implisiittisesti JNI:n läpi)
+activate C2CBenchmark00026
+
+  activate JNI
+  JNI -> nativerunners.c : C2CBenchmark00026_runInternal
+  
+  box "Dalvik"
+    participant MeasuringTool
+    participant C2CBenchmark00026
+    participant JNI
+
+  end box
+
+  loop
+  
+  activate nativerunners.c
+  
+  box "libnativebenchmark"
+    participant nativerunners.c
+    participant nativebenchmark.c
+  end box
+
+  nativerunners.c -> nativebenchmark.c : J2CBenchmark00026_nativemethod
+  activate nativebenchmark.c
+  deactivate nativebenchmark.c
+  nativerunners.c <-- nativebenchmark.c
+  end
+
+  JNI <-- nativerunners.c
+  deactivate nativerunners.c
+  
+  C2CBenchmark00026 <-- JNI
+  deactivate JNI
+
+
+C2CBenchmark00026 <-- C2CBenchmark00026
+deactivate C2CBenchmark00026
+MeasuringTool <-- C2CBenchmark00026
+deactivate C2CBenchmark00026
+

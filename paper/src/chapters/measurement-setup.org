@@ -56,7 +56,7 @@ vasteaikamittauksista on löytynyt mielenkiintoisia riippuvuuksia
 varioitavien mittausmuuttujien ja vasteaikojen väliltä, nähdään
 saman benchmarkin kutsuprofiileista usein selvästi, mikä
 JNI-toteutuksen osa aiheuttaa esimerkiksi lineaarisesti lisääntyvän
-vasteajan kun vaikkapa viitearvoisten kutsuparametrien määrää
+vasteajan, kun vaikkapa viitearvoisten kutsuparametrien määrää
 lisätään.
 
 ** Toteutuksen haasteet ja reunaehdot
@@ -66,6 +66,9 @@ variaatioita voi yleensä toteuttaa ajonaikaisina muutoksina ohjelman
 syötteissä: esimerkiksi metodiparametrien määrät on Java-ohjelmassa
 lukittava käännösaikana. Variaatioista on vieläpä parhaimmillaan
 luotava 4 eri versiota:
+
+# footnote http://docs.oracle.com/javase/1.5.0/docs/guide/language/varargs.html
+# javan varargs on vain syntaktista sokeria arraylle
 
 1. puhdas C-kielinen versio,
 2. puhdas Java-kielinen versio,
@@ -99,7 +102,8 @@ mittaustyökalut Android-laitteessa.
 #+LABEL: fig:architecture
 #+RESULTS: fig:architecture
 
-Seuraavassa käydään lyhyesti läpi ohjelmiston eri pääkomponentit.
+Ohjelmiston pääkomponentit näkyvät kuvassa \ref{fig:architecture}, ja
+ne käsitellään seuraavassa tarkemmin.
 
 ** Android-sovellus NativeBenchmark
 
@@ -137,6 +141,61 @@ suoritetaan puhtaasti \path{libnativebenchmark}-natiivikirjaston
 sisällä. Tällaisessakin tapauksessa mittauksen kuitenkin aina
 käynnistää \path{BenchmarkRunner} -Java-olio.
 
+Seuraavaaksi havainnollistetaan Java- ja C-kielisistä lähtösilmukoista
+ja kutsukohteista muodostuvia permutaatioita. Aluksi käsitellään kutsu
+Javasta C:hen.
+
+#+NAME: fig:sequence_java_to_c
+#+INCLUDE: "figures/sequence-java-to-c.puml" src plantuml :results file :file /tmp/sequence-java-to-c.png :exports results
+#+CAPTION: Javasta kutsutaan natiivikomponenttia
+#+LABEL: fig:sequence_java_to_c
+#+RESULTS: fig:sequence_java_to_c
+
+Kuvasta \ref{fig:sequence_java_to_c} nähdään, että lähtösilmukka on
+Java-komponentissa (metodissa
+\path{J2CBenchmark00026.runInternal}). Lähtösilmukkaa toistettaessa
+ylitetään hyvin monta kertaa JNI-rajapinta ja kutsutaan sen kautta
+~libnativebenchmark~-natiivikirjastossa olevaa metodia, jonka sisältö
+on tyhjä. Näin ollen mittauksen kohde on käytännössä juuri JNI-kutsu.
+
+Seuraavaksi nähdään yksinkertaisempi asetelma, jossa Java-ohjelma
+kutsuu sisäisesti tavallista Java-metodia ilman JNI-rajapintaa.
+
+#+NAME: fig:sequence_java_to_java
+#+INCLUDE: "figures/sequence-java-to-java.puml" src plantuml :results file :file /tmp/sequence-java-to-java.png :exports results
+#+CAPTION: Javasta kutsutaan Java-metodia
+#+LABEL: fig:sequence_java_to_java
+#+RESULTS: fig:sequence_java_to_java
+
+Kuvassa \path{JavaCounterparts}-luokka sisältää kaikki tyhjät metodit
+joita voidaan kutsua Java- tai C-lähtösilmukasta. Samaa luokkaa
+hyödynnetään myös seuraavassa tapauksessa, jossa C-lähtösilmukka kutsuu
+Java-tynkämetodia.
+
+#+NAME: fig:sequence_c_to_java
+#+INCLUDE: "figures/sequence-c-to-java.puml" src plantuml :results file :file /tmp/sequence-c-to-java.png :exports results
+#+CAPTION: Natiivikomponentista kutsutaan Java-metodia
+#+LABEL: fig:sequence_c_to_java
+#+RESULTS: fig:sequence_c_to_java
+
+Kuvasta \ref{fig:sequence_c_to_java} nähdään, että JNI-rajapinta
+ylitetään kahdessa kohtaa. Ensinnäkin, koska tällä kertaa
+lähtösilmukka on natiivikoodissa (moduulin \path{nativerunners.c}
+funktiossa
+\path{Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00026_runInternal}),
+täytyy jo tätä fuktiota kutsua JNI:n kautta. Varsinainen mittauskohde
+on kuitenkin natiivikoodin kutsuma \path{(*env)->CallVoidMethod}
+-JNI-funktio, jota kautta kutsutaan Java-komponentissa olevaa
+\path{JavaCounterparts}-luokan tyhjää metodia.
+
+#+NAME: fig:sequence_c_to_c
+#+INCLUDE: "figures/sequence-c-to-c.puml" src plantuml :results file :file /tmp/sequence-c-to-c.png :exports results
+#+CAPTION: Natiivikomponentista kutsutaan natiivikomponenttia
+#+LABEL: fig:sequence_c_to_c
+#+RESULTS: fig:sequence_c_to_c
+
+# Todo: alla alkaa katkeavasti
+
 Tarkemmin ottaen BenchmarkRunner delegoi mittaamisen käynnistämisen
 \path{MeasuringTool} -aliluokalle. Tämä johtuu siitä, että eri
 mittaustyökalut suorittavat samat kohdeoperaatiot eri tavoilla.
@@ -155,25 +214,6 @@ kunnes mittaava komponentti \path{LinuxPerfRecordTool} keskeyttää
 benchmark-säikeen suorituksen. Tämä monimutkaistaa lähtösilmukoita,
 sillä niiden on itse tutkittava, onko mittaus keskeytetty, ja tehtävä
 se tarpeeksi harvoin, jotta se ei vaikuta suoritusaikoihin.
-
-Seuraavaaksi havainnollistetaan Java- ja C-kielisistä lähtösilmukoista
-ja kutsukohteista muodostuvia permutaatioita. Aluksi kutsu Javasta C:hen.
-
-#+NAME: fig:sequence_java_to_c
-#+INCLUDE: "figures/sequence-java-to-c.puml" src plantuml :results file :file /tmp/sequence-java-to-c.png :exports results
-#+CAPTION: Javasta kutsutaan natiivikomponenttia
-#+LABEL: fig:sequence_java_to_c
-#+RESULTS: fig:sequence_java_to_c
-
-Seuraava kuva \ref{fig:sequence_c_to_java} esittää päinvastaista tilannetta, jossa 
-C-natiivikirjastosta kutsutaan Java-ohjelmaa.
-
-#+NAME: fig:sequence_c_to_java
-#+INCLUDE: "figures/sequence-c-to-java.puml" src plantuml :results file :file /tmp/sequence-c-to-java.png :exports results
-#+CAPTION: Javasta kutsutaan natiivikomponenttia
-#+LABEL: fig:sequence_c_to_java
-#+RESULTS: fig:sequence_c_to_java
-
 
 
 
