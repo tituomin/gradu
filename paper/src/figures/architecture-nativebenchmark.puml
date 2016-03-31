@@ -1,0 +1,10 @@
+package "fi.helsinki.cs.tituomin.nativebenchmark" {
+  package "benchmark" {
+    () run
+    [Benchmark]
+    [Benchmark] - run
+  }
+  [NativeBenchmark] ..> run
+}
+[perf record] - exec
+[NativeBenchmark] ..> exec

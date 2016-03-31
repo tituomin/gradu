@@ -85,10 +85,10 @@ erillisellä Python-kielisellä ohjelmalla.
 Seuraavassa hahmotellaan tästä perusratkaisusta syntynyttä
 arkkitehtuuria.
 
-** Ohjelmiston kokonaisarkkitehtuuri
+* Ohjelmiston kokonaisarkkitehtuuri
 
 Ohjelmisto koostuu kolmesta komponentista, joista käännöstyökalut ja
-analyysityökalut ajetaan kehitysympäristössä PC-tietokoneessa ja
+analyysityökalut ajetaan kehitysympäristössä työpöytä-Linux-järjestelmässä ja
 mittaustyökalut Android-laitteessa.
 
 # TODO Include below from file
@@ -99,8 +99,21 @@ mittaustyökalut Android-laitteessa.
 #+LABEL: fig:nativebenchmark_architecture
 #+RESULTS: fig:nativebenchmark_architecture
 
-    
-** Toteutuksen ominaispiirteitä
+Seuraavassa käydään lyhyesti läpi ohjelmiston eri pääkomponentit.
+
+** Android-sovellus NativeBenchmark
+
+#+NAME: fig:nativebenchmark_architecture
+#+INCLUDE: "figures/architecture-nativebenchmark.puml" src plantuml :results file :file /tmp/architecture-nativebenchmark.png :exports results
+#+CAPTION: NativeBenchmark
+#+LABEL: fig:nativebenchmark_architecture
+#+RESULTS: fig:nativebenchmark_architecture
+
+** Benchmark-generaattori Benchmark Generator
+
+** Mittaustulosten käsittelijä Benchmark Analyzer
+   
+* Toteutuksen ominaispiirteitä
    # näitä jo käsiteltiinkin
     4 sivua\newline 27. 1. 2014
 
