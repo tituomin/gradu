@@ -23,7 +23,7 @@ package "fi.helsinki.cs.tituomin.nativebenchmark" {
     [Benchmark] <|-- [C2JBenchmark]
 
     note bottom of runInternalJava : Java-kielinen lähtösilmukka,\njossa kutsutaan kohdemetodia tai -funktiota
-    note left of method_stub : Java-kielinen tyhjä kohdemetodi
+    note left of method_stub : Java-kielinen tyhjä kutsukohde
 
   }
 
@@ -37,7 +37,7 @@ package "fi.helsinki.cs.tituomin.nativebenchmark" {
     nativemethod_stub -- [nativebenchmark.c]
 
     note bottom of runInternal : Natiivilähtösilmukka, jossa kutsutaan\nkohdemetodia- tai funktiota
-    note top of nativemethod_stub : C-kielinen\ntyhjä kohdemetodi
+    note top of nativemethod_stub : C-kielinen\ntyhjä kutsukohde
 
   }
 }

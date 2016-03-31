@@ -1,3 +1,4 @@
+
 * Mittausohjelmisto
 
 Tutkielmaa varten laadittiin synteettinen
@@ -92,11 +93,11 @@ Ohjelmisto koostuu kolmesta komponentista, joista käännöstyökalut ja
 analyysityökalut ajetaan kehitysympäristössä työpöytä-Linux-järjestelmässä ja
 mittaustyökalut Android-laitteessa.
 
-#+NAME: fig:nativebenchmark_architecture
+#+NAME: fig:architecture
 #+INCLUDE: "figures/architecture.puml" src plantuml :results file :file /tmp/architecture.png :exports results
 #+CAPTION: Arkkitehtuurin yleiskuvaus
-#+LABEL: fig:nativebenchmark_architecture
-#+RESULTS: fig:nativebenchmark_architecture
+#+LABEL: fig:architecture
+#+RESULTS: fig:architecture
 
 Seuraavassa käydään lyhyesti läpi ohjelmiston eri pääkomponentit.
 
@@ -128,7 +129,7 @@ Sovelluksen keskeisimmät osat ovat
   \path{JavaSystemNanoResponseTimeRecorder} sekä \path{LinuxPerfRecordTool}.
 
 Benchmarkit ovat pohjimmiltaan vain monta kertaa toistettavia
-silmukoita, joiden sisällä kutsutaan tutkinnan kohteena olevaa
+silmukoita (/lähdesilmukoita/), joiden sisällä kutsutaan tutkinnan kohteena olevaa
 JNI-palvelua tai sen verrokkia. Jokainen benchmark on ympäröity
 samanrakenteisella Java-kielisellä \path{BenchMark}-luokan aliluokalla
 silloinkin, vaikka kyseessä olisi sellainen verrokkioperaatio, joka
@@ -140,22 +141,41 @@ Tarkemmin ottaen BenchmarkRunner delegoi mittaamisen käynnistämisen
 \path{MeasuringTool} -aliluokalle. Tämä johtuu siitä, että eri
 mittaustyökalut suorittavat samat kohdeoperaatiot eri tavoilla.
 
-# TODO terminologia alla "kohdesilmukka" (määrittele)
-
 Yksinkertaisempi tapaus on vasteaikojen mittaus 
-\path{JavaSystemNanoResponseTimeRecorder}-luokalla: kohdesilmukkaa suoritetaan
+\path{JavaSystemNanoResponseTimeRecorder}-luokalla: lähtösilmukkaa suoritetaan
 yhteensä aina täsmälleen ennalta määrätyn kierroslukumäärän verran.
 \path{JavaSystemNanoResponseTimeRecorder} ottaa talteen järjestelmän kellon
 arvon ennen kierrosten suoritusta ja sen jälkeen.
 
-Kutsuprofiilia luotaessa kaikkia kohdesilmukoita tulee sen sijaan
-suorittaa niin kauan, että \path{perf record}-työkalu on saanut
+Kutsuprofiilia luotaessa kaikkia lähtösilmukoita tulee sen sijaan
+suorittaa niin kauan, että ~perf record~ -työkalu on saanut
 kerättyä riittävän määrän näytteitä -- esimerkiksi 10 sekunnin ajan
-jokaista benchmarkia kohden. Näin ollen kohdesilmukoita ajetaan,
+jokaista benchmarkia kohden. Näin ollen lähtösilmukoita ajetaan,
 kunnes mittaava komponentti \path{LinuxPerfRecordTool} keskeyttää
-benchmark-säikeen suorituksen. Tämä monimutkaistaa kohdesilmukoita,
-sillä niiden on itse tutkittava onko mittaus keskeytetty ja tehtävä se
-tarpeeksi harvoin, jotta se ei vaikuta suoritusaikoihin.
+benchmark-säikeen suorituksen. Tämä monimutkaistaa lähtösilmukoita,
+sillä niiden on itse tutkittava, onko mittaus keskeytetty, ja tehtävä
+se tarpeeksi harvoin, jotta se ei vaikuta suoritusaikoihin.
+
+Seuraavaaksi havainnollistetaan Java- ja C-kielisistä lähtösilmukoista
+ja kutsukohteista muodostuvia permutaatioita. Aluksi kutsu Javasta C:hen.
+
+#+NAME: fig:sequence_java_to_c
+#+INCLUDE: "figures/sequence-java-to-c.puml" src plantuml :results file :file /tmp/sequence-java-to-c.png :exports results
+#+CAPTION: Javasta kutsutaan natiivikomponenttia
+#+LABEL: fig:sequence_java_to_c
+#+RESULTS: fig:sequence_java_to_c
+
+Seuraava kuva \ref{fig:sequence_c_to_java} esittää päinvastaista tilannetta, jossa 
+C-natiivikirjastosta kutsutaan Java-ohjelmaa.
+
+#+NAME: fig:sequence_c_to_java
+#+INCLUDE: "figures/sequence-c-to-java.puml" src plantuml :results file :file /tmp/sequence-c-to-java.png :exports results
+#+CAPTION: Javasta kutsutaan natiivikomponenttia
+#+LABEL: fig:sequence_c_to_java
+#+RESULTS: fig:sequence_c_to_java
+
+
+
 
 ** Benchmark-generaattori Benchmark Generator
 

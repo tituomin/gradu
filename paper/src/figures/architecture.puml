@@ -6,11 +6,9 @@ node "Android-laite" {
   frame "Linux" {
     frame "Dalvik" {
       package "fi.helsinki.cs.tituomin.nativebenchmark" {
-        package "benchmark" {
-          () run
-          [Benchmark]
-          [Benchmark] - run
-        }
+        () run
+        [Benchmark]
+        [Benchmark] - run
         [NativeBenchmark] ..> run
       }
     }

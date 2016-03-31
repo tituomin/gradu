@@ -1,0 +1,54 @@
+MeasuringTool -> C2JBenchmark00026 : run
+
+activate C2JBenchmark00026
+C2JBenchmark00026 -> JNI : natiivimetodikutsu\nkohteena runInternal\n(implisiittisesti JNI:n läpi)
+activate C2JBenchmark00026
+
+participant JavaCounterparts
+
+  activate JNI
+  JNI -> nativerunners.c : C2JBenchmark00026_runInternal
+  note left: Dalvikin\nsisäinen\nJNI-toteutus
+  
+  box "Dalvik"
+    participant MeasuringTool
+    participant C2JBenchmark00026
+    participant JNI
+
+  end box
+
+  loop
+  
+  activate nativerunners.c
+  
+  box "libnativebenchmark"
+    participant nativerunners.c
+  end box
+
+  box "Dalvik"
+    participant JNI as JNI2
+    participant JavaCounterparts
+  end box
+
+  nativerunners.c -> JNI2 : (*env)->CallVoidMethod
+  activate JNI2
+  JNI2 -> JavaCounterparts : benchmark00026
+  note right: Tyhjä Java-metodi
+  JavaCounterparts --> JNI2 
+  JNI2 --> nativerunners.c
+  deactivate JNI2
+
+  end
+
+  JNI <-- nativerunners.c
+  deactivate nativerunners.c
+  
+  C2JBenchmark00026 <-- JNI
+  deactivate JNI
+
+
+C2JBenchmark00026 <-- C2JBenchmark00026
+deactivate C2JBenchmark00026
+MeasuringTool <-- C2JBenchmark00026
+deactivate C2JBenchmark00026
+

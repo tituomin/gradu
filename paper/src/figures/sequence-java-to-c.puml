@@ -1,0 +1,40 @@
+MeasuringTool -> J2CBenchmark00026 : run
+
+activate J2CBenchmark00026
+J2CBenchmark00026 -> J2CBenchmark00026 : runInternal
+activate J2CBenchmark00026
+
+loop
+  J2CBenchmark00026 -> JNI : natiivimetodikutsu\n(implisiittisesti JNI:n läpi)
+
+  activate JNI
+  JNI -> nativebenchmark.c : J2CBenchmark00026_nativemethod
+  note left: Dalvikin\nsisäinen\nJNI-toteutus
+  
+  box "Dalvik"
+    participant MeasuringTool
+    participant J2CBenchmark00026
+    participant JNI
+  end box
+  
+  activate nativebenchmark.c
+  
+  note right: Tyhjä metodi
+  
+  box "libnativebenchmark"
+    participant nativebenchmark.c
+  end box
+  
+  JNI <-- nativebenchmark.c
+  deactivate nativebenchmark.c
+  
+  J2CBenchmark00026 <-- JNI
+  deactivate JNI
+
+end
+
+J2CBenchmark00026 <-- J2CBenchmark00026
+deactivate J2CBenchmark00026
+MeasuringTool <-- J2CBenchmark00026
+deactivate J2CBenchmark00026
+
