@@ -10,9 +10,9 @@ JNI-rajapinnan eri kutsuja.
 Kun alkeisoperaatioita suoritetaan laitteessa, samojen operaatioiden
 suoritusta mitataan kahdella toisiaan täydentävällä menetelmällä eri
 mittausajojen aikana: ensin yksittäisen aliohjelman suorituksen
-kokonaisvasteaika mitataan Javan ~System.nanoTime()~-metodilla, ja
+kokonaisvasteaika mitataan Javan \path{System.nanoTime()}-metodilla, ja
 seuraavassa ajossa samoille aliohjelmille luodaan
-näytteenottomenetelmällä kutsuprofiilit Linuxin ~perf~-työkalun
+näytteenottomenetelmällä kutsuprofiilit Linuxin \path{perf}-työkalun
 avulla.
 
 ** Mittausten tavoitteet
@@ -29,7 +29,7 @@ määrää ja niiden tyyppiä. Lisäksi jos kyseessä on merkkijonoja,
 taulukoita tai muita vaihtelevankokoisia syötteitä käsittelevä
 funktio, varioidaan käsiteltävän syötteen kokoa.
 
-Esimerksi JNI-funktio ~CallVoidMethod~ vastaanottaa vaihtelevan määrän
+Esimerksi JNI-funktio \path{CallVoidMethod} vastaanottaa vaihtelevan määrän
 kutsuparametreja. Mittausajoissa sitä kutsutaan eri määrillä eri
 tyyppisiä parametreja, jolloin saadaan selville muunmuassakäyttäytyykö
 funktio eri tavalla käsitellessään primitiivityyppisiä ja
@@ -44,9 +44,9 @@ jos jollekin JNI-kutsulle on keksitty analoginen kutsu tai operaatio
 JNI-rajapinnan ulkopuolelta -- operaatio, jonka voi toteuttaa
 puhtaasti C- tai Java-kielisessä ohjelmassa -- lisätään mittauksiin
 tällaiset benchmarkit. Siten esimerkiksi JNI-rajapinnan
-~CallVoidMethod~- perusfunktiokutsun kaikille variaatioille on
+\path{CallVoidMethod}- perusfunktiokutsun kaikille variaatioille on
 laadittu vertailukohdaksi benchmarkit, joissa C-ohjelma
-yksinkertaisesti kutsuu tavallista ~void~-paluuarvollista funktiota,
+kutsuu aivan tavallista ~void~-paluuarvollista funktiota,
 ja Java-ohjelma vastaavasti kutsuu ~void~-paluuarvollista metodia.
 
 Kolmas tapa saada syvempiä tuloksia JNI-rajapinnan käyttäytymisestä on
@@ -79,7 +79,7 @@ halutut tyyppivariaatiot.
 # Esimerkki ?  / bit of source
 
 Koska Java-kieli ei suoraan tue staattisen metaohjelmoinnin mahdollisuutta,
-eikä C++-kielen templateja voisi hyödyntää kuin nativiiversioiden
+eikä C++-kielen templateja voisi hyödyntää kuin natiiviversioiden
 ohjelmointiin, päätettiin lähdekoodin generointi tehdä täysin
 erillisellä Python-kielisellä ohjelmalla.
 
@@ -108,7 +108,7 @@ Seuraavassa käydään lyhyesti läpi ohjelmiston eri pääkomponentit.
 #+LABEL: fig:nativebenchmark_architecture
 #+RESULTS: fig:nativebenchmark_architecture
 
-Android-sovellus NativeBenchmark sisältää kaiken Android-laitteessa
+Android-sovellus \path{NativeBenchmark} sisältää kaiken Android-laitteessa
 suoritettavan ohjelmakoodin: sekä Java-kieliset että natiivikirjastoon
 kuuluvat benchmarkit, mutta myös niiden ympärille vaadittavan
 logiikan, joka suorittaa halutut benchmarkit valituilla
@@ -121,42 +121,41 @@ Android-käyttöliittymä, mutta sovellusta voi ohjata myös laitteen
 ulkopuolelta tekstikomentojen avulla TCP-yhteyden välityksellä.
 
 Sovelluksen keskeisimmät osat ovat
-- /benchmark/ -paketin sisältämät generoidut benchmarkit,
-- /libnativebenchmark/ -natiivikirjasto, joka sisältää generoitujen benchmarkien natiiviosat,
-- /BenchmarkRunner/ -luokka,
-- /MeasuringTool/ -luokan kaksi aliluokkaa
-  /JavaSystemNanoResponseTimeRecorder/ sekä /LinuxPerfRecordTool/.
+- ~benchmark~ -paketin sisältämät generoidut benchmarkit,
+- ~libnativebenchmark~ -natiivikirjasto, joka sisältää generoitujen benchmarkien natiiviosat,
+- ~BenchmarkRunner~ -luokka,
+- ~MeasuringTool~ -luokan kaksi aliluokkaa
+  \path{JavaSystemNanoResponseTimeRecorder} sekä \path{LinuxPerfRecordTool}.
 
-Benchmarkit ovat yksinkertaistetusti vain monta kertaa toistettavia
+Benchmarkit ovat pohjimmiltaan vain monta kertaa toistettavia
 silmukoita, joiden sisällä kutsutaan tutkinnan kohteena olevaa
 JNI-palvelua tai sen verrokkia. Jokainen benchmark on ympäröity
-samanrakenteisella Java-kielisellä ~BenchMark~-luokan aliluokalla
+samanrakenteisella Java-kielisellä \path{BenchMark}-luokan aliluokalla
 silloinkin, vaikka kyseessä olisi sellainen verrokkioperaatio, joka
-suoritetaan puhtaasti /libnativebenchmark/-natiivikirjaston
+suoritetaan puhtaasti \path{libnativebenchmark}-natiivikirjaston
 sisällä. Tällaisessakin tapauksessa mittauksen kuitenkin aina
-käynnistää /BenchmarkRunner/ -Java-olio.
+käynnistää \path{BenchmarkRunner} -Java-olio.
 
 Tarkemmin ottaen BenchmarkRunner delegoi mittaamisen käynnistämisen
-/MeasuringTool/ -aliluokalle. Tämä johtuu siitä, että eri
+\path{MeasuringTool} -aliluokalle. Tämä johtuu siitä, että eri
 mittaustyökalut suorittavat samat kohdeoperaatiot eri tavoilla.
 
 # TODO terminologia alla "kohdesilmukka" (määrittele)
 
-Yksinkertaisempi tapaus on vasteaikojen mittaus työkalulla
-/JavaSystemNanoResponseTimeRecorder/: kohdesilmukkaa suoritetaan
+Yksinkertaisempi tapaus on vasteaikojen mittaus 
+\path{JavaSystemNanoResponseTimeRecorder}-luokalla: kohdesilmukkaa suoritetaan
 yhteensä aina täsmälleen ennalta määrätyn kierroslukumäärän verran.
-JavaSystemNanoResponseTimeRecorder ottaa talteen järjestelmän kellon
+\path{JavaSystemNanoResponseTimeRecorder} ottaa talteen järjestelmän kellon
 arvon ennen kierrosten suoritusta ja sen jälkeen.
 
 Kutsuprofiilia luotaessa kaikkia kohdesilmukoita tulee sen sijaan
-suorittaa niin kauan, että perf record-työkalu on saanut kerättyä
-riittävän määrän näytteitä -- esimerkiksi 10 sekunnin ajan jokaista
-benchmarkia kohden. Näin ollen kohdesilmukoita ajetaan, kunnes
-mittaava komponentti /LinuxPerfRecordTool/ keskeyttää
-benchmark-säikeen suorituksen. Tämä monimutkaistaa kohdesilmukoiden
-ohjelmointia, sillä niiden on itse tutkittava onko mittaus
-keskeytetty. Tuloksiin tämä ei merkittävästi vaikuta, sillä säikeen
-keskeytys tutkitaan hyvin harvoin.
+suorittaa niin kauan, että \path{perf record}-työkalu on saanut
+kerättyä riittävän määrän näytteitä -- esimerkiksi 10 sekunnin ajan
+jokaista benchmarkia kohden. Näin ollen kohdesilmukoita ajetaan,
+kunnes mittaava komponentti \path{LinuxPerfRecordTool} keskeyttää
+benchmark-säikeen suorituksen. Tämä monimutkaistaa kohdesilmukoita,
+sillä niiden on itse tutkittava onko mittaus keskeytetty ja tehtävä se
+tarpeeksi harvoin, jotta se ei vaikuta suoritusaikoihin.
 
 ** Benchmark-generaattori Benchmark Generator
 

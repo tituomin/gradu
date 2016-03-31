@@ -43,6 +43,14 @@
 \\usepackage{tablefont}
 \\counterwithin{figure}{section}
 \\counterwithin{table}{section}
+\\usepackage{url,etoolbox}
+\\appto\\UrlSpecials{%
+  \\do\\F{\\penalty0 \\mathchar`\\F }%
+  \\do\\L{\\penalty0 \\mathchar`\\L }%
+  \\do\\N{\\penalty0 \\mathchar`\\N }%
+  \\do\\T{\\penalty0 \\mathchar`\\T }%
+  \\do\\R{\\penalty0 \\mathchar`\\R }%
+}
 \\level{Pro gradu -tutkielmasuunnitelma}"
 ("\\section{%s}" . "\\section*{%s}")
 ("\\subsection{%s}" . "\\subsection*{%s}")
