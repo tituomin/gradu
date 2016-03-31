@@ -1,0 +1,35 @@
+
+node "Android-laite" {
+  folder "Tiedostojärjestelmä" {
+    [mittaustulokset]
+  }
+  frame "Linux" {
+    frame "Dalvik" {
+      package "fi.helsinki.cs.tituomin.nativebenchmark" {
+        package "benchmark" {
+          () run
+          [Benchmark]
+          [Benchmark] - run
+        }
+        [NativeBenchmark] ..> run
+      }
+    }
+    [perf record] - exec
+    [NativeBenchmark] ..> exec
+  }
+}
+
+node "Kehitysympäristö" {
+
+  frame "Käännöstyökalut" {
+    [BenchmarkGenerator] --> [Benchmark] : " generoi"
+  }
+  [mittaustulokset] <- [NativeBenchmark]
+  [mittaustulokset] <- [perf record]
+
+  frame "Analyysi" {
+    [Benchmark analyzer] -> [mittaustulokset] : " analysoi"
+  }
+}
+
+

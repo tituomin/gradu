@@ -94,45 +94,11 @@ mittaustyökalut Android-laitteessa.
 # TODO Include below from file
 
 #+NAME: fig:nativebenchmark_architecture
-#+begin_src plantuml :results file :file /tmp/architecture.png :exports results
-
-node "Android-laite" {
-  folder "Tiedostojärjestelmä" {
-    [mittaustulokset]
-  }
-  frame "Linux" {
-    frame "Dalvik" {
-      package "fi.helsinki.cs.tituomin.nativebenchmark" {
-        package "benchmark" {
-          () run
-          [Benchmark]
-          [Benchmark] - run
-        }
-        [NativeBenchmark] ..> run
-      }
-    }
-    [perf record] - exec
-    [NativeBenchmark] ..> exec
-  }
-}
-
-node "Kehitysympäristö" {
-
-  frame "Käännöstyökalut" {
-    [BenchmarkGenerator] --> [Benchmark] : generoi
-  }
-  [mittaustulokset] <- [perf record] : tulostaa
-  [mittaustulokset] <- [NativeBenchmark] : tulostaa
-
-  frame "Analyysi" {
-    [Benchmark analyzer] -> [mittaustulokset] :  analysoi
-  }
-}
-
-#+end_src
+#+INCLUDE: "figures/architecture.puml" src plantuml :results file :file /tmp/architecture.png :exports results
 #+CAPTION: Arkkitehtuurin yleiskuvaus
 #+LABEL: fig:nativebenchmark_architecture
 #+RESULTS: fig:nativebenchmark_architecture
+
     
 ** Toteutuksen ominaispiirteitä
    # näitä jo käsiteltiinkin
