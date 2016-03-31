@@ -1,20 +1,50 @@
 package "fi.helsinki.cs.tituomin.nativebenchmark" {
-  package "benchmark" {
-    () run
-    [Benchmark]
-    [Benchmark] - run
-  }
   package "measuringtool" {
-    [JavaSystemNanoResponseTimeRecorder] -- () start
-    [LinuxPerfRecordTool] -- () start
+    () start -- [MeasuringTool]
+    [JavaSystemNanoResponseTimeRecorder] -|> [MeasuringTool]
+    [MeasuringTool] <|- [LinuxPerfRecordTool]
   }
-  [BenchmarkRunner] .> start
-  [LinuxPerfRecordTool] .> run
-  [JavaSystemNanoResponseTimeRecorder] .> run
+
+  package "benchmark" {
+    () run -- [Benchmark]
+    () method_stub
+    method_stub -- [JavaCounterparts]
+    [J2JBenchmark]
+    [J2CBenchmark]
+    () runInternal as runInternalJava
+    [J2JBenchmark] -- () runInternalJava
+    [J2CBenchmark] -- () runInternalJava
+    [C2CBenchmark]
+    [C2JBenchmark]
+
+    [Benchmark] <|-- [J2JBenchmark]
+    [Benchmark] <|-- [J2CBenchmark]
+    [Benchmark] <|-- [C2CBenchmark]
+    [Benchmark] <|-- [C2JBenchmark]
+
+    note bottom of runInternalJava : Java-kielinen benchmark-silmukka,\njossa kutsutaan kohdemetodia tai -funktiota
+    note left of method_stub : Java-kielinen tyhjä kohdemetodi
+
+  }
+
+  [BenchmarkRunner] ..> start
+  [MeasuringTool] ..> run
+
+  package "libnativebenchmark" {
+    () runInternal
+    () method_stub as nativemethod_stub
+    [nativerunners.c] -- runInternal
+    [nativebenchmark.c] -- nativemethod_stub
+
+    note bottom of runInternal : Natiivisilmukka, jossa kutsutaan\nkohdemetodia- tai funktiota
+    note bottom of nativemethod_stub : C-kielinen\ntyhjä kohdemetodi
+
+  }
 }
-package "libnativebenchmark" {
-  [nativerunners.c] - runInternal
-  [nativebenchmark.c] - nativemethod
-}
-'[perf record] - exec
-'[LinuxPerfRecordTool] ..> exec
+
+[C2CBenchmark] ..> runInternal
+[C2JBenchmark] ..> runInternal
+[J2CBenchmark] ..> nativemethod_stub
+[nativerunners.c] ..> nativemethod_stub
+[nativerunners.c] ..> method_stub
+[J2JBenchmark] ..> method_stub
