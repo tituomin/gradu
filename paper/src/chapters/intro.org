@@ -18,14 +18,6 @@ Java-sovelluskehyksen käyttämiselle on sen /suorituskyky/, erityisesti
 jos ohjelmisto suorittaa paljon raskasta laskentaa tai sille on
 oleellisia tosiaikavaatimuksia.
 
-[fn:ios] Esimerkiksi Applen /iOS/-käyttöjärjestelmän sovellukset
-käännetään /Objective-C/ -kielestä laitteiston konekielellä
-suoritettaviksi, ja alustan kehitystyökaluilla voi suoraan hyödyntää
-myös C- tai C++-kielisiä komponentteja @@ios(14). Javan lupaus
-siirrettävyydestä ei realisoidu mobiilikäytössä, koska valmistajien
-kontrolloimiin järjestelmiin ei voi asentaa vaihtoehtoisia
-suoritusympäristöjä.
-# todo lähde?
 
 /Ohjelmistojen suorituskykytekniikka/ (/Software Performance
 Engineering/, /SPE/) on ohjelmistotekniikan osa-alue, jossa
@@ -102,3 +94,11 @@ sovellusarkkitehtuurille.
 
 # todo: poista esimerkkisovellus? 
 
+[fn:ios] Esimerkiksi Applen /iOS/-käyttöjärjestelmän sovellukset
+käännetään /Objective-C/ -kielestä laitteiston konekielellä
+suoritettaviksi, ja alustan kehitystyökaluilla voi suoraan hyödyntää
+myös C- tai C++-kielisiä komponentteja @@ios(14). Javan lupaus
+siirrettävyydestä ei realisoidu mobiilikäytössä, koska valmistajien
+kontrolloimiin järjestelmiin ei voi asentaa vaihtoehtoisia
+suoritusympäristöjä.
+# todo lähde?
