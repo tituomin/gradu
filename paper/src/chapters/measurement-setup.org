@@ -100,7 +100,7 @@ analyysityökalut ajetaan kehitysympäristössä työpöytä-Linux-järjestelmä
 mittaustyökalut Android-laitteessa.
 
 #+NAME: fig:architecture
-#+INCLUDE: "figures/architecture.puml" src plantuml :results file :file /tmp/architecture.png :exports results
+#+INCLUDE: "../../src/figures/architecture.puml" src plantuml :results file :file /tmp/architecture.png :exports results
 #+CAPTION: Arkkitehtuurin yleiskuvaus
 #+LABEL: fig:architecture
 #+RESULTS: fig:architecture
@@ -111,7 +111,7 @@ ne käsitellään seuraavassa tarkemmin.
 ** Android-sovellus NativeBenchmark
 
 #+NAME: fig:nativebenchmark_architecture
-#+INCLUDE: "figures/architecture-nativebenchmark.puml" src plantuml :results file :file /tmp/architecture-nativebenchmark.png :exports results
+#+INCLUDE: "../../src/figures/architecture-nativebenchmark.puml" src plantuml :results file :file /tmp/architecture-nativebenchmark.png :exports results
 #+CAPTION: NativeBenchmark
 #+LABEL: fig:nativebenchmark_architecture
 #+RESULTS: fig:nativebenchmark_architecture
@@ -144,12 +144,18 @@ suoritetaan puhtaasti \path{libnativebenchmark}-natiivikirjaston
 sisällä. Tällaisessakin tapauksessa mittauksen kuitenkin aina
 käynnistää \path{BenchmarkRunner} -Java-olio.
 
-Seuraavaaksi havainnollistetaan Java- ja C-kielisistä lähtösilmukoista
-ja kutsukohteista muodostuvia permutaatioita. Aluksi käsitellään kutsu
-Javasta C:hen.
+Ajettavat benchmarkit jakautuvat kahteen joukkoon. Ensimmäinen koostuu
+yksinkertaisista funktiokutsusta JNI-rajapinnan kautta: C-koodissa
+kutsuista \verb|Call|\tau\verb|Method| -funktioihin ja Java-koodissa
+kutuista ~native~ -määreellä merkittyihin ~nativemethod~ -nimisiin
+metodeihin. Toinen joukko testaa JNI-rajapinnan muita palveluita.
+
+Seuraavaksi havainnollistetaan Java- ja C-kielisistä lähtösilmukoista
+ja kutsukohteista muodostuvia permutaatioita yksinkertaisissa
+JNI-funktiokutsuissa. Aluksi käsitellään kutsu Javasta C:hen.
 
 #+NAME: fig:sequence_java_to_c
-#+INCLUDE: "figures/sequence-java-to-c.puml" src plantuml :results file :file /tmp/sequence-java-to-c.png :exports results
+#+INCLUDE: ../../src/figures/sequence-java-to-c.puml" src plantuml :results file :file /tmp/sequence-java-to-c.png :exports results
 #+CAPTION: Javasta kutsutaan natiivikomponenttia
 #+LABEL: fig:sequence_java_to_c
 #+RESULTS: fig:sequence_java_to_c
@@ -165,7 +171,7 @@ Seuraavaksi nähdään yksinkertaisempi asetelma, jossa Java-ohjelma
 kutsuu sisäisesti tavallista Java-metodia ilman JNI-rajapintaa.
 
 #+NAME: fig:sequence_java_to_java
-#+INCLUDE: "figures/sequence-java-to-java.puml" src plantuml :results file :file /tmp/sequence-java-to-java.png :exports results
+#+INCLUDE: ../../src/figures/sequence-java-to-java.puml" src plantuml :results file :file /tmp/sequence-java-to-java.png :exports results
 #+CAPTION: Javasta kutsutaan Java-metodia
 #+LABEL: fig:sequence_java_to_java
 #+RESULTS: fig:sequence_java_to_java
@@ -176,7 +182,7 @@ hyödynnetään myös seuraavassa tapauksessa, jossa C-lähtösilmukka kutsuu
 Java-tynkämetodia.
 
 #+NAME: fig:sequence_c_to_java
-#+INCLUDE: "figures/sequence-c-to-java.puml" src plantuml :results file :file /tmp/sequence-c-to-java.png :exports results
+#+INCLUDE: ../../src/figures/sequence-c-to-java.puml" src plantuml :results file :file /tmp/sequence-c-to-java.png :exports results
 #+CAPTION: Natiivikomponentista kutsutaan Java-metodia
 #+LABEL: fig:sequence_c_to_java
 #+RESULTS: fig:sequence_c_to_java
@@ -192,18 +198,15 @@ on kuitenkin natiivikoodin kutsuma \path{(*env)->CallVoidMethod}
 \path{JavaCounterparts}-luokan tyhjää metodia.
 
 #+NAME: fig:sequence_c_to_c
-#+INCLUDE: "figures/sequence-c-to-c.puml" src plantuml :results file :file /tmp/sequence-c-to-c.png :exports results
+#+INCLUDE: ../../src/figures/sequence-c-to-c.puml" src plantuml :results file :file /tmp/sequence-c-to-c.png :exports results
 #+CAPTION: Natiivikomponentista kutsutaan natiivikomponenttia
 #+LABEL: fig:sequence_c_to_c
 #+RESULTS: fig:sequence_c_to_c
 
-# Todo: alla alkaa katkeavasti
-
-Tarkemmin ottaen BenchmarkRunner delegoi mittaamisen käynnistämisen
-\path{MeasuringTool} -aliluokalle. Tämä johtuu siitä, että eri
+Mittauksien käynnistämistä monimutkaistaa hieman se, että eri
 mittaustyökalut suorittavat samat kohdeoperaatiot eri tavoilla.
 
-Yksinkertaisempi tapaus on vasteaikojen mittaus 
+Yksinkertaisempi tapaus on vasteaikojen mittaus
 \path{JavaSystemNanoResponseTimeRecorder}-luokalla: lähtösilmukkaa suoritetaan
 yhteensä aina täsmälleen ennalta määrätyn kierroslukumäärän verran.
 \path{JavaSystemNanoResponseTimeRecorder} ottaa talteen järjestelmän kellon
@@ -218,7 +221,16 @@ benchmark-säikeen suorituksen. Tämä monimutkaistaa lähtösilmukoita,
 sillä niiden on itse tutkittava, onko mittaus keskeytetty, ja tehtävä
 se tarpeeksi harvoin, jotta se ei vaikuta suoritusaikoihin.
 
+*** Mittaamisen perusrasitteet
 
+**** Allokoivat operaatiot
+
+*** Java-koodin mittaamisesta
+
+**** Warmup
+
+
+# TODO tähän kuva vasteaika vs. mittausajo.
 
 ** Benchmark-generaattori Benchmark Generator
 

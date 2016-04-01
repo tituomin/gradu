@@ -1,10 +1,16 @@
 
 (require 'org)
 (require 'org-install)
-;(require 'org-exp)
-(require 'org-special-blocks)
-(require 'org-latex)
-(require 'org-export-latex)
+
+(setq old-version (if (require 'ox-latex nil t) nil t))
+(message (if old-version "Using old version." "Using new version."))
+
+(when old-version
+  (progn
+    (require 'org-special-blocks)
+    (require 'org-latex)
+    (require 'org-export-latex)))
+
 (unless (boundp 'org-export-latex-classes)
   (setq org-export-latex-classes nil))
 (setq org-export-latex-listings t)
@@ -30,8 +36,18 @@
 (setq org-plantuml-jar-path
       (expand-file-name "~/plantuml.jar"))
 
+(setq latex-classes-list
+      (if old-version
+          'org-export-latex-classes
+        'org-latex-classes))
+
+(setq latex-encoding-alist
+      (if old-version
+          'org-export-latex-inputenc-alist
+        'org-latex-inputenc-alist))
+
 (add-to-list
- 'org-export-latex-classes
+ 'org-latex-classes
  `("gradu"
 "\\documentclass[finnish]{tktltiki}
 \\usepackage[finnish]{babel}
@@ -65,8 +81,14 @@
 (setq org-export-latex-format-toc-function 'org-export-latex-no-toc)
 (setq org-export-with-sub-superscripts nil)
 
-(add-to-list 'org-export-latex-inputenc-alist '("utf8" . "latin9"))
+(add-to-list 'org-latex-inputenc-alist '("utf8" . "latin9"))
 
 (prefer-coding-system 'utf-8)
 (find-file "~/gradu/paper/src/main.org" nil)
-(org-export-as-latex 3 nil nil nil "~/gradu/paper/gen")
+
+(if old-version
+    (org-latex-export-as-latex 3 nil nil nil)
+  (org-export-to-file 'latex "~/gradu/paper/gen/main.tex"
+    nil nil nil nil '(:base-directory "~/gradu/paper/src")))
+
+
