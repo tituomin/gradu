@@ -261,26 +261,68 @@ lähtösilmukkaa -- erityisesti Java-koodin tapauksessa Java- tai
 JIT-kääntäjä saattaa myös optimoida pois tyhjän silmukan, jolla ei ole
 sivuvaikutuksia.
 
-Muissakin suhteissa Java-sovelluksen ajonaikainen mittaaminen on
-haastavaa, ja haasteita on ratkaistu seuraavilla keinoilla.
 # TODO viite ylle
 # TODO XXXXXXX
 # TODO measurement-results tähän kaavio overhead-mittauksista
 
-** Java-koodin mittaamisesta
+** Muistia allokoivat operaatiot
 
-Dalvik sisältää JIT-kääntäjän \ref{sec-dalvik-intro}, joka 
+Muistia allokoivia JNI-operaatioita, jotka esimerkiksi luovat olioita,
+ei voi suorittaa tuhansia kertoja ilman että sovelluksen muisti
+loppuu. Yleensä mittauksissa on pyritty pitämään kierrosmäärä niin
+suurena kuin käytännössä on järkevää, jotta satunnaisten
+järjestelmässä esiintyvien häiriöiden suuruus verrattuna mitattuihin
+kokonaisvasteaikoihin olisi pieni. Allokoivissa operaatioissa silmukan
+kierrosmäärä pidetään alhaisena, mutta vastaavasti samoja mittauksia
+suoritetaan useampia ajoja ja saadut luvut yhdistetään
+tilastollisesti.
 
-**** Warmup
+# TODO tilastollisesti: miten ?
 
-** Allokoivat operaatiot
-** Mittauskohteet
+Javan tapauksessa väliaikaisten olioiden allokointi aiheuttaa
+lisäksi roskienkeruuta ennakoimattomina ajankohtina. Mittauksissa
+roskienkeruun aiheuttama sinänsä oleellinen rasite suorituskyvylle on
+päätetty yksinkertaisuuden vuoksi jättää huomiotta. Roskienkeruuta
+ehdotetaan virtuaalikoneelle ~System.gc()~ -kutsulla mittausajojen
+ulkopuolella. Androidin lokien perusteella virtuaalikone myös näyttää
+käytännössä ajavan roskienkeruun halutulla
+ajoituksella. Mittaustuloksien mukaan lisätään ote Androidin
+järjestelmälokista, mistä voidaan havaita mahdolliset häiriöitä
+aiheuttavat roskienkeruutapahtumat.
 
+Viimeinen ongelma allokoivissa operaatioissa on, että käynnistettäessä
+Android-sovellukselle annetaan sallittua maksimikokoa pienempi keko,
+jonka kasvattaminen tarpeen mukaan taas saattaa aiheuttaa
+suorituskykyhäiriöitä. Ongelmaa on vältetty allokoimalla heti
+sovelluksen käynnistyessä suuri taulukko-olio, johon saatu viite
+tuhotaan heti roskienkeruun mahdollistameksi.
+
+** JIT-käännös
+
+Dalvik sisältää JIT-kääntäjän \ref{sec-dalvik-intro}, jonka toiminta
+tekee Java-koodin käyttäytymisestä vaikeasti ennustettavaa: koska
+mittauksessa suoritetaan samaa silmukkaa jatkuvasti, on melko varmaa
+että se JIT-käännetään jossain vaiheessa, mutta suorituksen aluksi
+silmukan tavukoodia tulkitaan. Ratkaisuyritys ongelmaan on suorittaa
+ennen varsinaisia mittauksia lämmittelyajo, jonka kierrosmäärä on
+arvioitu riittäväksi JIT-kääntämisen laukaisemiseksi.
+
+Oikean kierrosmäärän arvioimiseksi ja JIT-käännöksen todentamiseksi
+tehtiin mittaus, jossa samaa benchmarkia suoritetaan pienehköllä
+silmukkakierrosluvulla mutta monessa perättäisessä ajossa, ja
+verrataan vasteajan kehittymistä ajan suhteen.
+
+# TODO tähän mittaus ja kuva !important
 # TODO tähän kuva vasteaika vs. mittausajo.
 
 * Benchmark-generaattori Benchmark Generator
+
+
+
 ** Mittauskohde
 *** Luokitellut JNI-operaatiot
+    # pitäisikö tämä siirtää tulosten käsittelyyn?
+    # luultavasti
      5 sivua\newline 2. 2. 2014
 
      JNI-operaatiot kategorisoidaan ja esitellään tiiviisti ja kommentoidaan
@@ -308,11 +350,3 @@ Dalvik sisältää JIT-kääntäjän \ref{sec-dalvik-intro}, joka
     2 sivua\newline 10. 2. 2014
 
     Käytetyt tilastolliset menetelmät.
-
-* Toteutuksen ominaispiirteitä
-   # näitä jo käsiteltiinkin
-    4 sivua\newline 27. 1. 2014
-
-    Mittaussovellukseen kohdistuvia erityishaasteita ja
-    niiden ratkaisuja.
-
