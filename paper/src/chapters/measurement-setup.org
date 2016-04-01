@@ -93,7 +93,7 @@ erillisellä Python-kielisellä ohjelmalla.
 Seuraavassa hahmotellaan tästä perusratkaisusta syntynyttä
 arkkitehtuuria.
 
-* Ohjelmiston kokonaisarkkitehtuuri
+* TODO Ohjelmiston kokonaisarkkitehtuuri
 
 Ohjelmisto koostuu kolmesta komponentista, joista käännöstyökalut ja
 analyysityökalut ajetaan kehitysympäristössä työpöytä-Linux-järjestelmässä ja
@@ -107,6 +107,8 @@ mittaustyökalut Android-laitteessa.
 
 Ohjelmiston pääkomponentit näkyvät kuvassa \ref{fig:architecture}, ja
 ne käsitellään seuraavassa tarkemmin.
+
+** TODO lisää tekstiä tähän
 
 ** Android-sovellus NativeBenchmark
 
@@ -139,7 +141,7 @@ Benchmarkit ovat pohjimmiltaan vain monta kertaa toistettavia
 silmukoita (/lähdesilmukoita/), joiden sisällä kutsutaan tutkinnan kohteena olevaa
 JNI-palvelua tai sen verrokkia. Jokainen benchmark on ympäröity
 samanrakenteisella Java-kielisellä \path{BenchMark}-luokan aliluokalla
-silloinkin, vaikka kyseessä olisi sellainen verrokkioperaatio, joka
+silloinkin, kun kyseessä on sellainen verrokkioperaatio, joka
 suoritetaan puhtaasti \path{libnativebenchmark}-natiivikirjaston
 sisällä. Tällaisessakin tapauksessa mittauksen kuitenkin aina
 käynnistää \path{BenchmarkRunner} -Java-olio.
@@ -150,9 +152,11 @@ kutsuista \verb|Call|\tau\verb|Method| -funktioihin ja Java-koodissa
 kutuista ~native~ -määreellä merkittyihin ~nativemethod~ -nimisiin
 metodeihin. Toinen joukko testaa JNI-rajapinnan muita palveluita.
 
-Seuraavaksi havainnollistetaan Java- ja C-kielisistä lähtösilmukoista
-ja kutsukohteista muodostuvia permutaatioita yksinkertaisissa
-JNI-funktiokutsuissa. Aluksi käsitellään kutsu Javasta C:hen.
+Seuraavaksi havainnollistetaan ensimmäisen joukon kaikkia neljää
+permutaatiota, jotka saadaan lähtösilmukoiden ja kutsukohteiden
+toteutuskielistä: (Java \rightarrow C), (Java \rightarrow Java), (C
+\rightarrow Java) sekä (C \rightarrow C). Aluksi käsitellään kutsu
+Javasta C:hen.
 
 #+NAME: fig:sequence_java_to_c
 #+INCLUDE: ../../src/figures/sequence-java-to-c.puml" src plantuml :results file :file /tmp/sequence-java-to-c.png :exports results
@@ -160,7 +164,7 @@ JNI-funktiokutsuissa. Aluksi käsitellään kutsu Javasta C:hen.
 #+LABEL: fig:sequence_java_to_c
 #+RESULTS: fig:sequence_java_to_c
 
-Kuvasta \ref{fig:sequence_java_to_c} nähdään, että lähtösilmukka on
+Kuvan \ref{fig:sequence_java_to_c} sekvenssikaaviossa lähtösilmukka on
 Java-komponentissa (metodissa
 \path{J2CBenchmark00026.runInternal}). Lähtösilmukkaa toistettaessa
 ylitetään hyvin monta kertaa JNI-rajapinta ja kutsutaan sen kautta
@@ -176,10 +180,10 @@ kutsuu sisäisesti tavallista Java-metodia ilman JNI-rajapintaa.
 #+LABEL: fig:sequence_java_to_java
 #+RESULTS: fig:sequence_java_to_java
 
-Kuvassa \path{JavaCounterparts}-luokka sisältää kaikki tyhjät metodit
+Kuvassa \ref{fig:sequence_java_to_java} \path{JavaCounterparts}-luokka sisältää kaikki tyhjät metodit
 joita voidaan kutsua Java- tai C-lähtösilmukasta. Samaa luokkaa
 hyödynnetään myös seuraavassa tapauksessa, jossa C-lähtösilmukka kutsuu
-Java-tynkämetodia.
+Java-tynkämetodia.\ref{fig:sequence_c_to_java}
 
 #+NAME: fig:sequence_c_to_java
 #+INCLUDE: ../../src/figures/sequence-c-to-java.puml" src plantuml :results file :file /tmp/sequence-c-to-java.png :exports results
@@ -188,7 +192,9 @@ Java-tynkämetodia.
 #+RESULTS: fig:sequence_c_to_java
 
 Kuvasta \ref{fig:sequence_c_to_java} nähdään, että JNI-rajapinta
-ylitetään kahdessa kohtaa. Ensinnäkin, koska tällä kertaa
+ylitetään kahdessa kohtaa. Molemmat kuvassa näkyvät
+Dalvik-virtuaalikoneet edustavat samaa instanssia, joka on selkeyden
+vuoksi piirretty kaksi kertaa. Ensinnäkin, koska tällä kertaa
 lähtösilmukka on natiivikoodissa (moduulin \path{nativerunners.c}
 funktiossa
 \path{Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00026_runInternal}),
@@ -202,6 +208,8 @@ on kuitenkin natiivikoodin kutsuma \path{(*env)->CallVoidMethod}
 #+CAPTION: Natiivikomponentista kutsutaan natiivikomponenttia
 #+LABEL: fig:sequence_c_to_c
 #+RESULTS: fig:sequence_c_to_c
+
+** Mittaamisen haasteita
 
 Mittauksien käynnistämistä monimutkaistaa hieman se, että eri
 mittaustyökalut suorittavat samat kohdeoperaatiot eri tavoilla.
@@ -223,12 +231,40 @@ se tarpeeksi harvoin, jotta se ei vaikuta suoritusaikoihin.
 
 *** Mittaamisen perusrasitteet
 
+Eri permutaatioiden sekvenssikaavioista voi huomata, että mitattava
+ohjelmakoodi vaihtelee sen mukaan, onko ~runInternal~ -metodi ja
+lähtösilmukka Java- vai natiivikomponentissa. Kun se on
+Java-komponentissa, Dalvik ensin tulkitsee silmukkaa ja sitten
+JIT-kääntää sen suorittaakseen kääntämäänsä versiota silmukasta. Kun
+lähtösilmukka on natiivikomponentissa, C-kääntäjän tuottamaa
+konekielistä versiota suoritetaan sellaisenaan.
+
+Koska on mahdotonta kontrolloida, miten erilaisia kaksi eri versiota
+lähtösilmukasta suoritustasolla ovat, ei niiden suoritusaikojakaan
+periaatteessa voi suoraan vertailla. Niiden erojen mittaamiseksi
+molempien versioiden perusrasitetta arvioitiin seuraavalla
+menetelmällä. Kummastakin lähtösilmukasta luotiin benchmarksarjat,
+jossa suoraan silmukan sisälle lisätään lineaarisesti varioiden /n/
+kappaletta identtistä ohjelmalohkoa, jotka suorittavat hyödyttömiä
+mutta tarpeeksi raskaita ja sivuvaikutuksellisia aritmeettisia
+operaatioita paikallisilla muuttujilla. Interpoloimalla saaduista
+vasteajoista kun /n/:n arvoa varioidaan, saadaan arvioitua, mikä
+mittausmenetelmän pohjavasteaika on n:n arvolla 0. Näin saadaan
+tarkempi arvio perusrasitteesta kuin pelkästään ajamalla tyhjää
+lähtösilmukkaa -- erityisesti Java-koodin tapauksessa Java- tai
+JIT-kääntäjä saattaa myös optimoida pois tyhjän silmukan, jolla
+ei ole sivuvaikutuksia (aiheesta lisää kohdassa XXXXX).
+
+# TODO XXXXXXX
+# TODO measurement-results tähän kaavio overhead-mittauksista
+
 **** Allokoivat operaatiot
 
 *** Java-koodin mittaamisesta
 
 **** Warmup
 
+*** Mittauskohteet
 
 # TODO tähän kuva vasteaika vs. mittausajo.
 
