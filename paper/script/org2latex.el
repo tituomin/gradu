@@ -47,7 +47,7 @@
         'org-latex-inputenc-alist))
 
 (add-to-list
- 'org-latex-classes
+ latex-classes-list
  `("gradu"
 "\\documentclass[finnish]{tktltiki}
 \\usepackage[finnish]{babel}
@@ -81,7 +81,7 @@
 (setq org-export-latex-format-toc-function 'org-export-latex-no-toc)
 (setq org-export-with-sub-superscripts nil)
 
-(add-to-list 'org-latex-inputenc-alist '("utf8" . "latin9"))
+(add-to-list latex-encoding-alist '("utf8" . "latin9"))
 
 (prefer-coding-system 'utf-8)
 (find-file "~/gradu/paper/src/main.org" nil)
