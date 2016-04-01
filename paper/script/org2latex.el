@@ -66,6 +66,10 @@
   \\do\\N{\\penalty0 \\mathchar`\\N }%
   \\do\\T{\\penalty0 \\mathchar`\\T }%
   \\do\\R{\\penalty0 \\mathchar`\\R }%
+  \\do\\J{\\penalty0 \\mathchar`\\J }%
+  \\do\\2{\\penalty0 \\mathchar`\\2 }%
+  \\do\\C{\\penalty0 \\mathchar`\\C }%
+  \\do\\B{\\penalty0 \\mathchar`\\B }%
 }
 \\level{Pro gradu -tutkielmasuunnitelma}"
 ("\\section{%s}" . "\\section*{%s}")
