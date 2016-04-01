@@ -87,7 +87,7 @@
 (find-file "~/gradu/paper/src/main.org" nil)
 
 (if old-version
-    (org-latex-export-as-latex 3 nil nil nil)
+    (org-export-as-latex 3 nil nil nil "~/gradu/paper/gen")
   (org-export-to-file 'latex "~/gradu/paper/gen/main.tex"
     nil nil nil nil '(:base-directory "~/gradu/paper/src")))
 
