@@ -214,6 +214,8 @@ Kuvan \ref{fig:sequence_c_to_c} tilanne on jäljelle jäänyt
 permutaatio, jossa koko mitattava suoritus tapahtuu
 natiivikomponentissa.
 
+# Mainitse BenchmarkParameter?
+
 * Mittaamisen haasteita
 
 Mittauksien käynnistämistä monimutkaistaa hieman se, että eri
@@ -310,14 +312,19 @@ arvioitu riittäväksi JIT-kääntämisen laukaisemiseksi.
 Oikean kierrosmäärän arvioimiseksi ja JIT-käännöksen todentamiseksi
 tehtiin mittaus, jossa samaa benchmarkia suoritetaan pienehköllä
 silmukkakierrosluvulla mutta monessa perättäisessä ajossa, ja
-verrataan vasteajan kehittymistä ajan suhteen.
+seurataan peräkkäisten vasteaikojen kehittymistä.
 
 # TODO tähän mittaus ja kuva !important
 # TODO tähän kuva vasteaika vs. mittausajo.
 
 * Benchmark-generaattori Benchmark Generator
 
+/Benchmark Generator/ on pythonkielinen ohjelma, joka tuottaa edellä
+kuvatun ohjelman lähtösilmukat sekä kutsujen kohteena olevat
+tynkämetodit. Ohjelma myös tulostaa c-kieliset moduulit sekä Java-kieliset
+luokat, joihin kyseiset silmukat ja metodit sijoitetaan.
 
+# TODO HERE
 
 ** Mittauskohde
 *** Luokitellut JNI-operaatiot
