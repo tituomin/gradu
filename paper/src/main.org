@@ -17,23 +17,23 @@
 
 
 * Johdanto
-#+INCLUDE: "../gen/chapters/intro.org" :minlevel 1
+#+INCLUDE: "../gen/chapters/intro.org" :minlevel 2
 * Yleiskatsaus Android-järjestelmään
-#+INCLUDE: "../gen/chapters/android_summary.org" :minlevel 1
+#+INCLUDE: "../gen/chapters/android_summary.org" :minlevel 2
 * Suorituskyky ohjelmistokehityksessä
-#+INCLUDE: "../gen/chapters/performance.org" :minlevel 1
+#+INCLUDE: "../gen/chapters/performance.org" :minlevel 2
 * Java-natiivirajapinta
-#+INCLUDE: "../gen/chapters/jni.org" :minlevel 1
+#+INCLUDE: "../gen/chapters/jni.org" :minlevel 2
 
 #+LATEX: \newpage
 * Koeasetelman kuvaus
-#+INCLUDE: "../gen/chapters/measurement-setup.org" :minlevel 1
+#+INCLUDE: "../gen/chapters/measurement-setup.org" :minlevel 2
 * Mittaustulokset
-#+INCLUDE: "../gen/chapters/measurement-results.org" :minlevel 1
+#+INCLUDE: "../gen/chapters/measurement-results.org" :minlevel 2
 * Tulosten analyysi
-#+INCLUDE: "../gen/chapters/measurement-results.org" :minlevel 1
+#+INCLUDE: "../gen/chapters/measurement-results.org" :minlevel 2
 * Johtopäätökset
-#+INCLUDE "../gen/chapters/conclusions.org" :minlevel 1
+#+INCLUDE "../gen/chapters/conclusions.org" :minlevel 2
 
 #+LATEX: \newpage
 #+LATEX: \bibliographystyle{templates/tktl}
