@@ -77,7 +77,7 @@ palveluhakemistokomponenttiin.
 
 Osa Androidin järjestelmäpalveluista on toteutettu Java-kielellä ja
 osa C++-kielellä. Javan natiivirajapinta JNI esitellään tarkemmin
-luvussa 3, mutta voimme jo havaita, että natiivirajapintaa käytetään
+luvussa \ref{sec-jni}, mutta voimme jo havaita, että natiivirajapintaa käytetään
 yleisesti järjestelmän sisäisessä toteutuksessa, kun Java-koodista on
 kutsuttava matalamman arkkitehtuuritason natiiveja kirjastoja
 @@embedded(78).  Esimerkiksi Binder-kutsumekanismin toteutus on

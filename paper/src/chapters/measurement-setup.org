@@ -1,3 +1,4 @@
+\label{sec-measurement-setup}
 
 * Mittausohjelmisto
 
@@ -23,16 +24,18 @@ avulla.
 # todo sisäinen viittaus tohon alle: miten ?
 
 Yksittäisen funktiokutsun mitattu vasteaika ei kerro mitään
-yleispätevää kyseisestä funktiosta. Siksi samaa funktiota
-kutsutaan varioiden kaikkia mahdollisia asioita, joita
-funktiokutsussa voi varioida: käytännössä kutsuparametrien
-määrää ja niiden tyyppiä. Lisäksi jos kyseessä on merkkijonoja,
-taulukoita tai muita vaihtelevankokoisia syötteitä käsittelevä
-funktio, varioidaan käsiteltävän syötteen kokoa.
+yleispätevää kyseisestä funktiosta
+(ks. luku \ref{performance:representativeness-generalization},
+s.\pageref{performance:representativeness-generalization}). Siksi samaa
+funktiota kutsutaan varioiden kaikkia mahdollisia asioita, joita
+funktiokutsussa voi varioida: käytännössä kutsuparametrien määrää ja
+niiden tyyppiä. Lisäksi jos kyseessä on merkkijonoja, taulukoita tai
+muita vaihtelevankokoisia syötteitä käsittelevä funktio, varioidaan
+käsiteltävän syötteen kokoa.
 
 Esimerksi JNI-funktio \path{CallVoidMethod} vastaanottaa vaihtelevan määrän
 kutsuparametreja. Mittausajoissa sitä kutsutaan eri määrillä eri
-tyyppisiä parametreja, jolloin saadaan selville muunmuassakäyttäytyykö
+tyyppisiä parametreja, jolloin saadaan selville muun muassa, käyttäytyykö
 funktio eri tavalla käsitellessään primitiivityyppisiä ja
 viitetyyppisiä parametreja.
 

@@ -9,20 +9,20 @@ node "Android-laite" {
         () run
         [Benchmark]
         [Benchmark] - run
-        [NativeBenchmark] ..> run
+        [Native Benchmark] ..> run
       }
     }
     [perf record] - exec
-    [NativeBenchmark] ..> exec
+    [Native Benchmark] ..> exec
   }
 }
 
 node "Kehitysympäristö" {
 
   frame "Käännöstyökalut" {
-    [BenchmarkGenerator] --> [Benchmark] : " generoi"
+    [Benchmark generator] --> [Benchmark] : " generoi"
   }
-  [mittaustulokset] <- [NativeBenchmark]
+  [mittaustulokset] <- [Native Benchmark]
   [mittaustulokset] <- [perf record]
 
   frame "Analyysi" {

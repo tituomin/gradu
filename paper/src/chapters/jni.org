@@ -1,3 +1,4 @@
+\label{sec-jni}
 
 Kaikki Android-järjestelmään asennettavat tavalliset sovellukset
 suoritetaan omassa prosessissaan Dalvik-virtuaalikoneessa, vaikka ne

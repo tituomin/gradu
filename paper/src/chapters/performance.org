@@ -500,6 +500,7 @@ pituutta syklimäärässä.
 # todo: analysoi linuxin timeria ja schedulointia..
 # todo: onko dalvikissa ym. muissa komponenteissa jaksollisia ilmiöitä?
 * Mittauskohteen edustavuus ja tulosten yleistettävyys
+\label{performance:representativeness-generalization}
 
 Vaikka suorituskyvyn eri osatekijöitä voi arvioida ja mitata
 näennäisen tarkoilla kvantitatiivisilla mittareilla, tulosten
@@ -669,7 +670,7 @@ muistinhallinta/, /dynaamisen optimoinnin/ aiheuttama epädeterminismi
 sekä /järjestelmän lämmitysviiveet/ jotka johtuvat luokkien
 lataamisesta ja JIT-kääntämisestä @@coffee(83). Näiden hallitsemiseksi
 on omat mittausmenetelmänsä sekä tilastolliset työkalunsa, joita
-käsittelemme tarkemmin luvussa [[sec-5][5]]. 
+käsittelemme tarkemmin luvussa \ref{sec-measurement-setup}.
 
 Tutkielmassa mitataan Dalvik-virtuaalikoneen
 Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
