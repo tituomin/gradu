@@ -1,0 +1,49 @@
+@startuml
+
+package "templates" {
+        [arrays.py]
+        [c_jni_function.py]
+        [c_module.py]
+        [c_nativemethod.py]
+        [java_benchmark.py]
+        [java_counterparts.py]
+        [java_registry_init.py]
+        [loop_code.py]
+        [CustomBenchmarks.java]
+        [jni_interface_benchmarks.c]
+}
+
+'TODO: RENAME IN SOURCE ACCORDING TO THIS: '
+
+[templating] -- put
+[templating] -- partial
+put <.. [native_call_benchmarks]
+put <.. [custom_benchmarks]
+partial <.. [native_call_benchmarks]
+partial <.. [custom_benchmarks]
+templates <..[native_call_benchmarks]
+templates <.. [custom_benchmarks]
+templates ..> templating
+[jni_types] <.. [native_call_benchmarks]
+[jni_types] <.. [custom_benchmarks]
+
+[benchmark_generator] -- main
+[custom_benchmarks] -- write_custom_benchmarks
+[native_call_benchmarks] -- generate_benchmarks
+generate_benchmarks <.. [benchmark_generator]
+write_custom_benchmarks <.. [benchmark_generator]
+
+folder "Tiedostojärjestelmä" {
+  [generoidut Java-luokat]
+  [generoidut C-moduulit]
+}
+
+frame "Käännöstyökalu" {
+      main <.. [custom_rules.xml]
+}
+
+
+[benchmark_generator] -> Tiedostojärjestelmä : tulostaa
+custom_rules.xml .> Tiedostojärjestelmä
+
+@enduml

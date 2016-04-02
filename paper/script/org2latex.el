@@ -11,6 +11,8 @@
     (require 'org-latex)
     (require 'org-export-latex)))
 
+;(setq org-src-preserve-indentation t)
+
 (unless (boundp 'org-export-latex-classes)
   (setq org-export-latex-classes nil))
 (setq org-export-latex-listings t)
@@ -82,6 +84,7 @@
               depth)))
 
 (setq org-confirm-babel-evaluate nil)
+(setq org-export-babel-evaluate (not (getenv "SKIP_BABEL_EVALUATE"))) ; Change to true to get images
 (setq org-export-latex-format-toc-function 'org-export-latex-no-toc)
 (setq org-export-with-sub-superscripts nil)
 

@@ -101,7 +101,8 @@ Missä mennään:
 **** DONE metatiedot erilliseen tekstitiedostoon
 *** DONE tsekkaa automaattisesti datasta columnien määrä?
 
-* Teksti
+* Teksti [6/21]
+** TODO latex koodiblokkien fonttikoko ---
 ** huomiot hardcopy <2014-01-12 Sun>
 *** poista väite tekstin kulusta
     [[file:~/gradu/paper/src/chapters/performance.org::poista-seuraavaksi]]

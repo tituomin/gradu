@@ -317,43 +317,133 @@ seurataan peräkkäisten vasteaikojen kehittymistä.
 # TODO tähän mittaus ja kuva !important
 # TODO tähän kuva vasteaika vs. mittausajo.
 
-* Benchmark-generaattori Benchmark Generator
+* Benchmark Generator
 
-/Benchmark Generator/ on pythonkielinen ohjelma, joka tuottaa edellä
-kuvatun ohjelman lähtösilmukat sekä kutsujen kohteena olevat
-tynkämetodit. Ohjelma myös tulostaa c-kieliset moduulit sekä Java-kieliset
-luokat, joihin kyseiset silmukat ja metodit sijoitetaan.
+/Benchmark Generator/ on Python-kielinen ohjelma, joka tuottaa
+/NativeBenchmark/-sovelluksen lähtösilmukat sekä kutsujen kohteena
+olevat tynkämetodit. Ohjelma myös tulostaa C-kieliset moduulit sekä
+Java-kieliset luokat, joihin kyseiset silmukat ja metodit sijoitetaan.
 
-# TODO HERE
+#+NAME: fig:benchmark_generator_architecture
+#+INCLUDE: "../../src/figures/architecture-benchmark-generator.puml" src plantuml :results file :file /tmp/architecture-benchmark_generator.png :exports results
+#+CAPTION: Benchmark Generator: komponentit
+#+LABEL: fig:benchmark_generator_architecture
+#+RESULTS: fig:benchmark_generator_architecture
 
-** Mittauskohde
-*** Luokitellut JNI-operaatiot
-    # pitäisikö tämä siirtää tulosten käsittelyyn?
-    # luultavasti
-     5 sivua\newline 2. 2. 2014
+Kuvan \ref{fig:benchmark_generator_architecture} alaosasta nähdään,
+että ~benchmark_generator~-päämoduulia kutsuu automaattisesti
+Ant-käännöstyökalu, ja generoidut lähdekooditiedostot tulevat näin
+osaksi normaaleja Androidin SDK- ja NDK- käännösprosesseja.
 
-     JNI-operaatiot kategorisoidaan ja esitellään tiiviisti ja kommentoidaan
-     niiden mittaamiseen liittyviä haasteita. Kategoriat ovat:
-     - Viitteidenhallinta
-     - Olioiden käsittely
-     - Kenttien ja metodien löytäminen
-     - Kenttien ja metodien käyttö
-     - Merkkijonojen ja taulukoiden käsittely
-     - Tehostetut IO-operaatiot (NIO)
+Lähdekoodien generointi perustuu seuraavaan kahteen
+suunnitteluratkaisuun.  Ensinnäkin generointikoodi ottaa
+lähtökohdakseen ~jni_types~-moduulissa määritellyt tietorakenteet,
+jotka sisältävät tarvittavat tiedot kaikista Java-ohjelmoinnin
+tyypeistä ja niiden vastinpareista C-kielessä.
 
-*** Sivuutetut operaatiot
-     1 sivu\newline 3. 2. 2014
+Java- ja C-koodia käsitellään merkkijonoina eikä esimerkiksi
+rakenteellisina syntaksipuina, mutta monimutkaisia
+lähdekoodimerkkijonoja on vältetty upottamasta suoraan Python-kielisen
+logiikan keskelle. Lähdekoodin generoinnin pohjina toimivat
+~templates~-paketista löytyvät aihiot. Ne muistuttavat
+HTML-ohjelmoinnissa käytettyjen template-kielten aihioita. Aihiot
+koostuvat staattisena pysyvästä kohdekielisestä merkkijonosta, jonka
+sisällä olevat paikkamerkit korvataan muuttujien vaihtuvilla arvoilla.
 
-     Mittausten ulkopuolelle jääneet JNI-funktiot perusteluineen.
-     - Natiivimetodien rekisteröinti
-     - Luokkaoperaatiot
-     - Reflektio
-     - Virtuaalikone ja versiontarkistus
+Seuraavassa esimerkissä näkyy ~jni_types~-moduulin ~dict~-tyyppimääritelmä
+~int~-primitiivityypille.
+
+#+INCLUDE: "/home/tituomin/nativebenchmark/script/jni_types.py" src python :lines "52-61"
+#+LABEL: src:jni-gen-int
+#+NAME: src:jni-gen-int
+#+CAPTION: foo bar
+
+Tietueen kentistä ~symbol~ on tyypin sisäinen tunniste
+generointikoodissa. Kentät ~java~ sekä ~c~ ovat tyypin nimet
+molemmissa kielissä, ja ~java-literal~ sekä ~c-literal~ sisältävät
+tyyppiä vastaavan literaalin, jonka voi aina lisätä lähdekoodiin, kun
+tarvitaan kyseisen tyyppistä arvoa. Kenttä ~jvm-desc~ on
+Java-tavukoodissa ja joissain JNI-kutsuissa käytetty tyyppimääritys.
+Kentän ~representative~ arvon perusteella voidaan alustavien
+mittausten jälkeen välttää turhien benchmarkien aikaavievä suoritus --
+esimerkiksi ~int~- ja ~char~-tyyppien välillä ei huomattu mitään eroa,
+joten mittauksissa voidaan käyttää vain ~int~-tyyppisiä benchmarkeja
+edustamaan molempia.
+
+# Seuraavassa esimerkissä on vastaava määritelmä ~String~-viitetyypille.
+
+# #+INCLUDE: "/home/tituomin/nativebenchmark/script/jni_types.py" src python :lines "118-128"
+
+# Eroa ~int~-tyypiin on erityisesti siinä, ettei C-ohjelmassa ole suoraa
+# literaalia Javan ~String~-arvolle (kenttä ~c-literal~). ~String~ on
+# myös merkitty viitetyyppiseksi (kenttä ~is-object~).
+
+Generointiin käytettävät aihiot näyttävät seuraavalta. Esimerkki
+on tiedostosta \path{templates/c_nativemethod.py}.
+
+#+INCLUDE: "/home/tituomin/nativebenchmark/script/templates/c_nativemethod.py" src python :lines "7-18"
+
+Template-kielen paikkamerkkeinä tulkittavat osat erotetaan
+kirjaimellisesti tulkittavasta osasta erottimilla ~<%~ ja ~%>~,
+joille ei ole varattua merkitystä kohdekielissä. Kyseisten merkintöjen
+käyttöä aihioissa esimerkiksi kohdekielen merkkijonoliteraalin sisällä
+ei tueta.
+
+Aihion voi täydentää valittujen parametrien arvoilla
+~templating~-moduulin funktioilla ~put~ ja ~partial~. Funktio ~put~
+korvaa aihion kaikki paikkamerkit samannimisten nimettyjen parametrien
+arvoilla poistaen puuttuvia argumentteja vastaavat
+paikkamerkit. Funktio ~partial~ jättää puuttuvien argumenttien
+paikkamerkinnät paikoilleen, mikä helpottaa erikoistuneiden aihioiden
+johtamista samasta perusaihiosta. Funktiota ~put~ käytetään kuten
+seuraavassa esimerkissä.
+
+#+INCLUDE: "/home/tituomin/nativebenchmark/script/make_custom_benchmarks.py" src python :lines "391-398"
+#+BEGIN_SRC python
+[...]
+#+END_SRC
+
+Molemmat funktiot on helppo toteuttaa, kun tukena on
+seuraavat Python-sanakirjaluokasta periytetyt kaksi aliluokkaa.
+
+#+INCLUDE: "/home/tituomin/nativebenchmark/script/templating.py" src python :lines "6-13"
+
+Kun ~put~-kutsun nimetyt argumentit tallennetaan ~PurgeDict~-olioon,
+mahdollisesti puuttuvien avainten arvoiksi tulee automaattisesti
+tyhjä. Vastaavasti ~partial~-kutsun argumentit tallennettuna
+~PartialDict~-olioon toimivat niin, että paikkamerkin puuttuva arvo
+korvataan samanlaisella paikkamerkillä.
+
+# TODO: pseudokoodi benchmarkit luovasta silmukasta?
 
 * Mittaustulosten käsittelijä Benchmark Analyzer
-    Yleisesittely tulosten analysointiin käytettävästä ohjelmasta.
+
+/NativeBenchmark/-sovelluksen näkökulmasta suoritettavilla
+benchmarkeilla ei ole mitään suhdetta toisiinsa, vaan jokainen
+suoritetaan toisistaan riippumatta ja jokaisesta mittauksesta
+tallennetaan mahdollisimman täydelliset parametritiedot
+tekstitiedostoon.  Vasteaikamittauksissa tiedostoon tallennetaan myös
+mittaustulos eli vasteaika, kutsuprofiilin tapauksessa sen sijaan
+tiedostopolku ~perf record~-työkalun tulostamaan
+näytetiedostoon. Seuraavassa on esimerkki tekstitiedoston sisällöstä.
+
+# TODO: konvertoi alle taulukko mittaustiedostosta:
+| Class            | Response time | Units | parameter_type_int_count | parameter_type_char_count | very | long | table with lots | and lots of text |
+|------------------+---------------+-------+--------------------------+---------------------------+------+------+-----------------+------------------|
+| J2Benchmark00026 |             2 |     3 |                        4 |                         5 |      |      |                 |                  |
+| 1                |             2 |     3 |                        4 |                         5 |      |      |                 |                  |
+|------------------+---------------+-------+--------------------------+---------------------------+------+------+-----------------+------------------|
+
+Koska kaikki varioitavat parametrit on tallennettu tiedostoon,
+/Benchmark Analyzer/ -ohjelman tehtäväksi jää yhdistellä jälkikäteen
+saman parametrin vaihtelevat arvot yhdeksi mittaussarjaksi ja piirtää
+tulokset kuvaajiksi ~gnuplot~-ohjelmalla sekä tulostaa ne taulukoiksi
+tekstitiedostoihin. Analyysiohjelmalla on myös käytössään
+~jni_types~-moduulin tyyppimääritykset.
 
 ** Tilastolliset menetelmät
     2 sivua\newline 10. 2. 2014
+
+    # TODO: ei ole juurikaan käytetty muuta kuin interpolointia
 
     Käytetyt tilastolliset menetelmät.

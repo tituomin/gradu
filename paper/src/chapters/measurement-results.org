@@ -1,3 +1,29 @@
+* Mittauskohteet
+** Luokitellut JNI-operaatiot
+   # pitäisikö tämä siirtää tulosten käsittelyyn?
+   # luultavasti
+    5 sivua\newline 2. 2. 2014
+
+    JNI-operaatiot kategorisoidaan ja esitellään tiiviisti ja kommentoidaan
+    niiden mittaamiseen liittyviä haasteita. Kategoriat ovat:
+    - Viitteidenhallinta
+    - Olioiden käsittely
+    - Kenttien ja metodien löytäminen
+    - Kenttien ja metodien käyttö
+    - Merkkijonojen ja taulukoiden käsittely
+    - Tehostetut IO-operaatiot (NIO)
+
+** Sivuutetut operaatiot
+    1 sivu\newline 3. 2. 2014
+
+    Mittausten ulkopuolelle jääneet JNI-funktiot perusteluineen.
+    - Natiivimetodien rekisteröinti
+    - Luokkaoperaatiot
+    - Reflektio
+    - Virtuaalikone ja versiontarkistus
+
+
+
 * Vasteaikamittaukset
    5 sivua\newline 17. 2. 2014
 
