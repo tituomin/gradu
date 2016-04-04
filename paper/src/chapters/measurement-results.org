@@ -1,26 +1,206 @@
-* Mittauskohteet
-** Luokitellut JNI-operaatiot
-   # pitäisikö tämä siirtää tulosten käsittelyyn?
-   # luultavasti
-    5 sivua\newline 2. 2. 2014
+Tässä luvussa esitellään kerätyt mittaustulokset ja tehdään niistä
+alustavia havaintoja. Sitä ennen mittauksen kohteena olevat
+JNI-rajapinnan palvelut luokitellaan palvelun luonteen mukaan. Myös
+mittausten ulkopuolelle jätetyt operaatiot mainitaan perusteluineen.
 
-    JNI-operaatiot kategorisoidaan ja esitellään tiiviisti ja kommentoidaan
-    niiden mittaamiseen liittyviä haasteita. Kategoriat ovat:
-    - Viitteidenhallinta
-    - Olioiden käsittely
-    - Kenttien ja metodien löytäminen
-    - Kenttien ja metodien käyttö
-    - Merkkijonojen ja taulukoiden käsittely
-    - Tehostetut IO-operaatiot (NIO)
+* Luokitellut JNI-operaatiot
 
-** Sivuutetut operaatiot
-    1 sivu\newline 3. 2. 2014
+# TODO metodisignaturet lisää alle?
 
-    Mittausten ulkopuolelle jääneet JNI-funktiot perusteluineen.
-    - Natiivimetodien rekisteröinti
-    - Luokkaoperaatiot
-    - Reflektio
-    - Virtuaalikone ja versiontarkistus
+Tämän luokittelun lähtökohtana ovat JNI-rajapinnan tarjoamat
+funktiot /natiiviohjelmalle/. Kaikkia näitä funktioita kutsutaan
+funktiokutsulla, jolla on seuraava C-kielinen rakenne:
+\verb|(*env)->|\phi\verb|(*env,| \alpha\verb|);|. Kutsussa \phi
+korvataan JNI-funktion nimellä ja \alpha vaadituilla argumenteilla.
+~env~ on osoitinmuuttuja JNI-ympäristöön.
+
+Luokittelussa kerrotaan myös, mitä vertauskohtaa kyseiselle
+operaatiolle mahdollisesti on käytetty eri lähtö- ja kohdekielien Java
+ja C eri permutaatiossa.
+
+# JNI-operaatiot kategorisoidaan ja esitellään tiiviisti ja kommentoidaan
+# niiden mittaamiseen liittyviä haasteita. Kategoriat ovat:
+# - Viitteidenhallinta
+# - Olioiden käsittely
+# - Kenttien ja metodien löytäminen
+# - Kenttien ja metodien käyttö
+# - Merkkijonojen ja taulukoiden käsittely
+# - Tehostetut IO-operaatiot (NIO)
+
+** Metodien ja funktioiden kutsuminen
+Mittausten kannalta keskiössä ovat JNI-natiivirajapinnan kautta
+tehtävät aliohjelmakutsut erityyppisillä parametreilla.
+
+Operaatiot suunnassa C \rightarrow Java ovat
+1. \verb|Call|\tau\verb|Method|,
+2. \verb|CallNonVirtual|\tau\verb|Method| ja
+3. \verb|CallStatic|\tau\verb|Method|.
+
+Operaatioista (1) huomioi olion luokkahierarkian eli kutsu sidotaan
+oikeaan luokkaan dynaamisesti kuten Javan metodikutsussa. Sen sijaan
+(2) kutsuu aina eksplisiittisesti määritellyn luokan metodia. (3)
+kutsuu staattista metodia. Variaatioita (1)-(3) vertaillaan
+mittauksissa.
+
+Metodien kutsuminen vaatii seuraavia tukipalveluita, joita on mitattu
+erikseen: ~GetMethodID~ ja ~GetStaticMethodID~. Kuten suositeltu,
+palveluita ei mittauksissa kutsuta joka kerta jokaisen metodikutsun
+yhteydessä.
+
+Vastinpari suunnassa Java \rightarrow C on ~native~ -metodin
+kutsuminen Javasta eli C-ohjelmassa olevan funktion
+kutsuminen. Variaatioille (1)--(2) ei ole vastinetta C-kielessä, mutta
+~native~-metodin voi merkitä staattiseksi (3).
+
+Vastinpari suunnassa Java \rightarrow Java on normaali
+Java-metodikutsu. Vastinpari suunnassa C \rightarrow C on normaali
+funktiokutsu.
+
+** Merkkijonojen käsittely
+
+Java-merkkijonojen sisältöä käsitellään natiivikomponentista seuraavilla
+operaatioilla. Osoittimen palauttavat operaatiot ovat
+
+1. ~GetStringChars~ ja ~ReleaseStringChars~,
+2. ~GetStringCritical~ ja ~ReleaseStringUTFChars~ sekä
+3. ~GetStringUTFChars~ ja ~ReleaseStringCritical~.
+
+Kopioivat operaatiot ovat
+1. ~GetStringRegion~ ja
+2. ~GetStringUTFRegion~.
+
+Tukioperaatiot
+1. ~GetStringLength~
+2. ~GetStringUTFLength~
+
+Operaatioille ei ole mittauksissa vastinpareja, sillä kyseessä on
+oleellisesti
+
+# TODO HERE I AM
+
+# #+CAPTION: Merkkijonon käsittelyn vertailukohdat
+# #+LABEL: tab-string-counter
+# |   | Java \rightarrow C | C \rightarrow C | Java \rightarrow Java |   |
+# |---+--------------------+-----------------+-----------------------+---|
+# | / | <                  |                 | >                     |   |
+# | a | b                  | c               |                       |   |
+# |   |                    |                 |                       |   |
+
+
+
+
+** Taulukoiden käsittely
+*** DONE GetArrayLength                                                                  :util:read:
+*** DONE GetObjectArrayElement                                                                :read:
+*** DONE SetObjectArrayElement                                                               :write:
+*** DONE Get<PrimitiveType>ArrayRegion Routines                                        :group2:copy:
+*** DONE Set<PrimitiveType>ArrayRegion Routines                                        :group2:copy:
+
+*** DONE Get<PrimitiveType>ArrayElements Routines                                           :group1:
+*** SUPPORT Release<PrimitiveType>ArrayElements Routines                                    :group1:
+
+*** DONE GetPrimitiveArrayCritical,                                                         :group3:
+*** SUPPORT ReleasePrimitiveArrayCritical                                                   :group3:
+** Kenttien käsittely
+*** Ilmentymän kentät                                                                          :dep:
+**** DONE GetFieldID                                                                        :search:
+**** DONE COUNTERPOINT Get<type>Field Routines
+     skip others than J target, because
+     aim of measuring is to measure the jni call
+     overhead, which doesn't exist for j2c, c2c
+     - [X] C2J
+     - [X] J2J
+     - [ ] J2C
+     - [ ] C2C
+**** COUNTERPOINT Set<type>Field Routines
+     - [X] C2J
+     - [X] J2J
+     - [ ] J2C
+     - [ ] C2C
+*** Staattiset kentät                                                                          :dep:
+**** DONE GetStaticFieldID                                                                  :search:
+**** COUNTERPOINT GetStatic<type>Field Routines
+     - [X] C2J
+     - [X] J2J
+     - [ ] J2C
+     - [ ] C2C
+**** COUNTERPOINT SetStatic<type>Field Routines
+     - [X] C2J
+     - [X] J2J
+     - [ ] J2C
+     - [ ] C2C
+** Olioiden käsittely
+*** DONE GetObjectClass                                                                       :read:
+*** EXCLUDE GetObjectRefType                                                                  :read:
+*** EXCLUDE IsInstanceOf                                                             :read:traverse:
+*** EXCLUDE IsSameObject                                                                      :read:
+** Muistia varaavat operaatiot
+*** DONE AllocObject                                                                         :alloc:
+*** DONE NewObject, NewObjectA, NewObjectV                                             :comp2:alloc:
+
+*** DONE NewString                                                                           :alloc:
+*** DONE NewStringUTF                                                                        :alloc:
+
+
+*** DONE NewObjectArray                                                                      :alloc:
+*** DONE New<PrimitiveType>Array Routines                                                    :alloc:
+
+** Paikalliset ja globaalit viitteet
+*** Global References
+**** EXCLUDE NewGlobalRef                                                                       :gc:
+**** EXCLUDE DeleteGlobalRef                                                                    :gc:
+*** Local References
+**** EXCLUDE EnsureLocalCapacity                                                          :allocref:
+**** EXCLUDE NewLocalRef                                                         :comp1:gc:allocref:
+**** EXCLUDE DeleteLocalRef                                                      :comp1:gc:allocref:
+**** DONE PushLocalFrame                                                            :comp1:allocref:
+**** DONE PopLocalFrame                                                             :comp1:allocref:
+*** Weak Global References                                                            :unclear:rtfm:
+**** EXCLUDE NewWeakGlobalRef                                                             :allocref:
+**** EXCLUDE DeleteWeakGlobalRef                                                          :allocref:
+** Poikkeukset
+*** EXCLUDE Throw                                                                          :special:
+*** EXCLUDE ThrowNew                                                                 :special:alloc:
+*** DONE ExceptionCheck                                                                       :read:
+*** EXCLUDE ExceptionOccurred                                                                 :read:
+*** EXCLUDE ExceptionClear
+*** EXCLUDE ExceptionDescribe                                                              :exclude:
+*** EXCLUDE FatalError                                                                     :exclude:
+** Natiivimetodien rekisteröinti
+*** EXCLUDE RegisterNatives                                                                :exclude:
+*** EXCLUDE UnregisterNatives                                                              :exclude:
+** Rinnakkaisohjelmointi
+*** EXCLUDE MonitorEnter                                                                     :synch:
+*** EXCLUDE MonitorExit                                                                      :synch:
+** Non-blocking IO                                                               :important:
+*** DONE NewDirectByteBuffer                                                             :important:
+*** DONE GetDirectBufferAddress                                                          :important:
+*** DONE GetDirectBufferCapacity                                                              :read:
+** Luokkien käsittely                                                                :exclude:maybe:
+*** DONE FindClass                                                            :exclude:maybe:search:
+*** EXCLUDE DefineClass                                                                    :exclude:
+*** EXCLUDE GetSuperclass                                                   :exclude:maybe:traverse:
+*** EXCLUDE IsAssignableFrom                                                :exclude:maybe:traverse:
+** Reflektio                                                                               :exclude:
+*** EXCLUDE FromReflectedMethod
+*** EXCLUDE FromReflectedField
+*** EXCLUDE ToReflectedMethod
+*** EXCLUDE ToReflectedField
+** Java VM-rajapinta                                                             :exclude:
+*** EXCLUDE GetJavaVM                                                                      :exclude:
+** Versiotiedot                                                                            :exclude:
+*** EXCLUDE GetVersion                                                                     :exclude:
+*** EXCLUDE Constants                                                                      :exclude:
+
+
+* Sivuutetut operaatiot
+   1 sivu\newline 3. 2. 2014
+
+   Mittausten ulkopuolelle jääneet JNI-funktiot perusteluineen.
+   - Natiivimetodien rekisteröinti
+   - Luokkaoperaatiot
+   - Reflektio
+   - Virtuaalikone ja versiontarkistus
 
 
 
