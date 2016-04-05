@@ -120,7 +120,7 @@ Kopioivat operaatiot ovat:
 Suoria vertailukohtia näillekään operaatioille ei ole muissa
 kutsusuunnissa kuin C \rightarrow Java, jälleen kerran
 lukuunnottamatta ~NIO~-rajapintaa (kohta
-\label{sec:measurement-classification-nio}), jonka avulla natiivi- ja
+\ref{sec:measurement-classification-nio}), jonka avulla natiivi- ja
 Java-komponentit voivat myös käsitellä samaa muistialuetta.
 
 # TODO HERE
