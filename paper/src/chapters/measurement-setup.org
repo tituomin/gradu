@@ -216,6 +216,11 @@ natiivikomponentissa.
 
 # Mainitse BenchmarkParameter?
 
+* Testilaitteisto
+
+Google Nexus S
+# https://en.wikipedia.org/wiki/Nexus_S
+
 * Mittaamisen haasteita
 
 Mittauksien käynnistämistä monimutkaistaa hieman se, että eri
@@ -313,6 +318,10 @@ Oikean kierrosmäärän arvioimiseksi ja JIT-käännöksen todentamiseksi
 tehtiin mittaus, jossa samaa benchmarkia suoritetaan pienehköllä
 silmukkakierrosluvulla mutta monessa perättäisessä ajossa, ja
 seurataan peräkkäisten vasteaikojen kehittymistä.
+
+\begin{figure}
+    \input{figures/warmup-proof}
+\end{figure}
 
 # TODO tähän mittaus ja kuva !important
 # TODO tähän kuva vasteaika vs. mittausajo.
