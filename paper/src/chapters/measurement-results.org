@@ -234,9 +234,7 @@ Java-komponentit voivat myös käsitellä samaa muistialuetta.
 
    Raakatulokset.
 
-\begin{figure}
-    \input{figures/jei}
-\end{figure}
+{{{plot(jei)}}}
 
 * Kutsuprofiilit
    5 sivua\newline 24. 2. 2014

@@ -16,6 +16,8 @@
 #+LATEX: \definecolor{listingc}{rgb}{0.98,0.98,0.98}
 #+LATEX: \newcommand{\todo}[1]{}
 
+#+MACRO: plot \begin{figure} \input{figures/plots/plot-$1.tex} \end{figure}
+
 #+MACRO: c   \cite{$1}
 #+MACRO: cp   \cite[s.~$2]{$1}
 # just testing alternatives
