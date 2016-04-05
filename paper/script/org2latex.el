@@ -1,4 +1,5 @@
-
+(require 'package)
+(package-initialize)
 (require 'org)
 (require 'org-install)
 
@@ -56,12 +57,14 @@
 \\usepackage{chngcntr}
 \\usepackage{xcolor}
 \\usepackage{pifont}
-\\usepackage{epstopdf}
 \\usepackage{listings}
 \\usepackage{tablefont}
 \\counterwithin{figure}{section}
 \\counterwithin{table}{section}
 \\usepackage{url,etoolbox}
+\\usepackage{graphicx}
+\\graphicspath{{./figures/}}
+\\usepackage{epstopdf}
 \\appto\\UrlSpecials{%
   \\do\\F{\\penalty0 \\mathchar`\\F }%
   \\do\\L{\\penalty0 \\mathchar`\\L }%
@@ -87,6 +90,8 @@
 (setq org-export-babel-evaluate (not (getenv "SKIP_BABEL_EVALUATE"))) ; Change to true to get images
 (setq org-export-latex-format-toc-function 'org-export-latex-no-toc)
 (setq org-export-with-sub-superscripts nil)
+
+(setq org-latex-prefer-user-labels t)
 
 (add-to-list latex-encoding-alist '("utf8" . "latin9"))
 
