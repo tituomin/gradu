@@ -33,7 +33,7 @@
 * Tulosten analyysi
 #+INCLUDE: "../gen/chapters/measurement-analysis.org" :minlevel 2
 * Johtopäätökset
-#+INCLUDE "../gen/chapters/conclusions.org" :minlevel 2
+#+INCLUDE: "../gen/chapters/conclusions.org" :minlevel 2
 
 #+LATEX: \newpage
 #+LATEX: \bibliographystyle{templates/tktl}
