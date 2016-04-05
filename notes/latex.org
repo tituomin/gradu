@@ -1,2 +1,5 @@
 nice floating image ...
 #+ATTR_LATEX: :float wrap :width 0.38\textwidth :placement {H}{0.4\textwidth}
+
+http://www.gnuplotting.org/output-terminals/
+epslatex
