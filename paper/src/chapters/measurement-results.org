@@ -233,6 +233,11 @@ Java-komponentit voivat myös käsitellä samaa muistialuetta.
    5 sivua\newline 17. 2. 2014
 
    Raakatulokset.
+
+\begin{figure}
+    \input{figures/jei}
+\end{figure}
+
 * Kutsuprofiilit
    5 sivua\newline 24. 2. 2014
 
