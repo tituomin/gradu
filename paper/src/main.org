@@ -3,6 +3,7 @@
 #+LANGUAGE: fi
 #+LaTeX_CLASS: gradu
 #+LaTeX_CLASS_OPTIONS: [gradu]
+#+OPTIONS: toc:nil
 
 #+BEGIN_abstract
 #+INCLUDE: "chapters/abstract.org"
