@@ -31,7 +31,7 @@
 * Mittaustulokset
 #+INCLUDE: "../gen/chapters/measurement-results.org" :minlevel 2
 * Tulosten analyysi
-#+INCLUDE: "../gen/chapters/measurement-results.org" :minlevel 2
+#+INCLUDE: "../gen/chapters/measurement-analysis.org" :minlevel 2
 * Johtopäätökset
 #+INCLUDE "../gen/chapters/conclusions.org" :minlevel 2
 

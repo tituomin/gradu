@@ -73,10 +73,24 @@ Tukioperaatiot
 1. ~GetStringLength~
 2. ~GetStringUTFLength~
 
-Operaatioille ei ole mittauksissa vastinpareja, sillä kyseessä on
-oleellisesti
+Operaatioille ei ole mittauksissa varsinaisia vastinpareja, sillä
+kyseessä on ainoa tapa käsitellä natiivikoodissa Javan
+merkkijonoja. C:n merkkijonojen käsittely C-kielessä ei vaadi mitään
+vastaavia ylimääräistä operaatiota kuten ei myöskään
+Java-merkkijonojen käsittely Java-koodissa.
 
-# TODO HERE I AM
+C-merkkijonojen eli ~char~-taulukoiden käsittely
+~java.nio.CharBuffer~-olioina Java-koodissa sen sijaan on mahdollista
+~Non-blocking IO~-API:n kautta (ks. kohta
+\ref{sec:measurement-classification-nio}), jos ~CharBuffer~-olio
+luodaan Java-komponentissa ja välitetään JNI:n kautta
+natiivikomponentille. Tällöin JNI:n merkkijononkäsittelyoperaatioiden
+aiheuttamaa rasitetta vastaa oikeastaan yksi natiivimetodikutsu
+yhdistettynä JNI:n NIO-operaatioon
+\path{GetDirectBufferAddress}. ~CharBuffer~-oliossa on myös metodit
+Java-merkkijonon (~String~) sisällön tehokkaaseen kopioimiseen olioon.
+
+# TODO puuttuu sellaisenaan counterparteista (voiko komposoida?)
 
 # #+CAPTION: Merkkijonon käsittelyn vertailukohdat
 # #+LABEL: tab-string-counter
@@ -86,21 +100,31 @@ oleellisesti
 # | a | b                  | c               |                       |   |
 # |   |                    |                 |                       |   |
 
-
-
-
 ** Taulukoiden käsittely
-*** DONE GetArrayLength                                                                  :util:read:
-*** DONE GetObjectArrayElement                                                                :read:
-*** DONE SetObjectArrayElement                                                               :write:
-*** DONE Get<PrimitiveType>ArrayRegion Routines                                        :group2:copy:
-*** DONE Set<PrimitiveType>ArrayRegion Routines                                        :group2:copy:
 
-*** DONE Get<PrimitiveType>ArrayElements Routines                                           :group1:
-*** SUPPORT Release<PrimitiveType>ArrayElements Routines                                    :group1:
+Taulukoiden käsittely on täysin analogista merkkijonojen käsittelyn
+kanssa. Osoittimen palauttavat operaatiot ovat:
 
-*** DONE GetPrimitiveArrayCritical,                                                         :group3:
-*** SUPPORT ReleasePrimitiveArrayCritical                                                   :group3:
+1. \verb|Get|\tau\verb|ArrayElements| ja \verb|Release|\tau\verb|ArrayElements|
+2. ~GetPrimitiveArrayCritical~ ja ~ReleasePrimitiveArrayCritical~
+
+Yllä \tau on jokin Javan primitiivityypeistä. Viitetyyppisten
+taulukoiden elementtejä voi käsitellä vain yksi kerrallaan
+operaatioilla ~GetObjectArrayElement~ ja ~SetObjectArrayElement~.
+
+Kopioivat operaatiot ovat:
+
+1. ~Get~\(\tau\)\verb|ArrayRegion| ja
+2. \verb|Set|\(\tau\)\verb|ArrayRegion|
+
+Suoria vertailukohtia näillekään operaatioille ei ole muissa
+kutsusuunnissa kuin C \rightarrow Java, jälleen kerran
+lukuunnottamatta ~NIO~-rajapintaa (kohta
+\label{sec:measurement-classification-nio}), jonka avulla natiivi- ja
+Java-komponentit voivat myös käsitellä samaa muistialuetta.
+
+# TODO HERE
+
 ** Kenttien käsittely
 *** Ilmentymän kentät                                                                          :dep:
 **** DONE GetFieldID                                                                        :search:
@@ -173,6 +197,7 @@ oleellisesti
 *** EXCLUDE MonitorEnter                                                                     :synch:
 *** EXCLUDE MonitorExit                                                                      :synch:
 ** Non-blocking IO                                                               :important:
+\label{sec:measurement-classification-nio}
 *** DONE NewDirectByteBuffer                                                             :important:
 *** DONE GetDirectBufferAddress                                                          :important:
 *** DONE GetDirectBufferCapacity                                                              :read:
