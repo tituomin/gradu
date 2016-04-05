@@ -45,7 +45,7 @@ gen/main-latin.tex: main.tex
 	iconv -f UTF-8 -t ISO-8859-1 gen/main.tex -o gen/main-latin.tex
 
 main.pdf: gen/main-latin.tex
-	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/tituomin-gradu -pdf -pdflatex="pdflatex -interaction nonstopmode" -use-make gen/main-latin.tex
+	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/tituomin-gradu -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make gen/main-latin.tex
 #	chmod a+r build/tituomin-gradu.pdf
 #	cp build/tituomin-gradu.pdf ~/public_html/
 
