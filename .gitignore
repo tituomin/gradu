@@ -1,5 +1,6 @@
 paper/build
 paper/gen
+paper/figures/plots
 *.aux
 *.bbl
 *.blg

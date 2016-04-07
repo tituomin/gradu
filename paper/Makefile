@@ -2,6 +2,12 @@
 CHAPTERS := $(wildcard src/chapters/*.org)
 BUILD_DIRS := gen gen/chapters build
 
+FIGURE_SOURCES := $(shell find figures/plots -name '*.tex' -and -not -name '*latin.tex')
+FIGURE_BASENAMES := $(basename $(FIGURE_SOURCES))
+FIGURE_LATIN_BASENAMES := $(addsuffix -latin,$(FIGURE_BASENAMES))
+FIGURE_LATIN := $(addsuffix .tex,$(FIGURE_LATIN_BASENAMES) )
+
+
 vpath %.org  src
 vpath %.tex  gen
 
@@ -41,10 +47,17 @@ main.tex: src/main.org gen/chapters_generated
 # -interactive=nonstopmode keeps the pdflatex backend from stopping at a
 # missing file reference and interactively asking you for an alternative.
 
+figures/plots/plot-%-latin.tex: figures/plots/plot-%.tex
+	iconv -f UTF-8 -t ISO-8859-1 $< -o $@
+
+
+
 gen/main-latin.tex: main.tex
 	iconv -f UTF-8 -t ISO-8859-1 gen/main.tex -o gen/main-latin.tex
 
-main.pdf: gen/main-latin.tex
+$(FIGURE_LATIN): $(FIGURE_SOURCES)
+
+main.pdf: gen/main-latin.tex $(FIGURE_LATIN)
 	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/tituomin-gradu -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make gen/main-latin.tex
 #	chmod a+r build/tituomin-gradu.pdf
 #	cp build/tituomin-gradu.pdf ~/public_html/
