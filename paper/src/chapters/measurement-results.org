@@ -76,7 +76,7 @@ Tukioperaatiot
 Operaatioille ei ole mittauksissa varsinaisia vastinpareja, sillä
 kyseessä on ainoa tapa käsitellä natiivikoodissa Javan
 merkkijonoja. C:n merkkijonojen käsittely C-kielessä ei vaadi mitään
-vastaavia ylimääräistä operaatiota kuten ei myöskään
+vastaavaa ylimääräistä operaatiota kuten ei myöskään
 Java-merkkijonojen käsittely Java-koodissa.
 
 C-merkkijonojen eli ~char~-taulukoiden käsittely
