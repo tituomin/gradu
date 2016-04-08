@@ -3,8 +3,6 @@ alustavia havaintoja. Sitä ennen mittauksen kohteena olevat
 JNI-rajapinnan palvelut luokitellaan palvelun luonteen mukaan. Myös
 mittausten ulkopuolelle jätetyt operaatiot mainitaan perusteluineen.
 
-* Luokitellut JNI-operaatiot
-
 # TODO metodisignaturet lisää alle?
 
 Tämän luokittelun lähtökohtana ovat JNI-rajapinnan tarjoamat
@@ -27,7 +25,7 @@ ja C eri permutaatiossa.
 # - Merkkijonojen ja taulukoiden käsittely
 # - Tehostetut IO-operaatiot (NIO)
 
-** Metodien ja funktioiden kutsuminen
+* Metodien ja funktioiden kutsuminen
 Mittausten kannalta keskiössä ovat JNI-natiivirajapinnan kautta
 tehtävät aliohjelmakutsut erityyppisillä parametreilla.
 
@@ -56,6 +54,7 @@ Vastinpari suunnassa Java \rightarrow Java on normaali
 Java-metodikutsu. Vastinpari suunnassa C \rightarrow C on normaali
 funktiokutsu.
 
+* Muut JNI-operaatiot
 ** Merkkijonojen käsittely
 
 Java-merkkijonojen sisältöä käsitellään natiivikomponentista seuraavilla
