@@ -30,6 +30,8 @@
 # {{{c(foo)}}}
 
 \begin{figure} \input{figures/plots/test.tex} \end{figure}
+\begin{figure} \scalebox{.5}{\input{foo.tex}}l
+ \end{figure}
 
 * Johdanto
 #+INCLUDE: "../gen/chapters/intro.org" :minlevel 2
