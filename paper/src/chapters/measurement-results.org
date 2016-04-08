@@ -234,55 +234,43 @@ Java-komponentit voivat myös käsitellä samaa muistialuetta.
 
    Raakatulokset.
 
-{{{plot(01)}}}
-
+# {{{plot(01)}}}
 {{{plot(02)}}}
 
-{{{plot(03)}}}
-
+# {{{plot(03)}}}
 {{{plot(04)}}}
 
-{{{plot(05)}}}
-
+# {{{plot(05)}}}
 {{{plot(06)}}}
 
-{{{plot(07)}}}
-
+# {{{plot(07)}}}
 {{{plot(08)}}}
 
-{{{plot(09)}}}
-
+# {{{plot(09)}}}
 {{{plot(10)}}}
 
-{{{plot(11)}}}
-
+# {{{plot(11)}}}
 {{{plot(12)}}}
 
-{{{plot(13)}}}
-
+# {{{plot(13)}}}
 {{{plot(14)}}}
 
-{{{plot(15)}}}
-
+# {{{plot(15)}}}
 {{{plot(16)}}}
 
-{{{plot(17)}}}
-
+# {{{plot(17)}}}
 {{{plot(18)}}}
 
 \clearpage
 Some separating text.
 
-{{{plot(19)}}}
-
+# {{{plot(19)}}}
 {{{plot(20)}}}
 
-{{{plot(21)}}}
-
+# {{{plot(21)}}}
 {{{plot(22)}}}
 
-{{{plot(23)}}}
-
+# {{{plot(23)}}}
 {{{plot(24)}}}
 
 {{{plot(25)}}}
@@ -358,6 +346,9 @@ Some separating text.
 
 {{{plot(56)}}}
 
+{{{plot(57)}}}
+
+{{{rotated_plot(58)}}}
 
 * Kutsuprofiilit
    5 sivua\newline 24. 2. 2014

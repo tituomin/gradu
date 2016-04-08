@@ -65,6 +65,7 @@
 \\usepackage{graphicx}
 \\graphicspath{{./figures/}}
 \\usepackage{epstopdf}
+\\usepackage[figuresleft]{rotating}
 \\appto\\UrlSpecials{%
   \\do\\F{\\penalty0 \\mathchar`\\F }%
   \\do\\L{\\penalty0 \\mathchar`\\L }%

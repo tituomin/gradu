@@ -16,8 +16,10 @@
 #+LATEX: \definecolor{listingc}{rgb}{0.98,0.98,0.98}
 #+LATEX: \newcommand{\todo}[1]{}
 
+#+MACRO: rotated_plot_internal \begin{sidewaysfigure} \input{figures/plots/plot-$1-page-$2-latin.tex} \end{sidewaysfigure}
 #+MACRO: plot_internal \begin{figure} \input{figures/plots/plot-$1-page-$2-latin.tex} \end{figure}
 #+MACRO: plot {{{plot_internal(6d0390ad-94bc-4006-8dfc-0646fcd0d23b,$1)}}}
+#+MACRO: rotated_plot {{{rotated_plot_internal(6d0390ad-94bc-4006-8dfc-0646fcd0d23b,$1)}}}
 
 #+MACRO: c   \cite{$1}
 #+MACRO: cp   \cite[s.~$2]{$1}
