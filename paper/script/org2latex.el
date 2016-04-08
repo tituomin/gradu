@@ -39,6 +39,9 @@
 (setq org-plantuml-jar-path
       (expand-file-name "~/plantuml.jar"))
 
+(add-to-list 'org-babel-default-header-args:plantuml
+             '(:java . "-splash:no"))
+
 (setq latex-classes-list
       (if old-version
           'org-export-latex-classes
@@ -63,6 +66,7 @@
 \\counterwithin{table}{section}
 \\usepackage{url,etoolbox}
 \\usepackage{graphicx}
+\\usepackage{tikz}
 \\graphicspath{{./figures/}}
 \\usepackage{epstopdf}
 \\usepackage[figuresleft]{rotating}
