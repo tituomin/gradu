@@ -29,6 +29,8 @@
 # {{{cp(benchmark-ndk, 5)}}}
 # {{{c(foo)}}}
 
+\begin{figure} \input{figures/plots/test.tex} \end{figure}
+
 * Johdanto
 #+INCLUDE: "../gen/chapters/intro.org" :minlevel 2
 * Yleiskatsaus Android-järjestelmään

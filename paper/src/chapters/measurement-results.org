@@ -274,78 +274,66 @@ Some separating text.
 {{{plot(24)}}}
 
 {{{plot(25)}}}
-
-{{{plot(26)}}}
+# {{{plot(26)}}}
 
 {{{plot(27)}}}
-
-{{{plot(28)}}}
+# {{{plot(28)}}}
 
 \clearpage
 Some separating text.
 
 {{{plot(29)}}}
-
-{{{plot(30)}}}
+# {{{plot(30)}}}
 
 {{{plot(31)}}}
-
-{{{plot(32)}}}
+# {{{plot(32)}}}
 
 {{{plot(33)}}}
-
-{{{plot(34)}}}
+# TODO maybe linespoints above
+# {{{plot(34)}}}
 
 {{{plot(35)}}}
-
-{{{plot(36)}}}
+# {{{plot(36)}}}
 
 {{{plot(37)}}}
-
-{{{plot(38)}}}
+# {{{plot(38)}}}
 
 \clearpage
 Some separating text.
 
 {{{plot(39)}}}
-
-{{{plot(40)}}}
+# {{{plot(40)}}}
 
 {{{plot(41)}}}
-
 {{{plot(42)}}}
 
 {{{plot(43)}}}
-
 {{{plot(44)}}}
 
 {{{plot(45)}}}
-
-{{{plot(46)}}}
+# {{{plot(46)}}}
 
 {{{plot(47)}}}
-
 {{{plot(48)}}}
 
 \clearpage
 Some separating text.
 
+# TODO bars
 {{{plot(49)}}}
 
-{{{plot(50)}}}
-
+\clearpage
+# {{{plot(50)}}}
 {{{plot(51)}}}
+\clearpage
 
-{{{plot(52)}}}
-
+# {{{plot(52)}}}
 {{{plot(53)}}}
 
-{{{plot(54)}}}
-
+# {{{plot(54)}}}
 {{{plot(55)}}}
 
-{{{plot(56)}}}
-
+# {{{plot(56)}}}
 {{{plot(57)}}}
 
 {{{rotated_plot(58)}}}
