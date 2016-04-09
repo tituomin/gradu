@@ -16,8 +16,8 @@
 
 (unless (boundp 'org-export-latex-classes)
   (setq org-export-latex-classes nil))
-(setq org-export-latex-listings t)
-(setq org-export-latex-listings-options
+(setq org-latex-listings t)
+(setq org-latex-listings-options
       '(("basicstyle" "\\scriptsize\\ttfamily")
         ("aboveskip" "1em")
 ;       ("numbers" "left")
