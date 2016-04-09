@@ -252,6 +252,10 @@ JIT-kääntää sen suorittaakseen kääntämäänsä versiota silmukasta. Kun
 lähtösilmukka on natiivikomponentissa, C-kääntäjän tuottamaa
 konekielistä versiota suoritetaan sellaisenaan.
 
+{{{plot(02)}}}
+
+{{{plot(04)}}}
+
 Koska on mahdotonta kontrolloida, miten erilaisia kaksi eri versiota
 lähtösilmukasta konekielitasolla ovat, ei niiden suoritusaikojakaan
 periaatteessa voi suoraan vertailla. Niiden erojen mittaamiseksi

@@ -233,12 +233,6 @@ Java-komponentit voivat myös käsitellä samaa muistialuetta.
 
    Raakatulokset.
 
-# {{{plot(01)}}}
-{{{plot(02)}}}
-
-# {{{plot(03)}}}
-{{{plot(04)}}}
-
 # {{{plot(05)}}}
 {{{plot(06)}}}
 
