@@ -252,10 +252,6 @@ JIT-kääntää sen suorittaakseen kääntämäänsä versiota silmukasta. Kun
 lähtösilmukka on natiivikomponentissa, C-kääntäjän tuottamaa
 konekielistä versiota suoritetaan sellaisenaan.
 
-{{{plot(02)}}}
-
-{{{plot(04)}}}
-
 Koska on mahdotonta kontrolloida, miten erilaisia kaksi eri versiota
 lähtösilmukasta konekielitasolla ovat, ei niiden suoritusaikojakaan
 periaatteessa voi suoraan vertailla. Niiden erojen mittaamiseksi
@@ -272,9 +268,15 @@ lähtösilmukkaa -- erityisesti Java-koodin tapauksessa Java- tai
 JIT-kääntäjä saattaa myös optimoida pois tyhjän silmukan, jolla ei ole
 sivuvaikutuksia.
 
+# TODO two plots below: scale 50%
+
+{{{plot(02)}}}
+
+{{{plot(04)}}}
+
+
 # TODO viite ylle
 # TODO XXXXXXX
-# TODO measurement-results tähän kaavio overhead-mittauksista
 
 ** Muistia allokoivat operaatiot
 

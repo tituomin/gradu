@@ -54,8 +54,103 @@ Vastinpari suunnassa Java \rightarrow Java on normaali
 Java-metodikutsu. Vastinpari suunnassa C \rightarrow C on normaali
 funktiokutsu.
 
+{{{plot(41)}}}
+{{{plot(42)}}}
+
+{{{plot(43)}}}
+{{{plot(44)}}}
+
+{{{plot(45)}}}
+# {{{plot(46)}}}
+
+{{{plot(47)}}}
+{{{plot(48)}}}
+
+# {{{plot(05)}}}
+{{{plot(06)}}}
+
+# {{{plot(07)}}}
+{{{plot(08)}}}
+
+# {{{plot(09)}}}
+{{{plot(10)}}}
+
+# {{{plot(11)}}}
+{{{plot(12)}}}
+
+# {{{plot(13)}}}
+{{{plot(14)}}}
+
+# {{{plot(15)}}}
+{{{plot(16)}}}
+
+# {{{plot(17)}}}
+{{{plot(18)}}}
+
+\clearpage
+Some separating text.
+
+# {{{plot(19)}}}
+{{{plot(20)}}}
+
+# {{{plot(21)}}}
+{{{plot(22)}}}
+
+# {{{plot(23)}}}
+{{{plot(24)}}}
+
+{{{plot(25)}}}
+# {{{plot(26)}}}
+
+{{{plot(27)}}}
+# {{{plot(28)}}}
+
+\clearpage
+Some separating text.
+
+{{{plot(29)}}}
+# {{{plot(30)}}}
+
+{{{plot(31)}}}
+# {{{plot(32)}}}
+
+{{{plot(33)}}}
+# TODO maybe linespoints above
+# {{{plot(34)}}}
+
+{{{plot(35)}}}
+# {{{plot(36)}}}
+
+{{{plot(37)}}}
+# {{{plot(38)}}}
+
+\clearpage
+Some separating text.
+
+{{{plot(39)}}}
+# {{{plot(40)}}}
+
+\clearpage
+Some separating text.
+
+# TODO bars
+{{{plot(49)}}}
+
 * Muut JNI-operaatiot
+
+\clearpage
+# {{{plot(50)}}}
+# explode 51 : group according to below ...?
+{{{plot(51)}}} 
+\clearpage
+
+
+{{{rotated_plot(58)}}}
+
 ** Merkkijonojen käsittely
+
+# {{{plot(52)}}}
+{{{plot(53)}}}
 
 Java-merkkijonojen sisältöä käsitellään natiivikomponentista seuraavilla
 operaatioilla. Osoittimen palauttavat operaatiot ovat
@@ -98,6 +193,15 @@ Java-merkkijonon (~String~) sisällön tehokkaaseen kopioimiseen olioon.
 # | / | <                  |                 | >                     |   |
 # | a | b                  | c               |                       |   |
 # |   |                    |                 |                       |   |
+
+# Vertailukohtia: normaalin taulukon lukeminen
+
+# {{{plot(54)}}}
+{{{plot(55)}}}
+
+# {{{plot(56)}}}
+{{{plot(57)}}}
+
 
 ** Taulukoiden käsittely
 
@@ -233,103 +337,6 @@ Java-komponentit voivat myös käsitellä samaa muistialuetta.
 
    Raakatulokset.
 
-# {{{plot(05)}}}
-{{{plot(06)}}}
-
-# {{{plot(07)}}}
-{{{plot(08)}}}
-
-# {{{plot(09)}}}
-{{{plot(10)}}}
-
-# {{{plot(11)}}}
-{{{plot(12)}}}
-
-# {{{plot(13)}}}
-{{{plot(14)}}}
-
-# {{{plot(15)}}}
-{{{plot(16)}}}
-
-# {{{plot(17)}}}
-{{{plot(18)}}}
-
-\clearpage
-Some separating text.
-
-# {{{plot(19)}}}
-{{{plot(20)}}}
-
-# {{{plot(21)}}}
-{{{plot(22)}}}
-
-# {{{plot(23)}}}
-{{{plot(24)}}}
-
-{{{plot(25)}}}
-# {{{plot(26)}}}
-
-{{{plot(27)}}}
-# {{{plot(28)}}}
-
-\clearpage
-Some separating text.
-
-{{{plot(29)}}}
-# {{{plot(30)}}}
-
-{{{plot(31)}}}
-# {{{plot(32)}}}
-
-{{{plot(33)}}}
-# TODO maybe linespoints above
-# {{{plot(34)}}}
-
-{{{plot(35)}}}
-# {{{plot(36)}}}
-
-{{{plot(37)}}}
-# {{{plot(38)}}}
-
-\clearpage
-Some separating text.
-
-{{{plot(39)}}}
-# {{{plot(40)}}}
-
-{{{plot(41)}}}
-{{{plot(42)}}}
-
-{{{plot(43)}}}
-{{{plot(44)}}}
-
-{{{plot(45)}}}
-# {{{plot(46)}}}
-
-{{{plot(47)}}}
-{{{plot(48)}}}
-
-\clearpage
-Some separating text.
-
-# TODO bars
-{{{plot(49)}}}
-
-\clearpage
-# {{{plot(50)}}}
-{{{plot(51)}}}
-\clearpage
-
-# {{{plot(52)}}}
-{{{plot(53)}}}
-
-# {{{plot(54)}}}
-{{{plot(55)}}}
-
-# {{{plot(56)}}}
-{{{plot(57)}}}
-
-{{{rotated_plot(58)}}}
 
 * Kutsuprofiilit
    5 sivua\newline 24. 2. 2014
