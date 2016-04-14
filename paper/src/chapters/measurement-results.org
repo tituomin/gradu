@@ -141,7 +141,7 @@ Some separating text.
 \clearpage
 # {{{plot(50)}}}
 # explode 51 : group according to below ...?
-{{{plot(51)}}} 
+{{{plot(51)}}}
 \clearpage
 
 
@@ -228,6 +228,46 @@ Java-komponentit voivat myös käsitellä samaa muistialuetta.
 
 # TODO HERE
 
+** Non-blocking I/O
+\label{sec:measurement-classification-nio}
+
+Javan standardikirjaston paketin ~java.nio~ luokka ~ByteBuffer~ antaa
+joitakin lisämahdollisuuksia datan siirtoon Java- ja
+natiivikomponenttien välillä. ~ByteBuffer~-olio edustaa jatkuvaa
+muistialuetta jota voi käsitellä /binääridatana/.
+
+Jos ~ByteBuffer~-on allokoitu /suorana/ (/direct/), virtuaalikone
+yrittää taata, että natiivioperaatiot (käyttöjärjestelmän operaatiot
+tai JNI-natiivikomponentin suorittamat operaatiot), joita puskurille
+suoritetaan, tehdään suoraan samalle muistialueelle, jota
+Java-ohjelmakin käsittelee. Sitävastoin epäsuoran puskurin sisältö
+saatetaan kopioida erikseen ennen käyttöjärjestelmän
+natiivi-I/O-operaatioita. JNI-rajapinta sitä paitsi tarjoaa pääsyn
+ainoastaan /suoran/ ~ByteBuffer~-olion muistialueelle, jota voi
+käsitellä suoraan osoittimen avulla.
+
+# TODO tähän tarvitaan ehkä viitteitä jolloin ehkä pitää
+# siirtää teorialukuihin?
+
+Eräs tutkielman päämääristä on hahmottaa, mikä on tehokkain tapa
+/välittää dataa/ JNI-rajapinnan yli. Tämän takia
+~java.nio.ByteBuffer~-olion käsittelyä Java- ja natiivikomponenteissa
+verrataan muihin datanvälitystapoihin: kutsuargumenttien ja
+paluuarvojen välitykseen sekä merkkijonojen ja taulukoiden
+käsittelyyn. Mittauksen avulla yritetään tutkia esimerkiksi, onko
+kokonaisrasitteen kannalta tehokkaampaa välittää rajapinnan yli viite
+taulukkoon vai ~ByteBuffer~-olioon. Tässä täytyy huomioida niin
+viitteen välityksen, tarvittavien tukipalveluiden kuin itse
+muistialueen käsittelyn aiheuttamat rasitteet.
+
+Tätä silmälläpitäen täytyy huomioida lisärasite, joka syntyy
+seuraavista ~ByteBuffer~-olion käsittelyssä välttämättömien
+JNI-palveluiden kutsumisesta. \path{NewDirectByteBuffer}, jolla luodaan
+natiivikomponentista suora tavupuskuri /valmiiksi allokoituun
+muistialueeseen/. Jos taas puskuri on luotu Java-komponentissa,
+sen edustaman muistialueen saa \path{GetDirectBufferAddress}-kutsulla ja
+kapasiteetin \path{GetDirectBufferCapacity}.
+
 ** Kenttien käsittely
 *** Ilmentymän kentät                                                                          :dep:
 **** DONE GetFieldID                                                                        :search:
@@ -258,9 +298,6 @@ Java-komponentit voivat myös käsitellä samaa muistialuetta.
      - [ ] C2C
 ** Olioiden käsittely
 *** DONE GetObjectClass                                                                       :read:
-*** EXCLUDE GetObjectRefType                                                                  :read:
-*** EXCLUDE IsInstanceOf                                                             :read:traverse:
-*** EXCLUDE IsSameObject                                                                      :read:
 ** Muistia varaavat operaatiot
 *** DONE AllocObject                                                                         :alloc:
 *** DONE NewObject, NewObjectA, NewObjectV                                             :comp2:alloc:
@@ -268,11 +305,22 @@ Java-komponentit voivat myös käsitellä samaa muistialuetta.
 *** DONE NewString                                                                           :alloc:
 *** DONE NewStringUTF                                                                        :alloc:
 
-
 *** DONE NewObjectArray                                                                      :alloc:
 *** DONE New<PrimitiveType>Array Routines                                                    :alloc:
-
 ** Paikalliset ja globaalit viitteet
+*** Local References
+**** DONE PushLocalFrame                                                            :comp1:allocref:
+**** DONE PopLocalFrame                                                             :comp1:allocref:
+** Poikkeukset
+*** DONE ExceptionCheck                                                                       :read:
+** Luokkien käsittely                                                                :exclude:maybe:
+*** DONE FindClass                                                            :exclude:maybe:search:
+* Sivuutetut operaatiot
+** Olioiden käsittely
+*** EXCLUDE GetObjectRefType                                                                  :read:
+*** EXCLUDE IsInstanceOf                                                             :read:traverse:
+*** EXCLUDE IsSameObject                                                                      :read:
+** Viitteet
 *** Global References
 **** EXCLUDE NewGlobalRef                                                                       :gc:
 **** EXCLUDE DeleteGlobalRef                                                                    :gc:
@@ -280,35 +328,32 @@ Java-komponentit voivat myös käsitellä samaa muistialuetta.
 **** EXCLUDE EnsureLocalCapacity                                                          :allocref:
 **** EXCLUDE NewLocalRef                                                         :comp1:gc:allocref:
 **** EXCLUDE DeleteLocalRef                                                      :comp1:gc:allocref:
-**** DONE PushLocalFrame                                                            :comp1:allocref:
-**** DONE PopLocalFrame                                                             :comp1:allocref:
+
 *** Weak Global References                                                            :unclear:rtfm:
 **** EXCLUDE NewWeakGlobalRef                                                             :allocref:
 **** EXCLUDE DeleteWeakGlobalRef                                                          :allocref:
-** Poikkeukset
-*** EXCLUDE Throw                                                                          :special:
-*** EXCLUDE ThrowNew                                                                 :special:alloc:
-*** DONE ExceptionCheck                                                                       :read:
-*** EXCLUDE ExceptionOccurred                                                                 :read:
-*** EXCLUDE ExceptionClear
-*** EXCLUDE ExceptionDescribe                                                              :exclude:
-*** EXCLUDE FatalError                                                                     :exclude:
+
+** Luokkien käsittely                                                                :exclude:maybe:
+*** EXCLUDE DefineClass                                                                    :exclude:
+*** EXCLUDE GetSuperclass                                                   :exclude:maybe:traverse:
+*** EXCLUDE IsAssignableFrom                                                :exclude:maybe:traverse:
+
 ** Natiivimetodien rekisteröinti
 *** EXCLUDE RegisterNatives                                                                :exclude:
 *** EXCLUDE UnregisterNatives                                                              :exclude:
 ** Rinnakkaisohjelmointi
 *** EXCLUDE MonitorEnter                                                                     :synch:
 *** EXCLUDE MonitorExit                                                                      :synch:
-** Non-blocking IO                                                               :important:
-\label{sec:measurement-classification-nio}
-*** DONE NewDirectByteBuffer                                                             :important:
-*** DONE GetDirectBufferAddress                                                          :important:
-*** DONE GetDirectBufferCapacity                                                              :read:
-** Luokkien käsittely                                                                :exclude:maybe:
-*** DONE FindClass                                                            :exclude:maybe:search:
-*** EXCLUDE DefineClass                                                                    :exclude:
-*** EXCLUDE GetSuperclass                                                   :exclude:maybe:traverse:
-*** EXCLUDE IsAssignableFrom                                                :exclude:maybe:traverse:
+
+** Poikkeukset
+*** DONE ExceptionCheck                                                                       :read:
+*** EXCLUDE Throw                                                                          :special:
+*** EXCLUDE ThrowNew                                                                 :special:alloc:
+*** EXCLUDE ExceptionOccurred                                                                 :read:
+*** EXCLUDE ExceptionClear
+*** EXCLUDE ExceptionDescribe                                                              :exclude:
+*** EXCLUDE FatalError                                                                     :exclude:
+
 ** Reflektio                                                                               :exclude:
 *** EXCLUDE FromReflectedMethod
 *** EXCLUDE FromReflectedField
@@ -321,7 +366,7 @@ Java-komponentit voivat myös käsitellä samaa muistialuetta.
 *** EXCLUDE Constants                                                                      :exclude:
 
 
-* Sivuutetut operaatiot
+
    1 sivu\newline 3. 2. 2014
 
    Mittausten ulkopuolelle jääneet JNI-funktiot perusteluineen.
