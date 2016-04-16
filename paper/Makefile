@@ -17,7 +17,9 @@ vpath %.tex  gen
 
 # First rule should always be the default "all" rule, so both "make all" and
 # "make" will invoke it.
-all: $(BUILD_DIRS) main.pdf 
+all: $(BUILD_DIRS) main.pdf
+
+plots: $(BUILD_DIRS) plots.pdf
 
 gen:
 	mkdir -p gen
@@ -35,8 +37,11 @@ gen/chapters_generated: $(CHAPTERS)
 	for file in $(?F); do script/preprocess.sh src/chapters/$$file gen/chapters/$$file; done
 	touch gen/chapters_generated
 
-main.tex: src/main.org gen/chapters_generated
-	emacs --batch --script script/org2latex.el
+gen/main.tex: src/main.org gen/chapters_generated
+	emacs --batch --script script/org2latex.el $(abspath $<) $(abspath $@)
+
+gen/plots.tex: src/plots.org
+	emacs --batch --script script/org2latex.el $(abspath $<) $(abspath $@)
 
 # MAIN LATEXMK RULE
 
@@ -52,15 +57,21 @@ figures/plots/plot-%-latin.tex: figures/plots/plot-%.tex
 
 
 
-gen/main-latin.tex: main.tex
+gen/main-latin.tex: gen/main.tex
 	iconv -f UTF-8 -t ISO-8859-1 gen/main.tex -o gen/main-latin.tex
+
+gen/plots-latin.tex: plots.tex
+	iconv -f UTF-8 -t ISO-8859-1 gen/plots.tex -o gen/plots-latin.tex
 
 $(FIGURE_LATIN): $(FIGURE_SOURCES)
 
 main.pdf: gen/main-latin.tex $(FIGURE_LATIN)
 	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/tituomin-gradu -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make gen/main-latin.tex
-#	chmod a+r build/tituomin-gradu.pdf
-#	cp build/tituomin-gradu.pdf ~/public_html/
+
+plots.pdf: gen/plots-latin.tex $(FIGURE_LATIN)
+	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/plots -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make gen/plots-latin.tex
+
+
 
 clean:
 	latexmk -CA

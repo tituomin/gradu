@@ -81,7 +81,7 @@
   \\do\\C{\\penalty0 \\mathchar`\\C }%
   \\do\\B{\\penalty0 \\mathchar`\\B }%
 }
-\\level{Pro gradu -tutkielmasuunnitelma}"
+\\level{Pro gradu -tutkielma}"
 ("\\section{%s}" . "\\section*{%s}")
 ("\\subsection{%s}" . "\\subsection*{%s}")
 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
@@ -101,11 +101,17 @@
 (add-to-list latex-encoding-alist '("utf8" . "latin9"))
 
 (prefer-coding-system 'utf-8)
-(find-file "~/gradu/paper/src/main.org" nil)
+
+(setq filename-to-process (elt argv 0))
+(setq output-filename (elt argv 1))
+(message "Processing file %s." filename-to-process)
+(message "Will output to %s." output-filename)
+
+(find-file filename-to-process nil)
 
 (if old-version
     (org-export-as-latex 3 nil nil nil "~/gradu/paper/gen")
-  (org-export-to-file 'latex "~/gradu/paper/gen/main.tex"
+  (org-export-to-file 'latex output-filename
     nil nil nil nil '(:base-directory "~/gradu/paper/src")))
 
 
