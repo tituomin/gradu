@@ -16,6 +16,8 @@
 #+MACRO: plot {{{plot_internal(6d0390ad-94bc-4006-8dfc-0646fcd0d23b,$1)}}}
 #+MACRO: rotated_plot {{{rotated_plot_internal(6d0390ad-94bc-4006-8dfc-0646fcd0d23b,$1)}}}
 
+#+MACRO: plot_a {{{plot_internal(80adab84-72bc-423c-adeb-8eda99a36b20,$1)}}}
+#+MACRO: rotated_plot_a {{{rotated_plot_internal(80adab84-72bc-423c-adeb-8eda99a36b20,$1)}}}
 
 {{{plot(01)}}}
 \clearpage
@@ -191,3 +193,35 @@
 {{{rotated_plot(58)}}}
 \clearpage
 
+{{{plot_a(01)}}}
+\clearpage
+
+{{{plot_a(02)}}}
+\clearpage
+
+{{{plot_a(03)}}}
+\clearpage
+
+{{{plot_a(04)}}}
+\clearpage
+
+{{{plot_a(05)}}}
+\clearpage
+
+{{{plot_a(06)}}}
+\clearpage
+
+{{{plot_a(07)}}}
+\clearpage
+
+{{{plot_a(08)}}}
+\clearpage
+
+{{{plot_a(09)}}}
+\clearpage
+
+{{{plot_a(10)}}}
+\clearpage
+
+{{{rotated_plot_a(11)}}}
+\clearpage
