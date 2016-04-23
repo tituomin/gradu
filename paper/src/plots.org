@@ -11,10 +11,10 @@
 #+LATEX: \definecolor{listingc}{rgb}{0.98,0.98,0.98}
 #+LATEX: \newcommand{\todo}[1]{}
 
-#+MACRO: rotated_plot_internal \begin{sidewaysfigure} \input{figures/plots/plot-$1-page-$2-latin.tex} \end{sidewaysfigure}
-#+MACRO: plot_internal \begin{figure} \input{figures/plots/plot-$1-page-$2-latin.tex} \end{figure}
-#+MACRO: plot {{{plot_internal(6d0390ad-94bc-4006-8dfc-0646fcd0d23b,$1)}}}
-#+MACRO: rotated_plot {{{rotated_plot_internal(6d0390ad-94bc-4006-8dfc-0646fcd0d23b,$1)}}}
+#+MACRO: rotated_plot_internal \begin{sidewaysfigure} \input{figures/plots/plot-$1-page-$2-latin.tex} \end{sidewaysfigure} $1
+#+MACRO: plot_internal \begin{figure} \input{figures/plots/plot-$1-page-$2-latin.tex} \end{figure} $1
+#+MACRO: plot {{{plot_internal(37c64ff6-e103-48c8-9411-542780aad542,$1)}}}
+#+MACRO: rotated_plot {{{rotated_plot_internal(37c64ff6-e103-48c8-9411-542780aad542,$1)}}}
 
 #+MACRO: plot_a {{{plot_internal(80adab84-72bc-423c-adeb-8eda99a36b20,$1)}}}
 #+MACRO: rotated_plot_a {{{rotated_plot_internal(80adab84-72bc-423c-adeb-8eda99a36b20,$1)}}}
@@ -190,7 +190,31 @@
 {{{plot(57)}}}
 \clearpage
 
-{{{rotated_plot(58)}}}
+{{{plot(58)}}}
+\clearpage
+
+{{{plot(59)}}}
+\clearpage
+
+{{{plot(60)}}}
+\clearpage
+
+{{{plot(61)}}}
+\clearpage
+
+{{{plot(62)}}}
+\clearpage
+
+{{{plot(63)}}}
+\clearpage
+
+{{{plot(64)}}}
+\clearpage
+
+{{{plot(65)}}}
+\clearpage
+
+{{{rotated_plot(66)}}}
 \clearpage
 
 {{{plot_a(01)}}}
