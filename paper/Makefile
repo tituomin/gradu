@@ -2,7 +2,7 @@
 CHAPTERS := $(wildcard src/chapters/*.org)
 BUILD_DIRS := gen gen/chapters build
 
-FIGURE_SOURCES := $(shell find figures/plots -name '*.tex' -and -not -name '*latin.tex')
+FIGURE_SOURCES := $(shell find figures/plots/ -name '*.tex' -and -not -name '*latin.tex')
 FIGURE_BASENAMES := $(basename $(FIGURE_SOURCES))
 FIGURE_LATIN_BASENAMES := $(addsuffix -latin,$(FIGURE_BASENAMES))
 FIGURE_LATIN := $(addsuffix .tex,$(FIGURE_LATIN_BASENAMES) )
