@@ -1,3 +1,5 @@
+* <2016-04-24 su 17:37> huomattu, että NIO-mittaukset todella aikaavieviä
+  melkein 180 s max
 * <2016-03-26 Sat 21:28> huomattu, että weakglobalref j>j aiheuttaa gc:n
   tsekkaa, mistä johtuu -- satunnainen virhe - meneekö shufflella pois/johtuuko edellisestä ajosta?
   katso myös logit
