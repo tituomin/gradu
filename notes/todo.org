@@ -5,6 +5,7 @@ Missä mennään:
 [[file:~/gradu/paper/bib/main.bib::saavedra]]
 (hyvä peruslähde benchmarkeista)
 
+* TODO <2016-04-28 to 21:26> check if doubling java overhead leads to sane results
 * DONE tsekkaa tallentuuko memmap oikein profin dataan
 ** erit. ashmem dalvik code cache
 * Koodi
