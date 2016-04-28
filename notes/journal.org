@@ -1,4 +1,6 @@
-* <2016-04-25 ma 00:04> bytebufferview: clear on loopin sisällä väärin 
+* TODO <2016-04-26 ti 23:42> heräsi epäilys, optimoidaanko bulk kokonaan pois?
+* <2016-04-26 ti 22:14> !NIO:ssa on array()-metodi, jossa arrayn voi palauttaa natiivikoodiin?
+* <2016-04-25 ma 00:04> bytebufferview: clear on loopin sisällä väärin
 * <2016-04-24 su 23:43> miksi commentoitu ulos newweakglobalref?
 * <2016-04-24 su 23:17> huomattu, että read/writecompletearray eivät vertailukelpoisia keskenään
   johtuu siitä, että read-versioissa on mukana ylimääräinen

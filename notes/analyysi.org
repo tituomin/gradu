@@ -1,7 +1,10 @@
 
 Kaikki yksiköt sekunneissa.
 Mittaus 37c64ff6-e103-48c8-9411-542780aad542
-
+* misc
+** high overhead in j2jfindclass:
+   it has try catch block?
+** 
 * TODO
   mitä tarkoittaa kohteen koko: getmethod/fieldid (p51)
 
