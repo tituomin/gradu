@@ -13,8 +13,8 @@
 
 #+MACRO: rotated_plot_internal \begin{sidewaysfigure} \input{figures/plots/plot-$1-page-$2-latin.tex} \end{sidewaysfigure} $1
 #+MACRO: plot_internal \begin{figure} \input{figures/plots/plot-$1-page-$2-latin.tex} \end{figure} $1
-#+MACRO: plot {{{plot_internal(37c64ff6-e103-48c8-9411-542780aad542,$1)}}}
-#+MACRO: rotated_plot {{{rotated_plot_internal(37c64ff6-e103-48c8-9411-542780aad542,$1)}}}
+#+MACRO: plot {{{plot_internal(347fe0be-62b3-42b9-b40e-468aa10a8475,$1)}}}
+#+MACRO: rotated_plot {{{rotated_plot_internal(347fe0be-62b3-42b9-b40e-468aa10a8475,$1)}}}
 
 #+MACRO: plot_a {{{plot_internal(80adab84-72bc-423c-adeb-8eda99a36b20,$1)}}}
 #+MACRO: rotated_plot_a {{{rotated_plot_internal(80adab84-72bc-423c-adeb-8eda99a36b20,$1)}}}
