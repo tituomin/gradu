@@ -1,3 +1,6 @@
+* <2016-04-30 la 00:25> C2C readcompleteshort : myös siinä read hitaampi kuin write
+* <2016-04-28 to 23:47> huomattu: että java overheadista tulee järkevä, jos varmistaa että on JIT-käännetty
+  tai ainakin jos on ajanut warmupin overhead-filtterillä
 * TODO <2016-04-26 ti 23:42> heräsi epäilys, optimoidaanko bulk kokonaan pois?
 * <2016-04-26 ti 22:14> !NIO:ssa on array()-metodi, jossa arrayn voi palauttaa natiivikoodiin?
 * <2016-04-25 ma 00:04> bytebufferview: clear on loopin sisällä väärin
