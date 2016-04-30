@@ -1,0 +1,54 @@
+Vertailu: C2CRead/WriteCompleteShortArray
+
+* Read
+                jshort__IN = jshort_buf__IN[idx];
+  1454dc:	e59f320c 	ldr	r3, [pc, #524]	; 1456f0 <Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CReadCompleteShortArray_runInternal+0x340>
+  1454e0:	e7943003 	ldr	r3, [r4, r3]
+  1454e4:	e5932000 	ldr	r2, [r3]
+  1454e8:	e51b303c 	ldr	r3, [fp, #-60]	; 0x3c
+  1454ec:	e1a03083 	lsl	r3, r3, #1
+  1454f0:	e0823003 	add	r3, r2, r3
+
+  1454f4:	e1d320b0 	ldrh	r2, [r3]
+                                ; 1 cycle
+  1454f8:	e59f31f4 	ldr	r3, [pc, #500]	; 1456f4 <Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CReadCompleteShortArray_runInternal+0x344>
+                                ; 1 cycle?
+  1454fc:	e7943003 	ldr	r3, [r4, r3]
+                                ; 2 cycles?
+  145500:	e1c320b0 	strh	r2, [r3]
+                                ; 1 cycle
+
+ -> 5 cycles
+
+* Write
+
+            jshort_buf__IN[idx] = 101;
+  145960:	e59f30c8 	ldr	r3, [pc, #200]	; 145a30 <Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2CWriteCompleteShortArray_runInternal+0x330>
+  145964:	e7943003 	ldr	r3, [r4, r3]
+  145968:	e5932000 	ldr	r2, [r3]
+  14596c:	e51b3038 	ldr	r3, [fp, #-56]	; 0x38
+  145970:	e1a03083 	lsl	r3, r3, #1
+  145974:	e0823003 	add	r3, r2, r3
+
+
+  145978:	e3a02065 	mov	r2, #101	; 0x65
+                                ; 1 cycle
+  14597c:	e1c320b0 	strh	r2, [r3]
+                                ; 1 cycle
+  -> 2 cycles
+
+
+
+ero: write + 3 cycles = 4
+
+400 Mhz -> 400000000
+
+laskennallinen ero 3 * 500000 rounds * 512 * 1/400000000 = 1.92 s (!)
+
+read
+23075202718
+write
+18319729431
+
+-> oikea ero: 4.75 s (!)
+-> muistihausta (?)
