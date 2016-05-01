@@ -1,3 +1,4 @@
+* <2016-05-01 su 19:52> run as a test with byte == representative
 * <2016-05-01 su 12:12> [[file:~/android-source-412/libcore/luni/src/main/native/libcore_io_Memory.cpp::static%20void%20Memory_peekByteArray(JNIEnv*%20env,%20jclass,%20jint%20srcAddress,%20jbyteArray%20dst,%20jint%20dstOffset,%20jint%20byteCount)%20{][peek magic (native)]]
   Huomattu, että sisäisesti peek-metodit käyttävät vain normaaleja Set*ArrayRegion (plus swappaavat tarvittaessa).
   [[file:~/android-source-412/libcore/luni/src/main/java/java/nio/ReadWriteDirectByteBuffer.java::this.block.pokeByteArray(offset%20+%20position,%20src,%20srcOffset,%20byteCount);]]
