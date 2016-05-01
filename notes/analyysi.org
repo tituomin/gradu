@@ -5,83 +5,160 @@ Mittaus 37c64ff6-e103-48c8-9411-542780aad542
 ** high overhead in j2jfindclass:
    it has try catch block?
 ** 
+* TODO laske perusrasite kaikkiin kohtiin mukaan!
+
 * TODO
   mitä tarkoittaa kohteen koko: getmethod/fieldid (p51)
 
 * TODO rasitteet
-  Java-versiot ei pidä paikkaansa
+  Java-versiot ei pidä paikkaansa ! ! !
 
-|-----------+---------+-------------------+-------------------+----------------------------------+---|
-| rasitteet | kerroin |                 C |              Java | notes                            |   |
-|-----------+---------+-------------------+-------------------+----------------------------------+---|
-| non alloc |  100000 |  0.00395564477273 |  -0.0195240683636 | Ei voi olla J                    |   |
-| alloc     |     300 | 7.19672727273e-05 | 0.000187426590909 | J: 0 pitäisi jättää huomiotta... |   |
-|-----------+---------+-------------------+-------------------+----------------------------------+---|
+|-----------+---------+-------------------+--------------------+---------------------------------|
+| rasitteet | kerroin | C                 | Java               | notes                           |
+|-----------+---------+-------------------+--------------------+---------------------------------|
+| non alloc |  500000 | 0.134 * x +0.0638 | 0.0615 * x -0.0134 | edelleen negatiivinen 0-arvo !! |
+| alloc     |         |                   |                    | TODO                            |
+|-----------+---------+-------------------+--------------------+---------------------------------|
 
 * peruskutsut
 
 long ja double erottuvat hyvin kaikissa suunnissa...
-(32-bittinnen prosessori)
+(32-bittinen prosessori)
 
-|                 |                     | C-J            | J-C               | J-J              | C-C              | notes |
-|                 |                     |                |                   | (3)              |                  |       |
-|-----------------+---------------------+----------------+-------------------+------------------+------------------+-------|
-| kutsuparametrit | viite               | 0.126x + 0.57 | 0.066x + 0.18    | 0.0005x + 0.035 | -                |       |
-|                 | float               | 0.031x + 0.54 | 0.00136x + 0.184 | 0.0003x + 0.039 | -                | (1)   |
-|                 | int                 | 0.010x + 0.55 | 0.00168x + 0.183 | 0.00076x + 0.035 | 0.0005x + 0.011 |       |
-|                 | long ja double (64) | 0.021x + 0.56 | 0.00854x + 0.150 | 0.001x + 0.036 | 0.0010x + 0.011 | (2)   |
-|-----------------+---------------------+----------------+-------------------+------------------+------------------+-------|
-| paluuarvot      | viite               | *0.66*         | *0.34*            | 0.04             | 0.014            | (4)   |
-|                 | float               | 0.58           | 0.19              | -''-             | 0.012            |       |
-|                 | int                 | 0.63           | 0.17              | -''-             | -''-             |       |
-|                 | long ja double      | 0.58           | 0.17              | -''-             | -''-             |       |
-|-----------------+---------------------+----------------+-------------------+------------------+------------------+-------|
+|                 |                     | C-J              | J-C                | J-J                | C-C                 | notes |
+|                 |                     |                  |                    | (3)                |                     |       |
+|-----------------+---------------------+------------------+--------------------+--------------------+---------------------+-------|
+| kutsuparametrit | viite               | 0.642  * x +2.73 | 0.33 * x + 0.9     | 0.00347 * x +0.139 | 0.00254 * x +0.0559 |       |
+|                 | float               | 0.155  * x +2.65 | 0.0116  * x +0.832 | 0.00286 * x +0.142 | 0.00247 * x +0.0579 | (1)   |
+|                 | int                 | 0.0506 * x +2.74 | 0.00855 * x +0.871 | 0.00334 * x +0.144 | 0.00233 * x +0.0593 |       |
+|                 | long ja double (64) | 0.634  * x +2.78 | 0.0415  * x +0.719 | 0.00497 * x +0.152 | 0.00533 * x +0.0542 | (2)   |
+|-----------------+---------------------+------------------+--------------------+--------------------+---------------------+-------|
+| paluuarvot      |                     |                  |                    |                    |                     |       |
+| (datan suunta)  |                     | J->C             | C->J               |                    |                     |       |
+|                 | viite               | 3.2              | 1.6                | 0.15               | 0.07                | (4)   |
+|                 | float               | 2.79             | 0.89               | 0.14               | 0.06                |       |
+|                 | int                 | 2.72             | 0.89               | 0.16               | 0.06                |       |
+|                 | long ja double      | 2.8              | 0.9                | 0.15               | 0.06                |       |
+|-----------------+---------------------+------------------+--------------------+--------------------+---------------------+-------|
 
 
 1. j-c: tsekkaa onko slopea tarpeeksi
 2. j-c: double ja long: hyppy 14kpl kohdalla
+Cortex-A8: The processor has a total of 40 registers:
+    33 general-purpose 32-bit registers > n 16 rekisteriä käytettävissä 64-bitt
+    seven 32-bit status registers   
 3. melko hajanaisia tuloksia (laaja hajonta)
    J-J-suunnassa ei eroa viite vs. primitiivi
 4. C-C-suunnassa erottuu viite vs. primitiivi: miksi??
 
-paluuarvot
-|   |   |   |   |   |
-|---+---+---+---+---|
-|   |   |   |   |   |
 * SetArrayRegion (p52)
 
 |        | C-J             |
 |--------+-----------------|
-| 64-bit | 0.00085x + 0.23 |
-| other  | 0.0004x + 0.24  |
+| 64-bit | 0.0045 x + 1.2  |
+| other  | 0.0023 x + 1.16 |
 
-** Read/WriteCompleteArray (primitive)
+* GetArrayRegion (p52)
 
-|        | J-J               | C-C              | J-J               | C-C               | notes |      |
-|--------+-------------------+------------------+-------------------+-------------------+-------+------|
-|        | read              | read (2)         | write (1)         | write             |       |      |
-|--------+-------------------+------------------+-------------------+-------------------+-------+------|
-| float  | 0.0212x + 0.016   | 0.0284x + 0.0639 | 0.00423x + 0.04   | 0.00531x + 0.0137 | (2)   |      |
-| double | 0.0212x + 0.048   | 0.0203x + 0.0184 | 0.00479x + 0.05   | 0.00605x + 0.0253 |       |      |
-|--------+-------------------+------------------+-------------------+-------------------+-------+------|
-| long   | 0.00713x + 0.0227 | 0.0124x + 0.0151 | 0.00476x + 0.0376 | 0.00524x + 0.0254 |       |      |
-| int    | 0.00529x + 0.0358 | 0.0113x + 0.0221 | 0.00427x + 0.0351 | 0.00530x + 0.0167 |       |      |
-|--------+-------------------+------------------+-------------------+-------------------+-------+------|
-| NIO    | START             |                  |                   |                   |       |      |
-|--------+-------------------+------------------+-------------------+-------------------+-------+------|
-| float  | 0.264x + 0.458    |                  | 0.243x + 0.271    |                   |       |      |
-| double | 0.272x - 0.0577   |                  | 0.252x + 0.396    |                   | (3)   | TODO |
-| byte   | 0.249x + 0.484    |                  | 0.236x + 0.645    |                   |       |      |
-| short  | 0.248x - 0.545    |                  | 0.285x - 0.129    |                   | (3)   |      |
-| long   | 0.242x + 0.907    |                  | 0.260x - 0.0129   |                   |       |      |
-| int    | 0.248x + 0.001    |                  | 0.255x - 0.5575   |                   |       |      |
-|--------+-------------------+------------------+-------------------+-------------------+-------+------|
-| NIO    | END               |                  |                   |                   |       |      |
-|--------+-------------------+------------------+-------------------+-------------------+-------+------|
+| bits | C-J               |
+|------+-------------------+
+| 64   | 0.0046 * x +1.18  |
+| less | 0.00232 * x +1.16 |
 
 
+** TODO Read/WriteCompleteArray (primitive)
 
+|        | J-J               | C-C                |               J-J | C-C                | notes |                                    |
+|--------+-------------------+--------------------+-------------------+--------------------+-------+------------------------------------|
+|        | read              | read (2)           |         write (1) | write              |       |                                    |
+|--------+-------------------+--------------------+-------------------+--------------------+-------+------------------------------------|
+| double | 0.0252 * x +0.177 | 0.0478 * x +0.081  | 0.0265 * x +0.165 | 0.0398 * x +0.0609 |       |                                    |
+| float  | 0.0146 * x +0.155 | 0.0434 * x +0.283  | 0.0187 * x +0.146 | 0.0359 * x +0.0551 | (2)   |                                    |
+|--------+-------------------+--------------------+-------------------+--------------------+-------+------------------------------------|
+| long   | 0.0252 * x +0.158 | 0.0468 * x +0.216  | 0.0227 * x +0.157 | 0.0346 * x +0.0331 |       |                                    |
+| int    | 0.0152 * x +0.178 | 0.0451 * x +0.0656 | 0.0152 * x +0.178 | 0.0358 * x +0.076  |       |                                    |
+|--------+-------------------+--------------------+-------------------+--------------------+-------+------------------------------------|
+| NIO    | START             |                    |                   |                    |       | note: this have been divided by 64 |
+|--------+-------------------+--------------------+-------------------+--------------------+-------+------------------------------------|
+| char   | 8.20264029391     |                    |     6.59070988336 |                    |       |                                    |
+| long   | 8.07829001869     |                    |     5.91180326653 |                    |       |                                    |
+| float  | 7.51842809791     |                    |     5.98952732291 |                    |       |                                    |
+| short  | 7.62161222749     |                    |     5.96488641962 |                    | (3)   |                                    |
+| int    | 7.66523099073     |                    |      5.6787080222 |                    |       |                                    |
+| double | 6.9852011746      |                    |     5.46183393351 |                    | (3)   | TODO                               |
+| byte   | 3.01219080687     |                    |     2.83738707162 |                    |       |                                    |
+|--------+-------------------+--------------------+-------------------+--------------------+-------+------------------------------------|
+| NIO    | END               |                    |                   |                    |       |                                    |
+|--------+-------------------+--------------------+-------------------+--------------------+-------+------------------------------------|
+
+* Nio call sequence for J-J get byte:
+- DirectByteBugger.get
+  - peekByteArray -> byte[] dst
+    - env->SetByteArrayRegion
+
+  - ei suoraan verrattavissa setXarrayregioniin, koska TÄSSÄ MUKANA JNI OVERHEAD LISÄKSI
+    
+* notes
 1. why is writing quicker ?? optimization? still linear though! :check_code:
-   answer: added "redundant" side-effects in read code (todo: remove in c?)
+   WRONG answer: added "redundant" side-effects in read code (todo: remove in c?)
+   REAL answer: write case uses inline value for writing, not dependent
+   on memory access && has less bytecodes ...
+   Besides, not true anymore for J2J
 2. why is float slower than double ?? other weirdness to: maybe because of O0
 3. can't be negative!
+
+
+* Eri tapoja kopioida 512 tavua
+
+  MUISTA KERROIN : 1 / 500_000
+
+** C->J
+
+*** kutsu tavuargumentilla 512 kertaa:
+
+    512 * (0.0506 * 1 + 2.74) = 1428 
+
+*** palauta paluuarvona 512 kertaa
+    0.89 * 512 = 455.7 
+    
+*** DONE kopioi java-taulukkoon 
+    SetByteArrayRegion
+
+    0.0023 * 512 + 1.16 = 2.3376 
+
+*** kopioi directbytebuffer-muistialueeseen
+    0.0358 * 512 +0.076 = 18.4   ( sen jälkeen java-puolella arrayhin +3s tai array()-kutsulla vähemmän?)
+    + ensin c-puolella newdirectbuffer tai accessdirectbuffer ...
+      -> vähintään 3.26s lisää -> noin 21.66
+
+** J->C
+
+*** palauta paluuarvona:
+
+    2.72 * 512 = 1400
+
+*** kutsu tavuargumentilla 512 kertaa:
+
+    0.00855 * 512 + 0.871 = 5.25
+
+*** välitä array-parametrina ( + luku)
+
+    (välitys): 0.33 * 1 + 0.9 = 1.23 +
+      (luku c:ssä):
+           getarrayregion : 0.00232 * 512 + 1.16 = 2.35
+        - tai -
+            (getintarrayelements) : 8.72e-05 * 512 +3.14 = 3.18
+
+*** accessDirectBuffer (getdirectbufferaddress) 2.36 s
+
+* yleishuomiot:
+
+** J->C paljon nopeampi kuin päinvastoin (kutsusuuntana)
+   osittain johtuu siitä, että aina välitetään viite (olio/luokka)
+   osittain siitä, että joudutaan tekemään enemmän lukituksia, jne.
+   (checckaa perf report)
+
+** mieluummin käsitellään staattisia fieldejä kuin instanssifieldejä...
+   syy: sama: indirectreftable ... 
+
+
