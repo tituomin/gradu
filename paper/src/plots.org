@@ -16,8 +16,8 @@
 #+MACRO: plot {{{plot_internal(880e48f1-c9a9-4c7e-a3c6-fa403ca70214,$1)}}}
 #+MACRO: rotated_plot {{{rotated_plot_internal(880e48f1-c9a9-4c7e-a3c6-fa403ca70214,$1)}}}
 
-#+MACRO: plot_a {{{plot_internal(80adab84-72bc-423c-adeb-8eda99a36b20,$1)}}}
-#+MACRO: rotated_plot_a {{{rotated_plot_internal(80adab84-72bc-423c-adeb-8eda99a36b20,$1)}}}
+#+MACRO: plot_a {{{plot_internal(b45ae421-fbec-407e-88be-cd2f76d1bbff,$1)}}}
+#+MACRO: rotated_plot_a {{{rotated_plot_internal(b45ae421-fbec-407e-88be-cd2f76d1bbff,$1)}}}
 
 {{{plot(01)}}}
 \clearpage
