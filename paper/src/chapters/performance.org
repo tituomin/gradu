@@ -31,24 +31,26 @@ suoritusaikaista käyttäytymistä @@vertical, @@appel.
 # TODO esimerkki lähteistä (java vertical profiling)
 # lisää lähteitä?
 
-Knuthin näkökulma rajottui kuitenkin yksittäisen algoritmin, ohjelman
+Knuthin näkökulma rajoittui kuitenkin yksittäisen algoritmin, ohjelman
 tai komponentin /ohjelmointiin/. Laajaa ohjelmistoa rakentaessa
 otetaan kantaa myös ohjelmiston käsitteellisiin vaatimuksiin ja
 suunnitellaan ohjelmiston komponenttitason arkkitehtuuri sekä
 komponenttien tarkempi rakenne. Oli ohjelmiston tuotantoprosessi miten
 inkrementaalinen tahansa, varhaiset suuren mittaluokan ratkaisut
 rajoittavat usein myöhempiä yksityiskohtia. Merkittäviä
-seurannaisvaikutuksia on esimerkiksi
+seurannaisvaikutuksia on esimerkiksi käytetyillä ohjelmointikielillä,
+käytetyillä valmiskomponenteilla ja ohjelmakirjastoilla sekä
+ohjelmiston yleisarkkitehtuurilla. Esimerkiksi
+asiakas-palvelin-arkkitehtuurissa on valittava, sijoitetaanko tietty
+toiminto palvelin- vai asiakaskomponenttiin. Androidin tapauksessa
+vastaava valinta koskee sitä, sijoitetaanko toiminto hallittuun
+ympäristöön (Java-ohjelma virtuaalikoneessa) vai natiiviympäristöön
+(natiivikirjasto).
 
-- käytetyillä ohjelmointikielillä,
-- käytetyillä valmiskomponenteilla ja ohjelmakirjastoilla sekä
-- ohjelmiston yleisarkkitehtuurilla ja komponenttien sijoittumisella
-  suoritusympäristön eri osiin.
-  
 Kaikkia näitä valintoja voi toki periaatteessa muuttaa milloin
 tahansa, mutta todellisten projektien rajoitusten takia se on usein
 jälkikäteen mahdotonta.
-  
+
 # comment: lähde edelliseen?
 
 Suorituskykyvaatimusten täyttymistä ohjelmistoprosessin näkökulmasta
@@ -93,7 +95,7 @@ tulosten tulkintaan liittyviä haasteita.
 # todo: arvioiminen &mallintaminen vs. mittaaminen/mittari
 # todo: another indice: memory use!
 # (kielenkäyttö)
-Suorituskyky on pohjimmiltaan subjektiivinen käsite, joka ilmaisee
+Suorituskyky on pohjimmiltaan subjektiivinen käsite, joka ilmaisee,
 miten /hyvin/ järjestelmä toteuttaa tehtävänsä @@ferrari(2). Tässä
 tutkielmassa suorituskyky määritellään ohjelmiston laadulliseksi
 ominaisuudeksi, joka kuvaa, miten /nopeasti/ ohjelmisto toimii
@@ -119,11 +121,9 @@ Tutkielmassa keskitytään mobiilisovellusten responsiivisuuteen. Sitä
 arvioidaan /vasteajalla/: aikavälillä syötteen saamisesta siihen
 hetkeen, kun ohjelman tai ohjelmakomponentin tuloste on palautettu
 käyttäjälle tai kutsuvalle komponentille @@ferrari(13). Vasteajan
-perussuure on aika, ja vasteaikaa voi arvioida eri tarkkuusasteilla
-jopa yksittäisestä konekäskystä koko ohjelmistoon.
-
-\todo{<<tarkkuusaste>>}
-# todo selvennä ylempi
+perussuure on aika. Vasteaikamittauksen mittauskohteen suuruusluokka
+voi vaihdella jopa yksittäisestä konekäskystä ohjelmiston suorittamaan
+pitkäkestoiseen, käyttäjälle näkyvään toimintoon.
 
 Myös tuottavuutta käsitellään tutkielmassa, sillä komponenttien
 tuottavuus vaikuttaa käyttäjän kokemiin vasteaikoihin. Tuottavuus
@@ -139,7 +139,7 @@ haasteita suorituskyvyn arvioinnissa @@spe(115), @@ferrari(221).
 
 Seuraavaksi käsittelemme ohjelmiston vasteaikojen mittaamiseen
 käytettäviä konkreettisia mittausmenetelmiä, joilla saadaan mitattua
-kokonaisvasteikoja sekä vasteaikojen jakautumista ohjelmiston eri
+kokonaisvasteaikoja sekä vasteaikojen jakautumista ohjelmiston eri
 osiin.
 
 ** Vasteajan mittaaminen
@@ -194,7 +194,7 @@ Tässä tutkielmassa kaikki suorituskykyä parantavat ratkaisut
 tavoittelevat ohjelman /vasteaikojen lyhentämistä tosiaikana
 mitattuna/. Tarkemman suorituskykyanalyysin kannalta pelkkä tosiajan
 käyttäminen ei kuitenkaan aina ole riittävää. UNIX-käyttöjärjestelmät
-pitävät kirjaa myös /sovellusajasta/ (/user time/), eli ajasta, jonka
+pitävät kirjaa myös /sovellusajasta/ (/user time/) eli ajasta, jonka
 sovellusprosessi viettää aktiivisesti tavallisessa suoritustilassa
 käyttöjärjestelmäytimen ulkopuolella (/unprivileged mode/, /user
 mode/) @@advanced-unix(20). Toinen osa sovellusprosessin
@@ -206,7 +206,7 @@ eksplisiittisesti kutsunut.
 
 Aika, joka kuluu erilaisia palveluita odottaessa, lasketaan tosiaikaan
 muttei sovellus- tai järjestelmäaikaan. Käyttäjän kannalta esimerkiksi
-I/O-operaatioden odottelulla on selvästi suuri merkitys. Sovellus- ja
+I/O-operaatioiden odottelulla on selvästi suuri merkitys. Sovellus- ja
 järjestelmäaika yhdessä vastaavat sovelluksen /suoritinaikaa/ (/CPU
 time/), koska niihin kuuluu ainoastaan prosessin aktiivinen
 suoritusaika @@advanced-unix(20). Tutkielmassa oletetaan, että
@@ -237,8 +237,13 @@ tapahtumien havaitseminen on käsitteellisesti kaukana ohjelmiston
 sisäisestä suorituskontekstista @@ferrari(32). Käytännön
 ohjelmistokehityksessä mittauslaitteiden hyödyntäminen ei usein
 ole mahdollista.
-# todo: suorituskonteksti hyvä pointti mutta ferrari ei sano tuota suoraan
-# mainitse että arm-prosessorissa on hardwaretukea asialle
+
+*** TODO "käsitteellisesti kaukana ohjelmiston sisäisestä suorituskontekstista" ? JV      :noexport:
+    :PROPERTIES:
+    :CUSTOM_ID: suorituskonteksti
+    :END:
+    KOODI SUORITUSKONTEKSTI: suorituskonteksti hyvä pointti mutta ferrari ei sano tuota suoraan
+    mainitse että arm-prosessorissa on hardwaretukea asialle
 
 Mittaustekniikat jakaantuvat menetelmiin, jotka joko /kirjaavat/
 (/record/) kiinnostavia /tapahtumia/ tai /tarkkailevat/ (/monitor/)
@@ -329,7 +334,7 @@ virtuaalikonetta.
 
 Tutkielman mittaukset suoritetaan näytteenottotekniikalla, Linuxin
 /perf/-työkalun avulla @@du(13). Android-laitteeseen on asennettu
-räätälöity Linux-ydin joka tukee suorituskykylaskurien käyttöä. Itse
+räätälöity Linux-ydin, joka tukee suorituskykylaskurien käyttöä. Itse
 mittaukset käynnistetään ja raportit tulostetaan ytimen ulkopuolisilla
 /perf/-komentorivityökaluilla.
 
@@ -370,7 +375,7 @@ vähentäisikin tuloksista.
 # lähteitä ferrari, smith, java vertical profiling?
 
 Toisaalta, jos ohjelmiston suorituskyvyn seuraaminen katsotaan osaksi
-sen normaalia toimintaa, ja instrumentointikäskyt ovat oleellinen osa
+sen normaalia toimintaa ja jos instrumentointikäskyt ovat oleellinen osa
 tuotantokäytössä suoritettavaa ohjelmistoa, häirinnän ongelma
 katoaa. Tämä lienee käytännöllisintä laajoissa palvelinohjelmistoissa
 tai käyttöjärjestelmissä -- yksittäisten käyttäjien mobiililaitteissa
@@ -499,6 +504,7 @@ jokainen alkaa satunnaisella ajanhetkellä, ja vaihtelemme jakson
 pituutta syklimäärässä.
 # todo: analysoi linuxin timeria ja schedulointia..
 # todo: onko dalvikissa ym. muissa komponenteissa jaksollisia ilmiöitä?
+\newpage
 * Mittauskohteen edustavuus ja tulosten yleistettävyys
 \label{performance:representativeness-generalization}
 
@@ -516,13 +522,13 @@ ominaispiirteitä ja toteutusyksityiskohtia.
 
 Esimerkiksi vasteaika ilmaisee aina tietyn operaation vasteajan
 tietyllä syötteellä eli kuormituksella, jota on hyvin vaikea
-spesifioida tavalla joka olisi riippumaton käsiteltävän järjestelmän
+spesifioida tavalla, joka olisi riippumaton käsiteltävän järjestelmän
 ominaisuuksista @@ferrari(14).
 
 Nämä seikat vähentävät yksittäisten mittaustulosten
-hyötyä. Tarkoistakin mittauksista on vaikeaa tehdä sellaisia /yleisiä/
-päätelmiä tulosten syistä, joita voisi soveltaa myös muissa
-konteksteissa kuin konkreettisessa mittaustilanteessa @@saavedra(69).
+hyötyä. Tarkoistakin mittauksista on vaikeaa tehdä sellaisia päätelmiä
+tulosten syistä, jotka voisi yleistää koskemaan muitakin kuin
+täsmälleen itse mittaustilanteen kaltaisia tapauksia @@saavedra(69).
 
 \todo{<<käyttötapaus>>}
 
@@ -619,7 +625,7 @@ suorituskykyominaisuuksia ja päätellä niistä, miten osista rakennettu
 kokonaisuus mahdollisesti toimisi. Kutsun /alkeisoperaatioden
 mittaamiseksi/ (/microbenchmarking/) tällaista menetelmää, jossa
 verrataan kielen tai järjestelmän yksittäisten perusoperaatioiden
-rasitteita toisiinsa @@saavedra(347). Menetelmän etuna on että
+rasitteita toisiinsa @@saavedra(347). Menetelmän etuna on, että
 mittaustuloksista saadaan periaatteessa suuri määrä suoraviivaisesti
 tulkittavaa dataa siitä, mitkä operaatiot ovat suhteessa erityisen
 raskaita ohjelmistoissa käytettäviksi. Lähestymistavassa on kuitenkin
@@ -667,7 +673,7 @@ keinotekoisesti lisättävä sivuvaikutuksia.
 Korkean tason kielellä tehtävät vakioidutkin mittaukset ovat erityisen
 virhealttiita, sillä niitä monimutkaistavat /automaattinen
 muistinhallinta/, /dynaamisen optimoinnin/ aiheuttama epädeterminismi
-sekä /järjestelmän lämmitysviiveet/ jotka johtuvat luokkien
+sekä /järjestelmän lämmitysviiveet/, jotka johtuvat luokkien
 lataamisesta ja JIT-kääntämisestä @@coffee(83). Näiden hallitsemiseksi
 on omat mittausmenetelmänsä sekä tilastolliset työkalunsa, joita
 käsittelemme tarkemmin luvussa \ref{sec-measurement-setup}.

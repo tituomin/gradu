@@ -3,7 +3,7 @@
 #+LANGUAGE: fi
 #+LaTeX_CLASS: gradu
 #+LaTeX_CLASS_OPTIONS: [gradu]
-#+OPTIONS: toc:nil
+#+OPTIONS: toc:nil H:3 num:2
 
 #+BEGIN_abstract
 #+INCLUDE: "chapters/abstract.org"
@@ -21,17 +21,13 @@
 #+MACRO: plot {{{plot_internal(6d0390ad-94bc-4006-8dfc-0646fcd0d23b,$1)}}}
 #+MACRO: rotated_plot {{{rotated_plot_internal(6d0390ad-94bc-4006-8dfc-0646fcd0d23b,$1)}}}
 
-#+MACRO: c   \cite{$1}
-#+MACRO: cp   \cite[s.~$2]{$1}
-# just testing alternatives
-
 # {{{c(benchmark-ndk)}}}
 # {{{cp(benchmark-ndk, 5)}}}
 # {{{c(foo)}}}
 
-\begin{figure} \input{figures/plots/test.tex} \end{figure}
-\begin{figure} \scalebox{.5}{\input{foo.tex}}l
- \end{figure}
+# \begin{figure} \input{figures/plots/test.tex} \end{figure}
+# \begin{figure} \scalebox{.5}{\input{foo.tex}}l
+#  \end{figure}
 
 * Johdanto
 #+INCLUDE: "../gen/chapters/intro.org" :minlevel 2
@@ -43,13 +39,19 @@
 #+INCLUDE: "../gen/chapters/jni.org" :minlevel 2
 
 #+LATEX: \newpage
-* Koeasetelman kuvaus
-#+INCLUDE: "../gen/chapters/measurement-setup.org" :minlevel 2
-* Mittaustulokset
-#+INCLUDE: "../gen/chapters/measurement-results.org" :minlevel 2
-* Tulosten analyysi
-#+INCLUDE: "../gen/chapters/measurement-analysis.org" :minlevel 2
-* Johtopäätökset
+* Suorituskykymittaukset
+  Tutkielman aineisto saatiin mittaamalla JNI-operaatioita käyttäviä
+  ohjelmia Android-laitteessa ja analysoimalla tuloksia. Tässä luvussa
+  kuvaillaan mittausten koeasetelma, esitellään mittaustulokset ja
+  tehdään niistä johtopäätelmiä.
+
+** Koeasetelman kuvaus
+#+INCLUDE: "../gen/chapters/measurement-setup.org" :minlevel 3
+** Mittaustulokset
+#+INCLUDE: "../gen/chapters/measurement-results.org" :minlevel 3
+** Tulosten analyysi
+#+INCLUDE: "../gen/chapters/measurement-analysis.org" :minlevel 3
+* Yhteenveto
 #+INCLUDE: "../gen/chapters/conclusions.org" :minlevel 2
 
 #+LATEX: \newpage

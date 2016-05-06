@@ -1,10 +1,21 @@
-#+TODO: TODO PLAN CODE TEST | WONTFIX DONE
 Gradu: duunit
 
 Missä mennään:
 [[file:~/gradu/paper/bib/main.bib::saavedra]]
 (hyvä peruslähde benchmarkeista)
 
+* vihavaisen huomiot <2014-02-06 to> [4/10]
+** yhdistä luvut 5-7
+*** TODO tarkista että otsikot meni ok
+** TODO [[file:~/gradu/paper/src/chapters/performance.org::#suorituskonteksti]["käsitteellisesti kaukana ohjelmiston sisäisestä suorituskontekstista" ? JV]]
+** TODO kirjoita johdantoon ja android-osaan ja ehkä yhteenvetoon
+   että dalvik on jo vanhentunut mutta mittausmetodi ei!
+** TODO vihavaiselle pilkkusäännöt s. 13 https://www.cs.helsinki.fi/u/taina/gradut/gradumalli.pdf
+** TODO yhteenveto-luvun sisältö koko tutkielmasta :lopuksi:
+** TODO suorituskykyasioita voisi avata vieläkin lisää?
+** DONE tekstissä voi käyttää numeroimattomia otsakkeita (n 1 / sivu)
+*** DONE varmista että tyyli meni oikein (aloittaa rivin boldilla, ei rivinvaihtoa)
+** DONE numeroituja pää- ja alilukuja liikaa
 * TODO <2016-05-01 su 21:33> noticed that the emacs perf-report-mode (or python actually)
   chokes probably on the extra lines of alloc cvs
 * TODO <2016-05-01 su 12:59> maybe one optimized session of c2c measurement?

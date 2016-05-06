@@ -84,7 +84,7 @@
 \\level{Pro gradu -tutkielma}"
 ("\\section{%s}" . "\\section*{%s}")
 ("\\subsection{%s}" . "\\subsection*{%s}")
-("\\paragraph{%s}" . "\\paragraph*{%s}")))
+("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
 
 (defun org-export-latex-no-toc (depth)
     (when depth

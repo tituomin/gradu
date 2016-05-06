@@ -241,7 +241,7 @@ benchmark-säikeen suorituksen. Tämä monimutkaistaa lähtösilmukoita,
 sillä niiden on itse tutkittava, onko mittaus keskeytetty, ja tehtävä
 se tarpeeksi harvoin, jotta se ei vaikuta suoritusaikoihin.
 
-** Mittaamisen perusrasitteet
+* Mittaamisen perusrasitteet
 
 Eri permutaatioiden sekvenssikaavioista (kuvat
 \ref{fig:sequence_java_to_c}--\ref{fig:sequence_c_to_c}) voi huomata,
@@ -278,7 +278,7 @@ sivuvaikutuksia.
 # TODO viite ylle
 # TODO XXXXXXX
 
-** Muistia allokoivat operaatiot
+* Muistia allokoivat operaatiot
 
 Muistia allokoivia JNI-operaatioita, jotka esimerkiksi luovat olioita,
 ei voi suorittaa tuhansia kertoja ilman että sovelluksen muisti
@@ -310,7 +310,7 @@ suorituskykyhäiriöitä. Ongelmaa on vältetty allokoimalla heti
 sovelluksen käynnistyessä suuri taulukko-olio, johon saatu viite
 tuhotaan heti roskienkeruun mahdollistameksi.
 
-** JIT-käännös
+* JIT-käännös
 
 Dalvik sisältää JIT-kääntäjän \ref{sec-dalvik-intro}, jonka toiminta
 tekee Java-koodin käyttäytymisestä vaikeasti ennustettavaa: koska
@@ -456,9 +456,9 @@ tulokset kuvaajiksi ~gnuplot~-ohjelmalla sekä tulostaa ne taulukoiksi
 tekstitiedostoihin. Analyysiohjelmalla on myös käytössään
 ~jni_types~-moduulin tyyppimääritykset.
 
-** Tilastolliset menetelmät
-    2 sivua\newline 10. 2. 2014
+* Tilastolliset menetelmät
+   2 sivua\newline 10. 2. 2014
 
-    # TODO: ei ole juurikaan käytetty muuta kuin interpolointia
+   # TODO: ei ole juurikaan käytetty muuta kuin interpolointia
 
-    Käytetyt tilastolliset menetelmät.
+   Käytetyt tilastolliset menetelmät.

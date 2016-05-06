@@ -1,4 +1,5 @@
 
+
 Aluksi esitetään  lyhyt yleiskuvaus Android-järjestelmästä ennen
 siirtymistä tutkielman varsinaiseen aiheeseen, suorituskyvyn
 mittaamiseen ja mallintamiseen sekä Androidin
@@ -52,7 +53,7 @@ Kaikki Java-ohjelmakoodi käännetään Androidia varten ensin normaaliksi
 tavukoodiksi ja siitä Androidin omaksi rekisteripohjaiseksi
 ~dex~-tavukoodiksi, jota suorittaa Dalvik-virtuaalikone @@aot(15). Dalvikissa
 suoritetaan sekä sovellusohjelmat että järjestelmän sisäiset
-komponentit -- siltä osin kun ne on toteutettu Javalla.
+komponentit -- siltä osin kuin ne on toteutettu Javalla.
 
 Android on alusta lähtien suunniteltu tukemaan moniajoa. Jokaista
 Android-sovellusta suoritetaan omalla käyttäjätunnuksellaan, omassa

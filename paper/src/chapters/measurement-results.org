@@ -147,7 +147,7 @@ Some separating text.
 
 {{{rotated_plot(58)}}}
 
-** Merkkijonojen käsittely
+* Merkkijonojen käsittely
 
 # {{{plot(52)}}}
 {{{plot(53)}}}
@@ -202,8 +202,7 @@ Java-merkkijonon (~String~) sisällön tehokkaaseen kopioimiseen olioon.
 # {{{plot(56)}}}
 {{{plot(57)}}}
 
-
-** Taulukoiden käsittely
+* Taulukoiden käsittely
 
 Taulukoiden käsittely on täysin analogista merkkijonojen käsittelyn
 kanssa. Osoittimen palauttavat operaatiot ovat:
@@ -228,7 +227,7 @@ Java-komponentit voivat myös käsitellä samaa muistialuetta.
 
 # TODO HERE
 
-** Non-blocking I/O
+* Non-blocking I/O
 \label{sec:measurement-classification-nio}
 
 Javan standardikirjaston paketin ~java.nio~ luokka ~ByteBuffer~ antaa
@@ -268,53 +267,53 @@ muistialueeseen/. Jos taas puskuri on luotu Java-komponentissa,
 sen edustaman muistialueen saa \path{GetDirectBufferAddress}-kutsulla ja
 kapasiteetin \path{GetDirectBufferCapacity}.
 
-** Kenttien käsittely
-*** Ilmentymän kentät                                                                          :dep:
-**** DONE GetFieldID                                                                        :search:
-**** DONE COUNTERPOINT Get<type>Field Routines
-     skip others than J target, because
-     aim of measuring is to measure the jni call
-     overhead, which doesn't exist for j2c, c2c
-     - [X] C2J
-     - [X] J2J
-     - [ ] J2C
-     - [ ] C2C
-**** COUNTERPOINT Set<type>Field Routines
-     - [X] C2J
-     - [X] J2J
-     - [ ] J2C
-     - [ ] C2C
-*** Staattiset kentät                                                                          :dep:
-**** DONE GetStaticFieldID                                                                  :search:
-**** COUNTERPOINT GetStatic<type>Field Routines
-     - [X] C2J
-     - [X] J2J
-     - [ ] J2C
-     - [ ] C2C
-**** COUNTERPOINT SetStatic<type>Field Routines
-     - [X] C2J
-     - [X] J2J
-     - [ ] J2C
-     - [ ] C2C
-** Olioiden käsittely
-*** DONE GetObjectClass                                                                       :read:
-** Muistia varaavat operaatiot
-*** DONE AllocObject                                                                         :alloc:
-*** DONE NewObject, NewObjectA, NewObjectV                                             :comp2:alloc:
+* Kenttien käsittely
+** Ilmentymän kentät                                                                           :dep:
+*** DONE GetFieldID                                                                         :search:
+*** DONE COUNTERPOINT Get<type>Field Routines
+    skip others than J target, because
+    aim of measuring is to measure the jni call
+    overhead, which doesn't exist for j2c, c2c
+    - [X] C2J
+    - [X] J2J
+    - [ ] J2C
+    - [ ] C2C
+*** COUNTERPOINT Set<type>Field Routines
+    - [X] C2J
+    - [X] J2J
+    - [ ] J2C
+    - [ ] C2C
+** Staattiset kentät                                                                           :dep:
+*** DONE GetStaticFieldID                                                                   :search:
+*** COUNTERPOINT GetStatic<type>Field Routines
+    - [X] C2J
+    - [X] J2J
+    - [ ] J2C
+    - [ ] C2C
+*** COUNTERPOINT SetStatic<type>Field Routines
+    - [X] C2J
+    - [X] J2J
+    - [ ] J2C
+    - [ ] C2C
+* Olioiden käsittely
+** DONE GetObjectClass                                                                        :read:
+* Muistia varaavat operaatiot
+** DONE AllocObject                                                                          :alloc:
+** DONE NewObject, NewObjectA, NewObjectV                                              :comp2:alloc:
 
-*** DONE NewString                                                                           :alloc:
-*** DONE NewStringUTF                                                                        :alloc:
+** DONE NewString                                                                            :alloc:
+** DONE NewStringUTF                                                                         :alloc:
 
-*** DONE NewObjectArray                                                                      :alloc:
-*** DONE New<PrimitiveType>Array Routines                                                    :alloc:
-** Paikalliset ja globaalit viitteet
-*** Local References
-**** DONE PushLocalFrame                                                            :comp1:allocref:
-**** DONE PopLocalFrame                                                             :comp1:allocref:
-** Poikkeukset
-*** DONE ExceptionCheck                                                                       :read:
-** Luokkien käsittely                                                                :exclude:maybe:
-*** DONE FindClass                                                            :exclude:maybe:search:
+** DONE NewObjectArray                                                                       :alloc:
+** DONE New<PrimitiveType>Array Routines                                                     :alloc:
+* Paikalliset ja globaalit viitteet
+** Local References
+*** DONE PushLocalFrame                                                             :comp1:allocref:
+*** DONE PopLocalFrame                                                              :comp1:allocref:
+* Poikkeukset
+** DONE ExceptionCheck                                                                        :read:
+* Luokkien käsittely                                                                 :exclude:maybe:
+** DONE FindClass                                                             :exclude:maybe:search:
 * Sivuutetut operaatiot
 ** Olioiden käsittely
 *** EXCLUDE GetObjectRefType                                                                  :read:
