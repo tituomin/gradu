@@ -4,15 +4,15 @@ Missä mennään:
 [[file:~/gradu/paper/bib/main.bib::saavedra]]
 (hyvä peruslähde benchmarkeista)
 
-* vihavaisen huomiot <2014-02-06 to> [4/10]
-** yhdistä luvut 5-7
-*** TODO tarkista että otsikot meni ok
+* vihavaisen huomiot <2014-02-06 to> [4/9]
 ** TODO [[file:~/gradu/paper/src/chapters/performance.org::#suorituskonteksti]["käsitteellisesti kaukana ohjelmiston sisäisestä suorituskontekstista" ? JV]]
+** TODO suorituskykyasioita voisi avata vieläkin lisää?
+** yhdistä luvut 5-7
+*** TODO tarkista että otsikot meni ok :lopuksi:
 ** TODO kirjoita johdantoon ja android-osaan ja ehkä yhteenvetoon
    että dalvik on jo vanhentunut mutta mittausmetodi ei!
-** TODO vihavaiselle pilkkusäännöt s. 13 https://www.cs.helsinki.fi/u/taina/gradut/gradumalli.pdf
 ** TODO yhteenveto-luvun sisältö koko tutkielmasta :lopuksi:
-** TODO suorituskykyasioita voisi avata vieläkin lisää?
+** DONE vihavaiselle pilkkusäännöt s. 13 https://www.cs.helsinki.fi/u/taina/gradut/gradumalli.pdf
 ** DONE tekstissä voi käyttää numeroimattomia otsakkeita (n 1 / sivu)
 *** DONE varmista että tyyli meni oikein (aloittaa rivin boldilla, ei rivinvaihtoa)
 ** DONE numeroituja pää- ja alilukuja liikaa
