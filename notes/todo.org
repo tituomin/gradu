@@ -4,6 +4,20 @@ Missä mennään:
 [[file:~/gradu/paper/bib/main.bib::saavedra]]
 (hyvä peruslähde benchmarkeista)
 
+* saved for posterity
+  Tällaiset lupaukset oli tutkielmasuunnitelmassa...
+
+  JNI-operaatiot kategorisoidaan ja esitellään tiiviisti ja kommentoidaan
+  niiden mittaamiseen liittyviä haasteita. Kategoriat ovat:
+  - Viitteidenhallinta
+  - Olioiden käsittely
+  - Kenttien ja metodien löytäminen
+  - Kenttien ja metodien käyttö
+  - Merkkijonojen ja taulukoiden käsittely
+  - Tehostetut IO-operaatiot (NIO)
+* TODO <2016-05-06 Fri 19:36> jonnekin hukkunut static/ym variaatiot? onko plotattu?
+* TODO <2016-05-06 Fri 19:21> siirrä NIO-luku JNI:n yhteyteen? lisää lähde
+* TODO <2016-05-06 Fri 19:04> mahdollisesti poistettava turhan tarkaa Python-läpinää
 * TODO <2016-05-06 Fri 18:21> [[file:~/gradu/paper/src/chapters/measurement-setup.org::#nexus-s-reference][lisää viite]]
 * vihavaisen huomiot <2014-02-06 to> [3/7]
 ** yhdistä luvut 5-7

@@ -238,13 +238,6 @@ sisäisestä suorituskontekstista @@ferrari(32). Käytännön
 ohjelmistokehityksessä mittauslaitteiden hyödyntäminen ei usein
 ole mahdollista.
 
-*** TODO "käsitteellisesti kaukana ohjelmiston sisäisestä suorituskontekstista" ? JV      :noexport:
-    :PROPERTIES:
-    :CUSTOM_ID: suorituskonteksti
-    :END:
-    KOODI SUORITUSKONTEKSTI: suorituskonteksti hyvä pointti mutta ferrari ei sano tuota suoraan
-    mainitse että arm-prosessorissa on hardwaretukea asialle
-
 Mittaustekniikat jakaantuvat menetelmiin, jotka joko /kirjaavat/
 (/record/) kiinnostavia /tapahtumia/ tai /tarkkailevat/ (/monitor/)
 järjestelmän tai ohjelmiston /tiloja/@@spe(328). Tapahtumien
@@ -294,6 +287,14 @@ voivat näin tutkia vaikkapa, missä aliohjelmissa suoritin viettää
 suurimman osan ajastaan. Algoritmeja muuttamalla, tietorakenteita
 vaihtamalla tai ohjelmaa muuten muokkaamalla näitä /kuumia kohtia/
 (/hot spot/) voidaan optimoida -- tai vähentää niiden kutsukohtia.
+
+*** TODO "käsitteellisesti kaukana ohjelmiston sisäisestä suorituskontekstista" ? JV      :noexport:
+    :PROPERTIES:
+    :CUSTOM_ID: suorituskonteksti
+    :END:
+    KOODI SUORITUSKONTEKSTI: suorituskonteksti hyvä pointti mutta ferrari ei sano tuota suoraan
+    mainitse että arm-prosessorissa on hardwaretukea asialle
+
 
 ** Mittausten toteuttaminen
 Instrumentoitua ohjelmaa voi suorittaa normaalisti samassa

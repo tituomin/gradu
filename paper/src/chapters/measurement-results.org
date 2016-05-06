@@ -1,7 +1,6 @@
-Tässä luvussa esitellään kerätyt mittaustulokset ja tehdään niistä
-alustavia havaintoja. Sitä ennen mittauksen kohteena olevat
-JNI-rajapinnan palvelut luokitellaan palvelun luonteen mukaan. Myös
-mittausten ulkopuolelle jätetyt operaatiot mainitaan perusteluineen.
+Tässä luvussa esitellään kerätyt mittaustulokset ja koostetaan niistä
+alustavat havainnot. Myös mittausten ulkopuolelle jätetyt operaatiot
+mainitaan perusteluineen.
 
 # TODO metodisignaturet lisää alle?
 
@@ -13,17 +12,8 @@ korvataan JNI-funktion nimellä ja \alpha vaadituilla argumenteilla.
 ~env~ on osoitinmuuttuja JNI-ympäristöön.
 
 Luokittelussa kerrotaan myös, mitä vertauskohtaa kyseiselle
-operaatiolle mahdollisesti on käytetty eri lähtö- ja kohdekielien Java
-ja C eri permutaatiossa.
-
-# JNI-operaatiot kategorisoidaan ja esitellään tiiviisti ja kommentoidaan
-# niiden mittaamiseen liittyviä haasteita. Kategoriat ovat:
-# - Viitteidenhallinta
-# - Olioiden käsittely
-# - Kenttien ja metodien löytäminen
-# - Kenttien ja metodien käyttö
-# - Merkkijonojen ja taulukoiden käsittely
-# - Tehostetut IO-operaatiot (NIO)
+operaatiolle mahdollisesti on käytetty lähtö- ja kohdekielien eri
+permutaatiossa.
 
 * Metodien ja funktioiden kutsuminen
 Mittausten kannalta keskiössä ovat JNI-natiivirajapinnan kautta
@@ -40,10 +30,11 @@ oikeaan luokkaan dynaamisesti kuten Javan metodikutsussa. Sen sijaan
 kutsuu staattista metodia. Variaatioita (1)-(3) vertaillaan
 mittauksissa.
 
-Metodien kutsuminen vaatii seuraavia tukipalveluita, joita on mitattu
-erikseen: ~GetMethodID~ ja ~GetStaticMethodID~. Kuten suositeltu,
+Metodien kutsuminen edellyttää aina metoditunnuksen noutamista
+~GetMethodID~ ja ~GetStaticMethodID~-kutsuilla. Kuten suositeltu,
 palveluita ei mittauksissa kutsuta joka kerta jokaisen metodikutsun
-yhteydessä.
+yhteydessä vaan kerran koko mittausta käynnistettäessä (ks. kohta
+\label{ref:get-method-id-efficiency}).
 
 Vastinpari suunnassa Java \rightarrow C on ~native~ -metodin
 kutsuminen Javasta eli C-ohjelmassa olevan funktion
@@ -51,101 +42,48 @@ kutsuminen. Variaatioille (1)--(2) ei ole vastinetta C-kielessä, mutta
 ~native~-metodin voi merkitä staattiseksi (3).
 
 Vastinpari suunnassa Java \rightarrow Java on normaali
-Java-metodikutsu. Vastinpari suunnassa C \rightarrow C on normaali
+metodikutsu. Vastinpari suunnassa C \rightarrow C on normaali
 funktiokutsu.
 
-{{{plot(41)}}}
-{{{plot(42)}}}
+** Tulokset
 
-{{{plot(43)}}}
-{{{plot(44)}}}
+Kaikissa tuloksissa ja kaikissa permutaatioissa /vasteaika on
+lineaarisesti riippuvainen parametrien määrästä/. Kuitenkin
+/viitetyyppisillä parametreilla riippuvuuden kulmakerroin on
+suurempi/, eli viitetyyppisen parametrin käsittely näkyy tuloksissa
+keskeisenä suorituskykyrasitteena. Tätä havainnollistavat kuvat
+\ref{fig:plot-22} ja \ref{fig:plot-18}, joissa parametrityyppeinä on
+~int~ ja ~Object~.
 
-{{{plot(45)}}}
-# {{{plot(46)}}}
-
-{{{plot(47)}}}
-{{{plot(48)}}}
-
-# {{{plot(05)}}}
-{{{plot(06)}}}
-
-# {{{plot(07)}}}
-{{{plot(08)}}}
-
-# {{{plot(09)}}}
-{{{plot(10)}}}
-
-# {{{plot(11)}}}
-{{{plot(12)}}}
-
-# {{{plot(13)}}}
-{{{plot(14)}}}
-
-# {{{plot(15)}}}
-{{{plot(16)}}}
-
-# {{{plot(17)}}}
-{{{plot(18)}}}
-
-\clearpage
-Some separating text.
-
-# {{{plot(19)}}}
-{{{plot(20)}}}
-
-# {{{plot(21)}}}
 {{{plot(22)}}}
 
-# {{{plot(23)}}}
-{{{plot(24)}}}
+{{{plot(18)}}}
 
-{{{plot(25)}}}
-# {{{plot(26)}}}
+Kuvissa näkyvät kaikki kutsusuuntien permutaatiot, joten niistä voi
+myös hahmottaa eri kutsusuuntien vasteaikojen suhteellisia
+eroja. Kuten kohdassa \label{ref:jni-book-estimate} arvioitiin,
+Dalvikissakin kutsut suunnassa {{{permu(Java,C)}}} ovat selvästi
+päinvastaista suuntaa nopeampia. Tämä pätee kaikilla
+parametrityypeillä.
 
-{{{plot(27)}}}
-# {{{plot(28)}}}
+Sen sijaan suuntien {{{permu(Java,Java)}}} {{{permu(C,C)}}}
+keskinäisestä erosta ei tämän mittauksen perusteella voi tehdä
+pitkälle vieviä johtopäätöksiä muun muassa siksi, että
+mittausteknisistä syistä Java-lähdesilmukoihin on jouduttu lisäämään
+sivuvaikutuksellisia operaatioita, joita ei C-kielisissä silmukoissa
+tarvita: C-kääntäjästä on kytketty tarpeettoman koodin optimointi pois
+päältä. Kuvista \ref{fig:plot-52} ja \ref{fig:plot-50} nähdään
+kuitenkin näissäkin kutsusuunnissa lineaarinen riippuvuus, vaikka näin
+pienillä vasteajoilla mittaushäiriöt ovat suhteellisesti
+merkittävämpiä.  Tämän perusteella Java-kääntäjä tai Dalvikin
+JIT-kääntäjä ei ole onnistunut optimoimaan pois tyhjän metodin kutsua
+Java-koodista.
 
-\clearpage
-Some separating text.
+{{{plot(52)}}}
 
-{{{plot(29)}}}
-# {{{plot(30)}}}
-
-{{{plot(31)}}}
-# {{{plot(32)}}}
-
-{{{plot(33)}}}
-# TODO maybe linespoints above
-# {{{plot(34)}}}
-
-{{{plot(35)}}}
-# {{{plot(36)}}}
-
-{{{plot(37)}}}
-# {{{plot(38)}}}
-
-\clearpage
-Some separating text.
-
-{{{plot(39)}}}
-# {{{plot(40)}}}
-
-\clearpage
-Some separating text.
-
-# TODO bars
-{{{plot(49)}}}
-
-* Muut JNI-operaatiot
-
-\clearpage
-# {{{plot(50)}}}
-# explode 51 : group according to below ...?
-{{{plot(51)}}}
-\clearpage
+{{{plot(50)}}}
 
 
-{{{rotated_plot(58)}}}
 
 * Merkkijonojen käsittely
 
@@ -202,6 +140,99 @@ Java-merkkijonon (~String~) sisällön tehokkaaseen kopioimiseen olioon.
 # {{{plot(56)}}}
 {{{plot(57)}}}
 
+* plots :noexport:
+  {{{plot(41)}}}
+  {{{plot(42)}}}
+  
+  {{{plot(43)}}}
+  {{{plot(44)}}}
+  
+  {{{plot(45)}}}
+  # {{{plot(46)}}}
+  
+  {{{plot(47)}}}
+  {{{plot(48)}}}
+  
+  # {{{plot(05)}}}
+  {{{plot(06)}}}
+  
+  # {{{plot(07)}}}
+  {{{plot(08)}}}
+  
+  # {{{plot(09)}}}
+  {{{plot(10)}}}
+  
+  # {{{plot(11)}}}
+  {{{plot(12)}}}
+  
+  # {{{plot(13)}}}
+  {{{plot(14)}}}
+  
+  # {{{plot(15)}}}
+  {{{plot(16)}}}
+  
+  # {{{plot(17)}}}
+  {{{plot(18)}}}
+  
+  \clearpage
+  Some separating text.
+  
+  # {{{plot(19)}}}
+  {{{plot(20)}}}
+  
+  # {{{plot(21)}}}
+  {{{plot(22)}}}
+  
+  # {{{plot(23)}}}
+  {{{plot(24)}}}
+  
+  {{{plot(25)}}}
+  # {{{plot(26)}}}
+  
+  {{{plot(27)}}}
+  # {{{plot(28)}}}
+  
+  \clearpage
+  Some separating text.
+  
+  {{{plot(29)}}}
+  # {{{plot(30)}}}
+  
+  {{{plot(31)}}}
+  # {{{plot(32)}}}
+  
+  {{{plot(33)}}}
+  # TODO maybe linespoints above
+  # {{{plot(34)}}}
+  
+  {{{plot(35)}}}
+  # {{{plot(36)}}}
+  
+  {{{plot(37)}}}
+  # {{{plot(38)}}}
+  
+  \clearpage
+  Some separating text.
+  
+  {{{plot(39)}}}
+  # {{{plot(40)}}}
+  
+  \clearpage
+  Some separating text.
+  
+  # TODO bars
+  {{{plot(49)}}}
+
+
+  \clearpage
+  # {{{plot(50)}}}
+  # explode 51 : group according to below ...?
+  {{{plot(51)}}}
+  \clearpage
+  
+  
+  {{{rotated_plot(58)}}}
+
 * Taulukoiden käsittely
 
 Taulukoiden käsittely on täysin analogista merkkijonojen käsittelyn
@@ -210,9 +241,10 @@ kanssa. Osoittimen palauttavat operaatiot ovat:
 1. \verb|Get|\tau\verb|ArrayElements| ja \verb|Release|\tau\verb|ArrayElements|
 2. ~GetPrimitiveArrayCritical~ ja ~ReleasePrimitiveArrayCritical~
 
-Yllä \tau on jokin Javan primitiivityypeistä. Viitetyyppisten
-taulukoiden elementtejä voi käsitellä vain yksi kerrallaan
-operaatioilla ~GetObjectArrayElement~ ja ~SetObjectArrayElement~.
+Yllä \tau korvataan jollakin Javan
+primitiivityypeistä. Viitetyyppisten taulukoiden elementtejä voi
+käsitellä vain yksi kerrallaan operaatioilla ~GetObjectArrayElement~
+ja ~SetObjectArrayElement~.
 
 Kopioivat operaatiot ovat:
 
@@ -225,15 +257,13 @@ lukuunnottamatta ~NIO~-rajapintaa (kohta
 \ref{sec:measurement-classification-nio}), jonka avulla natiivi- ja
 Java-komponentit voivat myös käsitellä samaa muistialuetta.
 
-# TODO HERE
-
 * Non-blocking I/O
 \label{sec:measurement-classification-nio}
 
 Javan standardikirjaston paketin ~java.nio~ luokka ~ByteBuffer~ antaa
 joitakin lisämahdollisuuksia datan siirtoon Java- ja
 natiivikomponenttien välillä. ~ByteBuffer~-olio edustaa jatkuvaa
-muistialuetta jota voi käsitellä /binääridatana/.
+muistialuetta jota voi käsitellä tehokkaasti molemmissa komponenteissa.
 
 Jos ~ByteBuffer~-on allokoitu /suorana/ (/direct/), virtuaalikone
 yrittää taata, että natiivioperaatiot (käyttöjärjestelmän operaatiot
@@ -245,8 +275,7 @@ natiivi-I/O-operaatioita. JNI-rajapinta sitä paitsi tarjoaa pääsyn
 ainoastaan /suoran/ ~ByteBuffer~-olion muistialueelle, jota voi
 käsitellä suoraan osoittimen avulla.
 
-# TODO tähän tarvitaan ehkä viitteitä jolloin ehkä pitää
-# siirtää teorialukuihin?
+# TODO tähän tarvitaan ehkä viitteitä
 
 Eräs tutkielman päämääristä on hahmottaa, mikä on tehokkain tapa
 /välittää dataa/ JNI-rajapinnan yli. Tämän takia
@@ -261,11 +290,11 @@ muistialueen käsittelyn aiheuttamat rasitteet.
 
 Tätä silmälläpitäen täytyy huomioida lisärasite, joka syntyy
 seuraavista ~ByteBuffer~-olion käsittelyssä välttämättömien
-JNI-palveluiden kutsumisesta. \path{NewDirectByteBuffer}, jolla luodaan
-natiivikomponentista suora tavupuskuri /valmiiksi allokoituun
-muistialueeseen/. Jos taas puskuri on luotu Java-komponentissa,
-sen edustaman muistialueen saa \path{GetDirectBufferAddress}-kutsulla ja
-kapasiteetin \path{GetDirectBufferCapacity}.
+JNI-palveluiden kutsumisesta. Funktiolla \path{NewDirectByteBuffer}
+luodaan natiivikomponentista suora tavupuskuri /valmiiksi allokoituun
+muistialueeseen/. Jos taas puskuri on luotu Java-komponentissa, sen
+edustaman muistialueen saa \path{GetDirectBufferAddress}-kutsulla ja
+kapasiteetin \path{GetDirectBufferCapacity}-kutsulla.
 
 * Kenttien käsittely
 ** Ilmentymän kentät                                                                           :dep:
@@ -375,17 +404,17 @@ kapasiteetin \path{GetDirectBufferCapacity}.
    - Virtuaalikone ja versiontarkistus
 
 
-
+   
 * Vasteaikamittaukset
    5 sivua\newline 17. 2. 2014
 
    Raakatulokset.
 
-
 * Kutsuprofiilit
    5 sivua\newline 24. 2. 2014
 
    Raakatulokset.
+
 * Yhteenveto tuloksista
    3 sivua\newline 10. 3. 2014
 

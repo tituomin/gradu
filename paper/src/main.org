@@ -21,6 +21,8 @@
 #+MACRO: plot {{{plot_internal(6d0390ad-94bc-4006-8dfc-0646fcd0d23b,$1)}}}
 #+MACRO: rotated_plot {{{rotated_plot_internal(6d0390ad-94bc-4006-8dfc-0646fcd0d23b,$1)}}}
 
+#+MACRO: permu $1\nbsp{}\rightarrow\nbsp{}$2
+
 # {{{c(benchmark-ndk)}}}
 # {{{cp(benchmark-ndk, 5)}}}
 # {{{c(foo)}}}

@@ -461,6 +461,8 @@ korvataan samanlaisella paikkamerkillä.
 
 # TODO: pseudokoodi benchmarkit luovasta silmukasta?
 
+# TODO: python-koodin sielunelämään meneminen hieman kyseenalaista, onko tarpeen
+
 * Mittaustulosten käsittelijä Benchmark Analyzer
 
 /NativeBenchmark/-sovelluksen näkökulmasta suoritettavilla
@@ -470,25 +472,19 @@ tallennetaan mahdollisimman täydelliset parametritiedot
 tekstitiedostoon.  Vasteaikamittauksissa tiedostoon tallennetaan myös
 mittaustulos eli vasteaika, kutsuprofiilin tapauksessa sen sijaan
 tiedostopolku ~perf record~-työkalun tulostamaan
-näytetiedostoon. Seuraavassa on esimerkki tekstitiedoston sisällöstä.
+näytetiedostoon.
 
-# TODO: konvertoi alle taulukko mittaustiedostosta:
-| Class            | Response time | Units | parameter_type_int_count | parameter_type_char_count | very | long | table with lots | and lots of text |
-|------------------+---------------+-------+--------------------------+---------------------------+------+------+-----------------+------------------|
-| J2Benchmark00026 |             2 |     3 |                        4 |                         5 |      |      |                 |                  |
-| 1                |             2 |     3 |                        4 |                         5 |      |      |                 |                  |
-|------------------+---------------+-------+--------------------------+---------------------------+------+------+-----------------+------------------|
-
-Koska kaikki varioitavat parametrit on tallennettu tiedostoon,
-/Benchmark Analyzer/ -ohjelman tehtäväksi jää yhdistellä jälkikäteen
-saman parametrin vaihtelevat arvot yhdeksi mittaussarjaksi ja piirtää
-tulokset kuvaajiksi ~gnuplot~-ohjelmalla sekä tulostaa ne taulukoiksi
-tekstitiedostoihin. Analyysiohjelmalla on myös käytössään
+Koska kaikki varioitavat parametrit on tallennettu rakenteisesti
+tiedostoon, /Benchmark Analyzer/ -ohjelman tehtäväksi jää yhdistellä
+jälkikäteen saman parametrin vaihtelevat arvot yhdeksi mittaussarjaksi
+ja piirtää tulokset kuvaajiksi ~gnuplot~-ohjelmalla sekä tulostaa ne
+taulukoiksi tekstitiedostoihin. Analyysiohjelmalla on myös käytössään
 ~jni_types~-moduulin tyyppimääritykset.
 
-* Tilastolliset menetelmät
-   2 sivua\newline 10. 2. 2014
-
-   # TODO: ei ole juurikaan käytetty muuta kuin interpolointia
-
-   Käytetyt tilastolliset menetelmät.
+* TODO Tilastolliset menetelmät                                    :noexport:
+  Tarvitaanko tätä?
+  2 sivua\newline 10. 2. 2014
+  
+  # TODO: ei ole juurikaan käytetty muuta kuin interpolointia
+  
+  Käytetyt tilastolliset menetelmät.

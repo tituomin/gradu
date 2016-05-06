@@ -284,6 +284,7 @@ koskaan suoraan noudeta tai käsitellä natiivikomponentissa.
 # todo selvennä perintäsuhteet
 
 ** Oliot ja luokat
+
 # todo: selitä itse tekstissä että metodi on ainoa java->c-integraatio-
 # menetelmä
 Olioiden ja luokkien kenttien käsittely ja metodien kutsuminen
@@ -349,14 +350,14 @@ Java_CallBackExample_nativemethod (JNIEnv *env, jobject receiver_object, jint nu
 
 Metodin tai kentän etsiminen symbolisen nimen ja tyyppimäärityksen
 perusteella ~GetMethodID~-kutsulla on raskas operaatio käytettäväksi
-toistuvasti silmukassa @@jnibook(56--57). Siksi natiiviohjelmaa
-suositellaan säilyttämään metodien ja kenttien tunnisteet omissa
-muuttujissaan, kun ne on kerran selvitetty. Paras käytäntö on tehdä
-~GetMethodID~-kutsut erillisessä natiivimetodissa, jota kutsutaan sen
-Java-luokan staattisessa alustuslohkossa, jonka metodeja
-natiivikomponentti tulevaisuudessa kutsuu @@jnibook(56).
-Virtuaalikone takaa, että luokan staattinen alustuslohko suoritetaan ennen
-kuin luokan metodeja voi kutsua.
+toistuvasti silmukassa @@jnibook(56--57).\label{ref:get-method-id-efficiency}
+Siksi natiiviohjelmaa suositellaan säilyttämään metodien ja kenttien
+tunnisteet omissa muuttujissaan, kun ne on kerran selvitetty. Paras
+käytäntö on tehdä ~GetMethodID~-kutsut erillisessä natiivimetodissa,
+jota kutsutaan sen Java-luokan staattisessa alustuslohkossa, jonka
+metodeja natiivikomponentti tulevaisuudessa kutsuu @@jnibook(56).
+Virtuaalikone takaa, että luokan staattinen alustuslohko suoritetaan
+ennen kuin luokan metodeja voi kutsua.
 
 #+begin_src java -r
 class InstanceMethodCall {
@@ -382,19 +383,13 @@ tallennetaan valmiiksi normaalilla ~GetMethodID~-kutsulla
 natiivimetodissa \ding{204}, jota kutsutaan staattisessa
 alustuslohkossa \ding{205}.
 
-*** lainaus ylle :noexport:
-    The virtual machine always executes the static initializer of a class
-    before it invokes any of the methods in that class. Thus a suitable place for com-
-    puting and caching field or method IDs is in the static initializer of the class that
-    defines the fields or methods. @@jnibook(56)
-
 Alkuperäisessä natiivirajapinnan spesifikaatiossa arvioidaan, että
 tunnisteiden tallentamisesta huolimatta takaisinkutsurajapinnan
 käyttäminen on tyypillisissä toteutuksissa hitaampaa kuin
 natiivimetodien kutsuminen Javasta juuri funktiokutsujen epäsuoruuden
 takia ja siksi, ettei tätä käyttötapausta yleensä ole optimoitu
-@@jnibook(58). Dalvikin tapauksessa todelliset suorituskykytulokset
-tulevat nähtäväksi mittausten myötä.
+@@jnibook(58)\label{ref:jni-book-estimate}. Dalvikin tapauksessa
+todelliset suorituskykytulokset tulevat nähtäväksi mittausten myötä.
 
 ** Merkkijonot ja taulukot
 
