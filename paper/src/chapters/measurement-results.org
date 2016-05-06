@@ -70,7 +70,7 @@ parametrityypeillä.
 Sen sijaan suuntien {{{permu(Java,Java)}}} {{{permu(C,C)}}}
 keskinäisestä erosta ei tämän mittauksen perusteella voi tehdä
 pitkälle meneviä johtopäätöksiä muun muassa siksi, että
-mittausteknisistä syistä Java-lähdesilmukoihin on jouduttu lisäämään
+mittausteknisistä syistä Java-lähtösilmukoihin on jouduttu lisäämään
 sivuvaikutuksellisia operaatioita, joita ei C-kielisissä silmukoissa
 tarvita: C-kääntäjästä on kytketty tarpeettoman koodin optimointi pois
 päältä. Kuvista \ref{fig:plot-52} ja \ref{fig:plot-50} nähdään
@@ -78,7 +78,8 @@ kuitenkin näissäkin kutsusuunnissa lineaarinen riippuvuus, vaikka näin
 pienillä vasteajoilla mittaushäiriöt ovat suhteellisesti jo
 merkittäviä. Lineaarisen riippuvuuden perusteella Java-kääntäjä tai
 Dalvikin JIT-kääntäjä ei ole onnistunut optimoimaan pois tyhjän
-metodin kutsua Java-koodista.
+metodin kutsua Java-koodista -- juuri ylimääräisen sivuvaikutuksen
+takia.
 
 {{{plot(52)}}}
 
@@ -93,24 +94,26 @@ Primitiivi- ja viitetyyppien ryhmittyminen näkyy kuvissa selvästi.
 {{{plot(48)}}}
 
 Yksikielisissä permutaatioissa (kuvat \ref{fig:plot-50} ja
-\ref{fig:plot-52}) ei vastaavaa eroa näy, mutta sinänsä
-mielenkiintoisena yksityiskohtana niissä voidaan havaita 64-bittisten
-parametrityyppien ~long~ ja ~double~ suurempi rasite 32-bittisessä
-prosessorissa.
+\ref{fig:plot-52}) ei vastaavaa eroa näy, mutta mielenkiintoisena
+yksityiskohtana niissä voidaan havaita 64-bittisten parametrityyppien
+~long~ ja ~double~ suurempi rasite 32-bittisessä prosessorissa.
 
 {{{plot(50)}}}
 
 {{{plot(52)}}}
 
 Vasteajat riippuvat siis lineaarisesti parametrien määrästä, mutta
-eivät esimerkiksi välitettävän taulukon koosta, mikä olisikin
-odottamatonta. Tämä näkyy esimerkiksi kuvassa \ref{fig:plot-29}.
+eivät esimerkiksi parametrina välitettävän taulukon koosta, mikä
+olisikin odottamatonta. Tämä näkyy esimerkiksi kuvassa
+\ref{fig:plot-29}.
 
 {{{plot(29)}}}
 
 ** Kutsuprofiilit
 
-
+Kutsuprofiilien avulla saadaan lisävalaistusta viiteparametrien
+aiheuttamaan suurempaan rasitteeseen sekä JNI-kutsusuuntien
+keskinäisiin eroihin.
 
 * Merkkijonojen käsittely
 
@@ -133,10 +136,11 @@ Tukioperaatiot
 2. ~GetStringUTFLength~
 
 Operaatioille ei ole mittauksissa varsinaisia vastinpareja, sillä
-kyseessä on ainoa tapa käsitellä natiivikoodissa Javan
-merkkijonoja. C:n merkkijonojen käsittely C-kielessä ei vaadi mitään
-vastaavaa ylimääräistä operaatiota kuten ei myöskään
-Java-merkkijonojen käsittely Java-koodissa.
+kyseessä ovat operaatiot, joita on kutsuttava sen /lisäksi/ että
+merkkijonoa varsinaisesti käsitellään natiivikoodissa. Siten
+natiivimerkkijonojen käsittely C-kielessä ei vaadi mitään vastaavaa
+ylimääräistä operaatiota kuten ei myöskään Java-merkkijonojen
+käsittely Java-koodissa vaan kyseessä on nimenomaan
 
 C-merkkijonojen eli ~char~-taulukoiden käsittely
 ~java.nio.CharBuffer~-olioina Java-koodissa sen sijaan on mahdollista
@@ -161,11 +165,39 @@ Java-merkkijonon (~String~) sisällön tehokkaaseen kopioimiseen olioon.
 
 # Vertailukohtia: normaalin taulukon lukeminen
 
+** vasteajat
+
+# TODO: copyUTF O^2? -- mikä on arvo parametrilla 0?
+
+Vasteaikamittauksista huomataan ensinnäkin, että osoitinoperaatiot,
+jotka välittävät viittauksen suoraan virtuaalikoneen sisäiseen
+Unicode-tietorakenteeseen, eivät ole riippuvaisia merkkijonon
+pituudesta (ks. kuva \ref{fig:plot-54}). Tämä on odotetusten mukaista,
+sillä operaatiossa välitetään vain osoite merkkijonoon. Myös
+Unicode-merkkijonon pituuden selvitys on vakiollinen operaatio,
+oletettavasti koska merkkijonon pituus on tallessa Java-merkkijonon
+sisäisessä toteutuksessa.
+
 # {{{plot(54)}}}
 {{{plot(55)}}}
 
+Sen sijaan UTF-muunnoksen tekevä osoitinoperaatio on riippuvainen
+kohteen koosta. Se on myös operaatio, joka johtaa Dalvikin allokoimaan
+muistia muunnettua merkkijonoa varten. Näin ollen kuvan
+\ref{fig:aplot-8} vasteajat on mitattu pienillä lähtösilmukan
+kierrosmäärillä ja vasteaikojen suhdeluku aikaisempiin on 3:5000.
+
+Samoin kopioivat operaatiot ovat lineaarisesti raskaampia kopioitavan
+kohteen koon kasvaessa, mutta tässäkin tapauksessa Unicode \rightarrow
+UTF-8 -muunnos on merkittävästi raskaampi kuin pelkkä Unicode-merkkien
+kopiointi. Näin ollen kuvassa \ref{fig:plot-59} merkkijonon koon
+selvittäminen UTF-8-koodauksessa on raskaampi operaatio kuin Unicode-
+merkkijonon kopioiminen.
+
+# todo: miten viitata alloc-plotteihin?
+
 # {{{plot(56)}}}
-{{{plot(57)}}}
+{{{plot(59)}}}
 
 * plots :noexport:
   {{{plot(41)}}}
@@ -268,7 +300,7 @@ kanssa. Osoittimen palauttavat operaatiot ovat:
 1. \verb|Get|\tau\verb|ArrayElements| ja \verb|Release|\tau\verb|ArrayElements|
 2. ~GetPrimitiveArrayCritical~ ja ~ReleasePrimitiveArrayCritical~
 
-Yllä \tau korvataan jollakin Javan
+Operaatioiden nimessä \tau korvataan jollakin Javan
 primitiivityypeistä. Viitetyyppisten taulukoiden elementtejä voi
 käsitellä vain yksi kerrallaan operaatioilla ~GetObjectArrayElement~
 ja ~SetObjectArrayElement~.

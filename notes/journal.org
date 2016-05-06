@@ -1,3 +1,4 @@
+* <2016-05-06 Fri 21:09> tuli mieleen, että voisko tuo CopyUTF tai joku muukin olla O2?
 * <2016-05-06 pe 10:32> in progress: linux perf measurement with 0.1s to ensure zip is correctly made
 * DONE <2016-05-01 su 19:52> run as a test with byte == representative ! got good results
 * <2016-05-01 su 12:12> [[file:~/android-source-412/libcore/luni/src/main/native/libcore_io_Memory.cpp::static%20void%20Memory_peekByteArray(JNIEnv*%20env,%20jclass,%20jint%20srcAddress,%20jbyteArray%20dst,%20jint%20dstOffset,%20jint%20byteCount)%20{][peek magic (native)]]

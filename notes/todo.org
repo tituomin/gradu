@@ -7,14 +7,9 @@ Missä mennään:
 * saved for posterity
   Tällaiset lupaukset oli tutkielmasuunnitelmassa...
 
-  JNI-operaatiot kategorisoidaan ja esitellään tiiviisti ja kommentoidaan
-  niiden mittaamiseen liittyviä haasteita. Kategoriat ovat:
-  - Viitteidenhallinta
-  - Olioiden käsittely
-  - Kenttien ja metodien löytäminen
-  - Kenttien ja metodien käyttö
-  - Merkkijonojen ja taulukoiden käsittely
-  - Tehostetut IO-operaatiot (NIO)
+* TODO <2016-05-06 Fri 21:45> kun väsyttää: kirjoita sivuutetut operaatiot osuus (perf results)
+* TODO <2016-05-06 Fri 21:15> CopyUnicode vakiollinen? How??? (plot p59)
+* TODO <2016-05-06 Fri 20:57> LAITA 64/32-bit kohtaan assemblya! assemblya! :hifistely:
 * TODO <2016-05-06 Fri 19:36> jonnekin hukkunut static/ym variaatiot? onko plotattu?
 * TODO <2016-05-06 Fri 19:21> siirrä NIO-luku JNI:n yhteyteen? lisää lähde
 * TODO <2016-05-06 Fri 19:04> mahdollisesti poistettava turhan tarkaa Python-läpinää
