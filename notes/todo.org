@@ -4,7 +4,10 @@ Missä mennään:
 [[file:~/gradu/paper/bib/main.bib::saavedra]]
 (hyvä peruslähde benchmarkeista)
 
-* vihavaisen huomiot <2014-02-06 to> [4/9]
+* TODO <2016-05-06 Fri 18:21> [[file:~/gradu/paper/src/chapters/measurement-setup.org::#nexus-s-reference][lisää viite]]
+* vihavaisen huomiot <2014-02-06 to> [3/7]
+** yhdistä luvut 5-7
+*** TODO tarkista että otsikot meni ok
 ** TODO [[file:~/gradu/paper/src/chapters/performance.org::#suorituskonteksti]["käsitteellisesti kaukana ohjelmiston sisäisestä suorituskontekstista" ? JV]]
 ** TODO suorituskykyasioita voisi avata vieläkin lisää?
 ** yhdistä luvut 5-7

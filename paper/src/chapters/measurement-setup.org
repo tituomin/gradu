@@ -3,9 +3,8 @@
 Tutkielmaa varten laadittiin synteettinen
 benchmarking-mittausohjelmisto (/microbenchmarking suite/)
 /NativeBenchmark/. Ohjelmiston avulla Android-laitteessa voidaan
-suorittaa kokoelma minimaalisia aliohjelmia (jatkossa
-alkeisoperaatioita), jotka yhdessä harjoittavat kattavasti
-JNI-rajapinnan eri kutsuja.
+suorittaa kokoelma minimaalisia aliohjelmia, jotka yhdessä
+harjoittavat kattavasti JNI-rajapinnan eri kutsuja.
 
 Kun alkeisoperaatioita suoritetaan laitteessa, samojen operaatioiden
 suoritusta mitataan kahdella toisiaan täydentävällä menetelmällä eri
@@ -83,15 +82,15 @@ halutut tyyppivariaatiot.
 
 # Esimerkki ?  / bit of source
 
-Koska Java-kieli ei suoraan tue staattisen metaohjelmoinnin mahdollisuutta,
-eikä C++-kielen templateja voisi hyödyntää kuin natiiviversioiden
-ohjelmointiin, päätettiin lähdekoodin generointi tehdä täysin
-erillisellä Python-kielisellä ohjelmalla.
+Koska Java-kieli ei suoraan tue staattisen metaohjelmoinnin
+mahdollisuutta, eikä C++-kielen templateja voisi hyödyntää kuin
+natiiviversioiden ohjelmointiin, päätettiin lähdekoodin generointi
+tehdä täysin erillisellä Python-kielisellä ohjelmalla.
 
 Seuraavassa hahmotellaan tästä perusratkaisusta syntynyttä
 arkkitehtuuria.
 
-* TODO Ohjelmiston kokonaisarkkitehtuuri
+* Ohjelmiston kokonaisarkkitehtuuri
 
 Ohjelmisto koostuu kolmesta komponentista, joista käännöstyökalut ja
 analyysityökalut ajetaan kehitysympäristössä työpöytä-Linux-järjestelmässä ja
@@ -105,8 +104,6 @@ mittaustyökalut Android-laitteessa.
 
 Ohjelmiston pääkomponentit näkyvät kuvassa \ref{fig:architecture}, ja
 ne käsitellään seuraavassa tarkemmin.
-
-** TODO lisää tekstiä tähän
 
 * Android-sovellus NativeBenchmark
 
@@ -130,25 +127,27 @@ ulkopuolelta tekstikomentojen avulla TCP-yhteyden välityksellä.
 
 Sovelluksen keskeisimmät osat ovat
 - ~benchmark~ -paketin sisältämät generoidut benchmarkit,
-- ~libnativebenchmark~ -natiivikirjasto, joka sisältää generoitujen benchmarkien natiiviosat,
+- ~libnativebenchmark~ -natiivikirjasto, joka sisältää generoitujen
+  benchmarkien natiiviosat,
 - ~BenchmarkRunner~ -luokka,
 - ~MeasuringTool~ -luokan kaksi aliluokkaa
   \path{JavaSystemNanoResponseTimeRecorder} sekä \path{LinuxPerfRecordTool}.
 
 Benchmarkit ovat pohjimmiltaan vain monta kertaa toistettavia
-silmukoita (/lähtösilmukoita/), joiden sisällä kutsutaan tutkinnan kohteena olevaa
-JNI-palvelua tai sen verrokkia. Jokainen benchmark on ympäröity
-samanrakenteisella Java-kielisellä \path{BenchMark}-luokan aliluokalla
-silloinkin, kun kyseessä on sellainen verrokkioperaatio, joka
-suoritetaan puhtaasti \path{libnativebenchmark}-natiivikirjaston
+silmukoita (/lähtösilmukoita/), joiden sisällä kutsutaan tutkinnan
+kohteena olevaa JNI-palvelua tai sen verrokkia. Jokainen benchmark on
+ympäröity samanrakenteisella Java-kielisellä \path{BenchMark}-luokan
+aliluokalla silloinkin, kun kyseessä on sellainen verrokkioperaatio,
+joka suoritetaan puhtaasti \path{libnativebenchmark}-natiivikirjaston
 sisällä. Tällaisessakin tapauksessa mittauksen kuitenkin aina
 käynnistää \path{BenchmarkRunner} -Java-olio.
 
 Ajettavat benchmarkit jakautuvat kahteen joukkoon. Ensimmäinen koostuu
-yksinkertaisista funktiokutsusta JNI-rajapinnan kautta: C-koodissa
+yksinkertaisista funktiokutsuista JNI-rajapinnan kautta: C-koodissa
 kutsuista \verb|Call|\tau\verb|Method| -funktioihin ja Java-koodissa
 kutsuista ~native~ -määreellä merkittyihin ~nativemethod~ -nimisiin
-metodeihin. Toinen joukko testaa JNI-rajapinnan muita palveluita.
+metodeihin. Toinen joukko testaa JNI-rajapinnan muita palveluita kuten
+merkkijonojen ja taulukoiden käsittelyä.
 
 Seuraavaksi havainnollistetaan ensimmäisen joukon kaikkia neljää
 permutaatiota, jotka saadaan lähtösilmukoiden ja kutsukohteiden
@@ -214,23 +213,58 @@ Kuvan \ref{fig:sequence_c_to_c} tilanne on jäljelle jäänyt
 permutaatio, jossa koko mitattava suoritus tapahtuu
 natiivikomponentissa.
 
+* Mittauslaitteisto
+
+Mittaukset suoritettiin Samsungin valmistamassa /Google Nexus
+S/-puhelimessa, joka julkaistiin vuonna 2010. Puhelimessa on Androidin
+versio 4.1.2. Perf-työkalun käytön mahdollistamiseksi puhelimeen
+käännettiin uudelleen konfiguroitu Linuxin ydin, ja
+Android-järjestelmään konfiguroitiin mukaan perf-ohjelma sekä
+uudelleen käännetyt versiot Dalvikista ja su-komennosta. Muokattujen
+järjestelmäkomponenttien asentaminen laitteeseen saattaa tehdä siitä
+toimintakyvyttömän, joten riskin minimoimiseksi ja resurssisyistä
+mittauksia ei toistettu viimeisimmillä laitteilla.
+
+Mikään mittausmenetelmissä sinänsä ei kuitenkaan estä mittausten
+toistamista uusilla Android-laitteilla, mikä olisikin tulosten
+toistettavuuden ja yleistettävyyden kannalta tärkeä seuraava
+askel. Mittaukseen valittavan Android-laitteen on kuuluttava Android
+Open Source Projectin tukemiin kohdelaitteisiin.
+
+Oleellisin tutkielmassa avoimeksi jäävä kysymys on, miten Dalvikin
+korvaava ART-virtuaalikonetoteutus muuttaa tuloksia. Sen takia
+mittaukset olisi hyvä ajaa vähintään Android 5.0-järjestelmässä. Koska
+JNI on standardoitu rajapinta, mittauskoodissa itsessään ei ole mitään
+riippuvuuksia juuri Dalvikiin. Mittaussovelluksessa ei myöskään ole
+merkittäviä riippuvuuksia käytettyyn Android-versioon. Suurin työ
+mittausten kääntämiselle uudemmille alustaversioille onkin juuri
+Linux-ytimen sekä Androidin käyttöjärjestelmäkomponenttien
+uudelleenkonfigurointi tukemaan perf- työkalua.
+
+** TODO lisää viitteet ja tarkista Android-versio, mieti lopullinen sivu :noexport:
+   :PROPERTIES:
+   :CUSTOM_ID: nexus-s-reference
+   :END:
+   https://en.wikipedia.org/wiki/Nexus_S
+   lisää liite, jossa tarkat konfiguraatio-ohjeet?
+
+   # https://en.wikipedia.org/wiki/Android_Runtime
+   # Ainoa vaatimus on, että valittu laite 
+
 # Mainitse BenchmarkParameter?
-
-* Testilaitteisto
-
-Google Nexus S
-# https://en.wikipedia.org/wiki/Nexus_S
 
 * Mittaamisen haasteita
 
 Mittauksien käynnistämistä monimutkaistaa hieman se, että eri
-mittaustyökalut suorittavat samat kohdeoperaatiot eri tavoilla.
+\path{MeasuringTool}-mittaustyökalut suorittavat samat kohdeoperaatiot
+eri tavoilla.
 
 Yksinkertaisempi tapaus on vasteaikojen mittaus
-\path{JavaSystemNanoResponseTimeRecorder}-luokalla: lähtösilmukkaa suoritetaan
-yhteensä aina täsmälleen ennalta määrätyn kierroslukumäärän verran.
-\path{JavaSystemNanoResponseTimeRecorder} ottaa talteen järjestelmän kellon
-arvon ennen kierrosten suoritusta ja sen jälkeen.
+\path{JavaSystemNanoResponseTimeRecorder}-luokassa: lähtösilmukkaa
+suoritetaan yhteensä aina täsmälleen ennalta määrätyn
+kierroslukumäärän verran.  \path{JavaSystemNanoResponseTimeRecorder}
+ottaa talteen järjestelmän kellon arvon ennen kierrosten suoritusta ja
+sen jälkeen.
 
 Kutsuprofiilia luotaessa kaikkia lähtösilmukoita tulee sen sijaan
 suorittaa niin kauan, että ~perf record~ -työkalu on saanut
@@ -254,26 +288,25 @@ konekielistä versiota suoritetaan sellaisenaan.
 
 Koska on mahdotonta kontrolloida, miten erilaisia kaksi eri versiota
 lähtösilmukasta konekielitasolla ovat, ei niiden suoritusaikojakaan
-periaatteessa voi suoraan vertailla. Niiden erojen mittaamiseksi
-molempien versioiden perusrasitetta arvioitiin seuraavalla
-menetelmällä. Kummastakin lähtösilmukasta luotiin benchmarksarjat,
-jossa suoraan silmukan sisälle lisätään /n/ kappaletta identtistä
-ohjelmalohkoa, jotka suorittavat hyödyttömiä mutta tarpeeksi raskaita
-ja sivuvaikutuksellisia aritmeettisia operaatioita paikallisilla
-muuttujilla. Interpoloimalla saaduista vasteajoista kun /n/:n arvoa
-varioidaan lineaarisesti, saadaan arvioitua, mikä mittausmenetelmän
-pohjavasteaika on /n/:n arvolla 0 (tyhjä lähtösilmukka). Näin saadaan
-tarkempi arvio perusrasitteesta kuin pelkästään ajamalla tyhjää
-lähtösilmukkaa -- erityisesti Java-koodin tapauksessa Java- tai
-JIT-kääntäjä saattaa myös optimoida pois tyhjän silmukan, jolla ei ole
-sivuvaikutuksia.
+periaatteessa voi suoraan vertailla. Lähtösilmukoiden erojen
+mittaamiseksi molempien versioiden perusrasitetta arvioitiin
+seuraavalla menetelmällä. Kummastakin lähtösilmukasta luotiin
+benchmarksarjat, jossa suoraan silmukan sisälle lisätään /n/
+kappaletta identtistä ohjelmalohkoa, jotka suorittavat hyödyttömiä
+mutta tarpeeksi raskaita ja sivuvaikutuksellisia aritmeettisia
+operaatioita paikallisilla muuttujilla. Kun /n/:n arvoa varioidaan
+lineaarisesti, saaduista vasteajoista interpoloimalla voidaan
+arvioida, mikä mittausmenetelmän pohjavasteaika on /n/:n arvolla 0
+(tyhjä lähtösilmukka). Näin saadaan tarkempi arvio perusrasitteesta
+kuin pelkästään ajamalla tyhjää lähtösilmukkaa -- erityisesti
+Java-koodin tapauksessa Java- tai JIT-kääntäjä saattaa myös optimoida
+pois tyhjän silmukan, jolla ei ole sivuvaikutuksia.
 
 # TODO two plots below: scale 50%
 
 {{{plot(02)}}}
 
 {{{plot(04)}}}
-
 
 # TODO viite ylle
 # TODO XXXXXXX
@@ -287,13 +320,12 @@ suurena kuin käytännössä on järkevää, jotta satunnaisten
 järjestelmässä esiintyvien häiriöiden suuruus verrattuna mitattuihin
 kokonaisvasteaikoihin olisi pieni. Allokoivissa operaatioissa silmukan
 kierrosmäärä pidetään alhaisena, mutta vastaavasti samoja mittauksia
-suoritetaan useampia ajoja ja saadut luvut yhdistetään
-tilastollisesti.
+suoritetaan useampia ajoja ja saaduista luvuista otetaan keskiarvo.
 
 # TODO tilastollisesti: miten ?
 
-Javan tapauksessa väliaikaisten olioiden allokointi aiheuttaa
-lisäksi roskienkeruuta ennakoimattomina ajankohtina. Mittauksissa
+Javan tapauksessa väliaikaisten olioiden allokointi aiheuttaa lisäksi
+roskienkeruuta ennakoimattomina ajankohtina. Mittauksissa
 roskienkeruun aiheuttama sinänsä oleellinen rasite suorituskyvylle on
 päätetty yksinkertaisuuden vuoksi jättää huomiotta. Roskienkeruuta
 ehdotetaan virtuaalikoneelle ~System.gc()~ -kutsulla mittausajojen
@@ -329,9 +361,6 @@ seurataan peräkkäisten vasteaikojen kehittymistä.
     \input{figures/warmup-proof}
 \end{figure}
 
-# TODO tähän mittaus ja kuva !important
-# TODO tähän kuva vasteaika vs. mittausajo.
-
 * Benchmark Generator
 
 /Benchmark Generator/ on Python-kielinen ohjelma, joka tuottaa
@@ -346,12 +375,13 @@ Java-kieliset luokat, joihin kyseiset silmukat ja metodit sijoitetaan.
 #+RESULTS: fig:benchmark_generator_architecture
 
 Kuvan \ref{fig:benchmark_generator_architecture} alaosasta nähdään,
-että ~benchmark_generator~-päämoduulia kutsuu automaattisesti
-Ant-käännöstyökalu, ja generoidut lähdekooditiedostot tulevat näin
-osaksi normaaleja Androidin SDK- ja NDK- käännösprosesseja.
+että Ant-käännöstyökalu on konfiguroitu kutsumaan automaattisesti
+~benchmark_generator~-päämoduulia, ja generoidut lähdekooditiedostot
+tulevat näin osaksi normaaleja Androidin SDK- ja NDK-
+käännösprosesseja.
 
 Lähdekoodien generointi perustuu seuraavaan kahteen
-suunnitteluratkaisuun.  Ensinnäkin generointikoodi ottaa
+suunnitteluratkaisuun. Ensinnäkin generointikoodi ottaa
 lähtökohdakseen ~jni_types~-moduulissa määritellyt tietorakenteet,
 jotka sisältävät tarvittavat tiedot kaikista Java-ohjelmoinnin
 tyypeistä ja niiden vastinpareista C-kielessä.
@@ -365,8 +395,8 @@ HTML-ohjelmoinnissa käytettyjen template-kielten aihioita. Aihiot
 koostuvat staattisena pysyvästä kohdekielisestä merkkijonosta, jonka
 sisällä olevat paikkamerkit korvataan muuttujien vaihtuvilla arvoilla.
 
-Seuraavassa esimerkissä näkyy ~jni_types~-moduulin ~dict~-tyyppimääritelmä
-~int~-primitiivityypille.
+Seuraavassa esimerkissä näkyy ~jni_types~-moduulin pythonkielinen
+~dict~-tyyppimääritelmä Javan ~int~-primitiivityypille.
 
 #+INCLUDE: "/home/tituomin/nativebenchmark/script/jni_types.py" src python :lines "52-61"
 #+LABEL: src:jni-gen-int

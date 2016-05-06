@@ -47,8 +47,10 @@
 
 ** Koeasetelman kuvaus
 #+INCLUDE: "../gen/chapters/measurement-setup.org" :minlevel 3
+
 ** Mittaustulokset
 #+INCLUDE: "../gen/chapters/measurement-results.org" :minlevel 3
+
 ** Tulosten analyysi
 #+INCLUDE: "../gen/chapters/measurement-analysis.org" :minlevel 3
 * Yhteenveto
