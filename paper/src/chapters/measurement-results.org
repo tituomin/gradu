@@ -45,7 +45,7 @@ Vastinpari suunnassa Java \rightarrow Java on normaali
 metodikutsu. Vastinpari suunnassa C \rightarrow C on normaali
 funktiokutsu.
 
-** Tulokset
+** Vasteajat
 
 Kaikissa tuloksissa ja kaikissa permutaatioissa /vasteaika on
 lineaarisesti riippuvainen parametrien määrästä/. Kuitenkin
@@ -62,26 +62,53 @@ keskeisenä suorituskykyrasitteena. Tätä havainnollistavat kuvat
 Kuvissa näkyvät kaikki kutsusuuntien permutaatiot, joten niistä voi
 myös hahmottaa eri kutsusuuntien vasteaikojen suhteellisia
 eroja. Kuten kohdassa \label{ref:jni-book-estimate} arvioitiin,
-Dalvikissakin kutsut suunnassa {{{permu(Java,C)}}} ovat selvästi
-päinvastaista suuntaa nopeampia. Tämä pätee kaikilla
+Dalvikissakin /kutsut suunnassa {{{permu(Java,C)}}} ovat selvästi
+päinvastaista suuntaa nopeampia/: edellisten vasteajat suhteessa
+jälkimmäisten aikoihin ovat noin 2--3 -kertaisia. Tämä pätee kaikilla
 parametrityypeillä.
 
 Sen sijaan suuntien {{{permu(Java,Java)}}} {{{permu(C,C)}}}
 keskinäisestä erosta ei tämän mittauksen perusteella voi tehdä
-pitkälle vieviä johtopäätöksiä muun muassa siksi, että
+pitkälle meneviä johtopäätöksiä muun muassa siksi, että
 mittausteknisistä syistä Java-lähdesilmukoihin on jouduttu lisäämään
 sivuvaikutuksellisia operaatioita, joita ei C-kielisissä silmukoissa
 tarvita: C-kääntäjästä on kytketty tarpeettoman koodin optimointi pois
 päältä. Kuvista \ref{fig:plot-52} ja \ref{fig:plot-50} nähdään
 kuitenkin näissäkin kutsusuunnissa lineaarinen riippuvuus, vaikka näin
-pienillä vasteajoilla mittaushäiriöt ovat suhteellisesti
-merkittävämpiä.  Tämän perusteella Java-kääntäjä tai Dalvikin
-JIT-kääntäjä ei ole onnistunut optimoimaan pois tyhjän metodin kutsua
-Java-koodista.
+pienillä vasteajoilla mittaushäiriöt ovat suhteellisesti jo
+merkittäviä. Lineaarisen riippuvuuden perusteella Java-kääntäjä tai
+Dalvikin JIT-kääntäjä ei ole onnistunut optimoimaan pois tyhjän
+metodin kutsua Java-koodista.
 
 {{{plot(52)}}}
 
 {{{plot(50)}}}
+
+Kuviin \ref{fig:plot-46} ja \ref{fig:plot-48} on koostettu eri
+parametrityypit suunnissa {{{permu(C,Java)}}} ja {{{permu(Java,C)}}}.
+Primitiivi- ja viitetyyppien ryhmittyminen näkyy kuvissa selvästi.
+
+{{{plot(46)}}}
+
+{{{plot(48)}}}
+
+Yksikielisissä permutaatioissa (kuvat \ref{fig:plot-50} ja
+\ref{fig:plot-52}) ei vastaavaa eroa näy, mutta sinänsä
+mielenkiintoisena yksityiskohtana niissä voidaan havaita 64-bittisten
+parametrityyppien ~long~ ja ~double~ suurempi rasite 32-bittisessä
+prosessorissa.
+
+{{{plot(50)}}}
+
+{{{plot(52)}}}
+
+Vasteajat riippuvat siis lineaarisesti parametrien määrästä, mutta
+eivät esimerkiksi välitettävän taulukon koosta, mikä olisikin
+odottamatonta. Tämä näkyy esimerkiksi kuvassa \ref{fig:plot-29}.
+
+{{{plot(29)}}}
+
+** Kutsuprofiilit
 
 
 
