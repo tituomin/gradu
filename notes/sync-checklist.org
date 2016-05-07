@@ -1,0 +1,19 @@
+- [X] SDK
+  yaku version: see pic gradu/notes/
+  local version: see pic
+
+- [X] NDK
+  yaku version: r8c
+  local version: r10e-rc4
+
+- [X] linux kernel source
+
+- [X] aosp source
+  latest modifications? yaku?
+  dunno!
+
+- repos [3/3]
+  - [X] gradu
+  - [X] nativebenchmark
+  - [X] analyzer
+
