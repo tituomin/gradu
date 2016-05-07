@@ -16,12 +16,13 @@
 #+LATEX: \definecolor{listingc}{rgb}{0.98,0.98,0.98}
 #+LATEX: \newcommand{\todo}[1]{}
 
-#+MACRO: rotated_plot_internal \begin{sidewaysfigure} \input{figures/plots/plot-$1-page-$2-latin.tex} \end{sidewaysfigure}
-#+MACRO: plot_internal \begin{figure} \input{figures/plots/plot-$1-page-$2-latin.tex} \end{figure}
-#+MACRO: plot {{{plot_internal(6d0390ad-94bc-4006-8dfc-0646fcd0d23b,$1)}}}
-#+MACRO: rotated_plot {{{rotated_plot_internal(6d0390ad-94bc-4006-8dfc-0646fcd0d23b,$1)}}}
+#+MACRO: rotated_plot_internal \begin{sidewaysfigure} \input{figures/plots/plot-$1-$2-latin.tex} \end{sidewaysfigure}
+#+MACRO: plot_internal \begin{figure} \input{figures/plots/plot-$1-$2-latin.tex} \end{figure}
+#+MACRO: plot {{{plot_internal(47d22819-625b-43f6-8e9f-afeb5066b758,$1)}}}
+#+MACRO: rotated_plot {{{rotated_plot_internal(47d22819-625b-43f6-8e9f-afeb5066b758,$1)}}}
 
 #+MACRO: permu $1\nbsp{}\rightarrow\nbsp{}$2
+#+MACRO: TODO \textcolor{red}{TODO}
 
 # {{{c(benchmark-ndk)}}}
 # {{{cp(benchmark-ndk, 5)}}}
