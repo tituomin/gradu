@@ -304,9 +304,9 @@ pois tyhjän silmukan, jolla ei ole sivuvaikutuksia.
 
 # TODO two plots below: scale 50%
 
-{{{plot(02)}}}
+{{{plot(normaloverhead-c-fit)}}}
 
-{{{plot(04)}}}
+{{{plot(normaloverhead-j-fit)}}}
 
 # TODO viite ylle
 # TODO XXXXXXX

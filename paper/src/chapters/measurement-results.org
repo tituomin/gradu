@@ -31,33 +31,29 @@ kutsuu staattista metodia. Variaatioita (1)-(3) vertaillaan
 mittauksissa.
 
 Metodien kutsuminen edellyttää aina metoditunnuksen noutamista
-~GetMethodID~ ja ~GetStaticMethodID~-kutsuilla. Kuten suositeltu,
+~GetMethodID~- ja ~GetStaticMethodID~-kutsuilla. Kuten suositeltu,
 palveluita ei mittauksissa kutsuta joka kerta jokaisen metodikutsun
 yhteydessä vaan kerran koko mittausta käynnistettäessä (ks. kohta
-\label{ref:get-method-id-efficiency}).
+\label{ref:get-method-id-efficiency}). {{{TODO}}} Metoditunnusten
+noudon rasite käsitellään erikseen kohdassa. {{{TODO}}}
 
 Vastinpari suunnassa Java \rightarrow C on ~native~ -metodin
 kutsuminen Javasta eli C-ohjelmassa olevan funktion
 kutsuminen. Variaatioille (1)--(2) ei ole vastinetta C-kielessä, mutta
-~native~-metodin voi merkitä staattiseksi (3).
+~native~-metodin voi merkitä staattiseksi (3). Vastinpari suunnassa
+Java \rightarrow Java on normaali metodikutsu. Vastinpari suunnassa C
+\rightarrow C on normaali funktiokutsu.
 
-Vastinpari suunnassa Java \rightarrow Java on normaali
-metodikutsu. Vastinpari suunnassa C \rightarrow C on normaali
-funktiokutsu.
-
-** Vasteajat
+{{{plot(basic-call-int-fit)}}}
+{{{plot(basic-call-Object-fit)}}}
 
 Kaikissa tuloksissa ja kaikissa permutaatioissa /vasteaika on
 lineaarisesti riippuvainen parametrien määrästä/. Kuitenkin
 /viitetyyppisillä parametreilla riippuvuuden kulmakerroin on
 suurempi/, eli viitetyyppisen parametrin käsittely näkyy tuloksissa
 keskeisenä suorituskykyrasitteena. Tätä havainnollistavat kuvat
-\ref{fig:plot-22} ja \ref{fig:plot-18}, joissa parametrityyppeinä on
-~int~ ja ~Object~.
-
-{{{plot(22)}}}
-
-{{{plot(18)}}}
+\ref{fig:basic-call-int-fit} ja \ref{fig:basic-call-Object-fit},
+joissa parametrityyppeinä on ~int~ ja ~Object~.
 
 Kuvissa näkyvät kaikki kutsusuuntien permutaatiot, joten niistä voi
 myös hahmottaa eri kutsusuuntien vasteaikojen suhteellisia
@@ -73,52 +69,44 @@ pitkälle meneviä johtopäätöksiä muun muassa siksi, että
 mittausteknisistä syistä Java-lähtösilmukoihin on jouduttu lisäämään
 sivuvaikutuksellisia operaatioita, joita ei C-kielisissä silmukoissa
 tarvita: C-kääntäjästä on kytketty tarpeettoman koodin optimointi pois
-päältä. Kuvista \ref{fig:plot-52} ja \ref{fig:plot-50} nähdään
-kuitenkin näissäkin kutsusuunnissa lineaarinen riippuvuus, vaikka näin
-pienillä vasteajoilla mittaushäiriöt ovat suhteellisesti jo
+päältä. Kuvista \ref{fig:basic-call-all-types-j-j-fit} ja
+\ref{fig:basic-call-all-types-c-c-fit} nähdään kuitenkin näissäkin
+kutsusuunnissa lineaarinen riippuvuus, vaikka näin pienillä
+vasteajoilla mittaushäiriöt ovat suhteellisesti jo
 merkittäviä. Lineaarisen riippuvuuden perusteella Java-kääntäjä tai
 Dalvikin JIT-kääntäjä ei ole onnistunut optimoimaan pois tyhjän
 metodin kutsua Java-koodista -- juuri ylimääräisen sivuvaikutuksen
 takia.
 
-{{{plot(52)}}}
+{{{plot(basic-call-all-types-j-j-fit)}}}
 
-{{{plot(50)}}}
+{{{plot(basic-call-all-types-c-c-fit)}}}
 
-Kuviin \ref{fig:plot-46} ja \ref{fig:plot-48} on koostettu eri
+Kuviin \ref{fig:basic-call-all-types-c-j} ja \ref{fig:basic-call-all-types-j-c} on koostettu eri
 parametrityypit suunnissa {{{permu(C,Java)}}} ja {{{permu(Java,C)}}}.
 Primitiivi- ja viitetyyppien ryhmittyminen näkyy kuvissa selvästi.
 
-{{{plot(46)}}}
+{{{plot(basic-call-all-types-c-j)}}}
 
-{{{plot(48)}}}
+{{{plot(basic-call-all-types-j-c)}}}
 
-Yksikielisissä permutaatioissa (kuvat \ref{fig:plot-50} ja
-\ref{fig:plot-52}) ei vastaavaa eroa näy, mutta mielenkiintoisena
+Yksikielisissä permutaatioissa (kuvat \ref{fig:basic-call-all-types-j-j-fit} ja
+\ref{fig:basic-call-all-types-c-c-fit}) ei vastaavaa eroa näy, mutta mielenkiintoisena
 yksityiskohtana niissä voidaan havaita 64-bittisten parametrityyppien
 ~long~ ja ~double~ suurempi rasite 32-bittisessä prosessorissa.
 
-{{{plot(50)}}}
-
-{{{plot(52)}}}
-
 Vasteajat riippuvat siis lineaarisesti parametrien määrästä, mutta
 eivät esimerkiksi parametrina välitettävän taulukon koosta, mikä
-olisikin odottamatonta. Tämä näkyy esimerkiksi kuvassa
-\ref{fig:plot-29}.
+olisikin odottamatonta koska taulukot välitetään
+viiteparametrina. Tämä näkyy esimerkiksi kuvassa \ref{fig:variable-argument-size-j-c}.
 
-{{{plot(29)}}}
-
-** Kutsuprofiilit
+{{{plot(variable-argument-size-j-c)}}}
 
 Kutsuprofiilien avulla saadaan lisävalaistusta viiteparametrien
 aiheuttamaan suurempaan rasitteeseen sekä JNI-kutsusuuntien
 keskinäisiin eroihin.
 
 * Merkkijonojen käsittely
-
-# {{{plot(52)}}}
-{{{plot(53)}}}
 
 Java-merkkijonojen sisältöä käsitellään natiivikomponentista seuraavilla
 operaatioilla. Osoittimen palauttavat operaatiot ovat
@@ -165,21 +153,19 @@ Java-merkkijonon (~String~) sisällön tehokkaaseen kopioimiseen olioon.
 
 # Vertailukohtia: normaalin taulukon lukeminen
 
-** vasteajat
-
 # TODO: copyUTF O^2? -- mikä on arvo parametrilla 0?
 
 Vasteaikamittauksista huomataan ensinnäkin, että osoitinoperaatiot,
 jotka välittävät viittauksen suoraan virtuaalikoneen sisäiseen
 Unicode-tietorakenteeseen, eivät ole riippuvaisia merkkijonon
-pituudesta (ks. kuva \ref{fig:plot-54}). Tämä on odotetusten mukaista,
-sillä operaatiossa välitetään vain osoite merkkijonoon. Myös
-Unicode-merkkijonon pituuden selvitys on vakiollinen operaatio,
-oletettavasti koska merkkijonon pituus on tallessa Java-merkkijonon
-sisäisessä toteutuksessa.
+pituudesta (ks. kuva \ref{fig:special-calls-c-j-fit}). Tämä on
+odotetusten mukaista, sillä operaatiossa välitetään vain osoite
+merkkijonoon. Myös Unicode-merkkijonon pituuden selvitys on
+vakiollinen operaatio, oletettavasti koska merkkijonon pituus on
+tallessa Java-merkkijonon sisäisessä toteutuksessa.
 
 # {{{plot(54)}}}
-{{{plot(55)}}}
+{{{plot(special-calls-c-j-fit)}}}
 
 Sen sijaan UTF-muunnoksen tekevä osoitinoperaatio on riippuvainen
 kohteen koosta. Se on myös operaatio, joka johtaa Dalvikin allokoimaan
@@ -187,110 +173,19 @@ muistia muunnettua merkkijonoa varten. Näin ollen kuvan
 \ref{fig:aplot-8} vasteajat on mitattu pienillä lähtösilmukan
 kierrosmäärillä ja vasteaikojen suhdeluku aikaisempiin on 3:5000.
 
+# TODO kuva puuttuu yltä
+
 Samoin kopioivat operaatiot ovat lineaarisesti raskaampia kopioitavan
 kohteen koon kasvaessa, mutta tässäkin tapauksessa Unicode \rightarrow
 UTF-8 -muunnos on merkittävästi raskaampi kuin pelkkä Unicode-merkkien
-kopiointi. Näin ollen kuvassa \ref{fig:plot-59} merkkijonon koon
+kopiointi. Näin ollen kuvassa \ref{fig:special-calls-utf-c-j-fit} merkkijonon koon
 selvittäminen UTF-8-koodauksessa on raskaampi operaatio kuin Unicode-
 merkkijonon kopioiminen.
 
 # todo: miten viitata alloc-plotteihin?
 
 # {{{plot(56)}}}
-{{{plot(59)}}}
-
-* plots :noexport:
-  {{{plot(41)}}}
-  {{{plot(42)}}}
-  
-  {{{plot(43)}}}
-  {{{plot(44)}}}
-  
-  {{{plot(45)}}}
-  # {{{plot(46)}}}
-  
-  {{{plot(47)}}}
-  {{{plot(48)}}}
-  
-  # {{{plot(05)}}}
-  {{{plot(06)}}}
-  
-  # {{{plot(07)}}}
-  {{{plot(08)}}}
-  
-  # {{{plot(09)}}}
-  {{{plot(10)}}}
-  
-  # {{{plot(11)}}}
-  {{{plot(12)}}}
-  
-  # {{{plot(13)}}}
-  {{{plot(14)}}}
-  
-  # {{{plot(15)}}}
-  {{{plot(16)}}}
-  
-  # {{{plot(17)}}}
-  {{{plot(18)}}}
-  
-  \clearpage
-  Some separating text.
-  
-  # {{{plot(19)}}}
-  {{{plot(20)}}}
-  
-  # {{{plot(21)}}}
-  {{{plot(22)}}}
-  
-  # {{{plot(23)}}}
-  {{{plot(24)}}}
-  
-  {{{plot(25)}}}
-  # {{{plot(26)}}}
-  
-  {{{plot(27)}}}
-  # {{{plot(28)}}}
-  
-  \clearpage
-  Some separating text.
-  
-  {{{plot(29)}}}
-  # {{{plot(30)}}}
-  
-  {{{plot(31)}}}
-  # {{{plot(32)}}}
-  
-  {{{plot(33)}}}
-  # TODO maybe linespoints above
-  # {{{plot(34)}}}
-  
-  {{{plot(35)}}}
-  # {{{plot(36)}}}
-  
-  {{{plot(37)}}}
-  # {{{plot(38)}}}
-  
-  \clearpage
-  Some separating text.
-  
-  {{{plot(39)}}}
-  # {{{plot(40)}}}
-  
-  \clearpage
-  Some separating text.
-  
-  # TODO bars
-  {{{plot(49)}}}
-
-
-  \clearpage
-  # {{{plot(50)}}}
-  # explode 51 : group according to below ...?
-  {{{plot(51)}}}
-  \clearpage
-  
-  
-  {{{rotated_plot(58)}}}
+{{{plot(special-calls-utf-c-j-fit)}}}
 
 * Taulukoiden käsittely
 
