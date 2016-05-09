@@ -26,6 +26,11 @@
 #+MACRO: permu $1\nbsp{}\rightarrow\nbsp{}$2
 #+MACRO: TODO \textcolor{red}{TODO}
 
+#+MACRO: cj C\to{}Java
+#+MACRO: jc Java\to{}C
+#+MACRO: cc C\to{}C
+#+MACRO: jj Java\to{}Java
+
 #+MACRO: profile \input{profiles/$1}
 
 # {{{c(benchmark-ndk)}}}

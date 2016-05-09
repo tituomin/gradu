@@ -94,7 +94,8 @@
 (setq org-confirm-babel-evaluate nil)
 (setq org-export-babel-evaluate (not (getenv "SKIP_BABEL_EVALUATE"))) ; Change to true to get images
 (setq org-export-latex-format-toc-function 'org-export-latex-no-toc)
-(setq org-export-with-sub-superscripts nil)
+;(setq org-export-with-sub-superscripts nil)
+(setq org-use-sub-superscripts "{}")
 
 (setq org-latex-prefer-user-labels t)
 

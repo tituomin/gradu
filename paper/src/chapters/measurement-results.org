@@ -261,9 +261,53 @@ mitattu kattavasti staattisia metodikutsuja vaihtelevilla
 parametrimäärillä, vaan ainoastaan parametrin määrällä 0, jotta eri
 kutsutyyppien variaatioiden määrä pysyisi hallinnassa.
 
+0.824
 * Kutsuprofiilit suunnassa Java\to{}C
 
-# TODO HERE  
+Mikä sitten selittää, että {{{cj}}} -kutsusuunnan vasteaika on
+parhaimmillaankin (staattinen metodi parametrimäärällä 0) 1.76-kertaa
+{{{jc}}}-kutsusuunnan vasteaika? Luvussa täytyy huomioida, että
+mitatut kokonaisvasteajat sisältävät muutakin kuin tarkastelun
+kohteena olevassa JNI-toteutuksessa vietetyn ajan --- nimittäin itse
+kutsun kohteena olevan aliohjelman suorittamiseen kuluvan ajan.
+
+Java-komponentissa olevan kohdemetodin suoritus konekielitasolla on
+hyvin erilaista natiivikomponentin kohdefunktion suoritukseen
+nähden. Edellistä suoritetaan Dalvikin tavukooditulkin kautta, joka
+huolehtii myös JIT-kääntämiseen liittyvästä kirjanpidosta ja suorittaa
+mahdollisesti JIT-käännettyä koodia. Lisäksi Java-kohdemetodiin on
+lisätty yksinkertainen sivuvaikutuksellinen operaatio, jotta sitä ei
+optimoitaisi tyhjänä pois käännösvaiheessa.
+
+JNI-lisärasitteen suuruudesta /C/ saa paremman arvion seuraavasti.
+{{{cj}}}-suunnan rasite saadaan vähentämällä ({{{cj}}})-vasteajasta
+({{{jj}}})-vasteaika. Sama pätee myös toiseen suuntaan. Olettaen, että
+itse lähtösilmukan yleisrasite on merkityksettömän pieni suhteessa
+koko vasteaikaan, saadaan näin selville, miten paljon kauemmin kestää
+kutsua samaa kohdealiohjelmaa JNI:n yli verrattuna normaaliin kutsuun
+ilman JNI:tä. Tällä tavalla saadaan tarkennettua {{{cj}}} kutsusuunnan
+JNI-rasite tässä parhaimmassa tapauksessa noin 1.19 kertaiseksi
+{{{jc}}}-suunnan rasitteeseen nähden.
+
+Listauksien \ref{profile:C2JBenchmark00001} ja
+\ref{profile:J2CBenchmark00001} profiileja tutkimalla saadaan tähän
+ainakin osaselitystä seuraavista huomioista. {{{jc}}}-profiilista
+puuttuu \path{ScopedJniThreadState}-olion luominen ja
+\path{dvmChangeStatus}-metodia kutsutaan suoraan. Samoin
+\path{callPrep}-funktio puuttuu. Näiden toteutusyksityiskohtien
+tarkempi analyysi jätetään tässä tutkielmassa tekemättä.
+
+Kuvasta \ref{fig:basic-call-Object-fit} nähdään myös, että
+viiteparametrien määrän lisääntyessä {{{jc}}}-suunnan kuvaajan
+kulmakerroin on loivempi. Tästä voisi päätellä, että viitteiden
+hallinta tähän suuntaan on tehokkaampaa. Profiilista
+\ref{profile:J2CBenchmark00206}, huomataan että tässäkin tapauksessa
+ero saattaa suurelta osalta selittyä sillä, että {{{cj}}}-suunnassa
+käsitellyt viitteet ovat globaaleja ja päinvastaisen suunnan viitteet
+lokaaleja. Kohdassa \ding{202} {{{TODO}}} ei tarvita rinnakkaisten
+säikeiden poissulkemista.
+
+{{{profile(J2CBenchmark00206)}}}
 
 ** jni-totetutus: kommentteja :noexport:
 
