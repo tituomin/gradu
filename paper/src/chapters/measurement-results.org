@@ -41,8 +41,8 @@ Vastinpari suunnassa Java \rightarrow C on ~native~ -metodin
 kutsuminen Javasta eli C-ohjelmassa olevan funktion
 kutsuminen. Variaatioille (1)--(2) ei ole vastinetta C-kielessä, mutta
 ~native~-metodin voi merkitä staattiseksi (3). Vastinpari suunnassa
-Java \rightarrow Java on normaali metodikutsu. Vastinpari suunnassa C
-\rightarrow C on normaali funktiokutsu.
+Java \rightarrow Java on tavallinen metodikutsu. Vastinpari suunnassa C
+\rightarrow C on tavallinen funktiokutsu.
 
 {{{plot(basic-call-int-fit)}}}
 {{{plot(basic-call-Object-fit)}}}
@@ -60,7 +60,7 @@ myös hahmottaa eri kutsusuuntien vasteaikojen suhteellisia
 eroja. Kuten kohdassa \label{ref:jni-book-estimate} arvioitiin,
 Dalvikissakin /kutsut suunnassa {{{permu(Java,C)}}} ovat selvästi
 päinvastaista suuntaa nopeampia/: edellisten vasteajat suhteessa
-jälkimmäisten aikoihin ovat noin 2--3 -kertaisia. Tämä pätee kaikilla
+jälkimmäisten aikoihin ovat noin kolminkertaisia. Tämä pätee kaikilla
 parametrityypeillä.
 
 Sen sijaan suuntien {{{permu(Java,Java)}}} {{{permu(C,C)}}}
@@ -72,25 +72,25 @@ tarvita: C-kääntäjästä on kytketty tarpeettoman koodin optimointi pois
 päältä. Kuvista \ref{fig:basic-call-all-types-j-j-fit} ja
 \ref{fig:basic-call-all-types-c-c-fit} nähdään kuitenkin näissäkin
 kutsusuunnissa lineaarinen riippuvuus, vaikka näin pienillä
-vasteajoilla mittaushäiriöt ovat suhteellisesti jo
+vasteajoilla mittaushäiriöt ovat jo suhteellisesti
 merkittäviä. Lineaarisen riippuvuuden perusteella Java-kääntäjä tai
 Dalvikin JIT-kääntäjä ei ole onnistunut optimoimaan pois tyhjän
-metodin kutsua Java-koodista -- juuri ylimääräisen sivuvaikutuksen
+metodin kutsua Java-koodista --- juuri ylimääräisen sivuvaikutuksen
 takia.
 
 {{{plot(basic-call-all-types-j-j-fit)}}}
 
 {{{plot(basic-call-all-types-c-c-fit)}}}
 
-Kuviin \ref{fig:basic-call-all-types-c-j} ja \ref{fig:basic-call-all-types-j-c} on koostettu eri
-parametrityypit suunnissa {{{permu(C,Java)}}} ja {{{permu(Java,C)}}}.
-Primitiivi- ja viitetyyppien ryhmittyminen näkyy kuvissa selvästi.
-
 {{{plot(basic-call-all-types-c-j)}}}
 
 {{{plot(basic-call-all-types-j-c)}}}
 
-Yksikielisissä permutaatioissa (kuvat \ref{fig:basic-call-all-types-j-j-fit} ja
+Kuviin \ref{fig:basic-call-all-types-c-j} ja \ref{fig:basic-call-all-types-j-c} on koostettu eri
+parametrityypit suunnissa {{{permu(C,Java)}}} ja {{{permu(Java,C)}}}.
+Primitiivi- ja viitetyyppien ryhmittyminen näkyy kuvissa selvästi.
+
+Samankielisissä permutaatioissa (kuvat \ref{fig:basic-call-all-types-j-j-fit} ja
 \ref{fig:basic-call-all-types-c-c-fit}) ei vastaavaa eroa näy, mutta mielenkiintoisena
 yksityiskohtana niissä voidaan havaita 64-bittisten parametrityyppien
 ~long~ ja ~double~ suurempi rasite 32-bittisessä prosessorissa.
@@ -102,9 +102,350 @@ viiteparametrina. Tämä näkyy esimerkiksi kuvassa \ref{fig:variable-argument-s
 
 {{{plot(variable-argument-size-j-c)}}}
 
+* Kutsuprofiilit suunnassa C\to{}Java
+
 Kutsuprofiilien avulla saadaan lisävalaistusta viiteparametrien
-aiheuttamaan suurempaan rasitteeseen sekä JNI-kutsusuuntien
-keskinäisiin eroihin.
+aiheuttamaan suurempaan rasitteeseen sekä kieltenvälisten
+kutsusuuntien keskinäisiin eroihin. Kutsuprofiilissa
+\ref{profile:C2JBenchmark00206} nähdään, missä aliohjelmissa
+suoritusaikaa kuluu eniten mittauksessa, jossa natiivikomponentista
+kutsutaan Java- metodia kahdellakymmenellä Object-tyyppisellä
+parametrilla. Suurin osa profiileissa esiintyvistä aliohjelmista
+kuuluu Dalvikin C++-toteutukseen.
+
+Tutkielman kutsuprofiilit on laskettu luvussa
+\ref{sec-profiling-inclusive} sivulla
+\pageref{sec-profiling-inclusive} esitellyn inklusiivisen suoritusajan
+avulla, eli aliohjelman suoritusaikaa kuvaavissa prosenttiluvuissa on
+mukana aliohjelmassa itsessään sekä kaikissa sen välittömästi tai
+välillisesti kutsumissa aliohjelmissa vietetty aika.
+
+Luettaessa profiilia ylhäältä alaspäin päästään kutsuvasta
+aliohjelmasta kutsuttuun aliohjelmaan. Profiilissa näkyvä aliohjelma
+/A/ on suorituksen aikana kutsunut suoraan kaikkia aliohjelmia, joiden
+prosenttiluku ja nimi on piirretty välittömästi aliohjelman /A/
+nimestä lähtevän pystyviivan oikealle puolelle. Esimerkiksi
+neljännellä rivillä \path{dvmDecodeIndirectRef} on kutsunut suoraan
+C++-luokan \path{ScopedPthreadMutexLock} konstruktoria ja destruktoria
+sekä luokan \path{IndirectRefTable} metodia \path{get}. Jos
+profiilissa esiintyy saman prosenttiluvun alla useampi aliohjelma,
+nämä esiintyvät kutsupinossa aina yhdessä -- esimerkiksi ketju
+nopeasti suoritettavia pieniä aliohjelmia, joita kutsuprofiilinäytteen
+ajallinen erottelukyky tai käytettyjen prosenttilukujen kahden
+desimaalin tarkkuus ei riitä erottamaan toisistaan.
+
+{{{profile(C2JBenchmark00206)}}}
+
+Listauksen \ref{profile:C2JBenchmark00206} kutsuprofiilista ja muista
+tutkielman listauksista on jätetty pois perf-mittauksista ja Androidin
+taustaprosesseista aiheutuva rasite (28.36%), minkä takia
+kokonaisuoritusaika on 71.64% eikä 100%.
+
+Kutsuketju alkaa Dalvikin \path{dvmPlatformInvoke}-aliohjelmasta. Se
+on konekielellä toteutettu silta, joka muuntaa Javasta välitetyt
+kutsuparametrit paikallisen natiivikutsukonvention mukaiseksi. Koska
+tässä mittauksessa lähtösilmukka on natiivikoodissa, lähtee suoritus
+käyntiin yhdestä \path{dvmPlatformInvoke}-kutsusta.
+
+Mitattavassa metodissa on keinotekoisen paljon viiteparametreja, joten
+profiilista erottuu viitteiden välittämisen aikarasite. Avain on
+Dalvikin metodi \path{dvmDecodeIndirectRef}, joka vie 46.21% koko
+suoritusajasta ja 64% benchmarkin suoritusajasta. /Indirect
+ref[erence]/ tarkoittaa epäsuoraa viitettä, joka välitetään
+parametrinä JNI-rajapinnan yli, eli juuri JNI-koodin \path{jobject *}
+-tyyppisiä parametreja eri muodoissaan. Dalvik-virtuaalikone joutuu
+pitämään kirjaa välitetyistä viitteistä tarkoitusta varten
+toteutetulla taulutietorakenteella
+(\path{dalvik/vm/IndirectRefTable}). Sitä tarvitaan jotta
+virtuaalikoneen muistinhallinnalla säilyy tieto myös JNI:n yli
+välitetyistä viitteistä.
+
+Yli puolet epäsuorien viitteiden hallinnasta kuluu rinnakkaisten
+säikeiden poissulkemiseen \path{ScopedPthreadMutexLock}- olion
+avulla. Tämä johtuu siitä, että mittauksessa välitetyt olioviitteet
+ovat /globaaleja/ viitteitä, joita säilytetään Dalvikin globaalissa
+viitetaulukossa. Mittauksessa käytetään globaaleja viitteitä lähinnä
+ohjelmakoodin yksinkertaistamiseksi, minkä seurauksena löytyikin
+sattumalta hitain suorituspolku \path{dvmDecodeIndirectRef} -metodin
+sisältä. Listauksessa \ref{src:dvmDecodeIndirectRef} näkyy mutex-lukon
+varaaminen kohdassa \ding{202}. Nopeampi suorituspolku käyttää
+lokaalin JNI-kontekstin omaa viitetaulukkoa ilman lukitusta \ding{203}
+
+#+NAME: src:dvmDecodeIndirectRef
+#+CAPTION: Ote funktiosta dvmDecodeIndirectRef
+#+ATTR_LATEX: frame=lines
+#+BEGIN_SRC c++
+switch (indirectRefKind(jobj)) {
+case kIndirectKindLocal:
+    {
+        Object* result = self->jniLocalRefTable.get(jobj); (*@\ding{203}@*)
+        if (UNLIKELY(result == NULL)) {
+            ALOGE("JNI ERROR (app bug): use of deleted local reference (%p)", jobj);
+            dvmAbort();
+        }
+        return result;
+    }
+case kIndirectKindGlobal:
+    {
+        // TODO: find a way to avoid the mutex activity here
+        IndirectRefTable* pRefTable = &gDvm.jniGlobalRefTable;
+        ScopedPthreadMutexLock lock(&gDvm.jniGlobalRefLock); (*@\ding{202}@*)
+        Object* result = pRefTable->get(jobj);
+        if (UNLIKELY(result == NULL)) {
+            ALOGE("JNI ERROR (app bug): use of deleted global reference (%p)", jobj);
+            dvmAbort();
+        }
+        return result;
+    }
+#+END_SRC
+
+Kattavammissa mittauksissa täytyisi laatia erilliset benchmarkit,
+jotka käyttävät paikallisia viitteitä. Tämänkin mittauksen avulla
+saadaan kuitenkin jotain käsitystä nopeutuksen suuruusluokasta, joka
+paikallisilla viitteillä saavutettaisiin: tämän benchmarkin
+kokonaissuoritusajasta yli kolmasosa kuluu lukitukseen.
+
+Edelleen C \to Java -kutsusuunnassa ja kahdellakymmenellä
+~int~-parametrilla saadaan listauksen \ref{src:C2JBenchmark00146}
+kutsuprofiili.
+
+# {{{profile(C2JBenchmark00146)}}}
+
+Profiilissa näkyy edelleen \path{dvmDecodeIndirectRef} (\ding{202})
+13.42% suoritusajalla --- benchmarkissa kutsutaan Java-olion metodia,
+joten olio täytyy välittää viitteenä JNI-kutsussa.
+
+#+BEGIN_SRC c
+(*env)->CallVoidMethod(env, java_counterparts_object, mid);
+#+END_SRC
+
+Kutsussa välitetään viite \path{java_counterparts_object} olioon,
+jonka metodia ollaan kutsumassa. Viitteidenkäsittelyä korkeammalle
+profiilissa nousevat muut C \to Java -kutsun perusrasitteet, jotka
+ovat nähtävissä profiilin haaran \path{CallVoidMethod} alakohdissa.
+
+\path{dvmCallMethodV} (15.56%) vastaa Dalvikissa metodin kutsumisesta
+vaihtelevalla argumenttimäärällä kaikissa kutsusuunnissa. Ainoa
+JNI:hin liittyvä rasite siitä alkavassa kutsuhaarassa on
+\path{callPrep}-metodi, jota ei näy vastaavassa vertailukohdassa
+suunnassa Java\to{}Java. Suurimpana yleisrasitteena kyseisessä haarassa
+näkyvät JIT-kääntäjän kirjanpitoon liittyvät toimet, jotka näkyvät
+myös suunnassa Java\to{}Java.
+
+Varsinaiset JNI-rajapinnan käyttöön liittyvät rasitteet näkyvät
+kutsussa \path{dvmGetVirtualizedMethod} (3.35%), joka vastaa
+dynaamisesti sidotun metodin löytämisestä, sekä
+\path{ScopedJniThreadState}-olion luomisessa ja poistamisessa
+(yhteensä 5.52%). Ne suorittavat kaikkiin JNI-kutsuihin liittyvät
+virtuaalikoneen sisäiset tilamuutokset
+\path{dvmChangeStatus}-metodilla. Tilamuutosten avulla virtuaalikone
+pitää kirjaa, milloin muistinhallinnan roskienkeruu on sallittua.
+Säikeen suorituksen ollessa natiivikomponentissa tila on
+~THREAD_NATIVE~, jonka aikana roskienkeruu on mahdollista. Suorituksen
+ollessa käynnissä tavallisessa Java-tilassa, tila on ~THREAD_RUNNING~,
+jolloin roskienkeruu edellyttää tilamuutosta esimerkiksi
+~THREAD_SUSPENDED~-tilaan (johon tilaan virtuaalikone asettaa itsensä
+ennen roskien keruuta).
+
+* Staattiset metodikutsut suunnassa C\to{}Java
+
+Viitteidenkäsittelyn lisärasitteesta Dalvikissa voi päästä eroon
+käyttämällä pelkästään primitiiviparametreja ja kutsumalla Java-luokan
+/staattista metodia/. Profiilissa \ref{profile:C2JBenchmark00001}
+kutsuttu metodi on staattinen, eikä \path{dvmDecodeIndirectRef}-kutsua
+näy. Rasite on 500 000 kierroksella 1.49 sekuntia, kun vastaavalla
+dynaamisella kutsulla se on 2.68 sekuntia, mistä suurin osa selittyy
+juuri kutsujen \path{dvmDecodeIndirectRef} sekä
+\path{dvmGetVirtualizedMethod} poistumisella. Mittauksissa ei ole
+mitattu kattavasti staattisia metodikutsuja vaihtelevilla
+parametrimäärillä, vaan ainoastaan parametrin määrällä 0, jotta eri
+kutsutyyppien variaatioiden määrä pysyisi hallinnassa.
+
+* Kutsuprofiilit suunnassa Java\to{}C
+
+# TODO HERE  
+
+** jni-totetutus: kommentteja :noexport:
+
+*** Jni.cpp moduulin kommentti: Native methods and interaction with the GC
+    All JNI methods must start by changing their thread status to
+    THREAD_RUNNING, and finish by changing it back to THREAD_NATIVE before
+    returning to native code.  The switch to "running" triggers a thread
+    suspension check.
+    
+    With a rudimentary GC we should be able to skip the status change for
+    simple functions, e.g.  IsSameObject, GetJavaVM, GetStringLength, maybe
+    even access to fields with primitive types.  Our options are more limited
+    with a compacting GC.
+    
+    For performance reasons we do as little error-checking as possible here.
+    For example, we don't check to make sure the correct type of Object is
+    passed in when setting a field, and we don't prevent you from storing
+    new values in a "final" field.  Such things are best handled in the
+    "check" version.  For actions that are common, dangerous, and must be
+    checked at runtime, such as array bounds checks, we do the tests here.
+    
+    
+    General notes on local/global reference tracking
+    
+    JNI provides explicit control over natively-held references that the GC
+    needs to know about.  These can be local, in which case they're released
+    when the native method returns into the VM, or global, which are held
+    until explicitly released.  (There are also weak-global references,
+    which have the lifespan and visibility of global references, but the
+    object they refer to may be collected.)
+    
+    The references can be created with explicit JNI NewLocalRef / NewGlobalRef
+    calls.  The former is very unusual, the latter is reasonably common
+    (e.g. for caching references to class objects).
+    
+    Local references are most often created as a side-effect of JNI functions.
+    For example, the AllocObject/NewObject functions must create local
+    references to the objects returned, because nothing else in the GC root
+    set has a reference to the new objects.
+    
+    The most common mode of operation is for a method to create zero or
+    more local references and return.  Explicit "local delete" operations
+    are expected to be exceedingly rare, except when walking through an
+    object array, and the Push/PopLocalFrame calls are expected to be used
+    infrequently.  For efficient operation, we want to add new local refs
+    with a simple store/increment operation; to avoid infinite growth in
+    pathological situations, we need to reclaim the space used by deleted
+    entries.
+    
+    If we just want to maintain a list for the GC root set, we can use an
+    expanding append-only array that compacts when objects are deleted.
+    In typical situations, e.g. running through an array of objects, we will
+    be deleting one of the most recently added entries, so we can minimize
+    the number of elements moved (or avoid having to move any).
+    
+    If we want to conceal the pointer values from native code, which is
+    necessary to allow the GC to move JNI-referenced objects around, then we
+    have to use a more complicated indirection mechanism.
+    
+    The spec says, "Local references are only valid in the thread in which
+    they are created.  The native code must not pass local references from
+    one thread to another."
+    
+    
+    Pinned objects
+    
+    For some large chunks of data, notably primitive arrays and String data,
+    JNI allows the VM to choose whether it wants to pin the array object or
+    make a copy.  We currently pin the memory for better execution performance.
+    
+    TODO: we're using simple root set references to pin primitive array data,
+    because they have the property we need (i.e. the pointer we return is
+    guaranteed valid until we explicitly release it).  However, if we have a
+    compacting GC and don't want to pin all memory held by all global refs,
+    we need to treat these differently.
+    
+    
+    Global reference tracking
+    
+    There should be a small "active" set centered around the most-recently
+    added items.
+    
+    Because it's global, access to it has to be synchronized.  Additions and
+    removals require grabbing a mutex.  If the table serves as an indirection
+    mechanism (i.e. it's not just a list for the benefit of the garbage
+    collector), reference lookups may also require grabbing a mutex.
+    
+    The JNI spec does not define any sort of limit, so the list must be able
+    to expand to a reasonable size.  It may be useful to log significant
+    increases in usage to help identify resource leaks.
+    
+    
+    Weak-global reference tracking
+    
+    [TBD]
+    
+    
+    Local reference tracking
+    
+    Each Thread/JNIEnv points to an IndirectRefTable.
+    
+    We implement Push/PopLocalFrame with actual stack frames.  Before a JNI
+    frame gets popped, we set "nextEntry" to the "top" pointer of the current
+    frame, effectively releasing the references.
+    
+    The GC will scan all references in the table.
+
+*** stack.cpp dvmCallMethodV (staattiset metodit)
+    We don't need to take the class as an argument because, in Dalvik,
+    we don't need to worry about static synchronized methods.
+
+*** indirectreftable                                                                      :noexport:
+
+Maintain a table of indirect references.  Used for local/global JNI
+references.
+
+The table contains object references that are part of the GC root set.
+When an object is added we return an IndirectRef that is not a valid
+pointer but can be used to find the original value in O(1) time.
+Conversions to and from indirect refs are performed on JNI method calls
+in and out of the VM, so they need to be very fast.
+
+To be efficient for JNI local variable storage, we need to provide
+operations that allow us to operate on segments of the table, where
+segments are pushed and popped as if on a stack.  For example, deletion
+of an entry should only succeed if it appears in the current segment,
+and we want to be able to strip off the current segment quickly when
+a method returns.  Additions to the table must be made in the current
+segment even if space is available in an earlier area.
+
+A new segment is created when we call into native code from interpreted
+code, or when we handle the JNI PushLocalFrame function.
+
+The GC must be able to scan the entire table quickly.
+
+In summary, these must be very fast:
+- adding or removing a segment
+- adding references to a new segment
+- converting an indirect reference back to an Object
+These can be a little slower, but must still be pretty quick:
+- adding references to a "mature" segment
+- removing individual references
+- scanning the entire table straight through
+
+If there's more than one segment, we don't guarantee that the table
+will fill completely before we fail due to lack of space.  We do ensure
+that the current segment will pack tightly, which should satisfy JNI
+requirements (e.g. EnsureLocalCapacity).
+
+To make everything fit nicely in 32-bit integers, the maximum size of
+the table is capped at 64K.
+
+None of the table functions are synchronized.
+
+----
+
+Indirect reference definition.  This must be interchangeable with JNI's
+jobject, and it's convenient to let null be null, so we use void*.
+
+We need a 16-bit table index and a 2-bit reference type (global, local,
+weak global).  Real object pointers will have zeroes in the low 2 or 3
+bits (4- or 8-byte alignment), so it's useful to put the ref type
+in the low bits and reserve zero as an invalid value.
+
+The remaining 14 bits can be used to detect stale indirect references.
+For example, if objects don't move, we can use a hash of the original
+Object* to make sure the entry hasn't been re-used.  (If the Object*
+we find there doesn't match because of heap movement, we could do a
+secondary check on the preserved hash value; this implies that creating
+a global/local ref queries the hash value and forces it to be saved.)
+
+A more rigorous approach would be to put a serial number in the extra
+bits, and keep a copy of the serial number in a parallel table.  This is
+easier when objects can move, but requires 2x the memory and additional
+memory accesses on add/get.  It will catch additional problems, e.g.:
+create iref1 for obj, delete iref1, create iref2 for same obj, lookup
+iref1.  A pattern based on object bits will miss this.
+
+For now, we use a serial number.
+
+# TODO viite 
+
 
 * Merkkijonojen käsittely
 
@@ -154,6 +495,7 @@ Java-merkkijonon (~String~) sisällön tehokkaaseen kopioimiseen olioon.
 # Vertailukohtia: normaalin taulukon lukeminen
 
 # TODO: copyUTF O^2? -- mikä on arvo parametrilla 0?
+
 
 Vasteaikamittauksista huomataan ensinnäkin, että osoitinoperaatiot,
 jotka välittävät viittauksen suoraan virtuaalikoneen sisäiseen
@@ -357,17 +699,6 @@ kapasiteetin \path{GetDirectBufferCapacity}-kutsulla.
    - Reflektio
    - Virtuaalikone ja versiontarkistus
 
-
-   
-* Vasteaikamittaukset
-   5 sivua\newline 17. 2. 2014
-
-   Raakatulokset.
-
-* Kutsuprofiilit
-   5 sivua\newline 24. 2. 2014
-
-   Raakatulokset.
 
 * Yhteenveto tuloksista
    3 sivua\newline 10. 3. 2014

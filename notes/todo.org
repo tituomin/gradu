@@ -7,6 +7,8 @@ Missä mennään:
 * saved for posterity
   Tällaiset lupaukset oli tutkielmasuunnitelmassa...
 
+* TODO <2016-05-09 Mon 11:03> tsekkaa, miltä näyttää varmasti jitatun java-koodin ajaminen ... (esim. se warmupoverhead!)
+* TODO <2016-05-08 su 20:47> tarvitaanko jotain lähteitä kun puhutaan dalvikin source codesta?
 * TODO <2016-05-06 Fri 21:45> kun väsyttää: kirjoita sivuutetut operaatiot osuus (perf results)
 * TODO <2016-05-06 Fri 21:15> CopyUnicode vakiollinen? How??? (plot p59)
 * TODO <2016-05-06 Fri 20:57> LAITA 64/32-bit kohtaan assemblya! assemblya! :hifistely:

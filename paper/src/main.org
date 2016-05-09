@@ -15,6 +15,8 @@
 
 #+LATEX: \definecolor{listingc}{rgb}{0.98,0.98,0.98}
 #+LATEX: \newcommand{\todo}[1]{}
+#+LATEX: \renewcommand{\thelstlisting}{\thesection.\arabic{lstlisting}}
+#+LATEX: \renewcommand{\lstlistingname}{Listaus}
 
 #+MACRO: rotated_plot_internal \begin{sidewaysfigure} \input{figures/plots/plot-$1-$2-latin.tex} \end{sidewaysfigure}
 #+MACRO: plot_internal \begin{figure} \input{figures/plots/plot-$1-$2-latin.tex} \end{figure}
@@ -23,6 +25,8 @@
 
 #+MACRO: permu $1\nbsp{}\rightarrow\nbsp{}$2
 #+MACRO: TODO \textcolor{red}{TODO}
+
+#+MACRO: profile \input{profiles/$1}
 
 # {{{c(benchmark-ndk)}}}
 # {{{cp(benchmark-ndk, 5)}}}

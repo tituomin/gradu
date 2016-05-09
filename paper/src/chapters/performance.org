@@ -348,6 +348,7 @@ tavallisella mikrotietokoneella.
 Valgrind-virtuaalikoneessa on merkittävästi normaalia hitaampaa.
 
 ** Mittaustekniikoiden valintaperusteista
+
 Eri mittaustekniikoilla on vahvuutensa ja heikkoutensa. Instrumentointi
 ei vaadi minkäänlaista erityistukea järjestelmältä, mutta edellyttää
 kuitenkin instrumentoitavien ohjelmien uudelleen kääntämistä ja usein
@@ -417,6 +418,8 @@ pääohjelman kontolle laskettaisiin siis /kaikki/ suoritus. Käytännössä
 mielekäs abstraktiotaso näytteiden analyysille löytyy
 tilannekohtaisesti jostakin pääohjelman ja suoritettavan kohdan
 väliltä kutsupinosta.
+
+\label{sec-profiling-inclusive}
 
 Profilointityökaluissa aliohjelman suoritusaikaa kutsutaan usein
 /inklusiiviseksi/, jos siihen lasketaan mukaan myös aliohjelman

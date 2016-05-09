@@ -1,0 +1,296 @@
+
+\lstset{
+  basicstyle=\linespread{0.3}\rmfamily\tiny,
+  escapeinside={(*@}{@*)},
+  columns=fixed,
+  basewidth=0.5em,
+  mathescape,
+  language={},
+  xleftmargin=0cm,
+  framexleftmargin=0em,
+  framextopmargin=1cm,
+  framexbottommargin=1cm,
+  breaklines=false,breakatwhitespace=false,
+  moredelim=[is][\underbar]{<<@<<}{>>@>>}
+}
+\begin{lstlisting}[caption=20 viiteparametria (C$\to$Java) , label=profile:formatted, numberbychapter=true, frame=lines]
+
+    |$\underline{\phantom{0}71.09\%}$ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00206_runInternal
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |$\underline{\phantom{0}70.19\%}$ CallVoidMethod(_JNIEnv*, _jobject*, _jmethodID*, ...)
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |$\underline{\phantom{0}56.30\%}$ dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |$\underline{\phantom{0}46.21\%}$ dvmDecodeIndirectRef(Thread*, _jobject*)
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |$\underline{\phantom{0}13.64\%}$ ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |$\underline{\phantom{0}11.09\%}$ pthread_mutex_lock
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |$\underline{\phantom{00}4.53\%}$ pthread_mutex_lock_impl
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |$\underline{\phantom{0}12.26\%}$ ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |$\underline{\phantom{0}10.13\%}$ pthread_mutex_unlock
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |$\underline{\phantom{00}3.67\%}$ pthread_mutex_unlock_impl
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |$\underline{\phantom{00}4.07\%}$ IndirectRefTable::get(void*) const
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |$\underline{\phantom{00}1.12\%}$ dvmInterpret(Thread*, Method const*, JValue*)
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |$\underline{\phantom{00}0.19\%}$ common_selectTrace
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        $\underline{\phantom{00}0.13\%}$ dvmJitCheckTraceRequest
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |$\underline{\phantom{00}0.13\%}$    common_updateProfile
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |dvmJitGetTraceAddrThread
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        $\underline{\phantom{00}0.07\%}$ getCodeAddrCommon(unsigned short const*, bool)
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |        $\underline{\phantom{00}0.03\%}$ 0xc003be08
+(*@\vspace{-0.15cm}@*)
+                    |       |                |       |               0xc003503c
+(*@\vspace{-0.15cm}@*)
+                    |       |                |       |               0xc006fed0
+(*@\vspace{-0.15cm}@*)
+                    |       |                |       |               0xc006faf8
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |$\underline{\phantom{00}0.91\%}$ callPrep(Thread*, Method const*, Object*, bool)
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |        $\underline{\phantom{00}0.03\%}$ 0xc003be08
+(*@\vspace{-0.15cm}@*)
+                    |       |                |       |               0xc003503c
+(*@\vspace{-0.15cm}@*)
+                    |       |                |       |               0xc006fed0
+(*@\vspace{-0.15cm}@*)
+                    |       |                |       |               0xc006faf8
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |$\underline{\phantom{00}0.14\%}$ dvmPopFrame(Thread*)
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |        $\underline{\phantom{00}0.10\%}$ 0xc003be08
+(*@\vspace{-0.15cm}@*)
+                    |                |               0xc003503c
+(*@\vspace{-0.15cm}@*)
+                    |                |               0xc006fed0
+(*@\vspace{-0.15cm}@*)
+                    |               |
+(*@\vspace{-0.15cm}@*)
+                    |               |
+(*@\vspace{-0.15cm}@*)
+                    |               |$\underline{\phantom{00}0.07\%}$ 0xc006faf8
+(*@\vspace{-0.15cm}@*)
+                    |               |
+(*@\vspace{-0.15cm}@*)
+                    |               |
+(*@\vspace{-0.15cm}@*)
+                    |                $\underline{\phantom{00}0.03\%}$ 0xc006fb68
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |$\underline{\phantom{00}2.26\%}$ dvmDecodeIndirectRef(Thread*, _jobject*)
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |$\underline{\phantom{00}0.75\%}$ ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |        $\underline{\phantom{00}0.54\%}$ pthread_mutex_lock
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |                $\underline{\phantom{00}0.20\%}$ pthread_mutex_lock_impl
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |$\underline{\phantom{00}0.40\%}$ ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |        $\underline{\phantom{00}0.34\%}$ pthread_mutex_unlock
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |                $\underline{\phantom{00}0.13\%}$ pthread_mutex_unlock_impl
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |        $\underline{\phantom{00}0.31\%}$ IndirectRefTable::get(void*) const
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |$\underline{\phantom{00}0.82\%}$ dvmGetVirtualizedMethod(ClassObject const*, Method const*)
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |        $\underline{\phantom{00}0.17\%}$ dvmIsDirectMethod(Method const*)
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |$\underline{\phantom{00}0.39\%}$ ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |        $\underline{\phantom{00}0.23\%}$ dvmChangeStatus(Thread*, ThreadStatus)
+(*@\vspace{-0.15cm}@*)
+                    |               |
+(*@\vspace{-0.15cm}@*)
+                    |               |
+(*@\vspace{-0.15cm}@*)
+                    |                $\underline{\phantom{00}0.03\%}$ android_atomic_acquire_store
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |$\underline{\phantom{00}0.37\%}$ ScopedJniThreadState::~ScopedJniThreadState()
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |        $\underline{\phantom{00}0.20\%}$ dvmChangeStatus(Thread*, ThreadStatus)
+(*@\vspace{-0.15cm}@*)
+                    |               |
+(*@\vspace{-0.15cm}@*)
+                    |               |
+(*@\vspace{-0.15cm}@*)
+                    |                $\underline{\phantom{00}0.10\%}$ android_atomic_release_store
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+
+
+
+\end{lstlisting}
+
