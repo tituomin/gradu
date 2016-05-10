@@ -241,11 +241,14 @@ virtuaalikoneen sisäiset tilamuutokset
 \path{dvmChangeStatus}-metodilla. Tilamuutosten avulla virtuaalikone
 pitää kirjaa, milloin muistinhallinnan roskienkeruu on sallittua.
 Säikeen suorituksen ollessa natiivikomponentissa tila on
-~THREAD_NATIVE~, jonka aikana roskienkeruu on mahdollista. Suorituksen
-ollessa käynnissä tavallisessa Java-tilassa, tila on ~THREAD_RUNNING~,
-jolloin roskienkeruu edellyttää tilamuutosta esimerkiksi
-~THREAD_SUSPENDED~-tilaan (johon tilaan virtuaalikone asettaa itsensä
-ennen roskien keruuta).
+~THREAD_NATIVE~, jonka aikana roskienkeruu on mahdollista (mutta
+viitetaulukkoa lukemalla roskienkeruu pysyy tietoisena JNI-rajapinnan
+yli välitetyistä olioviitteistä).
+
+Suorituksen ollessa käynnissä tavallisessa Java-tilassa, tila on
+~THREAD_RUNNING~, jolloin roskienkeruu edellyttää tilamuutosta
+esimerkiksi ~THREAD_SUSPENDED~-tilaan (johon tilaan virtuaalikone
+asettaa itsensä ennen roskien keruuta).
 
 * Staattiset metodikutsut suunnassa C\to{}Java
 
@@ -257,42 +260,44 @@ näy. Rasite on 500 000 kierroksella 1.49 sekuntia, kun vastaavalla
 dynaamisella kutsulla se on 2.68 sekuntia, mistä suurin osa selittyy
 juuri kutsujen \path{dvmDecodeIndirectRef} sekä
 \path{dvmGetVirtualizedMethod} poistumisella. Mittauksissa ei ole
-mitattu kattavasti staattisia metodikutsuja vaihtelevilla
+suoritettu kattavasti staattisia metodikutsuja vaihtelevilla
 parametrimäärillä, vaan ainoastaan parametrin määrällä 0, jotta eri
 kutsutyyppien variaatioiden määrä pysyisi hallinnassa.
 
-0.824
 * Kutsuprofiilit suunnassa Java\to{}C
 
 Mikä sitten selittää, että {{{cj}}} -kutsusuunnan vasteaika on
-parhaimmillaankin (staattinen metodi parametrimäärällä 0) 1.76-kertaa
-{{{jc}}}-kutsusuunnan vasteaika? Luvussa täytyy huomioida, että
-mitatut kokonaisvasteajat sisältävät muutakin kuin tarkastelun
-kohteena olevassa JNI-toteutuksessa vietetyn ajan --- nimittäin itse
-kutsun kohteena olevan aliohjelman suorittamiseen kuluvan ajan.
+1.76-kertaa {{{jc}}}-kutsusuunnan vasteaika parhaimmassakin
+tapauksessa, eli kutsuttaessa staattista metodia ilman parametreja?
+Luvussa täytyy huomioida, että mitatut kokonaisvasteajat sisältävät
+muutakin kuin tarkastelun kohteena olevassa JNI-toteutuksessa vietetyn
+ajan --- nimittäin itse kutsun kohteena olevan aliohjelman
+suorittamiseen kuluvan ajan.
 
 Java-komponentissa olevan kohdemetodin suoritus konekielitasolla on
 hyvin erilaista natiivikomponentin kohdefunktion suoritukseen
 nähden. Edellistä suoritetaan Dalvikin tavukooditulkin kautta, joka
 huolehtii myös JIT-kääntämiseen liittyvästä kirjanpidosta ja suorittaa
 mahdollisesti JIT-käännettyä koodia. Lisäksi Java-kohdemetodiin on
-lisätty yksinkertainen sivuvaikutuksellinen operaatio, jotta sitä ei
-optimoitaisi tyhjänä pois käännösvaiheessa.
+näissä mittauksissa lisätty yksinkertainen sivuvaikutuksellinen
+operaatio, jotta sitä ei optimoitaisi tyhjänä pois käännösvaiheessa.
 
-JNI-lisärasitteen suuruudesta /C/ saa paremman arvion seuraavasti.
+JNI-lisärasitteen suuruudesta saakin paremman arvion seuraavasti.
 {{{cj}}}-suunnan rasite saadaan vähentämällä ({{{cj}}})-vasteajasta
-({{{jj}}})-vasteaika. Sama pätee myös toiseen suuntaan. Olettaen, että
-itse lähtösilmukan yleisrasite on merkityksettömän pieni suhteessa
-koko vasteaikaan, saadaan näin selville, miten paljon kauemmin kestää
-kutsua samaa kohdealiohjelmaa JNI:n yli verrattuna normaaliin kutsuun
-ilman JNI:tä. Tällä tavalla saadaan tarkennettua {{{cj}}} kutsusuunnan
-JNI-rasite tässä parhaimmassa tapauksessa noin 1.19 kertaiseksi
-{{{jc}}}-suunnan rasitteeseen nähden.
+({{{jj}}})-vasteaika. Sama pätee myös toiseen kutsusuuntaan mutatis
+mutandis. Olettaen, että itse lähtösilmukan yleisrasite on
+merkityksettömän pieni suhteessa koko vasteaikaan, saadaan näin
+selville, miten paljon kauemmin kestää kutsua samaa kohdealiohjelmaa
+JNI:n yli verrattuna normaaliin kutsuun ilman JNI:tä. Tällä tavalla
+saadaan tarkennettua {{{cj}}} kutsusuunnan JNI-rasite tässä
+parhaimmassa tapauksessa noin 1.19 kertaiseksi {{{jc}}}-suunnan
+rasitteeseen nähden.
 
 Listauksien \ref{profile:C2JBenchmark00001} ja
 \ref{profile:J2CBenchmark00001} profiileja tutkimalla saadaan tähän
-ainakin osaselitystä seuraavista huomioista. {{{jc}}}-profiilista
-puuttuu \path{ScopedJniThreadState}-olion luominen ja
+lisärasitteeseen ainakin osittainen selitys seuraavista
+huomioista. {{{jc}}}-profiilista puuttuu
+\path{ScopedJniThreadState}-olion luominen ja
 \path{dvmChangeStatus}-metodia kutsutaan suoraan. Samoin
 \path{callPrep}-funktio puuttuu. Näiden toteutusyksityiskohtien
 tarkempi analyysi jätetään tässä tutkielmassa tekemättä.
@@ -304,10 +309,11 @@ hallinta tähän suuntaan on tehokkaampaa. Profiilista
 \ref{profile:J2CBenchmark00206}, huomataan että tässäkin tapauksessa
 ero saattaa suurelta osalta selittyä sillä, että {{{cj}}}-suunnassa
 käsitellyt viitteet ovat globaaleja ja päinvastaisen suunnan viitteet
-lokaaleja. Kohdassa \ding{202} {{{TODO}}} ei tarvita rinnakkaisten
+lokaaleja. Kohdassa \ding{202} {{{TODO}}} ei {{{jc}}} -suunnassa tarvita rinnakkaisten
 säikeiden poissulkemista.
 
-{{{profile(J2CBenchmark00206)}}}
+# {{{profile(J2CBenchmark00206)}}}
+\newpage
 
 ** jni-totetutus: kommentteja :noexport:
 
@@ -491,73 +497,83 @@ For now, we use a serial number.
 # TODO viite 
 
 
+
+
 * Merkkijonojen käsittely
 
-Java-merkkijonojen sisältöä käsitellään natiivikomponentista seuraavilla
-operaatioilla. Osoittimen palauttavat operaatiot ovat
+Java-merkkijonojen sisältöä käsitellään natiivikomponentista
+seuraavilla operaatioilla. Osoittimen palauttavia ja vapauttavia
+operaatioita kutsutaan aina pareittain, joten jokainen pari on koottu
+yhteisen benchmarkin alle. Benchmarkeille on annettu nimet seuraavasti:
 
-1. ~GetStringChars~ ja ~ReleaseStringChars~,
-2. ~GetStringCritical~ ja ~ReleaseStringUTFChars~ sekä
-3. ~GetStringUTFChars~ ja ~ReleaseStringCritical~.
+- ReadString ::  ~GetStringChars~ ja ~ReleaseStringChars~
+- ReadStringCritical :: ~GetStringCritical~ ja ~ReleaseStringCritical~
+- ReadStringUTF :: ~GetStringUTFChars~ ja ~ReleaseStringUTFChars~.
 
-Kopioivat operaatiot ovat
-1. ~GetStringRegion~ ja
-2. ~GetStringUTFRegion~.
+Kopioivat operaatiot ~GetStringRegion~ ja ~GetStringUTFRegion~ näkyvät
+tuloksissa nimillään samoin kuin tukioperaatiot ~GetStringLength~ ja
+~GetStringUTFLength~, joilla selvitetään merkkijonon pituus (mikä on
+tarpeen ennen kuin merkkijonon voi läpikäydä C-koodissa).
 
-Tukioperaatiot
-1. ~GetStringLength~
-2. ~GetStringUTFLength~
+Näille C\to{}Java operaatioille ei ole löydettävissä vastinpareja
+suunnissa {{{cj}}} tai {{{jc}}}, sillä kyseessä ovat operaatiot, joita
+on kutsuttava sen /lisäksi/ että merkkijonoa varsinaisesti käsitellään
+natiivikoodissa. Siten natiivimerkkijonojen käsittely C-kielessä ei
+vaadi mitään vastaavaa ylimääräistä operaatiota kuten ei myöskään
+Java-merkkijonojen käsittely Java-koodissa, vaan kyseessä on puhtaasti
+JNI-rajapinnasta johtuva lisärasite.
 
-Operaatioille ei ole mittauksissa varsinaisia vastinpareja, sillä
-kyseessä ovat operaatiot, joita on kutsuttava sen /lisäksi/ että
-merkkijonoa varsinaisesti käsitellään natiivikoodissa. Siten
-natiivimerkkijonojen käsittely C-kielessä ei vaadi mitään vastaavaa
-ylimääräistä operaatiota kuten ei myöskään Java-merkkijonojen
-käsittely Java-koodissa vaan kyseessä on nimenomaan
-
-C-merkkijonojen eli ~char~-taulukoiden käsittely
-~java.nio.CharBuffer~-olioina Java-koodissa sen sijaan on mahdollista
+Kutsusuunnassa {{{jc}}} operaatioille on kuitenkin eräs vertailukohta.
+Natiivimerkkijonojen eli ~char~-taulukoiden käsittely
+~java.nio.CharBuffer~-olioina Java-koodissa on mahdollista
 ~Non-blocking IO~-API:n kautta (ks. kohta
-\ref{sec:measurement-classification-nio}), jos ~CharBuffer~-olio
-luodaan Java-komponentissa ja välitetään JNI:n kautta
-natiivikomponentille. Tällöin JNI:n merkkijononkäsittelyoperaatioiden
-aiheuttamaa rasitetta vastaa oikeastaan yksi natiivimetodikutsu
-yhdistettynä JNI:n NIO-operaatioon
-\path{GetDirectBufferAddress}. ~CharBuffer~-oliossa on myös metodit
-Java-merkkijonon (~String~) sisällön tehokkaaseen kopioimiseen olioon.
-
-# TODO puuttuu sellaisenaan counterparteista (voiko komposoida?)
-
-# #+CAPTION: Merkkijonon käsittelyn vertailukohdat
-# #+LABEL: tab-string-counter
-# |   | Java \rightarrow C | C \rightarrow C | Java \rightarrow Java |   |
-# |---+--------------------+-----------------+-----------------------+---|
-# | / | <                  |                 | >                     |   |
-# | a | b                  | c               |                       |   |
-# |   |                    |                 |                       |   |
-
-# Vertailukohtia: normaalin taulukon lukeminen
+\ref{sec:measurement-classification-nio}). Tällöin JNI:n
+merkkijononkäsittelyoperaatioiden aiheuttamaa rasitetta vastaa (1)
+natiivikomponentin JNI-kutsu \path{NewDirectByteBuffer}, joka luo
+etukäteen varatun muistialueen ympärille \path{ByteBuffer}-olion ja
+(2) kutsu, jossa Java-komponentille lähetetään viite kyseiseen
+olioon.
 
 # TODO: copyUTF O^2? -- mikä on arvo parametrilla 0?
-
-
 Vasteaikamittauksista huomataan ensinnäkin, että osoitinoperaatiot,
 jotka välittävät viittauksen suoraan virtuaalikoneen sisäiseen
 Unicode-tietorakenteeseen, eivät ole riippuvaisia merkkijonon
-pituudesta (ks. kuva \ref{fig:special-calls-c-j-fit}). Tämä on
+pituudesta (ks. kuva \ref{fig:special-calls-unicode-c-j-fit}). Tämä on
 odotetusten mukaista, sillä operaatiossa välitetään vain osoite
 merkkijonoon. Myös Unicode-merkkijonon pituuden selvitys on
 vakiollinen operaatio, oletettavasti koska merkkijonon pituus on
-tallessa Java-merkkijonon sisäisessä toteutuksessa.
+tallessa Java-merkkijonon sisäisessä toteutuksessa. Kopioivan operaation
+\path{GetStringRegion} riippuvuus on odotetusti lineaarinen.
 
 # {{{plot(54)}}}
-{{{plot(special-calls-c-j-fit)}}}
+{{{plot(special-calls-unicode-c-j-fit)}}}
+
+Kuitenkin noin alle 1500 merkin pituisilla merkkijonoilla merkkijonon
+kopioiminen \path{GetStringRegion}-metodilla on nopeampaa kuin
+osoitteen saaminen merkkijonon muistialueelle. Listauksessa
+\ref{profile:C2JReadUnicode-512} näkyy suurimpana vasteajan
+komponenttina jälleen globaalin viitteen purku, koska käytetty
+~jstring~-viite on globaali. Tämän jälkeen merkittävä kustannus
+(8.44%) syntyy jälleen muistinhallintaan liittyvästä toimesta, eli
+merkkijonon sisäisen merkkitaulukon sulkemisesta roskienkeruun
+ulkopuolelle (\path{pinPrimitiveArray}). Itse merkkijonon merkkien
+nouto (\path{StringObject::chars()} ja \path{StringObject::array()}
+vievät kokonaisajasta vain 0.7%. Muistinhallintaan liittyvät rasitteet
+tavallaan myös tuplaantuvat, koska vastaavat toimet tehdään sekä
+noudettaessa että vapautettaessa viite merkkijonon sisältöön, mikä
+näkyy myös kutsuprofiilissa.
+
+Kopioivan Unicode-operaation profiilissa
+\ref{profile:C2JCopyUnicode-512} näkyy myös globaalin
+~jstring~-viitteen purku, mutta se tapahtuu vain kerran eikä kahdesti.
 
 Sen sijaan UTF-muunnoksen tekevä osoitinoperaatio on riippuvainen
 kohteen koosta. Se on myös operaatio, joka johtaa Dalvikin allokoimaan
-muistia muunnettua merkkijonoa varten. Näin ollen kuvan
-\ref{fig:aplot-8} vasteajat on mitattu pienillä lähtösilmukan
-kierrosmäärillä ja vasteaikojen suhdeluku aikaisempiin on 3:5000.
+muistia muunnettua merkkijonoa varten. Siksi kuvan \ref{fig:aplot-8}
+vasteajat on mitattu allokoiviin operaatioihin soveltuvilla
+vähäisemmillä lähtösilmukan kierrosmäärillä: allokoivien operaatioiden
+kierrosluku on 300 ja ei-allokoivien 500000, joten --- vasteaikojen
+suhdeluku on 3:5000.
 
 # TODO kuva puuttuu yltä
 
@@ -603,17 +619,17 @@ Java-komponentit voivat myös käsitellä samaa muistialuetta.
 Javan standardikirjaston paketin ~java.nio~ luokka ~ByteBuffer~ antaa
 joitakin lisämahdollisuuksia datan siirtoon Java- ja
 natiivikomponenttien välillä. ~ByteBuffer~-olio edustaa jatkuvaa
-muistialuetta jota voi käsitellä tehokkaasti molemmissa komponenteissa.
+muistialuetta jota voi käsitellä tehokkaasti molemmissa ympäristöissä.
 
 Jos ~ByteBuffer~-on allokoitu /suorana/ (/direct/), virtuaalikone
 yrittää taata, että natiivioperaatiot (käyttöjärjestelmän operaatiot
 tai JNI-natiivikomponentin suorittamat operaatiot), joita puskurille
 suoritetaan, tehdään suoraan samalle muistialueelle, jota
 Java-ohjelmakin käsittelee. Sitävastoin epäsuoran puskurin sisältö
-saatetaan kopioida erikseen ennen käyttöjärjestelmän
-natiivi-I/O-operaatioita. JNI-rajapinta sitä paitsi tarjoaa pääsyn
-ainoastaan /suoran/ ~ByteBuffer~-olion muistialueelle, jota voi
-käsitellä suoraan osoittimen avulla.
+saatetaan kopioida erikseen ennen
+natiivi-I/O-operaatioita. JNI-rajapinta tarjoaa pääsyn ainoastaan
+/suoran/ ~ByteBuffer~-olion muistialueelle, jota voi käsitellä suoraan
+osoittimen avulla.
 
 # TODO tähän tarvitaan ehkä viitteitä
 
@@ -638,52 +654,39 @@ kapasiteetin \path{GetDirectBufferCapacity}-kutsulla.
 
 * Kenttien käsittely
 ** Ilmentymän kentät                                                                           :dep:
-*** DONE GetFieldID                                                                         :search:
-*** DONE COUNTERPOINT Get<type>Field Routines
-    skip others than J target, because
-    aim of measuring is to measure the jni call
-    overhead, which doesn't exist for j2c, c2c
-    - [X] C2J
-    - [X] J2J
-    - [ ] J2C
-    - [ ] C2C
+*** GetFieldID                                                                              :search:
+*** COUNTERPOINT Get<type>Field Routines
 *** COUNTERPOINT Set<type>Field Routines
-    - [X] C2J
-    - [X] J2J
-    - [ ] J2C
-    - [ ] C2C
 ** Staattiset kentät                                                                           :dep:
-*** DONE GetStaticFieldID                                                                   :search:
+*** GetStaticFieldID                                                                        :search:
 *** COUNTERPOINT GetStatic<type>Field Routines
-    - [X] C2J
-    - [X] J2J
-    - [ ] J2C
-    - [ ] C2C
 *** COUNTERPOINT SetStatic<type>Field Routines
-    - [X] C2J
-    - [X] J2J
-    - [ ] J2C
-    - [ ] C2C
-* Olioiden käsittely
-** DONE GetObjectClass                                                                        :read:
-* Muistia varaavat operaatiot
-** DONE AllocObject                                                                          :alloc:
-** DONE NewObject, NewObjectA, NewObjectV                                              :comp2:alloc:
 
-** DONE NewString                                                                            :alloc:
-** DONE NewStringUTF                                                                         :alloc:
+* Ehkä -lopuksi?
+** Olioiden käsittely
+*** DONE GetObjectClass                                                                       :read:
+** Muistia varaavat operaatiot
+*** DONE AllocObject                                                                         :alloc:
+*** DONE NewObject, NewObjectA, NewObjectV                                             :comp2:alloc:
+*** DONE NewString                                                                           :alloc:
+*** DONE NewStringUTF                                                                        :alloc:
+*** DONE NewObjectArray                                                                      :alloc:
+*** DONE New<PrimitiveType>Array Routines                                                    :alloc:
+** Paikalliset ja globaalit viitteet
+*** Local References
+**** DONE PushLocalFrame                                                            :comp1:allocref:
+**** DONE PopLocalFrame                                                             :comp1:allocref:
+** Poikkeukset
+*** DONE ExceptionCheck                                                                       :read:
+** Luokkien käsittely                                                                :exclude:maybe:
+*** DONE FindClass                                                            :exclude:maybe:search:
 
-** DONE NewObjectArray                                                                       :alloc:
-** DONE New<PrimitiveType>Array Routines                                                     :alloc:
-* Paikalliset ja globaalit viitteet
-** Local References
-*** DONE PushLocalFrame                                                             :comp1:allocref:
-*** DONE PopLocalFrame                                                              :comp1:allocref:
-* Poikkeukset
-** DONE ExceptionCheck                                                                        :read:
-* Luokkien käsittely                                                                 :exclude:maybe:
-** DONE FindClass                                                             :exclude:maybe:search:
 * Sivuutetut operaatiot
+
+Tutkielmassa on sivuutettu osa JNI-rajapinnan palveluista muutamasta
+eri syystä.
+
+
 ** Olioiden käsittely
 *** EXCLUDE GetObjectRefType                                                                  :read:
 *** EXCLUDE IsInstanceOf                                                             :read:traverse:
@@ -696,23 +699,19 @@ kapasiteetin \path{GetDirectBufferCapacity}-kutsulla.
 **** EXCLUDE EnsureLocalCapacity                                                          :allocref:
 **** EXCLUDE NewLocalRef                                                         :comp1:gc:allocref:
 **** EXCLUDE DeleteLocalRef                                                      :comp1:gc:allocref:
-
 *** Weak Global References                                                            :unclear:rtfm:
 **** EXCLUDE NewWeakGlobalRef                                                             :allocref:
 **** EXCLUDE DeleteWeakGlobalRef                                                          :allocref:
-
 ** Luokkien käsittely                                                                :exclude:maybe:
 *** EXCLUDE DefineClass                                                                    :exclude:
 *** EXCLUDE GetSuperclass                                                   :exclude:maybe:traverse:
 *** EXCLUDE IsAssignableFrom                                                :exclude:maybe:traverse:
-
 ** Natiivimetodien rekisteröinti
 *** EXCLUDE RegisterNatives                                                                :exclude:
 *** EXCLUDE UnregisterNatives                                                              :exclude:
 ** Rinnakkaisohjelmointi
 *** EXCLUDE MonitorEnter                                                                     :synch:
 *** EXCLUDE MonitorExit                                                                      :synch:
-
 ** Poikkeukset
 *** DONE ExceptionCheck                                                                       :read:
 *** EXCLUDE Throw                                                                          :special:
@@ -721,7 +720,6 @@ kapasiteetin \path{GetDirectBufferCapacity}-kutsulla.
 *** EXCLUDE ExceptionClear
 *** EXCLUDE ExceptionDescribe                                                              :exclude:
 *** EXCLUDE FatalError                                                                     :exclude:
-
 ** Reflektio                                                                               :exclude:
 *** EXCLUDE FromReflectedMethod
 *** EXCLUDE FromReflectedField
@@ -732,7 +730,6 @@ kapasiteetin \path{GetDirectBufferCapacity}-kutsulla.
 ** Versiotiedot                                                                            :exclude:
 *** EXCLUDE GetVersion                                                                     :exclude:
 *** EXCLUDE Constants                                                                      :exclude:
-
 
 
    1 sivu\newline 3. 2. 2014
