@@ -63,7 +63,7 @@ päinvastaista suuntaa nopeampia/: edellisten vasteajat suhteessa
 jälkimmäisten aikoihin ovat noin kolminkertaisia. Tämä pätee kaikilla
 parametrityypeillä.
 
-Sen sijaan suuntien {{{permu(Java,Java)}}} {{{permu(C,C)}}}
+Sen sijaan suuntien ({{{permu(Java,Java)}}}) sekä ({{{permu(C,C)}}})
 keskinäisestä erosta ei tämän mittauksen perusteella voi tehdä
 pitkälle meneviä johtopäätöksiä muun muassa siksi, että
 mittausteknisistä syistä Java-lähtösilmukoihin on jouduttu lisäämään
@@ -75,8 +75,7 @@ kutsusuunnissa lineaarinen riippuvuus, vaikka näin pienillä
 vasteajoilla mittaushäiriöt ovat jo suhteellisesti
 merkittäviä. Lineaarisen riippuvuuden perusteella Java-kääntäjä tai
 Dalvikin JIT-kääntäjä ei ole onnistunut optimoimaan pois tyhjän
-metodin kutsua Java-koodista --- juuri ylimääräisen sivuvaikutuksen
-takia.
+metodin kutsua Java-koodista.
 
 {{{plot(basic-call-all-types-j-j-fit)}}}
 
@@ -271,8 +270,8 @@ Mikä sitten selittää, että {{{cj}}} -kutsusuunnan vasteaika on
 tapauksessa, eli kutsuttaessa staattista metodia ilman parametreja?
 Luvussa täytyy huomioida, että mitatut kokonaisvasteajat sisältävät
 muutakin kuin tarkastelun kohteena olevassa JNI-toteutuksessa vietetyn
-ajan --- nimittäin itse kutsun kohteena olevan aliohjelman
-suorittamiseen kuluvan ajan.
+ajan --- nimittäin kutsun kohteena olevan aliohjelman suorittamiseen
+kuluvan ajan.
 
 Java-komponentissa olevan kohdemetodin suoritus konekielitasolla on
 hyvin erilaista natiivikomponentin kohdefunktion suoritukseen

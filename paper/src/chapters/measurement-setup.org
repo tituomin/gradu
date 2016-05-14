@@ -209,9 +209,8 @@ on kuitenkin natiivikoodin kutsuma \path{(*env)->CallVoidMethod}
 #+LABEL: fig:sequence_c_to_c
 #+RESULTS: fig:sequence_c_to_c
 
-Kuvan \ref{fig:sequence_c_to_c} tilanne on jäljelle jäänyt
-permutaatio, jossa koko mitattava suoritus tapahtuu
-natiivikomponentissa.
+Kuvan \ref{fig:sequence_c_to_c} tilanne on viimeinen permutaatio.
+Siinä koko mitattava suoritus tapahtuu natiivikomponentissa.
 
 * Mittauslaitteisto
 
