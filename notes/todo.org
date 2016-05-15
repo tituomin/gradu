@@ -4,6 +4,7 @@ Missä mennään:
 [[file:~/gradu/paper/bib/main.bib::saavedra]]
 (hyvä peruslähde benchmarkeista)
 
+* TODO <2016-05-15 su 22:45> onko critical array-operaatio määritelty missään?
 * DONE <2016-05-15 su 22:24> MAJOR MAJOR! JNI book s. 27 : pinning == muistisijainnin pysyvyys, ei roskienkeruun esto
 * TODO <2016-05-15 su 22:21> MAJOR! Java Strings are IMMUTABLE!
 * saved for posterity

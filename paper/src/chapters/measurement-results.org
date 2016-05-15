@@ -509,7 +509,10 @@ For now, we use a serial number.
 Java-merkkijonojen sisältöä käsitellään natiivikomponentista
 seuraavilla operaatioilla. Osoittimen palauttavia ja vapauttavia
 operaatioita kutsutaan aina pareittain, joten jokainen pari on koottu
-yhteisen benchmarkin alle. Benchmarkeille on annettu nimet seuraavasti:
+yhteisen benchmarkin alle. Kannattaa huomata, että vaikka JNI:n
+osoitinoperaatiot merkkijonoille mahdollistaisivat merkkijonon
+muokkaamisen, tämä on kielletty: Javan merkkijonot ovat
+muuttumattomia. Benchmarkeille on annettu nimet seuraavasti:
 
 - ReadString ::  ~GetStringChars~ ja ~ReleaseStringChars~
 - ReadStringCritical :: ~GetStringCritical~ ja ~ReleaseStringCritical~
@@ -522,7 +525,7 @@ tarpeen ennen kuin merkkijonon voi läpikäydä C-koodissa).
 
 Näille C\to{}Java operaatioille ei ole löydettävissä vastinpareja
 suunnissa {{{cj}}} tai {{{jc}}}, sillä kyseessä ovat operaatiot, joita
-on kutsuttava sen /lisäksi/ että merkkijonoa varsinaisesti käsitellään
+on kutsuttava sen /lisäksi/ että merkkijonoa varsinaisesti luetaan
 natiivikoodissa. Siten natiivimerkkijonojen käsittely C-kielessä ei
 vaadi mitään vastaavaa ylimääräistä operaatiota kuten ei myöskään
 Java-merkkijonojen käsittely Java-koodissa, vaan kyseessä on puhtaasti
@@ -555,11 +558,11 @@ tallessa Java-merkkijonon sisäisessä toteutuksessa. Kopioivan operaation
 
 Kuitenkin noin alle 1500 merkin pituisilla merkkijonoilla merkkijonon
 kopioiminen \path{GetStringRegion}-metodilla on nopeampaa kuin
-osoitteen saaminen merkkijonon muistialueelle. Jälkimmäisen tapauksen
+osoitteen saaminen merkkijonon muistialueelle. Osoitinoperaation
 kutsuprofiili näkyy listauksessa \ref{profile:C2JReadUnicode-512},
 jossa merkittävimpänä vasteajan komponenttina on jälleen globaalin
 viitteen purku, koska käytetty ~jstring~-viite on globaali. Tämän
-jälkeen merkittävä kustannus (8.44%) syntyy jälleen muistinhallintaan
+jälkeen merkittävä kustannus (8.44%) syntyy toisesta muistinhallintaan
 liittyvästä toimesta, eli merkkijonon sisäisen merkkitaulukon
 /kiinnikytkemisestä/ (\path{pinPrimitiveArray}), mikä takaa että
 palautettu muistiosoite pysyy voimassa. Itse merkkijonon merkkien
@@ -601,7 +604,8 @@ merkkijonon kopioiminen.
 Taulukoiden käsittelyn perusmenetelmät ovat samat kuin merkkijonojen
 käsittelyssä, mutta merkistökoodaukseen liittyviä rasitteita ei
 tällöin ole, ja viitetyyppejä sisältävät taulukot käsitellään omana
-erityistapauksenaan. Osoittimen palauttavia operaatiota mitataan
+erityistapauksenaan. Lisäksi Java-taulukoiden lukeminen ja kirjoittaminen
+ovat molemmat sallittuja. Osoittimen palauttavia operaatiota mitataan
 seuraavissa benchmarkeissa.
 
 - Get\tau{}ArrayElements :: Funktiot \verb|Get|\tau\verb|ArrayElements| ja
@@ -614,7 +618,9 @@ primitiivityypeistä.
 
 Viitetyyppisten taulukoiden elementtejä voi käsitellä vain yksi
 kerrallaan operaatioilla ~GetObjectArrayElement~ ja
-~SetObjectArrayElement~.
+~SetObjectArrayElement~. Molempien kutsurasitteeksi saatiin 46.6ms
+kutsua kohti eli karkeasti arvioidden yli 20 sekuntia 512-alkioisen
+taulukon läpikäyntiin.
 
 Kopioivat operaatiot ovat:
 
@@ -625,7 +631,45 @@ Suoria vertailukohtia näille suunnan C\to{}Java taulukko-operaatioille
 ei ole muissa kutsusuunnissa, jälleen kerran lukuunnottamatta
 ~NIO~-rajapintaa (ks. kohta \ref{sec:measurement-classification-nio}).
 
-Primitiivitaululukoiden operaatioissa odotetusti 
+Primitiivitaululukoiden operaatioiden osoitinversioiden vasteajat ovat
+odotetusti vakiollisia suhteessa syötteen kokoon (kuvan
+\ref{fig:special-calls-arrayelements-c-j-fit} ylempi ryhmittymä), kun
+taas kopioivat versiot kasvavat lineaarisesti syötteen koon kasvaessa
+(kuva \ref{fig:special-calls-arrayregion-c-j-fit}). Merkkijonon
+pituuden selvittäminen on vakiollinen operaatio (kuvan
+\ref{fig:special-calls-arrayelements-c-j-fit} alempi ryhmittymä).
+
+{{{plot(special-calls-arrayelements-c-j-fit)}}}
+
+{{{plot(special-calls-arrayregion-c-j-fit)}}}
+
+Kutsuprofiilin {{{TODO}}} perusteella osoitinoperaatiot noudattavat
+täsmälleen merkkijonojen osoitinoperaatioiden rakennetta, mitä tukee
+se, että vasteajatkin ovat yhtäsuuret \path{Get\tau{}ArrayElements}-
+ja \path{GetStringChars}-kutsuissa. Keskeisimmät rasitteet syntyvät
+siis epäsuoran globaalin viitteen purusta ja taulukon
+kiinnikytkemisestä.
+
+Kopioivien operaatioiden vasteajat noudattelevat melko suoraan
+kopioitavan primitiivityypin kokoa. Operaatioiden vasteajoissa on
+vakioelementti, joka koostuu taulukkoviitteen purusta ---
+kiinnikytkemistä ei kopioitaessa tarvita. Lineaarisen riippuvuuden
+kulmakerroin määräytyy melko suoraan itse kopiointioperaatiosta
+(\path{memcpy}), määräävänä tekijänä kopioitavien elementtien koko
+tavuina. Siten ~double~-taulukon kopiointi (kun vakiorasite on
+vähennetty) on noin kaksi kertaa niin raskasta kuin ~float~-taulukon.
+Myös \path{GetStringRegion} -operaation rasite vastaa hyvin
+16-bittisen char-taulukon kopioimisen rasitetta. Kutsuprofiileissa
+tämä näkyy niin, että ~memcpy~-operaation prosenttiosuus operaatiossa
+kasvaa tasaisesti.
+
+# TODO; kerro että memcpy ei jostain syystä istu siististi
+# profiiliin
+
+# TODO: käsittele erikseen critical-versiot
+
+# TODO readcompletearray-etc-vastinparit tähän vai vasta
+# loppuun? ehkä loppuun?
 
 * Non-blocking I/O
 \label{sec:measurement-classification-nio}
