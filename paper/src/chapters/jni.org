@@ -429,11 +429,12 @@ kutsulla:
 void ReleaseStringChars(JNIEnv* env, jstring string, jchar *cstr);
 #+end_src
 
-Dalvik-virtuaalikone tukee olioiden /kiinnikytkemistä/ (/pinning/) eli
-sulkemista roskienkeruun ulkopuolelle @@aosp. Periaatteessa tämän
-pitäisi mahdollistaa nopeat osoittimiin perustuvat merkkijono- ja
-taulukko-operaatiot, jotka eivät siis suorita kopiointia eivätkä
-aiheuta muistinvaraus- tai kopiointikustannuksia.
+Dalvik-virtuaalikone tukee olioiden /kiinnikytkemistä/ (/pinning/),
+joka estää olion muistiosoitteen muuttumisen roskienkeruun aikana
+@@aosp. Periaatteessa tämän pitäisi mahdollistaa nopeat osoittimiin
+perustuvat merkkijono- ja taulukko-operaatiot, jotka eivät siis
+suorita kopiointia eivätkä aiheuta muistinvaraus- tai
+kopiointikustannuksia.
 
 Android-dokumentaation mukaan kopiointikustannuksia syntyy lähinnä,
 jos Dalvikin sisäisestä 16-bittisestä
