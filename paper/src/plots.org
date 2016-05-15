@@ -97,6 +97,10 @@
 \clearpage
 {{{plot(special-calls-arrayregion-c-j)}}}
 \clearpage
+{{{plot(special-calls-arrayelements-c-j-fit)}}}
+\clearpage
+{{{plot(special-calls-arrayelements-c-j)}}}
+\clearpage
 {{{plot(special-calls-bulk-bytebufferview-j-j-fit)}}}
 \clearpage
 {{{plot(special-calls-bulk-bytebufferview-j-j)}}}
