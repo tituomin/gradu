@@ -611,21 +611,17 @@ seuraavissa benchmarkeissa.
 - Get\tau{}ArrayElements :: Funktiot \verb|Get|\tau\verb|ArrayElements| ja
      \verb|Release|\tau\verb|ArrayElements|
 - ReadPrimitiveArrayCritical :: Funktiot \path{GetPrimitiveArrayCritical} ja
-     \path{ReleasePrimitiveArrayCritical}
+     \path{Release}-\path{PrimitiveArrayCritical}
 
 Operaatioiden nimet saadaan korvaamalla \tau jollakin Javan
-primitiivityypeistä.
+primitiivityypeistä. Kopioivat operaatiot ovat ~Get~\(\tau\)\verb|ArrayRegion| ja
+\verb|Set|\(\tau\)\verb|ArrayRegion|.
 
 Viitetyyppisten taulukoiden elementtejä voi käsitellä vain yksi
 kerrallaan operaatioilla ~GetObjectArrayElement~ ja
 ~SetObjectArrayElement~. Molempien kutsurasitteeksi saatiin 46.6ms
-kutsua kohti eli karkeasti arvioidden yli 20 sekuntia 512-alkioisen
+kutsua kohti eli karkeasti arvioiden yli 20 sekuntia 512-alkioisen
 taulukon läpikäyntiin.
-
-Kopioivat operaatiot ovat:
-
-1. ~Get~\(\tau\)\verb|ArrayRegion| ja
-2. \verb|Set|\(\tau\)\verb|ArrayRegion|
 
 Suoria vertailukohtia näille suunnan C\to{}Java taulukko-operaatioille
 ei ole muissa kutsusuunnissa, jälleen kerran lukuunnottamatta
@@ -645,23 +641,23 @@ pituuden selvittäminen on vakiollinen operaatio (kuvan
 
 Kutsuprofiilin {{{TODO}}} perusteella osoitinoperaatiot noudattavat
 täsmälleen merkkijonojen osoitinoperaatioiden rakennetta, mitä tukee
-se, että vasteajatkin ovat yhtäsuuret \path{Get\tau{}ArrayElements}-
+se, että vasteajatkin ovat yhtä suuret \verb|Get|\tau{}\verb|ArrayElements|-
 ja \path{GetStringChars}-kutsuissa. Keskeisimmät rasitteet syntyvät
 siis epäsuoran globaalin viitteen purusta ja taulukon
 kiinnikytkemisestä.
 
-Kopioivien operaatioiden vasteajat noudattelevat melko suoraan
-kopioitavan primitiivityypin kokoa. Operaatioiden vasteajoissa on
-vakioelementti, joka koostuu taulukkoviitteen purusta ---
-kiinnikytkemistä ei kopioitaessa tarvita. Lineaarisen riippuvuuden
-kulmakerroin määräytyy melko suoraan itse kopiointioperaatiosta
-(\path{memcpy}), määräävänä tekijänä kopioitavien elementtien koko
-tavuina. Siten ~double~-taulukon kopiointi (kun vakiorasite on
-vähennetty) on noin kaksi kertaa niin raskasta kuin ~float~-taulukon.
-Myös \path{GetStringRegion} -operaation rasite vastaa hyvin
-16-bittisen char-taulukon kopioimisen rasitetta. Kutsuprofiileissa
-tämä näkyy niin, että ~memcpy~-operaation prosenttiosuus operaatiossa
-kasvaa tasaisesti.
+Kopioivien operaatioiden vasteajat noudattelevat kopioitavan
+primitiivityypin kokoa. Operaatioiden vasteajoissa on vakioelementti,
+joka syntyy taulukkoviitteen purusta --- kiinnikytkemistä ei
+kopioitaessa tarvita. Lineaarisen riippuvuuden kulmakerroin määräytyy
+melko suoraan varsinaisesta kopioinnista (\path{memcpy}), määräävänä
+tekijänä kopioitavien elementtien koko tavuina. Siten
+~double~-taulukon kopiointi (kun vakiorasite on vähennetty) on noin
+kaksi kertaa niin raskasta kuin ~float~-taulukon.  Myös
+\path{GetStringRegion} -operaation rasite vastaa hyvin 16-bittisen
+char-taulukon kopioimisen rasitetta. Kutsuprofiileissa tämä näkyy
+niin, että ~memcpy~-operaation prosenttiosuus operaatiossa kasvaa
+tasaisesti syötteen koon kasvaessa.
 
 # TODO; kerro että memcpy ei jostain syystä istu siististi
 # profiiliin
@@ -702,13 +698,27 @@ taulukkoon vai ~ByteBuffer~-olioon. Tässä täytyy huomioida niin
 viitteen välityksen, tarvittavien tukipalveluiden kuin itse
 muistialueen käsittelyn aiheuttamat rasitteet.
 
-Tätä silmälläpitäen täytyy huomioida lisärasite, joka syntyy
-seuraavista ~ByteBuffer~-olion käsittelyssä välttämättömien
-JNI-palveluiden kutsumisesta. Funktiolla \path{NewDirectByteBuffer}
-luodaan natiivikomponentista suora tavupuskuri /valmiiksi allokoituun
-muistialueeseen/. Jos taas puskuri on luotu Java-komponentissa, sen
-edustaman muistialueen saa \path{GetDirectBufferAddress}-kutsulla ja
-kapasiteetin \path{GetDirectBufferCapacity}-kutsulla.
+Tätä silmälläpitäen täytyy huomioida seuraavien ~ByteBuffer~-olion
+käsittelyssä välttämättömien JNI-palveluiden lisärasite. Funktiolla
+\path{NewDirectByteBuffer} luodaan natiivikomponentista käsin suora
+tavupuskuri eli Javan ~DirectByteBuffer~-olio /valmiiksi allokoituun
+muistialueeseen/.
+
+Jos taas puskuri on luotu Java-komponentissa, sen edustaman
+muistialueen saa \path{GetDirectBufferAddress}-kutsulla ja
+kapasiteetin \path{GetDirectBufferCapacity}-kutsulla. Koska molemmat
+operaatiot ovat edellytyksiä puskurin käytölle, niitä mitattiin
+yhdessä ja vasteajaksi saatiin 2.31 sekuntia.
+
+
+| JNI-kutsu                       | kierrosmäärä | vasteaika | vertailuluku |
+|---------------------------------+--------------+-----------+--------------|
+| \path{GetDirectBufferAddress} + | 500 000      |           |              |
+| \path{GetDirectBufferCapacity}  |              |           |              |
+|---------------------------------+--------------+-----------+--------------|
+| \path{NewDirectByteBuffer}      | 300          |           |              |
+
+
 
 * Kenttien käsittely
 ** Ilmentymän kentät                                                                           :dep:
@@ -799,6 +809,7 @@ eri syystä.
    - Virtuaalikone ja versiontarkistus
 
 
+* Datan siirto: yhteislaskelmat
 * Yhteenveto tuloksista
    3 sivua\newline 10. 3. 2014
 
