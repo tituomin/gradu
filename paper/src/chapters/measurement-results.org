@@ -704,20 +704,23 @@ käsittelyssä välttämättömien JNI-palveluiden lisärasite. Funktiolla
 tavupuskuri eli Javan ~DirectByteBuffer~-olio /valmiiksi allokoituun
 muistialueeseen/.
 
-Jos taas puskuri on luotu Java-komponentissa, sen edustaman
+Jos taas puskurin muisti on varattu Java-komponentissa, sen edustaman
 muistialueen saa \path{GetDirectBufferAddress}-kutsulla ja
 kapasiteetin \path{GetDirectBufferCapacity}-kutsulla. Koska molemmat
-operaatiot ovat edellytyksiä puskurin käytölle, niitä mitattiin
-yhdessä ja vasteajaksi saatiin 2.31 sekuntia.
+operaatiot ovat edellytyksiä puskurin käytölle, ne mitattiin yhdessä
+benchmarkissa, jonka vasteajaksi saatiin 2.31 sekuntia. Benchmarkin
+kutsuprofiilissa näkyvät ainoastaan muissakin JNI-kutsuissa nähdyt
+epäsuoran globaalin viitteen purku sekä virtuaalikoneen suoritustilan
+muutos.
 
+| JNI-kutsu                       | kierrosmäärä |   vasteaika | vertailuluku |
+|---------------------------------+--------------+-------------+--------------|
+| \path{GetDirectBufferAddress} + | 500 000      |        2.31 |         2.31 |
+| \path{GetDirectBufferCapacity}  |              |             |              |
+|---------------------------------+--------------+-------------+--------------|
+| \path{NewDirectByteBuffer}      | 300          | 0.007909092 |         13.2 |
 
-| JNI-kutsu                       | kierrosmäärä | vasteaika | vertailuluku |
-|---------------------------------+--------------+-----------+--------------|
-| \path{GetDirectBufferAddress} + | 500 000      |           |              |
-| \path{GetDirectBufferCapacity}  |              |           |              |
-|---------------------------------+--------------+-----------+--------------|
-| \path{NewDirectByteBuffer}      | 300          |           |              |
-
+\path{NewDirectByteBuffer}-kutsuprofiili listauksessa 
 
 
 * Kenttien käsittely
