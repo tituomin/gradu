@@ -647,17 +647,18 @@ siis epäsuoran globaalin viitteen purusta ja taulukon
 kiinnikytkemisestä.
 
 Kopioivien operaatioiden vasteajat noudattelevat kopioitavan
-primitiivityypin kokoa. Operaatioiden vasteajoissa on vakioelementti,
-joka syntyy taulukkoviitteen purusta --- kiinnikytkemistä ei
-kopioitaessa tarvita. Lineaarisen riippuvuuden kulmakerroin määräytyy
-melko suoraan varsinaisesta kopioinnista (\path{memcpy}), määräävänä
+primitiivityypin kokoa. Vasteajoissa on vakioelementti, joka syntyy
+taulukkoviitteen purusta --- kiinnikytkemistä ei kopioitaessa
+tarvita. Lineaarisen riippuvuuden kulmakerroin määräytyy melko suoraan
+varsinaisesta muistialueen kopioinnista (\path{memcpy}), määräävänä
 tekijänä kopioitavien elementtien koko tavuina. Siten
 ~double~-taulukon kopiointi (kun vakiorasite on vähennetty) on noin
-kaksi kertaa niin raskasta kuin ~float~-taulukon.  Myös
-\path{GetStringRegion} -operaation rasite vastaa hyvin 16-bittisen
-char-taulukon kopioimisen rasitetta. Kutsuprofiileissa tämä näkyy
-niin, että ~memcpy~-operaation prosenttiosuus operaatiossa kasvaa
-tasaisesti syötteen koon kasvaessa.
+kaksi kertaa niin raskasta kuin ~float~-taulukon.  Vertailun vuoksi
+kopioivan merkkijono-operaation \path{GetStringRegion} rasite vastaa
+hyvin 16-bittisen char-taulukon kopioimisen
+rasitetta. Kutsuprofiileissa lineaarinen riippuvuus näkyy niin, että
+~memcpy~-operaation prosenttiosuus operaatiossa kasvaa tasaisesti
+syötteen koon kasvaessa.
 
 # TODO; kerro että memcpy ei jostain syystä istu siististi
 # profiiliin
@@ -673,7 +674,8 @@ tasaisesti syötteen koon kasvaessa.
 Javan standardikirjaston paketin ~java.nio~ luokka ~ByteBuffer~ antaa
 joitakin lisämahdollisuuksia datan siirtoon Java- ja
 natiivikomponenttien välillä. ~ByteBuffer~-olio edustaa jatkuvaa
-muistialuetta jota voi käsitellä tehokkaasti molemmissa ympäristöissä.
+muistialuetta, jota voi käsitellä tehokkaasti molemmissa
+ympäristöissä.
 
 Jos ~ByteBuffer~-on allokoitu /suorana/ (/direct/), virtuaalikone
 yrittää taata, että natiivioperaatiot (käyttöjärjestelmän operaatiot
@@ -687,7 +689,7 @@ osoittimen avulla.
 
 # TODO tähän tarvitaan ehkä viitteitä
 
-Eräs tutkielman päämääristä on hahmottaa, mikä on tehokkain tapa
+Keskeinen tutkielman päämäärä on hahmottaa, mikä on tehokkain tapa
 /välittää dataa/ JNI-rajapinnan yli. Tämän takia
 ~java.nio.ByteBuffer~-olion käsittelyä Java- ja natiivikomponenteissa
 verrataan muihin datanvälitystapoihin: kutsuargumenttien ja
@@ -698,20 +700,22 @@ taulukkoon vai ~ByteBuffer~-olioon. Tässä täytyy huomioida niin
 viitteen välityksen, tarvittavien tukipalveluiden kuin itse
 muistialueen käsittelyn aiheuttamat rasitteet.
 
-Tätä silmälläpitäen täytyy huomioida seuraavien ~ByteBuffer~-olion
-käsittelyssä välttämättömien JNI-palveluiden lisärasite. Funktiolla
+Tätä silmälläpitäen täytyy NIO-luokkien käytön kustannuksiin laskea
+seuraavien ~ByteBuffer~-olion käsittelyssä välttämättömien
+JNI-palveluiden lisärasitteet. Ensimmäisessä vaihtoehdossa funktiolla
 \path{NewDirectByteBuffer} luodaan natiivikomponentista käsin suora
 tavupuskuri eli Javan ~DirectByteBuffer~-olio /valmiiksi allokoituun
 muistialueeseen/.
 
-Jos taas puskurin muisti on varattu Java-komponentissa, sen edustaman
-muistialueen saa \path{GetDirectBufferAddress}-kutsulla ja
-kapasiteetin \path{GetDirectBufferCapacity}-kutsulla. Koska molemmat
-operaatiot ovat edellytyksiä puskurin käytölle, ne mitattiin yhdessä
-benchmarkissa, jonka vasteajaksi saatiin 2.31 sekuntia. Benchmarkin
-kutsuprofiilissa näkyvät ainoastaan muissakin JNI-kutsuissa nähdyt
-epäsuoran globaalin viitteen purku sekä virtuaalikoneen suoritustilan
-muutos.
+Jos taas puskurin muisti on varattu Java-komponentissa,
+natiivikomponentti saa puskurin edustaman muistialueen osoitteen
+\path{GetDirectBufferAddress}-kutsulla ja kapasiteetin
+\path{GetDirectBufferCapacity}-kutsulla. Koska tässä vaihtoehdossa
+molemmat operaatiot ovat edellytyksiä puskurin käytölle, ne mitattiin
+yhdessä benchmarkissa, jonka vasteajaksi saatiin 2.31
+sekuntia. Benchmarkin kutsuprofiilissa näkyvät ainoastaan epäsuoran
+globaalin viitteen purku sekä virtuaalikoneen suoritustilan muutos,
+jotka nähtiin aiemminkin käsitellyissä JNI-kutsuissa.
 
 | JNI-kutsu                       | kierrosmäärä |   vasteaika | vertailuluku |
 |---------------------------------+--------------+-------------+--------------|
@@ -720,10 +724,30 @@ muutos.
 |---------------------------------+--------------+-------------+--------------|
 | \path{NewDirectByteBuffer}      | 300          | 0.007909092 |         13.2 |
 
-\path{NewDirectByteBuffer}-kutsuprofiili listauksessa 
-
+\path{NewDirectByteBuffer}-kutsuprofiili listauksessa
+\ref{profile:NewDirectBuffer-512} näyttää lähes yksinomaan
+roskienkeruuseen liittyviä metodikutsuja alkaen metodista
+\path{dvmCollectGarbage} kohdassa \ding{202}. {{{TODO}}} Tämä on
+mittaustekninen ongelma, joka tekee kaikkien muistia varaavien
+operaatioiden kutsuprofiilit hankaliksi hyödyntää. Siinä missä
+benchmarkin suoritus on saatu mitattua ilman roskienkeruuta
+/vasteaikamittauksissa/, kutsuprofiilinäytteet kerätään
+yhtäjaksoisesti useiden sekuntien jaksolta, jonka aikana
+suhteellisesti suurin osa ajasta vietetään roskienkeruussa. Allokoivia
+operaatioita ei voi ajaa kuin lyhyen ajan ennen kuin muistia täytyy
+vapauttaa, jotta se ei loppuisi.
 
 * Kenttien käsittely
+
+Kuvaan \ref{fig:special-calls-non-dynamic} on koottu Javan olioiden ja
+luokkien kenttien käsittelemiseen käytettävien JNI-metodien vasteajat.
+Vertailukohtina kuvassa ovat vastaavat operaatiot puhtaasti
+Java-komponentissa suoritettuina.
+
+{{{plot(special-calls-non-dynamic)}}}
+
+{{{TODO}}} kuvassa on asteikko pielessä. \ref{fig:killer-app}
+
 ** Ilmentymän kentät                                                                           :dep:
 *** GetFieldID                                                                              :search:
 *** COUNTERPOINT Get<type>Field Routines
@@ -756,7 +780,6 @@ muutos.
 
 Tutkielmassa on sivuutettu osa JNI-rajapinnan palveluista muutamasta
 eri syystä.
-
 
 ** Olioiden käsittely
 *** EXCLUDE GetObjectRefType                                                                  :read:
