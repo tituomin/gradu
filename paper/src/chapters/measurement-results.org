@@ -748,33 +748,20 @@ Java-komponentissa suoritettuina.
 
 {{{TODO}}} kuvassa on asteikko pielessä. \ref{fig:killer-app}
 
-** Ilmentymän kentät                                                                           :dep:
-*** GetFieldID                                                                              :search:
-*** COUNTERPOINT Get<type>Field Routines
-*** COUNTERPOINT Set<type>Field Routines
-** Staattiset kentät                                                                           :dep:
-*** GetStaticFieldID                                                                        :search:
-*** COUNTERPOINT GetStatic<type>Field Routines
-*** COUNTERPOINT SetStatic<type>Field Routines
+Kuvasta nähdään, että staattisten kenttien luku ja kirjoittaminen
+kestää noin puolet ilmentymäkenttien luvusta ja
+kirjoittamisesta. Lisäksi viitetyyppisen ilmentymäkentän lukeminen on
+hieman hitaampaa kuin muiden ilmentymäkenttien.
 
-* Ehkä -lopuksi?
-** Olioiden käsittely
-*** DONE GetObjectClass                                                                       :read:
-** Muistia varaavat operaatiot
-*** DONE AllocObject                                                                         :alloc:
-*** DONE NewObject, NewObjectA, NewObjectV                                             :comp2:alloc:
-*** DONE NewString                                                                           :alloc:
-*** DONE NewStringUTF                                                                        :alloc:
-*** DONE NewObjectArray                                                                      :alloc:
-*** DONE New<PrimitiveType>Array Routines                                                    :alloc:
-** Paikalliset ja globaalit viitteet
-*** Local References
-**** DONE PushLocalFrame                                                            :comp1:allocref:
-**** DONE PopLocalFrame                                                             :comp1:allocref:
-** Poikkeukset
-*** DONE ExceptionCheck                                                                       :read:
-** Luokkien käsittely                                                                :exclude:maybe:
-*** DONE FindClass                                                            :exclude:maybe:search:
+Profiileista nähdään sama kuvio kuin aiemmin: siinä missä staattisten
+kenttien käsittelyn ainoa merkittävä JNI-lisärasite johtuu
+virtuaalikoneen tilamuutoksesta, ilmentymäkenttää käsitellessä
+joudutaan lisäksi purkamaan globaali viite ilmentymään, jonka kenttää
+käsitellään. \path{GetObjectField}-operaatiossa joudutaan lisäksi
+lisäämään kentästä luettu olioviite viitetaulukkoon
+\path{addLocalReference}-kutsulla, koska kyseinen viitearvo välitetään
+natiivikomponentille ja sen on siksi löydyttävä virtuaalikoneen
+viitetaulukosta.
 
 * Sivuutetut operaatiot
 
@@ -834,6 +821,27 @@ eri syystä.
    - Reflektio
    - Virtuaalikone ja versiontarkistus
 
+** Ehkä -lopuksi? :no way:
+*** Olioiden käsittely
+**** DONE GetObjectClass                                                                      :read:
+*** Muistia varaavat operaatiot
+**** DONE AllocObject                                                                        :alloc:
+**** DONE NewObject, NewObjectA, NewObjectV                                            :comp2:alloc:
+**** DONE NewString                                                                          :alloc:
+**** DONE NewStringUTF                                                                       :alloc:
+**** DONE NewObjectArray                                                                     :alloc:
+**** DONE New<PrimitiveType>Array Routines                                                   :alloc:
+*** Paikalliset ja globaalit viitteet
+**** Local References
+***** DONE PushLocalFrame                                                           :comp1:allocref:
+***** DONE PopLocalFrame                                                            :comp1:allocref:
+*** Poikkeukset
+**** DONE ExceptionCheck                                                                      :read:
+*** Luokkien käsittely                                                               :exclude:maybe:
+**** DONE FindClass                                                           :exclude:maybe:search:
+
+
+* Taulukoiden käsittelyn kokonaisvasteajat                                                    :todo:
 
 * Datan siirto: yhteislaskelmat
 * Yhteenveto tuloksista
