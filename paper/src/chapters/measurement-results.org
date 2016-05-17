@@ -750,14 +750,14 @@ Java-komponentissa suoritettuina.
 
 Kuvasta nähdään, että staattisten kenttien luku ja kirjoittaminen
 kestää noin puolet ilmentymäkenttien luvusta ja
-kirjoittamisesta. Lisäksi viitetyyppisen ilmentymäkentän lukeminen on
+{kirjoittamisesta. Viitetyyppisen ilmentymäkentän lukeminen on vielä
 hieman hitaampaa kuin muiden ilmentymäkenttien.
 
 Profiileista nähdään sama kuvio kuin aiemmin: siinä missä staattisten
 kenttien käsittelyn ainoa merkittävä JNI-lisärasite johtuu
 virtuaalikoneen tilamuutoksesta, ilmentymäkenttää käsitellessä
 joudutaan lisäksi purkamaan globaali viite ilmentymään, jonka kenttää
-käsitellään. \path{GetObjectField}-operaatiossa joudutaan lisäksi
+käsitellään. \path{GetObjectField}-operaatiossa joudutaan myös
 lisäämään kentästä luettu olioviite viitetaulukkoon
 \path{addLocalReference}-kutsulla, koska kyseinen viitearvo välitetään
 natiivikomponentille ja sen on siksi löydyttävä virtuaalikoneen
