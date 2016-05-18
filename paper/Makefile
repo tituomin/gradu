@@ -17,7 +17,7 @@ vpath %.tex  gen
 
 # First rule should always be the default "all" rule, so both "make all" and
 # "make" will invoke it.
-all: $(BUILD_DIRS) main.pdf
+all: $(BUILD_DIRS) main.pdf copy_pdf
 
 plots: $(BUILD_DIRS) plots.pdf
 
@@ -72,6 +72,8 @@ plots.pdf: gen/plots-latin.tex $(FIGURE_LATIN)
 	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/plots -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make gen/plots-latin.tex
 
 
+copy_pdf: main.pdf
+	cp build/tituomin-gradu.pdf /home/tituomin/Dropbox/
 
 clean:
 	latexmk -CA
