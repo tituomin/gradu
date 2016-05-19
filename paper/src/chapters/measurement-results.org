@@ -320,7 +320,7 @@ säikeiden poissulkemista kohdassa \ding{202}.
 # {{{profile(J2CBenchmark00206)}}}
 \newpage
 
-** jni-totetutus: kommentteja :noexport:
+** jni-totetutus: dalvik: source code kommentteja                                         :noexport:
 
 *** Jni.cpp moduulin kommentti: Native methods and interaction with the GC
     All JNI methods must start by changing their thread status to
