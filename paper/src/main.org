@@ -9,6 +9,7 @@
 #+INCLUDE: "chapters/abstract.org"
 #+END_abstract
 
+#+LATEX: \hyphenation{Java Python sa-na-kir-ja-luo-kas-ta}
 #+LATEX: \mytableofcontents
 #+LATEX: \onehalfspacing
 #+LATEX: \newpage
@@ -59,6 +60,8 @@
 
 ** Koeasetelman kuvaus
 #+INCLUDE: "../gen/chapters/measurement-setup.org" :minlevel 3
+
+#+LATEX: \newpage
 
 ** Mittaustulokset
 #+INCLUDE: "../gen/chapters/measurement-results.org" :minlevel 3

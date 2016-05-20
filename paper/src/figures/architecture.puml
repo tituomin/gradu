@@ -1,7 +1,7 @@
 
 node "Android-laite" {
-  folder "Tiedostojärjestelmä" {
-    [mittaustulokset]
+  frame "Tiedostojärjestelmä" {
+    database mittaustulokset
   }
   frame "Linux" {
     frame "Dalvik" {

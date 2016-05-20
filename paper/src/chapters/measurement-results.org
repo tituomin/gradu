@@ -1,19 +1,9 @@
 Tässä luvussa esitellään kerätyt mittaustulokset ja koostetaan niistä
 alustavat havainnot. Myös mittausten ulkopuolelle jätetyt operaatiot
-mainitaan perusteluineen.
+mainitaan perusteluineen. Mittauskohteet on luokiteltu
+aihepiireittäin.
 
 # TODO metodisignaturet lisää alle?
-
-Tämän luokittelun lähtökohtana ovat JNI-rajapinnan tarjoamat
-funktiot /natiiviohjelmalle/. Kaikkia näitä funktioita kutsutaan
-funktiokutsulla, jolla on seuraava C-kielinen rakenne:
-\verb|(*env)->|\phi\verb|(*env,| \alpha\verb|);|. Kutsussa \phi
-korvataan JNI-funktion nimellä ja \alpha vaadituilla argumenteilla.
-~env~ on osoitinmuuttuja JNI-ympäristöön.
-
-Luokittelussa kerrotaan myös, mitä vertauskohtaa kyseiselle
-operaatiolle mahdollisesti on käytetty lähtö- ja kohdekielien eri
-permutaatiossa.
 
 * Metodien ja funktioiden kutsuminen
 Mittausten kannalta keskiössä ovat JNI-natiivirajapinnan kautta

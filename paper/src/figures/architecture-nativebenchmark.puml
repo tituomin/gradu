@@ -9,18 +9,18 @@ package "fi.helsinki.cs.tituomin.nativebenchmark" {
     () run -- [Benchmark]
     () method_stub
     method_stub -- [JavaCounterparts]
-    [J2JBenchmark]
-    [J2CBenchmark]
+    [J2JBenchmark*]
+    [J2CBenchmark*]
     () runInternal as runInternalJava
-    [J2JBenchmark] -- () runInternalJava
-    [J2CBenchmark] -- () runInternalJava
-    [C2CBenchmark]
-    [C2JBenchmark]
+    [J2JBenchmark*] -- () runInternalJava
+    [J2CBenchmark*] -- () runInternalJava
+    [C2CBenchmark*]
+    [C2JBenchmark*]
 
-    [Benchmark] <|-- [J2JBenchmark]
-    [Benchmark] <|-- [J2CBenchmark]
-    [Benchmark] <|-- [C2CBenchmark]
-    [Benchmark] <|-- [C2JBenchmark]
+    [Benchmark] <|-- [J2JBenchmark*]
+    [Benchmark] <|-- [J2CBenchmark*]
+    [Benchmark] <|-- [C2CBenchmark*]
+    [Benchmark] <|-- [C2JBenchmark*]
 
     note bottom of runInternalJava : Java-kielinen lähtösilmukka,\njossa kutsutaan kohdemetodia tai -funktiota
     note left of method_stub : Java-kielinen tyhjä kutsukohde
@@ -42,9 +42,9 @@ package "fi.helsinki.cs.tituomin.nativebenchmark" {
   }
 }
 
-[C2CBenchmark] ..> runInternal
-[C2JBenchmark] ..> runInternal
-[J2CBenchmark] ..> nativemethod_stub
+[C2CBenchmark*] ..> runInternal
+[C2JBenchmark*] ..> runInternal
+[J2CBenchmark*] ..> nativemethod_stub
 [nativerunners.c] .> nativemethod_stub
 [nativerunners.c] .> method_stub
-[J2JBenchmark] ..> method_stub
+[J2JBenchmark*] ..> method_stub

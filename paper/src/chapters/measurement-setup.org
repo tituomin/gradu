@@ -137,17 +137,21 @@ Benchmarkit ovat pohjimmiltaan vain monta kertaa toistettavia
 silmukoita (/lähtösilmukoita/), joiden sisällä kutsutaan tutkinnan
 kohteena olevaa JNI-palvelua tai sen verrokkia. Jokainen benchmark on
 ympäröity samanrakenteisella Java-kielisellä \path{BenchMark}-luokan
-aliluokalla silloinkin, kun kyseessä on sellainen verrokkioperaatio,
-joka suoritetaan puhtaasti \path{libnativebenchmark}-natiivikirjaston
-sisällä. Tällaisessakin tapauksessa mittauksen kuitenkin aina
-käynnistää \path{BenchmarkRunner} -Java-olio.
+aliluokalla --- silloinkin, kun kyseessä on sellainen
+verrokkioperaatio, joka suoritetaan puhtaasti
+\path{libnativebenchmark}-natiivikirjaston sisällä. Tällaisessakin
+tapauksessa mittauksen kuitenkin aina käynnistää
+\path{BenchmarkRunner} -Java-olio.
 
-Ajettavat benchmarkit jakautuvat kahteen joukkoon. Ensimmäinen koostuu
-yksinkertaisista funktiokutsuista JNI-rajapinnan kautta: C-koodissa
-kutsuista \verb|Call|\tau\verb|Method| -funktioihin ja Java-koodissa
-kutsuista ~native~ -määreellä merkittyihin ~nativemethod~ -nimisiin
-metodeihin. Toinen joukko testaa JNI-rajapinnan muita palveluita kuten
-merkkijonojen ja taulukoiden käsittelyä.
+Mittauskohteet voi luokitella kahteen joukkoon: funktiokutsuihin
+sekä muihin JNI:n tarjoamiin palveluihin. Ensiksi mainittu joukko
+koostuu yksinkertaisista funktiokutsuista JNI-rajapinnan kautta:
+C-koodissa kutsuista \verb|Call|\tau\verb|Method| -funktioihin ja
+Java-koodissa kutsuista ~native~ -määreellä merkittyihin
+~nativemethod~ -nimisiin metodeihin. Näille funktiokutsuille on myös
+verrokkioperaatiot, joissa Java-ohjelma kutsuu suoraan Java-metodia ja
+C-ohjelma C-funktiota. Toinen joukko testaa JNI-rajapinnan muita
+palveluita kuten merkkijonojen ja taulukoiden käsittelyä.
 
 Seuraavaksi havainnollistetaan ensimmäisen joukon kaikkia neljää
 permutaatiota, jotka saadaan lähtösilmukoiden ja kutsukohteiden
@@ -157,7 +161,7 @@ Javasta C:hen.
 
 #+NAME: fig:sequence_java_to_c
 #+INCLUDE: ../../src/figures/sequence-java-to-c.puml" src plantuml :results file :file /tmp/sequence-java-to-c.png :exports results
-#+ATTR_LATEX: :width {0.8\linewidth} :placement [h]
+#+ATTR_LATEX: :width {0.8\linewidth} :placement [t]
 #+CAPTION: Javasta kutsutaan natiivikomponenttia
 #+LABEL: fig:sequence_java_to_c
 #+RESULTS: fig:sequence_java_to_c
@@ -166,13 +170,13 @@ Kuvan \ref{fig:sequence_java_to_c} sekvenssikaaviossa lähtösilmukka on
 Java-komponentissa (metodissa
 \path{J2CBenchmark00026.runInternal}). Lähtösilmukkaa toistettaessa
 ylitetään hyvin monta kertaa JNI-rajapinta ja kutsutaan sen kautta
-~libnativebenchmark~-natiivikirjastossa olevaa metodia, jonka sisältö
+~libnativebenchmark~ -natiivikir\-jas\-tos\-sa olevaa metodia, jonka sisältö
 on tyhjä. Näin ollen mittauksen kohde on käytännössä juuri JNI-kutsu.
 
 
 #+NAME: fig:sequence_java_to_java
 #+INCLUDE: ../../src/figures/sequence-java-to-java.puml" src plantuml :results file :file /tmp/sequence-java-to-java.png :exports results
-#+ATTR_LATEX: :width {0.4\linewidth} :placement [b]
+#+ATTR_LATEX: :width {0.4\linewidth} :placement [t]
 #+CAPTION: Javasta kutsutaan Java-metodia
 #+LABEL: fig:sequence_java_to_java
 #+RESULTS: fig:sequence_java_to_java
@@ -186,25 +190,25 @@ C-lähtösilmukka kutsuu Java-tynkämetodia.
 
 #+NAME: fig:sequence_c_to_java
 #+INCLUDE: ../../src/figures/sequence-c-to-java.puml" src plantuml :results file :file /tmp/sequence-c-to-java.png :exports results
+#+ATTR_LATEX: :width {0.8\linewidth} :placement [b]
 #+CAPTION: Natiivikomponentista kutsutaan Java-metodia
 #+LABEL: fig:sequence_c_to_java
 #+RESULTS: fig:sequence_c_to_java
 
-Kuvasta \ref{fig:sequence_c_to_java} nähdään, että JNI-rajapinta
-ylitetään kahdessa kohtaa. Molemmat kuvassa näkyvät
-Dalvik-virtuaalikoneet edustavat samaa instanssia, joka on selkeyden
-vuoksi piirretty kaksi kertaa. Ensinnäkin, koska tällä kertaa
-lähtösilmukka on natiivikoodissa (moduulin \path{nativerunners.c}
-funktiossa
+Kuvassa \ref{fig:sequence_c_to_java} JNI-rajapinta ylitetään kahdessa
+kohtaa. Ensinnäkin, koska tällä kertaa lähtösilmukka on
+natiivikoodissa (moduulin \path{nativerunners.c} funktiossa
 \path{Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00026_runInternal}),
 täytyy jo tätä fuktiota kutsua JNI:n kautta. Varsinainen mittauskohde
 on kuitenkin natiivikoodin kutsuma \path{(*env)->CallVoidMethod}
 -JNI-funktio, jota kautta kutsutaan Java-komponentissa olevaa
-\path{JavaCounterparts}-luokan tyhjää metodia.
+\path{JavaCounterparts}-luokan tyhjää metodia. Molemmat kuvan
+Dalvik-virtuaalikoneet ovat sama instanssi, joka on selkeyden vuoksi
+piirretty kaksi kertaa.
 
 #+NAME: fig:sequence_c_to_c
 #+INCLUDE: ../../src/figures/sequence-c-to-c.puml" src plantuml :results file :file /tmp/sequence-c-to-c.png :exports results
-#+ATTR_LATEX: :width {0.8\linewidth} :placement [h]
+#+ATTR_LATEX: :width {0.8\linewidth} :placement [t]
 #+CAPTION: Natiivikomponentista kutsutaan natiivikomponenttia
 #+LABEL: fig:sequence_c_to_c
 #+RESULTS: fig:sequence_c_to_c
@@ -218,8 +222,12 @@ Mittaukset suoritettiin Samsungin valmistamassa /Google Nexus
 S/-puhelimessa, joka julkaistiin vuonna 2010. Puhelimessa on Androidin
 versio 4.1.2. Perf-työkalun käytön mahdollistamiseksi puhelimeen
 käännettiin uudelleen konfiguroitu Linuxin ydin, ja
-Android-järjestelmään konfiguroitiin mukaan perf-ohjelma sekä
-uudelleen käännetyt versiot Dalvikista ja su-komennosta. Muokattujen
+Android-järjestelmän paketteihin otettiin mukaan perf-ohjelma sekä
+uudelleen käännetyt versiot Dalvikista ja su-komennosta. Profilointi
+vaatii myös profiloitavien komponenttien kuten Dalvikin
+uudelleenkääntämistä erikseen määritellyllä kutsukonventiolla, jotta
+perf-työkalu osaa tulkita aliohjelmakutsujen muodostamat ketjut oikein
+kutsupinosta otetuista näytteistä. Muokattujen
 järjestelmäkomponenttien asentaminen laitteeseen saattaa tehdä siitä
 toimintakyvyttömän, joten riskin minimoimiseksi ja resurssisyistä
 mittauksia ei toistettu viimeisimmillä laitteilla.
@@ -266,13 +274,13 @@ ottaa talteen järjestelmän kellon arvon ennen kierrosten suoritusta ja
 sen jälkeen.
 
 Kutsuprofiilia luotaessa kaikkia lähtösilmukoita tulee sen sijaan
-suorittaa niin kauan, että ~perf record~ -työkalu on saanut
-kerättyä riittävän määrän näytteitä -- esimerkiksi 10 sekunnin ajan
-jokaista benchmarkia kohden. Näin ollen lähtösilmukoita ajetaan,
-kunnes mittaava komponentti \path{LinuxPerfRecordTool} keskeyttää
+suorittaa niin kauan, että ~perf record~ -työkalu on saanut kerättyä
+riittävän määrän näytteitä -- esimerkiksi 10 sekunnin ajan jokaista
+benchmarkia kohden. Näin ollen lähtösilmukoita ajetaan, kunnes
+mittaava komponentti \path{LinuxPerfRecordTool} keskeyttää
 benchmark-säikeen suorituksen. Tämä monimutkaistaa lähtösilmukoita,
-sillä niiden on itse tutkittava, onko mittaus keskeytetty, ja tehtävä
-se tarpeeksi harvoin, jotta se ei vaikuta suoritusaikoihin.
+sillä niiden on itse tutkittava, onko mittaus keskeytetty, mutta
+tehtävä se tarpeeksi harvoin, jotta se ei vaikuta suoritusaikoihin.
 
 * Mittaamisen perusrasitteet
 
@@ -339,7 +347,7 @@ Android-sovellukselle annetaan sallittua maksimikokoa pienempi keko,
 jonka kasvattaminen tarpeen mukaan taas saattaa aiheuttaa
 suorituskykyhäiriöitä. Ongelmaa on vältetty allokoimalla heti
 sovelluksen käynnistyessä suuri taulukko-olio, johon saatu viite
-tuhotaan heti roskienkeruun mahdollistameksi.
+tuhotaan heti roskienkeruun mahdollistamiseksi.
 
 * JIT-käännös
 
@@ -347,14 +355,16 @@ Dalvik sisältää JIT-kääntäjän \ref{sec-dalvik-intro}, jonka toiminta
 tekee Java-koodin käyttäytymisestä vaikeasti ennustettavaa: koska
 mittauksessa suoritetaan samaa silmukkaa jatkuvasti, on melko varmaa
 että se JIT-käännetään jossain vaiheessa, mutta suorituksen aluksi
-silmukan tavukoodia tulkitaan. Ratkaisuyritys ongelmaan on suorittaa
-ennen varsinaisia mittauksia lämmittelyajo, jonka kierrosmäärä on
+silmukan tavukoodia tulkitaan. Ongelma on ratkaistu suorittamalla
+ennen varsinaisia mittauksia /lämmittelyajo/, jonka kierrosmäärä on
 arvioitu riittäväksi JIT-kääntämisen laukaisemiseksi.
 
-Oikean kierrosmäärän arvioimiseksi ja JIT-käännöksen todentamiseksi
+Oikean kierrosmäärän arvioimiseksi ja JIT-käännöksen havaitsemiseksi
 tehtiin mittaus, jossa samaa benchmarkia suoritetaan pienehköllä
 silmukkakierrosluvulla mutta monessa perättäisessä ajossa, ja
 seurataan peräkkäisten vasteaikojen kehittymistä.
+
+# TODO: ref below above
 
 \begin{figure}
     \input{figures/warmup-proof}
@@ -380,24 +390,24 @@ tulevat näin osaksi normaaleja Androidin SDK- ja NDK-
 käännösprosesseja.
 
 Lähdekoodien generointi perustuu seuraavaan kahteen
-suunnitteluratkaisuun. Ensinnäkin generointikoodi ottaa
-lähtökohdakseen ~jni_types~-moduulissa määritellyt tietorakenteet,
-jotka sisältävät tarvittavat tiedot kaikista Java-ohjelmoinnin
-tyypeistä ja niiden vastinpareista C-kielessä.
+suunnitteluratkaisuun. Ensinnäkin generointikoodin syötteenä ovat
+~jni_types~-moduulissa määritellyt tietorakenteet, jotka sisältävät
+tarvittavat tiedot kaikista Java-ohjelmoinnin tyypeistä ja niiden
+vastinpareista C-kielessä.
 
-Java- ja C-koodia käsitellään merkkijonoina eikä esimerkiksi
-rakenteellisina syntaksipuina, mutta monimutkaisia
-lähdekoodimerkkijonoja on vältetty upottamasta suoraan Python-kielisen
+Toinen ratkaisu on käsitellä Java- ja C-koodia merkkijonoina eikä
+esimerkiksi rakenteellisina syntaksipuina. Monimutkaisia
+lähdekoodimerkkijonoja on vältetty upottamasta suoraan pythonkielisen
 logiikan keskelle. Lähdekoodin generoinnin pohjina toimivat
 ~templates~-paketista löytyvät aihiot. Ne muistuttavat
-HTML-ohjelmoinnissa käytettyjen template-kielten aihioita. Aihiot
-koostuvat staattisena pysyvästä kohdekielisestä merkkijonosta, jonka
-sisällä olevat paikkamerkit korvataan muuttujien vaihtuvilla arvoilla.
+www-sovelluksissa käytettyjen template-kielten aihioita. Aihiot ovat
+kohdekielistä koodia sisältäviä merkkijonoja, jonka sisällä olevat
+nimetyt paikkamerkit korvataan vaihtuvilla arvoilla.
 
 Seuraavassa esimerkissä näkyy ~jni_types~-moduulin pythonkielinen
 ~dict~-tyyppimääritelmä Javan ~int~-primitiivityypille.
 
-#+INCLUDE: "/home/tituomin/nativebenchmark/script/jni_types.py" src python :lines "52-61"
+#+INCLUDE: "/home/tituomin/nativebenchmark/script/jni_types.py" src python :lines "57-67"
 #+LABEL: src:jni-gen-int
 #+NAME: src:jni-gen-int
 #+CAPTION: foo bar
@@ -442,13 +452,13 @@ paikkamerkinnät paikoilleen, mikä helpottaa erikoistuneiden aihioiden
 johtamista samasta perusaihiosta. Funktiota ~put~ käytetään kuten
 seuraavassa esimerkissä.
 
-#+INCLUDE: "/home/tituomin/nativebenchmark/script/make_custom_benchmarks.py" src python :lines "391-398"
+#+INCLUDE: "/home/tituomin/nativebenchmark/script/make_custom_benchmarks.py" src python :lines "320-329"
 #+BEGIN_SRC python
 [...]
 #+END_SRC
 
 Molemmat funktiot on helppo toteuttaa, kun tukena on
-seuraavat Python-sanakirjaluokasta periytetyt kaksi aliluokkaa.
+seuraavat Pythonin sanakirjaluokasta periytyvät kaksi aliluokkaa.
 
 #+INCLUDE: "/home/tituomin/nativebenchmark/script/templating.py" src python :lines "6-13"
 
