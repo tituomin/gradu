@@ -1,9 +1,7 @@
 Gradu: duunit
 
-Missä mennään:
-[[file:~/gradu/paper/bib/main.bib::saavedra]]
-(hyvä peruslähde benchmarkeista)
-
+* TODO <2016-05-21 la 16:19> kuvien sijainnit                                                  :nyt:
+* TODO <2016-05-21 la 16:13> CRITICAL-versiot, onko missään?
 * TODO <2016-05-19 to 21:24> latex miten saadaan newpage?? chapterien väliin
 * TODO <2016-05-19 to 20:41> mittaamisen perusrasitteet j2j edelleen pielessä
 * TODO <2016-05-19 to 20:37> AOSP:n tukemat kohdelaitteet: VIITE?

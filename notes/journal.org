@@ -1,3 +1,5 @@
+* <2016-05-21 la 15:40> huomattu fastjni-konventio jos ei tarvita enviä tai jclassia
+  [[file:~/droid/src/dalvik/vm/Jni.cpp::static%20bool%20dvmRegisterJNIMethod(ClassObject*%20clazz,%20const%20char*%20methodName,][fastjni]]
 * <2016-05-06 Fri 21:09> tuli mieleen, että voisko tuo CopyUTF tai joku muukin olla O2?
 * <2016-05-06 pe 10:32> in progress: linux perf measurement with 0.1s to ensure zip is correctly made
 * DONE <2016-05-01 su 19:52> run as a test with byte == representative ! got good results
