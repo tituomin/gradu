@@ -126,6 +126,8 @@ Cortex-A8: The processor has a total of 40 registers:
 
     0.0023 * 512 + 1.16 = 2.3376 
 
+*** kopioi java-taulukon muistialueelle
+
 *** kopioi directbytebuffer-muistialueeseen
     0.0358 * 512 +0.076 = 18.4   ( sen jälkeen java-puolella arrayhin +3s tai array()-kutsulla vähemmän?)
     + ensin c-puolella newdirectbuffer tai accessdirectbuffer ...

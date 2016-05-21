@@ -1,0 +1,80 @@
+
+
+* datanvälitystavat
+
+käsitellään erikseen jc ja cc
+
+oletus: lista data-alkioita jotka välitetään jc,
+käsitellään muistissa + prosessorissa, tuloksena
+on samankokoinen lista data-alkioita, välitetään cj
+
+sync / async ??
+
+responsiivisuuden takaamiseksi lista käsitellään natiivipuolella
+asynkronisesti -> viitteet oltavat globaaleja sikäli kuin niiden
+dataa ei kopioida / tai sitten viitteet voi olla lokaaleja, jos
+koko threadi nukkuu! (mutta silloin ei voi käyttää critical-versioita)
+
+merkkijonoa ei käsitellä erikseen
+
+** jc
+
+1. src-lista on java-taulukossa
+   src-lista välitetään ja käsitellään java-taulukkona jni-metodeilla natiivipuolella
+   
+   a. osoitin
+   b. kopioiva
+   jos on kopioiva, tuloksia ei voi kirjoittaa /samaan taulukkoon/
+
+3. src-lista tehdään java directbytebufferiin
+   välitetään 
+
+4. yksittäiset alkiot välitetään metodikutsuilla (no way!)
+
+** cj
+
+   dest-lista luodaan java-taulukoksi /tai/
+   kopioidaan olemassaolevaan java-taulukkoon
+   c-koodi pitää omaa muistialuetta, tekee siitä bytebufferin > välittää javalle
+   
+   java lukee koko taulukon
+
+   tai directbuffer
+
+4. yksittäiset alkiot välitettään metodikutsuilla
+
+-- vertailukohdat:
+
+natiivi: getelements, getregion, getpointer to direct bytebuffer
+
+java: read array (written by c) / read bulk direct = vain memcopy arrayhyn, pitää lukea vielä array erikseen ->
+
+SUMMA SUMMARUM
+eli verrataan:
+
+jc:
+
+1. taulukkoviitteen välitys vs bytebuffer-viitteen välitys : ei eroa ? 
+2. taulukko: osoitin vs kopioiva vs get pointer to bytebuffer
+3. read complete array in c
+
+cj:
+
+1. bytebufferin luonti vs. olemassaolevan java-taulukko-olion käyttö
+2. kirjoittaminen tarvitsee joka tapauksessa tehdä kokonaan cssä
+3. bytebufferin välitys vs. ei tarvitse välittää olemassaolevaa taulukkoa
+4. miten nopeaa on:
+      bulk-kustannus + arrayn lukeminen jj vs
+      individual gets vs. views 
+
+------------------
+
+yleinen malli:
+
+- lokaalit vs globaalit viitteet
+  - staattinen vs instanssimetodi
+  - määrät
+- utf vs unicode
+- viite vs kopiointi
+  - criticalilla ei ole väliä...
+- kutsusuunta jc vs cj
