@@ -1,5 +1,6 @@
 Gradu: duunit
 
+* TODO <2016-05-21 la 18:27> HUOM! vertaa static j2c, c2j !!
 * TODO <2016-05-21 la 16:19> kuvien sijainnit                                                  :nyt:
 * TODO <2016-05-21 la 16:13> CRITICAL-versiot, onko missään?
 * TODO <2016-05-19 to 21:24> latex miten saadaan newpage?? chapterien väliin
