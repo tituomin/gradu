@@ -268,7 +268,7 @@ pysyisi hallinnassa.
 * Kutsuprofiilit suunnassa Java\to{}C
 
 Mikä sitten selittää, että {{{cj}}} -kutsusuunnan vasteaika on
-1.76 kertaa {{{jc}}}-kutsusuunnan vasteaika parhaimmassakin
+1.56 kertaa {{{jc}}}-kutsusuunnan vasteaika parhaimmassakin
 tapauksessa eli kutsuttaessa staattista metodia ilman parametreja?
 Luvussa täytyy huomioida, että mitatut kokonaisvasteajat sisältävät
 muutakin kuin tarkastelun kohteena olevassa JNI-toteutuksessa vietetyn
@@ -771,24 +771,78 @@ joudutaan lisäksi purkamaan globaali viite ilmentymään, jonka kenttää
 käsitellään. \path{GetObjectField}-operaatiossa joudutaan myös
 lisäämään kentästä luettu olioviite viitetaulukkoon
 \path{addLocalReference}-kutsulla, koska kyseinen viitearvo välitetään
-natiivikomponentille ja sen on siksi löydyttävä virtuaalikoneen
+natiivikomponentille, ja sen on siksi löydyttävä virtuaalikoneen
 viitetaulukosta.
 
 * Tulosten analyysi
 
-Rasitteet
-** yhteiset
-*** virtuaalikoneen tilan muuttaminen
-** muistinhallinta
-*** staattinen vs instanssi
-*** indirect ref
-**** lok
-**** glob
-** merkkijonot
-*** utf
-*** unicode
-** kutsusuunta
-*** pieni ero johtuen eri koodipoluista
+Seuraavaksi luomme mittaustulosten perusteella karkean mallin, joka
+kuvaa, mistä osatekijöistä JNI-rajapinnan käytön rasitteet syntyvät.
+Mallin lukuarvot ovat suhdelukuja, jotka kertovat eri rasitteiden
+suuruusluokan suhteessa toisiinsa.
+
+#+LATEX: {\footnotesize
+#+ATTR_LaTeX: align=rr
+| / |                              |                                  | <          | <          |
+|   | *rasite*                     | *muuttuja*                       | *{{{cj}}}* | *{{{jc}}}* |
+|---+------------------------------+----------------------------------+------------+------------|
+| 1 | virtuaalikoneen tilamuutos   | kutsujen määrä                   | 123 n      | 84 n       |
+|---+------------------------------+----------------------------------+------------+------------|
+| 2 | metodikutsun perusrasite     | kutsujen määrä                   | 50 n       | 30 n       |
+| 3 | parametrien välitys          | primitiiviparametrien määrä      | 2 n        | 3 n        |
+|---+------------------------------+----------------------------------+------------+------------|
+| 4 | viiteparametrit              | instanssi- vai staattinen metodi | 5 tai 0    | 5 tai 2    |
+| 5 |                              | globaalit viitteet               | 70 n       | 60 n       |
+| 6 |                              | lokaalit viitteet                | 30 n       | 20 n       |
+|---+------------------------------+----------------------------------+------------+------------|
+| 7 | muistialueen kiinnitys       |                                  | 20 n       | -          |
+|---+------------------------------+----------------------------------+------------+------------|
+| 8 | datan kopiointi              | tavujen määrä                    | 400 n      | -          |
+|---+------------------------------+----------------------------------+------------+------------|
+#+LATEX: }
+
+Ylläoleviin rasitteisiin ei saatu mukaan seuraavia erityistapauksia,
+joiden rasitteet on lisättävä mukaan tapauskohtaisesti.
+
+#+LATEX: {\footnotesize
+#+ATTR_LaTeX: align=rr
+|   | *rasite*                     | *muuttuja*     | *{{{cj}}}* |
+|---+------------------------------+----------------+------------+
+| 1 | muunnos Unicodesta UTF-8:aan | merkkien määrä | 300 n      |
+|---+------------------------------+----------------+------------+
+#+LATEX: }
+
+Mallista huomataan, että ehdottomasti suurin osa JNI-operaatioiden
+kustannuksista syntyy muistinhallintaan liittyvistä operaatioista:
+viitteiden tallentamisesta viitetaulukkorakenteeseen, niiden
+noutamisesta sieltä sekä muistialueiden kiinnikytkemisestä ja
+kytkemisen poistamisesta. Melko pienillä syötteillä nämä kustannukset
+selvästi ylittävät koko syötteen kopioimisen
+kustannukset. Muistinhallintaan liittyy välillisesti myös kaikkien
+JNI-operaatioiden suorittama virtuaalikoneen tilamuutos.
+
+Verrattuna normaaliin aliohjelmakutsuun yksikielisessä ohjelmassa
+JNI:n välityksellä tehtäviin kutsuihin tulee toisaalta myös merkittävä
+lisärasite, joka johtuu kutsun epäsuoruudesta, kutsukonvention
+muuntamisesta kielten välillä, mahdollisten välttämättömien viitteiden
+käsittelystä sekä edellä mainitusta tilamuutoksesta.
+
+Tulokset voidaan tiivistää näin: tehokas Java Native
+Interface-rajapinnan käyttö on sellaista, joka saa hyödynnettyä
+natiivikomponentista mahdollisesti saatavan suorituskykyedun
+mahdollisimman pienellä määrällä JNI-kutsuja, tallentaen
+mahdollisimman vähän Java-olioviitteitä pysyvästi natiivikomponenttiin
+globaalien viitteiden muodossa sekä välittäen ylipäätään
+lukumääräisesti mahdollisimman vähän Javan muistinhallinnan piirissä
+olevaan kekoon allokoituja olioita natiivikomponentille.
+
+Mainittuja ongelmakohtia pystyy välttämään esimerkiksi seuraavassa
+esimerkissä hahmotellulla tavalla, jossa Javalla allokoitujen olioiden
+käyttö vältetään ~java.nio.DirectByteBuffer~ -olion avulla. Kyseinen
+olio välitetään komponentista toiseen kertaluontoisesti, sen voi
+allokoida suoraan natiivikomponentissa, ja sen lukeminen
+Java-komponentissa on tehokasta kopioivien ~bulk~-operaatioiden
+avulla.
 
 * Esimerkki datan siirtämisen kustannuksista
 
@@ -846,8 +900,7 @@ vaihtoehdot.
 
 * Sivuutetut operaatiot
 
-Tutkielmassa on sivuutettu osa JNI-rajapinnan palveluista muutamasta
-eri syystä.
+
 
 ** Olioiden käsittely
 *** EXCLUDE GetObjectRefType                                                                  :read:
