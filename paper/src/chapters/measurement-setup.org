@@ -379,6 +379,7 @@ Java-kieliset luokat, joihin kyseiset silmukat ja metodit sijoitetaan.
 
 #+NAME: fig:benchmark_generator_architecture
 #+INCLUDE: "../../src/figures/architecture-benchmark-generator.puml" src plantuml :results file :file /tmp/architecture-benchmark_generator.png :exports results
+#+ATTR_LATEX: :width {0.5\linewidth} :placement [t]
 #+CAPTION: Benchmark Generator: komponentit
 #+LABEL: fig:benchmark_generator_architecture
 #+RESULTS: fig:benchmark_generator_architecture
