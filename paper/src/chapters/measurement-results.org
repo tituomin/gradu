@@ -74,10 +74,6 @@ Java-koodista.
 
 {{{plot(basic-call-all-types-c-c-fit)}}}
 
-{{{plot(basic-call-all-types-c-j)}}}
-
-{{{plot(basic-call-all-types-j-c)}}}
-
 Kuviin \ref{fig:basic-call-all-types-c-j} ja \ref{fig:basic-call-all-types-j-c} on koostettu eri
 parametrityypit suunnissa ({{{permu(C,Java)}}}) ja ({{{permu(\mbox{Java},C)}}}).
 Primitiivi- ja viitetyyppien ryhmittyminen näkyy kuvissa selvästi.
@@ -86,6 +82,10 @@ Samankielisissä permutaatioissa (kuvat \ref{fig:basic-call-all-types-j-j-fit} j
 \ref{fig:basic-call-all-types-c-c-fit}) ei vastaavaa eroa näy, mutta mielenkiintoisena
 yksityiskohtana niissä voidaan havaita 64-bittisten parametrityyppien
 ~long~ ja ~double~ suurempi rasite 32-bittisessä prosessorissa.
+
+{{{plot(basic-call-all-types-c-j)}}}
+
+{{{plot(basic-call-all-types-j-c)}}}
 
 Vasteajat riippuvat siis lineaarisesti parametrien määrästä, mutta
 eivät esimerkiksi parametrina välitettävän taulukon koosta (kuva
@@ -748,14 +748,14 @@ vapauttaa, jotta se ei loppuisi. Kutsuprofiileja voi toki rajallisesti
 hyödyntää tutkimalla siitä roskienkeruun dominoiman osuuden
 alapuolelle jääviä osia.
 
+{{{rotated_plot(special-calls-non-dynamic)}}}
+
 * Kenttien käsittely
 
 Kuvaan \ref{fig:special-calls-non-dynamic} on koottu Javan olioiden ja
 luokkien kenttien käsittelemiseen käytettävien JNI-metodien vasteajat.
 Vertailukohtina kuvassa ovat vastaavat operaatiot puhtaasti
 Java-komponentissa suoritettuina.
-
-{{{plot(special-calls-non-dynamic)}}}
 
 {{{TODO}}} kuvassa on asteikko pielessä. \ref{fig:killer-app}
 
@@ -764,8 +764,8 @@ kestää noin puolet ilmentymäkenttien luvusta ja
 kirjoittamisesta. Viitetyyppisen ilmentymäkentän lukeminen on vielä
 hieman hitaampaa kuin muiden ilmentymäkenttien.
 
-Profiileista nähdään sama kuvio kuin aiemmin: siinä missä staattisten
-kenttien käsittelyn ainoa merkittävä JNI-lisärasite johtuu
+Profiileista tunnistetaan sama kaava kuin aiemmin: siinä missä
+staattisten kenttien käsittelyn ainoa merkittävä JNI-lisärasite johtuu
 virtuaalikoneen tilamuutoksesta, ilmentymäkenttää käsitellessä
 joudutaan lisäksi purkamaan globaali viite ilmentymään, jonka kenttää
 käsitellään. \path{GetObjectField}-operaatiossa joudutaan myös
@@ -773,6 +773,76 @@ lisäämään kentästä luettu olioviite viitetaulukkoon
 \path{addLocalReference}-kutsulla, koska kyseinen viitearvo välitetään
 natiivikomponentille ja sen on siksi löydyttävä virtuaalikoneen
 viitetaulukosta.
+
+* Tulosten analyysi
+
+Rasitteet
+** yhteiset
+*** virtuaalikoneen tilan muuttaminen
+** muistinhallinta
+*** staattinen vs instanssi
+*** indirect ref
+**** lok
+**** glob
+** merkkijonot
+*** utf
+*** unicode
+** kutsusuunta
+*** pieni ero johtuen eri koodipoluista
+
+* Esimerkki datan siirtämisen kustannuksista
+
+Lopuksi edellä esitettyjä tuloksia tarkastellaan astetta korkeammasta
+näkökulmasta. Oletetaan, että JNI:n käyttötarkoitus sovelluksessa on
+prosessoida tehokkaalla natiivikirjastolla suurehko määrä
+Java-komponentissa olevaa dataa ja palauttaa samantyyppinen
+prosessoitu data takaisin Java-komponentille. Operaation syöte ja
+tuloste ovat kumpikin taulukko homogeenistä primitiivityyppistä
+dataa. Mikä on tehokkain tapa välittää syöte natiivikomponentille ja
+operaation tulos Java-komponentille?
+
+Oletetaan, että syöte on ~byte[]~-tyyppinen taulukko, jonka sisältämän
+datan koko /n/ on 128 kilotavua. Oletetaan myös, että aluksi syöte on
+valmiina kokonaisuudessaan Java-komponentin muistissa, ja
+prosessoinnin loputtua tuloste on valmiina taulukossa
+natiivikomponentin muistialueella -- ne siis välitetään kerralla
+JNI-rajapinnan yli.
+
+# 131072
+
+Syötteen välittämiseen suunnassa {{{jc}}} natiivikomponentin
+prosessoitavaksi käsitellään tässä kolme vaihtoehtoa, joista
+ensimmäinen (1) on syötteen kopioiminen /n/ natiivikutsulla, joilla on
+~byte~-tyyppinen kutsuparametri.
+
+Toinen vaihtoehto on Javan ~byte~-taulukon välittäminen /yhden/
+natiivikutsun parametrina ja sen käsittely natiivikomponentissa
+osoittimen kautta (2a) tai kopioimalla taulukon sisältö (2b).
+
+Kolmas vaihtoehto on, että data on suorassa tavupuskurissa eli
+~DirectByteBuffer~-oliossa, johon välitetään viite /yhden/
+natiivikutsun parameterina, ja puskurin muistialuetta käsitellään
+natiivikomponentissa osoittimen kautta.
+
+
+| tuloksiksi saatiin | tämmöiset |   |   |   |
+|--------------------+-----------+---+---+---|
+|                    |           |   |   |   |
+
+Tuloksen välittämiseen suunnassa {{{cj}}} käsitellään seuraavat
+vaihtoehdot.
+
+1. Natiivikomponentti kutsuu Java-metodia /n/ kertaa ~jbyte~-tyyppisellä parametrilla.
+2. Natiivikomponentti kirjoittaa tuloksen Java-taulukon
+   muistialueeseen (2a) tai kopioi sen Java-taulukkoon
+   JNI-operaatiolla \verb|Set|\tau{}\verb|ArrayRegion| (2b).
+3. Natiivikomponentti luo suoran tavupuskurin natiivimuistialueen
+   ympärille, joka sisältää tuloksen ja välittää viitteen JNI:n yli
+   tavupuskuriin. Java-komponentti kopioi tavupuskurin sisällön
+   taulukkoon (3a) tai lukee suoraan tavupuskuria (3b).
+
+| tuloksiksi saatiin | tällaiset |
+|                    |           |
 
 * Sivuutetut operaatiot
 
@@ -851,11 +921,8 @@ eri syystä.
 *** Luokkien käsittely                                                               :exclude:maybe:
 **** DONE FindClass                                                           :exclude:maybe:search:
 
-
-* Taulukoiden käsittelyn kokonaisvasteajat                                                    :todo:
-
-* Datan siirto: yhteislaskelmat
 * Yhteenveto tuloksista
    3 sivua\newline 10. 3. 2014
 
    Molempien mittausmenetelmien tulosten yhdistäminen.
+
