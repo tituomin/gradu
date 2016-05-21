@@ -900,82 +900,28 @@ vaihtoehdot.
 
 * Sivuutetut operaatiot
 
+Tutkielmassa jätettiin mittaamatta osa JNI-rajapinnan lukuisista
+metodeista, ja osa mittaustuloksistakin jätettiin lopulta
+analysoimatta. Keskeinen tutkielman tavoite oli löytää rajapinnan
+käytön keskeisimmät pullonkaulat, jotka ilmenevät rajapinnan
+realistisessa käytössä. Siksi harvoin tai vain erikoistilanteissa
+kutsuttavat rajapinnan palvelut rajattiin tutkielman ulkopuolelle.
 
+Nämä harvemmin tarvittavat palvelut liittyvät muun muassa
+eksplisiittiseen viitteiden käsittelyyn, olioiden ja luokkien
+ominaisuuksien käsittelyyn, reflektioon, sekä natiivimetodien
+rekisteröintiin.
 
-** Olioiden käsittely
-*** EXCLUDE GetObjectRefType                                                                  :read:
-*** EXCLUDE IsInstanceOf                                                             :read:traverse:
-*** EXCLUDE IsSameObject                                                                      :read:
-** Viitteet
-*** Global References
-**** EXCLUDE NewGlobalRef                                                                       :gc:
-**** EXCLUDE DeleteGlobalRef                                                                    :gc:
-*** Local References
-**** EXCLUDE EnsureLocalCapacity                                                          :allocref:
-**** EXCLUDE NewLocalRef                                                         :comp1:gc:allocref:
-**** EXCLUDE DeleteLocalRef                                                      :comp1:gc:allocref:
-*** Weak Global References                                                            :unclear:rtfm:
-**** EXCLUDE NewWeakGlobalRef                                                             :allocref:
-**** EXCLUDE DeleteWeakGlobalRef                                                          :allocref:
-** Luokkien käsittely                                                                :exclude:maybe:
-*** EXCLUDE DefineClass                                                                    :exclude:
-*** EXCLUDE GetSuperclass                                                   :exclude:maybe:traverse:
-*** EXCLUDE IsAssignableFrom                                                :exclude:maybe:traverse:
-** Natiivimetodien rekisteröinti
-*** EXCLUDE RegisterNatives                                                                :exclude:
-*** EXCLUDE UnregisterNatives                                                              :exclude:
-** Rinnakkaisohjelmointi
-*** EXCLUDE MonitorEnter                                                                     :synch:
-*** EXCLUDE MonitorExit                                                                      :synch:
-** Poikkeukset
-*** DONE ExceptionCheck                                                                       :read:
-*** EXCLUDE Throw                                                                          :special:
-*** EXCLUDE ThrowNew                                                                 :special:alloc:
-*** EXCLUDE ExceptionOccurred                                                                 :read:
-*** EXCLUDE ExceptionClear
-*** EXCLUDE ExceptionDescribe                                                              :exclude:
-*** EXCLUDE FatalError                                                                     :exclude:
-** Reflektio                                                                               :exclude:
-*** EXCLUDE FromReflectedMethod
-*** EXCLUDE FromReflectedField
-*** EXCLUDE ToReflectedMethod
-*** EXCLUDE ToReflectedField
-** Java VM-rajapinta                                                             :exclude:
-*** EXCLUDE GetJavaVM                                                                      :exclude:
-** Versiotiedot                                                                            :exclude:
-*** EXCLUDE GetVersion                                                                     :exclude:
-*** EXCLUDE Constants                                                                      :exclude:
+Sen sijaan potentiaalisesti oleellisemmat, mutta yksinkertaisuuden
+vuoksi pois rajatut ja todennäköisesti vaikeasti mitattavat palvelut
+koskevat rinnakkaisohjelmointia (\path{MonitorEnter} ja
+\path{MonitorExit}) ja poikkeusten käsittelyä. Ne olisivat
+mielenkiintoinen jatkotutkimuksen aihe.
 
-
-   1 sivu\newline 3. 2. 2014
-
-   Mittausten ulkopuolelle jääneet JNI-funktiot perusteluineen.
-   - Natiivimetodien rekisteröinti
-   - Luokkaoperaatiot
-   - Reflektio
-   - Virtuaalikone ja versiontarkistus
-
-** Ehkä -lopuksi? :no way:
-*** Olioiden käsittely
-**** DONE GetObjectClass                                                                      :read:
-*** Muistia varaavat operaatiot
-**** DONE AllocObject                                                                        :alloc:
-**** DONE NewObject, NewObjectA, NewObjectV                                            :comp2:alloc:
-**** DONE NewString                                                                          :alloc:
-**** DONE NewStringUTF                                                                       :alloc:
-**** DONE NewObjectArray                                                                     :alloc:
-**** DONE New<PrimitiveType>Array Routines                                                   :alloc:
-*** Paikalliset ja globaalit viitteet
-**** Local References
-***** DONE PushLocalFrame                                                           :comp1:allocref:
-***** DONE PopLocalFrame                                                            :comp1:allocref:
-*** Poikkeukset
-**** DONE ExceptionCheck                                                                      :read:
-*** Luokkien käsittely                                                               :exclude:maybe:
-**** DONE FindClass                                                           :exclude:maybe:search:
-
-* Yhteenveto tuloksista
-   3 sivua\newline 10. 3. 2014
-
-   Molempien mittausmenetelmien tulosten yhdistäminen.
+Mittauksia tehtiin myös /allokoiville/ rajapinnan palveluille, joilla
+luodaan uusia Java-olioita. Näitä operaatioita ei kuitenkaan käsitelty
+systemaattisesti, koska muiden tulosten valossa niidenkään
+laajamittainen käyttäminen natiivikomponentista tuskin on tehokasta
+jos sitä voi välttää -- viitetyyppisten olioiden käytöstä kun syntyvät
+keskeisimmät JNI-rajapinnan kustannukset.
 
