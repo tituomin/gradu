@@ -1,8 +1,10 @@
+Johdanto
+
 * Dalvikin JNI-rajapinnan suorituskykymalli
 
-Kokoamme nyt mittaustuloksista karkean mallin, joka kuvaa,
-mistä osatekijöistä JNI-rajapinnan käytön rasitteet syntyvät. Mallin
-lukuarvot ovat suhdelukuja, jotka ilmaisevat eri rasitteiden
+Kokoamme nyt mittaustuloksista karkean mallin, joka kuvaa, mistä
+osatekijöistä JNI-rajapinnan käytön rasitteet syntyvät. Mallista
+saatavat lukuarvot ovat suhdelukuja, jotka ilmaisevat eri rasitteiden
 suuruusluokan suhteessa toisiinsa. Mallissa on vain lineaarisia
 riippuvuuksia, ja /muuttuja/-sarakkeessa ilmaistaan, mikä on
 riippuvuudessa esiintyvän muuttujan tulkinta.
@@ -29,23 +31,67 @@ itsenäiseen käyttäytymiseen erillään kokonaisuudesta.
 
 #+LATEX: {\footnotesize
 #+ATTR_LaTeX: align=rr
-| / |                            |                                  | <          | <          |
-|   | *rasite*                   | *muuttuja*                       | *{{{cj}}}* | *{{{jc}}}* |
-|---+----------------------------+----------------------------------+------------+------------|
-| 1 | virtuaalikoneen tilamuutos | kutsujen määrä                   | 123 c      | 84 c       |
-|---+----------------------------+----------------------------------+------------+------------|
-| 2 | metodikutsun perusrasite   | kutsujen määrä                   | 50 c       | 30 c       |
-| 3 | parametrien välitys        | primitiiviparametrien määrä      | 2 p        | 3 p        |
-|---+----------------------------+----------------------------------+------------+------------|
-| 4 | viiteparametrit            | instanssi- vai staattinen metodi | 5 tai 0    | 5 tai 2    |
-| 5 |                            | globaalit viitteet               | 70 g       | 60 g       |
-| 6 |                            | lokaalit viitteet                | 30 l       | 20 l       |
-|---+----------------------------+----------------------------------+------------+------------|
-| 7 | muistialueen kiinnitys     | -                                | 20         | -          |
-|---+----------------------------+----------------------------------+------------+------------|
-| 8 | datan kopiointi            | tavujen määrä                    | 400 b      | -          |
-|---+----------------------------+----------------------------------+------------+------------|
+| / |                              |                              | <                     | <          |
+|   | *rasite*                     | *muuttuja*                   | *{{{cj}}}*            | *{{{jc}}}* |
+|---+------------------------------+------------------------------+-----------------------+------------|
+| 1 | JNI-perusrasite              | JNI-kutsujen määrä /c/       | $0.43  c$             | $0.05 c$   |
+|---+------------------------------+------------------------------+-----------------------+------------|
+| 2 | aliohjelmakutsun perusrasite | aliohjelmakutsujen määrä /f/ | $1.3    f$            | $30 c$     |
+| 3 | virtuaalimetodikutsu         | virtuaalikutsujen määrä /v/  | $0.24 v$              |            |
+|---+------------------------------+------------------------------+-----------------------+------------|
+| 4 | parametrien välitys          | parametrien määrä /p/        | $0.08 p$              | $3 p$      |
+| 5 | viiteparametrien välitys     | globaalit viitteet /g/       | $0.52 g$              | $60 g$     |
+| 6 |                              | lokaalit viitteet /l/        | $(0.51 \cdot 0.45) l$ | $20 l$     |
+|---+------------------------------+------------------------------+-----------------------+------------|
+| 8 | muistialueen kiinnitys       | -                            | $0.73$                | -          |
+|---+------------------------------+------------------------------+-----------------------+------------|
+| 9 | datan kopiointi              | tavujen määrä /b/            | $0.00053 b$           | -          |
+
 #+LATEX: }
+
+* laskelmat :noexport:
+** pinning: c2jgetbytearrayelements/512: 10.07 unpin + 7.57 pin vrt. 3.029158648 -> (73.49)
+   ((10.07 + 7.57) / 73.49) * (3.029158648) = 0.727097000281
+** lokaalit viitteet laskettu niin, että profiileissa koko timesta on vähennetty lukkotimet (prosenteista laskettu)
+** huom! parametrivälitykseen otettu float (maksimi...)
+** tässä 00001 for reference
+0.054311168 C2C
+0.129103460 J2J
+0.774550756 J2C
+1.469809387 C2J
+
+- > c2j 4 real = 1.469809387 - 0.129103460 = 1.340705927
+-- > c2j setstaticfloatfield = 0.42496192
+verrattu 00001:stä ja setstaticfloatfieldiä -> 0.301690140845 olisi jni-perusrasite?
+
+0.24 olisi 00002:n perusteella arvioitu virtuaalimetodikutsun overhead. kokeillaan
+
+** 1 tilamuutos cj
+   # tulkinta: lineaarinen muutos johtuu 
+    
+   cj: setstaticfloatfield: (17  + 11.65 ) / 71.07 * 0.43 = 0.17
+   cj static call: (00001) : ((4.6 + 4.5) / 72.80) * (1.469 - 0.129) = 0.1675
+   cj opt 5: (get static method id): ((2.05 + 2.01) / 74.4) * (4.074232239) = 0.22
+   cj opt 3: (basic-call-double[] 20): ((0.67 + 0.28) / 70.66) * (15.594008579 - 0.19223075) = 0.21
+   cj opt 2: (00002 eli 0 param) : ((4.07  + 2.74 ) / 74.80) * (2.67512402 - 0.141008667) = 0.23
+   cj opt 4: (basic-call-int 20): ((3.07 + 2.45) / 71.67) * (3.695259945 - 0.193387501) = 0.27
+             (basic-call-int 10): ((3.67 + 2.42) / 73.29) * (3.230370734 - 0.164231502) = 0.26
+   cj opt 6: (get double array region 512): ((2.87 + 2.06) / 70.35) * 3.325020941 = 0.23
+
+** 1 tilamuutos jc
+   opt 2: (00002 eli 0 param): (5.31 / 67.26) * (0.824651381 - 0.054271917) = 0.06
+   opt 3: (basic-call-double[] 20): (0.27 / 70.22) * (7.515466099 - 0.104840209) = 0.0284942892381
+   opt 4: (basic-call-int 20): (4.71 / 62.13) * (1.025977591 - 0.104758834) = 0.0698364774742
+          (basic-call-int 10): (3.6 / 63.39) * (0.974328006 - 0.079489916) = 0.0508190112636
+
+** 3 virtuaalimetodi: getvirtualizemethod
+   00002 cj : 
+** 2 metodikutsu cj
+   loput vakio rasitteesta: 
+   static call: (1.469-0.129) - 0.1675 = 1.17
+   00002 eli 0 param: ()
+
+* jatkuu
 
 Ylläoleviin rasitteisiin ei saatu mukaan seuraavia erityistapauksia,
 joiden rasitteet on lisättävä mukaan tapauskohtaisesti.
@@ -57,6 +103,11 @@ joiden rasitteet on lisättävä mukaan tapauskohtaisesti.
 | 1 | muunnos Unicodesta UTF-8:aan | merkkien määrä | 300 n      |
 |---+------------------------------+----------------+------------+
 #+LATEX: }
+
+Taulukon kohta /perusrasite/ (1) pitää sisällään JNI-funktion
+kutsumisesta aiheutuvan rasituksen, virtuaalikoneen tilanmuutoksen, ja
+kaikki muut mahdolliset Dalvikin JNI-toteutuksen rasitteet, jotka ovat
+/yhteisiä kaikille saman kutsusuunnan JNI-operaatioille/.
 
 Mallista huomataan, että ehdottomasti suurin osa JNI-operaatioiden
 kustannuksista syntyy muistinhallintaan liittyvistä operaatioista:

@@ -1,8 +1,12 @@
--*- mode: perf-report; -*-
-
 id: 47d22819-625b-43f6-8e9f-afeb5066b758
 measurements: bcd96453-677a-4988-9b67-294e6cf34e8e 9b81d96a-f768-4ae9-b32c-5483f67aa465
 
+# NOTES: @ -merkillä merkitty poimitut luvut
+
+# extra tillbehör 1.0.0-rc2/J2CBenchmark00001
+# extra tillbehör 1.0.0-rc2/C2JBenchmark00001
+# extra tillbehör 1.0.0-rc2/J2JBenchmark00001
+# extra tillbehör 1.0.0-rc2/J2CBenchmark00001
 
 Mittauksen perusrasite (C)
 normaloverhead-c
