@@ -34,14 +34,14 @@ itsenäiseen käyttäytymiseen erillään kokonaisuudesta.
 | / |                                    |                              | <                     | <          |
 |   | *rasite*                           | *muuttuja*                   | *{{{cj}}}*            | *{{{jc}}}* |
 |---+------------------------------------+------------------------------+-----------------------+------------|
-| 1 | JNI-perusrasite                    | JNI-kutsujen määrä /c/       | $0.43  c$             | $0.05 c$   |
+| 1 | JNI-perusrasite                    | JNI-kutsujen määrä /c/       | $0.43  c$             |            |
 |---+------------------------------------+------------------------------+-----------------------+------------|
-| 2 | aliohjelmakutsun perusrasite       | aliohjelmakutsujen määrä /f/ | $0.9    f$            | $30 c$     |
+| 2 | aliohjelmakutsun perusrasite       | aliohjelmakutsujen määrä /f/ | $0.9    f$            |            |
 | 3 | virtuaalimetodikutsu               | virtuaalikutsujen määrä /v/  | $0.64 v$              |            |
 |---+------------------------------------+------------------------------+-----------------------+------------|
-| 4 | parametrien välitys                | parametrien määrä /p/        | $0.08 p$              | $3 p$      |
-| 5 | viiteparametrien välitys           | globaalit viitteet /g/       | $0.52 g$              | $60 g$     |
-| 6 |                                    | lokaalit viitteet /l/        | $(0.51 \cdot 0.45) l$ | $20 l$     |
+| 4 | parametrien välitys                | parametrien määrä /p/        | $0.08 p$              |            |
+| 5 | viiteparametrien välitys           | globaalit viitteet /g/       | $0.52 g$              |            |
+| 6 |                                    | lokaalit viitteet /l/        | $(0.51 \cdot 0.45) l$ |            |
 |---+------------------------------------+------------------------------+-----------------------+------------|
 | 8 | muistialueen kiinnitys ja irroitus | -                            | $0.8$                 | -          |
 |---+------------------------------------+------------------------------+-----------------------+------------|
