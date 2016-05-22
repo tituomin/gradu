@@ -1,20 +1,168 @@
-* JNI-kuormitusmalli
-   4 sivua\newline 17. 3. 2014
+* Dalvikin JNI-rajapinnan suorituskykymalli
 
-   Yksinkertainen malli, joka kertoo miten JNI-rajapinnan aiheuttaman
-   kuormituksen voi ennustaa sen käyttötavasta.
-* Sovellusarkkitehtuurivaihtoehdot
-   5 sivua\newline 24. 3. 2014
+Kokoamme nyt mittaustuloksista karkean mallin, joka kuvaa,
+mistä osatekijöistä JNI-rajapinnan käytön rasitteet syntyvät. Mallin
+lukuarvot ovat suhdelukuja, jotka ilmaisevat eri rasitteiden
+suuruusluokan suhteessa toisiinsa. Mallissa on vain lineaarisia
+riippuvuuksia, ja /muuttuja/-sarakkeessa ilmaistaan, mikä on
+riippuvuudessa esiintyvän muuttujan tulkinta.
 
-   Esitellään 2-3 vaihtoehtoa JNI-sovelluksen kokonaisrakenteelle.
-* Arkkitehtuurisuositukset
-   2 sivua\newline 31. 3. 2014
+Kun mallin muuttujiin sijoittaa jonkin konkreettisen JNI-rajapinnan
+käyttötapauksen arvot, nähdään erottelu kyseisen käyttötapauksen
+/JNI:n käytöstä/ muodostuvan rasitteen jakautumisesta osatekijöihinsä.
+Kun osatekijöiden rasitteet laskee yhteen, saadaan JNI:stä johtuva
+kokonaisrasite. Eri käyttötapauksille saatuja kokonaisrasitteiden
+vertailulukuja voi myös verrata keskenään.
 
-   Analysoidaan mallin perusteella paras arkkitehtuurimalli.
-* Haasteet ja puutteet
-   4 sivua\newline 7. 4. 2014
+Malli /ei/ kerro käyttötapauksen kokonaisrasitetta /suhteessa JNI:n
+käytöstä saatuun hyötyyn/. Tämä on hyvin tapauskohtaista, ja tiedon
+saamiseksi tarvittaisiin tarkat mittaukset siitä, miten paljon
+tehokkaampaa natiivikomponentin käyttö on verrattuna saman laskennan
+suorittamiseen Java-koodissa.
 
-   Käsitellään tulosten tieteellistä luotettavuutta ja erityisesti
-   sitä, missä määrin mittaukset selviävät synteettisen mittaamisen
-   sudenkuopista, ja miten tutkimuskohdetta voisi paremmin mitata
-   tulevaisuudessa.
+Mallista saatuihin tuloksiin tulee suhtautua summittaisena arviona,
+sillä suoritettavan ohjelman käyttäytymistä kokonaisuutena aidossa
+suoritusympäristössä ei voi täysin palauttaa ohjelmien alkeisosien
+itsenäiseen käyttäytymiseen erillään kokonaisuudesta.
+
+# TODO yllä viite siihen tekstikohtaan, jossa tuo sanottiin
+
+#+LATEX: {\footnotesize
+#+ATTR_LaTeX: align=rr
+| / |                            |                                  | <          | <          |
+|   | *rasite*                   | *muuttuja*                       | *{{{cj}}}* | *{{{jc}}}* |
+|---+----------------------------+----------------------------------+------------+------------|
+| 1 | virtuaalikoneen tilamuutos | kutsujen määrä                   | 123 c      | 84 c       |
+|---+----------------------------+----------------------------------+------------+------------|
+| 2 | metodikutsun perusrasite   | kutsujen määrä                   | 50 c       | 30 c       |
+| 3 | parametrien välitys        | primitiiviparametrien määrä      | 2 p        | 3 p        |
+|---+----------------------------+----------------------------------+------------+------------|
+| 4 | viiteparametrit            | instanssi- vai staattinen metodi | 5 tai 0    | 5 tai 2    |
+| 5 |                            | globaalit viitteet               | 70 g       | 60 g       |
+| 6 |                            | lokaalit viitteet                | 30 l       | 20 l       |
+|---+----------------------------+----------------------------------+------------+------------|
+| 7 | muistialueen kiinnitys     | -                                | 20         | -          |
+|---+----------------------------+----------------------------------+------------+------------|
+| 8 | datan kopiointi            | tavujen määrä                    | 400 b      | -          |
+|---+----------------------------+----------------------------------+------------+------------|
+#+LATEX: }
+
+Ylläoleviin rasitteisiin ei saatu mukaan seuraavia erityistapauksia,
+joiden rasitteet on lisättävä mukaan tapauskohtaisesti.
+
+#+LATEX: {\footnotesize
+#+ATTR_LaTeX: align=rr
+|   | *rasite*                     | *muuttuja*     | *{{{cj}}}* |
+|---+------------------------------+----------------+------------+
+| 1 | muunnos Unicodesta UTF-8:aan | merkkien määrä | 300 n      |
+|---+------------------------------+----------------+------------+
+#+LATEX: }
+
+Mallista huomataan, että ehdottomasti suurin osa JNI-operaatioiden
+kustannuksista syntyy muistinhallintaan liittyvistä operaatioista:
+viitteiden tallentamisesta viitetaulukkorakenteeseen, niiden
+noutamisesta sieltä sekä muistialueiden kiinnikytkemisestä ja
+kytkemisen poistamisesta. Melko pienillä syötteillä nämä kustannukset
+selvästi ylittävät koko syötteen kopioimisen
+kustannukset. Muistinhallintaan liittyy välillisesti myös kaikkien
+JNI-operaatioiden suorittama virtuaalikoneen tilamuutos.
+
+Verrattuna normaaliin aliohjelmakutsuun yksikielisessä ohjelmassa
+JNI:n välityksellä tehtäviin aliohjelmakutsuihin tulee aina myös
+merkittävä lisärasite, joka johtuu kutsun epäsuoruudesta,
+kutsukonvention muuntamisesta kielten välillä, mahdollisten
+välttämättömien viitteiden käsittelystä sekä edellä mainitusta
+tilamuutoksesta.
+
+Tulokset voidaan tiivistää näin: tehokas Java Native
+Interface-rajapinnan käyttö on sellaista, joka saa hyödynnettyä
+natiivikomponentista mahdollisesti saatavan suorituskykyedun
+mahdollisimman pienellä määrällä JNI-kutsuja, tallentaen
+mahdollisimman vähän Java-olioviitteitä pysyvästi natiivikomponenttiin
+globaalien viitteiden muodossa sekä välittäen ylipäätään
+lukumääräisesti mahdollisimman vähän Javan muistinhallinnan piirissä
+olevaan kekoon allokoituja olioita natiivikomponentille.
+
+* Suorituskykyrasitteiden välttäminen datan siirrossa
+
+Lopuksi edellä esitettyjä tuloksia tarkastellaan astetta korkeammasta
+näkökulmasta. Oletetaan, että JNI:n käyttötarkoitus sovelluksessa on
+prosessoida tehokkaalla natiivikirjastolla suurehko määrä
+Java-komponentissa olevaa dataa ja palauttaa samantyyppinen
+prosessoitu data takaisin Java-komponentille. Operaation syöte ja
+tuloste ovat kumpikin taulukko homogeenistä primitiivityyppistä
+dataa. Mikä on tehokkain tapa välittää syöte natiivikomponentille ja
+operaation tulos Java-komponentille?
+
+Suorituskykymallin paljastamia ongelmakohtia pystyy kiertämään
+esimerkiksi välttämällä Javassa allokoitujen olioiden käyttö
+~java.nio.DirectByteBuffer~ -olion avulla. Kyseinen olio välitetään
+komponentista toiseen kertaluontoisesti, sen voi allokoida suoraan
+natiivikomponentissa, ja sen lukeminen Java-komponentissa on tehokasta
+kopioivien ~bulk~-operaatioiden avulla.
+
+Oletetaan, että syöte on ~byte[]~-tyyppinen taulukko, jonka sisältämän
+datan koko /n/ on 128 kilotavua. Oletetaan myös, että aluksi syöte on
+valmiina kokonaisuudessaan Java-komponentin muistissa, ja
+prosessoinnin loputtua tuloste on valmiina taulukossa
+natiivikomponentin muistialueella -- ne siis välitetään kerralla
+JNI-rajapinnan yli.
+
+# 131072
+
+Syötteen välittämiseen suunnassa {{{jc}}} natiivikomponentin
+prosessoitavaksi käsitellään tässä kolme vaihtoehtoa, joista
+ensimmäinen (1) on syötteen kopioiminen /n/ natiivikutsulla, joilla on
+~byte~-tyyppinen kutsuparametri.
+
+Toinen vaihtoehto on Javan ~byte~-taulukon välittäminen /yhden/
+natiivikutsun parametrina ja sen käsittely natiivikomponentissa
+osoittimen kautta (2a) tai kopioimalla taulukon sisältö (2b).
+
+Kolmas vaihtoehto on, että data on suorassa tavupuskurissa eli
+~DirectByteBuffer~-oliossa, johon välitetään viite /yhden/
+natiivikutsun parameterina, ja puskurin muistialuetta käsitellään
+natiivikomponentissa osoittimen kautta.
+
+
+| tuloksiksi saatiin | tämmöiset |   |   |   |
+|--------------------+-----------+---+---+---|
+|                    |           |   |   |   |
+
+Tuloksen välittämiseen suunnassa {{{cj}}} käsitellään seuraavat
+vaihtoehdot.
+
+1. Natiivikomponentti kutsuu Java-metodia /n/ kertaa ~jbyte~-tyyppisellä parametrilla.
+2. Natiivikomponentti kirjoittaa tuloksen Java-taulukon
+   muistialueeseen (2a) tai kopioi sen Java-taulukkoon
+   JNI-operaatiolla \verb|Set|\tau{}\verb|ArrayRegion| (2b).
+3. Natiivikomponentti luo suoran tavupuskurin natiivimuistialueen
+   ympärille, joka sisältää tuloksen ja välittää viitteen JNI:n yli
+   tavupuskuriin. Java-komponentti kopioi tavupuskurin sisällön
+   taulukkoon (3a) tai lukee suoraan tavupuskuria (3b).
+
+| tuloksiksi saatiin | tällaiset |
+|                    |           |
+
+
+* sunnitelman kohdat
+** JNI-kuormitusmalli
+    4 sivua\newline 17. 3. 2014
+
+    Yksinkertainen malli, joka kertoo miten JNI-rajapinnan aiheuttaman
+    kuormituksen voi ennustaa sen käyttötavasta.
+** Sovellusarkkitehtuurivaihtoehdot
+    5 sivua\newline 24. 3. 2014
+
+    Esitellään 2-3 vaihtoehtoa JNI-sovelluksen kokonaisrakenteelle.
+** Arkkitehtuurisuositukset
+    2 sivua\newline 31. 3. 2014
+
+    Analysoidaan mallin perusteella paras arkkitehtuurimalli.
+** Haasteet ja puutteet
+    4 sivua\newline 7. 4. 2014
+
+    Käsitellään tulosten tieteellistä luotettavuutta ja erityisesti
+    sitä, missä määrin mittaukset selviävät synteettisen mittaamisen
+    sudenkuopista, ja miten tutkimuskohdetta voisi paremmin mitata
+    tulevaisuudessa.

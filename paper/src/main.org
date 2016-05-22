@@ -66,6 +66,10 @@
 ** Mittaustulokset
 #+INCLUDE: "../gen/chapters/measurement-results.org" :minlevel 3
 
+
+\newpage
+
+
 ** Tulosten analyysi
 #+INCLUDE: "../gen/chapters/measurement-analysis.org" :minlevel 3
 * Yhteenveto
