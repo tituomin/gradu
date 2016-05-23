@@ -31,21 +31,21 @@ itsenäiseen käyttäytymiseen erillään kokonaisuudesta.
 
 #+LATEX: {\footnotesize
 #+ATTR_LaTeX: align=rr
-| / |                                    |                              | <                     | <          |
-|   | *rasite*                           | *muuttuja*                   | *{{{cj}}}*            | *{{{jc}}}* |
-|---+------------------------------------+------------------------------+-----------------------+------------|
-| 1 | JNI-perusrasite                    | JNI-kutsujen määrä /c/       | $0.43  c$             |            |
-|---+------------------------------------+------------------------------+-----------------------+------------|
-| 2 | aliohjelmakutsun perusrasite       | aliohjelmakutsujen määrä /f/ | $0.9    f$            |            |
-| 3 | virtuaalimetodikutsu               | virtuaalikutsujen määrä /v/  | $0.64 v$              |            |
-|---+------------------------------------+------------------------------+-----------------------+------------|
-| 4 | parametrien välitys                | parametrien määrä /p/        | $0.08 p$              |            |
-| 5 | viiteparametrien välitys           | globaalit viitteet /g/       | $0.52 g$              |            |
-| 6 |                                    | lokaalit viitteet /l/        | $(0.51 \cdot 0.45) l$ |            |
-|---+------------------------------------+------------------------------+-----------------------+------------|
-| 8 | muistialueen kiinnitys ja irroitus | -                            | $0.8$                 | -          |
-|---+------------------------------------+------------------------------+-----------------------+------------|
-| 9 | datan kopiointi                    | tavujen määrä /b/            | $0.00053 b$           | -          |
+| / |                                    |                              | <           | <           |
+|   | *rasite*                           | *muuttuja*                   | *{{{cj}}}*  | *{{{jc}}}*  |
+|---+------------------------------------+------------------------------+-------------+-------------|
+| 1 | JNI-perusrasite                    | JNI-kutsujen määrä /c/       | $0.28  c$   | 0           |
+|---+------------------------------------+------------------------------+-------------+-------------|
+| 2 | aliohjelmakutsun perusrasite       | aliohjelmakutsujen määrä /f/ | $0.97    f$ | $ 0.39 f $  |
+| 3 | virtuaalimetodikutsu               | virtuaalikutsujen määrä /v/  | $0.64 v$    | $ 0.05 v $  |
+|---+------------------------------------+------------------------------+-------------+-------------|
+| 4 | parametrien välitys                | parametrien määrä /p/        | $0.05 p$    | $ 0.0085 p$ |
+| 5 | viiteparametrien välitys           | globaalit viitteet /g/       | $0.59 g$    | -           |
+| 6 |                                    | lokaalit viitteet /l/        | $0.27 l$    | $ 0.32 l $  |
+|---+------------------------------------+------------------------------+-------------+-------------|
+| 8 | muistialueen kiinnitys ja irroitus | -                            | $2.0$       | -           |
+|---+------------------------------------+------------------------------+-------------+-------------|
+| 9 | datan kopiointi                    | tavujen määrä /b/            | $0.00053 b$ | -           |
 
 #+LATEX: }
 
