@@ -1,5 +1,6 @@
 Gradu: duunit
 
+* TODO <2016-05-23 ma 19:00> nonvirtual method callista on oma benchmark, jos haluaa tarkistaa luvut
 * TODO <2016-05-22 su 19:10> paluuarvoja ei pahemmin kattellao
 * TODO <2016-05-21 la 18:27> HUOM! vertaa static j2c, c2j !!
 * TODO <2016-05-21 la 16:19> kuvien sijainnit                                                  :nyt:

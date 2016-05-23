@@ -1,5 +1,5 @@
 #+AUTHOR: Timo Tuominen
-#+TITLE: Suorituskykyinen sovellusarkkitehtuuri Java-natiivirajapintaa hyödyntävälle Android-sovellukselle
+#+TITLE: Androidin Dalvik-virtuaalikoneen Java-natiivirajapinnan suorituskyky
 #+LANGUAGE: fi
 #+LaTeX_CLASS: gradu
 #+LaTeX_CLASS_OPTIONS: [gradu]
@@ -69,8 +69,7 @@
 
 \newpage
 
-
-** Tulosten analyysi
+** Dalvikin JNI-rajapinnan suorituskykymalli
 #+INCLUDE: "../gen/chapters/measurement-analysis.org" :minlevel 3
 * Yhteenveto
 #+INCLUDE: "../gen/chapters/conclusions.org" :minlevel 2

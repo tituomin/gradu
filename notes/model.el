@@ -4,11 +4,11 @@
    ((equal "cj" direction)
     (+ (* 0.28 calls)
        (* 0.97 function-calls)
-       (* 0.64 virtual-calls)
+       (* 0.65 virtual-calls)
        (* 0.05 parameters) ; test .07 -> .1
        (* 0.59 globals) ; test 52 -> 58
        (* 0.27 locals)
-       (*    2 pinning)
+       (*  0.6 pinning)
        (* 0.00053 bytes)))
    ((equal "jc" direction)
     (+ (*    0 calls) 
@@ -166,13 +166,172 @@
       (locals 0))
   (jni "cj"))
 
+
 ; get double array elements
-(let ((calls 1)
+(let ((calls 2)
       (function-calls 0)
       (virtual-calls 0)
       (bytes 0)
-      (pinning 1)
+      (pinning 2)
       (parameters 2)
-      (globals 1)
+      (globals 2)
       (locals 0))
   (jni "cj"))
+
+
+; thesis example
+(let ((calls 1)
+      (function-calls 1)
+      (virtual-calls 1)
+      (bytes 0)
+      (pinning 0)
+      (parameters 12)
+      (globals 11)
+      (locals 0))
+  (jni "cj"))
+
+
+; thesis data passing
+; jc 1: n kpl byte calls native
+(let ((calls (* 1024 128))
+      (function-calls (* 1024 128))
+      (virtual-calls 0)
+      (bytes 0)
+      (pinning 0)
+      (parameters 2)
+      (globals 0)
+      (locals 1))
+  (jni "jc"))
+;51118.417
+
+; jc 2a
+(+
+ (let ((calls 1) ; pass array j -> c
+       (function-calls 1)
+       (virtual-calls 0)
+       (bytes 0)
+       (pinning 0)
+       (parameters 2)
+       (globals 0)
+       (locals 2))
+   (jni "jc"))
+ (let ((calls 2) ; get array elements
+       (function-calls 0)
+       (virtual-calls 0)
+       (bytes 0)
+       (pinning 2)
+       (parameters 2)
+       (globals 0)
+       (locals 2))
+   (jni "cj"))
+ )
+;3.4470000000000005
+; + muistinluku c c 
+; 0.0407 * 128 * 1024 +0.0604 = 5334
+
+
+; jc 2b
+(+
+ (let ((calls 1) ; pass array j -> c
+       (function-calls 1)
+       (virtual-calls 0)
+       (bytes 0)
+       (pinning 0)
+       (parameters 2)
+       (globals 0)
+       (locals 2))
+   (jni "jc"))
+ (let ((calls 1) ; copy array
+       (function-calls 0)
+       (virtual-calls 0)
+       (bytes (* 128 1024))
+       (pinning 0)
+       (parameters 2)
+       (globals 0)
+       (locals 2))
+   (jni "cj"))
+ )
+;71.43516
+;; 0.0407 * 128 * 1024 +0.0604 = 5334
+
+; jc 3 accessdirect buffer 2.3s
+
+(+
+ (let ((calls 1) ; pass array j -> c
+       (function-calls 1)
+       (virtual-calls 0)
+       (bytes 0)
+       (pinning 0)
+       (parameters 2)
+       (globals 0)
+       (locals 2))
+   (jni "jc"))
+ 2.3)
+;3.347 + 
+; 0.0407 * 128 * 1024 +0.0604 = 5334
+
+; cj
+
+; thesis data passing
+; cj 1: n kpl byte calls native
+(let ((calls (* 1024 128))
+      (function-calls 128000)
+      (virtual-calls 0)
+      (bytes 0)
+      (pinning 0)
+      (parameters 2)
+      (globals 0)
+      (locals 1))
+  (jni "jc"))
+; 49920.337
+
+; cj 2a : sama kuin toiseen suuntaan, paitsi ei tarivtse lukea -- 3.347
+; plus normaali java-luku
+
+
+; cj 2b : 
+; jc 2b
+(+
+ (let ((calls 1) ; pass array j -> c
+       (function-calls 1)
+       (virtual-calls 0)
+       (bytes 0)
+       (pinning 0)
+       (parameters 2)
+       (globals 0)
+       (locals 2))
+   (jni "jc"))
+ (let ((calls 1) ; copy array
+       (function-calls 0)
+       (virtual-calls 0)
+       (bytes (* 128 1024))
+       (pinning 0)
+       (parameters 2)
+       (globals 0)
+       (locals 2))
+   (jni "cj"))
+ )
+; 71
+; plus normaali java-luku
+
+; c2j newdirectbytebuffer 13.0898483333
+; 3a
+(+
+ 13
+ (let ((calls 1) ; pass buffer c -> j
+       (function-calls 1)
+       (virtual-calls 0)
+       (bytes 0)
+       (pinning 0)
+       (parameters 2)
+       (globals 0)
+       (locals 2))
+   (jni "jc"))
+ 
+ )
++ 
+; 3b
+; vakio 3 plus normaali java-luku
+
+
+

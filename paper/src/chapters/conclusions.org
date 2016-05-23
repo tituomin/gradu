@@ -1,1 +1,28 @@
-Tämä ensin, lopuksi johdanto ja otsikko.
+Android-sovelluksia on mahdollista rakentaa yhdistelemällä Androidin
+virtuaalikoneen suorittamia Java-komponentteja natiivikirjastojen
+komponentteihin, jotka on käännetty suoraan suoritusympäristön
+konekielelle, ja joita suoritetaan virtuaalikoneen tavallisen
+tulkinta- tai käännösprosessin ulkopuolella.
+
+Jotta Java-komponentit ja natiivikomponentit voisivat kutsua toisiaan
+ja käsitellä toistensa muuttujia ja tietorakenteita,
+Java-virtuaalikoneet tarjoavat Java Native Interface (JNI)-standardin,
+joka on vieraskutsurajapinta natiivi- ja Java-komponenttien
+välillä. Myös Androidin Dalvik- ja ART-virtuaalikoneet toteuttavat
+JNI-rajapinnan.
+
+Rajapinnan käytöstä aiheutuu kuitenkin erilaisia ylimääräisiä
+suorituskykyrasitteita verrattuna tavallisiin, samankielisen
+komponentin sisällä tehtäviin aliohjelmakutsuihin ja
+tietorakenteita käsitteleviin operaatioihin.
+
+Tutkielmassa tutkittiin vasteaika- ja kutsuprofiilimittauksilla
+Androidin Dalvik-virtuaalikoneen JNI-toteutuksen ominaispiirteitä
+suorituskyvyn näkökulmasta. Virtuaalikoneen käyttäytymisestä saatiin
+erotettua lineaarisia riippuvuuksia, jotka paljastivat että
+virtuaalikoneen muistinhallinta aiheuttaa Dalvikin JNI-rajapinnan
+käytön merkittävimmät rasitteet. Jokaisessa rajapinnan operaatiossa
+on myös oleellinen pohjarasite
+
+rajapinnan suorituskykyrasitteiden Tavoitteena oli hahmottaa,
+minkälainen

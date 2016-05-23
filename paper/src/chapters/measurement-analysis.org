@@ -1,6 +1,3 @@
-Johdanto
-
-* Dalvikin JNI-rajapinnan suorituskykymalli
 
 Kokoamme nyt mittaustuloksista karkean mallin, joka kuvaa, mistä
 osatekijöistä JNI-rajapinnan käytön rasitteet syntyvät. Mallista
@@ -31,91 +28,66 @@ itsenäiseen käyttäytymiseen erillään kokonaisuudesta.
 
 #+LATEX: {\footnotesize
 #+ATTR_LaTeX: align=rr
-| / |                                    |                              | <           | <           |
-|   | *rasite*                           | *muuttuja*                   | *{{{cj}}}*  | *{{{jc}}}*  |
-|---+------------------------------------+------------------------------+-------------+-------------|
-| 1 | JNI-perusrasite                    | JNI-kutsujen määrä /c/       | $0.28  c$   | 0           |
-|---+------------------------------------+------------------------------+-------------+-------------|
-| 2 | aliohjelmakutsun perusrasite       | aliohjelmakutsujen määrä /f/ | $0.97    f$ | $ 0.39 f $  |
-| 3 | virtuaalimetodikutsu               | virtuaalikutsujen määrä /v/  | $0.64 v$    | $ 0.05 v $  |
-|---+------------------------------------+------------------------------+-------------+-------------|
-| 4 | parametrien välitys                | parametrien määrä /p/        | $0.05 p$    | $ 0.0085 p$ |
-| 5 | viiteparametrien välitys           | globaalit viitteet /g/       | $0.59 g$    | -           |
-| 6 |                                    | lokaalit viitteet /l/        | $0.27 l$    | $ 0.32 l $  |
-|---+------------------------------------+------------------------------+-------------+-------------|
-| 8 | muistialueen kiinnitys ja irroitus | -                            | $2.0$       | -           |
-|---+------------------------------------+------------------------------+-------------+-------------|
-| 9 | datan kopiointi                    | tavujen määrä /b/            | $0.00053 b$ | -           |
+| / |                                    |                              | <           | <          |
+|   | *rasite*                           | *muuttuja*                   | *{{{cj}}}*  | *{{{jc}}}* |
+|---+------------------------------------+------------------------------+-------------+------------|
+| 1 | JNI-perusrasite                    | JNI-kutsujen määrä /c/       | $0.28  c$   | $0.39 f$   |
+|---+------------------------------------+------------------------------+-------------+------------|
+| 2 | aliohjelmakutsun perusrasite       | aliohjelmakutsujen määrä /f/ | $0.97    f$ | -          |
+| 3 | virtuaalimetodikutsu               | virtuaalikutsujen määrä /v/  | $0.64 v$    | $0.05 v$   |
+|---+------------------------------------+------------------------------+-------------+------------|
+| 4 | parametrien välitys                | parametrien määrä /p/        | $0.05 p$    | $0.0085 p$ |
+| 5 | viiteparametrien välitys           | globaalit viitteet /g/       | $0.59 g$    | -          |
+| 6 |                                    | lokaalit viitteet /l/        | $0.27 l$    | $0.32 l$   |
+|---+------------------------------------+------------------------------+-------------+------------|
+| 8 | muistialueen kiinnitys ja irroitus | operaatioiden määrä /n/      | $0.6 n$     | -          |
+|---+------------------------------------+------------------------------+-------------+------------|
+| 9 | datan kopiointi                    | tavujen määrä /b/            | $0.00053 b$ | -          |
 
 #+LATEX: }
 
-* laskelmat :noexport:
-** pinning: c2jgetbytearrayelements/512: 10.07 unpin + 7.57 pin vrt. 3.029158648 -> (73.49)
-   ((10.07 + 7.57) / 73.49) * (3.029158648) = 0.727097000281
-** lokaalit viitteet laskettu niin, että profiileissa koko timesta on vähennetty lukkotimet (prosenteista laskettu)
-** huom! parametrivälitykseen otettu float (maksimi...)
-** tässä 00001 for reference
-0.054311168 C2C
-0.129103460 J2J
-0.774550756 J2C
-1.469809387 C2J
 
-- > c2j 4 real = 1.469809387 - 0.129103460 = 1.340705927
-- > j2c 4 real = 0.774550756 - 0.054311168 = 0.720239588
--- > c2j setstaticfloatfield = 0.42496192
-verrattu 00001:stä ja setstaticfloatfieldiä -> 0.301690140845 olisi jni-perusrasite?
+Malliin ei ole otettu mukaan kaikkia JNI-rajapinnan tarjoamia
+erikoistoimintoja kuten merkkijonojen merkistömuunnoksia, vaan se
+keskittyy perusoperaatioihin: aliohjelmakutsuihin ja taulukkomuotoisen
+datan välitykseen.
 
-0.24 olisi 00002:n perusteella arvioitu virtuaalimetodikutsun overhead. kokeillaan
+Taulukon kohta /JNI-perusrasite/ (1) pitää sisällään JNI-funktion
+kutsumisesta aiheutuvan kustannuksen, virtuaalikoneen tilanmuutoksen, ja
+kaikki muut mahdolliset Dalvikin JNI-toteutuksen kustannukset, jotka ovat
+/yhteisiä kaikille saman kutsusuunnan
+JNI-operaatioille/. Kutsusuunnassa {{{jc}}} ei ole muita operaatioita
+kuin natiivimetodikutsu, joten aliohjelmakutsun perusrasite on mukana
+JNI-perusrasitteessa.
 
-** 1 tilamuutos cj
-   # tulkinta: lineaarinen muutos johtuu 
-    
-   cj: setstaticfloatfield: (17  + 11.65 ) / 71.07 * 0.43 = 0.17
-   cj static call: (00001) : ((4.6 + 4.5) / 72.80) * (1.469 - 0.129) = 0.1675
-   cj opt 5: (get static method id): ((2.05 + 2.01) / 74.4) * (4.074232239) = 0.22
-   cj opt 3: (basic-call-double[] 20): ((0.67 + 0.28) / 70.66) * (15.594008579 - 0.19223075) = 0.21
-   cj opt 2: (00002 eli 0 param) : ((4.07  + 2.74 ) / 74.80) * (2.67512402 - 0.141008667) = 0.23
-   cj opt 4: (basic-call-int 20): ((3.07 + 2.45) / 71.67) * (3.695259945 - 0.193387501) = 0.27
-             (basic-call-int 10): ((3.67 + 2.42) / 73.29) * (3.230370734 - 0.164231502) = 0.26
-   cj opt 6: (get double array region 512): ((2.87 + 2.06) / 70.35) * 3.325020941 = 0.23
+Sovelletaan mallia tapaukseen, jossa suunnassa {{{cj}}} kutsutaan
+~void~-arvon palauttavaa instanssimetodia virtuaalikutsuna kymmenellä
+~long[]~-tyyppisellä parameterilla. C-ohjelmassa kutsu näyttää tältä:
 
-** 1 tilamuutos jc
-   opt 2: (00002 eli 0 param): (5.31 / 67.26) * (0.824651381 - 0.054271917) = 0.06
-   opt 3: (basic-call-double[] 20): (0.27 / 70.22) * (7.515466099 - 0.104840209) = 0.0284942892381
-   opt 4: (basic-call-int 20): (4.71 / 62.13) * (1.025977591 - 0.104758834) = 0.0698364774742
-          (basic-call-int 10): (3.6 / 63.39) * (0.974328006 - 0.079489916) = 0.0508190112636
+#+begin_src c
+(*env)->CallVoidMethod(env, java_counterparts_object, mid, l1, [...] l10);
+#+end_src
 
-** 3 virtuaalimetodi: getvirtualizemethod
-   00002 cj : 
-** 2 metodikutsu cj
-   loput vakio rasitteesta: 
-   static call: (1.469-0.129) - 0.1675 = 1.17
-   00002 eli 0 param: ()
+Tässä on JNI-kutsuja yksi, joka on aliohjelmakutsu ja
+virtuaalikutsu. Parametreja kutsussa on 12 (JNI-kutsun
+~env~-parametria ei lasketa parametrimäärään), joista 11 on tässä
+tapauksessa globaaleja viitteitä. Malliin sijoittamalla saadaan
+seuraavat arvot.
 
-* jatkuu
-
-Ylläoleviin rasitteisiin ei saatu mukaan seuraavia erityistapauksia,
-joiden rasitteet on lisättävä mukaan tapauskohtaisesti.
-
-#+LATEX: {\footnotesize
-#+ATTR_LaTeX: align=rr
-|   | *rasite*                     | *muuttuja*     | *{{{cj}}}* |
-|---+------------------------------+----------------+------------+
-| 1 | muunnos Unicodesta UTF-8:aan | merkkien määrä | 300 n      |
-|---+------------------------------+----------------+------------+
-#+LATEX: }
-
-Taulukon kohta /perusrasite/ (1) pitää sisällään JNI-funktion
-kutsumisesta aiheutuvan rasituksen, virtuaalikoneen tilanmuutoksen, ja
-kaikki muut mahdolliset Dalvikin JNI-toteutuksen rasitteet, jotka ovat
-/yhteisiä kaikille saman kutsusuunnan JNI-operaatioille/.
+| 1 | perusrasite          | $1\cdot0.28$  | 0.28 |   |
+| 2 | aliohjelmakutsu      | $1\cdot0.97$  | 0.97 |   |
+| 3 | virtuaalimetodikutsu | $1\cdot0.65$  | 0.65 |   |
+| 4 | parametrit           | $12\cdot0.05$ |  0.6 |   |
+| 5 | globaalit viitteet   | $11\cdot0.59$ | 6.49 |   |
+|---+----------------------+---------------+------+---|
+|   | yhteensä             |               | 8.99 |   |
 
 Mallista huomataan, että ehdottomasti suurin osa JNI-operaatioiden
 kustannuksista syntyy muistinhallintaan liittyvistä operaatioista:
 viitteiden tallentamisesta viitetaulukkorakenteeseen, niiden
 noutamisesta sieltä sekä muistialueiden kiinnikytkemisestä ja
-kytkemisen poistamisesta. Melko pienillä syötteillä nämä kustannukset
-selvästi ylittävät koko syötteen kopioimisen
+kytkemisen poistamisesta. Esimerkiksi melko pienillä syötteillä nämä
+kustannukset selvästi ylittävät koko syötteen kopioimisen
 kustannukset. Muistinhallintaan liittyy välillisesti myös kaikkien
 JNI-operaatioiden suorittama virtuaalikoneen tilamuutos.
 
@@ -135,7 +107,7 @@ globaalien viitteiden muodossa sekä välittäen ylipäätään
 lukumääräisesti mahdollisimman vähän Javan muistinhallinnan piirissä
 olevaan kekoon allokoituja olioita natiivikomponentille.
 
-* Suorituskykyrasitteiden välttäminen datan siirrossa
+* Suorituskykyrasitteiden välttäminen datan siirrossa :noexport:
 
 Lopuksi edellä esitettyjä tuloksia tarkastellaan astetta korkeammasta
 näkökulmasta. Oletetaan, että JNI:n käyttötarkoitus sovelluksessa on
@@ -185,7 +157,7 @@ Tuloksen välittämiseen suunnassa {{{cj}}} käsitellään seuraavat
 vaihtoehdot.
 
 1. Natiivikomponentti kutsuu Java-metodia /n/ kertaa ~jbyte~-tyyppisellä parametrilla.
-2. Natiivikomponentti kirjoittaa tuloksen Java-taulukon
+2. Natiivikomponentti kirjoittaa tuloksen suoraan Java-taulukon
    muistialueeseen (2a) tai kopioi sen Java-taulukkoon
    JNI-operaatiolla \verb|Set|\tau{}\verb|ArrayRegion| (2b).
 3. Natiivikomponentti luo suoran tavupuskurin natiivimuistialueen
@@ -197,7 +169,7 @@ vaihtoehdot.
 |                    |           |
 
 
-* sunnitelman kohdat
+* sunnitelman kohdat :noexport:
 ** JNI-kuormitusmalli
     4 sivua\newline 17. 3. 2014
 
