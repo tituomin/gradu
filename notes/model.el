@@ -7,7 +7,7 @@
        (* 0.64 virtual-calls)
        (* 0.05 parameters) ; test .07 -> .1
        (* 0.59 globals) ; test 52 -> 58
-       (* 0.52 0.45 locals)
+       (* 0.27 locals)
        (*    2 pinning)
        (* 0.00053 bytes)))
    ((equal "jc" direction)
