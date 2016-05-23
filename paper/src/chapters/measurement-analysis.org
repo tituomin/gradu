@@ -61,6 +61,7 @@ itsenäiseen käyttäytymiseen erillään kokonaisuudesta.
 1.469809387 C2J
 
 - > c2j 4 real = 1.469809387 - 0.129103460 = 1.340705927
+- > j2c 4 real = 0.774550756 - 0.054311168 = 0.720239588
 -- > c2j setstaticfloatfield = 0.42496192
 verrattu 00001:stä ja setstaticfloatfieldiä -> 0.301690140845 olisi jni-perusrasite?
 
