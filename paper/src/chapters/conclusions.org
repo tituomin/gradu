@@ -16,11 +16,81 @@ suorituskykyrasitteita verrattuna tavallisiin, samankielisen
 komponentin sisällä tehtäviin aliohjelmakutsuihin ja
 tietorakenteita käsitteleviin operaatioihin.
 
-Tutkielmassa tutkittiin vasteaika- ja kutsuprofiilimittauksilla
-Androidin Dalvik-virtuaalikoneen JNI-toteutuksen ominaispiirteitä
-suorituskyvyn näkökulmasta. Virtuaalikoneen käyttäytymisestä saatiin
-erotettua lineaarisia riippuvuuksia, jotka paljastivat että
-virtuaalikoneen muistinhallinta aiheuttaa Dalvikin JNI-rajapinnan
-käytön merkittävimmät rasitteet. Jokaisessa rajapinnan operaatiossa
-on myös oleellinen pohjarasite
+Tutkielmassa tarkasteltiin vasteaika- ja kutsuprofiilimittausten
+avulla Androidin Dalvik-virtuaalikoneen JNI-toteutuksen
+ominaispiirteitä suorituskyvyn näkökulmasta. Tutkielman mittauksissa
+yhdistettiin kahta menetelmää. Toisaalta käytettiin
+vasteaikamittauksia, jossa mitattavia JNI-operaatiota toistettiin
+silmukassa ja mitattiin suorituksen kokonaisvasteaika. Toisaalta
+samoja operaatioita tutkittiin näytteenottomenetelmällä, jossa
+prosessorin tilasta ja erityisesti kutsupinosta otetaan tasaisin
+väliajoin näytteitä, joista muodostetaan koko mittausjakson ajalta
+/kutsuprofiili/. Menetelmiä yhdistelemällä saatiin selville paitsi
+riippuvuuksia eri parametrien ja kokonaisvasteajan välillä, myös
+Dalvik-virtuaalikoneen sisäisen toteutuksen osat, joiden kesken
+suoritusaika jakautui.
 
+Virtuaalikoneen käyttäytymisestä saatiin erotettua lineaarisia
+riippuvuuksia, jotka paljastivat että virtuaalikoneen muistinhallinta
+aiheuttaa Dalvikin JNI-rajapinnan käytön merkittävimmät
+rasitteet. Jokaisessa rajapinnan operaatiossa ja jokaisessa sen kautta
+tehdyssä aliohjelmakutsussa on myös merkittävä pohjarasite, joten
+kutsujen määrän kasvaessa vasteaika suurenee nopeasti.
+
+Muistinhallinnan suurimmat rasitteet johtuvat siitä, että Dalvik pitää
+kirjaa natiivikomponenteille välitetyistä epäsuorista viitteistä
+tarkoitusta varten rakennetun taulutietorakenteen avulla. Tämä on
+välttämätöntä, jotta virtuaalikoneen muistinhallinnalla säilyisi tieto
+Java-suoritusympäristön ulkopuolelle välitetyistä olioviitteistä
+tilanteessa, jossa roskienkeruu ja muistinhallinnan operaatiot voivat
+siirrellä olioita muistiosoitteesta toiseen. Jos taas
+natiivikomponentti käsittelee Java-taulukon tai merkkijonon
+muistialuetta suoraan, täytyy kyseiset oliot kiinnikytkeä, mikä estää
+niiden siirtämisen muistissa. Tästäkin operaatiosta syntyy
+kustannuksia.
+
+Tutkielman mittaukset tehtiin edellisen sukupolven
+Android-virtuaalikoneessa Dalvikissa. Käytetty metodologia ja suurin
+osa mittausohjelmistosta on kuitenkin sellaisenaan siirrettävissä
+Androidin uudemmalle ART-virtuaalikoneelle. Mittausten toistaminen eri
+ympäristöversioissa ja laitteissa lisäisi niiden
+yleistettävyyttä. Vaikka ART-virtuaalikoneen sisäinen toteutus saattaa
+erota Dalvikin toteutuksesta, samat yleiset periaatteet pätevät: suuri
+osa JNI-rajapinnan rasitteista johtuu kaikissa virtuaalikoneissa hyvin
+todennäköisesti automaattisen muistinhallinnan piirissä olevien
+komponenttien yhdistämisestä hallitusti natiivikomponenttiin, jossa
+muistinhallinta on manuaalista.
+
+Muita mielenkiintoisia kehityskohteita olisi varioida ja tutkia
+kattavammin erilaisia JNI-rajapinnan parametrivaihtoehtoja:
+erityisesti lokaalien ja globaalien viitteiden erottelu osoittautui
+hyvin oleelliseksi tekijäksi, jota tutkielman mittauksissa ei
+riittävästi tutkittu. Toinen selkeä puute mittausmenetelmissä oli
+keskittyminen alkeisoperaatioiden mittaamiseen. Realistisemman ja
+kokonaisvaltaisemman kuvan rajapinnan käyttäytymisestä saisi, jos
+mittauskohteisiin lisättäisiin edustavia korkeamman tason
+käyttötapauksia, jotka edustaisivat paremmin todellisten sovellusten
+tarpeita ja joissa samassa benchmarkissa käytettäisiin useita
+rajapinnan alkeisoperaatioita. Esimerkiksi suurten datamäärien
+välittäminen rajapinnan välityksellä komponentista toiseen taulukko-
+tai tavupuskuritietorakenteiden avulla olisi mielekäs tutkimuskohde.
+Alkeisoperaatioiden tapauksessa ongelmaksi jää, että kokonaisen
+ohjelman käyttäytyminen ei palaudu tyhjentävästi siinä käytettyjen
+osien käyttäytymiseen, mikä johtuu esimerkiksi prosessorin välimuistin
+ja ennustavien heuristiikkojen kaltaisista vaikeasti ennakoitavista
+tekijöistä.
+
+Tutkielmasta saatiin kuitenkin oleellista tietoa JNI-rajapinnan
+käyttäytymisestä, mikä tiivistettiin yksinkertaiseen lineaariseen
+malliin. Mallia voisi hyödyntää esimerkiksi ohjelmistoprojektissa,
+jossa rajapinnan käyttöä harkitaan suorituskykyedun
+tavoittelemiseksi. Vaikka konkreettisen Android-sovelluksen lopullinen
+suorituskykykäyttäytyminen voidaan havaita vasta sovellusta itseään
+tutkimalla, voidaan tutkielman mallin avulla saada jonkinlainen arvio
+rajapinnan pullonkauloista eri
+arkkitehtuurivaihtoehdoissa. Erityisesti JNI-rajapinnan patologisten
+käyttötapausten välttämiseen saatiin lisävalaistusta. Sovelluksen
+hyvää suorituskykyä edistää rajapintakutsujen määrän ja rajapinnan
+kautta välitettyjen viiteparametrien määrän rajoittaminen sekä jonkin
+verran myös natiivikomponentista Java-komponenttiin suuntautuvien
+metodikutsujen välttäminen.

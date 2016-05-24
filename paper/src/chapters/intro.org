@@ -41,14 +41,13 @@ kannalta vähintään yhtä oleellinen tekijä kuin mikrotason
 optimoinnit. Toki suorituskyvyn huomioiminen varhaisessa
 kehitysvaiheessa ei estä myöhäisen vaiheen lisäoptimointia.
 
-Tutkielmassa keskitytään siihen, mitä erityisvaatimuksia
-/monikielinen/ Android-ohjelmointi asettaa sovelluksen
-arkkitehtuurille suorituskykynäkökohdista. Java-kielen rinnalla
-Androidia on mahdollista ohjelmoida myös käyttäen kohdealustana
-laitteiston omaa natiivisuoritysympäristöä. Tällöin ohjelmointi
-tapahtuu käytännössä C- tai C++-kielillä, joista ohjelma käännetään
-laitteiston prosessorin konekielelle, tällä hetkellä yleensä
-ARM-konekielelle.
+Tutkielmassa keskitytään siihen, mitä suorituskykyrasitteita
+/monikielinen/ Android-ohjelmointi aiheuttaa
+sovellukselle. Java-kielen rinnalla Androidia on mahdollista
+ohjelmoida myös käyttäen kohdealustana laitteiston omaa
+natiivisuoritysympäristöä. Tällöin ohjelmointi tapahtuu käytännössä C-
+tai C++-kielillä, joista ohjelma käännetään laitteiston prosessorin
+konekielelle, tällä hetkellä yleensä ARM-konekielelle.
 
 Menetelmän mahdollistaa Java-kielen /Java Native Interface/ -standardi
 (/JNI/), joka on toteutettu myös osana
@@ -87,10 +86,12 @@ työkaluja. Lisäksi lähteiden perusteella esitellään
 Android-ohjelmistoalustan rakennetta suorituskyvyn näkökulmasta,
 keskittyen Dalvik-virtuaalikoneeseen ja sen
 JNI-toteutukseen. Tutkielman toinen osa soveltaa ensimmäisen osan
-metodeja ja käsitteitä Dalvikin JNI-toteutuksen mittaamiseen ja
-mallintamiseen. Analyysin perusteella tästä johdetaan yleisiä
-suosituksia Androidin natiivikehityksessä tehokkaalle
-sovellusarkkitehtuurille.
+metodeja ja käsitteitä Dalvikin JNI-toteutuksen
+mittaamiseen. Toteutusta mitataan kahdella toisiaan tukevalla
+menetelmällä, joiden tuloksista koostetaan yksinkertainen malli
+JNI-rajapinnan aiheuttaman ylimääräisen vasteajan keskeisimmistä
+osatekijöistä. Mallin avulla voi saada karkean suuruusluokka-arvion
+rajapinnan käyttämisen kustannuksista erilaisissa tilanteissa.
 
 # todo: poista esimerkkisovellus? 
 
