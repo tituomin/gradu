@@ -1,5 +1,5 @@
 #+AUTHOR: Timo Tuominen
-#+TITLE: Androidin Dalvik-virtuaalikoneen Java-natiivirajapinnan suorituskyky
+#+TITLE: Java-natiivirajapinnan suorituskyky\newline{}Androidin Dalvik-virtuaalikoneessa
 #+LANGUAGE: fi
 #+LaTeX_CLASS: gradu
 #+LaTeX_CLASS_OPTIONS: [gradu]
@@ -25,7 +25,7 @@
 #+MACRO: rotated_plot {{{rotated_plot_internal(47d22819-625b-43f6-8e9f-afeb5066b758,$1)}}}
 
 #+MACRO: permu $1\nbsp{}\rightarrow\nbsp{}$2
-#+MACRO: TODO \textcolor{red}{TODO}
+#+MACRO: TODO \textcolor{red}{TEHTÄVÄ}
 
 #+MACRO: cj C\to{}Java
 #+MACRO: jc Java\to{}C

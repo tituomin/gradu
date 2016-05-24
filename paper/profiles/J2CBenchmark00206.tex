@@ -1,0 +1,381 @@
+
+\lstset{
+  basicstyle=\linespread{0}\rmfamily\tiny,
+  escapeinside={(*@}{@*)},
+  columns=fixed,
+  basewidth=0.5em,
+  mathescape,
+  language={},
+  breaklines=false,breakatwhitespace=false,
+  moredelim=[is][\underbar]{<<@<<}{>>@>>}
+}
+\begin{lstlisting}[caption=20 viiteparametria Java$\to$C , label=profile:J2CBenchmark00206, numberbychapter=true, frame=lines, float, floatplacement=t]
+
+   |$\underline{\phantom{0}68.69\%}$ nativebenchmark  libdvm.so           [.] dvmInterpret(Thread*, Method const*, JValue*)
+
+         |
+(*@\vspace{-0.15cm}@*)
+         |
+(*@\vspace{-0.15cm}@*)
+        | dvmInterpret(Thread*, Method const*, JValue*)
+
+            |
+(*@\vspace{-0.15cm}@*)
+            |$\underline{\phantom{0}64.65\%}$ dalvik_mterp
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |$\underline{\phantom{0}48.73\%}$ dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |$\underline{\phantom{0}34.43\%}$ addLocalReference(Thread*, Object*)
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |$\underline{\phantom{00}7.44\%}$ IndirectRefTable::add(unsigned int, Object*)
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |        $\underline{\phantom{00}0.03\%}$ 0xc003be08
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |                |       |       |       |               0xc003503c
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |                |       |       |       |               0xc006fed0
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |                |       |       |       |               0xc006faf8
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |        $\underline{\phantom{00}0.26\%}$ 0xc003be08
+(*@\vspace{-0.15cm}@*)
+            |       |       |                |       |       |               0xc003503c
+(*@\vspace{-0.15cm}@*)
+            |       |       |                |       |       |               0xc006fed0
+(*@\vspace{-0.15cm}@*)
+            |       |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |       |               |$\underline{\phantom{00}0.20\%}$ 0xc006faf8
+(*@\vspace{-0.15cm}@*)
+            |       |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |       |               |$\underline{\phantom{00}0.03\%}$ 0xc006fb60
+(*@\vspace{-0.15cm}@*)
+            |       |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |       |                $\underline{\phantom{00}0.03\%}$ 0xc006fb38
+(*@\vspace{-0.15cm}@*)
+            |       |       |                        |       |       |                       0xc00b59a0
+(*@\vspace{-0.15cm}@*)
+            |       |       |                        |       |       |                       0xc00b55a4
+(*@\vspace{-0.15cm}@*)
+            |       |       |                        |       |       |                       0xc00b4264
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |$\underline{\phantom{00}0.64\%}$ dvmChangeStatus(Thread*, ThreadStatus)
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |$\underline{\phantom{00}0.10\%}$ android_atomic_release_store
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |        $\underline{\phantom{00}0.03\%}$ android_atomic_acquire_store
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |$\underline{\phantom{00}0.10\%}$ 0xc003c160
+(*@\vspace{-0.15cm}@*)
+            |       |       |        |       |       |       0xc058209c
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |$\underline{\phantom{00}0.05\%}$ 0xc0581768
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |        $\underline{\phantom{00}0.05\%}$ 0xc003c0c4
+(*@\vspace{-0.15cm}@*)
+            |       |       |                |       |       |               0xc009016c
+(*@\vspace{-0.15cm}@*)
+            |       |       |                |       |       |               0xc0090138
+(*@\vspace{-0.15cm}@*)
+            |       |       |                |       |       |               0xc008fa9c
+(*@\vspace{-0.15cm}@*)
+            |       |       |                |       |       |               0xc0042f64
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |       |
+(*@\vspace{-0.15cm}@*)
+            |       |        $\underline{\phantom{00}0.07\%}$ 0xc003be08
+(*@\vspace{-0.15cm}@*)
+            |       |                |       |               0xc003503c
+(*@\vspace{-0.15cm}@*)
+            |       |                |       |               0xc006fed0
+(*@\vspace{-0.15cm}@*)
+            |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |               |$\underline{\phantom{00}0.03\%}$ 0xc006faf8
+(*@\vspace{-0.15cm}@*)
+            |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |               |
+(*@\vspace{-0.15cm}@*)
+            |       |                $\underline{\phantom{00}0.03\%}$ 0xc006fb38
+(*@\vspace{-0.15cm}@*)
+            |       |                        |       |                       0xc0077d60
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |        $\underline{\phantom{00}0.21\%}$ Dalvik_java_lang_VMThread_isInterrupted(unsigned int const*, JValue*)
+(*@\vspace{-0.15cm}@*)
+            |                |               dvmLockThreadList(Thread*)
+(*@\vspace{-0.15cm}@*)
+            |                |               dvmLockMutex(pthread_mutex_t*)
+(*@\vspace{-0.15cm}@*)
+            |                |               pthread_mutex_lock
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |$\underline{\phantom{00}1.45\%}$ common_selectTrace
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |       |
+(*@\vspace{-0.15cm}@*)
+            |        $\underline{\phantom{00}0.03\%}$ dvmJitCheckTraceRequest
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |$\underline{\phantom{00}0.07\%}$ 0xc003be08
+
+                   | 0xc003503c
+
+                   | 0xc006fed0
+
+                   | 0xc006faf8
+
+| 
+
+
+
+\end{lstlisting}
+

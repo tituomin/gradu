@@ -204,9 +204,9 @@ saadaan kuitenkin jotain käsitystä nopeutuksen suuruusluokasta, joka
 paikallisilla viitteillä saavutettaisiin: tämän benchmarkin
 kokonaissuoritusajasta yli kolmasosa kuluu lukitukseen.
 
-# {{{profile(C2JBenchmark00146)}}}
+{{{profile(C2JBenchmark00146)}}}
 
-Listauksen \ref{src:C2JBenchmark00146} kutsuprofiilissa kutsusuunta on
+Listauksen \ref{profile:C2JBenchmark00146} kutsuprofiilissa kutsusuunta on
 {{{cj}}} ja kutsussa on kaksikymmentä
 ~int~-parametria. Profiilissa näkyy edelleen
 \path{dvmDecodeIndirectRef} (\ding{202}) 13.42% suoritusajalla ---
@@ -252,13 +252,17 @@ ennen roskien keruuta).
 
 Viitteidenkäsittelyn lisärasitteesta Dalvikissa voi päästä eroon
 käyttämällä pelkästään primitiiviparametreja ja kutsumalla Java-luokan
-/staattista metodia/. Profiilissa \ref{profile:C2JBenchmark00001}
-kutsuttu metodi on staattinen, eikä \path{dvmDecodeIndirectRef}-kutsua
-näy. Kun staattista metodia kutsutaan, välitetään JNI-rajapinnan yli
-\path{jclass}-viite, mutta Dalvikissa ei tällaisesta luokkaviitteestä siis
-pidetä kirjaa viitetaulukon avulla. Rasite on 500 000 kierroksella
-1.49 sekuntia, kun vastaavalla dynaamisella kutsulla se on 2.68
-sekuntia, mistä suurin osa selittyy juuri kutsujen
+/staattista metodia/. 
+
+{{{profile(C2JBenchmark00001)}}}
+
+Profiilissa \ref{profile:C2JBenchmark00001} kutsuttu metodi on
+staattinen, eikä \path{dvmDecodeIndirectRef}-kutsua näy. Kun
+staattista metodia kutsutaan, välitetään JNI-rajapinnan yli
+\path{jclass}-viite, mutta Dalvikissa ei tällaisesta luokkaviitteestä
+siis pidetä kirjaa viitetaulukon avulla. Rasite on 500 000
+kierroksella 1.49 sekuntia, kun vastaavalla dynaamisella kutsulla se
+on 2.68 sekuntia, mistä suurin osa selittyy juuri kutsujen
 \path{dvmDecodeIndirectRef} sekä \path{dvmGetVirtualizedMethod}
 poistumisella. Mittauksissa ei ole suoritettu kattavasti staattisia
 metodikutsuja vaihtelevilla parametrimäärillä, vaan ainoastaan
@@ -303,6 +307,8 @@ suoritustilan muuttavaa \path{dvmChangeStatus}-metodia kutsutaan
 suoraan. Samoin \path{callPrep}-funktio puuttuu. Näiden
 toteutusyksityiskohtien tarkempi analyysi jätetään tässä tekemättä.
 
+{{{profile(J2CBenchmark00001)}}}
+
 Kuvasta \ref{fig:basic-call-Object-fit} nähdään myös, että
 viiteparametrien määrän lisääntyessä {{{jc}}}-suunnan kuvaajan
 kulmakerroin on loivempi. Tästä voisi päätellä, että viitteiden
@@ -317,7 +323,7 @@ natiivikomponentin on erikseen luotava globaalit viitteet, jos aikoo
 käyttää viitteitä yksittäisen natiivimetodikutsun elinkaaren
 ulkopuolella.
 
-# {{{profile(J2CBenchmark00206)}}}
+{{{profile(J2CBenchmark00206)}}}
 \newpage
 
 ** jni-totetutus: dalvik: source code kommentteja                                         :noexport:
@@ -557,6 +563,8 @@ lineaarinen.
 
 # TODO Lisää prosentit alle
 
+{{{profile(C2JReadUnicode-512)}}}
+
 Kuitenkin noin alle 1500 merkin pituisilla merkkijonoilla merkkijonon
 kopioiminen \path{GetStringRegion}-metodilla on nopeampaa kuin
 osoitteen saaminen merkkijonon muistialueelle. Osoitinoperaation
@@ -572,6 +580,8 @@ kokonaisajasta vain 0.7%. Muistinhallintaan liittyvät rasitteet
 tavallaan myös tuplaantuvat, koska vastaavat toimet tehdään sekä
 noudettaessa että vapautettaessa viite merkkijonon sisältöön, mikä
 näkyy myös kutsuprofiilissa.
+
+{{{profile(C2JCopyUnicode-512)}}}
 
 Kopioivan Unicode-operaation profiilissa
 \ref{profile:C2JCopyUnicode-512} näkyy myös globaalin
@@ -734,7 +744,7 @@ jotka nähtiin aiemminkin käsitellyissä JNI-kutsuissa.
 | \path{NewDirectByteBuffer}      | 300          | 0.007909092 |         13.2 |
 
 \path{NewDirectByteBuffer}-kutsuprofiili listauksessa
-\ref{profile:NewDirectBuffer-512} näyttää lähes yksinomaan
+\ref{profile:C2JNewDirectBuffer-512} näyttää lähes yksinomaan
 roskienkeruuseen liittyviä metodikutsuja alkaen metodista
 \path{dvmCollectGarbage} kohdassa \ding{202}. {{{TODO}}} Tämä on
 mittaustekninen ongelma, joka tekee kaikkien muistia varaavien
@@ -744,9 +754,9 @@ benchmarkin suoritus on saatu mitattua ilman roskienkeruuta
 yhtäjaksoisesti useiden sekuntien jaksolta, jonka aikana
 suhteellisesti suurin osa ajasta vietetään roskienkeruussa. Allokoivia
 operaatioita ei voi ajaa kuin lyhyen ajan ennen kuin muistia täytyy
-vapauttaa, jotta se ei loppuisi. Kutsuprofiileja voi toki rajallisesti
-hyödyntää tutkimalla siitä roskienkeruun dominoiman osuuden
-alapuolelle jääviä osia.
+vapauttaa, jotta se ei loppuisi.
+
+{{{profile(C2JNewDirectBuffer-512)}}}
 
 {{{rotated_plot(special-calls-non-dynamic)}}}
 

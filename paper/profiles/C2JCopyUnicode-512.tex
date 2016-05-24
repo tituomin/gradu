@@ -1,0 +1,304 @@
+
+\lstset{
+  basicstyle=\linespread{0}\rmfamily\tiny,
+  escapeinside={(*@}{@*)},
+  columns=fixed,
+  basewidth=0.5em,
+  language={},
+  mathescape,
+  breaklines=false,breakatwhitespace=false,
+  moredelim=[is][\underbar]{<<@<<}{>>@>>}
+}
+\begin{lstlisting}[caption=Unicode-merkkijonon kopiointi C$\to$Java, label=profile:C2JCopyUnicode-512, numberbychapter=true, frame=lines, float, floatplacement=t]
+
+   |$\underline{\phantom{0}70.31\%}$ nativebenchmark  libdvm.so           [.] dvmPlatformInvoke
+
+         |
+(*@\vspace{-0.15cm}@*)
+         |
+(*@\vspace{-0.15cm}@*)
+        | dvmPlatformInvoke
+
+            |
+(*@\vspace{-0.15cm}@*)
+            |
+(*@\vspace{-0.15cm}@*)
+            |$\underline{\phantom{0}66.92\%}$ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JCopyUnicode_runInternal
+
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |$\underline{\phantom{0}40.10\%}$ GetStringRegion(_JNIEnv*, _jstring*, int, int, unsigned short*)
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |$\underline{\phantom{0}20.26\%}$ dvmDecodeIndirectRef(Thread*, _jobject*)
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |$\underline{\phantom{00}5.93\%}$ ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        $\underline{\phantom{00}5.28\%}$ pthread_mutex_lock
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |$\underline{\phantom{00}1.91\%}$ pthread_mutex_lock_impl
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                $\underline{\phantom{00}0.03\%}$ 0xc003be08
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        |       |       |                       0xc003503c
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        |       |       |                       0xc006fed0
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        |       |       |                       0xc006faf8
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |$\underline{\phantom{00}4.07\%}$ ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        $\underline{\phantom{00}3.64\%}$ pthread_mutex_unlock
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |$\underline{\phantom{00}1.72\%}$ pthread_mutex_unlock_impl
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |        $\underline{\phantom{00}0.03\%}$ 0xc003be08
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |                |       |       |               |               0xc003503c
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |                |       |       |               |               0xc006fed0
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |                |       |       |               |               0xc006faf8
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |$\underline{\phantom{00}0.03\%}$ 0xc003be08
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |        |       |       |               |       0xc003503c
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |        |       |       |               |       0xc006fed0
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |        |       |       |               |       0xc006faf8
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                $\underline{\phantom{00}0.03\%}$ 0xc003be08
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        |       |       |                       0xc003503c
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        |       |       |                       0xc006fed0
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        |       |       |                       0xc006faf8
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |$\underline{\phantom{00}2.71\%}$ IndirectRefTable::get(void*) const
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        $\underline{\phantom{00}0.03\%}$ 0xc003be08
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                |       |       |               0xc003503c
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                |       |       |               0xc006fed0
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                |       |       |               0xc006faf8
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |        $\underline{\phantom{00}0.14\%}$ 0xc003be08
+(*@\vspace{-0.15cm}@*)
+                    |       |                |       |               0xc003503c
+(*@\vspace{-0.15cm}@*)
+                    |       |                |       |               0xc006fed0
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |$\underline{\phantom{00}0.06\%}$ 0xc006faf8
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |$\underline{\phantom{00}0.05\%}$ 0xc006faf4
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |                $\underline{\phantom{00}0.03\%}$ 0xc006fb38
+(*@\vspace{-0.15cm}@*)
+                    |       |                        |       |                       0xc00b5988
+(*@\vspace{-0.15cm}@*)
+                    |       |                        |       |                       0xc00b5844
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |$\underline{\phantom{00}4.20\%}$ ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |        $\underline{\phantom{00}1.34\%}$ dvmChangeStatus(Thread*, ThreadStatus)
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |                $\underline{\phantom{00}0.83\%}$ android_atomic_acquire_store
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                        $\underline{\phantom{00}0.16\%}$ android_memory_barrier
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |$\underline{\phantom{00}3.22\%}$ ScopedJniThreadState::~ScopedJniThreadState()
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |$\underline{\phantom{00}1.89\%}$ dvmChangeStatus(Thread*, ThreadStatus)
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        $\underline{\phantom{00}0.71\%}$ android_atomic_release_store
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                $\underline{\phantom{00}0.16\%}$ android_memory_barrier
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |        $\underline{\phantom{00}0.03\%}$ 0xc003c160
+(*@\vspace{-0.15cm}@*)
+                    |       |                |       |               0xc058209c
+(*@\vspace{-0.15cm}@*)
+                    |       |                |       |               0xc0581768
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |$\underline{\phantom{00}1.85\%}$ StringObject::chars() const
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |$\underline{\phantom{00}0.29\%}$ StringObject::length() const
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |        $\underline{\phantom{00}0.03\%}$ 0xc003be08
+(*@\vspace{-0.15cm}@*)
+                    |                |               0xc003503c
+(*@\vspace{-0.15cm}@*)
+                    |                |               0xc006fed0
+(*@\vspace{-0.15cm}@*)
+                    |                |               0xc006faf8
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |$\underline{\phantom{00}0.16\%}$ 0xc003be08
+(*@\vspace{-0.15cm}@*)
+                    |        |       0xc003503c
+(*@\vspace{-0.15cm}@*)
+                    |        |       0xc006fed0
+(*@\vspace{-0.15cm}@*)
+                    |        |       0xc006faf8
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |$\underline{\phantom{00}0.03\%}$ 0xc003c160
+(*@\vspace{-0.15cm}@*)
+                    |        |       0xc058209c
+(*@\vspace{-0.15cm}@*)
+                    |        |       0xc0581768
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |$\underline{\phantom{00}0.03\%}$ PopLocalFrame(_JNIEnv*, _jobject*)
+
+| 
+
+
+   |$\underline{\phantom{0}22.08\%}$ nativebenchmark  libc.so             [.] memcpy
+
+         |
+(*@\vspace{-0.15cm}@*)
+         |
+(*@\vspace{-0.15cm}@*)
+        | 0x535d7d1c
+
+           | dvmPlatformInvoke
+
+           | Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JCopyUnicode_runInternal
+
+| 
+
+
+
+\end{lstlisting}
+

@@ -1,5 +1,7 @@
 Gradu: duunit
 
+* # extra tillbehör   1.0.0-rc1/C2JNewDirectBuffer/512
+* TODO profiilit \begin{lstlisting}[caption=Staattinen metodi C$\to$Java , label=profile:C2JBenchmark00001, numberbychapter=true, frame=lines, float, floatplacement=t]
 * TODO <2016-05-23 ma 19:00> nonvirtual method callista on oma benchmark, jos haluaa tarkistaa luvut
 * TODO <2016-05-22 su 19:10> paluuarvoja ei pahemmin kattellao
 * TODO <2016-05-21 la 18:27> HUOM! vertaa static j2c, c2j !!
