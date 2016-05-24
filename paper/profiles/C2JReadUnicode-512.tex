@@ -1,24 +1,25 @@
-
+\newpage
 \lstset{
   basicstyle=\linespread{0}\rmfamily\tiny,
   escapeinside={(*@}{@*)},
   columns=fixed,
   basewidth=0.5em,
   mathescape,
+  language={},
   breaklines=false,breakatwhitespace=false,
   moredelim=[is][\underbar]{<<@<<}{>>@>>}
 }
-\begin{lstlisting}[caption=Unicode-merkkijonon osoitinoperaatio, label=profile:C2JReadUnicode-512, numberbychapter=true, frame=lines, float, floatplacement=t]
+\begin{lstlisting}[caption=Unicode-merkkijonon osoitinoperaatio, label=profile:C2JReadUnicode-512, numberbychapter=true, frame=lines]
 
    |$\underline{\phantom{0}69.25\%}$ dvmPlatformInvoke
 
-         |
+            |
 (*@\vspace{-0.15cm}@*)
-         |
+            |
 (*@\vspace{-0.15cm}@*)
-        | 0x536d7d1c
+            | 0x536d7d1c
 
-           | dvmPlatformInvoke
+            | dvmPlatformInvoke
 
             |
 (*@\vspace{-0.15cm}@*)
@@ -26,510 +27,1022 @@
 (*@\vspace{-0.15cm}@*)
             |$\underline{\phantom{0}66.81\%}$ Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JReadUnicode_runInternal
 (*@\vspace{-0.15cm}@*)
-            |       |
+                    |
 (*@\vspace{-0.15cm}@*)
-            |       |
+                    |
 (*@\vspace{-0.15cm}@*)
-            |       |$\underline{\phantom{0}34.09\%}$ GetStringChars(_JNIEnv*, _jstring*, unsigned char*)
+                    |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |
 (*@\vspace{-0.15cm}@*)
-            |       |       |$\underline{\phantom{0}12.20\%}$ dvmDecodeIndirectRef(Thread*, _jobject*)
+                    |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |$\underline{\phantom{0}34.09\%}$ GetStringChars(_JNIEnv*, _jstring*, unsigned char*)
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |$\underline{\phantom{00}3.39\%}$ ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |        $\underline{\phantom{00}3.16\%}$ pthread_mutex_unlock
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |$\underline{\phantom{00}1.97\%}$ pthread_mutex_unlock_impl
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |       |
+                    |       |$\underline{\phantom{0}12.20\%}$ dvmDecodeIndirectRef(Thread*, _jobject*)
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |        $\underline{\phantom{00}0.03\%}$ 0xc003be08
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |                |       |       |       |               |               0xc003503c
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |                |       |       |       |               |               0xc006fed0
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |                |       |       |       |               |               0xc006faf8
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                $\underline{\phantom{00}0.03\%}$ 0xc003be08
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                        |       |       |       |                       0xc003503c
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                        |       |       |       |                       0xc006fed0
+                    |       |       |$\underline{\phantom{00}3.39\%}$ ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                        |       |       |       |                       0xc006faf8
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |$\underline{\phantom{00}2.80\%}$ ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |        $\underline{\phantom{00}2.31\%}$ pthread_mutex_lock
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |       |        $\underline{\phantom{00}3.16\%}$ pthread_mutex_unlock
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                $\underline{\phantom{00}1.09\%}$ pthread_mutex_lock_impl
+                    |       |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |        $\underline{\phantom{00}0.96\%}$ IndirectRefTable::get(void*) const
+                    |       |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |       |               |$\underline{\phantom{00}1.97\%}$ pthread_mutex_unlock_impl
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |       |                       
 (*@\vspace{-0.15cm}@*)
-            |       |       |$\underline{\phantom{00}8.44\%}$ pinPrimitiveArray(ArrayObject*)
+                    |       |       |                       
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |       |                       
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |       |                       
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |$\underline{\phantom{00}2.54\%}$ ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+                    |       |       |                       
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |       |               
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |       |               
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |        $\underline{\phantom{00}2.27\%}$ pthread_mutex_unlock
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |       |$\underline{\phantom{00}2.80\%}$ ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                $\underline{\phantom{00}1.25\%}$ pthread_mutex_unlock_impl
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |        $\underline{\phantom{00}2.12\%}$ ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |$\underline{\phantom{00}1.75\%}$ pthread_mutex_lock
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |       |
+                    |       |       |        $\underline{\phantom{00}2.31\%}$ pthread_mutex_lock
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |       |
+                    |       |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |        $\underline{\phantom{00}0.98\%}$ pthread_mutex_lock_impl
+                    |       |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |               |
+                    |       |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |               |
+                    |       |       |                $\underline{\phantom{00}1.09\%}$ pthread_mutex_lock_impl
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |                $\underline{\phantom{00}0.03\%}$ 0xc003be08
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |                        |       |       |               |                       0xc003503c
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |                        |       |       |               |                       0xc006fed0
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |                        |       |       |               |                       0xc006faf8
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                $\underline{\phantom{00}0.03\%}$ 0xc003be08
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                        |       |       |                       0xc003503c
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                        |       |       |                       0xc006fed0
+                    |       |        $\underline{\phantom{00}0.96\%}$ IndirectRefTable::get(void*) const
 (*@\vspace{-0.15cm}@*)
-            |       |       |                        |       |       |                       0xc006faf8
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |$\underline{\phantom{00}4.73\%}$ ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |$\underline{\phantom{00}2.77\%}$ dvmChangeStatus(Thread*, ThreadStatus)
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |$\underline{\phantom{00}8.44\%}$ pinPrimitiveArray(ArrayObject*)
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |        $\underline{\phantom{00}1.90\%}$ android_atomic_acquire_store
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                $\underline{\phantom{00}0.03\%}$ android_memory_barrier
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |        $\underline{\phantom{00}0.03\%}$ 0xc003be08
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                |       |       |               0xc003503c
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                |       |       |               0xc006fed0
+                    |       |       |$\underline{\phantom{00}2.54\%}$ ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
 (*@\vspace{-0.15cm}@*)
-            |       |       |                |       |       |               0xc006faf8
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |$\underline{\phantom{00}2.23\%}$ ScopedJniThreadState::~ScopedJniThreadState()
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |        $\underline{\phantom{00}1.46\%}$ dvmChangeStatus(Thread*, ThreadStatus)
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |
+                    |       |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |
+                    |       |       |        $\underline{\phantom{00}2.27\%}$ pthread_mutex_unlock
 (*@\vspace{-0.15cm}@*)
-            |       |       |                $\underline{\phantom{00}0.49\%}$ android_atomic_release_store
+                    |       |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                       |
+                    |       |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                       |
+                    |       |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                        $\underline{\phantom{00}0.10\%}$ android_memory_barrier
+                    |       |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |       |                $\underline{\phantom{00}1.25\%}$ pthread_mutex_unlock_impl
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |$\underline{\phantom{00}0.42\%}$ StringObject::chars() const
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |$\underline{\phantom{00}0.28\%}$ StringObject::array() const
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |        $\underline{\phantom{00}0.03\%}$ 0xc003be08
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |                |       |               0xc003503c
+                    |       |        $\underline{\phantom{00}2.12\%}$ ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
 (*@\vspace{-0.15cm}@*)
-            |       |                |       |               0xc006fed0
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |                |       |               0xc006fb38
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |                |       |               0xc00b5994
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |                |       |               0xc00b55a4
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |                |       |               0xc00b4314
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |$\underline{\phantom{0}28.88\%}$ ReleaseStringChars(_JNIEnv*, _jstring*, unsigned short const*)
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |               |$\underline{\phantom{00}1.75\%}$ pthread_mutex_lock
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |$\underline{\phantom{00}8.56\%}$ dvmDecodeIndirectRef(Thread*, _jobject*)
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |$\underline{\phantom{00}2.53\%}$ ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+                    |       |                        $\underline{\phantom{00}0.98\%}$ pthread_mutex_lock_impl
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |                                
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |                                
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |        $\underline{\phantom{00}1.92\%}$ pthread_mutex_lock
+                    |       |                                
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |                                
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |                                
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                $\underline{\phantom{00}0.88\%}$ pthread_mutex_lock_impl
+                    |       |                                
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                       |
+                    |       |                                
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                       |
+                    |       |                                
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                        $\underline{\phantom{00}0.03\%}$ 0xc003be08
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                                |       |       |       |                               0xc003503c
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                                |       |       |       |                               0xc006fed0
+                    |       |$\underline{\phantom{00}4.73\%}$ ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                                |       |       |       |                               0xc006faf8
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |$\underline{\phantom{00}1.93\%}$ ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |        $\underline{\phantom{00}1.66\%}$ pthread_mutex_unlock
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |       |$\underline{\phantom{00}2.77\%}$ dvmChangeStatus(Thread*, ThreadStatus)
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                $\underline{\phantom{00}0.89\%}$ pthread_mutex_unlock_impl
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |        $\underline{\phantom{00}0.69\%}$ IndirectRefTable::get(void*) const
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |$\underline{\phantom{00}8.38\%}$ unpinPrimitiveArray(ArrayObject*)
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |                $\underline{\phantom{00}1.90\%}$ android_atomic_acquire_store
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |$\underline{\phantom{00}2.67\%}$ ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |        $\underline{\phantom{00}1.91\%}$ pthread_mutex_lock
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |               |
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                $\underline{\phantom{00}0.72\%}$ pthread_mutex_lock_impl
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                       |
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                       |
+                    |       |                        $\underline{\phantom{00}0.03\%}$ android_memory_barrier
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                        $\underline{\phantom{00}0.03\%}$ 0xc003c160
+                    |       |        
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                                |       |       |       |                               0xc058209c
+                    |       |        
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                                |       |       |       |                               0xc0581a74
+                    |       |        
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |        
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |        
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |$\underline{\phantom{00}2.35\%}$ ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+                    |       |        
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |        
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |        
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |$\underline{\phantom{00}2.01\%}$ pthread_mutex_unlock
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |       |
+                    |       |$\underline{\phantom{00}2.23\%}$ ScopedJniThreadState::~ScopedJniThreadState()
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |        $\underline{\phantom{00}1.26\%}$ pthread_mutex_unlock_impl
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |        $\underline{\phantom{00}0.03\%}$ 0xc003be08
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                |       |       |       |               0xc003503c
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                |       |       |       |               0xc006fed0
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                |       |       |       |               0xc006fb38
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                |       |       |       |               0xc00b5988
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                |       |       |       |               0xc00b55a4
+                    |       |        $\underline{\phantom{00}1.46\%}$ dvmChangeStatus(Thread*, ThreadStatus)
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |                |       |       |       |               0xc00b4314
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |$\underline{\phantom{00}0.69\%}$ dvmRemoveFromReferenceTable(ReferenceTable*, Object**, Object*)
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |        $\underline{\phantom{00}0.06\%}$ 0xc003be08
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                |       |       |               0xc003503c
+                    |       |               |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                |       |       |               0xc006fed0
+                    |       |                $\underline{\phantom{00}0.49\%}$ android_atomic_release_store
 (*@\vspace{-0.15cm}@*)
-            |       |       |                |       |       |               0xc006faf8
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |$\underline{\phantom{00}2.40\%}$ ScopedJniThreadState::~ScopedJniThreadState()
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |        $\underline{\phantom{00}1.81\%}$ dvmChangeStatus(Thread*, ThreadStatus)
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |
+                    |       |                       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |
+                    |       |                        $\underline{\phantom{00}0.10\%}$ android_memory_barrier
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |$\underline{\phantom{00}0.71\%}$ android_atomic_release_store
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |        $\underline{\phantom{00}0.07\%}$ android_memory_barrier
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                $\underline{\phantom{00}0.03\%}$ 0xc003be08
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                        |       |       |                       0xc003503c
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                        |       |       |                       0xc006fed0
+                    |       |$\underline{\phantom{00}0.42\%}$ StringObject::chars() const
 (*@\vspace{-0.15cm}@*)
-            |       |       |                        |       |       |                       0xc006faf8
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |$\underline{\phantom{00}1.63\%}$ ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |        $\underline{\phantom{00}0.95\%}$ dvmChangeStatus(Thread*, ThreadStatus)
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |               |
+                    |       |$\underline{\phantom{00}0.28\%}$ StringObject::array() const
 (*@\vspace{-0.15cm}@*)
-            |       |       |                $\underline{\phantom{00}0.70\%}$ android_atomic_acquire_store
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                       |$\underline{\phantom{00}0.06\%}$ android_memory_barrier
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                        $\underline{\phantom{00}0.03\%}$ 0xc003be08
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                                |       |       |                               0xc003503c
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                                |       |       |                               0xc006fed0
+                    |
 (*@\vspace{-0.15cm}@*)
-            |       |       |                                |       |       |                               0xc00b3d84
+                    |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |$\underline{\phantom{0}28.88\%}$ ReleaseStringChars(_JNIEnv*, _jstring*, unsigned short const*)
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |        $\underline{\phantom{00}0.23\%}$ StringObject::array() const
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |$\underline{\phantom{00}0.09\%}$ PushLocalFrame(_JNIEnv*, int)
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |$\underline{\phantom{00}0.06\%}$ dvmGetCurrentJNIMethod()
+                    |       |
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |$\underline{\phantom{00}8.56\%}$ dvmDecodeIndirectRef(Thread*, _jobject*)
 (*@\vspace{-0.15cm}@*)
-            |       |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |        $\underline{\phantom{00}0.03\%}$ ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |                |       |               dvmChangeStatus(Thread*, ThreadStatus)
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |       |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |        $\underline{\phantom{00}0.03\%}$ PopLocalFrame(_JNIEnv*, _jobject*)
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |
+                    |       |       |
 (*@\vspace{-0.15cm}@*)
-            |$\underline{\phantom{00}0.03\%}$ 0xc003be08
-
-                   | 0xc003503c
-
-                   | 0xc006fed0
-
-                   | 0xc006faf8
-
+                    |       |       |$\underline{\phantom{00}2.53\%}$ ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        $\underline{\phantom{00}1.92\%}$ pthread_mutex_lock
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                $\underline{\phantom{00}0.88\%}$ pthread_mutex_lock_impl
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |$\underline{\phantom{00}1.93\%}$ ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        $\underline{\phantom{00}1.66\%}$ pthread_mutex_unlock
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                $\underline{\phantom{00}0.89\%}$ pthread_mutex_unlock_impl
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |        $\underline{\phantom{00}0.69\%}$ IndirectRefTable::get(void*) const
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |$\underline{\phantom{00}8.38\%}$ unpinPrimitiveArray(ArrayObject*)
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |$\underline{\phantom{00}2.67\%}$ ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        $\underline{\phantom{00}1.91\%}$ pthread_mutex_lock
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                $\underline{\phantom{00}0.72\%}$ pthread_mutex_lock_impl
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |$\underline{\phantom{00}2.35\%}$ ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |       |$\underline{\phantom{00}2.01\%}$ pthread_mutex_unlock
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |                $\underline{\phantom{00}1.26\%}$ pthread_mutex_unlock_impl
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |        
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |$\underline{\phantom{00}0.69\%}$ dvmRemoveFromReferenceTable(ReferenceTable*, Object**, Object*)
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |$\underline{\phantom{00}2.40\%}$ ScopedJniThreadState::~ScopedJniThreadState()
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |        $\underline{\phantom{00}1.81\%}$ dvmChangeStatus(Thread*, ThreadStatus)
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |$\underline{\phantom{00}0.71\%}$ android_atomic_release_store
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                        $\underline{\phantom{00}0.07\%}$ android_memory_barrier
+(*@\vspace{-0.15cm}@*)
+                    |       |                
+(*@\vspace{-0.15cm}@*)
+                    |       |                
+(*@\vspace{-0.15cm}@*)
+                    |       |                
+(*@\vspace{-0.15cm}@*)
+                    |       |                
+(*@\vspace{-0.15cm}@*)
+                    |       |                
+(*@\vspace{-0.15cm}@*)
+                    |       |                
+(*@\vspace{-0.15cm}@*)
+                    |       |                
+(*@\vspace{-0.15cm}@*)
+                    |       |                
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |$\underline{\phantom{00}1.63\%}$ ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |        $\underline{\phantom{00}0.95\%}$ dvmChangeStatus(Thread*, ThreadStatus)
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |               |
+(*@\vspace{-0.15cm}@*)
+                    |       |                $\underline{\phantom{00}0.70\%}$ android_atomic_acquire_store
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |
+(*@\vspace{-0.15cm}@*)
+                    |       |                       |$\underline{\phantom{00}0.06\%}$ android_memory_barrier
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |        $\underline{\phantom{00}0.23\%}$ StringObject::array() const
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |$\underline{\phantom{00}0.09\%}$ PushLocalFrame(_JNIEnv*, int)
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |$\underline{\phantom{00}0.06\%}$ dvmGetCurrentJNIMethod()
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |       |
+(*@\vspace{-0.15cm}@*)
+                    |        $\underline{\phantom{00}0.03\%}$ ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+(*@\vspace{-0.15cm}@*)
+                    |                |       |               dvmChangeStatus(Thread*, ThreadStatus)
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                    |
+(*@\vspace{-0.15cm}@*)
+                     $\underline{\phantom{00}0.03\%}$ PopLocalFrame(_JNIEnv*, _jobject*)
 
 \end{lstlisting}
-
