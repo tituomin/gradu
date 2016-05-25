@@ -23,9 +23,7 @@ mittauksissa.
 Metodien kutsuminen edellyttää aina metoditunnuksen noutamista
 ~GetMethodID~- ja ~GetStaticMethodID~-kutsuilla. Kuten suositeltu,
 palveluita ei mittauksissa kutsuta joka kerta jokaisen metodikutsun
-yhteydessä vaan kerran koko mittausta käynnistettäessä (ks. kohta
-\label{ref:get-method-id-efficiency}). {{{TODO}}} Metoditunnusten
-noudon rasite käsitellään erikseen kohdassa. {{{TODO}}}
+yhteydessä vaan kerran koko mittausta käynnistettäessä.
 
 Vastinpari suunnassa Java \rightarrow C on ~native~ -metodin
 kutsuminen Javasta eli C-ohjelmassa olevan funktion
@@ -154,21 +152,25 @@ parametrinä JNI-rajapinnan yli, eli JNI-kutsujen \path{jobject *}
 -tyyppisiä parametreja eri muodoissaan. Dalvik-virtuaalikone joutuu
 pitämään kirjaa välitetyistä viitteistä tarkoitusta varten
 toteutetulla taulutietorakenteella
-(\path{dalvik/vm/IndirectRefTable}). Sitä tarvitaan jotta
-virtuaalikoneen muistinhallinnalla säilyy tieto myös JNI:n yli
-välitetyistä viitteistä.
+(\path{dalvik/vm/IndirectRefTable}). Epäsuoria viitteitä tarvitaan,
+jotta virtuaalikoneen muistinhallinnalla säilyy tieto myös JNI:n yli
+välitetyistä viitteistä. Toisaalta natiivikomponentti ei voi käsitellä
+JNI-operaatioilla viitetyyppisiä olioita suorilla muistiosoitteilla
+senkään vuoksi, että virtuaalikoneella säilyisi mahdollisuus
+järjestellä hallitsemiaan muistialueita uudelleen.
 
-Yli puolet epäsuorien viitteiden hallinnasta kuluu rinnakkaisten
-säikeiden poissulkemiseen \path{ScopedPthreadMutexLock}- olion
-avulla. Tämä johtuu siitä, että mittauksessa välitetyt olioviitteet
-ovat /globaaleja/ viitteitä, joita säilytetään Dalvikin kaikille
-säikeille yhteisessä, globaalissa viitetaulukossa. Mittauksessa
-käytetään globaaleja viitteitä lähinnä ohjelmakoodin
-yksinkertaistamiseksi, minkä seurauksena löytyikin sattumalta tämä
-hitain suorituspolku \path{dvmDecodeIndirectRef} -metodin
-sisältä. Listauksessa \ref{src:dvmDecodeIndirectRef} näkyy mutex-lukon
-varaaminen kohdassa \ding{202}. Nopeampi suorituspolku käyttää
-lokaalin JNI-kontekstin omaa viitetaulukkoa ilman lukitusta \ding{203}
+Profiilissa yli puolet epäsuorien viitteiden hallinnan suoritusajasta
+kuluu rinnakkaisten säikeiden poissulkemiseen
+\path{ScopedPthreadMutexLock}- olion avulla. Tämä johtuu siitä, että
+mittauksessa välitetyt olioviitteet ovat /globaaleja/ viitteitä, joita
+säilytetään Dalvikin kaikille säikeille yhteisessä, globaalissa
+viitetaulukossa. Mittauksessa käytetään globaaleja viitteitä lähinnä
+ohjelmakoodin yksinkertaistamiseksi, minkä seurauksena löytyikin
+sattumalta tämä hitain suorituspolku \path{dvmDecodeIndirectRef}
+-metodin sisältä. Listauksessa \ref{src:dvmDecodeIndirectRef} näkyy
+mutex-lukon varaaminen kohdassa \ding{202}. Nopeampi suorituspolku
+käyttää lokaalin JNI-kontekstin omaa viitetaulukkoa ilman lukitusta
+\ding{203}
 
 #+NAME: src:dvmDecodeIndirectRef
 #+CAPTION: Ote funktiosta dvmDecodeIndirectRef
