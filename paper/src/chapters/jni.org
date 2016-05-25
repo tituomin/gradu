@@ -513,26 +513,26 @@ natiivirajapinnan funktioiden avulla.
 # todo: korjaa, ei elinkaaren ajaksi vaan jotkut vaativat myös
 # eksplisiittiset lopetuskutsut
 
-Eräs tapa integroida natiivikomponentti Java-koodiin on luoda
-natiivimetodeita sisältävä Java-luokka, jonka instanssit ovat
-/vertaisolioita/ (/peer object/) @@jnibook(123--130). Vertaisolio
-edustaa jotain yksittäistä natiivipuolen resurssia, tietorakennetta
-tai olioinstanssia. Tällöin natiiviresurssista on tallennettava
-implisiittinen viite, kuten muistiosoite, vertaisluokan yksityiseen
-kenttään. Vertaisolion konstruktorista voidaan kutsua natiivimetodia,
-joka vastaa natiiviresurssin luomisesta, esimerkiksi
-muistinvarauksista, mutta vertaisolion käyttäjän on yleensä itse
-eksplisiittisesti kutsuttava natiivimetodia, joka vapauttaa
-natiiviresurssin @@jnibook(125--126). Muussa tapauksessa roskienkeruu
-poistaisi vertaisolion, kun siihen ei enää ole viitteitä, mutta
-jäljelle jäänyt natiiviresurssi aiheuttaisi muistivuodon.
+# Eräs tapa integroida natiivikomponentti Java-koodiin on luoda
+# natiivimetodeita sisältävä Java-luokka, jonka instanssit ovat
+# /vertaisolioita/ (/peer object/) @@jnibook(123--130). Vertaisolio
+# edustaa jotain yksittäistä natiivipuolen resurssia, tietorakennetta
+# tai olioinstanssia. Tällöin natiiviresurssista on tallennettava
+# implisiittinen viite, kuten muistiosoite, vertaisluokan yksityiseen
+# kenttään. Vertaisolion konstruktorista voidaan kutsua natiivimetodia,
+# joka vastaa natiiviresurssin luomisesta, esimerkiksi
+# muistinvarauksista, mutta vertaisolion käyttäjän on yleensä itse
+# eksplisiittisesti kutsuttava natiivimetodia, joka vapauttaa
+# natiiviresurssin @@jnibook(125--126). Muussa tapauksessa roskienkeruu
+# poistaisi vertaisolion, kun siihen ei enää ole viitteitä, mutta
+# jäljelle jäänyt natiiviresurssi aiheuttaisi muistivuodon.
 
-# todo: onko finalize  tarpeen joskus?
-# todo: edustaolio vs. peer object
+# # todo: onko finalize  tarpeen joskus?
+# # todo: edustaolio vs. peer object
 
-JNI ei tarjoa automaattista tukea edustaluokkien tekemiseen
-natiivitietorakenteille, vaan ohjelmoijan on itse määriteltävä
-sidonnat Java-luokan metodeihin.
+# JNI ei tarjoa automaattista tukea edustaluokkien tekemiseen
+# natiivitietorakenteille, vaan ohjelmoijan on itse määriteltävä
+# sidonnat Java-luokan metodeihin.
 # todo määrittele tarkemmin
 
 Koska JNI-spesifikaatio ei ota kantaa virtuaalikoneen sisäiseen
