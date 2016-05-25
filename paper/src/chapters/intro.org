@@ -1,23 +1,20 @@
 /Android/ on Googlen kehittämä Linux-pohjainen käyttöjärjestelmä ja
 sovellus\-ke\-hi\-tys\-a\-lus\-ta mobiililaitteille. Tässä
-tutkielmassa kuvaillaan ja arvioidaan suorituskykyisiä
-arkkitehtuuriratkaisuja sellaisille Android-sovelluksille, joiden
-komponenteista osa on kirjoitettu Java- ja osa C- tai
-C++-ohjelmointikielellä.
+tutkielmassa kuvaillaan ja arvioidaan sellaisten Android-sovellusten
+suorituskykyä, joiden komponenteista osa on kirjoitettu Java- ja osa
+C- tai C++-ohjelmointikielellä.
 
 Yleensä Android-sovellukset ohjelmoidaan /Java/-ohjelmointikielellä ja
 suoritetaan Googlen Androidia varten kehittämässä
-/Dalvik/-virtuaalikoneessa. Androidin Java-sovelluskehyksen
-käyttäminen ei aina kuitenkaan ole kokonaisuuden kannalta paras
-ratkaisu. Ensinnäkin käytettävissä saattaa olla muulla kielellä kuin
-Javalla kirjoitettua ohjelmakoodia, jota halutaan hyödyntää
-sellaisenaan. Toiseksi täysin uudestakin mobiilisovelluksesta halutaan
-usein lähtökohtaisesti rakentaa mahdollisimman /siirrettävä/.[fn:ios]
-Kolmas ja tämän tutkielman kannalta oleellisin este Androidin
-Java-sovelluskehyksen käyttämiselle on sen /suorituskyky/, erityisesti
-jos ohjelmisto suorittaa paljon raskasta laskentaa tai sille on
-oleellisia tosiaikavaatimuksia.
-
+virtuaalikoneessa. Androidin Java-sovelluskehyksen käyttäminen ei aina
+kuitenkaan ole kokonaisuuden kannalta paras ratkaisu. Ensinnäkin
+käytettävissä saattaa olla muulla kielellä kuin Javalla kirjoitettua
+ohjelmakoodia, jota halutaan hyödyntää sellaisenaan. Toiseksi täysin
+uudestakin mobiilisovelluksesta halutaan usein lähtökohtaisesti
+rakentaa mahdollisimman siirrettävä.[fn:ios] Kolmas ja tämän
+tutkielman kannalta oleellisin syy arvioida vaihtoehtoja Java-kielen
+käytölle on suorituskyky, erityisesti jos ohjelmisto suorittaa paljon
+raskasta laskentaa tai sille on oleellisia tosiaikavaatimuksia.
 
 /Ohjelmistojen suorituskykytekniikka/ (/Software Performance
 Engineering/, /SPE/) on ohjelmistotekniikan osa-alue, jossa
@@ -25,21 +22,21 @@ varmistetaan ohjelmistoprosessin alusta lähtien, että ohjelmistolle
 asetetut suorituskykyvaatimukset täyttyvät lopullisessa
 tuotteessa. Menettely on näennäisesti ristiriidassa usein lainatun
 Donald Knuthin lausahduksen kanssa: "Ennenaikainen optimointi on
-kaiken pahan alku ja juuri @@goto(268)." Yleisen tulkinnan mukaan ohjelmistoa
-suunniteltaessa tulisi keskittyä sen oikeaan toimivuuteen ja optimoida
-suorituskykyä vasta, kun käytössä on suoritettava ohjelma. Sen
-suoritusaikaista käyttäytymistä mittaamalla selvitetään, mihin
-ohjelman osiin optimoinnissa kannattaa keskittyä.
+kaiken pahan alku ja juuri @@goto(268)."  Yleisen tulkinnan mukaan
+ohjelmistoa suunniteltaessa tulisi keskittyä sen oikeaan toimivuuteen
+ja optimoida suorituskykyä vasta, kun käytössä on suoritettava
+ohjelma. Sen suoritusaikaista käyttäytymistä mittaamalla selvitetään,
+mihin ohjelman osiin optimoinnissa kannattaa keskittyä.
 
 Kehitysprosessin loppuvaiheessa ei kuitenkaan välttämättä enää ehdi
 korjata suorituskykyongelmia, jos ne kumpuavat varhaisista valinnoista
 kuten käytetyistä ohjelmointikielistä, ohjelmiston rakenteellisista
 ominaisuuksista ja komponenttien väliseen kommunikaatioon liittyvistä
 ratkaisuista. SPE:n keskeisiä väitteitä onkin, että ohjelmiston
-makrotason /arkkitehtuurin/ suunnittelu on usein suorituskyvyn
-kannalta vähintään yhtä oleellinen tekijä kuin mikrotason
-optimoinnit. Toki suorituskyvyn huomioiminen varhaisessa
-kehitysvaiheessa ei estä myöhäisen vaiheen lisäoptimointia.
+makrotason arkkitehtuurin suunnittelu on usein suorituskyvyn kannalta
+vähintään yhtä oleellinen tekijä kuin mikrotason
+optimoinnit. Suorituskyvyn huomioiminen varhaisessa kehitysvaiheessa
+ei toki estä lisäoptimointeja myöhäisemmässä kehitysvaiheessa.
 
 Tutkielmassa keskitytään siihen, mitä suorituskykyrasitteita
 /monikielinen/ Android-ohjelmointi aiheuttaa
@@ -50,8 +47,8 @@ tai C++-kielillä, joista ohjelma käännetään laitteiston prosessorin
 konekielelle, tällä hetkellä yleensä ARM-konekielelle.
 
 Menetelmän mahdollistaa Java-kielen /Java Native Interface/ -standardi
-(/JNI/), joka on toteutettu myös osana
-Dalvik-virtuaalikonetta. JNI-standardi on esimerkki
+(/JNI/), joka on toteutettu myös osana Androidin
+Java-virtuaalikonetta. JNI-standardi on esimerkki
 /vieraskutsurajapinnasta/ (/Foreign Function Interface/, /FFI/), joka
 on mekanismi kahden eri ohjelmointikielillä kirjoitetun ohjelman
 yhdistämiseksi.
@@ -77,14 +74,13 @@ Java-kom\-ponenttia. Monia haasteita liittyy myös muistinhallintaan ja
 resurssien jakamiseen virtuaalikoneen hallitseman muistin ja
 natiivikomponentin välillä.
 
-Tutkielmassa käytetään SPE-arviointimenetelmiä ja
-suorituskykymittauksia tutkimaan monikielisyydestä johtuvien
-rasitteiden suuruusluokkia. Tutkielma sisältää kirjallisuuteen
-perustuvan osuuden, jossa esitellään suorituskyvyn mallintamiseen,
-arvioimiseen ja mittaamiseen käytettäviä periaatteita, metodeita sekä
-työkaluja. Lisäksi lähteiden perusteella esitellään
-Android-ohjelmistoalustan rakennetta suorituskyvyn näkökulmasta,
-keskittyen Dalvik-virtuaalikoneeseen ja sen
+Tutkielmassa käytetään suorituskykymittauksia tutkimaan
+monikielisyydestä johtuvien rasitteiden suuruusluokkia. Tutkielma
+sisältää kirjallisuuteen perustuvan osuuden, jossa esitellään
+suorituskyvyn mallintamiseen, arvioimiseen ja mittaamiseen käytettäviä
+periaatteita, metodeita sekä työkaluja. Lisäksi lähteiden perusteella
+esitellään Android-ohjelmistoalustan rakennetta suorituskyvyn
+näkökulmasta, keskittyen Dalvik-virtuaalikoneeseen ja sen
 JNI-toteutukseen. Tutkielman toinen osa soveltaa ensimmäisen osan
 metodeja ja käsitteitä Dalvikin JNI-toteutuksen
 mittaamiseen. Toteutusta mitataan kahdella toisiaan tukevalla
