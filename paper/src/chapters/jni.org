@@ -539,10 +539,12 @@ Koska JNI-spesifikaatio ei ota kantaa virtuaalikoneen sisäiseen
 toteutukseen, se ei myöskään sanele, miten virtuaalikoneen tulee
 toteuttaa spesifikaation määräämät takuut tietorakenteiden
 elinkaarille.  Dalvik-virtuaalikoneen muistinhallinta tukee
-allokoitujen kohteiden kiinnikytkemistä eli niiden roskienkeruun
-estämistä @@aosp, mutta JNI sallii virtuaalikoneen myös /kopioida/
-kohteen arvon natiivikomponenttia varten. Tästä seuraisi merkittäviä
-suorituskykyrasitteita, mitä kysymystä tutkimme myöhemmässä vaiheessa.
+allokoitujen kohteiden kiinnikytkemistä eli sen takaamista, ettei
+niiden muistialueita siirretään muistissa osoitteesta toiseen
+@@aosp. /JNI-spesifikaatio/ sallii kuitenkin virtuaalikoneen myös
+/kopioida/ kohteen arvon natiivikomponenttia varten. Tutkimme
+myöhemmässä vaiheessa, millaisia suorituskykyrasitteita
+kiinnikytkemisellä on kopiointiin verrattuna.
 # todo: huom ! tämän takia yksittäiset olioviitteet pitää yksitellen poimia
 # taulukoista ? (check)
 
@@ -602,9 +604,8 @@ natiivialiohjelmien erilaisista kutsukäytännöistä, menetelmistä kuroa
 umpeen eroja natiivikielten ja virtuaalikoneen muistinhallinnassa,
 operaatioiden edellyttämästä rajapintakutsujen määristä sekä
 JNI-operaatiossa toistuvasta osoittimien käytöstä. Seuraavaksi
-paneudumme tarkemmin Dalvik-virtuaalikoneen toteutukseen, mittaamme
-eri natiivioperaatioiden suorituskykyä eri parametreilla ja luomme
-tuloksista malleja Javan natiivirajapinnan tehokkaalle hyödyntämiselle
-Android-sovelluksissa.
+mittaamme eri natiivioperaatioiden suorituskykyä eri parametreilla ja
+luomme tuloksista mallin, joka auttaa hahmottamaan tapoja Javan
+natiivirajapinnan tehokkaalle hyödyntämiselle Android-sovelluksissa.
 
 # mainitse jossain virheistä
