@@ -9,7 +9,7 @@ harjoittavat kattavasti JNI-rajapinnan eri kutsuja.
 Kun alkeisoperaatioita suoritetaan laitteessa, samojen operaatioiden
 suoritusta mitataan kahdella toisiaan täydentävällä menetelmällä eri
 mittausajojen aikana: ensin yksittäisen aliohjelman suorituksen
-kokonaisvasteaika mitataan Javan \path{System.nanoTime()}-metodilla, ja
+kokonaisvasteaika mitataan Javan \path{System}\path{.nano}- \path{Time()}-metodilla, ja
 seuraavassa ajossa samoille aliohjelmille luodaan
 näytteenottomenetelmällä kutsuprofiilit Linuxin \path{perf}-työkalun
 avulla.
@@ -63,8 +63,8 @@ lisätään.
 
 Erilaisten kutsuvariaatioiden kokonaismäärä on suuri, eikä
 variaatioita voi yleensä toteuttaa ajonaikaisina muutoksina ohjelman
-syötteissä: esimerkiksi metodiparametrien määrät on Java-ohjelmassa
-lukittava käännösaikana. Variaatioista on vieläpä parhaimmillaan
+syötteissä: esimerkiksi metodiparametrien määrä on Java-ohjelmassa
+oltava tiedossa käännösaikana. Variaatioista on vieläpä parhaimmillaan
 luotava 4 eri versiota:
 
 # footnote http://docs.oracle.com/javase/1.5.0/docs/guide/language/varargs.html
