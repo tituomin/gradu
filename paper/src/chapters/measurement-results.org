@@ -219,10 +219,11 @@ välittää viitteenä JNI-kutsussa.
 (*env)->CallVoidMethod(env, java_counterparts_object, mid);
 #+END_SRC
 
-Kutsussa välitetään viite \path{java_counterparts_object} olioon,
-jonka metodia ollaan kutsumassa. Viitteidenkäsittelyä korkeammalle
-profiilissa nousevat muut C \to Java -kutsun perusrasitteet, jotka
-ovat nähtävissä profiilin haaran \path{CallVoidMethod} alakohdissa.
+Kutsussa välitetään siis viite \path{java_counterparts_object}
+-olioon, jonka metodia ollaan kutsumassa. Viitteidenkäsittely ei
+kuitenkaan enää dominoi kutsuprofiilia, vaan merkittäviä ovat myös
+muut C \to Java -kutsun perusrasitteet, jotka ovat nähtävissä
+profiilin haaran \path{CallVoidMethod} alakohdissa.
 
 \path{dvmCallMethodV} (15.56%) vastaa Dalvikissa metodin kutsumisesta
 vaihtelevalla argumenttimäärällä kaikissa kutsusuunnissa. Ainoa
@@ -315,15 +316,15 @@ Kuvasta \ref{fig:basic-call-Object-fit} nähdään myös, että
 viiteparametrien määrän lisääntyessä {{{jc}}}-suunnan kuvaajan
 kulmakerroin on loivempi. Tästä voisi päätellä, että viitteiden
 hallinta tähän suuntaan on tehokkaampaa. Listauksen
-\ref{profile:J2CBenchmark00206} perusteella ero saattaa suurelta
-osin selittyä sillä, että {{{cj}}}-suunnassa käsitellyt viitteet
-ovat globaaleja ja päinvastaisen suunnan viitteet lokaaleja. Suunnassa
-{{{TODO}}} {{{jc}}} ei tarvita rinnakkaisten säikeiden poissulkemista
-kohdassa \ding{202}. Kyseisessä suunnassa viitteet ovat
-oletusarvoisesti lokaaleja JNI-standardin mukaisesti --
-natiivikomponentin on erikseen luotava globaalit viitteet, jos aikoo
-käyttää viitteitä yksittäisen natiivimetodikutsun elinkaaren
-ulkopuolella.
+\ref{profile:J2CBenchmark00206} perusteella ero saattaa suurelta osin
+selittyä sillä, että {{{jc}}}-suunnassa käsitellyt viitteet ovat
+lokaaleja ja päinvastaisen suunnan viitteet globaaleja. Kyseisessä
+suunnassa viitteet ovat oletusarvoisesti lokaaleja JNI-standardin
+mukaisesti -- natiivikomponentin on erikseen luotava globaalit
+viitteet, jos aikoo käyttää viitteitä yksittäisen natiivimetodikutsun
+elinkaaren ulkopuolella. Suunnassa {{{jc}}} ei tarvita myöskään
+rinnakkaisten säikeiden poissulkemista listauksen
+\ref{profile:J2CBenchmark00206} kohdassa \ding{202}.
 
 {{{profile(J2CBenchmark00206)}}}
 \newpage
@@ -652,10 +653,11 @@ pituuden selvittäminen on vakiollinen operaatio (kuvan
 
 {{{plot(special-calls-arrayregion-c-j-fit)}}}
 
-Kutsuprofiilin {{{TODO}}} perusteella taulukoiden osoitinoperaatioiden
+Kutsuprofiilien perusteella taulukoiden osoitinoperaatioiden
 kutsurakenteet ovat täsmälleen samoja merkkijonojen
-osoitinoperaatioiden kanssa. Funktioiden \verb|GetCharArrayElements|
-ja \path{GetStringChars} vasteajatkin ovat mittauksissa yhtä
+osoitinoperaatioiden kanssa, joten kutsuprofiileja ei ole erikseen
+listattu. Funktioiden \verb|GetCharArrayElements| ja
+\path{GetStringChars} vasteajatkin ovat mittauksissa yhtä
 suuret. Keskeisimmät rasitteet syntyvät siis epäsuoran globaalin
 viitteen purusta ja taulukon kiinnikytkemisestä.
 
@@ -710,20 +712,20 @@ osoittimen avulla.
 
 # TODO tähän tarvitaan ehkä viitteitä
 
-Keskeinen tutkielman päämäärä on hahmottaa, mikä on tehokkain tapa
-/välittää dataa/ JNI-rajapinnan yli. Tämän takia
-~java.nio.ByteBuffer~-olion käsittelyä Java- ja natiivikomponenteissa
-verrataan muihin datanvälitystapoihin: kutsuargumenttien ja
-paluuarvojen välitykseen sekä merkkijonojen ja taulukoiden
-käsittelyyn. Mittauksen avulla yritetään tutkia esimerkiksi, onko
-kokonaisrasitteen kannalta tehokkaampaa välittää rajapinnan yli viite
-taulukkoon vai ~ByteBuffer~-olioon. Tässä täytyy huomioida niin
-viitteen välityksen, tarvittavien tukipalveluiden kuin itse
-muistialueen käsittelyn aiheuttamat rasitteet.
+# Keskeinen tutkielman päämäärä on hahmottaa, mikä on tehokkain tapa
+# /välittää dataa/ JNI-rajapinnan yli. Tämän takia
+# ~java.nio.ByteBuffer~-olion käsittelyä Java- ja natiivikomponenteissa
+# verrataan muihin datanvälitystapoihin: kutsuargumenttien ja
+# paluuarvojen välitykseen sekä merkkijonojen ja taulukoiden
+# käsittelyyn. Mittauksen avulla yritetään tutkia esimerkiksi, onko
+# kokonaisrasitteen kannalta tehokkaampaa välittää rajapinnan yli viite
+# taulukkoon vai ~ByteBuffer~-olioon. Tässä täytyy huomioida niin
+# viitteen välityksen, tarvittavien tukipalveluiden kuin itse
+# muistialueen käsittelyn aiheuttamat rasitteet.
 
-Tätä silmälläpitäen täytyy NIO-luokkien käytön kustannuksiin laskea
-seuraavien ~ByteBuffer~-olion käsittelyssä välttämättömien
-JNI-palveluiden lisärasitteet. Ensimmäisessä vaihtoehdossa funktiolla
+NIO-luokkien käytön kustannuksiin täytyy laskea seuraavien
+~ByteBuffer~-olion käsittelyssä välttämättömien JNI-palveluiden
+lisärasitteet. Ensimmäisessä vaihtoehdossa funktiolla
 \path{NewDirectByteBuffer} luodaan natiivikomponentista käsin suora
 tavupuskuri eli Javan ~DirectByteBuffer~-olio /valmiiksi allokoituun
 muistialueeseen/.
@@ -748,11 +750,10 @@ jotka nähtiin aiemminkin käsitellyissä JNI-kutsuissa.
 \path{NewDirectByteBuffer}-kutsuprofiili listauksessa
 \ref{profile:C2JNewDirectBuffer-512} näyttää lähes yksinomaan
 roskienkeruuseen liittyviä metodikutsuja alkaen metodista
-\path{dvmCollectGarbage} kohdassa \ding{202}. {{{TODO}}} Tämä on
-mittaustekninen ongelma, joka tekee kaikkien muistia varaavien
-operaatioiden kutsuprofiilit hankaliksi hyödyntää. Siinä missä
-benchmarkin suoritus on saatu mitattua ilman roskienkeruuta
-/vasteaikamittauksissa/, kutsuprofiilinäytteet kerätään
+\path{dvmCollectGarbage}. Tämä on mittaustekninen ongelma, joka tekee
+kaikkien muistia varaavien operaatioiden kutsuprofiilit hankaliksi
+hyödyntää. Siinä missä benchmarkin suoritus on saatu mitattua ilman
+roskienkeruuta /vasteaikamittauksissa/, kutsuprofiilinäytteet kerätään
 yhtäjaksoisesti useiden sekuntien jaksolta, jonka aikana
 suhteellisesti suurin osa ajasta vietetään roskienkeruussa. Allokoivia
 operaatioita ei voi ajaa kuin lyhyen ajan ennen kuin muistia täytyy
@@ -768,8 +769,6 @@ Kuvaan \ref{fig:special-calls-non-dynamic} on koottu Javan olioiden ja
 luokkien kenttien käsittelemiseen käytettävien JNI-metodien vasteajat.
 Vertailukohtina kuvassa ovat vastaavat operaatiot puhtaasti
 Java-komponentissa suoritettuina.
-
-{{{TODO}}} kuvassa on asteikko pielessä. \ref{fig:killer-app}
 
 Kuvasta nähdään, että staattisten kenttien luku ja kirjoittaminen
 kestää noin puolet ilmentymäkenttien luvusta ja
@@ -800,10 +799,10 @@ eksplisiittiseen viitteiden käsittelyyn, olioiden ja luokkien
 ominaisuuksien käsittelyyn, reflektioon, sekä natiivimetodien
 rekisteröintiin.
 
-Sen sijaan potentiaalisesti oleellisemmat, mutta mittausten
-yksinkertaistamisen vuoksi pois rajatut palvelut koskevat
-rinnakkaisohjelmointia (\path{MonitorEnter} ja \path{MonitorExit}) ja
-poikkeusten käsittelyä. Ne olisivat mielenkiintoinen jatkotutkimuksen
+Sen sijaan todennäköisesti oleellisemmat, mutta mittausten
+yksinkertaistamisen vuoksi pois rajatut palvelut liittyvät
+rinnakkaisohjelmointiin (\path{MonitorEnter} ja \path{MonitorExit}) ja
+poikkeustenkäsittelyyn. Ne olisivat mielenkiintoinen jatkotutkimuksen
 aihe.
 
 Mittauksia tehtiin myös /allokoiville/ rajapinnan palveluille, joilla

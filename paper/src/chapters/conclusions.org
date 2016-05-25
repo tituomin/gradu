@@ -18,21 +18,19 @@ tietorakenteita käsitteleviin operaatioihin.
 
 Tutkielmassa tarkasteltiin vasteaika- ja kutsuprofiilimittausten
 avulla Androidin Dalvik-virtuaalikoneen JNI-toteutuksen
-ominaispiirteitä suorituskyvyn näkökulmasta. Tutkielman mittauksissa
-yhdistettiin kahta menetelmää. Toisaalta käytettiin
-vasteaikamittauksia, jossa mitattavia JNI-operaatiota toistettiin
-silmukassa ja mitattiin suorituksen kokonaisvasteaika. Toisaalta
-samoja operaatioita tutkittiin näytteenottomenetelmällä, jossa
-prosessorin tilasta ja erityisesti kutsupinosta otetaan tasaisin
-väliajoin näytteitä, joista muodostetaan koko mittausjakson ajalta
-/kutsuprofiili/. Menetelmiä yhdistelemällä saatiin selville paitsi
-riippuvuuksia eri parametrien ja kokonaisvasteajan välillä, myös
-Dalvik-virtuaalikoneen sisäisen toteutuksen osat, joiden kesken
-suoritusaika jakautui.
+ominaispiirteitä suorituskyvyn näkökulmasta. Vasteaikamittauksissa
+mitattavia JNI-operaatiota toistettiin silmukassa ja mitattiin
+suorituksen kokonaisvasteaika. Lisäksi samoja operaatioita tutkittiin
+näytteenottomenetelmällä, jossa prosessorin tilasta ja erityisesti
+kutsupinosta otetaan tasaisin väliajoin näytteitä, joista muodostetaan
+koko mittausjakson ajalta /kutsuprofiili/. Menetelmiä yhdistelemällä
+saatiin selville paitsi riippuvuuksia eri parametrien ja
+kokonaisvasteajan välillä, myös Dalvik-virtuaalikoneen sisäisen
+toteutuksen osat, joiden kesken suoritusaika jakautui.
 
 Virtuaalikoneen käyttäytymisestä saatiin erotettua lineaarisia
 riippuvuuksia, jotka paljastivat että virtuaalikoneen muistinhallinta
-aiheuttaa Dalvikin JNI-rajapinnan käytön merkittävimmät
+aiheuttaa välillisestiDalvikin JNI-rajapinnan käytön merkittävimmät
 rasitteet. Jokaisessa rajapinnan operaatiossa ja jokaisessa sen kautta
 tehdyssä aliohjelmakutsussa on myös merkittävä pohjarasite, joten
 kutsujen määrän kasvaessa vasteaika suurenee nopeasti.

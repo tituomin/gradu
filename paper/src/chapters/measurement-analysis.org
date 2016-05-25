@@ -68,7 +68,7 @@ Sovelletaan mallia tapaukseen, jossa suunnassa {{{cj}}} kutsutaan
 (*env)->CallVoidMethod(env, java_counterparts_object, mid, l1, [...] l10);
 #+end_src
 
-Tässä on JNI-kutsuja yksi, joka on aliohjelmakutsu ja
+JNI-kutsuja on tässä yksi, joka on aliohjelmakutsu ja
 virtuaalikutsu. Parametreja kutsussa on 12 (JNI-kutsun
 ~env~-parametria ei lasketa parametrimäärään), joista 11 on tässä
 tapauksessa globaaleja viitteitä. Malliin sijoittamalla saadaan

@@ -3,9 +3,18 @@
 Aluksi esitetään  lyhyt yleiskuvaus Android-järjestelmästä ennen
 siirtymistä tutkielman varsinaiseen aiheeseen, suorituskyvyn
 mittaamiseen ja mallintamiseen sekä Androidin
-Java-natiivirajapintaan.[fn:version]
+Java-natiivirajapintaan.
 
-[fn:version] Tämä tutkielma perustuu Androidin versioon 4.1.2.
+Tämä tutkielma perustuu Androidin versioon 4.1.2. Tutkielman aiheen
+kannalta se tarkoittaa erityisesti, että tutkielman mittaukset ja
+niiden tulokset koskevat Dalvik-virtuaalikonetta. Androidin versiosta
+6 lähtien Dalvik on korvattu ART-virtuaalikoneella. Uudistettu
+virtuaalikone tekee mittaustuloksista osin vanhentuneita, mutta
+tutkielman metodologian kannalta uudistuksella ei ole väliä. Samat
+mittaukset voi toteuttaa samoilla periaatteilla ja pitkälti samalla
+mittausohjelmistollakin uudemmissa Android-versioissa.  Lisäksi
+käytössä olevista Android-laitteista Dalvikin osuus on vielä
+merkittävä.
 
 * Androidin rakenne
 
@@ -26,6 +35,7 @@ Arkkitehtuurin infrastruktuuri, Dalvik-virtuaalikone sekä suuri osa
 järjestelmän matalan tason palveluista on toteutettu C- ja
 C++-kielillä @@embedded(138).
 
+Tässä tutkielmassa
 
 \todo{Yllä: POSIX ei liity userspacen järjestämiseen <<posix>>}
 
@@ -165,7 +175,9 @@ pitää samalla kirjaa koodialueista, usein silmukoista, joiden
 kääntäminen suoraan laitteistoalustan konekielelle nopeuttaisi
 todennäköisimmin ohjelman suoritusta. Tällaiset ohjelmakohdat Dalvik
 kääntää konekielelle ja suorittaa konekielisinä. Ne myös tallennetaan
-JIT-kääntäjän välimuistiin @@embedded(197).
+JIT-kääntäjän välimuistiin @@embedded(197). Androidin uudempi
+ART-virtuaalikone perustuu Java-koodin Ahead-of-Time kääntämiseen
+(AOT).
 
 \todo{<<ashmem>> onko jit-cache persistoitu -- poistettu nyt}
 
