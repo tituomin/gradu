@@ -198,13 +198,12 @@ C-lähtösilmukka kutsuu Java-tynkämetodia.
 Kuvassa \ref{fig:sequence_c_to_java} JNI-rajapinta ylitetään kahdessa
 kohtaa. Ensinnäkin, koska tällä kertaa lähtösilmukka on
 natiivikoodissa (moduulin \path{nativerunners.c} funktiossa
-\path{Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00026_runInternal}),
-täytyy jo tätä fuktiota kutsua JNI:n kautta. Varsinainen mittauskohde
-on kuitenkin natiivikoodin kutsuma \path{(*env)->CallVoidMethod}
--JNI-funktio, jota kautta kutsutaan Java-komponentissa olevaa
-\path{JavaCounterparts}-luokan tyhjää metodia. Molemmat kuvan
-Dalvik-virtuaalikoneet ovat sama instanssi, joka on selkeyden vuoksi
-piirretty kaksi kertaa.
+\path{runInternal}), täytyy jo tätä fuktiota kutsua JNI:n
+kautta. Varsinainen mittauskohde on kuitenkin natiivikoodin kutsuma
+\path{(*env)->CallVoidMethod} -JNI-funktio, jota kautta kutsutaan
+Java-komponentissa olevaa \path{JavaCounterparts}-luokan tyhjää
+metodia. Molemmat kuvan Dalvik-virtuaalikoneet ovat sama instanssi,
+joka on selkeyden vuoksi piirretty kaksi kertaa.
 
 #+NAME: fig:sequence_c_to_c
 #+INCLUDE: ../../src/figures/sequence-c-to-c.puml" src plantuml :results file :file /tmp/sequence-c-to-c.png :exports results
@@ -309,6 +308,14 @@ kuin pelkästään ajamalla tyhjää lähtösilmukkaa -- erityisesti
 Java-koodin tapauksessa Java- tai JIT-kääntäjä saattaa myös optimoida
 pois tyhjän silmukan, jolla ei ole sivuvaikutuksia.
 
+Käytännön mittauksissa osoittautui kuitenkin, että ainakaan
+Java-koodissa menetelmä ei toimi, sillä perusrasitteeksi
+interpoloinnissa saadaan negatiivinen arvo. Vaatisi lisätutkimuksia
+kehittää perusrasitemittauksista käyttökelpoisia. Ongelma saattaaa
+liittyä näissä mittauksissa käytettyihin epätyypillisiin
+ohjelmalohkoihin, joiden käyttäytyminen JIT-käännöksen syötteenä ei
+ole ennustettavaa.
+
 # TODO two plots below: scale 50%
 
 {{{plot(normaloverhead-c-fit)}}}
@@ -351,23 +358,29 @@ tuhotaan heti roskienkeruun mahdollistamiseksi.
 
 * JIT-käännös
 
-Dalvik sisältää JIT-kääntäjän \ref{sec-dalvik-intro}, jonka toiminta
-tekee Java-koodin käyttäytymisestä vaikeasti ennustettavaa: koska
-mittauksessa suoritetaan samaa silmukkaa jatkuvasti, on melko varmaa
-että se JIT-käännetään jossain vaiheessa, mutta suorituksen aluksi
-silmukan tavukoodia tulkitaan. Ongelma on ratkaistu suorittamalla
-ennen varsinaisia mittauksia /lämmittelyajo/, jonka kierrosmäärä on
-arvioitu riittäväksi JIT-kääntämisen laukaisemiseksi.
+Dalvik sisältää JIT-kääntäjän, jonka toiminta tekee Java-koodin
+käyttäytymisestä vaikeasti ennustettavaa: koska mittauksessa
+suoritetaan samaa silmukkaa jatkuvasti, on melko varmaa että se
+JIT-käännetään jossain vaiheessa, mutta suorituksen aluksi silmukan
+tavukoodia tulkitaan. Ongelma on ratkaistu suorittamalla ennen
+varsinaisia mittauksia /lämmittelyajo/, jonka kierrosmäärä on arvioitu
+riittäväksi JIT-kääntämisen laukaisemiseksi.
 
 Oikean kierrosmäärän arvioimiseksi ja JIT-käännöksen havaitsemiseksi
 tehtiin mittaus, jossa samaa benchmarkia suoritetaan pienehköllä
 silmukkakierrosluvulla mutta monessa perättäisessä ajossa, ja
-seurataan peräkkäisten vasteaikojen kehittymistä.
+seurataan peräkkäisten vasteaikojen kehittymistä. Mittaustulokset
+näkyvät kuvassa \ref{fig:warmup-plot}. Vaaka-akselilla näkyy
+mittauskerta ja pystyakselilla vasteaika. Huomionarvoista on, että
+tässä JIT-käännöksen tuloksena ollut ohjelma on /hitaampi/ kuin
+tulkittu koodi. Tämä johtunee mittauksiin valitun ohjelmakoodin
+epätyypillisyydestä.
 
 # TODO: ref below above
 
 \begin{figure}
     \input{figures/warmup-proof}
+\caption{Vasteajan muuttuminen mittausten edetessä}\label{fig:warmup-plot}
 \end{figure}
 
 * Benchmark Generator
