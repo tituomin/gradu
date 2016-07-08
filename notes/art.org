@@ -1,0 +1,22 @@
+
+Notes (with links) for ART virtual machine
+File created <2016-07-07 to 19:40>
+
+* Lähteitä
+
+** WWW
+
+*** https://developer.android.com/guide/practices/verifying-apps-art.html
+
+*** http://source.android.com/devices/tech/dalvik/index.html
+
+*** 
+
+* Lähdekoodi
+
+** Compiler / JNI
+
+*** [[file:~/latest-android/art/compiler/jni/quick/jni_compiler.cc::/%209.%20Plant%20call%20to%20native%20code%20associated%20with%20method.][The compiler part is only concerned with calling convention conversion?]]
+    although it also sets up some of the handlescope stuff in the calling stack ...
+
+*** [[file:~/latest-android/art/compiler/jni/jni_compiler_test.cc::void%20SetUpForTest(bool%20direct,%20const%20char*%20method_name,%20const%20char*%20method_sig,][Tests for jni compiler -> maybe easiest place to understand what happens.]]
