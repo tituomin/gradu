@@ -1,5 +1,61 @@
 * lähteet
 
+ART VIRTUAL MACHINE
+
+@INPROCEEDINGS{7280085,
+author={R. Yadav and R. S. Bhadoria},
+booktitle={Communication Systems and Network Technologies (CSNT), 2015 Fifth International Conference on},
+title={Performance Analysis for Android Runtime Environment},
+year={2015},
+pages={1076-1079},
+abstract={A new runtime was introduced with Android 4.4 i.e. Kit Kat, which should eventually replace the Dalvik runtime. ART (Android Runtime) and Dalvik as the runtime executes the Dalvik Executable format and Dex byte code specification. In other words, when an app is run on android, it goes through a runtime. Previously, Android's runtime was Dalvik. While it performed well, it was still a bottleneck as it only ran the code at the moment it needed to, with a JIT compiler (Just-in-time). AOT (Ahead-of-time) compilation paradigm is followed by ART to process application instructions before they are even required. In the next section, the background of compilation on various architectures is described. In next section, ART is introduced with its new features. In next section, ART has been tested against traditional Dalvik runtime. Then before the conclusion, ARM big. LITTLE architecture is described with some results.},
+keywords={Android (operating system);performance evaluation;program compilers;Android 4.4;Android runtime environment;Dalvik Executable format;Dalvik runtime replacement;Dex byte code specification;JIT compiler;Kit Kat;ahead-of-time compilation paradigm;just-in-time compiler;Androids;Computer architecture;Humanoid robots;Java;Performance evaluation;Runtime;Subspace constraints;Android Runtime;Dalvik;LITTLE Architecture;big},
+doi={10.1109/CSNT.2015.52},
+month={April},}
+
+@inproceedings{android-art,
+ author = {Kyle, Stephen and Leather, Hugh and Franke, Bj\"{o}rn and Butcher, Dave and Monteith, Stuart},
+ title = {Application of Domain-aware Binary Fuzzing to Aid Android Virtual Machine Testing},
+ booktitle = {Proceedings of the 11th ACM SIGPLAN/SIGOPS International Conference on Virtual Execution Environments},
+ series = {VEE '15},
+ year = {2015},
+ isbn = {978-1-4503-3450-1},
+ location = {Istanbul, Turkey},
+ pages = {121--132},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2731186.2731198},
+ doi = {10.1145/2731186.2731198},
+ acmid = {2731198},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {android, art, compiler testing, dex, fuzzing, random testing, testing, virtual machine testing},
+}
+
+(NOT ART)
+
+@article{Su:2014:RVP:2544375.2544379,
+ author = {Su, Tzu-Hsiang and Tsai, Hsiang-Jen and Yang, Keng-Hao and Chang, Po-Chun and Chen, Tien-Fu and Zhao, Yi-Ting},
+ title = {Reconfigurable Vertical Profiling Framework for the Android Runtime System},
+ journal = {ACM Trans. Embed. Comput. Syst.},
+ issue_date = {January 2014},
+ volume = {13},
+ number = {2s},
+ month = jan,
+ year = {2014},
+ issn = {1539-9087},
+ pages = {59:1--59:25},
+ articleno = {59},
+ numpages = {25},
+ url = {http://doi.acm.org/10.1145/2544375.2544379},
+ doi = {10.1145/2544375.2544379},
+ acmid = {2544379},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Profiling, embedded systems, nonintrusive profiling, vertical profiling, virtual machine profiling},
+}
+
+
+
 Cortex-A8 Technical Reference Manual	Revision: r3p2
 Home > Instruction Cycle Timing > About instruction cycle timing
 16.1. About instruction cycle timing
@@ -53,16 +109,16 @@ file={},
 }
 
 @article{curnow,
-author = {Curnow, H. J. and Wichmann, B. A.}, 
+author = {Curnow, H. J. and Wichmann, B. A.},
 title = {A synthetic benchmark},
-volume = {19}, 
-number = {1}, 
-pages = {43-49}, 
-year = {1976}, 
-doi = {10.1093/comjnl/19.1.43}, 
-abstract ={A simple method of measuring performance is by means of a benchmark program. Unless such a program is carefully constructed it is unlikely to be typical of the many thousands of programs run at an installation. An example benchmark for measuring the processor power of scientific computers is presented: this is compared with other methods of assessing computer power.}, 
-URL = {http://comjnl.oxfordjournals.org/content/19/1/43.abstract}, 
-eprint = {http://comjnl.oxfordjournals.org/content/19/1/43.full.pdf+html}, 
+volume = {19},
+number = {1},
+pages = {43-49},
+year = {1976},
+doi = {10.1093/comjnl/19.1.43},
+abstract ={A simple method of measuring performance is by means of a benchmark program. Unless such a program is carefully constructed it is unlikely to be typical of the many thousands of programs run at an installation. An example benchmark for measuring the processor power of scientific computers is presented: this is compared with other methods of assessing computer power.},
+URL = {http://comjnl.oxfordjournals.org/content/19/1/43.abstract},
+eprint = {http://comjnl.oxfordjournals.org/content/19/1/43.full.pdf+html},
 journal = {The Computer Journal},
 file = {curnow.pdf}
 }
@@ -84,7 +140,7 @@ pages={67-83},
 file={dependability-benchmarking.pdf}
 }
 
-- benchmarking, historiaa 
+- benchmarking, historiaa
 
 @Article{coffee,
   author = {Stephen M. Blackburn and Kathryn S. McKinley and Robin Garner and Chris Hoffmann and Asjad M. Khan and Rotem Bentzur and Amer Diwan and Daniel Feinberg and Daniel Frampton and Samuel Z. Guyer and Martin Hirzel and Antony Hosking and Maria Jump and Han Lee and J. Eliot and B. Moss and Aashish Phansalkar and Darko Stefanovic and Thomas VanDrunen and Daniel von Dincklage and Ben Wiedermann},
@@ -130,7 +186,7 @@ file={dependability-benchmarking.pdf}
  address = {New York, NY, USA},
  keywords = {DaCapo, Java, SPEC, benchmark, methodology},
  file = {p169-blackburn.pdf},
-} 
+}
 
 Since benchmarks drive computer science research and industry product
 development, which ones we use and how we evaluate them are key
@@ -196,7 +252,7 @@ ihan ok, mutta tuosta saa lähinnä yleisläppää
  address = {New York, NY, USA},
  keywords = {Graal, JNA, JNI, Java, Truffle, jblas, native code, native function interface, optimization},
  file = {p35-grimmer.pdf}
-} 
+}
 
 eräs esimerkki benchmarkin käytöstä
 
@@ -219,7 +275,7 @@ eräs esimerkki benchmarkin käytöstä
  address = {New York, NY, USA},
  keywords = {abstract machine performance model, benchmark analysis, execution time prediction, microbenchmarking},
  file = {p344-saavedra.pdf}
-} 
+}
 
 # <<saavedra>>
 
@@ -281,7 +337,7 @@ Sijainti: Hs 004.04 Allen
  publisher = {Morgan Kaufmann Publishers Inc.},
  address = {San Francisco, CA, USA},
  file = {P28.pdf},
-} 
+}
 
 
 @article{wilhelm-wcet,
@@ -304,7 +360,7 @@ Sijainti: Hs 004.04 Allen
  address = {New York, NY, USA},
  keywords = {Hard real time, worst-case execution times},
  file = {a36-wilhelm.pdf},
-} 
+}
 
 yllä oleva on erittäin hyvä! s. 17!
 sieltä löytyi tämä:
@@ -348,7 +404,7 @@ file={01215685.pdf}
  address = {New York, NY, USA},
  keywords = {benchmark, measurements, steady-state},
  file = {p297-gil.pdf},
-} 
+}
 
 - erittäin hyviä lähteitäkin...
 
@@ -388,7 +444,7 @@ file={01215685.pdf}
  acmid = {365931},
  publisher = {ACM},
  address = {New York, NY, USA},
-} 
+}
 
 - käsitteet, emulaatio vs. simulaatio
 
@@ -475,7 +531,7 @@ file={01215685.pdf}
  acmid = {356640},
  publisher = {ACM},
  address = {New York, NY, USA},
-} 
+}
 
 - s. 268: premature optimization  is the root of all evil
 
@@ -495,7 +551,7 @@ file={01215685.pdf}
 *** automaattinen jni
 
 
-@manual{jnitips, 
+@manual{jnitips,
   title = {JNI Tips},
   author = {Google},
   url = {http://developer.android.com/training/articles/perf-jni.htm},
@@ -583,9 +639,9 @@ todo month exact date
  just-in-time compiler, reverse engineering, static
  profiling},
  file = {p15-wang.pdf}
-} 
+}
 
-Loistava artikkeli. 
+Loistava artikkeli.
 
 *idea* käytä vastaavaa staattista analyysiä vähentämään native ->
 dvm-kutsuja? (siirrä dvm-osapuoli myös natiiviksi?)
@@ -600,7 +656,7 @@ dvm-kutsuja? (siirrä dvm-osapuoli myös natiiviksi?)
  - google traceview! (runs code once, combine with monkey?)
  - find out about real dynamic profiling
  - smali (dex disassembler)
-- differences btw java & c, bridge 
+- differences btw java & c, bridge
 - optimisation tricks
  - avoid calling native code through jni
  - inlining (lähde 20)
@@ -629,7 +685,7 @@ dvm-kutsuja? (siirrä dvm-osapuoli myös natiiviksi?)
  address = {New York, NY, USA},
  keywords = {JIT compilation, JNI, Java, inlining, native code},
  file = {p121-stepanian.pdf}
-} 
+}
 
 *** suorituskyky
 
@@ -650,7 +706,7 @@ dvm-kutsuja? (siirrä dvm-osapuoli myös natiiviksi?)
  address = {New York, NY, USA},
  keywords = {benchmarking, data analysis, java, methodology, statistics},
  file = {p57-georges.pdf}
-} 
+}
 
 - erittäin hyvä lähde käytettäväksi sellaisenaan
 - soveltuu suoraan benchmark-metodien avaamiseen
@@ -660,7 +716,7 @@ dvm-kutsuja? (siirrä dvm-osapuoli myös natiiviksi?)
  file = {http://web.archive.org/web/20060820211453/http://java.sun.com/docs/books/performance/}
 }
 
--waybackmachine 
+-waybackmachine
 
 @article{todo,
   author = {T, T and O, O and D, D},
@@ -740,16 +796,16 @@ dvm-kutsuja? (siirrä dvm-osapuoli myös natiiviksi?)
 - alussa hyviä perusväittämiä, arkkitehtuuri + suorituskyky
 
 @INPROCEEDINGS{arch,
-author={Clements, P.C.}, 
-booktitle={Parallel and Distributed Real-Time Systems, 1997. Proceedings of the Joint Workshop on}, title={Coming attractions in software architecture}, 
-year={1997}, 
-month={apr}, 
-volume={}, 
-number={}, 
-pages={2 -9}, 
-abstract={Software architecture has emerged as an important topic in software engineering. This paper examines what is new about the subject, and what is not, and what research trends we may expect in the future. We discuss the promise that work in the field holds, and organize the work into five predominant themes: selection, representation, evaluation, development, and recovery. Technology for the formal representation of architectures is examined in detail, along with notions of architectural styles and patterns. The paper begins by examining the range of meanings associated with the term in order to provide a context for its treatment}, 
-keywords={development;evaluation;recovery;representation;selection;software architecture;software engineering;software engineering;technological forecasting;}, 
-doi={10.1109/WPDRTS.1997.637857}, 
+author={Clements, P.C.},
+booktitle={Parallel and Distributed Real-Time Systems, 1997. Proceedings of the Joint Workshop on}, title={Coming attractions in software architecture},
+year={1997},
+month={apr},
+volume={},
+number={},
+pages={2 -9},
+abstract={Software architecture has emerged as an important topic in software engineering. This paper examines what is new about the subject, and what is not, and what research trends we may expect in the future. We discuss the promise that work in the field holds, and organize the work into five predominant themes: selection, representation, evaluation, development, and recovery. Technology for the formal representation of architectures is examined in detail, along with notions of architectural styles and patterns. The paper begins by examining the range of meanings associated with the term in order to provide a context for its treatment},
+keywords={development;evaluation;recovery;representation;selection;software architecture;software engineering;software engineering;technological forecasting;},
+doi={10.1109/WPDRTS.1997.637857},
 ISSN={},
 file={00637857.pdf}}
 
@@ -795,7 +851,7 @@ file={rethinking-models.pdf}
  address = {New York, NY, USA},
  keywords = {binary translation, hardware-assisted virtualization, paravirtualization, performance profiling, virtual machine},
  file = {p3-du.pdf}
-} 
+}
 
 - linux perf
 - perusläppää prosessorin countereista, ym
@@ -807,21 +863,21 @@ file={rethinking-models.pdf}
  isbn = {0321525949, 9780321525949},
  edition = {2nd},
  publisher = {Addison-Wesley Professional},
-} 
+}
 
 
 
-@ARTICLE{1667162, 
-author={Plattner, B. and Nievergelt, J.}, 
-journal={Computer}, title={Special Feature: Monitoring Program Execution: A Survey}, 
-year={1981}, 
-month={nov. }, 
-volume={14}, 
-number={11}, 
-pages={76 -93}, 
-abstract={Progress in this realm of performance measurement has lagged behind advances in the general field of programming languages: careful study of its capabilities and limitations is long overdue.}, 
-keywords={}, 
-doi={10.1109/C-M.1981.220255}, 
+@ARTICLE{1667162,
+author={Plattner, B. and Nievergelt, J.},
+journal={Computer}, title={Special Feature: Monitoring Program Execution: A Survey},
+year={1981},
+month={nov. },
+volume={14},
+number={11},
+pages={76 -93},
+abstract={Progress in this realm of performance measurement has lagged behind advances in the general field of programming languages: careful study of its capabilities and limitations is long overdue.},
+keywords={},
+doi={10.1109/C-M.1981.220255},
 ISSN={0018-9162},
 file={01667162.pdf}
 }
@@ -899,7 +955,7 @@ file={01667162.pdf}
 }
 
 
-           
+
 @Manual{cortex,
   title =        {Cortex-A8 Technical Reference Manual},
   OPTkey =       {},
@@ -950,21 +1006,21 @@ timing information.
  publisher = {ACM},
  address = {New York, NY, USA},
  file = {phelps.pdf}
-} 
+}
 
 ** ehkä päälähteet
 
-@ARTICLE{1291833, 
-author={Balsamo, S. and di Marco, A. and Inverardi, P. and Simeoni, M.}, 
-journal={Software Engineering, IEEE Transactions on}, title={Model-based performance prediction in software development: a survey}, 
-year={2004}, 
-month={may}, 
-volume={30}, 
-number={5}, 
-pages={ 295 - 310}, 
-abstract={ Over the last decade, a lot of research has been directed toward integrating performance analysis into the software development process. Traditional software development methods focus on software correctness, introducing performance issues later in the development process. This approach does not take into account the fact that performance problems may require considerable changes in design, for example, at the software architecture level, or even worse at the requirement analysis level. Several approaches were proposed in order to address early software performance analysis. Although some of them have been successfully applied, we are still far from seeing performance analysis integrated into ordinary software development. In this paper, we present a comprehensive review of recent research in the field of model-based performance prediction at software development time in order to assess the maturity of the field and point out promising research directions.}, 
-keywords={Automation;Availability;Performance analysis;Predictive models;Programming;Runtime;Software architecture;Software performance;Software systems;System software; formal verification; software performance evaluation; software process improvement; model-based performance prediction; requirement analysis level; software architecture level; software development process; software performance analysis; software verification;65;Software verification;integrated environments.;performance modeling and prediction;}, 
-doi={10.1109/TSE.2004.9}, 
+@ARTICLE{1291833,
+author={Balsamo, S. and di Marco, A. and Inverardi, P. and Simeoni, M.},
+journal={Software Engineering, IEEE Transactions on}, title={Model-based performance prediction in software development: a survey},
+year={2004},
+month={may},
+volume={30},
+number={5},
+pages={ 295 - 310},
+abstract={ Over the last decade, a lot of research has been directed toward integrating performance analysis into the software development process. Traditional software development methods focus on software correctness, introducing performance issues later in the development process. This approach does not take into account the fact that performance problems may require considerable changes in design, for example, at the software architecture level, or even worse at the requirement analysis level. Several approaches were proposed in order to address early software performance analysis. Although some of them have been successfully applied, we are still far from seeing performance analysis integrated into ordinary software development. In this paper, we present a comprehensive review of recent research in the field of model-based performance prediction at software development time in order to assess the maturity of the field and point out promising research directions.},
+keywords={Automation;Availability;Performance analysis;Predictive models;Programming;Runtime;Software architecture;Software performance;Software systems;System software; formal verification; software performance evaluation; software process improvement; model-based performance prediction; requirement analysis level; software architecture level; software development process; software performance analysis; software verification;65;Software verification;integrated environments.;performance modeling and prediction;},
+doi={10.1109/TSE.2004.9},
 ISSN={0098-5589},
 file = {01291833.pdf},
 }
@@ -985,12 +1041,12 @@ file = {01291833.pdf},
  publisher = {ACM},
  address = {New York, NY, USA},
  file = {p519-beizer.pdf},
-} 
+}
 
 - alkuperäinen markov-sovellus (found via ferrari)
 
-S. Barber, “Beyond performance testing”, parts 1-14, 
-IBM DeveloperWorks, Rational Technical Library, 2004, 
+S. Barber, “Beyond performance testing”, parts 1-14,
+IBM DeveloperWorks, Rational Technical Library, 2004,
 http://www.ibm.com/developerworks/rational/library/4169.html
 
 - vaikuttaa hyvältä
@@ -1072,7 +1128,7 @@ source={Scopus},
  just-in-time, optimization, performance,
  verification},
  file = {p121-absar.pdf},
-} 
+}
 
 - perusläppää androidista
 - dalvikista ja jitistä
@@ -1212,7 +1268,7 @@ source={Scopus},
  publisher = {IEEE Computer Society},
  address = {Washington, DC, USA},
  file = {04221619.pdf}
-} 
+}
 
 
 
@@ -1260,17 +1316,17 @@ source={Scopus},
   bibdate   = {20120402221746}
 }
 
-@ARTICLE{4plus1, 
-author={Kruchten, P.B.}, 
-journal={Software, IEEE}, title={The 4+1 View Model of architecture}, 
-year={1995}, 
-month={nov}, 
-volume={12}, 
-number={6}, 
-pages={42 -50}, 
-abstract={The 4+1 View Model organizes a description of a software architecture using five concurrent views, each of which addresses a specific set of concerns. Architects capture their design decisions in four views and use the fifth view to illustrate and validate them. The logical view describes the design's object model when an object-oriented design method is used. To design an application that is very data driven, you can use an alternative approach to develop some other form of logical view, such as an entity-relationship diagram. The process view describes the design's concurrency and synchronization aspects. The physical view describes the mapping of the software onto the hardware and reflects its distributed aspect. The development view describes the software's static organization in its development environment}, 
-keywords={4+1 View Model;concurrency;data-driven application design;design decisions;design object model;development environment;development view;distributed aspect;entity-relationship diagram;hardware;object-oriented design method;physical view;software architecture;software mapping;software static organization;synchronization;validation;distributed processing;entity-relationship modelling;object-oriented methods;software engineering;}, 
-doi={10.1109/52.469759}, 
+@ARTICLE{4plus1,
+author={Kruchten, P.B.},
+journal={Software, IEEE}, title={The 4+1 View Model of architecture},
+year={1995},
+month={nov},
+volume={12},
+number={6},
+pages={42 -50},
+abstract={The 4+1 View Model organizes a description of a software architecture using five concurrent views, each of which addresses a specific set of concerns. Architects capture their design decisions in four views and use the fifth view to illustrate and validate them. The logical view describes the design's object model when an object-oriented design method is used. To design an application that is very data driven, you can use an alternative approach to develop some other form of logical view, such as an entity-relationship diagram. The process view describes the design's concurrency and synchronization aspects. The physical view describes the mapping of the software onto the hardware and reflects its distributed aspect. The development view describes the software's static organization in its development environment},
+keywords={4+1 View Model;concurrency;data-driven application design;design decisions;design object model;development environment;development view;distributed aspect;entity-relationship diagram;hardware;object-oriented design method;physical view;software architecture;software mapping;software static organization;synchronization;validation;distributed processing;entity-relationship modelling;object-oriented methods;software engineering;},
+doi={10.1109/52.469759},
 ISSN={0740-7459},
 file={00469759.pdf}
 }
@@ -1315,7 +1371,7 @@ file={00469759.pdf}
  address = {New York, NY, USA},
  keywords = {JNI, JVM, SFI, sandboxing},
  file = {p201-siefers.pdf}
-} 
+}
 
 - p.201: Sun's JDK 1.6 contains over 800,000 lines of C/C++ code
 (compared to around two million lines of Java code).
@@ -1406,7 +1462,7 @@ file={00469759.pdf}
  keywords = {Interpreter, register architecture, stack
  architecture, virtual machine},
  file = {a21-shi.pdf},
-} 
+}
 
 huom, showdown käyttää java grandea ja sitä toista benchmark suitea... SPECjbb2000 :a
 
@@ -1456,15 +1512,15 @@ huom, showdown käyttää java grandea ja sitä toista benchmark suitea... SPECj
 
 - ARM-arkkitehtuuri.
 
-@INPROCEEDINGS{824367, 
-author={Radhakrishnan, R. and Vijaykrishnan, N. and John, L.K. and Sivasubramaniam, A.}, 
+@INPROCEEDINGS{824367,
+author={Radhakrishnan, R. and Vijaykrishnan, N. and John, L.K. and Sivasubramaniam, A.},
 booktitle={High-Performance Computer Architecture, 2000. HPCA-6. Proceedings. Sixth International Symposium on},
- title={Architectural issues in Java runtime systems}, 
-year={2000}, 
-month={}, 
-volume={}, 
-number={}, 
-pages={387 -398}, 
+ title={Architectural issues in Java runtime systems},
+year={2000},
+month={},
+volume={},
+number={},
+pages={387 -398},
 abstract={ The Java Virtual Machine (JVM) is the cornerstone of Java
                   technology, and its efficiency in executing portable
                   Java bytecodes is crucial for the success of this
@@ -1490,7 +1546,7 @@ abstract={ The Java Virtual Machine (JVM) is the cornerstone of Java
                   cache architectural support that would benefit JVM
                   implementations, and examines the synchronization
                   support for enhancing performance, using
-                  applications from the SpecJVM98 benchmarks}, 
+                  applications from the SpecJVM98 benchmarks},
 keywords={CPU architectural support;Java Virtual Machine;Java runtime
                   systems;SpecJVM98 benchmarks;cache architectural
                   support;computer
@@ -1503,8 +1559,8 @@ keywords={CPU architectural support;Java Virtual Machine;Java runtime
                   servers;smart JIT compiler strategy;synchronization
                   support;Java;cache storage;computer
                   architecture;program compilers;program
-                  interpreters;synchronisation;virtual machines;}, 
-doi={10.1109/HPCA.2000.824367}, 
+                  interpreters;synchronisation;virtual machines;},
+doi={10.1109/HPCA.2000.824367},
 file = {00824367.pdf},
 ISSN={},}
 
@@ -1532,11 +1588,11 @@ ISSN={},}
  address = {New York, NY, USA},
  keywords = {JNI, Java, heap protection, virtual machine},
  file = {p1-li.pdf}
-} 
+}
 
 - bugien luokittelua, hyvä!
 
-** hauskat 
+** hauskat
 
 @article{runaway,
  author = {Glass, Robert L.},
@@ -1556,7 +1612,7 @@ ISSN={},}
  publisher = {ACM},
  address = {New York, NY, USA},
  file={p16-glass.pdf},
-} 
+}
 
 
 @inproceedings{progressbar,
@@ -1575,7 +1631,7 @@ ISSN={},}
  publisher = {ACM},
  address = {New York, NY, USA},
  keywords = {duration neglect, human-centric, peak-and-end, progress bar, time perception, user interface},
-} 
+}
 
 * tiedekirjastossa
 
@@ -1634,7 +1690,7 @@ Henry H. Liu
 }
 
 - Ei löydy HY kirjastosta
- 
+
 * arvioi
 
 
@@ -1659,7 +1715,7 @@ http://www.cse.wustl.edu/~jain/cse567-06/ftp/sw_monitors1/index.html
  address = {New York, NY, USA},
  keywords = {empirical computational complexity, trend-prof},
  file = {p395-goldsmith.pdf}
-} 
+}
 
 - abstraktin perusteella voisi hyödyntää jni-bridgeen?
 
@@ -1680,7 +1736,7 @@ http://www.cse.wustl.edu/~jain/cse567-06/ftp/sw_monitors1/index.html
  address = {New York, NY, USA},
  keywords = {layered queuing, model building, performance engineering, software performance, tracing performance modeling},
  file = {p147-israr.pdf},
-} 
+}
 
 - lue
 
@@ -1781,14 +1837,14 @@ Benchmark,” Available: http://keithlea.com/javabench.
 
 -- hyviä lähteitä!
 
-@INPROCEEDINGS{leelimnotused, 
-author={Namseung Lee and Sung-Soo Lim}, 
-booktitle={Embedded Systems for Real-Time Multimedia (ESTIMedia), 2011 9th IEEE Symposium on}, title={A whole layer performance analysis method for Android platforms}, 
-year={2011}, 
-month={oct.}, 
-volume={}, 
-number={}, 
-pages={1}, 
+@INPROCEEDINGS{leelimnotused,
+author={Namseung Lee and Sung-Soo Lim},
+booktitle={Embedded Systems for Real-Time Multimedia (ESTIMedia), 2011 9th IEEE Symposium on}, title={A whole layer performance analysis method for Android platforms},
+year={2011},
+month={oct.},
+volume={},
+number={},
+pages={1},
 abstract={ As the products based on Android platform have been widely
                   spread in consumer electronics market, the needs for
                   systematic performance analysis have significantly
@@ -1808,56 +1864,56 @@ abstract={ As the products based on Android platform have been widely
                   significant. Therefore, minimizing the profiling
                   cost maintaining the accuracy of event logging has
                   been a primary issue in performance profiling at
-                  kernel layer.}, 
-keywords={Android framework layer profiling;Android platform;Dalvik Debug Monitor Server mechanism;Ftrace;consumer electronics market;event logging;kernel layer profiling;open source performance analysis tools;whole layer performance analysis method;consumer electronics;operating system kernels;program debugging;software performance evaluation;}, 
-doi={10.1109/ESTIMedia.2011.6088515}, 
+                  kernel layer.},
+keywords={Android framework layer profiling;Android platform;Dalvik Debug Monitor Server mechanism;Ftrace;consumer electronics market;event logging;kernel layer profiling;open source performance analysis tools;whole layer performance analysis method;consumer electronics;operating system kernels;program debugging;software performance evaluation;},
+doi={10.1109/ESTIMedia.2011.6088515},
 ISSN={},
 file = {06088515.pdf}
 }
 
-@INPROCEEDINGS{benchmark-ndk, 
-author={Cheng-Min Lin and Jyh-Horng Lin and Chyi-Ren Dow and Chang-Ming Wen}, 
-booktitle={Innovations in Bio-inspired Computing and Applications (IBICA), 2011 Second International Conference on}, title={Benchmark {Dalvik} and Native Code for {Android} System}, 
-year={2011}, 
-month={dec.}, 
-volume={}, 
-number={}, 
-pages={320 -323}, 
-keywords={Android development platform;Android native development kit;Android programming;Android system;C-C++ compiling;Dalvik Java code;Google;native code;performance analysis;test program;C++ language;Java;mobile computing;operating systems (computers);program compilers;program testing;virtual machines;}, 
-doi={10.1109/IBICA.2011.85}, 
+@INPROCEEDINGS{benchmark-ndk,
+author={Cheng-Min Lin and Jyh-Horng Lin and Chyi-Ren Dow and Chang-Ming Wen},
+booktitle={Innovations in Bio-inspired Computing and Applications (IBICA), 2011 Second International Conference on}, title={Benchmark {Dalvik} and Native Code for {Android} System},
+year={2011},
+month={dec.},
+volume={},
+number={},
+pages={320 -323},
+keywords={Android development platform;Android native development kit;Android programming;Android system;C-C++ compiling;Dalvik Java code;Google;native code;performance analysis;test program;C++ language;Java;mobile computing;operating systems (computers);program compilers;program testing;virtual machines;},
+doi={10.1109/IBICA.2011.85},
 ISSN={},
 file={06118781.pdf}
 }
 
 - vaikuttaa hyvältä
 
-@INPROCEEDINGS{kicheol-bad, 
-author={Ki-Cheol Son and Jong-Yeol Lee}, 
-booktitle={Awareness Science and Technology (iCAST), 2011 3rd International Conference on}, title={The method of {Android} application speed up by using {NDK}}, 
-year={2011}, 
-month={sept.}, 
-volume={}, 
-number={}, 
-pages={382 -385}, 
-abstract={The Android platform is one of the most popular used embedded OS, is mounted on robot, TVs, especially on Smart phones. Because general android applications are developed by the JAVA language, it is very slow in case which requires many calculational operations such as image processing. To overcome these defects, the Android OS is supporting JNI with the Android NDK, which makes available to use the C libraries in the android at application level. Through NDK, the Android applications can approach hardware and is able to developed high speed application. In this paper, we consider that how to enhance performance of the JAVA applications by using the Android NDK. We compared original NyARToolKit, which is augmented reality engine, with the improved NyARToolKit using the NDK. Through this experiment, we confirmed that android application programmers can make their application efficiently by using the NDK. We could increase speed of NyARToolKit by 1.869 times in our experiment. This paper presents a guideline for an effective way to use native code libraries in Android applications.}, 
-keywords={Android NDK;Android application speed up method;C libraries;JAVA language;JNI;Java native interface;NyARToolKit;TV;augmented reality engine;embedded OS;image processing;native code libraries;native development kit;robot;smart phones;C language;Java;augmented reality;operating systems (computers);software engineering;}, 
-doi={10.1109/ICAwST.2011.6163104}, 
+@INPROCEEDINGS{kicheol-bad,
+author={Ki-Cheol Son and Jong-Yeol Lee},
+booktitle={Awareness Science and Technology (iCAST), 2011 3rd International Conference on}, title={The method of {Android} application speed up by using {NDK}},
+year={2011},
+month={sept.},
+volume={},
+number={},
+pages={382 -385},
+abstract={The Android platform is one of the most popular used embedded OS, is mounted on robot, TVs, especially on Smart phones. Because general android applications are developed by the JAVA language, it is very slow in case which requires many calculational operations such as image processing. To overcome these defects, the Android OS is supporting JNI with the Android NDK, which makes available to use the C libraries in the android at application level. Through NDK, the Android applications can approach hardware and is able to developed high speed application. In this paper, we consider that how to enhance performance of the JAVA applications by using the Android NDK. We compared original NyARToolKit, which is augmented reality engine, with the improved NyARToolKit using the NDK. Through this experiment, we confirmed that android application programmers can make their application efficiently by using the NDK. We could increase speed of NyARToolKit by 1.869 times in our experiment. This paper presents a guideline for an effective way to use native code libraries in Android applications.},
+keywords={Android NDK;Android application speed up method;C libraries;JAVA language;JNI;Java native interface;NyARToolKit;TV;augmented reality engine;embedded OS;image processing;native code libraries;native development kit;robot;smart phones;C language;Java;augmented reality;operating systems (computers);software engineering;},
+doi={10.1109/ICAwST.2011.6163104},
 ISSN={},
 file={06163104.pdf}}
 
 - kehno, todella kehno
 
-@INPROCEEDINGS{eval-android-ndk, 
-author={Sangchul Lee and Jae Wook Jeon}, 
-booktitle={Control Automation and Systems (ICCAS), 2010 International Conference on}, title={Evaluating performance of {Android} platform using native {C} for embedded systems}, 
-year={2010}, 
-month={oct.}, 
-volume={}, 
-number={}, 
-pages={1160 -1163}, 
-abstract={The Android platform used for mobile devices can be applied to embedded systems, such as robot control systems. Developers should create applications by using Java language provided by Android SDK for embedded systems operated via Android platforms. However, in many existing embedded systems, developers have written applications for controlling the system by using C language. Android NDK makes it possible for developers to easily reuse such legacy code written in C/C++ languages. In this paper, we show the difference in terms of performance between an Android application using native code library from C source and an Android application using the same algorithm written in Java language only. We conducted an experiment on five parts: JNI communication delay, integer calculation, floating-point calculation, memory access algorithm, and heap memory allocation algorithm. This paper presents a guideline for an effective way to use native code libraries in Android applications.}, 
-keywords={Android NDK;Android SDK;Android platform;C language;JNI communication delay;Java language;embedded systems;floating-point calculation;heap memory allocation algorithm;integer calculation;memory access algorithm;mobile devices;C language;Java;embedded systems;mobile computing;}, 
-doi={}, 
+@INPROCEEDINGS{eval-android-ndk,
+author={Sangchul Lee and Jae Wook Jeon},
+booktitle={Control Automation and Systems (ICCAS), 2010 International Conference on}, title={Evaluating performance of {Android} platform using native {C} for embedded systems},
+year={2010},
+month={oct.},
+volume={},
+number={},
+pages={1160 -1163},
+abstract={The Android platform used for mobile devices can be applied to embedded systems, such as robot control systems. Developers should create applications by using Java language provided by Android SDK for embedded systems operated via Android platforms. However, in many existing embedded systems, developers have written applications for controlling the system by using C language. Android NDK makes it possible for developers to easily reuse such legacy code written in C/C++ languages. In this paper, we show the difference in terms of performance between an Android application using native code library from C source and an Android application using the same algorithm written in Java language only. We conducted an experiment on five parts: JNI communication delay, integer calculation, floating-point calculation, memory access algorithm, and heap memory allocation algorithm. This paper presents a guideline for an effective way to use native code libraries in Android applications.},
+keywords={Android NDK;Android SDK;Android platform;C language;JNI communication delay;Java language;embedded systems;floating-point calculation;heap memory allocation algorithm;integer calculation;memory access algorithm;mobile devices;C language;Java;embedded systems;mobile computing;},
+doi={},
 ISSN={},
 file={05669738.pdf}
 }
@@ -1865,31 +1921,31 @@ file={05669738.pdf}
 - todo lue tmä
 - vaikuttaa hyvältä!
 
-@INPROCEEDINGS{5718811, 
-author={Kundu, T.K. and Paul, K.}, 
-booktitle={VLSI Design (VLSI Design), 2011 24th International Conference on}, title={Improving Android Performance and Energy Efficiency}, 
-year={2011}, 
-month={jan.}, 
-volume={}, 
-number={}, 
-pages={256 -261}, 
-abstract={Mobile devices and embedded devices need more processing power but energy consumption should be less to save battery power. Google has released an open source platform Android for mobile devices. Android uses new power management framework to save power in mobile devices. Android developers are allowed to build only JAVA applications. In this work, we present benefits of using Android in low power embedded devices. We compared Android JAVA performance with popular Sun embedded JVM running on top of Angstrom linux. Our work shows that Android can be made more energy efficient by improving performance of JAVA applications. We developed a JAVA DSP framework which allows Android JAVA applications to use both ARM amp; DSP parallely and thus improves performance. We also showed, Android can be made more energy efficient by using our developed framework.}, 
-keywords={ARM;Android operating system;Angstrom Linux kernel;Java DSP framework;Java application;Sun embedded JVM;battery power;energy consumption;energy efficiency;low power embedded device;mobile device;open source platform;power management;power saving;processing power;Java;Linux;digital signal processing chips;electronic engineering computing;embedded systems;low-power electronics;mobile radio;operating system kernels;power aware computing;power consumption;public domain software;}, 
-doi={10.1109/VLSID.2011.63}, 
+@INPROCEEDINGS{5718811,
+author={Kundu, T.K. and Paul, K.},
+booktitle={VLSI Design (VLSI Design), 2011 24th International Conference on}, title={Improving Android Performance and Energy Efficiency},
+year={2011},
+month={jan.},
+volume={},
+number={},
+pages={256 -261},
+abstract={Mobile devices and embedded devices need more processing power but energy consumption should be less to save battery power. Google has released an open source platform Android for mobile devices. Android uses new power management framework to save power in mobile devices. Android developers are allowed to build only JAVA applications. In this work, we present benefits of using Android in low power embedded devices. We compared Android JAVA performance with popular Sun embedded JVM running on top of Angstrom linux. Our work shows that Android can be made more energy efficient by improving performance of JAVA applications. We developed a JAVA DSP framework which allows Android JAVA applications to use both ARM amp; DSP parallely and thus improves performance. We also showed, Android can be made more energy efficient by using our developed framework.},
+keywords={ARM;Android operating system;Angstrom Linux kernel;Java DSP framework;Java application;Sun embedded JVM;battery power;energy consumption;energy efficiency;low power embedded device;mobile device;open source platform;power management;power saving;processing power;Java;Linux;digital signal processing chips;electronic engineering computing;embedded systems;low-power electronics;mobile radio;operating system kernels;power aware computing;power consumption;public domain software;},
+doi={10.1109/VLSID.2011.63},
 ISSN={1063-9667},
 file={05718811.pdf}}
 
-@INPROCEEDINGS{6163105, 
-author={Jae Kyu Lee and Jong Yeol Lee}, 
-booktitle={Awareness Science and Technology (iCAST), 2011 3rd International Conference on}, title={Android programming techniques for improving performance}, 
-year={2011}, 
-month={sept.}, 
-volume={}, 
-number={}, 
-pages={386 -389}, 
-abstract={Android has been researched in various mobile device fields such as Smartphone and Tablet PC. In here, we should remember that mobile devices have limited storage and constrained battery life. Therefore, when developers develop applications, they should do efficient programming. In this paper, we have proposed programming guidelines for an effective way to improve performance in Android applications. We have programmed Android applications using Java and Native C, and compared the performance between the two languages. The applications are composed of five categories such as JNI delay, Integer, Floating-point, Memory access algorithm and String processing. By analyzing the results, we propose a more efficient way to program Android applications.}, 
-keywords={Android application programming;Android programming techniques;JNI delay;Java;floating-point;integer;memory access algorithm;mobile device;native C;performance improvement;programming guidelines;smartphone;string processing;tablet PC;C language;Java;operating systems (computers);smart phones;software performance evaluation;}, 
-doi={10.1109/ICAwST.2011.6163105}, 
+@INPROCEEDINGS{6163105,
+author={Jae Kyu Lee and Jong Yeol Lee},
+booktitle={Awareness Science and Technology (iCAST), 2011 3rd International Conference on}, title={Android programming techniques for improving performance},
+year={2011},
+month={sept.},
+volume={},
+number={},
+pages={386 -389},
+abstract={Android has been researched in various mobile device fields such as Smartphone and Tablet PC. In here, we should remember that mobile devices have limited storage and constrained battery life. Therefore, when developers develop applications, they should do efficient programming. In this paper, we have proposed programming guidelines for an effective way to improve performance in Android applications. We have programmed Android applications using Java and Native C, and compared the performance between the two languages. The applications are composed of five categories such as JNI delay, Integer, Floating-point, Memory access algorithm and String processing. By analyzing the results, we propose a more efficient way to program Android applications.},
+keywords={Android application programming;Android programming techniques;JNI delay;Java;floating-point;integer;memory access algorithm;mobile device;native C;performance improvement;programming guidelines;smartphone;string processing;tablet PC;C language;Java;operating systems (computers);smart phones;software performance evaluation;},
+doi={10.1109/ICAwST.2011.6163105},
 ISSN={},
 file={06163105.pdf}
 }
@@ -1933,17 +1989,17 @@ file={06163105.pdf}
 ** jni
 ehkä tärkeä:
 
-@INPROCEEDINGS{6393447, 
-author={Yeong-Jun Kim and Seong-Jin Cho and Kil-Jae Kim and Eun-Hye Hwang and Seung-Hyun Yoon and Jae-Wook Jeon}, 
-booktitle={Control, Automation and Systems (ICCAS), 2012 12th International Conference on}, title={Benchmarking Java application using JNI and native C application on Android}, 
-year={2012}, 
-month={oct.}, 
-volume={}, 
-number={}, 
-pages={284 -288}, 
-abstract={Android is one of the most widely spread mobile platform. Many people are using Android mobile devices and many developers are creating Android applications at this moment. When developing applications, the differences in performance between Java and C/C++ are a well-known issue. Because this is also true in Android, many Android application developers prefer to use the Android NDK along with Java compared to using only Java language. However, there are certain performance gaps in not only using different programming languages but also in using glibc of a native cross-compiler and bionic libc of the Android NDK. In this paper, we show the difference in performance between Android applications compiled by using a native cross-compiler for ARM and a native shared library through the JNI of the Android NDK. We used Mibench, a representative embedded benchmark suite that can be used freely with no restrictions. As a result, it was found that using the native shared library through the JNI of the Android NDK is faster compared to using the native cross-compiler for ARM in five of six cases.}, 
-keywords={Androids;Benchmark testing;Humanoid robots;Java;Libraries;Smart phones;C++ language;Java;operating systems (computers);program compilers;software libraries;ARM;Android NDK;Android application;Android mobile device;C/C++ language;JNI;Java language;Mibench;bionic libc;embedded benchmark suite;glibc;mobile platform;native cross-compiler;native shared library;programming language;Android;JNI;NDK;benchmark;bionic;glibc;}, 
-doi={}, 
+@INPROCEEDINGS{6393447,
+author={Yeong-Jun Kim and Seong-Jin Cho and Kil-Jae Kim and Eun-Hye Hwang and Seung-Hyun Yoon and Jae-Wook Jeon},
+booktitle={Control, Automation and Systems (ICCAS), 2012 12th International Conference on}, title={Benchmarking Java application using JNI and native C application on Android},
+year={2012},
+month={oct.},
+volume={},
+number={},
+pages={284 -288},
+abstract={Android is one of the most widely spread mobile platform. Many people are using Android mobile devices and many developers are creating Android applications at this moment. When developing applications, the differences in performance between Java and C/C++ are a well-known issue. Because this is also true in Android, many Android application developers prefer to use the Android NDK along with Java compared to using only Java language. However, there are certain performance gaps in not only using different programming languages but also in using glibc of a native cross-compiler and bionic libc of the Android NDK. In this paper, we show the difference in performance between Android applications compiled by using a native cross-compiler for ARM and a native shared library through the JNI of the Android NDK. We used Mibench, a representative embedded benchmark suite that can be used freely with no restrictions. As a result, it was found that using the native shared library through the JNI of the Android NDK is faster compared to using the native cross-compiler for ARM in five of six cases.},
+keywords={Androids;Benchmark testing;Humanoid robots;Java;Libraries;Smart phones;C++ language;Java;operating systems (computers);program compilers;software libraries;ARM;Android NDK;Android application;Android mobile device;C/C++ language;JNI;Java language;Mibench;bionic libc;embedded benchmark suite;glibc;mobile platform;native cross-compiler;native shared library;programming language;Android;JNI;NDK;benchmark;bionic;glibc;},
+doi={},
 ISSN={},
 file={06393447.pdf}
 }
@@ -2040,7 +2096,7 @@ BibTeX | EndNote | ACM Ref
  address = {New York, NY, USA},
  keywords = {android, dalvik vm, jit, method-based, trace-based},
  file = {p41-perez.pdf}
-} 
+}
 
 ** energiankulutus
 
@@ -2088,7 +2144,7 @@ BibTeX | EndNote | ACM Ref
  address = {New York, NY, USA},
  keywords = {bottleneck, call stack sampling, instrumentation, optimization, performance analysis, profiling, software development},
  file = {p4-dunlavey.pdf}
-} 
+}
 
 @inproceedings{Ansaloni:2010:RDE:1712605.1712616,
  author = {Ansaloni, Danilo and Binder, Walter and
@@ -2112,7 +2168,7 @@ BibTeX | EndNote | ACM Ref
  instrumentation, calling context tree, concurrency,
  java, profiling},
  file = {p57-ansaloni.pdf}
-} 
+}
 
 -- oleellinen!
 
@@ -2133,7 +2189,7 @@ BibTeX | EndNote | ACM Ref
  publisher = {ACM},
  address = {New York, NY, USA},
  file = {p85-ammons.pdf}
-} 
+}
 
 - ehkä?
 
@@ -2382,7 +2438,7 @@ BibTeX | EndNote | ACM Ref
  address = {New York, NY, USA},
  keywords = {JNI, JVML, inter-language analysis, java native
  interface, specification extraction},
-} 
+}
 [download]
 
 @article{Tan:2007:IIA:1297105.1297031,
@@ -2432,7 +2488,7 @@ BibTeX | EndNote | ACM Ref
   annote    = {Keywords: matemaattinen tilastotiede},
   bibdate   = {20120718165924}
 }
-            
+
 
 * erityistarpeisiin
 
@@ -2454,7 +2510,7 @@ BibTeX | EndNote | ACM Ref
  address = {New York, NY, USA},
  keywords = {energy aware computing},
  file = {p35-miyoshi.pdf}
-} 
+}
 
 
 
@@ -2590,14 +2646,14 @@ todo siisti
 Library:	 Kumpulan kampuskirjasto, lehdet, ei kotilainaan
 Call Number:	 Hs 1A:67-86 Journal of object-oriented programming
 
-Vol. 12, no. 6: Performance: myths, measurements, and morals; Part 1: myths 
-Vol. 12, no. 7: Performance: myths, measurements, and morals; Part 2: Even easy measurements are hard 
-Vol. 12, no. 8: Performance: myths, measurements, and morals; Part 3: Quadratic behavior will get you if you don't watch out! 
-Vol. 12, no. 9: Performance: myths, measurements, and morals; Part 4: How might we speed up a simple program? 
-Vol. 13, no. 1: Performance: myths, measurements, and morals; Part 5: How not to measure execution time 
+Vol. 12, no. 6: Performance: myths, measurements, and morals; Part 1: myths
+Vol. 12, no. 7: Performance: myths, measurements, and morals; Part 2: Even easy measurements are hard
+Vol. 12, no. 8: Performance: myths, measurements, and morals; Part 3: Quadratic behavior will get you if you don't watch out!
+Vol. 12, no. 9: Performance: myths, measurements, and morals; Part 4: How might we speed up a simple program?
+Vol. 13, no. 1: Performance: myths, measurements, and morals; Part 5: How not to measure execution time
 - puuttuu kirjastosta mutta olisi ollut paras
 
-Vol. 13, no. 2: Performance: myths, measurements, and morals; Part 6: Useful measurements\(emfinally! 
+Vol. 13, no. 2: Performance: myths, measurements, and morals; Part 6: Useful measurements\(emfinally!
 Vol. 13, no. 3: Performance: myths, measurements, and morals; Part 7: Detailed measurements of a small program
 
 *** portability
