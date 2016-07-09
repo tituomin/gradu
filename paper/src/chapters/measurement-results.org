@@ -796,7 +796,7 @@ kutsuttavat rajapinnan palvelut rajattiin tutkielman ulkopuolelle.
 
 Nämä harvemmin tarvittavat palvelut liittyvät muun muassa
 eksplisiittiseen viitteiden käsittelyyn, olioiden ja luokkien
-ominaisuuksien käsittelyyn, reflektioon, sekä natiivimetodien
+ominaisuuksien käsittelyyn, reflektioon sekä natiivimetodien
 rekisteröintiin.
 
 Sen sijaan todennäköisesti oleellisemmat, mutta mittausten
