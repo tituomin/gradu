@@ -3,7 +3,7 @@
 Kaikki Android-järjestelmään asennettavat tavalliset sovellukset
 suoritetaan omassa prosessissaan Dalvik-virtuaalikoneessa, vaikka ne
 sisältäisivätkin natiivikomponentteja.  Tutkimusten mukaan
-@@benchmark-ndk @@kicheol-bad @@eval-android-ndk natiivikomponenttien
+@@benchmark-ndk @@eval-android-ndk natiivikomponenttien
 käytöstä joskus todella on suorituskykyetua: koska Java-ohjelmaa
 suoritetaan välikielelle käännettynä virtuaalikoneessa, seuraa tästä
 yleisrasitteita verrattuna suoraan konekielellä suoritettavaan
