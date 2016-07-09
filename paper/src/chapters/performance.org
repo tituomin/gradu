@@ -259,7 +259,7 @@ tallennetun informaation avulla voidaan suorituksen jälkeen tulostaa
 luettelo jokaisesta kutsutusta aliohjelmasta järjestettynä
 kutsukertojen mukaan.  Tämän kaltaista instrumentointia ei välttämättä
 tarvitse ohjelmoida käsin: kääntäjä voi lisätä instrumentointikäskyjä
-kohdeohjelmaan tarvittaessa automaattisesti @@gprof(2).
+kohdeohjelmaan tarvittaessa automaattisesti @@gprof(121).
 
 Ohjelman profiilin käsitteen loi Donald Knuth @@fortran. Alunperin se
 tarkoitti taulukkoa ohjelman jokaisen lauseen /suorituskerroista/;
