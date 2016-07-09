@@ -638,7 +638,7 @@ kutsua kohti eli karkeasti arvioiden yli 20 sekuntia 512-alkioisen
 taulukon läpikäyntiin.
 
 Suoria vertailukohtia näille suunnan C\to{}Java taulukko-operaatioille
-ei ole muissa kutsusuunnissa, jälleen kerran lukuunnottamatta
+ei ole muissa kutsusuunnissa, jälleen kerran lukuunottamatta
 ~NIO~-rajapintaa (ks. kohta \ref{sec:measurement-classification-nio}).
 
 Primitiivitaululukoiden operaatioiden osoitinversioiden vasteajat ovat
