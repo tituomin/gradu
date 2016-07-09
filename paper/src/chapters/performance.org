@@ -487,7 +487,7 @@ kykenevät saamaan näytteitä ainoastaan ohjelman ns. luovutuskohdista
 
 Tutkielman mittauksissa näytteenotto tapahtuu aina, kun ARM-suorittimen
 kellosyklejä on tapahtunut ennalta valittu määrä (tapahtuma /cycle
-count/ @@cortex(3-86)). Tietokoneen suorittimen kellotaajuus (syklien
+count/ @@cortex(3:86)). Tietokoneen suorittimen kellotaajuus (syklien
 määrä sekunnissa) ei kuitenkaan tyypillisesti ole vakio, vaan mukautuu
 laskentatarpeeseen @@freqscaling. Mittauksissa on siis erikseen
 asetettava suorittimen kellotaajuus vakioksi, etteivät suuren
