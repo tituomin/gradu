@@ -3,26 +3,47 @@
 function individual_file() {
     filename=$1
     language=$2
-    echo "\subsection{${filename#$BASEDIR}}"
-    echo "\inputminted[linenos, numbersep=5pt, tabsize=4, frame=bottomline]{$language}{$filename}"
+    BASEDIR=$3
+    echo "\vspace{1cm}"
+    HEADER=${filename#$BASEDIR}
+    HEADER=${HEADER//_/\\_}
+    echo "\subsubsection{$HEADER}"
+    echo "\inputminted[fontsize=\small, linenos, numbersep=5pt, tabsize=4, frame=topline,framesep=0.8cm]{$language}{$filename}"
 }
 
 function print_all() {
-    BASEDIR=$1
-    LANGUAGE=$2
-    ROOT=$3
-    echo "\section{$LANGUAGE-tiedostot hakemistossa ${BASEDIR#$ROOT}}"
-    for filename in `find $BASEDIR -iname "*.$FILE_SUFFIX"`
+    ROOT=$1
+    BASEDIR=$2
+    LANGUAGE_SUFFIX=$3
+    LANGUAGE=$4
+    SUBPROJECT=$5
+    echo "\subsection{$SUBPROJECT}"
+    echo "Hakemistossa ${BASEDIR#$ROOT}."
+    for filename in `find $BASEDIR -iname "*.$LANGUAGE_SUFFIX" |sort`
     do 
-        individual_file $filename $FILE_SUFFIX
+        individual_file $filename $LANGUAGE $BASEDIR
     done
 }
 
 cat source-code.tex
 
-BASEDIR='/home/tituomin/StudioProjects/nativebenchmark/src/fi/helsinki/cs/tituomin/nativebenchmark/'
-FILE_SUFFIX='java'
+BASEROOT='/home/tituomin/StudioProjects'
 
-print_all $BASEDIR $FILE_SUFFIX "/home/tituomin/StudioProjects/nativebenchmark/"
+echo "\newpage"
+echo "\section{NativeBenchmark}"
+
+print_all "$BASEROOT/nativebenchmark/" \
+          "$BASEROOT/nativebenchmark/src/fi/helsinki/cs/tituomin/nativebenchmark/" \
+          "java" \
+          "java" \
+          "Java-komponentit"
+
+echo "\newpage"
+
+print_all "$BASEROOT/nativebenchmark/" \
+          "$BASEROOT/nativebenchmark/script/" \
+          "py" \
+          "python" \
+          "Python-komponentit"
 
 echo "\end{document}"
