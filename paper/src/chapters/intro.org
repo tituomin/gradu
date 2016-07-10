@@ -60,7 +60,7 @@ laitteiston kohdearkkitehtuurille sopivaksi
 kirjastobinääriksi. Lisäksi NDK sisältää joukon C-kielisiä
 otsaketiedostoja ja ohjelmointirajapintoja, joiden kautta osajoukkoa
 Android-alustan ominaisuuksista voidaan hyödyntää suoraan natiivista
-ohjelmasta, kutsumatta Java-sovelluskehyksen rajapintoja JNI-kerroksen
+ohjelmasta kutsumatta Java-sovelluskehyksen rajapintoja JNI-kerroksen
 kautta. Natiivitason Android-rajapinnoista ainoastaan nämä pysyvät
 vakaina alustan kehittyessä. Uusissa NDK-versioissa voidaan jopa
 ohjelmoida näitä rajoitettuja rajapintoja käyttävä sovellus
@@ -69,10 +69,10 @@ kokonaisuudessaan ilman Javaa.
 Suorituskyvyn kannalta Androidin natiiviohjelmoinnissa keskeistä on
 Java- ja natiivikomponenttien välinen kommunikaatio ja sitä kautta
 myös sovelluksen kokonaisarkkitehtuuri. JNI-kutsukerroksen käyttäminen
-on aina suorituskykyrasite, erityisesti kun natiivikomponentti kutsuu
-Java-kom\-ponenttia. Monia haasteita liittyy myös muistinhallintaan ja
-resurssien jakamiseen virtuaalikoneen hallitseman muistin ja
-natiivikomponentin välillä.
+on aina suorituskykyrasite ja erityisesti silloin, kun
+natiivikomponentti kutsuu Java-kom\-ponenttia. Monia haasteita liittyy
+myös muistinhallintaan ja resurssien jakamiseen virtuaalikoneen
+hallitseman muistin ja natiivikomponentin välillä.
 
 Tutkielmassa käytetään suorituskykymittauksia tutkimaan
 monikielisyydestä johtuvien rasitteiden suuruusluokkia. Tutkielma
