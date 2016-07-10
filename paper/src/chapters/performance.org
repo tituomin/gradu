@@ -341,7 +341,7 @@ mittaukset käynnistetään ja raportit tulostetaan ytimen ulkopuolisilla
 
 [fn:vm] Esimerkki virtualisoinnista on Androidin oma /emulaattori/,
 joka perustuu QEMU-virtuaalikoneeseen. Se on emulaattori, sillä se
-mallintaa Androidin laitteistoarkkitehtuuria eri laitteistolla,
+mallintaa Androidin laitteistoarkkitehtuuria toisella laitteistolla,
 tavallisella mikrotietokoneella.
 # lähde !!
 [fn:valgrind] Sovelluksen suorittaminen esimerkiksi
