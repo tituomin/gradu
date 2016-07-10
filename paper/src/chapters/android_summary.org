@@ -25,9 +25,9 @@ esimerkiksi vähentävät muistin- ja virrankulutusta @@embedded(49--53).
 
 Android ei muistuta tyypillistä Linux-pohjais\-ta työpöytä- tai
 palvelinkäyttöjärjestelmää @@embedded(48). Se on läheisempää sukua
-riisutummille /upotetuille/ Linux-järjestelmille, mutta eroaa
+riisutummille /upotetuille/ Linux-järjestelmille mutta eroaa
 niistäkin. Ensinnäkin merkittävä osa sovelluksista ja koko
-järjestelmästä on ohjelmoitu Javalla ja suoritetaan
+järjestelmästä on ohjelmoitu Javalla, ja niitä suoritetaan
 virtuaalikoneessa. Järjestelmän rakenne ei muutenkaan noudata
 esimerkiksi POSIX-standardia vaan perustuu hajautettuun
 komponenttiarkkitehtuuriin, joka on nimeltään /Binder/ @@embedded(79).
