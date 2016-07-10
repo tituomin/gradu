@@ -83,9 +83,9 @@ halutut tyyppivariaatiot.
 # Esimerkki ?  / bit of source
 
 Koska Java-kieli ei suoraan tue staattisen metaohjelmoinnin
-mahdollisuutta, eikä C++-kielen templateja voisi hyödyntää kuin
-natiiviversioiden ohjelmointiin, päätettiin lähdekoodin generointi
-tehdä täysin erillisellä Python-kielisellä ohjelmalla.
+mahdollisuutta, eikä C++-kielen geneerisiä malleja voisi hyödyntää
+kuin natiiviversioiden ohjelmointiin, päätettiin lähdekoodin
+generointi tehdä täysin erillisellä Python-kielisellä ohjelmalla.
 
 Seuraavassa hahmotellaan tästä perusratkaisusta syntynyttä
 arkkitehtuuria.
