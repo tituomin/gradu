@@ -319,7 +319,7 @@ kuvassa \ref{fig:normaloverhead-c-fit} ja Java-kieliselle kuvassa
 Käytännön mittauksissa osoittautui kuitenkin, että ainakaan
 Java-koodissa menetelmä ei toimi, sillä perusrasitteeksi
 interpoloinnissa saadaan negatiivinen arvo. Vaatisi lisätutkimuksia
-kehittää perusrasitemittauksista käyttökelpoisia. Ongelma saattaaa
+kehittää perusrasitemittauksista käyttökelpoisia. Ongelma saattaa
 liittyä näissä mittauksissa käytettyihin epätyypillisiin
 ohjelmalohkoihin, joiden käyttäytyminen JIT-käännöksen syötteenä ei
 ole ennustettavaa.
