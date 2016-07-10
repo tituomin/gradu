@@ -27,7 +27,7 @@ käsitellä Java-ohjelman dataa @@jnibook(41).
 
 \begin{figure}[h!]
 \centerline{\includegraphics[scale=1]{figures/jni-basic.pdf}}
-\caption{Natiivirajapinnan asema\cite[s. 5]{jnibook}}\label{fig:jnibasic}
+\caption{Natiivirajapinnan asema \cite[s. 5]{jnibook}}\label{fig:jnibasic}
 \end{figure}
 
 Kuva \ref{fig:jnibasic} antaa kokonaiskäsityksen JNI:n
