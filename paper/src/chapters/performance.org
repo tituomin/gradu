@@ -518,7 +518,7 @@ mittausjärjestelyn tarkkaa suunnittelua ja tulosten
 tulkintaa. Yksittäinen suoritusaikamittaus tuottaa mittausarvon
 tietylle /ohjelma--syöte/-parille tietyllä laitteistolla
 @@ferrari(455), muttei sinänsä kerro mitään yleistä esimerkiksi juuri
-monikielisten Android-ohjelmien ominaisuuksista. Yksittäisen
+monikielisten Android-ohjelmien ominaisuuksista. Yksittäiseen
 mittaustulokseen eniten vaikuttavat kausaaliset syyt saattavat olla
 kulloisenkin ohjelman, laitteiston tai syötteen sattumanvaraisia
 ominaispiirteitä ja toteutusyksityiskohtia.
