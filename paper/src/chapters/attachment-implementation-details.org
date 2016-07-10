@@ -21,10 +21,9 @@ Toinen ratkaisu on käsitellä Java- ja C-koodia merkkijonoina eikä
 esimerkiksi rakenteellisina syntaksipuina. Monimutkaisia
 lähdekoodimerkkijonoja on vältetty upottamasta suoraan pythonkielisen
 logiikan keskelle. Lähdekoodin generoinnin pohjina toimivat
-~templates~-paketista löytyvät aihiot. Ne muistuttavat
-www-sovelluksissa käytettyjen template-kielten aihioita. Aihiot ovat
-kohdekielistä koodia sisältäviä merkkijonoja, jonka sisällä olevat
-nimetyt paikkamerkit korvataan vaihtuvilla arvoilla.
+~templates~-pakkauksesta löytyvät aihiot. Ne ovat kohdekielistä
+koodia sisältäviä merkkijonoja, jonka sisällä olevat nimetyt
+paikkamerkit korvataan vaihtuvilla arvoilla.
 
 Seuraavassa esimerkissä näkyy ~jni_types~-moduulin pythonkielinen
 ~dict~-tyyppimääritelmä Javan ~int~-primitiivityypille.
