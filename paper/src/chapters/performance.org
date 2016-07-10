@@ -59,7 +59,7 @@ Performance Engineering/, /SPE/). Se on ohjelmistotekniikan osa-alue,
 jossa suorituskykyvaatimukset kvantifioidaan ja otetaan huomioon
 vaatimusanalyysistä lähtien aina ylläpitoon asti
 @@spe(1). Puutteelliset suorituskykyominaisuudet ovat usein olleet
-keskeisessä osassa epäonnistuneissa ohjelmistoprojekteissa @@runaway
+keskeisessä osassa epäonnistuneissa ohjelmistoprojekteissa @@runaway,
 ja suorituskykytekniikan kehittäjän Connie U. Smithin mukaan ne
 voitaisiin usein välttää /mallintamalla/ ohjelmistoja
 suorituskykynäkökulmasta jo ennen toteutusvaihetta.
@@ -73,7 +73,7 @@ mallintamiseen varhaisessa kehitysvaiheessa
 @@future-spe(172). Mittaamista voidaan tehdä vasta, kun ohjelmisto tai
 sen osa on jo olemassa. Mallintamista hankaloittaa puolestaan, että
 käyttökelpoiselta mallilta vaaditaan abstraktisuutta ja
-yksinkertaisuutta, mutta samalla riittävää /tarkkuutta/ suhteessa
+yksinkertaisuutta mutta samalla riittävää /tarkkuutta/ suhteessa
 määriteltyyn syötejoukkoon sekä reunaehtoihin ollaakseen /validi/
 @@ferrari(161--162).
 
@@ -85,7 +85,7 @@ malli natiivirajapinnasta mittausten perusteella.
 
 Seuraavaksi käsittelemme tutkielmassa käytettyjä
 suorituskykymittareita yleisellä tasolla, ohjelmiston suorituskyvyn
-mittaamiseen käytettäviä konkreettisia tekniikoita, ja lopuksi itse
+mittaamiseen käytettäviä konkreettisia tekniikoita ja lopuksi itse
 mittauskohteena olevaa ohjelmistoa sekä mittausten järjestämiseen ja
 tulosten tulkintaan liittyviä haasteita.
 
