@@ -521,9 +521,7 @@ tietylle /ohjelma--syöte/-parille tietyllä laitteistolla
 monikielisten Android-ohjelmien ominaisuuksista. Yksittäiseen
 mittaustulokseen eniten vaikuttavat kausaaliset syyt saattavat olla
 kulloisenkin ohjelman, laitteiston tai syötteen sattumanvaraisia
-ominaispiirteitä ja toteutusyksityiskohtia.
-
-Esimerkiksi vasteaika ilmaisee aina tietyn operaation vasteajan
+ominaispiirteitä ja toteutusyksityiskohtia. Esimerkiksi vasteaika ilmaisee aina tietyn operaation vasteajan
 tietyllä syötteellä eli kuormituksella, jota on hyvin vaikea
 spesifioida tavalla, joka olisi riippumaton käsiteltävän järjestelmän
 ominaisuuksista @@ferrari(14).
