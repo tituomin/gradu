@@ -329,7 +329,7 @@ ole ennustettavaa.
 * Muistia allokoivat operaatiot
 
 Muistia allokoivia JNI-operaatioita, jotka esimerkiksi luovat olioita,
-ei voi suorittaa tuhansia kertoja ilman että sovelluksen muisti
+ei voi suorittaa tuhansia kertoja ilman, että sovelluksen muisti
 loppuu. Yleensä mittauksissa on pyritty pitämään kierrosmäärä niin
 suurena kuin käytännössä on järkevää, jotta satunnaisten
 järjestelmässä esiintyvien häiriöiden suuruus verrattuna mitattuihin
