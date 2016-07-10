@@ -6,7 +6,7 @@ C- tai C++-ohjelmointikielellä.
 
 Yleensä Android-sovellukset ohjelmoidaan /Java/-ohjelmointikielellä ja
 suoritetaan Googlen Androidia varten kehittämässä
-virtuaalikoneessa. Androidin Java-sovelluskehyksen käyttäminen ei aina
+virtuaalikoneessa. Androidin Java-sovellus\-kehyksen käyttäminen ei aina
 kuitenkaan ole kokonaisuuden kannalta paras ratkaisu. Ensinnäkin
 käytettävissä saattaa olla muulla kielellä kuin Javalla kirjoitettua
 ohjelmakoodia, jota halutaan hyödyntää sellaisenaan. Toiseksi täysin
