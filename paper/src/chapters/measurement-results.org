@@ -535,8 +535,8 @@ tuloksissa nimillään samoin kuin tukioperaatiot ~GetStringLength~ ja
 pituus, mikä on tarpeen ennen kuin merkkijonon voi läpikäydä
 C-koodissa.
 
-Näille C\to{}Java -suunnan operaatioille ei ole löydettävissä vastinpareja
-suunnissa {{{cj}}} tai {{{jc}}}, sillä kyseessä ovat operaatiot, joita
+Näille {{{cj}}} -suunnan operaatioille ei ole löydettävissä vastinpareja
+suunnissa {{{cc}}} tai {{{jj}}}, sillä kyseessä ovat operaatiot, joita
 on kutsuttava sen /lisäksi/ että merkkijonoa varsinaisesti luetaan
 natiivikoodissa. Siten natiivimerkkijonojen käsittely C-kielessä ei
 vaadi mitään vastaavaa ylimääräistä operaatiota kuten ei myöskään
