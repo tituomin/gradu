@@ -419,13 +419,12 @@ mielekäs abstraktiotaso näytteiden analyysille löytyy
 tilannekohtaisesti jostakin pääohjelman ja suoritettavan kohdan
 väliltä kutsupinosta.
 
-\label{sec-profiling-inclusive}
-
 Profilointityökaluissa aliohjelman suoritusaikaa kutsutaan usein
-/inklusiiviseksi/, jos siihen lasketaan mukaan myös aliohjelman
+/inklusiiviseksi/ \label{sec-profiling-inclusive}, jos siihen lasketaan mukaan myös aliohjelman
 kutsumien muiden aliohjelmien ajat @@android-tracing. Pelkkään
 käskyosoittimeen perustuva raaka suoritusaika on tässä tutkielmassa
 /eksklusiivinen/ suoritusaika, jota usein kutsutaan nimellä /self time/.
+
 # gprof, oprofile, etc.
 
 Näytteenotto ei ole mittausmenetelmänä kytketty tarkalleen tiettyihin
