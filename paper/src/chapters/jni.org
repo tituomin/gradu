@@ -327,6 +327,7 @@ läpikäymiseen.
 
 Kokonaisuudessaan ~sum~-nimisen Java-metodin kutsuminen
 natiivimetodista käsin voisi näyttää seuraavalta:
+\newpage
 
 #+begin_src c
 #include <jni.h>
