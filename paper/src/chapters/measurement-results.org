@@ -322,7 +322,7 @@ lokaaleja ja päinvastaisen suunnan viitteet globaaleja. Kyseisessä
 suunnassa viitteet ovat oletusarvoisesti lokaaleja JNI-standardin
 mukaisesti -- natiivikomponentin on erikseen luotava globaalit
 viitteet, jos aikoo käyttää viitteitä yksittäisen natiivimetodikutsun
-elinkaaren ulkopuolella. Suunnassa {{{jc}}} ei tarvita myöskään
+elinkaaren ulkopuolella. Suunnassa {{{jc}}} ei myöskään tarvita
 rinnakkaisten säikeiden poissulkemista listauksen
 \ref{profile:J2CBenchmark00206} kohdassa \ding{202}.
 
@@ -598,6 +598,7 @@ vähäisemmillä lähtösilmukan kierrosmäärillä: allokoivien operaatioiden
 kierrosluku on 300 ja ei-allokoivien 500000, joten vasteaikojen
 suhdeluku on 3:5000.
 
+{{{plot_a(08)}}}
 # TODO kuva puuttuu yltä
 
 Samoin kopioivat operaatiot ovat lineaarisesti raskaampia kopioitavan
