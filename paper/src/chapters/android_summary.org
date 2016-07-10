@@ -75,7 +75,7 @@ voidaan pitää kirjaa käyttöjärjestelmän käyttäjänhallinnan avulla.
 Android-ohjelmointirajapinnan luokat antavat sovellusohjelmoijalle
 yksinkertaisen näkymän käyttöjärjestelmän palveluihin. Valtaosa
 palveluiden varsinaisesta toteutuksesta sijoittuu kuitenkin Androidin
-/järjestelmäpalveluihin/ (/system services/), komponentteihin joita
+/järjestelmäpalveluihin/ (/system services/) eli komponentteihin joita
 järjestelmä suorittaa omissa palvelinprosesseissaan
 @@embedded(79). Yleensä sovellusohjelmoija ei kutsu näitä
 tukipalveluita suoraan, vaan Android-ohjelmointirajapintojen sisäiset
