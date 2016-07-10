@@ -1,10 +1,10 @@
 \label{sec-measurement-setup}
 
-Tutkielmaa varten laadittiin synteettinen
-benchmarking-mittausohjelmisto (/microbenchmarking suite/)
-/NativeBenchmark/. Ohjelmiston avulla Android-laitteessa voidaan
-suorittaa kokoelma minimaalisia aliohjelmia, jotka yhdessä
-harjoittavat kattavasti JNI-rajapinnan eri kutsuja.
+Tutkielmaa varten laadittiin alkeisoperaatioden mittausohjelmisto
+(/microbenchmarking suite/) /NativeBenchmark/. Ohjelmiston avulla
+Android-laitteessa voidaan suorittaa kokoelma minimaalisia
+aliohjelmia, jotka yhdessä testaavat kattavasti JNI-rajapinnan eri
+kutsuja.
 
 Kun alkeisoperaatioita suoritetaan laitteessa, samojen operaatioiden
 suoritusta mitataan kahdella toisiaan täydentävällä menetelmällä eri
@@ -21,14 +21,14 @@ avulla.
 # todo sisäinen viittaus tohon alle: miten ?
 
 Yksittäisen funktiokutsun mitattu vasteaika ei kerro mitään
-yleispätevää kyseisestä funktiosta
-(ks. luku \ref{performance:representativeness-generalization},
-s.\pageref{performance:representativeness-generalization}). Siksi samaa
-funktiota kutsutaan varioiden kaikkia mahdollisia asioita, joita
-funktiokutsussa voi varioida: käytännössä kutsuparametrien määrää ja
-niiden tyyppiä. Lisäksi jos kyseessä on merkkijonoja, taulukoita tai
-muita vaihtelevankokoisia syötteitä käsittelevä funktio, varioidaan
-käsiteltävän syötteen kokoa.
+yleispätevää kyseisestä funktiosta (ks. luku
+\ref{performance:representativeness-generalization},
+s.\pageref{performance:representativeness-generalization}). Siksi
+samaa funktiota kutsutaan vaihdellen eri kutsukerroilla kaikkia
+sellaisia asioita, joita funktiokutsussa voi muuttaa:
+käytännössä kutsuparametrien määrää ja niiden tyyppiä. Jos kyseessä on
+merkkijonoja, taulukoita tai muita vaihtelevankokoisia syötteitä
+käsittelevä funktio, vaihdellaan käsiteltävän syötteen kokoa.
 
 Esimerksi JNI-funktio \path{CallVoidMethod} vastaanottaa vaihtelevan määrän
 kutsuparametreja. Mittausajoissa sitä kutsutaan eri määrillä eri
@@ -37,8 +37,8 @@ funktio eri tavalla käsitellessään primitiivityyppisiä ja
 viitetyyppisiä parametreja.
 
 Tämän ansiosta mittauksista piirtyy hieman kokonaisvaltaisempi kuva
-siitä, mitkä mittauksessa varioitavat muuttujat ovat oleellisia
-funktion suorituskyvyn kannalta.
+siitä, mitkä mittausten muuttujat ovat oleellisia funktion
+suorituskyvyn kannalta.
 
 Toinen tapa lisätä tulosten hyödynnettävyyttä on seuraava periaate:
 jos jollekin JNI-kutsulle on keksitty analoginen kutsu tai operaatio
@@ -311,7 +311,7 @@ seuraavalla menetelmällä. Kummastakin lähtösilmukasta luotiin
 benchmarksarjat, jossa suoraan silmukan sisälle lisätään /n/
 kappaletta identtistä ohjelmalohkoa, jotka suorittavat hyödyttömiä
 mutta tarpeeksi raskaita ja sivuvaikutuksellisia aritmeettisia
-operaatioita paikallisilla muuttujilla. Kun /n/:n arvoa varioidaan
+operaatioita paikallisilla muuttujilla. Kun /n/:n arvoja käydään läpi
 lineaarisesti, saaduista vasteajoista interpoloimalla voidaan
 arvioida, mikä mittausmenetelmän pohjavasteaika on /n/:n arvolla 0
 (tyhjä lähtösilmukka). Näin saadaan tarkempi arvio perusrasitteesta
