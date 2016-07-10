@@ -53,11 +53,10 @@ ja Java-ohjelma vastaavasti kutsuu ~void~-paluuarvollista metodia.
 Kolmas tapa saada syvempiä tuloksia JNI-rajapinnan käyttäytymisestä on
 mitata samoista benchmarkeista myös kutsuprofiilit. Kun
 vasteaikamittauksista on löytynyt mielenkiintoisia riippuvuuksia
-varioitavien mittausmuuttujien ja vasteaikojen väliltä, nähdään
-saman benchmarkin kutsuprofiileista usein selvästi, mikä
-JNI-toteutuksen osa aiheuttaa esimerkiksi lineaarisesti lisääntyvän
-vasteajan, kun vaikkapa viitearvoisten kutsuparametrien määrää
-lisätään.
+muuttujien ja vasteaikojen väliltä, nähdään saman benchmarkin
+kutsuprofiileista usein selvästi, mikä JNI-toteutuksen osa aiheuttaa
+esimerkiksi lineaarisesti lisääntyvän vasteajan, kun vaikkapa
+viitearvoisten kutsuparametrien määrää lisätään.
 
 * Toteutuksen haasteet ja reunaehdot
 
