@@ -292,7 +292,7 @@ sivuvaikutuksellinen operaatio, jotta sitä ei optimoitaisi tyhjänä
 pois käännösvaiheessa.
 
 JNI-lisärasitteen suuruudesta saakin paremman arvion seuraavasti.
-Suunnan {{{cj}}} rasite saadaan vähentämällä ({{{cj}}})-vasteajasta
+Kutsusuunnan {{{cj}}} rasite saadaan vähentämällä ({{{cj}}})-vasteajasta
 ({{{jj}}})-vasteaika. Sama pätee kääntäen myös toiseen
 kutsusuuntaan. Olettaen, että itse lähtösilmukan yleisrasite on
 merkityksettömän pieni suhteessa koko vasteaikaan, saadaan näin
