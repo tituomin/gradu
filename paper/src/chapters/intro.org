@@ -22,7 +22,7 @@ varmistetaan ohjelmistoprosessin alusta lähtien, että ohjelmistolle
 asetetut suorituskykyvaatimukset täyttyvät lopullisessa
 tuotteessa. Menettely on näennäisesti ristiriidassa usein lainatun
 Donald Knuthin lausahduksen kanssa: "Ennenaikainen optimointi on
-kaiken pahan alku ja juuri @@goto(268)."  Yleisen tulkinnan mukaan
+kaiken pahan alku ja juuri @@goto(268)."\hspace{6pt}Yleisen tulkinnan mukaan
 ohjelmistoa suunniteltaessa tulisi keskittyä sen oikeaan toimivuuteen
 ja optimoida suorituskykyä vasta, kun käytössä on suoritettava
 ohjelma. Sen suoritusaikaista käyttäytymistä mittaamalla selvitetään,
