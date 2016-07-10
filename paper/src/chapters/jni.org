@@ -355,7 +355,7 @@ tunnisteet omissa muuttujissaan, kun ne on kerran selvitetty. Paras
 käytäntö on tehdä ~GetMethodID~-kutsut erillisessä natiivimetodissa,
 jota kutsutaan sen Java-luokan staattisessa alustuslohkossa, jonka
 metodeja natiivikomponentti tulevaisuudessa kutsuu @@jnibook(56).
-Virtuaalikone takaa, että luokan staattinen alustuslohko suoritetaan
+Virtuaalikone takaa, että luokan staattinen alustuslohko suoritetaan,
 ennen kuin luokan metodeja voi kutsua.
 
 #+begin_src java -r
