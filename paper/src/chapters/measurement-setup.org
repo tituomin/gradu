@@ -113,10 +113,10 @@ ne käsitellään seuraavassa tarkemmin.
 #+LABEL: fig:nativebenchmark_architecture
 #+RESULTS: fig:nativebenchmark_architecture
 
-Android-sovellus \path{NativeBenchmark} sisältää kaiken Android-laitteessa
-suoritettavan ohjelmakoodin: sekä Java-kieliset että natiivikirjastoon
-kuuluvat benchmarkit, mutta myös niiden ympärille vaadittavan
-logiikan, joka suorittaa halutut benchmarkit valituilla
+Android-sovellus \path{NativeBenchmark} sisältää kaiken
+Android-laitteessa suoritettavan ohjelmakoodin: Java-kielisten ja
+natiivikirjastoon kuuluvien benchmarkien lisäksi sovellukseen kuuluu
+ohjelmalogiikka, joka suorittaa halutut benchmarkit valituilla
 mittaustyökaluilla.
 
 NativeBenchmark huolehtii mittausajoja koskevien asetustiedostojen
