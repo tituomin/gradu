@@ -605,8 +605,8 @@ kohteen koon kasvaessa, mutta tässäkin tapauksessa merkistökoodauksen
 muunnos Javan 16-bittisestä Unicodesta 8-bittiseen UTF-8:aan on
 merkittävästi raskaampi kuin pelkkä Unicode-merkkien kopiointi. Näin
 ollen kuvassa \ref{fig:special-calls-utf-c-j-fit} merkkijonon koon
-selvittäminen UTF-8-koodauksessa on raskaampi operaatio kuin Unicode-
-merkkijonon kopioiminen.
+selvittäminen UTF-8-koodauksessa on raskaampi operaatio kuin
+Unicode-merkkijonon kopioiminen.
 
 # todo: miten viitata alloc-plotteihin?
 
