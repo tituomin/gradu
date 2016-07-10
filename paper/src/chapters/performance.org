@@ -571,8 +571,8 @@ suunnitteluvaiheiden malleista @@spe(18). Ohjelmistoprosessissa näitä
 validoituja malleja verrataan lopulta alkuperäisiin
 suorituskykyvaatimuksiin, joita niitäkin voidaan joskus jopa muuttaa
 @@spe(18). Siten kvantifioidutkin mallit ja mittaukset täytyy lopulta
-suhteuttaa ohjelmiston suorituskykyvaatimuksille ja viime kädessä
-käyttäjien subjektiiviselle kokemukselle.
+suhteuttaa ohjelmiston suorituskykyvaatimuksiin ja viime kädessä
+käyttäjien subjektiivisiin kokemuksiin.
 
 \todo{<<outo kommentti>>}
 # vihavaiselta
