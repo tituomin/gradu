@@ -625,7 +625,7 @@ Toinen, tutkielmassa käytetty lähtökohta JNI:n
 suorituskykyominaisuuksien tutkimiseen on ikään kuin synteettinen:
 yritämme tutkia JNI-rajapinnan yksittäisten operaatioiden
 suorituskykyominaisuuksia ja päätellä niistä, miten osista rakennettu
-kokonaisuus mahdollisesti toimisi. Kutsun /alkeisoperaatioden
+kokonaisuus mahdollisesti toimisi. Kutsun /alkeisoperaatioiden
 mittaamiseksi/ (/microbenchmarking/) tällaista menetelmää, jossa
 verrataan kielen tai järjestelmän yksittäisten perusoperaatioiden
 rasitteita toisiinsa @@saavedra(347). Menetelmän etuna on, että
