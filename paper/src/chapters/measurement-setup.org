@@ -231,11 +231,23 @@ järjestelmäkomponenttien asentaminen laitteeseen saattaa tehdä siitä
 toimintakyvyttömän, joten riskin minimoimiseksi ja resurssisyistä
 mittauksia ei toistettu viimeisimmillä laitteilla.
 
-Mikään mittausmenetelmissä sinänsä ei kuitenkaan estä mittausten
+Mikään käytetyissä mittausmenetelmissä ei kuitenkaan estä mittausten
 toistamista uusilla Android-laitteilla, mikä olisikin tulosten
 toistettavuuden ja yleistettävyyden kannalta tärkeä seuraava
-askel. Mittaukseen valittavan Android-laitteen on kuuluttava Android
-Open Source Projectin tukemiin kohdelaitteisiin.
+askel. Mittausojelmiston siirtäminen on helpointa Android Open Source
+Projectin (AOSP) suoraan tukemiin kohdelaitteisiin kuten
+/Nexus/-laitteisiin. Lisäominaisuudet, joita mittausohjelmisto
+edellyttää Android-alustalta, on toteutettu suoraan muokkaamalla ja
+konfiguroimalla AOSP:n julkaisemaa lähdekoodiversiota, ja AOSP:n
+lähdekoodiversiot kääntyvät suoraan ilman lisätyötä vain tuetuille
+laitteille. Avoimen lähdekoodien komponenttien lisäksi Android vaatii
+nimittäin toimiakseen binäärimuotoisia laitteistokohtaisia kirjastoja,
+jotka AOSP on julkaissut vain tuetuille laitteille suoraan osana
+laitteistokohtaisia julkaisuversioita @@aosp-build-device. Samoin
+tuettujen laitteistojen tarkat konfiguraatiot kääntämistä varten ovat
+osa AOSP-lähdekoodia. Kääntäminen onnistuu kuitenkin mille tahansa
+laitteelle, jonka binäärikirjastot ja käännöskonfiguraatiot ovat
+saatavilla.
 
 Oleellisin tutkielmassa avoimeksi jäävä kysymys on, miten Dalvikin
 korvaava ART-virtuaalikonetoteutus muuttaa tuloksia. Sen takia
