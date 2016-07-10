@@ -221,7 +221,7 @@ Mittaukset suoritettiin Samsungin valmistamassa /Google Nexus
 S/-puhelimessa, joka julkaistiin vuonna 2010. Puhelimessa on Androidin
 versio 4.1.2. Perf-työkalun käytön mahdollistamiseksi puhelimeen
 käännettiin uudelleen konfiguroitu Linuxin ydin, ja
-Android-järjestelmän paketteihin otettiin mukaan perf-ohjelma sekä
+Android-järjestelmän pakkauksiin otettiin mukaan perf-ohjelma sekä
 uudelleen käännetyt versiot Dalvikista ja su-komennosta. Profilointi
 vaatii myös profiloitavien komponenttien kuten Dalvikin
 uudelleenkääntämistä erikseen määritellyllä kutsukonventiolla, jotta
