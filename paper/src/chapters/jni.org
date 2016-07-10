@@ -593,8 +593,6 @@ natiivikomponenttiin, joten kyseinen metodikutsu saattaa pitää
 paikallisten viitteiden edellyttämät muistivaraukset käytössä hyvinkin
 pitkään, ellei viitteitä erikseen vapauteta.
 
-\newpage
-
 Ennakoimme, että natiivirajapinnan ylittäminen voi aiheuttaa
 ylimääräisiä suorituskykyrasitteita aivan tavallisissa
 laskentatehtävissä kuten merkkijonojen ja taulukoiden käsittelyssä,
