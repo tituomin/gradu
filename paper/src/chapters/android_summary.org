@@ -35,8 +35,6 @@ Arkkitehtuurin infrastruktuuri, Dalvik-virtuaalikone sekä suuri osa
 järjestelmän matalan tason palveluista on toteutettu C- ja
 C++-kielillä @@embedded(138).
 
-Tässä tutkielmassa
-
 \todo{Yllä: POSIX ei liity userspacen järjestämiseen <<posix>>}
 
 \begin{figure}[h!]
