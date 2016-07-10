@@ -1,9 +1,8 @@
 
-
-Aluksi esitetään  lyhyt yleiskuvaus Android-järjestelmästä ennen
-siirtymistä tutkielman varsinaiseen aiheeseen, suorituskyvyn
-mittaamiseen ja mallintamiseen sekä Androidin
-Java-natiivirajapintaan.
+Tässä luvussa esitetään lyhyt yleiskuvaus tutkielman mittauskohteesta
+eli Android-järjestelmästä taustaksi myöhemmille luvuille, joissa
+syvennytään tutkielman varsinaiseen aiheeseen, suorituskyvyn
+mittaamiseen ja mallintamiseen sekä Androidin Java-natiivirajapintaan.
 
 Tämä tutkielma perustuu Androidin versioon 4.1.2. Tutkielman aiheen
 kannalta se tarkoittaa erityisesti, että tutkielman mittaukset ja
