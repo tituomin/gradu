@@ -100,7 +100,7 @@ aiheuttamaan suurempaan rasitteeseen sekä kieltenvälisten
 kutsusuuntien keskinäisiin eroihin. Listauksen
 \ref{profile:C2JBenchmark00206} kutsuprofiilissa nähdään, missä aliohjelmissa
 suoritusaikaa kuluu eniten mittauksessa, jossa natiivikomponentista
-kutsutaan Java- metodia kahdellakymmenellä Object-tyyppisellä
+kutsutaan Java-metodia kahdellakymmenellä Object-tyyppisellä
 parametrilla. Suurin osa profiileissa esiintyvistä aliohjelmista
 kuuluu Dalvikin C++-toteutukseen.
 
