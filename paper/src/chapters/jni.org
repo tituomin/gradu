@@ -446,12 +446,7 @@ natiivirajapinnan merkkijono-operaatioiden suorituskyvyn tarkempi
 analyysi vaatii kuitenkin mittauksia ja virtuaalikoneen toteutuksen
 tutkimista.
 
-\newpage
-Yleisestikin suorituskykyvaatimukset usein edellyttävät abstraktien
-rajapintojen piilottamien toteutusyksityiskohtien paljastamista --
-ainakin dokumentaatiossa.
 # lähde http://developer.android.com/training/articles/perf-jni.html
-# todo: joku lähde tuohon abstrakti rajapinta vs. toteutus
 
 *** turha? :noexport:
     Osoittimen palauttavista merkkijonofunktioista on olemassa versiot,
