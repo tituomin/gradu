@@ -13,7 +13,7 @@ ohjelmakoodia, jota halutaan hyödyntää sellaisenaan. Toiseksi täysin
 uudestakin mobiilisovelluksesta halutaan usein lähtökohtaisesti
 rakentaa mahdollisimman siirrettävä.[fn:ios] Kolmas ja tämän
 tutkielman kannalta oleellisin syy arvioida vaihtoehtoja Java-kielen
-käytölle on suorituskyky, erityisesti jos ohjelmisto suorittaa paljon
+käytölle on suorituskyky erityisesti, jos ohjelmisto suorittaa paljon
 raskasta laskentaa tai sille on oleellisia tosiaikavaatimuksia.
 
 /Ohjelmistojen suorituskykytekniikka/ (/Software Performance
