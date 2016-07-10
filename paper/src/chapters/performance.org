@@ -7,7 +7,7 @@ kysymykseen on vastattu hyvin eri tavoin.
 * Suorituskyvyn hallinta tuotantoprosessissa
 
 Donald Knuthilta on peräisin tunnettu lainaus: "Ennenaikainen
-optimointi on kaiken pahan alku ja juuri @@goto(268)."  Knuth
+optimointi on kaiken pahan alku ja juuri" @@goto(268).  Knuth
 korostaa, ettei varsinaisessa ohjelmointityössä kannata käyttää aikaa
 suorituskykyä parantaviin manuaalisiin optimointeihin, ennen kuin
 ohjelman suoritusaikaista käyttäytymistä on tutkittu ja löydetty
