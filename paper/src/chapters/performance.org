@@ -325,7 +325,7 @@ edellyttäisi mittauksia myös todellisessa ympäristössä. [fn:valgrind]
 # vaan dynaamista binääri-instrumentointia !! tärkeä top
 
 Myös Androidin Java-virtuaalikoneessa Dalvikissa on ohjelmien
-ajonaikaista käyttäytymistä kirjaavia toimintoja, joiden mittauksiin
+suoritusaikaista käyttäytymistä kirjaavia toimintoja, joiden mittauksiin
 Androidin kehitysympäristön suorituskykytyökalut perustuvat
 @@aosp. Dalvik mittaa kuitenkin Java-ohjelman metodien sekä
 natiivialiohjelmien suoritusaikoja @@android-tracing, @@androscope,
