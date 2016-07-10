@@ -1,0 +1,113 @@
+#+NAME: fig:benchmark_generator_architecture
+#+INCLUDE: "../../src/figures/architecture-benchmark-generator.puml" src plantuml :results file :file /tmp/architecture-benchmark_generator.png :exports results
+#+ATTR_LATEX: :width {0.5\linewidth} :placement [t]
+#+CAPTION: Benchmark Generator: komponentit
+#+LABEL: fig:benchmark_generator_architecture
+#+RESULTS: fig:benchmark_generator_architecture
+
+Kuvan \ref{fig:benchmark_generator_architecture} alaosasta nähdään,
+että Ant-käännöstyökalu on konfiguroitu kutsumaan automaattisesti
+~benchmark_generator~-päämoduulia, ja generoidut lähdekooditiedostot
+tulevat näin osaksi normaaleja Androidin SDK- ja NDK-
+käännösprosesseja.
+
+Lähdekoodien generointi perustuu seuraavaan kahteen
+suunnitteluratkaisuun. Ensinnäkin generointikoodin syötteenä ovat
+~jni_types~-moduulissa määritellyt tietorakenteet, jotka sisältävät
+tarvittavat tiedot kaikista Java-ohjelmoinnin tyypeistä ja niiden
+vastinpareista C-kielessä.
+
+Toinen ratkaisu on käsitellä Java- ja C-koodia merkkijonoina eikä
+esimerkiksi rakenteellisina syntaksipuina. Monimutkaisia
+lähdekoodimerkkijonoja on vältetty upottamasta suoraan pythonkielisen
+logiikan keskelle. Lähdekoodin generoinnin pohjina toimivat
+~templates~-paketista löytyvät aihiot. Ne muistuttavat
+www-sovelluksissa käytettyjen template-kielten aihioita. Aihiot ovat
+kohdekielistä koodia sisältäviä merkkijonoja, jonka sisällä olevat
+nimetyt paikkamerkit korvataan vaihtuvilla arvoilla.
+
+Seuraavassa esimerkissä näkyy ~jni_types~-moduulin pythonkielinen
+~dict~-tyyppimääritelmä Javan ~int~-primitiivityypille.
+
+#+INCLUDE: "/home/tituomin/nativebenchmark/script/jni_types.py" src python :lines "57-67"
+#+LABEL: src:jni-gen-int
+#+NAME: src:jni-gen-int
+#+CAPTION: foo bar
+
+Tietueen kentistä ~symbol~ on tyypin sisäinen tunniste
+generointikoodissa. Kentät ~java~ sekä ~c~ ovat tyypin nimet
+molemmissa kielissä, ja ~java-literal~ sekä ~c-literal~ sisältävät
+tyyppiä vastaavan literaalin, jonka voi aina lisätä lähdekoodiin, kun
+tarvitaan kyseisen tyyppistä arvoa. Kenttä ~jvm-desc~ on
+Java-tavukoodissa ja joissain JNI-kutsuissa käytetty tyyppimääritys.
+Kentän ~representative~ arvon perusteella voidaan alustavien
+mittausten jälkeen välttää turhien benchmarkien aikaavievä suoritus --
+esimerkiksi ~int~- ja ~char~-tyyppien välillä ei huomattu mitään eroa,
+joten mittauksissa voidaan käyttää vain ~int~-tyyppisiä benchmarkeja
+edustamaan molempia.
+
+# Seuraavassa esimerkissä on vastaava määritelmä ~String~-viitetyypille.
+
+# #+INCLUDE: "/home/tituomin/nativebenchmark/script/jni_types.py" src python :lines "118-128"
+
+# Eroa ~int~-tyypiin on erityisesti siinä, ettei C-ohjelmassa ole suoraa
+# literaalia Javan ~String~-arvolle (kenttä ~c-literal~). ~String~ on
+# myös merkitty viitetyyppiseksi (kenttä ~is-object~).
+
+Generointiin käytettävät aihiot näyttävät seuraavalta. Esimerkki
+on tiedostosta \path{templates/c_nativemethod.py}.
+
+#+INCLUDE: "/home/tituomin/nativebenchmark/script/templates/c_nativemethod.py" src python :lines "7-18"
+
+Template-kielen paikkamerkkeinä tulkittavat osat erotetaan
+kirjaimellisesti tulkittavasta osasta erottimilla ~<%~ ja ~%>~,
+joille ei ole varattua merkitystä kohdekielissä. Kyseisten merkintöjen
+käyttöä aihioissa esimerkiksi kohdekielen merkkijonoliteraalin sisällä
+ei tueta.
+
+Aihion voi täydentää valittujen parametrien arvoilla
+~templating~-moduulin funktioilla ~put~ ja ~partial~. Funktio ~put~
+korvaa aihion kaikki paikkamerkit samannimisten nimettyjen parametrien
+arvoilla poistaen puuttuvia argumentteja vastaavat
+paikkamerkit. Funktio ~partial~ jättää puuttuvien argumenttien
+paikkamerkinnät paikoilleen, mikä helpottaa erikoistuneiden aihioiden
+johtamista samasta perusaihiosta. Funktiota ~put~ käytetään kuten
+seuraavassa esimerkissä.
+
+#+INCLUDE: "/home/tituomin/nativebenchmark/script/make_custom_benchmarks.py" src python :lines "320-329"
+#+BEGIN_SRC python
+[...]
+#+END_SRC
+
+Molemmat funktiot on helppo toteuttaa, kun tukena on
+seuraavat Pythonin sanakirjaluokasta periytyvät kaksi aliluokkaa.
+
+#+INCLUDE: "/home/tituomin/nativebenchmark/script/templating.py" src python :lines "6-13"
+
+Kun ~put~-kutsun nimetyt argumentit tallennetaan ~PurgeDict~-olioon,
+mahdollisesti puuttuvien avainten arvoiksi tulee automaattisesti
+tyhjä. Vastaavasti ~partial~-kutsun argumentit tallennettuna
+~PartialDict~-olioon toimivat niin, että paikkamerkin puuttuva arvo
+korvataan samanlaisella paikkamerkillä.
+
+# TODO: pseudokoodi benchmarkit luovasta silmukasta?
+
+# TODO: python-koodin sielunelämään meneminen hieman kyseenalaista, onko tarpeen
+
+* Mittaustulosten käsittelijä Benchmark Analyzer
+
+/NativeBenchmark/-sovelluksen näkökulmasta suoritettavilla
+benchmarkeilla ei ole mitään suhdetta toisiinsa, vaan jokainen
+suoritetaan toisistaan riippumatta ja jokaisesta mittauksesta
+tallennetaan mahdollisimman täydelliset parametritiedot
+tekstitiedostoon.  Vasteaikamittauksissa tiedostoon tallennetaan myös
+mittaustulos eli vasteaika, kutsuprofiilin tapauksessa sen sijaan
+tiedostopolku ~perf record~-työkalun tulostamaan
+näytetiedostoon.
+
+Koska kaikki varioitavat parametrit on tallennettu rakenteisesti
+tiedostoon, /Benchmark Analyzer/ -ohjelman tehtäväksi jää yhdistellä
+jälkikäteen saman parametrin vaihtelevat arvot yhdeksi mittaussarjaksi
+ja piirtää tulokset kuvaajiksi ~gnuplot~-ohjelmalla sekä tulostaa ne
+taulukoiksi tekstitiedostoihin. Analyysiohjelmalla on myös käytössään
+~jni_types~-moduulin tyyppimääritykset.
