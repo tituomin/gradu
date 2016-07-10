@@ -59,7 +59,7 @@ todennäköisesti automaattisen muistinhallinnan piirissä olevien
 komponenttien yhdistämisestä hallitusti natiivikomponenttiin, jossa
 muistinhallinta on manuaalista.
 
-Muita mielenkiintoisia kehityskohteita olisi varioida ja tutkia
+Muita mielenkiintoisia kehityskohteita olisi tutkia
 kattavammin erilaisia JNI-rajapinnan parametrivaihtoehtoja:
 erityisesti lokaalien ja globaalien viitteiden erottelu osoittautui
 hyvin oleelliseksi tekijäksi, jota tutkielman mittauksissa ei

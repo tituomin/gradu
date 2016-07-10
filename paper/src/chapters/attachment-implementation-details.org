@@ -105,7 +105,7 @@ mittaustulos eli vasteaika, kutsuprofiilin tapauksessa sen sijaan
 tiedostopolku ~perf record~-työkalun tulostamaan
 näytetiedostoon.
 
-Koska kaikki varioitavat parametrit on tallennettu rakenteisesti
+Koska kaikki mittausten parametrit on tallennettu rakenteisesti
 tiedostoon, /Benchmark Analyzer/ -ohjelman tehtäväksi jää yhdistellä
 jälkikäteen saman parametrin vaihtelevat arvot yhdeksi mittaussarjaksi
 ja piirtää tulokset kuvaajiksi ~gnuplot~-ohjelmalla sekä tulostaa ne

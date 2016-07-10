@@ -726,7 +726,7 @@ seuraavat huomiot.
    käyttäytymisestä yksityiskohtaista tietoa mallien pohjaksi, jolloin
    voimme päätellä, mitkä JNI:n osat ovat suorituskyvyn kannalta kriittisimpiä.
 4. Mittauksissa alkeisoperaatioille annettavia mahdollisia parametreja
-   varioidaan hallitusti. Yksittäisten epävarmojen vasteaika-arvojen
+   vaihdellaan hallitusti. Yksittäisten epävarmojen vasteaika-arvojen
    sijaan saamme kuvaajia, joissa vasteaika vaihtelee halutun
    muuttujan funktiona. Regressioanalyysin avulla saamme varmistusta
    mittausten oikeellisuudelle, sikäli kuin mittauksissa on näkyvissä
