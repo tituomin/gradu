@@ -184,7 +184,7 @@ on tyhjä. Näin ollen mittauksen kohde on käytännössä juuri JNI-kutsu.
 Kuvassa \ref{fig:sequence_java_to_java} nähdään yksinkertaisempi
 asetelma, jossa Java-ohjelma kutsuu sisäisesti tavallista Java-metodia
 ilman JNI-rajapintaa.  \path{JavaCounterparts}-luokka sisältää kaikki
-tyhjät metodit joita voidaan kutsua Java- tai C-lähtösilmukasta. Samaa
+tyhjät metodit, joita voidaan kutsua Java- tai C-lähtösilmukasta. Samaa
 luokkaa hyödynnetään myös seuraavassa tapauksessa, jossa
 C-lähtösilmukka kutsuu Java-tynkämetodia.
 
