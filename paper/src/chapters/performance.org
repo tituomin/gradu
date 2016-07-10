@@ -440,11 +440,11 @@ kokonaisten aliohjelmien inklusiiviset suoritusajat.
 
 \todo{<<fix-benchmarking>>}
 
-Tutkielmassa mittauksiin käytetään lähinnä /perf/-työkalun
+Tutkielmassa profilointiin käytetään /perf/-työkalun
 näytteenottotekniikkaa, sillä siinä mittauskohteena on mahdollisimman
 paljon tuotantoversiota vastaava sovellus. Näytteenoton avulla ei
-saada selville aliohjelmakutsujen /määriä/, mutta niitä kontrolloidaan
-benchmark-mittauksissa mitattavan ohjelmakoodin tasolla.
+saada selville aliohjelmakutsujen tarkkoja /määriä/ vaan ainoastaan
+niiden suhteelliset osuudet otetuissa näytteissä.
 
 ** Näytteenoton tilastollinen edustavuus
 Kaikenlaisessa näytteenotossa on varmistettava, että otanta on
