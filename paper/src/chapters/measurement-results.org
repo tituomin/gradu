@@ -592,13 +592,13 @@ Kopioivan Unicode-operaation profiilissa
 
 Sen sijaan UTF-muunnoksen tekevä osoitinoperaatio on riippuvainen
 kohteen koosta. Se on myös operaatio, joka johtaa Dalvikin allokoimaan
-muistia muunnettua merkkijonoa varten. Siksi kuvan \ref{fig:aplot-8}
+muistia muunnettua merkkijonoa varten. Siksi kuvan \ref{fig:special-calls-utf-c-j-alloc-fit}
 vasteajat on mitattu allokoiviin operaatioihin soveltuvilla
 vähäisemmillä lähtösilmukan kierrosmäärillä: allokoivien operaatioiden
 kierrosluku on 300 ja ei-allokoivien 500000, joten vasteaikojen
 suhdeluku on 3:5000.
 
-{{{plot_a(08)}}}
+{{{plot_a(special-calls-utf-c-j-alloc-fit)}}}
 # TODO kuva puuttuu yltä
 
 Samoin kopioivat operaatiot ovat lineaarisesti raskaampia kopioitavan
@@ -608,8 +608,6 @@ merkittävästi raskaampi kuin pelkkä Unicode-merkkien kopiointi. Näin
 ollen kuvassa \ref{fig:special-calls-utf-c-j-fit} merkkijonon koon
 selvittäminen UTF-8-koodauksessa on raskaampi operaatio kuin
 Unicode-merkkijonon kopioiminen.
-
-# todo: miten viitata alloc-plotteihin?
 
 # {{{plot(56)}}}
 {{{plot(special-calls-utf-c-j-fit)}}}
