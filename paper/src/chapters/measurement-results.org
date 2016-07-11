@@ -172,6 +172,7 @@ mutex-lukon varaaminen kohdassa \ding{202}. Nopeampi suorituspolku
 käyttää lokaalin JNI-kontekstin omaa viitetaulukkoa ilman lukitusta
 \ding{203}
 
+\newpage
 #+NAME: src:dvmDecodeIndirectRef
 #+CAPTION: Ote funktiosta dvmDecodeIndirectRef
 #+ATTR_LATEX: frame=lines
