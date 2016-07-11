@@ -124,7 +124,8 @@ metadatan tiedostoihin. Sovelluksessa on yksinkertainen graafinen
 Android-käyttöliittymä, mutta sovellusta voi ohjata myös laitteen
 ulkopuolelta tekstikomentojen avulla TCP-yhteyden välityksellä.
 
-Sovelluksen keskeisimmät osat ovat
+Kuvan \ref{fig:nativebenchmark_architecture} komponenttikaaviossa
+näkyvät sovelluksen keskeisimmät osat:
 - ~benchmark~ -paketin sisältämät generoidut benchmarkit,
 - ~libnativebenchmark~ -natiivikirjasto, joka sisältää generoitujen
   benchmarkien natiiviosat,
