@@ -67,6 +67,7 @@
 \\usepackage{url,etoolbox}
 \\usepackage{graphicx}
 \\usepackage{tikz}
+\\usepackage[pdftex, pdfborderstyle={/S/U/W 0}]{hyperref} % this disables the boxes around links
 \\graphicspath{{./figures/}}
 \\usepackage{epstopdf}
 \\usepackage[figuresleft]{rotating}
