@@ -25,7 +25,8 @@ function print_all() {
     done
 }
 
-cat source-code.tex
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cat "$DIR/source-code.tex"
 
 BASEROOT='/home/tituomin/StudioProjects'
 

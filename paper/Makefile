@@ -17,7 +17,7 @@ vpath %.tex  gen
 
 # First rule should always be the default "all" rule, so both "make all" and
 # "make" will invoke it.
-all: $(BUILD_DIRS) main.pdf copy_pdf
+all: $(BUILD_DIRS) main.pdf add_attachments copy_pdf
 
 plots: $(BUILD_DIRS) plots.pdf
 
@@ -71,9 +71,15 @@ main.pdf: gen/main-latin.tex $(FIGURE_LATIN)
 plots.pdf: gen/plots-latin.tex $(FIGURE_LATIN)
 	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/plots -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make gen/plots-latin.tex
 
+build/tituomin-gradu-attachment.pdf: attachments/source-code.tex attachments/the_lot.sh
+	attachments/the_lot.sh >gen/source-attachment.tex
+	latexmk -jobname=build/tituomin-gradu-attachment -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" gen/source-attachment.tex
 
-copy_pdf: main.pdf
-	cp build/tituomin-gradu.pdf /home/tituomin/Dropbox/
+add_attachments: main.pdf build/tituomin-gradu-attachment.pdf
+	pdftk build/tituomin-gradu.pdf build/tituomin-gradu-attachment.pdf cat output build/tituomin-gradu-final.pdf
+
+copy_pdf: add_attachments
+	cp build/tituomin-gradu-final.pdf /home/tituomin/Dropbox/
 
 clean:
 	latexmk -CA
