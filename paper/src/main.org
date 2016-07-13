@@ -86,6 +86,6 @@
 
 #+LATEX: \internalappendix{1}{Mittausten generointi ja käsittely}
 #+INCLUDE: "../gen/chapters/attachment-implementation-details.org"
-
-#+LATEX: \externalappendix{2}{Muutokset Android-alustaan}
+#+LATEX: \internalappendix{2}{Muutokset Android-alustaan}
+#+INCLUDE: "../gen/chapters/attachment-aosp-changes.org"
 #+LATEX: \externalappendix{3}{Mittausohjelmiston lähdekoodi}
