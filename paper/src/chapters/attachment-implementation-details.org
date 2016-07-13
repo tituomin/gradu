@@ -1,9 +1,4 @@
-#+NAME: fig:benchmark_generator_architecture
-#+INCLUDE: "../../src/figures/architecture-benchmark-generator.puml" src plantuml :results file :file /tmp/architecture-benchmark_generator.png :exports results
-#+ATTR_LATEX: :width {0.5\linewidth} :placement [t]
-#+CAPTION: Benchmark Generator: komponentit
-#+LABEL: fig:benchmark_generator_architecture
-#+RESULTS: fig:benchmark_generator_architecture
+#+LATEX:\counterwithout{figure}{section}
 
 Kuvan \ref{fig:benchmark_generator_architecture} alaosasta nähdään,
 että Ant-käännöstyökalu on konfiguroitu kutsumaan automaattisesti
@@ -53,6 +48,17 @@ edustamaan molempia.
 # literaalia Javan ~String~-arvolle (kenttä ~c-literal~). ~String~ on
 # myös merkitty viitetyyppiseksi (kenttä ~is-object~).
 
+\newpage
+
+#+NAME: fig:benchmark_generator_architecture
+#+INCLUDE: "../../src/figures/architecture-benchmark-generator.puml" src plantuml :results file :file /tmp/architecture-benchmark_generator.png :exports results
+#+ATTR_LATEX: :width {0.9\linewidth} :placement [ht!]
+#+CAPTION: Benchmark Generator: komponentit
+#+LABEL: fig:benchmark_generator_architecture
+#+RESULTS: fig:benchmark_generator_architecture
+
+\newpage
+
 Generointiin käytettävät aihiot näyttävät seuraavalta. Esimerkki
 on tiedostosta \path{templates/c_nativemethod.py}.
 
@@ -93,7 +99,7 @@ korvataan samanlaisella paikkamerkillä.
 
 # TODO: python-koodin sielunelämään meneminen hieman kyseenalaista, onko tarpeen
 
-* Mittaustulosten käsittelijä Benchmark Analyzer
+#+LATEX: \subsection*{Mittaustulosten käsittelijä Benchmark Analyzer}
 
 /NativeBenchmark/-sovelluksen näkökulmasta suoritettavilla
 benchmarkeilla ei ole mitään suhdetta toisiinsa, vaan jokainen
