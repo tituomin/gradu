@@ -173,7 +173,7 @@
   \pagestyle{myheadings}
   \markright{}
   \appendix
-  \addtocontents{toc}{\protect \contentsline {section}{\enclname}{}{}}
+  \addtocontents{toc}{\protect \contentsline {section}{\enclname\vspace{-0.4cm}}{}{}}
   \setcounter{page}{0}
 }
 \newcommand{\internalappendix}[2]{%
@@ -182,12 +182,12 @@
   \setcounter{page}{1}%
   \section*{\appendixname\ #1. #2}
   \addtocontents{toc}{
-    \protect \contentsline {section}{\vspace{-0.5cm}\hspace{0.5cm}#1 #2}{}{}}
+    \protect \contentsline {section}{\vspace{-0.4cm}\hspace{0.5cm}#1 #2}{}{}}
   \addtocounter{appendix}{+1}%
 }
 \newcommand{\externalappendix}[2]{%
   \addtocontents{toc}{
-    \protect \contentsline {section}{\vspace{-0.5cm}\hspace{0.5cm}#1 #2}{}{}}
+    \protect \contentsline {section}{\vspace{-0.4cm}\hspace{0.5cm}#1 #2}{}{}}
   \addtocounter{appendix}{+1}%
 }
 \newcounter{appendixpage}
