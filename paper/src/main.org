@@ -79,3 +79,13 @@
 #+LATEX: \bibliographystyle{templates/tktl}
 #+LATEX: \bibliography{bib/main}
 
+#+LATEX: \lastpage
+#+LATEX: \newpage
+#+LATEX: \pagenumbering{gobble}
+#+LATEX: \appendices
+
+#+LATEX: \internalappendix{1}{Mittausten generointi ja käsittely}
+#+INCLUDE: "../gen/chapters/attachment-implementation-details.org"
+
+#+LATEX: \externalappendix{2}{Muutokset Android-alustaan}
+#+LATEX: \externalappendix{3}{Mittausohjelmiston lähdekoodi}
