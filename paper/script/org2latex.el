@@ -59,9 +59,11 @@
 \\usepackage[finnish]{babel}
 \\usepackage{chngcntr}
 \\usepackage{xcolor}
+\\usepackage{caption}
 \\usepackage{pifont}
 \\usepackage{listings}
 \\usepackage{tablefont}
+\\usepackage{dirtree}
 \\counterwithin{figure}{section}
 \\counterwithin{table}{section}
 \\usepackage{url,etoolbox}
