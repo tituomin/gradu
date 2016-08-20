@@ -19,6 +19,12 @@
 #+LATEX: \renewcommand{\thelstlisting}{\thesection.\arabic{lstlisting}}
 #+LATEX: \renewcommand{\lstlistingname}{Listaus}
 
+#+LATEX: \newenvironment{profile}{}{}
+
+#+LATEX: \DTsetlength{0.2em}{1em}{0.2em}{0.4pt}{0.4pt}
+#+LATEX: \renewcommand*\DTstyle{\sffamily}
+#+LATEX: \newmdenv[leftline=false,rightline=false]{topbot}
+
 #+MACRO: rotated_plot_internal \begin{sidewaysfigure} \input{figures/plots/plot-$1-$2-latin.tex} \end{sidewaysfigure}
 #+MACRO: plot_internal \begin{figure} \input{figures/plots/plot-$1-$2-latin.tex} \end{figure}
 #+MACRO: plot {{{plot_internal(47d22819-625b-43f6-8e9f-afeb5066b758,$1)}}}
