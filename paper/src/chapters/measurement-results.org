@@ -649,9 +649,9 @@ taas kopioivat versiot kasvavat lineaarisesti syötteen koon kasvaessa
 pituuden selvittäminen on vakiollinen operaatio (kuvan
 \ref{fig:special-calls-arrayelements-c-j-fit} alempi ryhmittymä).
 
-{{{plot(special-calls-arrayelements-c-j-fit)}}}
+{{{plot_edited(special-calls-arrayelements-c-j-fit, Taulukoiden käsittely osoittimilla suunnassa C$\rightarrow$Java)}}}
 
-{{{plot(special-calls-arrayregion-c-j-fit)}}}
+{{{plot_edited(special-calls-arrayregion-c-j-fit, Taulukoiden käsittely kopioimalla suunnassa C$\rightarrow$Java)}}}
 
 Kutsuprofiilien perusteella taulukoiden osoitinoperaatioiden
 kutsurakenteet ovat täsmälleen samoja merkkijonojen
