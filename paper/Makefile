@@ -60,7 +60,8 @@ gen/profiles.tex: src/profiles.org
 figures/plots/plot-%-latin.tex: figures/plots/plot-%.tex
 	iconv -f UTF-8 -t ISO-8859-1 $< -o $@
 
-
+figures/plots/%-latin.pdf_tex: figures/plots/%.pdf_tex
+	iconv -f UTF-8 -t ISO-8859-1 $< -o $@
 
 gen/main-latin.tex: gen/main.tex
 	iconv -f UTF-8 -t ISO-8859-1 gen/main.tex -o gen/main-latin.tex
@@ -74,7 +75,7 @@ gen/profiles-latin.tex: profiles.tex
 $(FIGURE_LATIN): $(FIGURE_SOURCES)
 
 main.pdf: gen/main-latin.tex $(FIGURE_LATIN)
-	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/tituomin-gradu -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make gen/main-latin.tex
+	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/tituomin-gradu -pdf -pdflatex="pdflatex -file-line-error -interaction nonstopmode -shell-escape" -use-make gen/main-latin.tex
 
 plots.pdf: gen/plots-latin.tex $(FIGURE_LATIN)
 	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/plots -pdf -pdflatex="pdflatex -interaction nonstopmode -shell-escape" -use-make gen/plots-latin.tex
