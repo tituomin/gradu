@@ -30,6 +30,8 @@
 #+MACRO: plot {{{plot_internal(47d22819-625b-43f6-8e9f-afeb5066b758,$1)}}}
 #+MACRO: rotated_plot {{{rotated_plot_internal(47d22819-625b-43f6-8e9f-afeb5066b758,$1)}}}
 #+MACRO: plot_a {{{plot_internal(b45ae421-fbec-407e-88be-cd2f76d1bbff,$1)}}}
+#+MACRO: plot_edited \begin{figure}\label{fig:$1}\caption{$2}\input{figures/plots/plot-47d22819-625b-43f6-8e9f-afeb5066b758-$1-latin.pdf_tex}\end{figure}
+#+MACRO: rotated_plot_edited \begin{sidewaysfigure}\input{figures/plots/plot-47d22819-625b-43f6-8e9f-afeb5066b758-$1-latin.pdf_tex}\end{sidewaysfigure}
 
 #+MACRO: permu $1\nbsp{}\rightarrow\nbsp{}$2
 #+MACRO: TODO \textcolor{red}{TEHTÄVÄ}

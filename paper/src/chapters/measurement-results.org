@@ -761,7 +761,7 @@ vapauttaa, jotta se ei loppuisi.
 
 {{{profile(C2JNewDirectBuffer-512)}}}
 
-{{{rotated_plot(special-calls-non-dynamic)}}}
+{{{plot_edited(special-calls-non-dynamic, Kenttien käsittely eri kutsusuunnissa)}}}
 
 * Kenttien käsittely
 
