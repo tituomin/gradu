@@ -43,10 +43,13 @@ def process(filename):
         lines = [
             extract(line) for line in f if (not SEPS_ONLY.match(line) and not COMMENT.match(line))]
     sorted_depths = sorted(depths)
-    print """
-\\begin{profile}
-\\footnotesize
-\\dirtree{%"""
+    print '''
+\\begin{figure}
+\\centering
+\\begin{topbot}
+\\begin{minipage}{1.0\\textwidth}
+\\scriptsize
+\\dirtree{%'''
 
     depth = -1
     def combine(rec1, rec2):
@@ -57,7 +60,8 @@ def process(filename):
             return x[:-1] + [combine(x[-1], y)]
         else:
             return x + [y]
-    new_lines = [{'texts':['']}] + reduce(r, lines, [])
+    new_lines = reduce(r, lines, [])
+    #new_lines = [{'texts':['']}] + reduce(r, lines, [])
 
     for line in new_lines:
         if not line.get('continuation'):
@@ -85,9 +89,12 @@ def process(filename):
                 formatted_text += '. '
             formatted_texts.append(formatted_text)
         print('\\newline '.join(formatted_texts))
-    print """
-}
-\end{profile}
+
+    print """}
+\end{minipage}
+\end{topbot}
+\caption{Framing a dirtree-generated figure}
+\end{figure}
 """
 
 if __name__ == '__main__':
