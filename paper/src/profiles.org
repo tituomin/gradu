@@ -1,0 +1,61 @@
+#+AUTHOR: Timo Tuominen
+#+TITLE: Java-natiivirajapinnan suorituskyky\newline{}Androidin Dalvik-virtuaalikoneessa
+#+LANGUAGE: fi
+#+LaTeX_CLASS: gradu
+#+LaTeX_CLASS_OPTIONS: [gradu]
+#+OPTIONS: toc:nil H:3 num:2
+
+#+LATEX: \hyphenation{Java Python sa-na-kir-ja-luo-kas-ta}
+#+LATEX: \onehalfspacing
+#+LATEX: \newpage
+
+#+LATEX: \definecolor{listingc}{rgb}{0.98,0.98,0.98}
+#+LATEX: \newcommand{\todo}[1]{}
+#+LATEX: \renewcommand{\thelstlisting}{\thesection.\arabic{lstlisting}}
+#+LATEX: \renewcommand{\lstlistingname}{Listaus}
+
+# #+LATEX: \DeclareCaptionType{profile}[Typename][List of mytype]
+#+LATEX: \newenvironment{profile}{}{}
+
+#+MACRO: permu $1\nbsp{}\rightarrow\nbsp{}$2
+#+MACRO: TODO \textcolor{red}{TEHTÄVÄ}
+
+#+MACRO: cj C\to{}Java
+#+MACRO: jc Java\to{}C
+#+MACRO: cc C\to{}C
+#+MACRO: jj Java\to{}Java
+
+#+MACRO: profile \input{profiles/$1}
+
+# \begin{figure} \input{figures/plots/test.tex} \end{figure}
+# \begin{figure} \scalebox{.5}{\input{foo.tex}}l
+#  \end{figure}
+
+#+LATEX: \DTsetlength{0.2em}{1em}{0.2em}{0.4pt}{0.4pt}
+#+LATEX: \renewcommand*\DTstyle{\sffamily}
+#+LATEX: \renewcommand*\DTstylecomment{\normalsize}
+#+LATEX: \newmdenv[leftline=false,rightline=false]{topbot}
+
+\newpage
+{{{profile(C2JBenchmark00206)}}}
+
+\newpage
+{{{profile(C2JBenchmark00146)}}}
+
+\newpage
+{{{profile(C2JBenchmark00001)}}}
+
+\newpage
+{{{profile(J2CBenchmark00001)}}}
+
+\newpage
+{{{profile(J2CBenchmark00206)}}}
+
+\newpage
+{{{profile(C2JReadUnicode-512)}}}
+
+\newpage
+{{{profile(C2JCopyUnicode-512)}}}
+
+\newpage
+{{{profile(C2JNewDirectBuffer-512)}}}
