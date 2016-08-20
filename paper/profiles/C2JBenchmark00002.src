@@ -1,17 +1,17 @@
-Could not get new measurements, continuing with old.
-Reading from 1 files
-Read 2484 lines
-Warning:
-Kernel address maps (/proc/{kallsyms,modules}) were restricted.
-
-Check /proc/sys/kernel/kptr_restrict before running 'perf record'.
-
-As no suitable kallsyms nor vmlinux was found, kernel samples
-can't be resolved.
-
-Samples in kernel modules can't be resolved as well.
-
-Profile for identifier 1.0.0-rc2/C2JBenchmark00002
+# Could not get new measurements, continuing with old.
+# Reading from 1 files
+# Read 2484 lines
+# Warning:
+# Kernel address maps (/proc/{kallsyms,modules}) were restricted.
+#
+# Check /proc/sys/kernel/kptr_restrict before running 'perf record'.
+#
+# As no suitable kallsyms nor vmlinux was found, kernel samples
+# can't be resolved.
+#
+# Samples in kernel modules can't be resolved as well.
+#
+# Profile for identifier 1.0.0-rc2/C2JBenchmark00002
 # ========
 # captured on: Sun May  8 22:10:16 2016
 # ========
