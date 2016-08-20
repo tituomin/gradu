@@ -7,6 +7,11 @@ FIGURE_BASENAMES := $(basename $(FIGURE_SOURCES))
 FIGURE_LATIN_BASENAMES := $(addsuffix -latin,$(FIGURE_BASENAMES))
 FIGURE_LATIN := $(addsuffix .tex,$(FIGURE_LATIN_BASENAMES) )
 
+FIGURE_EDITED_SOURCES := $(shell find figures/plots/ -name '*.pdf_tex' -and -not -name '*latin.pdf_tex')
+FIGURE_EDITED_BASENAMES := $(basename $(FIGURE_SOURCES))
+FIGURE_EDITED_LATIN_BASENAMES := $(addsuffix -latin,$(FIGURE_BASENAMES))
+FIGURE_EDITED_LATIN := $(addsuffix .pdf_tex,$(FIGURE_LATIN_BASENAMES) )
+
 
 vpath %.org  src
 vpath %.tex  gen
@@ -73,8 +78,9 @@ gen/profiles-latin.tex: profiles.tex
 	iconv -f UTF-8 -t ISO-8859-1 gen/profiles.tex -o gen/profiles-latin.tex
 
 $(FIGURE_LATIN): $(FIGURE_SOURCES)
+$(FIGURE_EDITED_LATIN): $(FIGURE_EDITED_SOURCES)
 
-main.pdf: gen/main-latin.tex $(FIGURE_LATIN)
+main.pdf: gen/main-latin.tex $(FIGURE_LATIN) $(FIGURE_EDITED_LATIN)
 	TEXINPUTS=./gen/:./templates/: BIBINPUTS=../bib/:./templates/: latexmk -jobname=build/tituomin-gradu -pdf -pdflatex="pdflatex -file-line-error -interaction nonstopmode -shell-escape" -use-make gen/main-latin.tex
 
 plots.pdf: gen/plots-latin.tex $(FIGURE_LATIN)
