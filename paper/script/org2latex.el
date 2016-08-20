@@ -65,6 +65,7 @@
 \\usepackage{tablefont}
 \\usepackage{mdframed}
 \\usepackage{dirtree}
+\\usepackage{newfloat}
 \\counterwithin{figure}{section}
 \\counterwithin{table}{section}
 \\usepackage{url,etoolbox}

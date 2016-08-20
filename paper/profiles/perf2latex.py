@@ -44,8 +44,10 @@ def process(filename):
             extract(line) for line in f if (not SEPS_ONLY.match(line) and not COMMENT.match(line))]
     sorted_depths = sorted(depths)
     print '''
-\\begin{figure}
+\\begin{profile}
 \\centering
+%\\label{profile:}
+%\\caption{}
 \\begin{topbot}
 \\begin{minipage}{1.0\\textwidth}
 \\scriptsize
@@ -93,8 +95,7 @@ def process(filename):
     print """}
 \end{minipage}
 \end{topbot}
-\caption{Framing a dirtree-generated figure}
-\end{figure}
+\end{profile}
 """
 
 if __name__ == '__main__':
