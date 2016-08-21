@@ -20,7 +20,7 @@ raskasta laskentaa tai sille on oleellisia tosiaikavaatimuksia.
 Engineering/, /SPE/) on ohjelmistotekniikan osa-alue, jossa
 varmistetaan ohjelmistoprosessin alusta lähtien, että ohjelmistolle
 asetetut suorituskykyvaatimukset täyttyvät lopullisessa
-tuotteessa. Menettely on näennäisesti ristiriidassa usein lainatun
+tuotteessa @@spe. Menettely on näennäisesti ristiriidassa usein lainatun
 Donald Knuthin lausahduksen kanssa: "Ennenaikainen optimointi on
 kaiken pahan alku ja juuri @@goto(268)."\hspace{6pt}Yleisen tulkinnan mukaan
 ohjelmistoa suunniteltaessa tulisi keskittyä sen oikeaan toimivuuteen
@@ -35,7 +35,7 @@ ominaisuuksista ja komponenttien väliseen kommunikaatioon liittyvistä
 ratkaisuista. SPE:n keskeisiä väitteitä onkin, että ohjelmiston
 makrotason arkkitehtuurin suunnittelu on usein suorituskyvyn kannalta
 vähintään yhtä oleellinen tekijä kuin mikrotason
-optimoinnit. Suorituskyvyn huomioiminen varhaisessa kehitysvaiheessa
+optimoinnit @@spe(7), @@perf-arch(164). Suorituskyvyn huomioiminen varhaisessa kehitysvaiheessa
 ei toki estä lisäoptimointeja myöhäisemmässä kehitysvaiheessa.
 
 Tutkielmassa keskitytään siihen, minkälaisia ylimääräisiä
