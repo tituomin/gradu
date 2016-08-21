@@ -251,7 +251,7 @@ JNI-kutsuissa, ja sen avulla virtuaalikone pitää kirjaa, milloin
 muistinhallinnan roskienkeruu on sallittua.
 
 Säikeen suorituksen ollessa natiivikomponentissa tila on
-~THREAD_NATIVE~, jonka aikana roskienkeruu on mahdollista, mutta
+~THREAD_NATIVE~, jolloin roskienkeruu on mahdollista, mutta
 Dalvikin viitetaulukkoa lukemalla roskienkeruu pysyy tietoisena
 JNI-rajapinnan yli välitetyistä olioviitteistä. Suorituksen ollessa
 käynnissä Java-komponentissa tila on ~THREAD_RUNNING~, jolloin
