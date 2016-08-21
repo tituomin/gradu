@@ -603,11 +603,11 @@ Kopioivan Unicode-operaation profiilissa
 
 Sen sijaan UTF-muunnoksen tekevä osoitinoperaatio on riippuvainen
 kohteen koosta. Se on myös operaatio, joka johtaa Dalvikin allokoimaan
-muistia muunnettua merkkijonoa varten. Siksi kuvan \ref{fig:special-calls-utf-c-j-alloc-fit}
-vasteajat on mitattu allokoiviin operaatioihin soveltuvilla
-vähäisemmillä lähtösilmukan kierrosmäärillä: allokoivien operaatioiden
-kierrosluku on 300 ja ei-allokoivien 500000, joten vasteaikojen
-suhdeluku on 3:5000.
+muistia muunnettua merkkijonoa varten. Siksi kyseisen operaation
+vasteajat kuvassa \ref{fig:special-calls-utf-c-j-alloc-fit} on mitattu
+allokoiviin operaatioihin soveltuvilla vähäisemmillä lähtösilmukan
+kierrosmäärillä: allokoivien operaatioiden kierrosluku on 300 ja
+ei-allokoivien 500000, joten vasteaikojen suhdeluku on 3:5000.
 
 {{{plot_a(special-calls-utf-c-j-alloc-fit)}}}
 # TODO kuva puuttuu yltä
