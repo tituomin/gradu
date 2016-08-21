@@ -51,6 +51,8 @@ päinvastaista suuntaa nopeampia/: edellisten vasteajat suhteessa
 jälkimmäisten aikoihin ovat noin kolminkertaisia. Tämä pätee kaikilla
 parametrityypeillä.
 
+{{{plot(basic-call-all-types-j-j-fit)}}}
+
 Sen sijaan samankielisten suuntien ({{{permu(Java,Java)}}}) sekä
 ({{{permu(C,C)}}}) välisestä erosta ei tämän mittauksen perusteella
 voi tehdä pitkälle meneviä johtopäätöksiä muun muassa siksi, että
@@ -68,10 +70,6 @@ Lineaarisen riippuvuuden perusteella Java-kääntäjä tai Dalvikin
 JIT-kääntäjä ei ole onnistunut optimoimaan pois tyhjän metodin kutsua
 Java-koodista.
 
-{{{plot(basic-call-all-types-j-j-fit)}}}
-
-{{{plot(basic-call-all-types-c-c-fit)}}}
-
 Kuviin \ref{fig:basic-call-all-types-c-j} ja \ref{fig:basic-call-all-types-j-c} on koostettu eri
 parametrityypit suunnissa ({{{permu(C,Java)}}}) ja ({{{permu(\mbox{Java},C)}}}).
 Primitiivi- ja viitetyyppien ryhmittyminen näkyy kuvissa selvästi.
@@ -87,6 +85,8 @@ seuraavasti. Viitetyyppiset ~Object~ sekä taulukkotyypit
 kuvautuvat ~jobject~-tyyppinimen kautta ~void~-osoittimiksi ja
 primitiivityypit kuvautuvat taulukon \ref{tab-primitives} mukaisesti
 C-kielen perustyypeiksi.
+
+{{{plot(basic-call-all-types-c-c-fit)}}}
 
 {{{plot(basic-call-all-types-c-j)}}}
 
@@ -179,7 +179,6 @@ mutex-lukon varaaminen kohdassa \ding{202}. Nopeampi suorituspolku
 käyttää lokaalin JNI-kontekstin omaa viitetaulukkoa ilman lukitusta
 \ding{203}
 
-\newpage
 #+NAME: src:dvmDecodeIndirectRef
 #+CAPTION: Ote funktiosta dvmDecodeIndirectRef
 #+ATTR_LATEX: frame=lines
@@ -290,6 +289,10 @@ muutakin kuin tarkastelun kohteena olevassa JNI-toteutuksessa vietetyn
 ajan --- nimittäin kutsun kohteena olevan aliohjelman suorittamiseen
 kuluvan ajan.
 
+{{{profile(J2CBenchmark00001)}}}
+
+\newpage
+
 Java-komponentissa olevan kohdemetodin suoritus konekielitasolla on
 hyvin erilaista natiivikomponentin kohdefunktion suoritukseen
 nähden. Edellistä suoritetaan Dalvikin tavukooditulkin kautta, joka
@@ -320,8 +323,6 @@ luoda \path{ScopedJniThreadState}-oliota, vaan virtuaalikoneen
 suoritustilan muuttavaa \path{dvmChangeStatus}-metodia kutsutaan
 suoraan. Samoin \path{callPrep}-funktio puuttuu. Näiden
 toteutusyksityiskohtien tarkempi analyysi jätetään tässä tekemättä.
-
-{{{profile(J2CBenchmark00001)}}}
 
 Kuvasta \ref{fig:basic-call-Object-fit} nähdään myös, että
 viiteparametrien määrän lisääntyessä {{{jc}}}-suunnan kuvaajan
