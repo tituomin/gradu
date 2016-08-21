@@ -175,10 +175,11 @@ kokonaistilasta @@ferrari(455); tutkielman mittauksissa muiden
 prosessien määrä pyritään minimoimaan ja niiden vaikutus tulkitaan
 mittausten satunnaisvirheeksi.
 
- Kvantitatiivisten mittausten rinnalla kannattaa pitää mielessä
+Kvantitatiivisten mittausten rinnalla kannattaa pitää mielessä
 käyttäjän subjektiivinen kokemus: käyttäjä voi kokea jopa yhtäsuuriksi
-mitatut vasteajat erilaisiksi, jos esimerkiksi työn etenemistä
-osoittava käyttöliittymäelementti etenee eri tavalla @@progressbar.
+mitatut vasteajat erilaisiksi, jos käyttöliittymässä näkyvä työn
+valmistumista havainnollistava edistymispalkki etenee eri tavalla
+@@progressbar.
 # todo luetaan piiriin
 # todo tarkista onko androidissa tarkka userspace gettimeofday (arm)
 # todo tosiaika?
