@@ -8,7 +8,7 @@
 #+LaTeX_HEADER:     fileext=lop,
 #+LaTeX_HEADER:     listname=Kutsuprofiilit,
 #+LaTeX_HEADER:     name=Listaus,
-#+LaTeX_HEADER:     placement=tbhp,
+#+LaTeX_HEADER:     placement=tbhp!,
 #+LaTeX_HEADER:     within=section,
 #+LaTeX_HEADER: ]{profile}
 
@@ -42,8 +42,11 @@
 #+LATEX: \newmdenv[leftline=false,rightline=false]{topbot}
 
 #+MACRO: rotated_plot_internal \begin{sidewaysfigure} \input{figures/plots/plot-$1-$2-latin.tex} \end{sidewaysfigure}
+
+#+MACRO: plot_small_internal #+LATEX: \begin{figure}\resizebox{!}{.8\textwidth} { \input{figures/plots/plot-$1-$2-latin.tex} } \end{figure}
 #+MACRO: plot_internal \begin{figure} \input{figures/plots/plot-$1-$2-latin.tex} \end{figure}
 #+MACRO: plot {{{plot_internal(47d22819-625b-43f6-8e9f-afeb5066b758,$1)}}}
+#+MACRO: plot_small {{{plot_small_internal(47d22819-625b-43f6-8e9f-afeb5066b758,$1)}}}
 #+MACRO: rotated_plot {{{rotated_plot_internal(47d22819-625b-43f6-8e9f-afeb5066b758,$1)}}}
 #+MACRO: plot_a {{{plot_internal(b45ae421-fbec-407e-88be-cd2f76d1bbff,$1)}}}
 #+MACRO: plot_edited \begin{figure}\caption{$2}\label{fig:$1}\def\svgwidth{\textwidth}\input{figures/plots/plot-47d22819-625b-43f6-8e9f-afeb5066b758-$1-latin.pdf_tex}\end{figure}
