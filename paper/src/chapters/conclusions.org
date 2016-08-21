@@ -52,12 +52,18 @@ Android-virtuaalikoneessa Dalvikissa. Käytetty metodologia ja suurin
 osa mittausohjelmistosta on kuitenkin sellaisenaan siirrettävissä
 Androidin uudemmalle ART-virtuaalikoneelle. Mittausten toistaminen eri
 ympäristöversioissa ja laitteissa lisäisi niiden
-yleistettävyyttä. Vaikka ART-virtuaalikoneen sisäinen toteutus saattaa
-erota Dalvikin toteutuksesta, samat yleiset periaatteet pätevät: suuri
-osa JNI-rajapinnan rasitteista johtuu kaikissa virtuaalikoneissa hyvin
-todennäköisesti automaattisen muistinhallinnan piirissä olevien
-komponenttien yhdistämisestä hallitusti natiivikomponenttiin, jossa
-muistinhallinta on manuaalista.
+yleistettävyyttä. Vaikka ART-virtuaalikoneen sisäinen toteutus eroaa
+merkittävästi Dalvikin toteutuksesta, samat yleiset periaatteet
+pätevät: suuri osa JNI-rajapinnan rasitteista johtuu kaikissa
+virtuaalikoneissa hyvin todennäköisesti automaattisen muistinhallinnan
+piirissä olevien komponenttien yhdistämisestä hallitusti
+natiivikomponenttiin, jossa muistinhallinta on manuaalista.  Itse
+mittaustulokset ja suorituskykymalli eivät päde
+ART-virtuaalikoneeseen, sillä esimerkiksi erilainen
+roskienkeruumenetelmä sekä JNI-rajapinnan sisäinen toteutus
+vaikuttavat tietenkin suoraan mitattuihin arvoihin -- erityisesti
+tiivistävä roskienkeruu johtaa siihen, että kiinnikytkemisen sijaan
+merkkijono- ja taulukko-operaatiot ovat aina kopioivia.
 
 Muita mielenkiintoisia kehityskohteita olisi tutkia
 kattavammin erilaisia JNI-rajapinnan parametrivaihtoehtoja:

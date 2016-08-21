@@ -29,7 +29,7 @@ järjestelmästä on ohjelmoitu Javalla, ja niitä suoritetaan
 virtuaalikoneessa. Järjestelmän rakenne ei muutenkaan noudata
 esimerkiksi POSIX-standardia vaan perustuu hajautettuun
 komponenttiarkkitehtuuriin, joka on nimeltään /Binder/ @@embedded(79).
-Arkkitehtuurin infrastruktuuri, Dalvik-virtuaalikone sekä suuri osa
+Arkkitehtuurin infrastruktuuri, virtuaalikone sekä suuri osa
 järjestelmän matalan tason palveluista on toteutettu C- ja
 C++-kielillä @@embedded(138).
 
@@ -57,9 +57,10 @@ käsiksi käyttöjärjestelmän ja laitteiston palveluihin. Nimiavaruuden
 
 Kaikki Java-ohjelmakoodi käännetään Androidia varten ensin normaaliksi
 tavukoodiksi ja siitä Androidin omaksi rekisteripohjaiseksi
-~dex~-tavukoodiksi, jota suorittaa Dalvik-virtuaalikone @@aot(15). Dalvikissa
-suoritetaan sekä sovellusohjelmat että järjestelmän sisäiset
-komponentit -- siltä osin kuin ne on toteutettu Javalla.
+~dex~-tavukoodiksi, jota suorittaa Dalvik- tai ART-virtuaalikone
+@@aot(15). Virtuaalikoneessa suoritetaan sekä sovellusohjelmat että
+järjestelmän sisäiset komponentit -- siltä osin kuin ne on toteutettu
+Javalla.
 
 Android on alusta lähtien suunniteltu tukemaan moniajoa. Jokaista
 Android-sovellusta suoritetaan omalla käyttäjätunnuksellaan, omassa
@@ -142,10 +143,11 @@ valmiudet laitteen sensorien lukemiseen.
 \label{sec-dalvik-intro}
 
 Javalla ohjelmoidun Android-sovelluksen matka suoritettavaksi
-ohjelmaksi on pääpiirteissään seuraavanlainen. Aluksi sovellus
-käännetään Java-lähdekoodista tavallisella Java-kääntäjällä
-luokkatiedostoiksi, jotka sisältävät standardinmukaisen
-Java-virtuaalikoneen ymmärtämää välikieltä, Java-tavukoodia.
+ohjelmaksi on pääpiirteissään seuraavanlainen, kun käytössä on
+Dalvik-virtuaalikone. Aluksi sovellus käännetään Java-lähdekoodista
+tavallisella Java-kääntäjällä luokkatiedostoiksi, jotka sisältävät
+standardinmukaisen Java-virtuaalikoneen ymmärtämää välikieltä,
+Java-tavukoodia.
 
 Androidin Dalvik-virtuaalikone ei kuitenkaan ole
 Java-virtuaalikone. Luokkatiedostoja käyttävä Java-virtuaalikone
@@ -206,6 +208,25 @@ tulosten analyysi.
 # todo tuossa yllä ei ole esim optimointia, garbage collectionia, ym.
 
 \todo{<<kappale-art-aot>>} 
+
+* ART-virtuaalikone
+
+Käsittelemme tässä lyhyesti ART-virtuaalikoneen merkittävimmät erot
+Dalvikiin verrattuna @@art-dalvik-summary. Dalvikin JIT-käännöksen
+sijaan ART- virtuaalikone kääntää Android-sovelluksen DEX-tavukoodista
+natiivikoodiksi /kun sovellus asennetaan laitteeseen/. Käännös on siis
+Ahead-of-Time -kääntämistä (AOT).
+
+Toinen keskeinen ero on ART:in tehokkaammassa ja paremmin
+rinnakkaistuvassa roskienkeruumenetelmässä, johon on kehitteillä myös
+/tiivistävä/ (/compacting/) roskienkeruu @@art-dalvik-summary.
+Viimeksi mainitulla ominaisuudella on suuri merkitys myös
+natiivirajapinnan käytön kannalta, sillä sen myötä automaattinen
+muistinhallinta voi siirrellä olioita vapaasti muistissa
+@@art-dalvik-gc-jni.
+
+Arvioimme tutkielman tulosten sovellettavuutta ART-virtuaalikoneeseen
+lyhyesti tutkielman yhteenvedossa.
 
 * todo :noexport:
 ** TODO mainitse renderscript ja muut vaihtoehdot jni:lle?
