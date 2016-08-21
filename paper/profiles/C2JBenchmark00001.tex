@@ -1,9 +1,13 @@
 
 \begin{profile}
-\footnotesize
+\centering
+\caption{Staattinen metodi C$\rightarrow$Java}
+\label{profile:C2JBenchmark00001}
+\begin{topbot}
+\begin{minipage}{1.0\textwidth}
+\scriptsize
 \dirtree{%
-.1  . 
-.1 \textbf{ 0.00\%} nativebenchmark  libdvm.so              [.] dvmPlatformInvoke\newline \phantom{\textbf{ 0.00\%}} ---dvmPlatformInvoke. 
+.1 \textbf{72.80\%} dvmPlatformInvoke. %\newline \phantom{\textbf{ 0.00\%}} ---dvmPlatformInvoke. 
 .2 \textbf{68.25\%} Java\_fi\_helsinki\_cs\_tituomin\_nativebenchmark\_benchmark\_C2JBenchmark00001\_runInternal. 
 .3 \textbf{64.83\%} CallStaticVoidMethod(\_JNIEnv*, \_jclass*, \_jmethodID*, ...). 
 .4 \textbf{45.36\%} dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::\_\_va\_list). 
@@ -29,5 +33,7 @@
 .3 \textbf{0.07\%} PushLocalFrame(\_JNIEnv*, int). 
 .4 \textbf{0.04\%} dvmGetCurrentJNIMethod()\newline \phantom{\textbf{0.04\%}} . 
 }
+\end{minipage}
+\end{topbot}
 \end{profile}
 
