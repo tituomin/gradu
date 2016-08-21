@@ -4,6 +4,16 @@ ohjelmistolle, mutta miten suorituskyky tulisi ottaa huomioon
 ohjelmiston kehitysprosessissa? Ohjelmistotekniikan kirjallisuudessa
 kysymykseen on vastattu hyvin eri tavoin.
 
+Tämä luku käsittelee sitä, miten ohjelmistolta vaadittava riittävä
+suorituskyky voidaan saavuttaa ohjelmistoa laadittaesssa. Aluksi
+tutkitaan, missä vaiheessa ohjelmistoprosessia suorituskyky tulisi
+huomioida. Sitten käsittelyä syvennettään määrittelemällä mittareita,
+joiden avulla suorituskykyä voi arvioida ja mitata
+kvantitatiivisesti. Tämän jälkeen käsittely keskittyy konkreettisten
+ohjelmien suorituskyvyn mittausmenetelmiin ja aivan lopuksi
+siihen, mitä rajoituksia suorituskykymittausten tuloksia tulkittaessa
+tulee huomioida.
+
 * Suorituskyvyn hallinta tuotantoprosessissa
 
 Donald Knuthilta on peräisin tunnettu lainaus: "Ennenaikainen
