@@ -75,12 +75,16 @@ myös muistinhallintaan ja resurssien jakamiseen virtuaalikoneen
 hallitseman muistin ja natiivikomponentin välillä.
 
 Tutkielmassa käytetään suorituskykymittauksia tutkimaan
-monikielisyydestä johtuvien rasitteiden suuruusluokkia. Tutkielma
-sisältää kirjallisuuteen perustuvan osuuden, jossa esitellään
-suorituskyvyn mallintamiseen, arvioimiseen ja mittaamiseen käytettäviä
-periaatteita, metodeita sekä työkaluja. Lisäksi lähteiden perusteella
-esitellään Android-ohjelmistoalustan rakennetta suorituskyvyn
-näkökulmasta keskittyen Dalvik-virtuaalikoneeseen ja sen
+monikielisyydestä johtuvien rasitteiden suuruusluokkia. Mittaukset
+perustuvat Androidin versioon 4.1.2. Tutkielman aiheen kannalta se
+tarkoittaa erityisesti, että tutkielman mittaukset ja niiden tulokset
+koskevat Androidin edellisen sukupolven Dalvik-virtuaalikonetta.
+
+Tutkielma sisältää kirjallisuuteen perustuvan osuuden, jossa
+esitellään suorituskyvyn mallintamiseen, arvioimiseen ja mittaamiseen
+käytettäviä periaatteita, metodeita sekä työkaluja. Lisäksi lähteiden
+perusteella esitellään Android-ohjelmistoalustan rakennetta
+suorituskyvyn näkökulmasta keskittyen Dalvik-virtuaalikoneeseen ja sen
 JNI-toteutukseen. Tutkielman toinen osa soveltaa ensimmäisen osan
 metodeja ja käsitteitä Dalvikin JNI-toteutuksen
 mittaamiseen. Toteutusta mitataan kahdella toisiaan tukevalla
