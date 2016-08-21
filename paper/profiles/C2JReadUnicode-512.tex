@@ -1,17 +1,19 @@
 
 \begin{profile}
-\footnotesize
+\centering
+\caption{Unicode-merkkijonon osoitinoperaatio}
+\label{profile:C2JReadUnicode-512}
+\begin{topbot}
+\begin{minipage}{1.0\textwidth}
+\scriptsize
 \dirtree{%
-.1  . 
-.1 \textbf{69.25\%} dvmPlatformInvoke\newline \phantom{\textbf{69.25\%}} ---0x536d7d1c\newline \phantom{\textbf{69.25\%}} dvmPlatformInvoke. 
+.1 \textbf{69.25\%} dvmPlatformInvoke. %\newline \phantom{\textbf{69.25\%}} ---0x536d7d1c\newline \phantom{\textbf{69.25\%}} dvmPlatformInvoke. 
 .2 \textbf{66.81\%} Java\_fi\_helsinki\_cs\_tituomin\_nativebenchmark\_benchmark\_C2JReadUnicode\_runInternal. 
 .3 \textbf{34.09\%} GetStringChars(\_JNIEnv*, \_jstring*, unsigned char*). 
 .4 \textbf{12.20\%} dvmDecodeIndirectRef(Thread*, \_jobject*). 
 .5 \textbf{3.39\%} ScopedPthreadMutexLock::~ScopedPthreadMutexLock(). 
 .6 \textbf{3.16\%} pthread\_mutex\_unlock. 
 .7 \textbf{1.97\%} pthread\_mutex\_unlock\_impl. 
-.8 \textbf{0.03\%} 0xc003be08\newline \phantom{\textbf{0.03\%}} 0xc003503c\newline \phantom{\textbf{0.03\%}} 0xc006fed0\newline \phantom{\textbf{0.03\%}} 0xc006faf8. 
-.7 \textbf{0.03\%} 0xc003be08\newline \phantom{\textbf{0.03\%}} 0xc003503c\newline \phantom{\textbf{0.03\%}} 0xc006fed0\newline \phantom{\textbf{0.03\%}} 0xc006faf8. 
 .5 \textbf{2.80\%} ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread\_mutex\_t*). 
 .6 \textbf{2.31\%} pthread\_mutex\_lock. 
 .7 \textbf{1.09\%} pthread\_mutex\_lock\_impl. 
@@ -23,57 +25,63 @@
 .5 \textbf{2.12\%} ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread\_mutex\_t*). 
 .6 \textbf{1.75\%} pthread\_mutex\_lock. 
 .7 \textbf{0.98\%} pthread\_mutex\_lock\_impl. 
-.8 \textbf{0.03\%} 0xc003be08\newline \phantom{\textbf{0.03\%}} 0xc003503c\newline \phantom{\textbf{0.03\%}} 0xc006fed0\newline \phantom{\textbf{0.03\%}} 0xc006faf8. 
-.6 \textbf{0.03\%} 0xc003be08\newline \phantom{\textbf{0.03\%}} 0xc003503c\newline \phantom{\textbf{0.03\%}} 0xc006fed0\newline \phantom{\textbf{0.03\%}} 0xc006faf8. 
 .4 \textbf{4.73\%} ScopedJniThreadState::ScopedJniThreadState(\_JNIEnv*). 
 .5 \textbf{2.77\%} dvmChangeStatus(Thread*, ThreadStatus). 
 .6 \textbf{1.90\%} android\_atomic\_acquire\_store. 
 .7 \textbf{0.03\%} android\_memory\_barrier. 
-.5 \textbf{0.03\%} 0xc003be08\newline \phantom{\textbf{0.03\%}} 0xc003503c\newline \phantom{\textbf{0.03\%}} 0xc006fed0\newline \phantom{\textbf{0.03\%}} 0xc006faf8. 
 .4 \textbf{2.23\%} ScopedJniThreadState::~ScopedJniThreadState(). 
 .5 \textbf{1.46\%} dvmChangeStatus(Thread*, ThreadStatus). 
 .6 \textbf{0.49\%} android\_atomic\_release\_store. 
 .7 \textbf{0.10\%} android\_memory\_barrier. 
 .4 \textbf{0.42\%} StringObject::chars() const. 
 .4 \textbf{0.28\%} StringObject::array() const. 
-.4 \textbf{0.03\%} 0xc003be08\newline \phantom{\textbf{0.03\%}} 0xc003503c\newline \phantom{\textbf{0.03\%}} 0xc006fed0\newline \phantom{\textbf{0.03\%}} 0xc006fb38\newline \phantom{\textbf{0.03\%}} 0xc00b5994\newline \phantom{\textbf{0.03\%}} 0xc00b55a4\newline \phantom{\textbf{0.03\%}} 0xc00b4314. 
 .3 \textbf{28.88\%} ReleaseStringChars(\_JNIEnv*, \_jstring*, unsigned short const*). 
-.4 \textbf{8.56\%} dvmDecodeIndirectRef(Thread*, \_jobject*). 
-.5 \textbf{2.53\%} ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread\_mutex\_t*). 
-.6 \textbf{1.92\%} pthread\_mutex\_lock. 
-.7 \textbf{0.88\%} pthread\_mutex\_lock\_impl. 
-.8 \textbf{0.03\%} 0xc003be08\newline \phantom{\textbf{0.03\%}} 0xc003503c\newline \phantom{\textbf{0.03\%}} 0xc006fed0\newline \phantom{\textbf{0.03\%}} 0xc006faf8. 
-.5 \textbf{1.93\%} ScopedPthreadMutexLock::~ScopedPthreadMutexLock(). 
-.6 \textbf{1.66\%} pthread\_mutex\_unlock. 
-.7 \textbf{0.89\%} pthread\_mutex\_unlock\_impl. 
-.5 \textbf{0.69\%} IndirectRefTable::get(void*) const. 
-.4 \textbf{8.38\%} unpinPrimitiveArray(ArrayObject*). 
-.5 \textbf{2.67\%} ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread\_mutex\_t*). 
-.6 \textbf{1.91\%} pthread\_mutex\_lock. 
-.7 \textbf{0.72\%} pthread\_mutex\_lock\_impl. 
-.8 \textbf{0.03\%} 0xc003c160\newline \phantom{\textbf{0.03\%}} 0xc058209c\newline \phantom{\textbf{0.03\%}} 0xc0581a74. 
-.5 \textbf{2.35\%} ScopedPthreadMutexLock::~ScopedPthreadMutexLock(). 
-.6 \textbf{2.01\%} pthread\_mutex\_unlock. 
-.7 \textbf{1.26\%} pthread\_mutex\_unlock\_impl. 
-.6 \textbf{0.03\%} 0xc003be08\newline \phantom{\textbf{0.03\%}} 0xc003503c\newline \phantom{\textbf{0.03\%}} 0xc006fed0\newline \phantom{\textbf{0.03\%}} 0xc006fb38\newline \phantom{\textbf{0.03\%}} 0xc00b5988\newline \phantom{\textbf{0.03\%}} 0xc00b55a4\newline \phantom{\textbf{0.03\%}} 0xc00b4314. 
-.5 \textbf{0.69\%} dvmRemoveFromReferenceTable(ReferenceTable*, Object**, Object*). 
-.5 \textbf{0.06\%} 0xc003be08\newline \phantom{\textbf{0.06\%}} 0xc003503c\newline \phantom{\textbf{0.06\%}} 0xc006fed0\newline \phantom{\textbf{0.06\%}} 0xc006faf8. 
-.4 \textbf{2.40\%} ScopedJniThreadState::~ScopedJniThreadState(). 
-.5 \textbf{1.81\%} dvmChangeStatus(Thread*, ThreadStatus). 
-.6 \textbf{0.71\%} android\_atomic\_release\_store. 
-.7 \textbf{0.07\%} android\_memory\_barrier. 
-.6 \textbf{0.03\%} 0xc003be08\newline \phantom{\textbf{0.03\%}} 0xc003503c\newline \phantom{\textbf{0.03\%}} 0xc006fed0\newline \phantom{\textbf{0.03\%}} 0xc006faf8. 
-.4 \textbf{1.63\%} ScopedJniThreadState::ScopedJniThreadState(\_JNIEnv*). 
-.5 \textbf{0.95\%} dvmChangeStatus(Thread*, ThreadStatus). 
-.6 \textbf{0.70\%} android\_atomic\_acquire\_store. 
-.7 \textbf{0.06\%} android\_memory\_barrier. 
-.7 \textbf{0.03\%} 0xc003be08\newline \phantom{\textbf{0.03\%}} 0xc003503c\newline \phantom{\textbf{0.03\%}} 0xc006fed0\newline \phantom{\textbf{0.03\%}} 0xc00b3d84. 
-.4 \textbf{0.23\%} StringObject::array() const. 
-.3 \textbf{0.09\%} PushLocalFrame(\_JNIEnv*, int). 
-.4 \textbf{0.06\%} dvmGetCurrentJNIMethod(). 
-.4 \textbf{0.03\%} ScopedJniThreadState::ScopedJniThreadState(\_JNIEnv*)\newline \phantom{\textbf{0.03\%}} dvmChangeStatus(Thread*,ThreadStatus). 
-.3 \textbf{0.03\%} PopLocalFrame(\_JNIEnv*, \_jobject*). 
-.2 \textbf{0.03\%} 0xc003be08\newline \phantom{\textbf{0.03\%}} 0xc003503c\newline \phantom{\textbf{0.03\%}} 0xc006fed0\newline \phantom{\textbf{0.03\%}} 0xc006faf8. 
+.3 \ldots. 
 }
+\end{minipage}
+\end{topbot}
+\end{profile}
+\newpage
+\addtocounter{profile}{-1}
+\begin{profile}
+\caption{Unicode-merkkijonon osoitinoperaatio [jatkoa]}
+\begin{topbot}
+\begin{minipage}{1.0\textwidth}
+\scriptsize
+\dirtree{%
+.1 . 
+.2 \textbf{28.88\%} ReleaseStringChars(\_JNIEnv*, \_jstring*, unsigned short const*). 
+.3 \textbf{8.56\%} dvmDecodeIndirectRef(Thread*, \_jobject*). 
+.4 \textbf{2.53\%} ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread\_mutex\_t*). 
+.5 \textbf{1.92\%} pthread\_mutex\_lock. 
+.6 \textbf{0.88\%} pthread\_mutex\_lock\_impl. 
+.4 \textbf{1.93\%} ScopedPthreadMutexLock::~ScopedPthreadMutexLock(). 
+.5 \textbf{1.66\%} pthread\_mutex\_unlock. 
+.6 \textbf{0.89\%} pthread\_mutex\_unlock\_impl. 
+.4 \textbf{0.69\%} IndirectRefTable::get(void*) const. 
+.3 \textbf{8.38\%} unpinPrimitiveArray(ArrayObject*). 
+.4 \textbf{2.67\%} ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread\_mutex\_t*). 
+.5 \textbf{1.91\%} pthread\_mutex\_lock. 
+.6 \textbf{0.72\%} pthread\_mutex\_lock\_impl. 
+.4 \textbf{2.35\%} ScopedPthreadMutexLock::~ScopedPthreadMutexLock(). 
+.5 \textbf{2.01\%} pthread\_mutex\_unlock. 
+.6 \textbf{1.26\%} pthread\_mutex\_unlock\_impl. 
+.4 \textbf{0.69\%} dvmRemoveFromReferenceTable(ReferenceTable*, Object**, Object*). 
+.3 \textbf{2.40\%} ScopedJniThreadState::~ScopedJniThreadState(). 
+.4 \textbf{1.81\%} dvmChangeStatus(Thread*, ThreadStatus). 
+.5 \textbf{0.71\%} android\_atomic\_release\_store. 
+.6 \textbf{0.07\%} android\_memory\_barrier. 
+.3 \textbf{1.63\%} ScopedJniThreadState::ScopedJniThreadState(\_JNIEnv*). 
+.4 \textbf{0.95\%} dvmChangeStatus(Thread*, ThreadStatus). 
+.5 \textbf{0.70\%} android\_atomic\_acquire\_store. 
+.6 \textbf{0.06\%} android\_memory\_barrier. 
+.3 \textbf{0.23\%} StringObject::array() const. 
+.2 \textbf{0.09\%} PushLocalFrame(\_JNIEnv*, int). 
+.3 \textbf{0.06\%} dvmGetCurrentJNIMethod(). 
+.3 \textbf{0.03\%} ScopedJniThreadState::ScopedJniThreadState(\_JNIEnv*)\newline \phantom{\textbf{0.03\%}} dvmChangeStatus(Thread*,ThreadStatus). 
+.2 \textbf{0.03\%} PopLocalFrame(\_JNIEnv*, \_jobject*). 
+}
+\end{minipage}
+\end{topbot}
 \end{profile}
 
