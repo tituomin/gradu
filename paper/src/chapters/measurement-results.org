@@ -801,16 +801,18 @@ viitetaulukosta.
 Tutkielmassa jätettiin mittaamatta osa JNI-rajapinnan lukuisista
 metodeista, ja osa mittaustuloksistakin jätettiin lopulta tarkemmin
 analysoimatta. Keskeinen tutkielman tavoite oli löytää rajapinnan
-käytön keskeisimmät pullonkaulat, jotka ilmenevät rajapinnan
-realistisessa käytössä. Siksi harvoin tai vain erikoistilanteissa
-kutsuttavat rajapinnan palvelut rajattiin tutkielman ulkopuolelle.
+käytön keskeisimmät pullonkaulat, eli sellaiset operaatiot joita
+saattaa rajapinnan realistisessa käytössä joutua käyttämään usein.
+Siksi sovelluksen elinkaaren aikana harvoin tai vain
+erikoistilanteissa kutsuttavat rajapinnan palvelut rajattiin
+tutkielman ulkopuolelle.
 
 Nämä harvemmin tarvittavat palvelut liittyvät muun muassa
-eksplisiittiseen viitteiden käsittelyyn, olioiden ja luokkien
-ominaisuuksien käsittelyyn, reflektioon sekä natiivimetodien
-rekisteröintiin.
-
-Sen sijaan todennäköisesti oleellisemmat, mutta mittausten
+eksplisiittiseen Java-viitteiden käsittelyyn, Java-olioiden ja
+-luokkien erityisominaisuuksien käsittelyyn, reflektioon sekä
+natiivimetodien rekisteröintiin. Esimerkiksi metodien rekisteröinti
+tapahtuu tyypillisesti vain kerran sovelluksen suoritusaikana. Sen
+sijaan mahdollisesti oleellisemmat, mutta mittausten
 yksinkertaistamisen vuoksi pois rajatut palvelut liittyvät
 rinnakkaisohjelmointiin (\path{MonitorEnter} ja \path{MonitorExit}) ja
 poikkeustenkäsittelyyn. Ne olisivat mielenkiintoinen jatkotutkimuksen
