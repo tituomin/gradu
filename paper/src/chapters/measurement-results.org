@@ -76,10 +76,17 @@ Kuviin \ref{fig:basic-call-all-types-c-j} ja \ref{fig:basic-call-all-types-j-c} 
 parametrityypit suunnissa ({{{permu(C,Java)}}}) ja ({{{permu(\mbox{Java},C)}}}).
 Primitiivi- ja viitetyyppien ryhmittyminen näkyy kuvissa selvästi.
 
-Samankielisissä permutaatioissa (kuvat \ref{fig:basic-call-all-types-j-j-fit} ja
-\ref{fig:basic-call-all-types-c-c-fit}) ei vastaavaa eroa näy, mutta mielenkiintoisena
-yksityiskohtana niissä voidaan havaita 64-bittisten parametrityyppien
-~long~ ja ~double~ suurempi rasite 32-bittisessä prosessorissa.
+Samankielisissä permutaatioissa (kuvat
+\ref{fig:basic-call-all-types-j-j-fit} ja
+\ref{fig:basic-call-all-types-c-c-fit}) ei vastaavaa eroa näy, mutta
+mielenkiintoisena yksityiskohtana niissä voidaan havaita 64-bittisten
+parametrityyppien ~long~ ja ~double~ suurempi rasite 32-bittisessä
+prosessorissa. Kuvassa \ref{fig:basic-call-all-types-c-c-fit}
+mainitut Java-tyypit kuvautuvat C-kielen tyypeiksi
+seuraavasti. Viitetyyppiset ~Object~ sekä taulukkotyypit
+kuvautuvat ~jobject~-tyyppinimen kautta ~void~-osoittimiksi ja
+primitiivityypit kuvautuvat taulukon \ref{tab-primitives} mukaisesti
+C-kielen perustyypeiksi.
 
 {{{plot(basic-call-all-types-c-j)}}}
 
