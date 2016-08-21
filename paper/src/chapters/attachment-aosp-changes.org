@@ -1,0 +1,141 @@
+Tässä liitteessä luetellaan mittauksia varten tehdyt muutokset Android
+Open Source Projectin julkaisemaan lähdekoodiversioon
+Android-järjestelmästä. Muutokset vaaditaan, jotta Linuxin
+~perf~-työkalu pystyy tulkitsemaan oikein kutsupinonäytteet ja
+tulostamaan aliohjelmista symboliset lähdekoodissa olevat nimet
+pelkkien muisti\-osoitteiden sijaan.
+
+Muutokset on tehty Androidin versioon ~android-4.1.2_r1~ build-tunnisteella
+~JZO54K~. Muutokset näytetään ~git~-työkalun esitysmuodossa.
+
+#+LATEX: \subsection*{build}
+Symbolisten nimien selvitys vaatii binääreihin ~build-id~ -tunnisteen.
+
+#+LATEX: \begin{footnotesize}
+#+BEGIN_EXAMPLE
+project build/
+diff --git a/core/combo/arch/arm/armv7-a-neon.mk \
+           b/core/combo/arch/arm/armv7-a-neon.mk
+index 32273ff..759e626 100644
+--- a/core/combo/arch/arm/armv7-a-neon.mk
++++ b/core/combo/arch/arm/armv7-a-neon.mk
+@@ -22,4 +22,4 @@ arch_variant_cflags := \
+     -mfpu=neon
+ 
+ arch_variant_ldflags := \
+-	-Wl,--fix-cortex-a8
++	-Wl,--fix-cortex-a8 -Wl,--build-id
+
+#+END_EXAMPLE
+#+LATEX: \end{footnotesize}
+
+#+LATEX: \subsection*{dalvik}
+Perf-työkalu osaa tulkita vain ~arm~-konekielen kutsupinoja. Oletuskieli
+on ~Thumb~.
+#+LATEX: \begin{footnotesize}
+#+BEGIN_EXAMPLE
+project dalvik/
+diff --git a/Android.mk b/Android.mk
+index 73ec342..64bb6cc 100644
+--- a/Android.mk
++++ b/Android.mk
+@@ -14,6 +14,8 @@
+ 
+ LOCAL_PATH := $(call my-dir)
+ 
++LOCAL_ARM_MODE := arm
++
+ subdirs := $(addprefix $(LOCAL_PATH)/,$(addsuffix /Android.mk, \
+ 		libdex \
+ 		vm \
+
+#+END_EXAMPLE
+#+LATEX: \end{footnotesize}
+
+#+LATEX: \subsection*{device}
+#+LATEX: \begin{footnotesize}
+Otettu käyttöön itse käännetty kernel-versio.
+#+BEGIN_EXAMPLE
+
+project device/samsung/crespo/
+diff --git a/kernel b/kernel
+deleted file mode 100644
+index 825e50d..0000000
+Binary files a/kernel and /dev/null differ
+diff --git a/kernel b/kernel
+new file mode 120000
+index 0000000..0347ad0
+--- /dev/null
++++ b/kernel
+@@ -0,0 +1 @@
++/home/tituomin/droid/linux-kernel/arch/arm/boot/zImage
+\ No newline at end of file
+
+#+END_EXAMPLE
+#+LATEX: \end{footnotesize}
+
+#+LATEX: \subsection*{perf}
+Otetaan perf-työkalu mukaan käännökseen.
+#+LATEX: \begin{footnotesize}
+#+BEGIN_EXAMPLE
+diff --git a/Android.mk b/Android.mk
+index 9109c96..4e9a795 100644
+--- a/Android.mk
++++ b/Android.mk
+@@ -119,3 +119,3 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/host-$(HOST_OS)-fixup
+ LOCAL_MODULE := libperf
+-LOCAL_MODULE_TAGS := eng
++LOCAL_MODULE_TAGS := optional
+ 
+@@ -156,3 +156,3 @@ LOCAL_C_INCLUDES := external/elfutils external/elfutils/libelf \
+external/elfutils
+ LOCAL_MODULE := libperf
+-LOCAL_MODULE_TAGS := eng
++LOCAL_MODULE_TAGS := optional
+ 
+@@ -167,3 +167,3 @@ include $(CLEAR_VARS)
+ LOCAL_MODULE := perfhost
+-LOCAL_MODULE_TAGS := eng
++LOCAL_MODULE_TAGS := optional
+ 
+@@ -234,3 +234,3 @@ include $(CLEAR_VARS)
+ LOCAL_MODULE := perf
+-LOCAL_MODULE_TAGS := eng
++LOCAL_MODULE_TAGS := optional
+ 
+#+END_EXAMPLE
+#+LATEX: \end{footnotesize}
+
+
+#+LATEX: \subsection*{su}
+Muokattu su-ohjelmaa sallimaan mittausohjelmiston su-kutsu
+ilman käyttöoikeustarkistuksia.
+
+#+LATEX: \begin{footnotesize}
+#+BEGIN_EXAMPLE
+
+project system/extras/
+diff --git a/su/su.c b/su/su.c
+index f87f073..4312c07 100644
+--- a/su/su.c
++++ b/su/su.c
+@@ -45,11 +45,12 @@ int main(int argc, char **argv)
+     int uid, gid, myuid;
+ 
+     /* Until we have something better, only root and the shell can use su. */
+-    myuid = getuid();
+-    if (myuid != AID_ROOT && myuid != AID_SHELL) {
+-        fprintf(stderr,"su: uid %d not allowed to su\n", myuid);
+-        return 1;
+-    }
++    /* commented out for thesis purposes */
++    /* myuid = getuid(); */
++    /* if (myuid != AID_ROOT && myuid != AID_SHELL) { */
++    /*     fprintf(stderr,"su: uid %d not allowed to su\n", myuid); */
++    /*     return 1; */
++    /* } */
+ 
+     if(argc < 2) {
+         uid = gid = 0;
+#+END_EXAMPLE
+#+LATEX: \end{footnotesize}
