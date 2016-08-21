@@ -50,7 +50,7 @@ print_all "$BASEROOT/nativebenchmark/" \
 echo "\newpage"
 
 print_all "$BASEROOT/bench-analyzer/" \
-          "$BASEROOT/bench-analyzer/" \
+          "$BASEROOT/bench-analyzer/bench-analyzer" \
           "py" \
           "python" \
           "Python-komponentit (analyysi)"
