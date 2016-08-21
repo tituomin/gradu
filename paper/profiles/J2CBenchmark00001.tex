@@ -1,9 +1,13 @@
 
 \begin{profile}
-\footnotesize
+\centering
+\caption{Staattinen metodi Java$\rightarrow$C}
+\label{profile:J2CBenchmark00001}
+\begin{topbot}
+\begin{minipage}{1.0\textwidth}
+\scriptsize
 \dirtree{%
-.1  . 
-.1 \textbf{ 0.00\%} nativebenchmark  libdvm.so              [.] dvmInterpret(Thread*, Method const*, JValue*)\newline \phantom{\textbf{ 0.00\%}} ---dvmInterpret(Thread*,Methodconst*,JValue*). 
+.1 \textbf{67.88\%} dvmInterpret(Thread*, Method const*, JValue*). %\newline \phantom{\textbf{ 0.00\%}} ---dvmInterpret(Thread*,Methodconst*,JValue*). 
 .2 \textbf{47.61\%} dalvik\_mterp. 
 .3 \textbf{37.28\%} dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*). 
 .4 \textbf{14.57\%} addLocalReference(Thread*, Object*). 
@@ -23,5 +27,7 @@
 .4 \textbf{0.26\%} getCodeAddrCommon(unsigned short const*, bool). 
 .5 \textbf{0.08\%} dvmJitHash(unsigned short const*). 
 }
+\end{minipage}
+\end{topbot}
 \end{profile}
 
