@@ -46,8 +46,8 @@ def process(filename):
     print '''
 \\begin{profile}
 \\centering
-%\\label{profile:}
 %\\caption{}
+%\\label{profile:}
 \\begin{topbot}
 \\begin{minipage}{1.0\\textwidth}
 \\scriptsize
