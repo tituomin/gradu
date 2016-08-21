@@ -392,8 +392,8 @@ epätyypillisyydestä.
 # TODO: ref below above
 
 \begin{figure}
-    \input{figures/warmup-proof}
-\caption{Vasteajan muuttuminen mittausten edetessä}\label{fig:warmup-plot}
+\caption{Vasteajan muuttuminen suorituksen jatkuessa}\label{fig:warmup-plot}
+    \input{figures/warmup-test}
 \end{figure}
 
 * Benchmark Generator
