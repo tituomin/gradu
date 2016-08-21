@@ -395,7 +395,7 @@ systemaattisesti hieman pienempiä.
     \input{figures/warmup-test}
 \end{figure}
 
-* Benchmark Generator
+* Benchmark Generator                                                 :noexport:
 
 /Benchmark Generator/ on Python-kielinen ohjelma, joka tuottaa
 /NativeBenchmark/-sovelluksen lähtösilmukat sekä kutsujen kohteena
