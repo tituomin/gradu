@@ -42,7 +42,7 @@
                           |          |          |          
                           |          |          |--0.67%-- dvmPopFrame(Thread*)
                           |          |          
-                          |          |--13.42%-- dvmDecodeIndirectRef(Thread*, _jobject*) (*@\ding{202}@*)
+                          |          |--13.42%-- dvmDecodeIndirectRef(Thread*, _jobject*) \DTcomment{ding{202}}
                           |          |          |          
                           |          |          |--4.24%-- ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
                           |          |          |          |          
@@ -60,11 +60,11 @@
                           |          |          |          
                           |          |          |--1.37%-- IndirectRefTable::get(void*) const
                           |          |          
-                          |          |--3.35%-- dvmGetVirtualizedMethod(ClassObject const*, Method const*)() (*@\ding{203}@*)
+                          |          |--3.35%-- dvmGetVirtualizedMethod(ClassObject const*, Method const*)() \DTcomment{ding{203}}
                           |          |          |          
                           |          |          |--1.00%-- dvmIsDirectMethod(Method const*)
                           |          |          
-                          |          |--3.07%-- ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*) (*@\ding{204}@*)
+                          |          |--3.07%-- ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*) \DTcomment{ding{204}}
                           |          |          |          
                           |          |          |--0.58%-- dvmChangeStatus(Thread*, ThreadStatus)
                           |          |          |          |          
@@ -73,7 +73,7 @@
                           |          |          |                      --0.03%-- android_memory_barrier
                           |          |          |          
                           |          |          
-                          |          |--2.45%-- ScopedJniThreadState::~ScopedJniThreadState()  (*@\ding{204}@*)
+                          |          |--2.45%-- ScopedJniThreadState::~ScopedJniThreadState()  \DTcomment{ding{204}}
                           |          |          |          
                           |          |           --1.34%-- dvmChangeStatus(Thread*, ThreadStatus)
                           |          |                     |          

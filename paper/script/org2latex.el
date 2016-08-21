@@ -59,15 +59,20 @@
 \\usepackage[finnish]{babel}
 \\usepackage{chngcntr}
 \\usepackage{xcolor}
+\\usepackage{caption}
 \\usepackage{pifont}
 \\usepackage{listings}
 \\usepackage{tablefont}
+\\usepackage{mdframed}
+\\usepackage{dirtree}
+\\usepackage{newfloat}
 \\counterwithin{figure}{section}
 \\counterwithin{table}{section}
 \\usepackage{url,etoolbox}
 \\usepackage{graphicx}
 \\usepackage{tikz}
-\\graphicspath{{./figures/}}
+\\usepackage[pdftex, pdfborderstyle={/S/U/W 0}]{hyperref} % this disables the boxes around links
+\\graphicspath{{./figures/}{./figures/plots/}}
 \\usepackage{epstopdf}
 \\usepackage[figuresleft]{rotating}
 \\appto\\UrlSpecials{%

@@ -1,20 +1,17 @@
 
+Tässä luvussa esitetään lyhyt yleiskuvaus tutkielman mittauskohteesta
+eli Android-järjestelmästä taustaksi myöhemmille luvuille, joissa
+syvennytään tutkielman varsinaiseen aiheeseen, suorituskyvyn
+mittaamiseen ja mallintamiseen sekä Androidin Java-natiivirajapintaan.
 
-Aluksi esitetään  lyhyt yleiskuvaus Android-järjestelmästä ennen
-siirtymistä tutkielman varsinaiseen aiheeseen, suorituskyvyn
-mittaamiseen ja mallintamiseen sekä Androidin
-Java-natiivirajapintaan.
-
-Tämä tutkielma perustuu Androidin versioon 4.1.2. Tutkielman aiheen
-kannalta se tarkoittaa erityisesti, että tutkielman mittaukset ja
-niiden tulokset koskevat Dalvik-virtuaalikonetta. Androidin versiosta
-6 lähtien Dalvik on korvattu ART-virtuaalikoneella. Uudistettu
-virtuaalikone tekee mittaustuloksista osin vanhentuneita, mutta
-tutkielman metodologian kannalta uudistuksella ei ole väliä. Samat
-mittaukset voi toteuttaa samoilla periaatteilla ja pitkälti samalla
-mittausohjelmistollakin uudemmissa Android-versioissa.  Lisäksi
-käytössä olevista Android-laitteista Dalvikin osuus on vielä
-merkittävä.
+Androidin versiosta 6 lähtien Dalvik-virtuaalikone on korvattu
+ART-virtuaalikoneella. Koska tämän tutkielman mittaukset on tehty
+Dalvikia vasten, uudistettu virtuaalikone tekee mittaustuloksista osin
+vanhentuneita. Tutkielman metodologian kannalta uudistuksella ei
+kuitenkaan ole väliä. Samat mittaukset voi toteuttaa samoilla
+periaatteilla ja pitkälti samalla mittausohjelmistollakin uudemmissa
+Android-versioissa.  Lisäksi käytössä olevista Android-laitteista
+Dalvikin osuus on vielä merkittävä.
 
 * Androidin rakenne
 
@@ -25,17 +22,15 @@ esimerkiksi vähentävät muistin- ja virrankulutusta @@embedded(49--53).
 
 Android ei muistuta tyypillistä Linux-pohjais\-ta työpöytä- tai
 palvelinkäyttöjärjestelmää @@embedded(48). Se on läheisempää sukua
-riisutummille /upotetuille/ Linux-järjestelmille, mutta eroaa
+riisutummille /upotetuille/ Linux-järjestelmille mutta eroaa
 niistäkin. Ensinnäkin merkittävä osa sovelluksista ja koko
-järjestelmästä on ohjelmoitu Javalla ja suoritetaan
+järjestelmästä on ohjelmoitu Javalla, ja niitä suoritetaan
 virtuaalikoneessa. Järjestelmän rakenne ei muutenkaan noudata
 esimerkiksi POSIX-standardia vaan perustuu hajautettuun
 komponenttiarkkitehtuuriin, joka on nimeltään /Binder/ @@embedded(79).
 Arkkitehtuurin infrastruktuuri, Dalvik-virtuaalikone sekä suuri osa
 järjestelmän matalan tason palveluista on toteutettu C- ja
 C++-kielillä @@embedded(138).
-
-Tässä tutkielmassa
 
 \todo{Yllä: POSIX ei liity userspacen järjestämiseen <<posix>>}
 
@@ -75,7 +70,7 @@ voidaan pitää kirjaa käyttöjärjestelmän käyttäjänhallinnan avulla.
 Android-ohjelmointirajapinnan luokat antavat sovellusohjelmoijalle
 yksinkertaisen näkymän käyttöjärjestelmän palveluihin. Valtaosa
 palveluiden varsinaisesta toteutuksesta sijoittuu kuitenkin Androidin
-/järjestelmäpalveluihin/ (/system services/), komponentteihin joita
+/järjestelmäpalveluihin/ (/system services/) eli komponentteihin joita
 järjestelmä suorittaa omissa palvelinprosesseissaan
 @@embedded(79). Yleensä sovellusohjelmoija ei kutsu näitä
 tukipalveluita suoraan, vaan Android-ohjelmointirajapintojen sisäiset

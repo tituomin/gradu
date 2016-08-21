@@ -51,6 +51,8 @@ päinvastaista suuntaa nopeampia/: edellisten vasteajat suhteessa
 jälkimmäisten aikoihin ovat noin kolminkertaisia. Tämä pätee kaikilla
 parametrityypeillä.
 
+{{{plot(basic-call-all-types-j-j-fit)}}}
+
 Sen sijaan samankielisten suuntien ({{{permu(Java,Java)}}}) sekä
 ({{{permu(C,C)}}}) välisestä erosta ei tämän mittauksen perusteella
 voi tehdä pitkälle meneviä johtopäätöksiä muun muassa siksi, että
@@ -68,18 +70,23 @@ Lineaarisen riippuvuuden perusteella Java-kääntäjä tai Dalvikin
 JIT-kääntäjä ei ole onnistunut optimoimaan pois tyhjän metodin kutsua
 Java-koodista.
 
-{{{plot(basic-call-all-types-j-j-fit)}}}
-
-{{{plot(basic-call-all-types-c-c-fit)}}}
-
 Kuviin \ref{fig:basic-call-all-types-c-j} ja \ref{fig:basic-call-all-types-j-c} on koostettu eri
 parametrityypit suunnissa ({{{permu(C,Java)}}}) ja ({{{permu(\mbox{Java},C)}}}).
 Primitiivi- ja viitetyyppien ryhmittyminen näkyy kuvissa selvästi.
 
-Samankielisissä permutaatioissa (kuvat \ref{fig:basic-call-all-types-j-j-fit} ja
-\ref{fig:basic-call-all-types-c-c-fit}) ei vastaavaa eroa näy, mutta mielenkiintoisena
-yksityiskohtana niissä voidaan havaita 64-bittisten parametrityyppien
-~long~ ja ~double~ suurempi rasite 32-bittisessä prosessorissa.
+Samankielisissä permutaatioissa (kuvat
+\ref{fig:basic-call-all-types-j-j-fit} ja
+\ref{fig:basic-call-all-types-c-c-fit}) ei vastaavaa eroa näy, mutta
+mielenkiintoisena yksityiskohtana niissä voidaan havaita 64-bittisten
+parametrityyppien ~long~ ja ~double~ suurempi rasite 32-bittisessä
+prosessorissa. Kuvassa \ref{fig:basic-call-all-types-c-c-fit}
+mainitut Java-tyypit kuvautuvat C-kielen tyypeiksi
+seuraavasti. Viitetyyppiset ~Object~ sekä taulukkotyypit
+kuvautuvat ~jobject~-tyyppinimen kautta ~void~-osoittimiksi ja
+primitiivityypit kuvautuvat taulukon \ref{tab-primitives} mukaisesti
+C-kielen perustyypeiksi.
+
+{{{plot(basic-call-all-types-c-c-fit)}}}
 
 {{{plot(basic-call-all-types-c-j)}}}
 
@@ -100,7 +107,7 @@ aiheuttamaan suurempaan rasitteeseen sekä kieltenvälisten
 kutsusuuntien keskinäisiin eroihin. Listauksen
 \ref{profile:C2JBenchmark00206} kutsuprofiilissa nähdään, missä aliohjelmissa
 suoritusaikaa kuluu eniten mittauksessa, jossa natiivikomponentista
-kutsutaan Java- metodia kahdellakymmenellä Object-tyyppisellä
+kutsutaan Java-metodia kahdellakymmenellä Object-tyyppisellä
 parametrilla. Suurin osa profiileissa esiintyvistä aliohjelmista
 kuuluu Dalvikin C++-toteutukseen.
 
@@ -120,7 +127,7 @@ prosenttiluku ja nimi on piirretty välittömästi aliohjelman /A/
 nimestä lähtevän pystyviivan oikealle puolelle. Esimerkiksi
 \path{dvmDecodeIndirectRef} \ding{202} on kutsunut suoraan
 C++-luokan \path{ScopedPthreadMutexLock} konstruktoria \ding{203} ja destruktoria \ding{204}
-sekä luokan \path{IndirectRefTable} metodia \path{get} \ding{204}. Jos
+sekä luokan \path{IndirectRefTable} metodia \path{get} \ding{205}. Jos
 profiilissa esiintyy saman prosenttiluvun alla useampi aliohjelma,
 nämä esiintyvät kutsupinossa aina yhdessä -- esimerkiksi ketju
 nopeasti suoritettavia pieniä aliohjelmia, joita kutsuprofiilinäytteen
@@ -146,7 +153,7 @@ käyntiin yhdestä \path{dvmPlatformInvoke}-kutsusta.
 Mitattavassa metodissa on keinotekoisen paljon viiteparametreja, joten
 profiilista erottuu viitteiden välittämisen aikarasite. Avainkohta on
 Dalvikin metodi \path{dvmDecodeIndirectRef}, joka vie 46.21% koko
-suoritusajasta ja 64% benchmarkin suoritusajasta. /Indirect
+suoritusajasta ja 64% testin suoritusajasta. /Indirect
 ref[erence]/ tarkoittaa epäsuoraa viitettä, joka välitetään
 parametrinä JNI-rajapinnan yli, eli JNI-kutsujen \path{jobject *}
 -tyyppisiä parametreja eri muodoissaan. Dalvik-virtuaalikone joutuu
@@ -200,10 +207,10 @@ case kIndirectKindGlobal:
     }
 #+END_SRC
 
-Kattavammissa mittauksissa täytyisi laatia erilliset benchmarkit,
+Kattavammissa mittauksissa täytyisi laatia erilliset testit,
 jotka käyttävät paikallisia viitteitä. Tämänkin mittauksen avulla
 saadaan kuitenkin jotain käsitystä nopeutuksen suuruusluokasta, joka
-paikallisilla viitteillä saavutettaisiin: tämän benchmarkin
+paikallisilla viitteillä saavutettaisiin: tämän testin
 kokonaissuoritusajasta yli kolmasosa kuluu lukitukseen.
 
 {{{profile(C2JBenchmark00146)}}}
@@ -212,7 +219,7 @@ Listauksen \ref{profile:C2JBenchmark00146} kutsuprofiilissa kutsusuunta on
 {{{cj}}} ja kutsussa on kaksikymmentä
 ~int~-parametria. Profiilissa näkyy edelleen
 \path{dvmDecodeIndirectRef} (\ding{202}) 13.42% suoritusajalla ---
-benchmarkissa kutsutaan Java-olion kohdemetodia, joten olio täytyy
+testissä kutsutaan Java-olion kohdemetodia, joten olio täytyy
 välittää viitteenä JNI-kutsussa.
 
 #+BEGIN_SRC c
@@ -243,7 +250,7 @@ JNI-kutsuissa, ja sen avulla virtuaalikone pitää kirjaa, milloin
 muistinhallinnan roskienkeruu on sallittua.
 
 Säikeen suorituksen ollessa natiivikomponentissa tila on
-~THREAD_NATIVE~, jonka aikana roskienkeruu on mahdollista, mutta
+~THREAD_NATIVE~, jolloin roskienkeruu on mahdollista, mutta
 Dalvikin viitetaulukkoa lukemalla roskienkeruu pysyy tietoisena
 JNI-rajapinnan yli välitetyistä olioviitteistä. Suorituksen ollessa
 käynnissä Java-komponentissa tila on ~THREAD_RUNNING~, jolloin
@@ -282,6 +289,10 @@ muutakin kuin tarkastelun kohteena olevassa JNI-toteutuksessa vietetyn
 ajan --- nimittäin kutsun kohteena olevan aliohjelman suorittamiseen
 kuluvan ajan.
 
+{{{profile(J2CBenchmark00001)}}}
+
+\newpage
+
 Java-komponentissa olevan kohdemetodin suoritus konekielitasolla on
 hyvin erilaista natiivikomponentin kohdefunktion suoritukseen
 nähden. Edellistä suoritetaan Dalvikin tavukooditulkin kautta, joka
@@ -292,7 +303,7 @@ sivuvaikutuksellinen operaatio, jotta sitä ei optimoitaisi tyhjänä
 pois käännösvaiheessa.
 
 JNI-lisärasitteen suuruudesta saakin paremman arvion seuraavasti.
-Suunnan {{{cj}}} rasite saadaan vähentämällä ({{{cj}}})-vasteajasta
+Kutsusuunnan {{{cj}}} rasite saadaan vähentämällä ({{{cj}}})-vasteajasta
 ({{{jj}}})-vasteaika. Sama pätee kääntäen myös toiseen
 kutsusuuntaan. Olettaen, että itse lähtösilmukan yleisrasite on
 merkityksettömän pieni suhteessa koko vasteaikaan, saadaan näin
@@ -304,13 +315,14 @@ rasitteeseen nähden.
 
 Listauksien \ref{profile:C2JBenchmark00001} ja
 \ref{profile:J2CBenchmark00001} profiileja vertailemalla saadaan tähän
-lisärasitteeseen ainakin osittainen selitys. {{{jc}}} -kutsussa ei
+lisärasitteeseen ainakin osittainen selitys. Listauksessa
+\ref{profile:C2JBenchmark00001} on staattisen metodikutsun profiili
+suunnassa {{{cj}}} ja listauksessa \ref{profile:J2CBenchmark00001} on
+vastaava kutsuprofiili suunnassa {{{jc}}}.  {{{jc}}} -kutsussa ei
 luoda \path{ScopedJniThreadState}-oliota, vaan virtuaalikoneen
 suoritustilan muuttavaa \path{dvmChangeStatus}-metodia kutsutaan
 suoraan. Samoin \path{callPrep}-funktio puuttuu. Näiden
 toteutusyksityiskohtien tarkempi analyysi jätetään tässä tekemättä.
-
-{{{profile(J2CBenchmark00001)}}}
 
 Kuvasta \ref{fig:basic-call-Object-fit} nähdään myös, että
 viiteparametrien määrän lisääntyessä {{{jc}}}-suunnan kuvaajan
@@ -322,7 +334,7 @@ lokaaleja ja päinvastaisen suunnan viitteet globaaleja. Kyseisessä
 suunnassa viitteet ovat oletusarvoisesti lokaaleja JNI-standardin
 mukaisesti -- natiivikomponentin on erikseen luotava globaalit
 viitteet, jos aikoo käyttää viitteitä yksittäisen natiivimetodikutsun
-elinkaaren ulkopuolella. Suunnassa {{{jc}}} ei tarvita myöskään
+elinkaaren ulkopuolella. Suunnassa {{{jc}}} ei myöskään tarvita
 rinnakkaisten säikeiden poissulkemista listauksen
 \ref{profile:J2CBenchmark00206} kohdassa \ding{202}.
 
@@ -518,12 +530,12 @@ For now, we use a serial number.
 Java-merkkijonojen sisältöä käsitellään natiivikomponentista
 seuraavilla operaatioilla. Osoittimen palauttavia ja vapauttavia
 operaatioita kutsutaan aina pareittain, joten jokainen pari on koottu
-yhteisen benchmarkin alle. On tärkeä huomata, että Java-merkkijonojen
+yhteisen testin alle. On tärkeä huomata, että Java-merkkijonojen
 muokkaaminen on ohjelmoijalta kielletty, vaikka se olisikin
 mahdollista JNI:n osoitinoperaatioiden avulla: Javan merkkijonot ovat
 muuttumattomia.
 
-Mittauksissa benchmarkeille on annettu nimet seuraavasti:
+Mittauksissa testeille on annettu nimet seuraavasti:
 
 - ReadString ::  ~GetStringChars~ ja ~ReleaseStringChars~
 - ReadStringCritical :: ~GetStringCritical~ ja ~ReleaseStringCritical~
@@ -535,8 +547,8 @@ tuloksissa nimillään samoin kuin tukioperaatiot ~GetStringLength~ ja
 pituus, mikä on tarpeen ennen kuin merkkijonon voi läpikäydä
 C-koodissa.
 
-Näille C\to{}Java -suunnan operaatioille ei ole löydettävissä vastinpareja
-suunnissa {{{cj}}} tai {{{jc}}}, sillä kyseessä ovat operaatiot, joita
+Näille {{{cj}}} -suunnan operaatioille ei ole löydettävissä vastinpareja
+suunnissa {{{cc}}} tai {{{jj}}}, sillä kyseessä ovat operaatiot, joita
 on kutsuttava sen /lisäksi/ että merkkijonoa varsinaisesti luetaan
 natiivikoodissa. Siten natiivimerkkijonojen käsittely C-kielessä ei
 vaadi mitään vastaavaa ylimääräistä operaatiota kuten ei myöskään
@@ -592,12 +604,13 @@ Kopioivan Unicode-operaation profiilissa
 
 Sen sijaan UTF-muunnoksen tekevä osoitinoperaatio on riippuvainen
 kohteen koosta. Se on myös operaatio, joka johtaa Dalvikin allokoimaan
-muistia muunnettua merkkijonoa varten. Siksi kuvan \ref{fig:aplot-8}
-vasteajat on mitattu allokoiviin operaatioihin soveltuvilla
-vähäisemmillä lähtösilmukan kierrosmäärillä: allokoivien operaatioiden
-kierrosluku on 300 ja ei-allokoivien 500000, joten vasteaikojen
-suhdeluku on 3:5000.
+muistia muunnettua merkkijonoa varten. Siksi kyseisen operaation
+vasteajat kuvassa \ref{fig:special-calls-utf-c-j-alloc-fit} on mitattu
+allokoiviin operaatioihin soveltuvilla vähäisemmillä lähtösilmukan
+kierrosmäärillä: allokoivien operaatioiden kierrosluku on 300 ja
+ei-allokoivien 500000, joten vasteaikojen suhdeluku on 3:5000.
 
+{{{plot_a(special-calls-utf-c-j-alloc-fit)}}}
 # TODO kuva puuttuu yltä
 
 Samoin kopioivat operaatiot ovat lineaarisesti raskaampia kopioitavan
@@ -605,10 +618,8 @@ kohteen koon kasvaessa, mutta tässäkin tapauksessa merkistökoodauksen
 muunnos Javan 16-bittisestä Unicodesta 8-bittiseen UTF-8:aan on
 merkittävästi raskaampi kuin pelkkä Unicode-merkkien kopiointi. Näin
 ollen kuvassa \ref{fig:special-calls-utf-c-j-fit} merkkijonon koon
-selvittäminen UTF-8-koodauksessa on raskaampi operaatio kuin Unicode-
-merkkijonon kopioiminen.
-
-# todo: miten viitata alloc-plotteihin?
+selvittäminen UTF-8-koodauksessa on raskaampi operaatio kuin
+Unicode-merkkijonon kopioiminen.
 
 # {{{plot(56)}}}
 {{{plot(special-calls-utf-c-j-fit)}}}
@@ -620,7 +631,7 @@ käsittelyssä, mutta merkistökoodaukseen liittyviä rasitteita ei
 tällöin ole, ja viitetyyppejä sisältävät taulukot käsitellään omana
 erityistapauksenaan. Lisäksi Java-taulukoiden lukeminen ja kirjoittaminen
 ovat molemmat sallittuja. Osoittimen palauttavia operaatiota mitataan
-seuraavissa benchmarkeissa.
+seuraavissa testeissä.
 
 - Get\tau{}ArrayElements :: Funktiot \verb|Get|\tau\verb|ArrayElements| ja
      \verb|Release|\tau\verb|ArrayElements|
@@ -638,7 +649,7 @@ kutsua kohti eli karkeasti arvioiden yli 20 sekuntia 512-alkioisen
 taulukon läpikäyntiin.
 
 Suoria vertailukohtia näille suunnan C\to{}Java taulukko-operaatioille
-ei ole muissa kutsusuunnissa, jälleen kerran lukuunnottamatta
+ei ole muissa kutsusuunnissa, jälleen kerran lukuunottamatta
 ~NIO~-rajapintaa (ks. kohta \ref{sec:measurement-classification-nio}).
 
 Primitiivitaululukoiden operaatioiden osoitinversioiden vasteajat ovat
@@ -649,9 +660,9 @@ taas kopioivat versiot kasvavat lineaarisesti syötteen koon kasvaessa
 pituuden selvittäminen on vakiollinen operaatio (kuvan
 \ref{fig:special-calls-arrayelements-c-j-fit} alempi ryhmittymä).
 
-{{{plot(special-calls-arrayelements-c-j-fit)}}}
+{{{plot_edited(special-calls-arrayelements-c-j-fit, Taulukoiden käsittely osoittimilla suunnassa C$\rightarrow$Java)}}}
 
-{{{plot(special-calls-arrayregion-c-j-fit)}}}
+{{{plot_edited(special-calls-arrayregion-c-j-fit, Taulukoiden käsittely kopioimalla suunnassa C$\rightarrow$Java)}}}
 
 Kutsuprofiilien perusteella taulukoiden osoitinoperaatioiden
 kutsurakenteet ovat täsmälleen samoja merkkijonojen
@@ -735,8 +746,8 @@ natiivikomponentti saa puskurin edustaman muistialueen osoitteen
 \path{GetDirectBufferAddress}-kutsulla ja kapasiteetin
 \path{GetDirectBufferCapacity}-kutsulla. Koska tässä vaihtoehdossa
 molemmat operaatiot ovat edellytyksiä puskurin käytölle, ne mitattiin
-yhdessä benchmarkissa, jonka vasteajaksi saatiin 2.31
-sekuntia. Benchmarkin kutsuprofiilissa näkyvät ainoastaan epäsuoran
+yhdessä testissä, jonka vasteajaksi saatiin 2.31
+sekuntia. Testin kutsuprofiilissa näkyvät ainoastaan epäsuoran
 globaalin viitteen purku sekä virtuaalikoneen suoritustilan muutos,
 jotka nähtiin aiemminkin käsitellyissä JNI-kutsuissa.
 
@@ -752,7 +763,7 @@ jotka nähtiin aiemminkin käsitellyissä JNI-kutsuissa.
 roskienkeruuseen liittyviä metodikutsuja alkaen metodista
 \path{dvmCollectGarbage}. Tämä on mittaustekninen ongelma, joka tekee
 kaikkien muistia varaavien operaatioiden kutsuprofiilit hankaliksi
-hyödyntää. Siinä missä benchmarkin suoritus on saatu mitattua ilman
+hyödyntää. Siinä missä testin suoritus on saatu mitattua ilman
 roskienkeruuta /vasteaikamittauksissa/, kutsuprofiilinäytteet kerätään
 yhtäjaksoisesti useiden sekuntien jaksolta, jonka aikana
 suhteellisesti suurin osa ajasta vietetään roskienkeruussa. Allokoivia
@@ -761,7 +772,7 @@ vapauttaa, jotta se ei loppuisi.
 
 {{{profile(C2JNewDirectBuffer-512)}}}
 
-{{{rotated_plot(special-calls-non-dynamic)}}}
+{{{plot_edited(special-calls-non-dynamic, Kenttien käsittely eri kutsusuunnissa)}}}
 
 * Kenttien käsittely
 
@@ -796,7 +807,7 @@ kutsuttavat rajapinnan palvelut rajattiin tutkielman ulkopuolelle.
 
 Nämä harvemmin tarvittavat palvelut liittyvät muun muassa
 eksplisiittiseen viitteiden käsittelyyn, olioiden ja luokkien
-ominaisuuksien käsittelyyn, reflektioon, sekä natiivimetodien
+ominaisuuksien käsittelyyn, reflektioon sekä natiivimetodien
 rekisteröintiin.
 
 Sen sijaan todennäköisesti oleellisemmat, mutta mittausten

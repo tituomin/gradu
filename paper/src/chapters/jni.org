@@ -3,14 +3,22 @@
 Kaikki Android-järjestelmään asennettavat tavalliset sovellukset
 suoritetaan omassa prosessissaan Dalvik-virtuaalikoneessa, vaikka ne
 sisältäisivätkin natiivikomponentteja.  Tutkimusten mukaan
-@@benchmark-ndk @@kicheol-bad @@eval-android-ndk natiivikomponenttien
-käytöstä joskus todella on suorituskykyetua: koska Java-ohjelmaa
+@@benchmark-ndk @@eval-android-ndk @@dba natiivikomponenttien
+käytöstä saattaa joskus todella olla suorituskykyetua: koska Java-ohjelmaa
 suoritetaan välikielelle käännettynä virtuaalikoneessa, seuraa tästä
 yleisrasitteita verrattuna suoraan konekielellä suoritettavaan
 ohjelmaan.  Kuinka siis korkean tason kielestä on mahdollista siirtyä
 suorittamaan konekielistä ohjelmaa?
 # todo tähän kerää kaikki mittaukset aiheesta
 # lisäksi luokittele rasitteiden syyt
+
+Tämä luku käsittelee Java Native Interface -rajapintaa. Aluksi
+JNI-rajapinta ja vieraskutsurajapinnat esitellään yleisesti. Sen
+jälkeen tutkitaan suunnitteluperiaatteita ja perusongelmia, joiden
+vuoksi JNI-rajapinnan suunnitteluratkaisuihin on päädytty. Rajapintaa
+esitellään myös sovellusohjelmoijan näkökulmasta. Lopuksi käsitellään
+tarkemmin vieraskutsurajapintojen keskeistä ongelmakohtaa eli
+/muistinhallintaa/ JNI-rajapinnan näkökulmasta.
 
 * Java Native Interface ja vieraskutsurajapinnat
 /Vieraskutsurajapinta/ (/Foreign Function Interface/) on rajapinta,
@@ -27,7 +35,7 @@ käsitellä Java-ohjelman dataa @@jnibook(41).
 
 \begin{figure}[h!]
 \centerline{\includegraphics[scale=1]{figures/jni-basic.pdf}}
-\caption{Natiivirajapinnan asema\cite[s. 5]{jnibook}}\label{fig:jnibasic}
+\caption{Natiivirajapinnan asema \cite[s. 5]{jnibook}}\label{fig:jnibasic}
 \end{figure}
 
 Kuva \ref{fig:jnibasic} antaa kokonaiskäsityksen JNI:n
@@ -355,7 +363,7 @@ tunnisteet omissa muuttujissaan, kun ne on kerran selvitetty. Paras
 käytäntö on tehdä ~GetMethodID~-kutsut erillisessä natiivimetodissa,
 jota kutsutaan sen Java-luokan staattisessa alustuslohkossa, jonka
 metodeja natiivikomponentti tulevaisuudessa kutsuu @@jnibook(56).
-Virtuaalikone takaa, että luokan staattinen alustuslohko suoritetaan
+Virtuaalikone takaa, että luokan staattinen alustuslohko suoritetaan,
 ennen kuin luokan metodeja voi kutsua.
 
 #+begin_src java -r
@@ -446,12 +454,7 @@ natiivirajapinnan merkkijono-operaatioiden suorituskyvyn tarkempi
 analyysi vaatii kuitenkin mittauksia ja virtuaalikoneen toteutuksen
 tutkimista.
 
-\newpage
-Yleisestikin suorituskykyvaatimukset usein edellyttävät abstraktien
-rajapintojen piilottamien toteutusyksityiskohtien paljastamista --
-ainakin dokumentaatiossa.
 # lähde http://developer.android.com/training/articles/perf-jni.html
-# todo: joku lähde tuohon abstrakti rajapinta vs. toteutus
 
 *** turha? :noexport:
     Osoittimen palauttavista merkkijonofunktioista on olemassa versiot,
@@ -592,8 +595,6 @@ kutsuhan voi siirtää ohjelman suorituksen pitkäksikin aikaa syvälle
 natiivikomponenttiin, joten kyseinen metodikutsu saattaa pitää
 paikallisten viitteiden edellyttämät muistivaraukset käytössä hyvinkin
 pitkään, ellei viitteitä erikseen vapauteta.
-
-\newpage
 
 Ennakoimme, että natiivirajapinnan ylittäminen voi aiheuttaa
 ylimääräisiä suorituskykyrasitteita aivan tavallisissa

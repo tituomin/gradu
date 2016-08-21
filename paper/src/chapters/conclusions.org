@@ -1,15 +1,15 @@
 Android-sovelluksia on mahdollista rakentaa yhdistelemällä Androidin
 virtuaalikoneen suorittamia Java-komponentteja natiivikirjastojen
 komponentteihin, jotka on käännetty suoraan suoritusympäristön
-konekielelle, ja joita suoritetaan virtuaalikoneen tavallisen
+konekielelle ja joita suoritetaan virtuaalikoneen tavallisen
 tulkinta- tai käännösprosessin ulkopuolella.
 
 Jotta Java-komponentit ja natiivikomponentit voisivat kutsua toisiaan
 ja käsitellä toistensa muuttujia ja tietorakenteita,
-Java-virtuaalikoneet tarjoavat Java Native Interface (JNI)-standardin,
-joka on vieraskutsurajapinta natiivi- ja Java-komponenttien
-välillä. Myös Androidin Dalvik- ja ART-virtuaalikoneet toteuttavat
-JNI-rajapinnan.
+Java-virtuaalikoneet tarjoavat Java Native Interface (JNI)
+-standardin, joka on vieraskutsurajapinta natiivi- ja
+Java-komponenttien välillä. Myös Androidin Dalvik- ja
+ART-virtuaalikoneet toteuttavat JNI-rajapinnan.
 
 Rajapinnan käytöstä aiheutuu kuitenkin erilaisia ylimääräisiä
 suorituskykyrasitteita verrattuna tavallisiin, samankielisen
@@ -29,10 +29,10 @@ kokonaisvasteajan välillä, myös Dalvik-virtuaalikoneen sisäisen
 toteutuksen osat, joiden kesken suoritusaika jakautui.
 
 Virtuaalikoneen käyttäytymisestä saatiin erotettua lineaarisia
-riippuvuuksia, jotka paljastivat että virtuaalikoneen muistinhallinta
-aiheuttaa välillisestiDalvikin JNI-rajapinnan käytön merkittävimmät
+riippuvuuksia, jotka paljastivat, että virtuaalikoneen muistinhallinta
+aiheuttaa välillisesti Dalvikin JNI-rajapinnan käytön merkittävimmät
 rasitteet. Jokaisessa rajapinnan operaatiossa ja jokaisessa sen kautta
-tehdyssä aliohjelmakutsussa on myös merkittävä pohjarasite, joten
+tehdyssä aliohjelmakutsussa on myös merkittävä yleisrasite, joten
 kutsujen määrän kasvaessa vasteaika suurenee nopeasti.
 
 Muistinhallinnan suurimmat rasitteet johtuvat siitä, että Dalvik pitää
@@ -59,16 +59,16 @@ todennäköisesti automaattisen muistinhallinnan piirissä olevien
 komponenttien yhdistämisestä hallitusti natiivikomponenttiin, jossa
 muistinhallinta on manuaalista.
 
-Muita mielenkiintoisia kehityskohteita olisi varioida ja tutkia
+Muita mielenkiintoisia kehityskohteita olisi tutkia
 kattavammin erilaisia JNI-rajapinnan parametrivaihtoehtoja:
 erityisesti lokaalien ja globaalien viitteiden erottelu osoittautui
 hyvin oleelliseksi tekijäksi, jota tutkielman mittauksissa ei
 riittävästi tutkittu. Toinen selkeä puute mittausmenetelmissä oli
 keskittyminen alkeisoperaatioiden mittaamiseen. Realistisemman ja
 kokonaisvaltaisemman kuvan rajapinnan käyttäytymisestä saisi, jos
-mittauskohteisiin lisättäisiin edustavia korkeamman tason
+mittauskohteisiin lisättäisiin korkeamman tason
 käyttötapauksia, jotka edustaisivat paremmin todellisten sovellusten
-tarpeita ja joissa samassa benchmarkissa käytettäisiin useita
+tarpeita ja joissa samassa testissä käytettäisiin useita
 rajapinnan alkeisoperaatioita. Esimerkiksi suurten datamäärien
 välittäminen rajapinnan välityksellä komponentista toiseen taulukko-
 tai tavupuskuritietorakenteiden avulla olisi mielekäs tutkimuskohde.

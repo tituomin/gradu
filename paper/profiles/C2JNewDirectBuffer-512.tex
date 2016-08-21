@@ -1,235 +1,38 @@
 
-\lstset{
-  basicstyle=\linespread{0}\rmfamily\tiny,
-  escapeinside={(*@}{@*)},
-  columns=fixed,
-  basewidth=0.5em,
-  mathescape,
-  breaklines=false,breakatwhitespace=false,
-  moredelim=[is][\underbar]{<<@<<}{>>@>>}
+\begin{profile}
+\centering
+\caption{NewDirectByteBuffer}
+\label{profile:C2JNewDirectBuffer-512}
+\begin{topbot}
+\begin{minipage}{1.0\textwidth}
+\scriptsize
+\dirtree{%
+%.1 \textbf{ 0.02\%} dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::\_\_va\_list). 
+.2 \textbf{74.31\%} dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::\_\_va\_list). 
+.3 \textbf{73.83\%} dvmInterpret(Thread*, Method const*, JValue*). 
+.4 \textbf{72.21\%} dalvik\_mterp\newline \phantom{\textbf{72.21\%}} Dalvik\_java\_lang\_Runtime\_gc(unsignedintconst*,JValue*)\newline \phantom{\textbf{72.21\%}} dvmCollectGarbage(). 
+.5 \textbf{72.19\%} dvmCollectGarbageInternal(GcSpec const*). 
+.6 \textbf{43.71\%} dvmHeapScanMarkedObjects(). 
+.6 \textbf{19.92\%} dvmHeapSweepUnmarkedObjects(bool, bool, unsigned int*, unsigned int*). 
+.6 \textbf{3.74\%} dvmHeapReScanMarkedObjects(). 
+.6 \textbf{2.67\%} dvmHeapMarkRootSet()\newline \phantom{\textbf{2.67\%}} dvmVisitRoots(void(*)(void*,unsignedint,RootType,void*),void*). 
+.6 \textbf{1.73\%} dvmHeapReMarkRootSet()\newline \phantom{\textbf{1.73\%}} dvmVisitRoots(void(*)(void*,unsignedint,RootType,void*),void*). 
+.6 \textbf{0.09\%} dvmHeapFinishMarkStep(). 
+.6 \textbf{0.02\%} dvmGetRelativeTimeMsec()\newline \phantom{\textbf{0.02\%}} dvmGetRelativeTimeUsec(). 
+.6 \textbf{0.02\%} dvmHeapSweepSystemWeaks()\newline \phantom{\textbf{0.02\%}} dvmGcDetachDeadInternedStrings(int(*)(void*)). 
+.4 \textbf{0.12\%} dalvik\_inst. 
+.5 \textbf{0.10\%} dvmAllocObject\newline \phantom{\textbf{0.10\%}} dvmMalloc(unsignedint,int). 
+.6 \textbf{0.04\%} dvmUnlockHeap()\newline \phantom{\textbf{0.04\%}} dvmUnlockMutex(pthread\_mutex\_t*)\newline \phantom{\textbf{0.04\%}} pthread\_mutex\_unlock. 
+.7 \textbf{0.02\%} pthread\_mutex\_unlock\_impl. 
+.6 \textbf{0.04\%} tryMalloc(unsigned int). 
+.7 \textbf{0.02\%} dvmHeapSourceAlloc(unsigned int)\newline \phantom{\textbf{0.02\%}} countAllocation(Heap*,voidconst*). 
+.6 \textbf{0.02\%} dvmLockHeap()\newline \phantom{\textbf{0.02\%}} dvmTryLockMutex(pthread\_mutex\_t*). 
+.4 \textbf{0.04\%} common\_updateProfile. 
+.5 \textbf{0.02\%} dvmJitGetTraceAddrThread\newline \phantom{\textbf{0.02\%}} getCodeAddrCommon(unsignedshortconst*,bool). 
+.4 \textbf{0.03\%} common\_selectTrace. 
+.3 \textbf{0.20\%} callPrep(Thread*, Method const*, Object*, bool). 
 }
-\begin{lstlisting}[caption=NewDirectByteBuffer, label=profile:C2JNewDirectBuffer-512, numberbychapter=true, frame=lines, float, floatplacement=t]
-
-   |$\underline{\phantom{0}74.33\%}$ nativebenchmark  libdvm.so           [.] dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
-
-         |
-(*@\vspace{-0.15cm}@*)
-         |
-(*@\vspace{-0.15cm}@*)
-         |$\underline{\phantom{0}74.31\%}$ dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
-(*@\vspace{-0.15cm}@*)
-                 |
-(*@\vspace{-0.15cm}@*)
-                 |
-(*@\vspace{-0.15cm}@*)
-                 |$\underline{\phantom{0}73.83\%}$ dvmInterpret(Thread*, Method const*, JValue*)
-(*@\vspace{-0.15cm}@*)
-                 |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |$\underline{\phantom{0}72.21\%}$ dalvik_mterp
-(*@\vspace{-0.15cm}@*)
-                 |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |       Dalvik_java_lang_Runtime_gc(unsigned int const*, JValue*)
-(*@\vspace{-0.15cm}@*)
-                 |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |       dvmCollectGarbage()
-(*@\vspace{-0.15cm}@*)
-                 |       |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |       |$\underline{\phantom{0}72.19\%}$ dvmCollectGarbageInternal(GcSpec const*)
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |$\underline{\phantom{0}43.71\%}$ dvmHeapScanMarkedObjects()
-(*@\vspace{-0.15cm}@*)
-                 |       |               |        
-(*@\vspace{-0.15cm}@*)
-                 |       |               |        
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |$\underline{\phantom{0}19.92\%}$ dvmHeapSweepUnmarkedObjects(bool, bool, unsigned int*, unsigned int*)
-(*@\vspace{-0.15cm}@*)
-                 |       |               |        
-(*@\vspace{-0.15cm}@*)
-                 |       |               |        
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |$\underline{\phantom{00}3.74\%}$ dvmHeapReScanMarkedObjects()
-(*@\vspace{-0.15cm}@*)
-                 |       |               |        
-(*@\vspace{-0.15cm}@*)
-                 |       |               |        
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |$\underline{\phantom{00}2.67\%}$ dvmHeapMarkRootSet()
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |         dvmVisitRoots(void (*)(void*, unsigned int, RootType, void*), void*)
-(*@\vspace{-0.15cm}@*)
-                 |       |               |        
-(*@\vspace{-0.15cm}@*)
-                 |       |               |        
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |$\underline{\phantom{00}1.73\%}$ dvmHeapReMarkRootSet()
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |         dvmVisitRoots(void (*)(void*, unsigned int, RootType, void*), void*)
-(*@\vspace{-0.15cm}@*)
-                 |       |               |        
-(*@\vspace{-0.15cm}@*)
-                 |       |               |        
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |$\underline{\phantom{00}0.09\%}$ dvmHeapFinishMarkStep()
-(*@\vspace{-0.15cm}@*)
-                 |       |               |        
-(*@\vspace{-0.15cm}@*)
-                 |       |               |        
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |$\underline{\phantom{00}0.02\%}$ dvmGetRelativeTimeMsec()
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |       dvmGetRelativeTimeUsec()
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |                $\underline{\phantom{00}0.02\%}$ dvmHeapSweepSystemWeaks()
-(*@\vspace{-0.15cm}@*)
-                 |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |                       dvmGcDetachDeadInternedStrings(int (*)(void*))
-(*@\vspace{-0.15cm}@*)
-                 |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |$\underline{\phantom{00}0.12\%}$ dalvik_inst
-(*@\vspace{-0.15cm}@*)
-                 |       |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |        $\underline{\phantom{00}0.10\%}$ dvmAllocObject
-(*@\vspace{-0.15cm}@*)
-                 |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |               dvmMalloc(unsigned int, int)
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |$\underline{\phantom{00}0.04\%}$ dvmUnlockHeap()
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |       dvmUnlockMutex(pthread_mutex_t*)
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |       pthread_mutex_unlock
-(*@\vspace{-0.15cm}@*)
-                 |       |               |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |        $\underline{\phantom{00}0.02\%}$ pthread_mutex_unlock_impl
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |$\underline{\phantom{00}0.04\%}$ tryMalloc(unsigned int)
-(*@\vspace{-0.15cm}@*)
-                 |       |               |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |        $\underline{\phantom{00}0.02\%}$ dvmHeapSourceAlloc(unsigned int)
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |               countAllocation(Heap*, void const*)
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |               |
-(*@\vspace{-0.15cm}@*)
-                 |       |                $\underline{\phantom{00}0.02\%}$ dvmLockHeap()
-(*@\vspace{-0.15cm}@*)
-                 |       |   
-(*@\vspace{-0.15cm}@*)
-                 |       |                       dvmTryLockMutex(pthread_mutex_t*)
-(*@\vspace{-0.15cm}@*)
-                 |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |$\underline{\phantom{00}0.04\%}$ common_updateProfile
-(*@\vspace{-0.15cm}@*)
-                 |       |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |        $\underline{\phantom{00}0.02\%}$ dvmJitGetTraceAddrThread
-(*@\vspace{-0.15cm}@*)
-                 |       |  
-(*@\vspace{-0.15cm}@*)
-                 |       |               getCodeAddrCommon(unsigned short const*, bool)
-(*@\vspace{-0.15cm}@*)
-                 |       |
-(*@\vspace{-0.15cm}@*)
-                 |       |
-(*@\vspace{-0.15cm}@*)
-                 |        $\underline{\phantom{00}0.03\%}$ common_selectTrace
-(*@\vspace{-0.15cm}@*)
-                 |
-(*@\vspace{-0.15cm}@*)
-                 |
-(*@\vspace{-0.15cm}@*)
-                  $\underline{\phantom{00}0.20\%}$ callPrep(Thread*, Method const*, Object*, bool)
-(*@\vspace{-0.15cm}@*)
-          
-(*@\vspace{-0.15cm}@*)
-          
-(*@\vspace{-0.15cm}@*)
-
-\end{lstlisting}
+\end{minipage}
+\end{topbot}
+\end{profile}
 

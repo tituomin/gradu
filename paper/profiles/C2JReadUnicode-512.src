@@ -28,16 +28,6 @@
                |          |          |          |           --3.16%-- pthread_mutex_unlock
                |          |          |          |                     |          
                |          |          |          |                     |--1.97%-- pthread_mutex_unlock_impl
-               |          |          |          |                     |          |          
-               |          |          |          |                     |           --0.03%-- 0xc003be08
-               |          |          |          |                     |                     0xc003503c
-               |          |          |          |                     |                     0xc006fed0
-               |          |          |          |                     |                     0xc006faf8
-               |          |          |          |                     |          
-               |          |          |          |                      --0.03%-- 0xc003be08
-               |          |          |          |                                0xc003503c
-               |          |          |          |                                0xc006fed0
-               |          |          |          |                                0xc006faf8
                |          |          |          |          
                |          |          |          |--2.80%-- ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
                |          |          |          |          |          
@@ -60,16 +50,6 @@
                |          |          |                     |--1.75%-- pthread_mutex_lock
                |          |          |                     |          |          
                |          |          |                     |           --0.98%-- pthread_mutex_lock_impl
-               |          |          |                     |                     |          
-               |          |          |                     |                      --0.03%-- 0xc003be08
-               |          |          |                     |                                0xc003503c
-               |          |          |                     |                                0xc006fed0
-               |          |          |                     |                                0xc006faf8
-               |          |          |                     |          
-               |          |          |                      --0.03%-- 0xc003be08
-               |          |          |                                0xc003503c
-               |          |          |                                0xc006fed0
-               |          |          |                                0xc006faf8
                |          |          |          
                |          |          |--4.73%-- ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
                |          |          |          |          
@@ -78,11 +58,6 @@
                |          |          |          |           --1.90%-- android_atomic_acquire_store
                |          |          |          |                     |          
                |          |          |          |                      --0.03%-- android_memory_barrier
-               |          |          |          |          
-               |          |          |           --0.03%-- 0xc003be08
-               |          |          |                     0xc003503c
-               |          |          |                     0xc006fed0
-               |          |          |                     0xc006faf8
                |          |          |          
                |          |          |--2.23%-- ScopedJniThreadState::~ScopedJniThreadState()
                |          |          |          |          
@@ -95,14 +70,6 @@
                |          |          |--0.42%-- StringObject::chars() const
                |          |          |          
                |          |          |--0.28%-- StringObject::array() const
-               |          |          |          
-               |          |           --0.03%-- 0xc003be08
-               |          |                     0xc003503c
-               |          |                     0xc006fed0
-               |          |                     0xc006fb38
-               |          |                     0xc00b5994
-               |          |                     0xc00b55a4
-               |          |                     0xc00b4314
                |          |          
                |          |--28.88%-- ReleaseStringChars(_JNIEnv*, _jstring*, unsigned short const*)
                |          |          |          
@@ -113,11 +80,6 @@
                |          |          |          |           --1.92%-- pthread_mutex_lock
                |          |          |          |                     |          
                |          |          |          |                      --0.88%-- pthread_mutex_lock_impl
-               |          |          |          |                                |          
-               |          |          |          |                                 --0.03%-- 0xc003be08
-               |          |          |          |                                           0xc003503c
-               |          |          |          |                                           0xc006fed0
-               |          |          |          |                                           0xc006faf8
                |          |          |          |          
                |          |          |          |--1.93%-- ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
                |          |          |          |          |          
@@ -134,31 +96,14 @@
                |          |          |          |           --1.91%-- pthread_mutex_lock
                |          |          |          |                     |          
                |          |          |          |                      --0.72%-- pthread_mutex_lock_impl
-               |          |          |          |                                |          
-               |          |          |          |                                 --0.03%-- 0xc003c160
-               |          |          |          |                                           0xc058209c
-               |          |          |          |                                           0xc0581a74
                |          |          |          |          
                |          |          |          |--2.35%-- ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
                |          |          |          |          |          
                |          |          |          |          |--2.01%-- pthread_mutex_unlock
                |          |          |          |          |          |          
                |          |          |          |          |           --1.26%-- pthread_mutex_unlock_impl
-               |          |          |          |          |          
-               |          |          |          |           --0.03%-- 0xc003be08
-               |          |          |          |                     0xc003503c
-               |          |          |          |                     0xc006fed0
-               |          |          |          |                     0xc006fb38
-               |          |          |          |                     0xc00b5988
-               |          |          |          |                     0xc00b55a4
-               |          |          |          |                     0xc00b4314
                |          |          |          |          
                |          |          |          |--0.69%-- dvmRemoveFromReferenceTable(ReferenceTable*, Object**, Object*)
-               |          |          |          |          
-               |          |          |           --0.06%-- 0xc003be08
-               |          |          |                     0xc003503c
-               |          |          |                     0xc006fed0
-               |          |          |                     0xc006faf8
                |          |          |          
                |          |          |--2.40%-- ScopedJniThreadState::~ScopedJniThreadState()
                |          |          |          |          
@@ -167,11 +112,6 @@
                |          |          |                     |--0.71%-- android_atomic_release_store
                |          |          |                     |          |          
                |          |          |                     |           --0.07%-- android_memory_barrier
-               |          |          |                     |          
-               |          |          |                      --0.03%-- 0xc003be08
-               |          |          |                                0xc003503c
-               |          |          |                                0xc006fed0
-               |          |          |                                0xc006faf8
                |          |          |          
                |          |          |--1.63%-- ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
                |          |          |          |          
@@ -180,11 +120,6 @@
                |          |          |                      --0.70%-- android_atomic_acquire_store
                |          |          |                                |          
                |          |          |                                |--0.06%-- android_memory_barrier
-               |          |          |                                |          
-               |          |          |                                 --0.03%-- 0xc003be08
-               |          |          |                                           0xc003503c
-               |          |          |                                           0xc006fed0
-               |          |          |                                           0xc00b3d84
                |          |          |          
                |          |           --0.23%-- StringObject::array() const
                |          |          
@@ -196,8 +131,3 @@
                |          |                     dvmChangeStatus(Thread*, ThreadStatus)
                |          |          
                |           --0.03%-- PopLocalFrame(_JNIEnv*, _jobject*)
-               |          
-                --0.03%-- 0xc003be08
-                          0xc003503c
-                          0xc006fed0
-                          0xc006faf8

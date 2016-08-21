@@ -4,10 +4,20 @@ ohjelmistolle, mutta miten suorituskyky tulisi ottaa huomioon
 ohjelmiston kehitysprosessissa? Ohjelmistotekniikan kirjallisuudessa
 kysymykseen on vastattu hyvin eri tavoin.
 
+Tämä luku käsittelee sitä, miten ohjelmistolta vaadittava riittävä
+suorituskyky voidaan saavuttaa ohjelmistoa laadittaesssa. Aluksi
+tutkitaan, missä vaiheessa ohjelmistoprosessia suorituskyky tulisi
+huomioida. Sitten käsittelyä syvennettään määrittelemällä mittareita,
+joiden avulla suorituskykyä voi arvioida ja mitata
+kvantitatiivisesti. Tämän jälkeen käsittely keskittyy konkreettisten
+ohjelmien suorituskyvyn mittausmenetelmiin ja aivan lopuksi
+siihen, mitä rajoituksia suorituskykymittausten tuloksia tulkittaessa
+tulee huomioida.
+
 * Suorituskyvyn hallinta tuotantoprosessissa
 
 Donald Knuthilta on peräisin tunnettu lainaus: "Ennenaikainen
-optimointi on kaiken pahan alku ja juuri @@goto(268)."  Knuth
+optimointi on kaiken pahan alku ja juuri" @@goto(268).  Knuth
 korostaa, ettei varsinaisessa ohjelmointityössä kannata käyttää aikaa
 suorituskykyä parantaviin manuaalisiin optimointeihin, ennen kuin
 ohjelman suoritusaikaista käyttäytymistä on tutkittu ja löydetty
@@ -59,7 +69,7 @@ Performance Engineering/, /SPE/). Se on ohjelmistotekniikan osa-alue,
 jossa suorituskykyvaatimukset kvantifioidaan ja otetaan huomioon
 vaatimusanalyysistä lähtien aina ylläpitoon asti
 @@spe(1). Puutteelliset suorituskykyominaisuudet ovat usein olleet
-keskeisessä osassa epäonnistuneissa ohjelmistoprojekteissa @@runaway
+keskeisessä osassa epäonnistuneissa ohjelmistoprojekteissa @@runaway,
 ja suorituskykytekniikan kehittäjän Connie U. Smithin mukaan ne
 voitaisiin usein välttää /mallintamalla/ ohjelmistoja
 suorituskykynäkökulmasta jo ennen toteutusvaihetta.
@@ -73,7 +83,7 @@ mallintamiseen varhaisessa kehitysvaiheessa
 @@future-spe(172). Mittaamista voidaan tehdä vasta, kun ohjelmisto tai
 sen osa on jo olemassa. Mallintamista hankaloittaa puolestaan, että
 käyttökelpoiselta mallilta vaaditaan abstraktisuutta ja
-yksinkertaisuutta, mutta samalla riittävää /tarkkuutta/ suhteessa
+yksinkertaisuutta mutta samalla riittävää /tarkkuutta/ suhteessa
 määriteltyyn syötejoukkoon sekä reunaehtoihin ollaakseen /validi/
 @@ferrari(161--162).
 
@@ -85,7 +95,7 @@ malli natiivirajapinnasta mittausten perusteella.
 
 Seuraavaksi käsittelemme tutkielmassa käytettyjä
 suorituskykymittareita yleisellä tasolla, ohjelmiston suorituskyvyn
-mittaamiseen käytettäviä konkreettisia tekniikoita, ja lopuksi itse
+mittaamiseen käytettäviä konkreettisia tekniikoita ja lopuksi itse
 mittauskohteena olevaa ohjelmistoa sekä mittausten järjestämiseen ja
 tulosten tulkintaan liittyviä haasteita.
 
@@ -175,10 +185,11 @@ kokonaistilasta @@ferrari(455); tutkielman mittauksissa muiden
 prosessien määrä pyritään minimoimaan ja niiden vaikutus tulkitaan
 mittausten satunnaisvirheeksi.
 
- Kvantitatiivisten mittausten rinnalla kannattaa pitää mielessä
+Kvantitatiivisten mittausten rinnalla kannattaa pitää mielessä
 käyttäjän subjektiivinen kokemus: käyttäjä voi kokea jopa yhtäsuuriksi
-mitatut vasteajat erilaisiksi, jos esimerkiksi työn etenemistä
-osoittava käyttöliittymäelementti etenee eri tavalla @@progressbar.
+mitatut vasteajat erilaisiksi, jos käyttöliittymässä näkyvä työn
+valmistumista havainnollistava edistymispalkki etenee eri tavalla
+@@progressbar.
 # todo luetaan piiriin
 # todo tarkista onko androidissa tarkka userspace gettimeofday (arm)
 # todo tosiaika?
@@ -259,7 +270,7 @@ tallennetun informaation avulla voidaan suorituksen jälkeen tulostaa
 luettelo jokaisesta kutsutusta aliohjelmasta järjestettynä
 kutsukertojen mukaan.  Tämän kaltaista instrumentointia ei välttämättä
 tarvitse ohjelmoida käsin: kääntäjä voi lisätä instrumentointikäskyjä
-kohdeohjelmaan tarvittaessa automaattisesti @@gprof(2).
+kohdeohjelmaan tarvittaessa automaattisesti @@gprof(121).
 
 Ohjelman profiilin käsitteen loi Donald Knuth @@fortran. Alunperin se
 tarkoitti taulukkoa ohjelman jokaisen lauseen /suorituskerroista/;
@@ -325,7 +336,7 @@ edellyttäisi mittauksia myös todellisessa ympäristössä. [fn:valgrind]
 # vaan dynaamista binääri-instrumentointia !! tärkeä top
 
 Myös Androidin Java-virtuaalikoneessa Dalvikissa on ohjelmien
-ajonaikaista käyttäytymistä kirjaavia toimintoja, joiden mittauksiin
+suoritusaikaista käyttäytymistä kirjaavia toimintoja, joiden mittauksiin
 Androidin kehitysympäristön suorituskykytyökalut perustuvat
 @@aosp. Dalvik mittaa kuitenkin Java-ohjelman metodien sekä
 natiivialiohjelmien suoritusaikoja @@android-tracing, @@androscope,
@@ -341,7 +352,7 @@ mittaukset käynnistetään ja raportit tulostetaan ytimen ulkopuolisilla
 
 [fn:vm] Esimerkki virtualisoinnista on Androidin oma /emulaattori/,
 joka perustuu QEMU-virtuaalikoneeseen. Se on emulaattori, sillä se
-mallintaa Androidin laitteistoarkkitehtuuria eri laitteistolla,
+mallintaa Androidin laitteistoarkkitehtuuria toisella laitteistolla,
 tavallisella mikrotietokoneella.
 # lähde !!
 [fn:valgrind] Sovelluksen suorittaminen esimerkiksi
@@ -419,13 +430,12 @@ mielekäs abstraktiotaso näytteiden analyysille löytyy
 tilannekohtaisesti jostakin pääohjelman ja suoritettavan kohdan
 väliltä kutsupinosta.
 
-\label{sec-profiling-inclusive}
-
 Profilointityökaluissa aliohjelman suoritusaikaa kutsutaan usein
-/inklusiiviseksi/, jos siihen lasketaan mukaan myös aliohjelman
+/inklusiiviseksi/ \label{sec-profiling-inclusive}, jos siihen lasketaan mukaan myös aliohjelman
 kutsumien muiden aliohjelmien ajat @@android-tracing. Pelkkään
 käskyosoittimeen perustuva raaka suoritusaika on tässä tutkielmassa
 /eksklusiivinen/ suoritusaika, jota usein kutsutaan nimellä /self time/.
+
 # gprof, oprofile, etc.
 
 Näytteenotto ei ole mittausmenetelmänä kytketty tarkalleen tiettyihin
@@ -441,11 +451,11 @@ kokonaisten aliohjelmien inklusiiviset suoritusajat.
 
 \todo{<<fix-benchmarking>>}
 
-Tutkielmassa mittauksiin käytetään lähinnä /perf/-työkalun
+Tutkielmassa profilointiin käytetään /perf/-työkalun
 näytteenottotekniikkaa, sillä siinä mittauskohteena on mahdollisimman
 paljon tuotantoversiota vastaava sovellus. Näytteenoton avulla ei
-saada selville aliohjelmakutsujen /määriä/, mutta niitä kontrolloidaan
-benchmark-mittauksissa mitattavan ohjelmakoodin tasolla.
+saada selville aliohjelmakutsujen tarkkoja /määriä/ vaan ainoastaan
+niiden suhteelliset osuudet otetuissa näytteissä.
 
 ** Näytteenoton tilastollinen edustavuus
 Kaikenlaisessa näytteenotossa on varmistettava, että otanta on
@@ -487,9 +497,9 @@ kykenevät saamaan näytteitä ainoastaan ohjelman ns. luovutuskohdista
 
 Tutkielman mittauksissa näytteenotto tapahtuu aina, kun ARM-suorittimen
 kellosyklejä on tapahtunut ennalta valittu määrä (tapahtuma /cycle
-count/ @@cortex(3-86)). Tietokoneen suorittimen kellotaajuus (syklien
+count/ @@cortex(3:86)). Tietokoneen suorittimen kellotaajuus (syklien
 määrä sekunnissa) ei kuitenkaan tyypillisesti ole vakio, vaan mukautuu
-laskentatarpeeseen @@freqscaling. Mittauksissa on siis erikseen
+laskentatarpeeseen @@freqscaling @@cortex-programmer(20:7). Mittauksissa on siis erikseen
 asetettava suorittimen kellotaajuus vakioksi, etteivät suuren
 kellotaajuuden ajanhetket ylikorostuisi.
 # 5 tehdä tilaa, väistyä (liikenteessä)
@@ -519,12 +529,10 @@ mittausjärjestelyn tarkkaa suunnittelua ja tulosten
 tulkintaa. Yksittäinen suoritusaikamittaus tuottaa mittausarvon
 tietylle /ohjelma--syöte/-parille tietyllä laitteistolla
 @@ferrari(455), muttei sinänsä kerro mitään yleistä esimerkiksi juuri
-monikielisten Android-ohjelmien ominaisuuksista. Yksittäisen
+monikielisten Android-ohjelmien ominaisuuksista. Yksittäiseen
 mittaustulokseen eniten vaikuttavat kausaaliset syyt saattavat olla
 kulloisenkin ohjelman, laitteiston tai syötteen sattumanvaraisia
-ominaispiirteitä ja toteutusyksityiskohtia.
-
-Esimerkiksi vasteaika ilmaisee aina tietyn operaation vasteajan
+ominaispiirteitä ja toteutusyksityiskohtia. Esimerkiksi vasteaika ilmaisee aina tietyn operaation vasteajan
 tietyllä syötteellä eli kuormituksella, jota on hyvin vaikea
 spesifioida tavalla, joka olisi riippumaton käsiteltävän järjestelmän
 ominaisuuksista @@ferrari(14).
@@ -572,8 +580,8 @@ suunnitteluvaiheiden malleista @@spe(18). Ohjelmistoprosessissa näitä
 validoituja malleja verrataan lopulta alkuperäisiin
 suorituskykyvaatimuksiin, joita niitäkin voidaan joskus jopa muuttaa
 @@spe(18). Siten kvantifioidutkin mallit ja mittaukset täytyy lopulta
-suhteuttaa ohjelmiston suorituskykyvaatimuksille ja viime kädessä
-käyttäjien subjektiiviselle kokemukselle.
+suhteuttaa ohjelmiston suorituskykyvaatimuksiin ja viime kädessä
+käyttäjien subjektiivisiin kokemuksiin.
 
 \todo{<<outo kommentti>>}
 # vihavaiselta
@@ -626,7 +634,7 @@ Toinen, tutkielmassa käytetty lähtökohta JNI:n
 suorituskykyominaisuuksien tutkimiseen on ikään kuin synteettinen:
 yritämme tutkia JNI-rajapinnan yksittäisten operaatioiden
 suorituskykyominaisuuksia ja päätellä niistä, miten osista rakennettu
-kokonaisuus mahdollisesti toimisi. Kutsun /alkeisoperaatioden
+kokonaisuus mahdollisesti toimisi. Kutsun /alkeisoperaatioiden
 mittaamiseksi/ (/microbenchmarking/) tällaista menetelmää, jossa
 verrataan kielen tai järjestelmän yksittäisten perusoperaatioiden
 rasitteita toisiinsa @@saavedra(347). Menetelmän etuna on, että
@@ -729,7 +737,7 @@ seuraavat huomiot.
    käyttäytymisestä yksityiskohtaista tietoa mallien pohjaksi, jolloin
    voimme päätellä, mitkä JNI:n osat ovat suorituskyvyn kannalta kriittisimpiä.
 4. Mittauksissa alkeisoperaatioille annettavia mahdollisia parametreja
-   varioidaan hallitusti. Yksittäisten epävarmojen vasteaika-arvojen
+   vaihdellaan hallitusti. Yksittäisten epävarmojen vasteaika-arvojen
    sijaan saamme kuvaajia, joissa vasteaika vaihtelee halutun
    muuttujan funktiona. Regressioanalyysin avulla saamme varmistusta
    mittausten oikeellisuudelle, sikäli kuin mittauksissa on näkyvissä

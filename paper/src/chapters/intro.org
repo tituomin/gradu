@@ -6,14 +6,14 @@ C- tai C++-ohjelmointikielellä.
 
 Yleensä Android-sovellukset ohjelmoidaan /Java/-ohjelmointikielellä ja
 suoritetaan Googlen Androidia varten kehittämässä
-virtuaalikoneessa. Androidin Java-sovelluskehyksen käyttäminen ei aina
+virtuaalikoneessa. Androidin Java-sovellus\-kehyksen käyttäminen ei aina
 kuitenkaan ole kokonaisuuden kannalta paras ratkaisu. Ensinnäkin
 käytettävissä saattaa olla muulla kielellä kuin Javalla kirjoitettua
 ohjelmakoodia, jota halutaan hyödyntää sellaisenaan. Toiseksi täysin
 uudestakin mobiilisovelluksesta halutaan usein lähtökohtaisesti
 rakentaa mahdollisimman siirrettävä.[fn:ios] Kolmas ja tämän
 tutkielman kannalta oleellisin syy arvioida vaihtoehtoja Java-kielen
-käytölle on suorituskyky, erityisesti jos ohjelmisto suorittaa paljon
+käytölle on suorituskyky erityisesti, jos ohjelmisto suorittaa paljon
 raskasta laskentaa tai sille on oleellisia tosiaikavaatimuksia.
 
 /Ohjelmistojen suorituskykytekniikka/ (/Software Performance
@@ -22,7 +22,7 @@ varmistetaan ohjelmistoprosessin alusta lähtien, että ohjelmistolle
 asetetut suorituskykyvaatimukset täyttyvät lopullisessa
 tuotteessa. Menettely on näennäisesti ristiriidassa usein lainatun
 Donald Knuthin lausahduksen kanssa: "Ennenaikainen optimointi on
-kaiken pahan alku ja juuri @@goto(268)."  Yleisen tulkinnan mukaan
+kaiken pahan alku ja juuri @@goto(268)."\hspace{6pt}Yleisen tulkinnan mukaan
 ohjelmistoa suunniteltaessa tulisi keskittyä sen oikeaan toimivuuteen
 ja optimoida suorituskykyä vasta, kun käytössä on suoritettava
 ohjelma. Sen suoritusaikaista käyttäytymistä mittaamalla selvitetään,
@@ -60,7 +60,7 @@ laitteiston kohdearkkitehtuurille sopivaksi
 kirjastobinääriksi. Lisäksi NDK sisältää joukon C-kielisiä
 otsaketiedostoja ja ohjelmointirajapintoja, joiden kautta osajoukkoa
 Android-alustan ominaisuuksista voidaan hyödyntää suoraan natiivista
-ohjelmasta, kutsumatta Java-sovelluskehyksen rajapintoja JNI-kerroksen
+ohjelmasta kutsumatta Java-sovelluskehyksen rajapintoja JNI-kerroksen
 kautta. Natiivitason Android-rajapinnoista ainoastaan nämä pysyvät
 vakaina alustan kehittyessä. Uusissa NDK-versioissa voidaan jopa
 ohjelmoida näitä rajoitettuja rajapintoja käyttävä sovellus
@@ -69,18 +69,22 @@ kokonaisuudessaan ilman Javaa.
 Suorituskyvyn kannalta Androidin natiiviohjelmoinnissa keskeistä on
 Java- ja natiivikomponenttien välinen kommunikaatio ja sitä kautta
 myös sovelluksen kokonaisarkkitehtuuri. JNI-kutsukerroksen käyttäminen
-on aina suorituskykyrasite, erityisesti kun natiivikomponentti kutsuu
-Java-kom\-ponenttia. Monia haasteita liittyy myös muistinhallintaan ja
-resurssien jakamiseen virtuaalikoneen hallitseman muistin ja
-natiivikomponentin välillä.
+on aina suorituskykyrasite ja erityisesti silloin, kun
+natiivikomponentti kutsuu Java-kom\-ponenttia. Monia haasteita liittyy
+myös muistinhallintaan ja resurssien jakamiseen virtuaalikoneen
+hallitseman muistin ja natiivikomponentin välillä.
 
 Tutkielmassa käytetään suorituskykymittauksia tutkimaan
-monikielisyydestä johtuvien rasitteiden suuruusluokkia. Tutkielma
-sisältää kirjallisuuteen perustuvan osuuden, jossa esitellään
-suorituskyvyn mallintamiseen, arvioimiseen ja mittaamiseen käytettäviä
-periaatteita, metodeita sekä työkaluja. Lisäksi lähteiden perusteella
-esitellään Android-ohjelmistoalustan rakennetta suorituskyvyn
-näkökulmasta, keskittyen Dalvik-virtuaalikoneeseen ja sen
+monikielisyydestä johtuvien rasitteiden suuruusluokkia. Mittaukset
+perustuvat Androidin versioon 4.1.2. Tutkielman aiheen kannalta se
+tarkoittaa erityisesti, että tutkielman mittaukset ja niiden tulokset
+koskevat Androidin edellisen sukupolven Dalvik-virtuaalikonetta.
+
+Tutkielma sisältää kirjallisuuteen perustuvan osuuden, jossa
+esitellään suorituskyvyn mallintamiseen, arvioimiseen ja mittaamiseen
+käytettäviä periaatteita, metodeita sekä työkaluja. Lisäksi lähteiden
+perusteella esitellään Android-ohjelmistoalustan rakennetta
+suorituskyvyn näkökulmasta keskittyen Dalvik-virtuaalikoneeseen ja sen
 JNI-toteutukseen. Tutkielman toinen osa soveltaa ensimmäisen osan
 metodeja ja käsitteitä Dalvikin JNI-toteutuksen
 mittaamiseen. Toteutusta mitataan kahdella toisiaan tukevalla

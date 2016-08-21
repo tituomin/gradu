@@ -1,0 +1,91 @@
+# Bad zip file /home/tituomin/measurements/perfdata-68c999e0-2c8e-4f74-8a4e-79402d74ab32.zip
+# Reading from 1 files
+# Read 2484 lines
+# Warning:
+# Kernel address maps (/proc/{kallsyms,modules}) were restricted.
+# Check /proc/sys/kernel/kptr_restrict before running 'perf record'.
+# As no suitable kallsyms nor vmlinux was found, kernel samples
+# can't be resolved.
+# Samples in kernel modules can't be resolved as well.
+# Profile for identifier 1.0.0-rc2/C2JBenchmark00206
+# ========
+# captured on: Wed Aug 10 23:54:09 2016
+# ========
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 2K of event 'cycles:HG'
+# Event count (approx.): 1197939657
+#
+# Children      Self  Command          Shared Object          Symbol                                                                                  
+# ........  ........  ...............  .....................  ........................................................................................
+#
+                --71.09%-- Java_fi_helsinki_cs_tituomin_nativebenchmark_benchmark_C2JBenchmark00206_runInternal
+                          |          
+                           --70.19%-- CallVoidMethod(_JNIEnv*, _jobject*, _jmethodID*, ...)
+                                     |          
+                                     |--56.30%-- dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)
+                                     |          |          
+                                     |          |--46.21%-- dvmDecodeIndirectRef(Thread*, _jobject*)  \DTcomment{\ding{202}}
+                                     |          |          |          
+                                     |          |          |--13.64%-- ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)  \DTcomment{\ding{203}}
+                                     |          |          |          |          
+                                     |          |          |          |--11.09%-- pthread_mutex_lock
+                                     |          |          |                     |          
+                                     |          |          |                      --4.53%-- pthread_mutex_lock_impl
+                                     |          |          |          
+                                     |          |          |--12.26%-- ScopedPthreadMutexLock::~ScopedPthreadMutexLock()  \DTcomment{\ding{204}}
+                                     |          |          |          |          
+                                     |          |          |           --10.13%-- pthread_mutex_unlock
+                                     |          |          |                     |          
+                                     |          |          |                      --3.67%-- pthread_mutex_unlock_impl
+                                     |          |          |          
+                                     |          |           --4.07%-- IndirectRefTable::get(void*) const  \DTcomment{\ding{205}}
+                                     |          |          
+                                     |          |--1.12%-- dvmInterpret(Thread*, Method const*, JValue*)
+                                     |          |          |          
+                                     |          |          |--0.19%-- common_selectTrace
+                                     |          |          |          |          
+                                     |          |          |           --0.13%-- dvmJitCheckTraceRequest
+                                     |          |          |          
+                                     |          |           --0.13%-- common_updateProfile
+                                     |          |                     dvmJitGetTraceAddrThread
+                                     |          |                     |          
+                                     |          |                      --0.07%-- getCodeAddrCommon(unsigned short const*, bool)
+                                     |          |          
+                                     |          |--0.91%-- callPrep(Thread*, Method const*, Object*, bool)
+                                     |          |          
+                                     |          |--0.14%-- dvmPopFrame(Thread*)
+                                     |          
+                                     |--2.26%-- dvmDecodeIndirectRef(Thread*, _jobject*)
+                                     |          |          
+                                     |          |--0.75%-- ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread_mutex_t*)
+                                     |          |          |          
+                                     |          |           --0.54%-- pthread_mutex_lock
+                                     |          |                     |          
+                                     |          |                      --0.20%-- pthread_mutex_lock_impl
+                                     |          |          
+                                     |          |--0.40%-- ScopedPthreadMutexLock::~ScopedPthreadMutexLock()
+                                     |          |          |          
+                                     |          |           --0.34%-- pthread_mutex_unlock
+                                     |          |                     |          
+                                     |          |                      --0.13%-- pthread_mutex_unlock_impl
+                                     |          |          
+                                     |           --0.31%-- IndirectRefTable::get(void*) const
+                                     |          
+                                     |--0.82%-- dvmGetVirtualizedMethod(ClassObject const*, Method const*)
+                                     |          |          
+                                     |           --0.17%-- dvmIsDirectMethod(Method const*)
+                                     |          
+                                     |--0.39%-- ScopedJniThreadState::ScopedJniThreadState(_JNIEnv*)
+                                     |          |          
+                                     |           --0.23%-- dvmChangeStatus(Thread*, ThreadStatus)
+                                     |                     |          
+                                     |                      --0.03%-- android_atomic_acquire_store
+                                     |          
+                                      --0.37%-- ScopedJniThreadState::~ScopedJniThreadState()
+                                                |          
+                                                 --0.20%-- dvmChangeStatus(Thread*, ThreadStatus)
+                                                           |          
+                                                            --0.10%-- android_atomic_release_store

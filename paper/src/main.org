@@ -3,6 +3,23 @@
 #+LANGUAGE: fi
 #+LaTeX_CLASS: gradu
 #+LaTeX_CLASS_OPTIONS: [gradu]
+
+#+LaTeX_HEADER: \DeclareFloatingEnvironment[
+#+LaTeX_HEADER:     fileext=lop,
+#+LaTeX_HEADER:     listname=Kutsuprofiilit,
+#+LaTeX_HEADER:     name=Listaus,
+#+LaTeX_HEADER:     placement=tbhp!,
+#+LaTeX_HEADER:     within=section,
+#+LaTeX_HEADER: ]{profile}
+
+#+LaTeX_HEADER: \lstnewenvironment{numberedlisting}
+#+LaTeX_HEADER: {\begin{profile}}
+#+LaTeX_HEADER: {\end{profile}}
+
+#+LaTeX_HEADER: \makeatletter
+#+LaTeX_HEADER: \AtBeginDocument{\let\c@profile\c@lstlisting}
+#+LaTeX_HEADER: \makeatother
+
 #+OPTIONS: toc:nil H:3 num:2
 
 #+BEGIN_abstract
@@ -19,10 +36,21 @@
 #+LATEX: \renewcommand{\thelstlisting}{\thesection.\arabic{lstlisting}}
 #+LATEX: \renewcommand{\lstlistingname}{Listaus}
 
+#+LATEX: \DTsetlength{0.2em}{1em}{0.2em}{0.4pt}{0.4pt}
+#+LATEX: \renewcommand*\DTstyle{\sffamily}
+#+LATEX: \renewcommand*\DTcomment{\large}
+#+LATEX: \newmdenv[leftline=false,rightline=false]{topbot}
+
 #+MACRO: rotated_plot_internal \begin{sidewaysfigure} \input{figures/plots/plot-$1-$2-latin.tex} \end{sidewaysfigure}
+
+#+MACRO: plot_small_internal #+LATEX: \begin{figure}\resizebox{!}{.8\textwidth} { \input{figures/plots/plot-$1-$2-latin.tex} } \end{figure}
 #+MACRO: plot_internal \begin{figure} \input{figures/plots/plot-$1-$2-latin.tex} \end{figure}
 #+MACRO: plot {{{plot_internal(47d22819-625b-43f6-8e9f-afeb5066b758,$1)}}}
+#+MACRO: plot_small {{{plot_small_internal(47d22819-625b-43f6-8e9f-afeb5066b758,$1)}}}
 #+MACRO: rotated_plot {{{rotated_plot_internal(47d22819-625b-43f6-8e9f-afeb5066b758,$1)}}}
+#+MACRO: plot_a {{{plot_internal(b45ae421-fbec-407e-88be-cd2f76d1bbff,$1)}}}
+#+MACRO: plot_edited \begin{figure}\caption{$2}\label{fig:$1}\def\svgwidth{\textwidth}\input{figures/plots/plot-47d22819-625b-43f6-8e9f-afeb5066b758-$1-latin.pdf_tex}\end{figure}
+#+MACRO: rotated_plot_edited \begin{sidewaysfigure}\input{figures/plots/plot-47d22819-625b-43f6-8e9f-afeb5066b758-$1-latin.pdf_tex}\end{sidewaysfigure}
 
 #+MACRO: permu $1\nbsp{}\rightarrow\nbsp{}$2
 #+MACRO: TODO \textcolor{red}{TEHTÄVÄ}
@@ -78,3 +106,13 @@
 #+LATEX: \bibliographystyle{templates/tktl}
 #+LATEX: \bibliography{bib/main}
 
+#+LATEX: \lastpage
+#+LATEX: \newpage
+#+LATEX: \pagenumbering{gobble}
+#+LATEX: \appendices
+
+#+LATEX: \internalappendix{1}{Mittausten generointi ja käsittely}
+#+INCLUDE: "../gen/chapters/attachment-implementation-details.org"
+#+LATEX: \internalappendix{2}{Muutokset Android-alustaan}
+#+INCLUDE: "../gen/chapters/attachment-aosp-changes.org"
+#+LATEX: \externalappendix{3}{Mittausohjelmiston lähdekoodi}

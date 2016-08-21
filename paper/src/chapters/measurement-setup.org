@@ -1,10 +1,10 @@
 \label{sec-measurement-setup}
 
-Tutkielmaa varten laadittiin synteettinen
-benchmarking-mittausohjelmisto (/microbenchmarking suite/)
-/NativeBenchmark/. Ohjelmiston avulla Android-laitteessa voidaan
-suorittaa kokoelma minimaalisia aliohjelmia, jotka yhdessä
-harjoittavat kattavasti JNI-rajapinnan eri kutsuja.
+Tutkielmaa varten laadittiin alkeisoperaatioden mittausohjelmisto
+(/microbenchmarking suite/) /NativeBenchmark/. Ohjelmiston avulla
+Android-laitteessa voidaan suorittaa kokoelma testejä eli minimaalisia
+aliohjelmia, jotka yhdessä käyttävät kattavasti JNI-rajapinnan eri
+kutsuja.
 
 Kun alkeisoperaatioita suoritetaan laitteessa, samojen operaatioiden
 suoritusta mitataan kahdella toisiaan täydentävällä menetelmällä eri
@@ -21,14 +21,14 @@ avulla.
 # todo sisäinen viittaus tohon alle: miten ?
 
 Yksittäisen funktiokutsun mitattu vasteaika ei kerro mitään
-yleispätevää kyseisestä funktiosta
-(ks. luku \ref{performance:representativeness-generalization},
-s.\pageref{performance:representativeness-generalization}). Siksi samaa
-funktiota kutsutaan varioiden kaikkia mahdollisia asioita, joita
-funktiokutsussa voi varioida: käytännössä kutsuparametrien määrää ja
-niiden tyyppiä. Lisäksi jos kyseessä on merkkijonoja, taulukoita tai
-muita vaihtelevankokoisia syötteitä käsittelevä funktio, varioidaan
-käsiteltävän syötteen kokoa.
+yleispätevää kyseisestä funktiosta (ks. luku
+\ref{performance:representativeness-generalization},
+s.\pageref{performance:representativeness-generalization}). Siksi
+samaa funktiota kutsutaan vaihdellen eri kutsukerroilla kaikkia
+sellaisia asioita, joita funktiokutsussa voi muuttaa:
+käytännössä kutsuparametrien määrää ja niiden tyyppiä. Jos kyseessä on
+merkkijonoja, taulukoita tai muita vaihtelevankokoisia syötteitä
+käsittelevä funktio, vaihdellaan käsiteltävän syötteen kokoa.
 
 Esimerksi JNI-funktio \path{CallVoidMethod} vastaanottaa vaihtelevan määrän
 kutsuparametreja. Mittausajoissa sitä kutsutaan eri määrillä eri
@@ -37,27 +37,26 @@ funktio eri tavalla käsitellessään primitiivityyppisiä ja
 viitetyyppisiä parametreja.
 
 Tämän ansiosta mittauksista piirtyy hieman kokonaisvaltaisempi kuva
-siitä, mitkä mittauksessa varioitavat muuttujat ovat oleellisia
-funktion suorituskyvyn kannalta.
+siitä, mitkä mittausten muuttujat ovat oleellisia funktion
+suorituskyvyn kannalta.
 
 Toinen tapa lisätä tulosten hyödynnettävyyttä on seuraava periaate:
 jos jollekin JNI-kutsulle on keksitty analoginen kutsu tai operaatio
 JNI-rajapinnan ulkopuolelta -- operaatio, jonka voi toteuttaa
 puhtaasti C- tai Java-kielisessä ohjelmassa -- lisätään mittauksiin
-tällaiset benchmarkit. Siten esimerkiksi JNI-rajapinnan
+tällaiset testit. Siten esimerkiksi JNI-rajapinnan
 \path{CallVoidMethod}- perusfunktiokutsun kaikille variaatioille on
-laadittu vertailukohdaksi benchmarkit, joissa C-ohjelma
+laadittu vertailukohdaksi testit, joissa C-ohjelma
 kutsuu aivan tavallista ~void~-paluuarvollista funktiota,
 ja Java-ohjelma vastaavasti kutsuu ~void~-paluuarvollista metodia.
 
 Kolmas tapa saada syvempiä tuloksia JNI-rajapinnan käyttäytymisestä on
-mitata samoista benchmarkeista myös kutsuprofiilit. Kun
+mitata samoista testeistä myös kutsuprofiilit. Kun
 vasteaikamittauksista on löytynyt mielenkiintoisia riippuvuuksia
-varioitavien mittausmuuttujien ja vasteaikojen väliltä, nähdään
-saman benchmarkin kutsuprofiileista usein selvästi, mikä
-JNI-toteutuksen osa aiheuttaa esimerkiksi lineaarisesti lisääntyvän
-vasteajan, kun vaikkapa viitearvoisten kutsuparametrien määrää
-lisätään.
+muuttujien ja vasteaikojen väliltä, nähdään saman testin
+kutsuprofiileista usein selvästi, mikä JNI-toteutuksen osa aiheuttaa
+esimerkiksi lineaarisesti lisääntyvän vasteajan, kun vaikkapa
+viitearvoisten kutsuparametrien määrää lisätään.
 
 * Toteutuksen haasteet ja reunaehdot
 
@@ -76,16 +75,16 @@ luotava 4 eri versiota:
 4. C-ohjelma, joka kutsuu Java-metodia.
 
 Variaatioiden hallitsemiseksi on hyödynnetään yksinkertaista
-staattista metaohjelmointia: benchmarkeja ei ohjelmoida käsin, vaan
+staattista metaohjelmointia: testejä ei ohjelmoida käsin, vaan
 niiden lähdekoodi generoidaan tietorakenteista, joihin on kuvattu
 halutut tyyppivariaatiot.
 
 # Esimerkki ?  / bit of source
 
 Koska Java-kieli ei suoraan tue staattisen metaohjelmoinnin
-mahdollisuutta, eikä C++-kielen templateja voisi hyödyntää kuin
-natiiviversioiden ohjelmointiin, päätettiin lähdekoodin generointi
-tehdä täysin erillisellä Python-kielisellä ohjelmalla.
+mahdollisuutta, eikä C++-kielen geneerisiä malleja voisi hyödyntää
+kuin natiiviversioiden ohjelmointiin, päätettiin lähdekoodin
+generointi tehdä täysin erillisellä Python-kielisellä ohjelmalla.
 
 Seuraavassa hahmotellaan tästä perusratkaisusta syntynyttä
 arkkitehtuuria.
@@ -113,10 +112,10 @@ ne käsitellään seuraavassa tarkemmin.
 #+LABEL: fig:nativebenchmark_architecture
 #+RESULTS: fig:nativebenchmark_architecture
 
-Android-sovellus \path{NativeBenchmark} sisältää kaiken Android-laitteessa
-suoritettavan ohjelmakoodin: sekä Java-kieliset että natiivikirjastoon
-kuuluvat benchmarkit, mutta myös niiden ympärille vaadittavan
-logiikan, joka suorittaa halutut benchmarkit valituilla
+Android-sovellus \path{NativeBenchmark} sisältää kaiken
+Android-laitteessa suoritettavan ohjelmakoodin: Java-kielisten ja
+natiivikirjastoon kuuluvien testien lisäksi sovellukseen kuuluu
+ohjelmalogiikka, joka suorittaa halutut testit valituilla
 mittaustyökaluilla.
 
 NativeBenchmark huolehtii mittausajoja koskevien asetustiedostojen
@@ -125,17 +124,18 @@ metadatan tiedostoihin. Sovelluksessa on yksinkertainen graafinen
 Android-käyttöliittymä, mutta sovellusta voi ohjata myös laitteen
 ulkopuolelta tekstikomentojen avulla TCP-yhteyden välityksellä.
 
-Sovelluksen keskeisimmät osat ovat
-- ~benchmark~ -paketin sisältämät generoidut benchmarkit,
+Kuvan \ref{fig:nativebenchmark_architecture} komponenttikaaviossa
+näkyvät sovelluksen keskeisimmät osat:
+- ~benchmark~ -paketin sisältämät generoidut testit,
 - ~libnativebenchmark~ -natiivikirjasto, joka sisältää generoitujen
-  benchmarkien natiiviosat,
+  testien natiiviosat,
 - ~BenchmarkRunner~ -luokka,
 - ~MeasuringTool~ -luokan kaksi aliluokkaa
   \path{JavaSystemNanoResponseTimeRecorder} sekä \path{LinuxPerfRecordTool}.
 
-Benchmarkit ovat pohjimmiltaan vain monta kertaa toistettavia
+Testit ovat pohjimmiltaan vain monta kertaa toistettavia
 silmukoita (/lähtösilmukoita/), joiden sisällä kutsutaan tutkinnan
-kohteena olevaa JNI-palvelua tai sen verrokkia. Jokainen benchmark on
+kohteena olevaa JNI-palvelua tai sen verrokkia. Jokainen testi on
 ympäröity samanrakenteisella Java-kielisellä \path{BenchMark}-luokan
 aliluokalla --- silloinkin, kun kyseessä on sellainen
 verrokkioperaatio, joka suoritetaan puhtaasti
@@ -184,7 +184,7 @@ on tyhjä. Näin ollen mittauksen kohde on käytännössä juuri JNI-kutsu.
 Kuvassa \ref{fig:sequence_java_to_java} nähdään yksinkertaisempi
 asetelma, jossa Java-ohjelma kutsuu sisäisesti tavallista Java-metodia
 ilman JNI-rajapintaa.  \path{JavaCounterparts}-luokka sisältää kaikki
-tyhjät metodit joita voidaan kutsua Java- tai C-lähtösilmukasta. Samaa
+tyhjät metodit, joita voidaan kutsua Java- tai C-lähtösilmukasta. Samaa
 luokkaa hyödynnetään myös seuraavassa tapauksessa, jossa
 C-lähtösilmukka kutsuu Java-tynkämetodia.
 
@@ -221,7 +221,7 @@ Mittaukset suoritettiin Samsungin valmistamassa /Google Nexus
 S/-puhelimessa, joka julkaistiin vuonna 2010. Puhelimessa on Androidin
 versio 4.1.2. Perf-työkalun käytön mahdollistamiseksi puhelimeen
 käännettiin uudelleen konfiguroitu Linuxin ydin, ja
-Android-järjestelmän paketteihin otettiin mukaan perf-ohjelma sekä
+Android-järjestelmän pakkauksiin otettiin mukaan perf-ohjelma sekä
 uudelleen käännetyt versiot Dalvikista ja su-komennosta. Profilointi
 vaatii myös profiloitavien komponenttien kuten Dalvikin
 uudelleenkääntämistä erikseen määritellyllä kutsukonventiolla, jotta
@@ -231,11 +231,23 @@ järjestelmäkomponenttien asentaminen laitteeseen saattaa tehdä siitä
 toimintakyvyttömän, joten riskin minimoimiseksi ja resurssisyistä
 mittauksia ei toistettu viimeisimmillä laitteilla.
 
-Mikään mittausmenetelmissä sinänsä ei kuitenkaan estä mittausten
+Mikään käytetyissä mittausmenetelmissä ei kuitenkaan estä mittausten
 toistamista uusilla Android-laitteilla, mikä olisikin tulosten
 toistettavuuden ja yleistettävyyden kannalta tärkeä seuraava
-askel. Mittaukseen valittavan Android-laitteen on kuuluttava Android
-Open Source Projectin tukemiin kohdelaitteisiin.
+askel. Mittausojelmiston siirtäminen on helpointa Android Open Source
+Projectin (AOSP) suoraan tukemiin kohdelaitteisiin kuten
+/Nexus/-laitteisiin. Lisäominaisuudet, joita mittausohjelmisto
+edellyttää Android-alustalta, on toteutettu suoraan muokkaamalla ja
+konfiguroimalla AOSP:n julkaisemaa lähdekoodiversiota, ja AOSP:n
+lähdekoodiversiot kääntyvät suoraan ilman lisätyötä vain tuetuille
+laitteille. Avoimen lähdekoodien komponenttien lisäksi Android vaatii
+nimittäin toimiakseen binäärimuotoisia laitteistokohtaisia kirjastoja,
+jotka AOSP on julkaissut vain tuetuille laitteille suoraan osana
+laitteistokohtaisia julkaisuversioita @@aosp-build-device. Samoin
+tuettujen laitteistojen tarkat konfiguraatiot kääntämistä varten ovat
+osa AOSP-lähdekoodia. Kääntäminen onnistuu kuitenkin mille tahansa
+laitteelle, jonka binäärikirjastot ja käännöskonfiguraatiot ovat
+saatavilla.
 
 Oleellisin tutkielmassa avoimeksi jäävä kysymys on, miten Dalvikin
 korvaava ART-virtuaalikonetoteutus muuttaa tuloksia. Sen takia
@@ -275,9 +287,9 @@ sen jälkeen.
 Kutsuprofiilia luotaessa kaikkia lähtösilmukoita tulee sen sijaan
 suorittaa niin kauan, että ~perf record~ -työkalu on saanut kerättyä
 riittävän määrän näytteitä -- esimerkiksi 10 sekunnin ajan jokaista
-benchmarkia kohden. Näin ollen lähtösilmukoita ajetaan, kunnes
+testiä kohden. Näin ollen lähtösilmukoita ajetaan, kunnes
 mittaava komponentti \path{LinuxPerfRecordTool} keskeyttää
-benchmark-säikeen suorituksen. Tämä monimutkaistaa lähtösilmukoita,
+testisäikeen suorituksen. Tämä monimutkaistaa lähtösilmukoita,
 sillä niiden on itse tutkittava, onko mittaus keskeytetty, mutta
 tehtävä se tarpeeksi harvoin, jotta se ei vaikuta suoritusaikoihin.
 
@@ -297,10 +309,10 @@ lähtösilmukasta konekielitasolla ovat, ei niiden suoritusaikojakaan
 periaatteessa voi suoraan vertailla. Lähtösilmukoiden erojen
 mittaamiseksi molempien versioiden perusrasitetta arvioitiin
 seuraavalla menetelmällä. Kummastakin lähtösilmukasta luotiin
-benchmarksarjat, jossa suoraan silmukan sisälle lisätään /n/
+testisarjat, jossa suoraan silmukan sisälle lisätään /n/
 kappaletta identtistä ohjelmalohkoa, jotka suorittavat hyödyttömiä
 mutta tarpeeksi raskaita ja sivuvaikutuksellisia aritmeettisia
-operaatioita paikallisilla muuttujilla. Kun /n/:n arvoa varioidaan
+operaatioita paikallisilla muuttujilla. Kun /n/:n arvoja käydään läpi
 lineaarisesti, saaduista vasteajoista interpoloimalla voidaan
 arvioida, mikä mittausmenetelmän pohjavasteaika on /n/:n arvolla 0
 (tyhjä lähtösilmukka). Näin saadaan tarkempi arvio perusrasitteesta
@@ -308,27 +320,28 @@ kuin pelkästään ajamalla tyhjää lähtösilmukkaa -- erityisesti
 Java-koodin tapauksessa Java- tai JIT-kääntäjä saattaa myös optimoida
 pois tyhjän silmukan, jolla ei ole sivuvaikutuksia.
 
+{{{plot(normaloverhead-c-fit)}}}
+
+{{{plot(normaloverhead-j-fit)}}}
+
+Perusrasitemittausten tulokset näkyvät C-kieliselle lähtösilmukalle
+kuvassa \ref{fig:normaloverhead-c-fit} ja Java-kieliselle kuvassa
+\ref{fig:normaloverhead-j-fit}.
+
 Käytännön mittauksissa osoittautui kuitenkin, että ainakaan
 Java-koodissa menetelmä ei toimi, sillä perusrasitteeksi
 interpoloinnissa saadaan negatiivinen arvo. Vaatisi lisätutkimuksia
-kehittää perusrasitemittauksista käyttökelpoisia. Ongelma saattaaa
+kehittää perusrasitemittauksista käyttökelpoisia. Ongelma saattaa
 liittyä näissä mittauksissa käytettyihin epätyypillisiin
 ohjelmalohkoihin, joiden käyttäytyminen JIT-käännöksen syötteenä ei
 ole ennustettavaa.
 
 # TODO two plots below: scale 50%
 
-{{{plot(normaloverhead-c-fit)}}}
-
-{{{plot(normaloverhead-j-fit)}}}
-
-# TODO viite ylle
-# TODO XXXXXXX
-
 * Muistia allokoivat operaatiot
 
 Muistia allokoivia JNI-operaatioita, jotka esimerkiksi luovat olioita,
-ei voi suorittaa tuhansia kertoja ilman että sovelluksen muisti
+ei voi suorittaa tuhansia kertoja ilman, että sovelluksen muisti
 loppuu. Yleensä mittauksissa on pyritty pitämään kierrosmäärä niin
 suurena kuin käytännössä on järkevää, jotta satunnaisten
 järjestelmässä esiintyvien häiriöiden suuruus verrattuna mitattuihin
@@ -367,142 +380,27 @@ varsinaisia mittauksia /lämmittelyajo/, jonka kierrosmäärä on arvioitu
 riittäväksi JIT-kääntämisen laukaisemiseksi.
 
 Oikean kierrosmäärän arvioimiseksi ja JIT-käännöksen havaitsemiseksi
-tehtiin mittaus, jossa samaa benchmarkia suoritetaan pienehköllä
+tehtiin mittaus, jossa samaa testiä suoritetaan pienehköllä
 silmukkakierrosluvulla mutta monessa perättäisessä ajossa, ja
 seurataan peräkkäisten vasteaikojen kehittymistä. Mittaustulokset
 näkyvät kuvassa \ref{fig:warmup-plot}. Vaaka-akselilla näkyy
-mittauskerta ja pystyakselilla vasteaika. Huomionarvoista on, että
-tässä JIT-käännöksen tuloksena ollut ohjelma on /hitaampi/ kuin
-tulkittu koodi. Tämä johtunee mittauksiin valitun ohjelmakoodin
-epätyypillisyydestä.
+mittauskerta ja pystyakselilla vasteaika. JIT-käännös tapahtuu noin
+kierroksen 4700 kohdalla, minkä jälkeen vasteajat ovat
+systemaattisesti hieman pienempiä.
 
 # TODO: ref below above
 
 \begin{figure}
-    \input{figures/warmup-proof}
-\caption{Vasteajan muuttuminen mittausten edetessä}\label{fig:warmup-plot}
+\caption{Vasteajan muuttuminen suorituksen jatkuessa}\label{fig:warmup-plot}
+    \input{figures/warmup-test}
 \end{figure}
 
-* Benchmark Generator
+* Benchmark Generator                                                 :noexport:
 
 /Benchmark Generator/ on Python-kielinen ohjelma, joka tuottaa
 /NativeBenchmark/-sovelluksen lähtösilmukat sekä kutsujen kohteena
 olevat tynkämetodit. Ohjelma myös tulostaa C-kieliset moduulit sekä
 Java-kieliset luokat, joihin kyseiset silmukat ja metodit sijoitetaan.
-
-#+NAME: fig:benchmark_generator_architecture
-#+INCLUDE: "../../src/figures/architecture-benchmark-generator.puml" src plantuml :results file :file /tmp/architecture-benchmark_generator.png :exports results
-#+ATTR_LATEX: :width {0.5\linewidth} :placement [t]
-#+CAPTION: Benchmark Generator: komponentit
-#+LABEL: fig:benchmark_generator_architecture
-#+RESULTS: fig:benchmark_generator_architecture
-
-Kuvan \ref{fig:benchmark_generator_architecture} alaosasta nähdään,
-että Ant-käännöstyökalu on konfiguroitu kutsumaan automaattisesti
-~benchmark_generator~-päämoduulia, ja generoidut lähdekooditiedostot
-tulevat näin osaksi normaaleja Androidin SDK- ja NDK-
-käännösprosesseja.
-
-Lähdekoodien generointi perustuu seuraavaan kahteen
-suunnitteluratkaisuun. Ensinnäkin generointikoodin syötteenä ovat
-~jni_types~-moduulissa määritellyt tietorakenteet, jotka sisältävät
-tarvittavat tiedot kaikista Java-ohjelmoinnin tyypeistä ja niiden
-vastinpareista C-kielessä.
-
-Toinen ratkaisu on käsitellä Java- ja C-koodia merkkijonoina eikä
-esimerkiksi rakenteellisina syntaksipuina. Monimutkaisia
-lähdekoodimerkkijonoja on vältetty upottamasta suoraan pythonkielisen
-logiikan keskelle. Lähdekoodin generoinnin pohjina toimivat
-~templates~-paketista löytyvät aihiot. Ne muistuttavat
-www-sovelluksissa käytettyjen template-kielten aihioita. Aihiot ovat
-kohdekielistä koodia sisältäviä merkkijonoja, jonka sisällä olevat
-nimetyt paikkamerkit korvataan vaihtuvilla arvoilla.
-
-Seuraavassa esimerkissä näkyy ~jni_types~-moduulin pythonkielinen
-~dict~-tyyppimääritelmä Javan ~int~-primitiivityypille.
-
-#+INCLUDE: "/home/tituomin/nativebenchmark/script/jni_types.py" src python :lines "57-67"
-#+LABEL: src:jni-gen-int
-#+NAME: src:jni-gen-int
-#+CAPTION: foo bar
-
-Tietueen kentistä ~symbol~ on tyypin sisäinen tunniste
-generointikoodissa. Kentät ~java~ sekä ~c~ ovat tyypin nimet
-molemmissa kielissä, ja ~java-literal~ sekä ~c-literal~ sisältävät
-tyyppiä vastaavan literaalin, jonka voi aina lisätä lähdekoodiin, kun
-tarvitaan kyseisen tyyppistä arvoa. Kenttä ~jvm-desc~ on
-Java-tavukoodissa ja joissain JNI-kutsuissa käytetty tyyppimääritys.
-Kentän ~representative~ arvon perusteella voidaan alustavien
-mittausten jälkeen välttää turhien benchmarkien aikaavievä suoritus --
-esimerkiksi ~int~- ja ~char~-tyyppien välillä ei huomattu mitään eroa,
-joten mittauksissa voidaan käyttää vain ~int~-tyyppisiä benchmarkeja
-edustamaan molempia.
-
-# Seuraavassa esimerkissä on vastaava määritelmä ~String~-viitetyypille.
-
-# #+INCLUDE: "/home/tituomin/nativebenchmark/script/jni_types.py" src python :lines "118-128"
-
-# Eroa ~int~-tyypiin on erityisesti siinä, ettei C-ohjelmassa ole suoraa
-# literaalia Javan ~String~-arvolle (kenttä ~c-literal~). ~String~ on
-# myös merkitty viitetyyppiseksi (kenttä ~is-object~).
-
-Generointiin käytettävät aihiot näyttävät seuraavalta. Esimerkki
-on tiedostosta \path{templates/c_nativemethod.py}.
-
-#+INCLUDE: "/home/tituomin/nativebenchmark/script/templates/c_nativemethod.py" src python :lines "7-18"
-
-Template-kielen paikkamerkkeinä tulkittavat osat erotetaan
-kirjaimellisesti tulkittavasta osasta erottimilla ~<%~ ja ~%>~,
-joille ei ole varattua merkitystä kohdekielissä. Kyseisten merkintöjen
-käyttöä aihioissa esimerkiksi kohdekielen merkkijonoliteraalin sisällä
-ei tueta.
-
-Aihion voi täydentää valittujen parametrien arvoilla
-~templating~-moduulin funktioilla ~put~ ja ~partial~. Funktio ~put~
-korvaa aihion kaikki paikkamerkit samannimisten nimettyjen parametrien
-arvoilla poistaen puuttuvia argumentteja vastaavat
-paikkamerkit. Funktio ~partial~ jättää puuttuvien argumenttien
-paikkamerkinnät paikoilleen, mikä helpottaa erikoistuneiden aihioiden
-johtamista samasta perusaihiosta. Funktiota ~put~ käytetään kuten
-seuraavassa esimerkissä.
-
-#+INCLUDE: "/home/tituomin/nativebenchmark/script/make_custom_benchmarks.py" src python :lines "320-329"
-#+BEGIN_SRC python
-[...]
-#+END_SRC
-
-Molemmat funktiot on helppo toteuttaa, kun tukena on
-seuraavat Pythonin sanakirjaluokasta periytyvät kaksi aliluokkaa.
-
-#+INCLUDE: "/home/tituomin/nativebenchmark/script/templating.py" src python :lines "6-13"
-
-Kun ~put~-kutsun nimetyt argumentit tallennetaan ~PurgeDict~-olioon,
-mahdollisesti puuttuvien avainten arvoiksi tulee automaattisesti
-tyhjä. Vastaavasti ~partial~-kutsun argumentit tallennettuna
-~PartialDict~-olioon toimivat niin, että paikkamerkin puuttuva arvo
-korvataan samanlaisella paikkamerkillä.
-
-# TODO: pseudokoodi benchmarkit luovasta silmukasta?
-
-# TODO: python-koodin sielunelämään meneminen hieman kyseenalaista, onko tarpeen
-
-* Mittaustulosten käsittelijä Benchmark Analyzer
-
-/NativeBenchmark/-sovelluksen näkökulmasta suoritettavilla
-benchmarkeilla ei ole mitään suhdetta toisiinsa, vaan jokainen
-suoritetaan toisistaan riippumatta ja jokaisesta mittauksesta
-tallennetaan mahdollisimman täydelliset parametritiedot
-tekstitiedostoon.  Vasteaikamittauksissa tiedostoon tallennetaan myös
-mittaustulos eli vasteaika, kutsuprofiilin tapauksessa sen sijaan
-tiedostopolku ~perf record~-työkalun tulostamaan
-näytetiedostoon.
-
-Koska kaikki varioitavat parametrit on tallennettu rakenteisesti
-tiedostoon, /Benchmark Analyzer/ -ohjelman tehtäväksi jää yhdistellä
-jälkikäteen saman parametrin vaihtelevat arvot yhdeksi mittaussarjaksi
-ja piirtää tulokset kuvaajiksi ~gnuplot~-ohjelmalla sekä tulostaa ne
-taulukoiksi tekstitiedostoihin. Analyysiohjelmalla on myös käytössään
-~jni_types~-moduulin tyyppimääritykset.
 
 * TODO Tilastolliset menetelmät                                    :noexport:
   Tarvitaanko tätä?

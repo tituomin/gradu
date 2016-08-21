@@ -1,5 +1,15 @@
 Gradu: duunit
-
+* new profiles [8/9]
+** TODO currently at {{{profile(C2JBenchmark00146)}}}
+** missing source files [8/8]
+*** DONE {{{profile(C2JBenchmark00206)}}}
+*** DONE {{{profile(C2JBenchmark00146)}}}
+*** DONE {{{profile(C2JBenchmark00001)}}}
+*** DONE {{{profile(J2CBenchmark00001)}}}
+*** DONE {{{profile(J2CBenchmark00206)}}}
+*** DONE {{{profile(C2JReadUnicode-512)}}}
+*** DONE {{{profile(C2JCopyUnicode-512)}}}
+*** DONE {{{profile(C2JNewDirectBuffer-512)}}}
 * http://newandroidbook.com/TOC.html ART source
 * # extra tillbehör   1.0.0-rc1/C2JNewDirectBuffer/512
 * TODO profiilit \begin{lstlisting}[caption=Staattinen metodi C$\to$Java , label=profile:C2JBenchmark00001, numberbychapter=true, frame=lines, float, floatplacement=t]
