@@ -1,9 +1,13 @@
 
 \begin{profile}
-\footnotesize
+\centering
+\caption{NewDirectByteBuffer}
+\label{profile:C2JNewDirectBuffer-512}
+\begin{topbot}
+\begin{minipage}{1.0\textwidth}
+\scriptsize
 \dirtree{%
-.1  . 
-.1 \textbf{ 0.02\%} nativebenchmark  libdvm.so              [.] dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::\_\_va\_list). 
+%.1 \textbf{ 0.02\%} dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::\_\_va\_list). 
 .2 \textbf{74.31\%} dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::\_\_va\_list). 
 .3 \textbf{73.83\%} dvmInterpret(Thread*, Method const*, JValue*). 
 .4 \textbf{72.21\%} dalvik\_mterp\newline \phantom{\textbf{72.21\%}} Dalvik\_java\_lang\_Runtime\_gc(unsignedintconst*,JValue*)\newline \phantom{\textbf{72.21\%}} dvmCollectGarbage(). 
@@ -28,5 +32,7 @@
 .4 \textbf{0.03\%} common\_selectTrace. 
 .3 \textbf{0.20\%} callPrep(Thread*, Method const*, Object*, bool). 
 }
+\end{minipage}
+\end{topbot}
 \end{profile}
 
