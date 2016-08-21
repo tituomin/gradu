@@ -384,10 +384,9 @@ tehtiin mittaus, jossa samaa benchmarkia suoritetaan pienehköllä
 silmukkakierrosluvulla mutta monessa perättäisessä ajossa, ja
 seurataan peräkkäisten vasteaikojen kehittymistä. Mittaustulokset
 näkyvät kuvassa \ref{fig:warmup-plot}. Vaaka-akselilla näkyy
-mittauskerta ja pystyakselilla vasteaika. Huomionarvoista on, että
-tässä JIT-käännöksen tuloksena ollut ohjelma on /hitaampi/ kuin
-tulkittu koodi. Tämä johtunee mittauksiin valitun ohjelmakoodin
-epätyypillisyydestä.
+mittauskerta ja pystyakselilla vasteaika. JIT-käännös tapahtuu noin
+kierroksen 4700 kohdalla, minkä jälkeen vasteajat ovat
+systemaattisesti hieman pienempiä.
 
 # TODO: ref below above
 
