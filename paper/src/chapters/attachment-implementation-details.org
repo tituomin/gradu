@@ -1,10 +1,25 @@
 #+LATEX:\counterwithout{figure}{section}
 
-Kuvan \ref{fig:benchmark_generator_architecture} alaosasta nähdään,
-että Ant-käännöstyökalu on konfiguroitu kutsumaan automaattisesti
-~benchmark_generator~-päämoduulia, ja generoidut lähdekooditiedostot
-tulevat näin osaksi normaaleja Androidin SDK- ja NDK-
-käännösprosesseja.
+Tässä liitteessä kuvaillaan suorituskykytestien generoimiseen ja
+testitulosten analysoimiseen laadittuja Python-ohjelmia.
+
+#+NAME: fig:benchmark_generator_architecture
+#+INCLUDE: "../../src/figures/architecture-benchmark-generator.puml" src plantuml :results file :file /tmp/architecture-benchmark_generator.png :exports results
+#+ATTR_LATEX: :width {0.8\linewidth} :placement [ht!]
+#+CAPTION: Benchmark Generator: komponentit
+#+LABEL: fig:benchmark_generator_architecture
+#+RESULTS: fig:benchmark_generator_architecture
+
+\newpage
+
+#+LATEX: \subsection*{Mittaustestien koodingeneroija Benchmark Generator}
+
+Kuvan \ref{fig:benchmark_generator_architecture} komponenttikaaviossa
+näkyy suorituskykytestit generoivan ~Benchmark Generator~-ohjelman
+perusarkkitehtuuri. Kuvan alaosasta nähdään, että Ant-käännöstyökalu on konfiguroitu
+kutsumaan automaattisesti ~benchmark_generator~-päämoduulia, ja
+generoidut lähdekooditiedostot tulevat näin osaksi normaaleja
+Androidin SDK- ja NDK- käännösprosesseja.
 
 Lähdekoodien generointi perustuu seuraavaan kahteen
 suunnitteluratkaisuun. Ensinnäkin generointikoodin syötteenä ovat
@@ -50,14 +65,6 @@ edustamaan molempia.
 
 \newpage
 
-#+NAME: fig:benchmark_generator_architecture
-#+INCLUDE: "../../src/figures/architecture-benchmark-generator.puml" src plantuml :results file :file /tmp/architecture-benchmark_generator.png :exports results
-#+ATTR_LATEX: :width {0.9\linewidth} :placement [ht!]
-#+CAPTION: Benchmark Generator: komponentit
-#+LABEL: fig:benchmark_generator_architecture
-#+RESULTS: fig:benchmark_generator_architecture
-
-\newpage
 
 Generointiin käytettävät aihiot näyttävät seuraavalta. Esimerkki
 on tiedostosta \path{templates/c_nativemethod.py}.
