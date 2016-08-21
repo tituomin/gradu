@@ -312,7 +312,10 @@ rasitteeseen nähden.
 
 Listauksien \ref{profile:C2JBenchmark00001} ja
 \ref{profile:J2CBenchmark00001} profiileja vertailemalla saadaan tähän
-lisärasitteeseen ainakin osittainen selitys. {{{jc}}} -kutsussa ei
+lisärasitteeseen ainakin osittainen selitys. Listauksessa
+\ref{profile:C2JBenchmark00001} on staattisen metodikutsun profiili
+suunnassa {{{cj}}} ja listauksessa \ref{profile:J2CBenchmark00001} on
+vastaava kutsuprofiili suunnassa {{{jc}}}.  {{{jc}}} -kutsussa ei
 luoda \path{ScopedJniThreadState}-oliota, vaan virtuaalikoneen
 suoritustilan muuttavaa \path{dvmChangeStatus}-metodia kutsutaan
 suoraan. Samoin \path{callPrep}-funktio puuttuu. Näiden
