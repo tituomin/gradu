@@ -35,9 +35,9 @@ tyyppiä vastaavan literaalin, jonka voi aina lisätä lähdekoodiin, kun
 tarvitaan kyseisen tyyppistä arvoa. Kenttä ~jvm-desc~ on
 Java-tavukoodissa ja joissain JNI-kutsuissa käytetty tyyppimääritys.
 Kentän ~representative~ arvon perusteella voidaan alustavien
-mittausten jälkeen välttää turhien benchmarkien aikaavievä suoritus --
+mittausten jälkeen välttää turhien testien aikaavievä suoritus --
 esimerkiksi ~int~- ja ~char~-tyyppien välillä ei huomattu mitään eroa,
-joten mittauksissa voidaan käyttää vain ~int~-tyyppisiä benchmarkeja
+joten mittauksissa voidaan käyttää vain ~int~-tyyppisiä testejä
 edustamaan molempia.
 
 # Seuraavassa esimerkissä on vastaava määritelmä ~String~-viitetyypille.
@@ -102,7 +102,7 @@ korvataan samanlaisella paikkamerkillä.
 #+LATEX: \subsection*{Mittaustulosten käsittelijä Benchmark Analyzer}
 
 /NativeBenchmark/-sovelluksen näkökulmasta suoritettavilla
-benchmarkeilla ei ole mitään suhdetta toisiinsa, vaan jokainen
+testeillä ei ole mitään suhdetta toisiinsa, vaan jokainen
 suoritetaan toisistaan riippumatta ja jokaisesta mittauksesta
 tallennetaan mahdollisimman täydelliset parametritiedot
 tekstitiedostoon.  Vasteaikamittauksissa tiedostoon tallennetaan myös

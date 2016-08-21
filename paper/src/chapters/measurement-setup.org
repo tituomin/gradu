@@ -2,8 +2,8 @@
 
 Tutkielmaa varten laadittiin alkeisoperaatioden mittausohjelmisto
 (/microbenchmarking suite/) /NativeBenchmark/. Ohjelmiston avulla
-Android-laitteessa voidaan suorittaa kokoelma minimaalisia
-aliohjelmia, jotka yhdessä testaavat kattavasti JNI-rajapinnan eri
+Android-laitteessa voidaan suorittaa kokoelma testejä eli minimaalisia
+aliohjelmia, jotka yhdessä käyttävät kattavasti JNI-rajapinnan eri
 kutsuja.
 
 Kun alkeisoperaatioita suoritetaan laitteessa, samojen operaatioiden
@@ -44,16 +44,16 @@ Toinen tapa lisätä tulosten hyödynnettävyyttä on seuraava periaate:
 jos jollekin JNI-kutsulle on keksitty analoginen kutsu tai operaatio
 JNI-rajapinnan ulkopuolelta -- operaatio, jonka voi toteuttaa
 puhtaasti C- tai Java-kielisessä ohjelmassa -- lisätään mittauksiin
-tällaiset benchmarkit. Siten esimerkiksi JNI-rajapinnan
+tällaiset testit. Siten esimerkiksi JNI-rajapinnan
 \path{CallVoidMethod}- perusfunktiokutsun kaikille variaatioille on
-laadittu vertailukohdaksi benchmarkit, joissa C-ohjelma
+laadittu vertailukohdaksi testit, joissa C-ohjelma
 kutsuu aivan tavallista ~void~-paluuarvollista funktiota,
 ja Java-ohjelma vastaavasti kutsuu ~void~-paluuarvollista metodia.
 
 Kolmas tapa saada syvempiä tuloksia JNI-rajapinnan käyttäytymisestä on
-mitata samoista benchmarkeista myös kutsuprofiilit. Kun
+mitata samoista testeistä myös kutsuprofiilit. Kun
 vasteaikamittauksista on löytynyt mielenkiintoisia riippuvuuksia
-muuttujien ja vasteaikojen väliltä, nähdään saman benchmarkin
+muuttujien ja vasteaikojen väliltä, nähdään saman testin
 kutsuprofiileista usein selvästi, mikä JNI-toteutuksen osa aiheuttaa
 esimerkiksi lineaarisesti lisääntyvän vasteajan, kun vaikkapa
 viitearvoisten kutsuparametrien määrää lisätään.
@@ -75,7 +75,7 @@ luotava 4 eri versiota:
 4. C-ohjelma, joka kutsuu Java-metodia.
 
 Variaatioiden hallitsemiseksi on hyödynnetään yksinkertaista
-staattista metaohjelmointia: benchmarkeja ei ohjelmoida käsin, vaan
+staattista metaohjelmointia: testejä ei ohjelmoida käsin, vaan
 niiden lähdekoodi generoidaan tietorakenteista, joihin on kuvattu
 halutut tyyppivariaatiot.
 
@@ -114,8 +114,8 @@ ne käsitellään seuraavassa tarkemmin.
 
 Android-sovellus \path{NativeBenchmark} sisältää kaiken
 Android-laitteessa suoritettavan ohjelmakoodin: Java-kielisten ja
-natiivikirjastoon kuuluvien benchmarkien lisäksi sovellukseen kuuluu
-ohjelmalogiikka, joka suorittaa halutut benchmarkit valituilla
+natiivikirjastoon kuuluvien testien lisäksi sovellukseen kuuluu
+ohjelmalogiikka, joka suorittaa halutut testit valituilla
 mittaustyökaluilla.
 
 NativeBenchmark huolehtii mittausajoja koskevien asetustiedostojen
@@ -126,16 +126,16 @@ ulkopuolelta tekstikomentojen avulla TCP-yhteyden välityksellä.
 
 Kuvan \ref{fig:nativebenchmark_architecture} komponenttikaaviossa
 näkyvät sovelluksen keskeisimmät osat:
-- ~benchmark~ -paketin sisältämät generoidut benchmarkit,
+- ~benchmark~ -paketin sisältämät generoidut testit,
 - ~libnativebenchmark~ -natiivikirjasto, joka sisältää generoitujen
-  benchmarkien natiiviosat,
+  testien natiiviosat,
 - ~BenchmarkRunner~ -luokka,
 - ~MeasuringTool~ -luokan kaksi aliluokkaa
   \path{JavaSystemNanoResponseTimeRecorder} sekä \path{LinuxPerfRecordTool}.
 
-Benchmarkit ovat pohjimmiltaan vain monta kertaa toistettavia
+Testit ovat pohjimmiltaan vain monta kertaa toistettavia
 silmukoita (/lähtösilmukoita/), joiden sisällä kutsutaan tutkinnan
-kohteena olevaa JNI-palvelua tai sen verrokkia. Jokainen benchmark on
+kohteena olevaa JNI-palvelua tai sen verrokkia. Jokainen testi on
 ympäröity samanrakenteisella Java-kielisellä \path{BenchMark}-luokan
 aliluokalla --- silloinkin, kun kyseessä on sellainen
 verrokkioperaatio, joka suoritetaan puhtaasti
@@ -287,9 +287,9 @@ sen jälkeen.
 Kutsuprofiilia luotaessa kaikkia lähtösilmukoita tulee sen sijaan
 suorittaa niin kauan, että ~perf record~ -työkalu on saanut kerättyä
 riittävän määrän näytteitä -- esimerkiksi 10 sekunnin ajan jokaista
-benchmarkia kohden. Näin ollen lähtösilmukoita ajetaan, kunnes
+testiä kohden. Näin ollen lähtösilmukoita ajetaan, kunnes
 mittaava komponentti \path{LinuxPerfRecordTool} keskeyttää
-benchmark-säikeen suorituksen. Tämä monimutkaistaa lähtösilmukoita,
+testisäikeen suorituksen. Tämä monimutkaistaa lähtösilmukoita,
 sillä niiden on itse tutkittava, onko mittaus keskeytetty, mutta
 tehtävä se tarpeeksi harvoin, jotta se ei vaikuta suoritusaikoihin.
 
@@ -309,7 +309,7 @@ lähtösilmukasta konekielitasolla ovat, ei niiden suoritusaikojakaan
 periaatteessa voi suoraan vertailla. Lähtösilmukoiden erojen
 mittaamiseksi molempien versioiden perusrasitetta arvioitiin
 seuraavalla menetelmällä. Kummastakin lähtösilmukasta luotiin
-benchmarksarjat, jossa suoraan silmukan sisälle lisätään /n/
+testisarjat, jossa suoraan silmukan sisälle lisätään /n/
 kappaletta identtistä ohjelmalohkoa, jotka suorittavat hyödyttömiä
 mutta tarpeeksi raskaita ja sivuvaikutuksellisia aritmeettisia
 operaatioita paikallisilla muuttujilla. Kun /n/:n arvoja käydään läpi
@@ -380,7 +380,7 @@ varsinaisia mittauksia /lämmittelyajo/, jonka kierrosmäärä on arvioitu
 riittäväksi JIT-kääntämisen laukaisemiseksi.
 
 Oikean kierrosmäärän arvioimiseksi ja JIT-käännöksen havaitsemiseksi
-tehtiin mittaus, jossa samaa benchmarkia suoritetaan pienehköllä
+tehtiin mittaus, jossa samaa testiä suoritetaan pienehköllä
 silmukkakierrosluvulla mutta monessa perättäisessä ajossa, ja
 seurataan peräkkäisten vasteaikojen kehittymistä. Mittaustulokset
 näkyvät kuvassa \ref{fig:warmup-plot}. Vaaka-akselilla näkyy

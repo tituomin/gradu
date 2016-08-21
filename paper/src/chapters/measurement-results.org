@@ -146,7 +146,7 @@ käyntiin yhdestä \path{dvmPlatformInvoke}-kutsusta.
 Mitattavassa metodissa on keinotekoisen paljon viiteparametreja, joten
 profiilista erottuu viitteiden välittämisen aikarasite. Avainkohta on
 Dalvikin metodi \path{dvmDecodeIndirectRef}, joka vie 46.21% koko
-suoritusajasta ja 64% benchmarkin suoritusajasta. /Indirect
+suoritusajasta ja 64% testin suoritusajasta. /Indirect
 ref[erence]/ tarkoittaa epäsuoraa viitettä, joka välitetään
 parametrinä JNI-rajapinnan yli, eli JNI-kutsujen \path{jobject *}
 -tyyppisiä parametreja eri muodoissaan. Dalvik-virtuaalikone joutuu
@@ -201,10 +201,10 @@ case kIndirectKindGlobal:
     }
 #+END_SRC
 
-Kattavammissa mittauksissa täytyisi laatia erilliset benchmarkit,
+Kattavammissa mittauksissa täytyisi laatia erilliset testit,
 jotka käyttävät paikallisia viitteitä. Tämänkin mittauksen avulla
 saadaan kuitenkin jotain käsitystä nopeutuksen suuruusluokasta, joka
-paikallisilla viitteillä saavutettaisiin: tämän benchmarkin
+paikallisilla viitteillä saavutettaisiin: tämän testin
 kokonaissuoritusajasta yli kolmasosa kuluu lukitukseen.
 
 {{{profile(C2JBenchmark00146)}}}
@@ -213,7 +213,7 @@ Listauksen \ref{profile:C2JBenchmark00146} kutsuprofiilissa kutsusuunta on
 {{{cj}}} ja kutsussa on kaksikymmentä
 ~int~-parametria. Profiilissa näkyy edelleen
 \path{dvmDecodeIndirectRef} (\ding{202}) 13.42% suoritusajalla ---
-benchmarkissa kutsutaan Java-olion kohdemetodia, joten olio täytyy
+testissä kutsutaan Java-olion kohdemetodia, joten olio täytyy
 välittää viitteenä JNI-kutsussa.
 
 #+BEGIN_SRC c
@@ -519,12 +519,12 @@ For now, we use a serial number.
 Java-merkkijonojen sisältöä käsitellään natiivikomponentista
 seuraavilla operaatioilla. Osoittimen palauttavia ja vapauttavia
 operaatioita kutsutaan aina pareittain, joten jokainen pari on koottu
-yhteisen benchmarkin alle. On tärkeä huomata, että Java-merkkijonojen
+yhteisen testin alle. On tärkeä huomata, että Java-merkkijonojen
 muokkaaminen on ohjelmoijalta kielletty, vaikka se olisikin
 mahdollista JNI:n osoitinoperaatioiden avulla: Javan merkkijonot ovat
 muuttumattomia.
 
-Mittauksissa benchmarkeille on annettu nimet seuraavasti:
+Mittauksissa testeille on annettu nimet seuraavasti:
 
 - ReadString ::  ~GetStringChars~ ja ~ReleaseStringChars~
 - ReadStringCritical :: ~GetStringCritical~ ja ~ReleaseStringCritical~
@@ -620,7 +620,7 @@ käsittelyssä, mutta merkistökoodaukseen liittyviä rasitteita ei
 tällöin ole, ja viitetyyppejä sisältävät taulukot käsitellään omana
 erityistapauksenaan. Lisäksi Java-taulukoiden lukeminen ja kirjoittaminen
 ovat molemmat sallittuja. Osoittimen palauttavia operaatiota mitataan
-seuraavissa benchmarkeissa.
+seuraavissa testeissä.
 
 - Get\tau{}ArrayElements :: Funktiot \verb|Get|\tau\verb|ArrayElements| ja
      \verb|Release|\tau\verb|ArrayElements|
@@ -735,8 +735,8 @@ natiivikomponentti saa puskurin edustaman muistialueen osoitteen
 \path{GetDirectBufferAddress}-kutsulla ja kapasiteetin
 \path{GetDirectBufferCapacity}-kutsulla. Koska tässä vaihtoehdossa
 molemmat operaatiot ovat edellytyksiä puskurin käytölle, ne mitattiin
-yhdessä benchmarkissa, jonka vasteajaksi saatiin 2.31
-sekuntia. Benchmarkin kutsuprofiilissa näkyvät ainoastaan epäsuoran
+yhdessä testissä, jonka vasteajaksi saatiin 2.31
+sekuntia. Testin kutsuprofiilissa näkyvät ainoastaan epäsuoran
 globaalin viitteen purku sekä virtuaalikoneen suoritustilan muutos,
 jotka nähtiin aiemminkin käsitellyissä JNI-kutsuissa.
 
@@ -752,7 +752,7 @@ jotka nähtiin aiemminkin käsitellyissä JNI-kutsuissa.
 roskienkeruuseen liittyviä metodikutsuja alkaen metodista
 \path{dvmCollectGarbage}. Tämä on mittaustekninen ongelma, joka tekee
 kaikkien muistia varaavien operaatioiden kutsuprofiilit hankaliksi
-hyödyntää. Siinä missä benchmarkin suoritus on saatu mitattua ilman
+hyödyntää. Siinä missä testin suoritus on saatu mitattua ilman
 roskienkeruuta /vasteaikamittauksissa/, kutsuprofiilinäytteet kerätään
 yhtäjaksoisesti useiden sekuntien jaksolta, jonka aikana
 suhteellisesti suurin osa ajasta vietetään roskienkeruussa. Allokoivia
