@@ -1,31 +1,25 @@
 
 \begin{profile}
-\footnotesize
+\centering
+\caption{20 Viiteparametria Java$\rightarrow$C}
+\label{profile:J2CBenchmark00206}
+\begin{topbot}
+\begin{minipage}{1.0\textwidth}
+\scriptsize
 \dirtree{%
-.1  . 
-.1 \textbf{ 0.00\%} nativebenchmark  libdvm.so              [.] dvmInterpret(Thread*, Method const*, JValue*)\newline \phantom{\textbf{ 0.00\%}} ---dvmInterpret(Thread*,Methodconst*,JValue*). 
+.1 \textbf{68.69\%} dvmInterpret(Thread*, Method const*, JValue*). %\newline \phantom{\textbf{ 0.00\%}} ---dvmInterpret(Thread*,Methodconst*,JValue*). 
 .2 \textbf{64.65\%} dalvik\_mterp. 
 .3 \textbf{48.73\%} dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*). 
 .4 \textbf{34.43\%} addLocalReference(Thread*, Object*). 
 .5 \textbf{7.44\%} IndirectRefTable::add(unsigned int, Object*). 
-.6 \textbf{0.03\%} 0xc003be08\newline \phantom{\textbf{0.03\%}} 0xc003503c\newline \phantom{\textbf{0.03\%}} 0xc006fed0\newline \phantom{\textbf{0.03\%}} 0xc006faf8. 
-.5 \textbf{0.26\%} 0xc003be08\newline \phantom{\textbf{0.26\%}} 0xc003503c\newline \phantom{\textbf{0.26\%}} 0xc006fed0. 
-.6 \textbf{0.20\%} 0xc006faf8. 
-.6 \textbf{0.03\%} 0xc006fb60. 
-.6 \textbf{0.03\%} 0xc006fb38\newline \phantom{\textbf{0.03\%}} 0xc00b59a0\newline \phantom{\textbf{0.03\%}} 0xc00b55a4\newline \phantom{\textbf{0.03\%}} 0xc00b4264. 
-.4 \textbf{0.64\%} dvmChangeStatus(Thread*, ThreadStatus). 
+.4 \textbf{0.64\%} dvmChangeStatus(Thread*, ThreadStatus) \DTcomment{\ding{202}}. 
 .5 \textbf{0.10\%} android\_atomic\_release\_store. 
 .5 \textbf{0.03\%} android\_atomic\_acquire\_store. 
-.4 \textbf{0.10\%} 0xc003c160\newline \phantom{\textbf{0.10\%}} 0xc058209c. 
-.5 \textbf{0.05\%} 0xc0581768. 
-.5 \textbf{0.05\%} 0xc003c0c4\newline \phantom{\textbf{0.05\%}} 0xc009016c\newline \phantom{\textbf{0.05\%}} 0xc0090138\newline \phantom{\textbf{0.05\%}} 0xc008fa9c\newline \phantom{\textbf{0.05\%}} 0xc0042f64. 
-.4 \textbf{0.07\%} 0xc003be08\newline \phantom{\textbf{0.07\%}} 0xc003503c\newline \phantom{\textbf{0.07\%}} 0xc006fed0. 
-.5 \textbf{0.03\%} 0xc006faf8. 
-.5 \textbf{0.03\%} 0xc006fb38\newline \phantom{\textbf{0.03\%}} 0xc0077d60. 
 .3 \textbf{0.21\%} Dalvik\_java\_lang\_VMThread\_isInterrupted(unsigned int const*, JValue*)\newline \phantom{\textbf{0.21\%}} dvmLockThreadList(Thread*)\newline \phantom{\textbf{0.21\%}} dvmLockMutex(pthread\_mutex\_t*)\newline \phantom{\textbf{0.21\%}} pthread\_mutex\_lock. 
 .2 \textbf{1.45\%} common\_selectTrace. 
-.3 \textbf{0.03\%} dvmJitCheckTraceRequest. 
-.2 \textbf{0.07\%} 0xc003be08\newline \phantom{\textbf{0.07\%}} 0xc003503c\newline \phantom{\textbf{0.07\%}} 0xc006fed0\newline \phantom{\textbf{0.07\%}} 0xc006faf8\newline \phantom{\textbf{0.07\%}} . 
+.3 \textbf{0.03\%} dvmJitCheckTraceRequest\newline \phantom{\textbf{0.03\%}} . 
 }
+\end{minipage}
+\end{topbot}
 \end{profile}
 

@@ -23,50 +23,12 @@
                |          |          |--34.43%-- addLocalReference(Thread*, Object*)
                |          |          |          |          
                |          |          |          |--7.44%-- IndirectRefTable::add(unsigned int, Object*)
-               |          |          |          |          |          
-               |          |          |          |           --0.03%-- 0xc003be08
-               |          |          |          |                     0xc003503c
-               |          |          |          |                     0xc006fed0
-               |          |          |          |                     0xc006faf8
-               |          |          |          |          
-               |          |          |           --0.26%-- 0xc003be08
-               |          |          |                     0xc003503c
-               |          |          |                     0xc006fed0
-               |          |          |                     |          
-               |          |          |                     |--0.20%-- 0xc006faf8
-               |          |          |                     |          
-               |          |          |                     |--0.03%-- 0xc006fb60
-               |          |          |                     |          
-               |          |          |                      --0.03%-- 0xc006fb38
-               |          |          |                                0xc00b59a0
-               |          |          |                                0xc00b55a4
-               |          |          |                                0xc00b4264
                |          |          |          
-               |          |          |--0.64%-- dvmChangeStatus(Thread*, ThreadStatus)
+               |          |          |--0.64%-- dvmChangeStatus(Thread*, ThreadStatus) \DTcomment{\ding{202}}
                |          |          |          |          
                |          |          |          |--0.10%-- android_atomic_release_store
                |          |          |          |          
                |          |          |           --0.03%-- android_atomic_acquire_store
-               |          |          |          
-               |          |          |--0.10%-- 0xc003c160
-               |          |          |          0xc058209c
-               |          |          |          |          
-               |          |          |          |--0.05%-- 0xc0581768
-               |          |          |          |          
-               |          |          |           --0.05%-- 0xc003c0c4
-               |          |          |                     0xc009016c
-               |          |          |                     0xc0090138
-               |          |          |                     0xc008fa9c
-               |          |          |                     0xc0042f64
-               |          |          |          
-               |          |           --0.07%-- 0xc003be08
-               |          |                     0xc003503c
-               |          |                     0xc006fed0
-               |          |                     |          
-               |          |                     |--0.03%-- 0xc006faf8
-               |          |                     |          
-               |          |                      --0.03%-- 0xc006fb38
-               |          |                                0xc0077d60
                |          |          
                |           --0.21%-- Dalvik_java_lang_VMThread_isInterrupted(unsigned int const*, JValue*)
                |                     dvmLockThreadList(Thread*)
@@ -76,9 +38,4 @@
                |--1.45%-- common_selectTrace
                |          |          
                |           --0.03%-- dvmJitCheckTraceRequest
-               |          
-                --0.07%-- 0xc003be08
-                          0xc003503c
-                          0xc006fed0
-                          0xc006faf8
 
