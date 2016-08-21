@@ -751,37 +751,7 @@ Tutkielman analyysivaiheessa esitämme ehdotuksia täydentävistä
 mittauksista ja vaihtoehtoisista tavoista saada luotettavampia tuloksia
 tutkimuskohteesta.
 
-
-
-
-* Arkkitehtuurin mallintaminen :noexport:
-# todo OHJELMISTON mallintaminen vai arkkitehtuurin?
-
-# todo vanhaa tekstiä tästä alaspäin ---------===========----
-# Suoritusajan analysoimiseksi ohjelma on jaettava joukkoon erillisiä
-# /tiloja/, joista ohjelman suoritus on yksikäsitteisesti yhdessä
-# tilassa kerrallaan @@ferrari(456--458). Ohjelman kokonaissuoritusta
-# kuvaa /tila--suoritusaika/ -pareista koostuva
-# jono. Kokonaissuoritusaika on jonon alkioiden suoritusaikojen summa.
-
-# Tilajako on mielivaltainen, mutta siitä on mielenkiintoinen
-# erikoistapaus, joka vastaa lähes suoraan Androidin ja monien muiden
-# ympäristöjen ohjelmointityökalujen mittaamia tuloksia: jos jokainen
-# ohjelman lause tai konekäskys tulkitaan omaksi tilakseen, niin näistä
-# suoritustiloista koostuvaa jonoa kutsutaan ohjelman /suoritusjäljeksi/
-# (/program trace/) @@ferrari(458). Luettelo kustakin lauseesta
-# kokonaissuorituskertoineen on ohjelman /profiili/ @@fortran(todo
-# sivu).
-
-# Performance depends largely upon the
-# volume and complexity of the inter-component com-
-# munication and coordination, especially if the compo-
-# nents are physically distributed processes
-#
-# todo älä kirjoita tällaisia lainauksia ilman lähdeviitteitä
-
-# lisää tähän selitys ferrarin 4-luvusta deterministinen
-# vs. probabilistinen malli.
+* Ohjelmiston mallintaminen                                           :noexport:
 
 Monet ohjelmistojen suorituskykyongelmat johtuvat varhaisen
 suunnitteluvaiheen arkkitehtuuriratkaisuista @@perf-arch(164);
@@ -803,18 +773,7 @@ yksinkertaisiakin, sikäli kuin niiden niiden tavoitteena on karkeasti
 arvioida ohjelmiston keskimääräiset, parhaat ja huonoimmat vasteajat
 suhteessa vaatimuksiin.
 
-# 4+1
-# logical
-# process
-# physical
-# development
-# + use case
-
-# todo selvennä 4+1 vihavaiselle alla
-
-Mallit voivat perustua esimerkiksi 4+1-arkkitehtuurimallien kehikkoon
-@@4plus1 ja UML-malleihin täydennettynä suorituskykyyn liittyvillä
-laajennuksilla. Toisaalta UML-mallit ja monet ohjelmistoprosessissa
+Toisaalta monet ohjelmistoprosessissa
 käytetyt mallit on kehitetty ohjelmiston /suunnittelun/ tueksi. Kun
 halutaan /analysoida/ ohjelmiston ei-funktionaalisia ominaisuuksia,
 kuten suorituskykyä, käytetään usein kvantitatiiviseen analyysiin
@@ -824,77 +783,7 @@ käytössä tehdyt mittaukset voivat korjata mallien oletuksia, kun
 ohjelmistoa kehitetään jatkuvasti vähittäisin muutoksin
 @@rethink(3).
 
-Varhaisvaiheen suorituskykymallit sijoittuvat kolmeen päätyyppiin
-@@rethink(6):
-
-# todo: queuing vs queuing network
-# todo suomennos qnm
-
-1. jonotusmallit (queuing models),
-2. Markov-mallit sekä
-3. simulaatiomallit.
-
-Tässä tutkielmassa käytetään Markov-malleja sijoittamaan käytännön
-mittauksista saatavat tulokset laajempaan käsitteelliseen
-kehikkoon. Markov-malleja on hyödynnetty ohjelmistojen mallintamiseen
-kirjallisuudessa: @@sharma, @@sharma2, @@beizer.
-
-Ohjelmistojen suorituskykytekniikan metodeissa käytetään usein
-jonotusmalleja (/Queing Network Models/). Ne soveltuvat
-rinnakkaislaskentaa hyödyntäviin tilanteisiin, joissa esimerkiksi
-yksittäisen palvelimen resursseista kilpailee monta asiakasta
-@@spe(227--228).
-
-Tämän tutkielman keskiössä ovat kuitenkin suhteellisen pienen
-mittakaavan \linebreak Android-sovellukset. Vaikka Android on
-moniajokäyttöjärjestelmä, se on tyypillisesti yhden käyttäjän käytössä
-kerrallaan. Tässä tutkielmassa tehdäänkin yksinkertaistava oletus,
-etteivät muut käynnissä olevat prosessit oleellisesti vaikuta
-mitattavan prosessin JNI-operaatioiden suorituskykyyn. Lisäksi, koska
-jokaisella prosessilla on oma Dalvik-virtuaalikoneensa, ei
-jonotusmalli ole luonteva tapa hahmottaa samanaikaistenkaan prosessien
-toimintaa virtuaalikoneen tasolla. Käytännön mittauksissa
-Android-laitteeseen ei ole asennettu ylimääräisiä sovelluksia ja
-muiden prosessien toiminta tulkitaan satunnaisiksi mittaushäiriöiksi,
-jotka huomioidaan tilastollisesti.
-
-
-Simulaatiomallit ovat /suoritettavia/ malleja järjestelmästä, usein
-karkeammalla tasolla kuin lopullinen järjestelmä.
-
-Oman mainintansa ansaitsevat tietojenkäsittelytieteen perinteisen
-ydinalueen, algoritmien ja tietorakenteiden tutkimuksen formaalit
-tavat mallintaa algoritmeja @@art-programming. Algoritmien
-asymptoottisen käyttäytymisen tuntemisesta on toki hyötyä
-suorituskyvyn mallintamisessa -- tällainen analyysi tukee yksittäisten
-algoritmien ja tietorakenteiden valintaa.  Käytännön
-ohjelmistokehitykselle merkittävä puute on kuitenkin, että
-asymptoottinen analyysi pelkistää ohjelman käyttäytymistä liiaksi
-jättäen huomiotta yksittäisten operaatioiden vakiolliset kustannukset,
-joilla on merkitystä todellisen suorituskyvyn kannalta @@spe(215).
-Todellisessa suorituksessa ohjelman käyttäytyminen saattaa esimerkiksi
-sopia huonosti yhteen suorittimen haarautumista ennustavan
-heuristiikan kanssa @@showdown(21:5). Hyödynnän kuitenkin
-asymptoottisen analyysin kaltaista menetelmää ekstrapoloidessani
-JNI-operaatioiden käyttäytymistä vaihtelevilla syöteparametreilla.
 # todo lähde
-
-
-# Tutkielmassa
-# hyödynnetään rajatusti simulaatiota siinä mielessä, että
-# Android-kehitystyökalujen /Android-emulaattori/ simuloi todellista
-# Android-laitetta ARM-käskyjen tasolla.[fn:emulator] Emulaattoria
-# hyödynnetään joidenkin mittaustulosten osalta.
-# todo: lähde
-# [fn:emulator] Emulaattori-käsitteen syntyaikana @@emu puhtaan
-# ohjelmallisesti toteutettua vieraan suoritusympäristön täydellistä
-# toisinnosta kutsuttiin simulaattoriksi. Emulaattori perustui
-# laitteistotukeen. Android-emulaattori on esimerkki nykykäytöstä, jossa
-# ohjelmallistakin toisintamista usein kutsutaan emuloinniksi.
-
-# TODO: uncomment? v 
-# Myös simulaatiomalleja hyödynnetään rajatusti, sillä
-# Android-ohjelmia suoritetaan 
 
 Tutkielman hypoteesi on, että erilaiset arkkitehtuuriratkaisut johtavat
 erilaisiin suoritusaikoihin sovelluksissa, jotka on toteutettu Java- ja
@@ -903,75 +792,10 @@ tehtävän. Tutkielma rajataan sovelluksiin, joiden suoritusaikaa
 määrittää oleellisesti sovelluksen prosessointi keskusyksikössä sekä
 keskusmuistihaut, eivät esimerkiksi I/O-operaatiot
 @@ferrari(168). Tällöin analyysin kohteeksi tuleekin, /mihin/
-Android-sovellus kuluttaa suoritusaikansa.  Tätä mallinnetaan
-Markov-ketjuilla.
+Android-sovellus kuluttaa suoritusaikansa.
+
 # todo tarkista että em. pitää paikkansa lopulta
 # todo onko tämä nyt se keskeinen hypoteesi? ehkä mutta tsekkaa lopuksi
-
-** Vasteaikojen mallintaminen Markov-ketjuilla
-\todo{<<Markov>>}
-
-Hyödynnän Beizerin @@beizer esittelemää yksinkertaista Markov-mallia,
-jolla ohjelman kokonaisvasteajan saa laskettua sen osien
-suoritusajoista @@ferrari. Mallinnustavan etuna on yksinkertaisuuden
-lisäksi se, että mittaustuloksina saatavat vasteaikojen jakautumat voi
-helposti kytkeä mallin osaksi.
-# todo ferrari sivut
-
-Mallissa ohjelma jaetaan suoritustiloihin halutulla karkeusasteella --
-tutkielmassa jako noudattaa lähinnä profilointityökaluissa esiintyvien
-aliohjelmien rajoja, yhdistellen tarvittaessa aliohjelmia suuremmiksi
-loogisiksi kokonaisuuksiksi. Malli on /verkko/, jonka nimetyt /solmut/
-vastaavat hetkellisiä diskreettejä suoritustiloja, ja solmujen väliset
-/kaaret/ vastaavat siirtymiä tilasta toiseen sekä myös laskentaa joka
-siirtymässä tapahtuu. Yhdestä tilasta voi lähteä ja siihen voi saapua
-monta kaarta, ja kaariin kytketyt todennäköisyydet ilmaisevat
-todennäköisyyttä, että kyseinen siirtymä tapahtuu.
-
-\begin{figure}[h!]
-\centerline{
-\includegraphics[scale=1]{figures/beizer_example.pdf}
-}\caption{Ohjelman mallinnus Markov-prosessina \cite{beizer}}\label{fig:beizer}
-\end{figure}
-
-Mallinnustavan erikoisuutena laskenta ei sijoitu solmuihin vaan
-kaariin, joihin liittyy todennäköisyyden lisäksi keskimääräinen
-suoritusaika sekä suoritusajan varianssi (jotka vastaavat
-mittauksia). Kuvassa \ref{fig:beizer} tilojen /i/ ja /k/ välisen
-siirtymän suoritusaika on \mu_ik, todennäköisyys p_ik ja suoritusajan
-varianssi \lambda_ik.  Muutoin kyseessä on perinteinen Markov-malli, joka on
-/historiaton/: /Markov-oletuksen/ mukaisesti eri siirtymien
-todennäköisyydet riippuvat ainoastaan kulloisestakin tilasta eikä
-prosessin aikaisemmista tiloista. Oletus on tietenkin epärealistinen,
-mutta mallin tarkkuus paranee tilojen ja siirtymien tarkkuuden
-parantuessa @@rethink(17). Kuten mittauksetkin, mallin arvot ovat
-vahvasti riippuvaisia ohjelmiston syötteistä; lähestymistapana tässä
-tutkielmassa on parametrisoida mallin vasteaika-arvot JNI-rajapintaan
-kohdistuvilla työkuormilla.
-
-Ohjelmiston kokonaisvasteaika ratkaistaan Beizerin mallinnustavassa
-algoritmilla, joka eliminoi verkosta yhden solmun
-kerrallaan. Algoritmissa on eri yhtälöt /sarjaan/ ja /rinnan/
-kytkettyjen solmujen sekä /silmukoiden/ poistoon @@beizer(521--522).
-
-1. Valitaan poistettava solmu.
-2. Poistetaan solmu käyttämällä /sarjaan/ kytkettyjen solmujen
-   poistomenetelmää. Kaarien määrä lisääntyy.
-3. Yhdistetään /rinnakkaiset/ kaaret.
-4. Poistetaan /silmukat/.
-5. Palataan kohtaan 1.
-
-# todo kuvat
-
-Jokaisella algoritmin kierroksella malli yksinkertaistuu, ja tuloksena
-syntyvien kaarien arvot on laskennallisesti yhdistetty poistoja
-edeltäneiden kaarien arvoista. Lopulta mallissa on ainoastaan yksi
-solmu, mutta mahdollisesti useita eri lähtö- ja lopputiloja kuvaavia
-kaaria. Redusoidusta mallista nähdään ohjelman kokonaisvasteajat
-jokaiselle mahdolliselle lähtö- ja lopputilojen yhdistelmälle. Jos
-käytetty malli on tarpeeksi totuudenmukainen, saadaan yksinkertaiselle
-yhden käyttäjän ohjelmalle arvioitua keskimääräinen suoritusaika
-varianssineen jo ennen ohjelman laatimista.
 
 
 
