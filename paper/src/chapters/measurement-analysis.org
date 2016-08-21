@@ -22,9 +22,11 @@ suorittamiseen Java-koodissa.
 Mallista saatuihin tuloksiin tulee suhtautua summittaisena arviona,
 sillä suoritettavan ohjelman käyttäytymistä kokonaisuutena aidossa
 suoritusympäristössä ei voi täysin palauttaa ohjelmien alkeisosien
-itsenäiseen käyttäytymiseen erillään kokonaisuudesta.
-
-# TODO yllä viite siihen tekstikohtaan, jossa tuo sanottiin
+itsenäiseen käyttäytymiseen erillään kokonaisuudesta. Mallia voi
+käyttää osana ohjelmistojen suorituskykytekniikan (SPE) menetelmiä
+varhaisen suunnitteluvaiheen apuna, sillä sen avulla voi saada
+arvion vasta suunnitteluvaiheessa olevan ohjelmiston
+suorituskykykäyttäytymisestä.
 
 #+LATEX: {\footnotesize
 #+ATTR_LaTeX: align=rr
@@ -106,6 +108,16 @@ mahdollisimman vähän Java-olioviitteitä pysyvästi natiivikomponenttiin
 globaalien viitteiden muodossa sekä välittäen ylipäätään
 lukumääräisesti mahdollisimman vähän Javan muistinhallinnan piirissä
 olevaan kekoon allokoituja olioita natiivikomponentille.
+
+Lopputuloksena voimme todeta, että Androidin Dalvik-suoritusympäristön
+käyttäytymistä saatiin mitattua kvantitatiivisesti niin, että
+tuloksista saatiin hyödyllistä ennakkotietoa monikielisten
+Android-sovellusten käyttäytymisestä. Laaditun mallin avulla
+sovelluksen suunnittelijan on mahdollista esimerkiksi vertailla kahden
+vaihtoehtoisen arkkitehtuurimallin suorituskykyrasitteita ennen kuin
+sitoutuu jompaan kumpaan malliin. Lisäksi tulosten avulla saatiin
+selville joitakin natiivirajapinnan käyttötapoja, joita tulisi välttää
+kaikissa rajapintaa hyödyntävissä sovelluksissa.
 
 * Suorituskykyrasitteiden välttäminen datan siirrossa :noexport:
 
