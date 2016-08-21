@@ -12,6 +12,14 @@ suorittamaan konekielistä ohjelmaa?
 # todo tähän kerää kaikki mittaukset aiheesta
 # lisäksi luokittele rasitteiden syyt
 
+Tämä luku käsittelee Java Native Interface -rajapintaa. Aluksi
+JNI-rajapinta ja vieraskutsurajapinnat esitellään yleisesti. Sen
+jälkeen tutkitaan suunnitteluperiaatteita ja perusongelmia, joiden
+vuoksi JNI-rajapinnan suunnitteluratkaisuihin on päädytty. Rajapintaa
+esitellään myös sovellusohjelmoijan näkökulmasta. Lopuksi käsitellään
+tarkemmin vieraskutsurajapintojen keskeistä ongelmakohtaa eli
+/muistinhallintaa/ JNI-rajapinnan näkökulmasta.
+
 * Java Native Interface ja vieraskutsurajapinnat
 /Vieraskutsurajapinta/ (/Foreign Function Interface/) on rajapinta,
 jonka kautta korkean tason ohjelmointikielestä käsin voidaan kutsua
