@@ -45,6 +45,14 @@ print_all "$BASEROOT/nativebenchmark/" \
           "$BASEROOT/nativebenchmark/script/" \
           "py" \
           "python" \
-          "Python-komponentit"
+          "Python-komponentit (koodingenerointi)"
+
+echo "\newpage"
+
+print_all "$BASEROOT/bench-analyzer/" \
+          "$BASEROOT/bench-analyzer/" \
+          "py" \
+          "python" \
+          "Python-komponentit (analyysi)"
 
 echo "\end{document}"
