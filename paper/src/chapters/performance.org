@@ -91,7 +91,10 @@ Mittaus- ja mallintamisnäkökulmaa ei ole saatu yhdistettyä toisiinsa
 riittävän yleispätevästi @@future-spe(172). Tämän tutkielman
 lähestymistapana on rajata näkökulma spesifisti Java-virtuaalikoneen
 ja natiivikoodin väliseen viestintään ja konstruoida yksinkertaistettu
-malli natiivirajapinnasta mittausten perusteella. 
+malli natiivirajapinnasta mittausten perusteella. Tutkielma siis
+yhdistää omalla tavallaan mittauksen mallintamiseen, sillä
+mittaustulokset toimivat laadittavan mallin lähtökohtana.
+
 
 Seuraavaksi käsittelemme tutkielmassa käytettyjä
 suorituskykymittareita yleisellä tasolla, ohjelmiston suorituskyvyn
@@ -695,7 +698,7 @@ Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
 suhteessa toisiinsa ja vastaaviin alkeisoperaatioihin Java- ja
 C-kielisessä ohjelmassa. Esimerkiksi JNI:n läpi tehtäviä metodikutsuja
 verrataan tavallisiin metodikutsuihin Java- ja C-kielissä. Tuloksista
-johdetaan tilastollinen malli, joka ennustaa ohjelmiston
+johdetaan yksinkertainen malli, joka ennustaa ohjelmiston
 JNI-operaatioista aiheutuvia rasitteita eri tilanteissa. Mallin
 parametreina ovat kutsuttu JNI-funktio sekä kutsuissa käytettyjen
 parametrien määrät ja tyypit.
@@ -748,8 +751,12 @@ seuraavat huomiot.
    relevanssi jää epävarmaksi.
 
 Tutkielman analyysivaiheessa esitämme ehdotuksia täydentävistä
-mittauksista ja vaihtoehtoisista tavoista saada luotettavampia tuloksia
-tutkimuskohteesta.
+mittauksista ja vaihtoehtoisista tavoista saada luotettavampia
+tuloksia tutkimuskohteesta. Tutkielman tavoitteena on hyödyntää
+mittaustuloksia siten, että niitä tulkitsemalla voidaan laatia malli,
+jota voisi hyödyntää ohjelmistojen suorituskykytekniikan @@spe
+menetelmien osana ja ensi askeleena kehittyneempään
+suorituskykymallin.
 
 * Ohjelmiston mallintaminen                                           :noexport:
 
