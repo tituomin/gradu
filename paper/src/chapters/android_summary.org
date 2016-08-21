@@ -10,8 +10,9 @@ Dalvikia vasten, uudistettu virtuaalikone tekee mittaustuloksista osin
 vanhentuneita. Tutkielman metodologian kannalta uudistuksella ei
 kuitenkaan ole väliä. Samat mittaukset voi toteuttaa samoilla
 periaatteilla ja pitkälti samalla mittausohjelmistollakin uudemmissa
-Android-versioissa.  Lisäksi käytössä olevista Android-laitteista
-Dalvikin osuus on vielä merkittävä.
+Android-versioissa. Lisäksi käytössä olevista Android-laitteista
+Dalvikin osuus on vielä merkittävä: heinäkuussa 2016 Dalvik oli
+käytössä noin 50% laitteista @@android-share.
 
 * Androidin rakenne
 
