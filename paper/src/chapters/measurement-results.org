@@ -127,7 +127,7 @@ prosenttiluku ja nimi on piirretty välittömästi aliohjelman /A/
 nimestä lähtevän pystyviivan oikealle puolelle. Esimerkiksi
 \path{dvmDecodeIndirectRef} \ding{202} on kutsunut suoraan
 C++-luokan \path{ScopedPthreadMutexLock} konstruktoria \ding{203} ja destruktoria \ding{204}
-sekä luokan \path{IndirectRefTable} metodia \path{get} \ding{204}. Jos
+sekä luokan \path{IndirectRefTable} metodia \path{get} \ding{205}. Jos
 profiilissa esiintyy saman prosenttiluvun alla useampi aliohjelma,
 nämä esiintyvät kutsupinossa aina yhdessä -- esimerkiksi ketju
 nopeasti suoritettavia pieniä aliohjelmia, joita kutsuprofiilinäytteen
