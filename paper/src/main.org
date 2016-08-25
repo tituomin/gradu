@@ -8,7 +8,7 @@
 #+LaTeX_HEADER:     fileext=lop,
 #+LaTeX_HEADER:     listname=Kutsuprofiilit,
 #+LaTeX_HEADER:     name=Listaus,
-#+LaTeX_HEADER:     placement=tbhp!,
+#+LaTeX_HEADER:     placement=tbp!,
 #+LaTeX_HEADER:     within=section,
 #+LaTeX_HEADER: ]{profile}
 
@@ -49,7 +49,7 @@
 #+MACRO: plot_small {{{plot_small_internal(47d22819-625b-43f6-8e9f-afeb5066b758,$1)}}}
 #+MACRO: rotated_plot {{{rotated_plot_internal(47d22819-625b-43f6-8e9f-afeb5066b758,$1)}}}
 #+MACRO: plot_a {{{plot_internal(b45ae421-fbec-407e-88be-cd2f76d1bbff,$1)}}}
-#+MACRO: plot_edited \begin{figure}\caption{$2}\label{fig:$1}\def\svgwidth{\textwidth}\input{figures/plots/plot-47d22819-625b-43f6-8e9f-afeb5066b758-$1-latin.pdf_tex}\end{figure}
+#+MACRO: plot_edited \begin{figure}[b!]\caption{$2}\label{fig:$1}\def\svgwidth{\textwidth}\input{figures/plots/plot-47d22819-625b-43f6-8e9f-afeb5066b758-$1-latin.pdf_tex}\end{figure}
 #+MACRO: rotated_plot_edited \begin{sidewaysfigure}\input{figures/plots/plot-47d22819-625b-43f6-8e9f-afeb5066b758-$1-latin.pdf_tex}\end{sidewaysfigure}
 
 #+MACRO: permu $1\nbsp{}\rightarrow\nbsp{}$2
@@ -93,9 +93,6 @@
 
 ** Mittaustulokset
 #+INCLUDE: "../gen/chapters/measurement-results.org" :minlevel 3
-
-
-\newpage
 
 ** Dalvikin JNI-rajapinnan suorituskykymalli
 #+INCLUDE: "../gen/chapters/measurement-analysis.org" :minlevel 3
