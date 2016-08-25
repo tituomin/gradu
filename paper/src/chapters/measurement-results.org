@@ -138,16 +138,10 @@ desimaalin tarkkuus ei riitä erottamaan toisistaan.
 Listauksen \ref{profile:C2JBenchmark00206} kutsuprofiilista ja muista
 tutkielman listauksista on jätetty pois perf-mittauksista ja Androidin
 taustaprosesseista aiheutuva rasite. Listauksessa
-\ref{profile:C2JBenchmark00206} tämä rasite on 28.36%, minkä takia
-profiilin kokonaisuoritusaika on 71.64% eikä 100%. Listaus on
-aloitettu \path{runInternal}-natiivimetodin kohdalta, jonka
-suoritusaika on 71.09%.
-
-Kutsuketju alkaa Dalvikin \path{dvmPlatformInvoke}-aliohjelmasta. Se
-on konekielellä toteutettu silta, joka muuntaa Javasta välitetyt
-kutsuparametrit paikallisen natiivikutsukonvention mukaiseksi. Koska
-tässä mittauksessa lähtösilmukka on natiivikoodissa, lähtee suoritus
-käyntiin yhdestä \path{dvmPlatformInvoke}-kutsusta.
+\ref{profile:C2JBenchmark00206} tämä rasite on noin 28%, minkä takia
+profiilin kokonaisuoritusaika ei ole 100%. Listaus
+\ref{profile:C2JBenchmark00206} on rajattu alkamaan natiivikirjaston
+\path{runInternal}-natiivimetodista.
 
 Mitattavassa metodissa on keinotekoisen paljon viiteparametreja, joten
 profiilista erottuu viitteiden välittämisen aikarasite. Avainkohta on
@@ -261,8 +255,9 @@ roskienkeruu edellyttää tilamuutosta esimerkiksi
 ~THREAD_SUSPENDED~-tilaan (johon tilaan virtuaalikone asettaa itsensä
 ennen roskien keruuta).
 
-* Staattiset metodikutsut suunnassa C\to{}Java
+{{{profile(J2CBenchmark00001)}}}
 
+* Staattiset metodikutsut suunnassa C\to{}Java
 
 Viitteidenkäsittelyn lisärasitteesta Dalvikissa voi päästä eroon
 käyttämällä pelkästään primitiiviparametreja ja kutsumalla Java-luokan
@@ -290,8 +285,6 @@ Luvussa täytyy huomioida, että mitatut kokonaisvasteajat sisältävät
 muutakin kuin tarkastelun kohteena olevassa JNI-toteutuksessa vietetyn
 ajan --- nimittäin kutsun kohteena olevan aliohjelman suorittamiseen
 kuluvan ajan.
-
-{{{profile(J2CBenchmark00001)}}}
 
 Java-komponentissa olevan kohdemetodin suoritus konekielitasolla on
 hyvin erilaista natiivikomponentin kohdefunktion suoritukseen
@@ -324,6 +317,8 @@ suoritustilan muuttavaa \path{dvmChangeStatus}-metodia kutsutaan
 suoraan. Samoin \path{callPrep}-funktio puuttuu. Näiden
 toteutusyksityiskohtien tarkempi analyysi jätetään tässä tekemättä.
 
+{{{profile(J2CBenchmark00206)}}}
+
 Kuvasta \ref{fig:basic-call-Object-fit} nähdään myös, että
 viiteparametrien määrän lisääntyessä {{{jc}}}-suunnan kuvaajan
 kulmakerroin on loivempi. Tästä voisi päätellä, että viitteiden
@@ -337,9 +332,6 @@ viitteet, jos aikoo käyttää viitteitä yksittäisen natiivimetodikutsun
 elinkaaren ulkopuolella. Suunnassa {{{jc}}} ei myöskään tarvita
 rinnakkaisten säikeiden poissulkemista listauksen
 \ref{profile:J2CBenchmark00206} kohdassa \ding{202}.
-
-{{{profile(J2CBenchmark00206)}}}
-\newpage
 
 ** jni-totetutus: dalvik: source code kommentteja                                         :noexport:
 
@@ -533,9 +525,9 @@ operaatioita kutsutaan aina pareittain, joten jokainen pari on koottu
 yhteisen testin alle. On tärkeä huomata, että Java-merkkijonojen
 muokkaaminen on ohjelmoijalta kielletty, vaikka se olisikin
 mahdollista JNI:n osoitinoperaatioiden avulla: Javan merkkijonot ovat
-muuttumattomia.
+muuttumattomia. Mittauksissa testeille on annettu nimet seuraavasti:
 
-Mittauksissa testeille on annettu nimet seuraavasti:
+{{{plot(special-calls-unicode-c-j-fit)}}}
 
 - ReadString ::  ~GetStringChars~ ja ~ReleaseStringChars~
 - ReadStringCritical :: ~GetStringCritical~ ja ~ReleaseStringCritical~
@@ -555,10 +547,12 @@ vaadi mitään vastaavaa ylimääräistä operaatiota kuten ei myöskään
 Java-merkkijonojen käsittely Java-koodissa, vaan kyseessä on puhtaasti
 JNI-rajapinnasta johtuva lisärasite.
 
+{{{profile(C2JReadUnicode-512)}}}
+
 Kutsusuunnassa {{{jc}}} operaatioille on kuitenkin eräs vertailukohta.
 Natiivimerkkijonojen eli ~char~-taulukoiden käsittely
 ~java.nio.CharBuffer~-olioina Java-koodissa on mahdollista
-~Non-blocking IO~-API:n kautta, joita käsitellään myöhemmin tässä
+~Non-blocking IO~-API:n kautta, jota käsitellään myöhemmin tässä
 luvussa.
 
 # TODO: copyUTF O^2? -- mikä on arvo parametrilla 0?
@@ -574,11 +568,8 @@ operaation \path{GetStringRegion} riippuvuus on odotetusti
 lineaarinen.
 
 # {{{plot(54)}}}
-{{{plot(special-calls-unicode-c-j-fit)}}}
 
 # TODO Lisää prosentit alle
-
-{{{profile(C2JReadUnicode-512)}}}
 
 {{{profile(C2JReadUnicode-512-2)}}}
 
@@ -598,13 +589,13 @@ tavallaan myös tuplaantuvat, koska vastaavat toimet tehdään sekä
 noudettaessa että vapautettaessa viite merkkijonon sisältöön, mikä
 näkyy myös kutsuprofiilissa.
 
-{{{profile(C2JCopyUnicode-512)}}}
-
 Kopioivan Unicode-operaation profiilissa
 \ref{profile:C2JCopyUnicode-512} näkyy myös globaalin
 ~jstring~-viitteen purku, mutta se tapahtuu vain kerran eikä kahdesti.
 
-Sen sijaan UTF-muunnoksen tekevä osoitinoperaatio on riippuvainen
+{{{profile(C2JCopyUnicode-512)}}}
+
+Sen sijaan UTF-8-muunnoksen tekevä osoitinoperaatio on riippuvainen
 kohteen koosta. Se on myös operaatio, joka johtaa Dalvikin allokoimaan
 muistia muunnettua merkkijonoa varten. Siksi kyseisen operaation
 vasteajat kuvassa \ref{fig:special-calls-utf-c-j-alloc-fit} on mitattu
