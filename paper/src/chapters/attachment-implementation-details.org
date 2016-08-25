@@ -15,11 +15,12 @@ testitulosten analysoimiseen laadittuja Python-ohjelmia.
 #+LATEX: \subsection*{Mittaustestien koodingeneroija Benchmark Generator}
 
 Kuvan \ref{fig:benchmark_generator_architecture} komponenttikaaviossa
-näkyy suorituskykytestit generoivan ~Benchmark Generator~-ohjelman
-perusarkkitehtuuri. Kuvan alaosasta nähdään, että Ant-käännöstyökalu on konfiguroitu
-kutsumaan automaattisesti ~benchmark_generator~-päämoduulia, ja
-generoidut lähdekooditiedostot tulevat näin osaksi normaaleja
-Androidin SDK- ja NDK- käännösprosesseja.
+näkyy suorituskykytestit generoivan ~Benchmark~ ~Generator~-ohjelman
+perusarkkitehtuuri. Kuvan alaosasta nähdään, että Ant-kään\-nös\-työ\-ka\-lu
+on konfiguroitu kutsumaan automaattisesti
+~benchmark_generator~-pää\-mo\-duu\-lia, ja generoidut lähdekooditiedostot
+tulevat näin osaksi normaaleja Androidin SDK- ja NDK-
+käännösprosesseja.
 
 Lähdekoodien generointi perustuu seuraavaan kahteen
 suunnitteluratkaisuun. Ensinnäkin generointikoodin syötteenä ovat
@@ -36,7 +37,7 @@ koodia sisältäviä merkkijonoja, jonka sisällä olevat nimetyt
 paikkamerkit korvataan vaihtuvilla arvoilla.
 
 Seuraavassa esimerkissä näkyy ~jni_types~-moduulin pythonkielinen
-~dict~-tyyppimääritelmä Javan ~int~-primitiivityypille.
+~dict~-tyyp\-pi\-mää\-ri\-tel\-mä Javan ~int~-primitiivityypille.
 
 #+INCLUDE: "/home/tituomin/nativebenchmark/script/jni_types.py" src python :lines "57-67"
 #+LABEL: src:jni-gen-int
