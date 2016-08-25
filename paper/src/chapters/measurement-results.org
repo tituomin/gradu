@@ -1,3 +1,5 @@
+{{{plot(basic-call-int-fit)}}}
+
 Tässä luvussa esitellään kerätyt mittaustulokset ja koostetaan niistä
 alustavat havainnot. Myös mittausten ulkopuolelle jätetyt operaatiot
 mainitaan perusteluineen. Mittauskohteet on luokiteltu
@@ -32,7 +34,6 @@ kutsuminen. Variaatioille (1)--(2) ei ole vastinetta C-kielessä, mutta
 Java \rightarrow Java on tavallinen metodikutsu. Vastinpari suunnassa C
 \rightarrow C on tavallinen funktiokutsu.
 
-{{{plot(basic-call-int-fit)}}}
 {{{plot(basic-call-Object-fit)}}}
 
 Kaikissa tuloksissa ja kaikissa permutaatioissa /vasteaika on
@@ -226,6 +227,7 @@ välittää viitteenä JNI-kutsussa.
 (*env)->CallVoidMethod(env, java_counterparts_object, mid);
 #+END_SRC
 
+
 Kutsussa välitetään siis viite \path{java_counterparts_object}
 -olioon, jonka metodia ollaan kutsumassa. Viitteidenkäsittely ei
 kuitenkaan enää dominoi kutsuprofiilia, vaan merkittäviä ovat myös
@@ -239,6 +241,8 @@ JNI:hin liittyvä rasite siitä alkavassa kutsuhaarassa on
 suunnassa Java\to{}Java. Suurimpana yleisrasitteena kyseisessä
 haarassa näkyvät JIT-kääntäjän suorituksen jäljittämiseen (tracing)
 liittyvät toimet, jotka näkyvät myös suunnassa Java\to{}Java.
+
+{{{profile(C2JBenchmark00001)}}}
 
 Varsinaiset JNI-rajapinnan käyttöön liittyvät rasitteet näkyvät
 kutsussa \path{dvmGet}-\path{VirtualizedMethod} (3.35%), joka vastaa
@@ -260,11 +264,10 @@ ennen roskien keruuta).
 
 * Staattiset metodikutsut suunnassa C\to{}Java
 
+
 Viitteidenkäsittelyn lisärasitteesta Dalvikissa voi päästä eroon
 käyttämällä pelkästään primitiiviparametreja ja kutsumalla Java-luokan
 /staattista metodia/. 
-
-{{{profile(C2JBenchmark00001)}}}
 
 Profiilissa \ref{profile:C2JBenchmark00001} kutsuttu metodi on
 staattinen, eikä \path{dvmDecodeIndirectRef}-kutsua näy. Kun
@@ -290,8 +293,6 @@ ajan --- nimittäin kutsun kohteena olevan aliohjelman suorittamiseen
 kuluvan ajan.
 
 {{{profile(J2CBenchmark00001)}}}
-
-\newpage
 
 Java-komponentissa olevan kohdemetodin suoritus konekielitasolla on
 hyvin erilaista natiivikomponentin kohdefunktion suoritukseen
@@ -580,6 +581,8 @@ lineaarinen.
 
 {{{profile(C2JReadUnicode-512)}}}
 
+{{{profile(C2JReadUnicode-512-2)}}}
+
 Kuitenkin noin alle 1500 merkin pituisilla merkkijonoilla merkkijonon
 kopioiminen \path{GetStringRegion}-metodilla on nopeampaa kuin
 osoitteen saaminen merkkijonon muistialueelle. Osoitinoperaation
@@ -626,6 +629,9 @@ Unicode-merkkijonon kopioiminen.
 
 * Taulukoiden käsittely
 
+\def\svgwidth{0.8\textwidth}
+{{{plot_edited(special-calls-arrayelements-c-j-fit, Taulukoiden käsittely osoittimilla suunnassa C$\rightarrow$Java)}}}
+
 Taulukoiden käsittelyn perusmenetelmät ovat samat kuin merkkijonojen
 käsittelyssä, mutta merkistökoodaukseen liittyviä rasitteita ei
 tällöin ole, ja viitetyyppejä sisältävät taulukot käsitellään omana
@@ -659,8 +665,6 @@ taas kopioivat versiot kasvavat lineaarisesti syötteen koon kasvaessa
 (kuva \ref{fig:special-calls-arrayregion-c-j-fit}). Merkkijonon
 pituuden selvittäminen on vakiollinen operaatio (kuvan
 \ref{fig:special-calls-arrayelements-c-j-fit} alempi ryhmittymä).
-
-{{{plot_edited(special-calls-arrayelements-c-j-fit, Taulukoiden käsittely osoittimilla suunnassa C$\rightarrow$Java)}}}
 
 {{{plot_edited(special-calls-arrayregion-c-j-fit, Taulukoiden käsittely kopioimalla suunnassa C$\rightarrow$Java)}}}
 
