@@ -2,7 +2,7 @@
 
 Tutkielmaa varten laadittiin alkeisoperaatioden mittausohjelmisto
 (/microbenchmarking suite/) /NativeBenchmark/. Ohjelmiston avulla
-Android-laitteessa voidaan suorittaa kokoelma testejä eli minimaalisia
+Android-laitteessa voidaan suorittaa kokoelma /testejä/ eli minimaalisia
 aliohjelmia, jotka yhdessä käyttävät kattavasti JNI-rajapinnan eri
 kutsuja.
 
@@ -30,15 +30,13 @@ käytännössä kutsuparametrien määrää ja niiden tyyppiä. Jos kyseessä on
 merkkijonoja, taulukoita tai muita vaihtelevankokoisia syötteitä
 käsittelevä funktio, vaihdellaan käsiteltävän syötteen kokoa.
 
-Esimerksi JNI-funktio \path{CallVoidMethod} vastaanottaa vaihtelevan määrän
-kutsuparametreja. Mittausajoissa sitä kutsutaan eri määrillä eri
-tyyppisiä parametreja, jolloin saadaan selville muun muassa, käyttäytyykö
-funktio eri tavalla käsitellessään primitiivityyppisiä ja
-viitetyyppisiä parametreja.
-
-Tämän ansiosta mittauksista piirtyy hieman kokonaisvaltaisempi kuva
-siitä, mitkä mittausten muuttujat ovat oleellisia funktion
-suorituskyvyn kannalta.
+Esimerksi JNI-funktio \path{CallVoidMethod} vastaanottaa vaihtelevan
+määrän kutsuparametreja. Mittausajoissa sitä kutsutaan eri määrillä
+eri tyyppisiä parametreja, jolloin saadaan selville muun muassa,
+käyttäytyykö funktio eri tavalla käsitellessään primitiivityyppisiä ja
+viitetyyppisiä parametreja. Tämän ansiosta mittauksista piirtyy hieman
+kokonaisvaltaisempi kuva siitä, mitkä mittausten muuttujat ovat
+oleellisia funktion suorituskyvyn kannalta.
 
 Toinen tapa lisätä tulosten hyödynnettävyyttä on seuraava periaate:
 jos jollekin JNI-kutsulle on keksitty analoginen kutsu tai operaatio
@@ -69,8 +67,8 @@ luotava 4 eri versiota:
 # footnote http://docs.oracle.com/javase/1.5.0/docs/guide/language/varargs.html
 # javan varargs on vain syntaktista sokeria arraylle
 
-1. puhdas C-kielinen versio,
-2. puhdas Java-kielinen versio,
+1. C-kielinen versio,
+2. Java-kielinen versio,
 3. Java-ohjelma, joka kutsuu natiivimetodia, sekä
 4. C-ohjelma, joka kutsuu Java-metodia.
 
@@ -85,7 +83,6 @@ Koska Java-kieli ei suoraan tue staattisen metaohjelmoinnin
 mahdollisuutta, eikä C++-kielen geneerisiä malleja voisi hyödyntää
 kuin natiiviversioiden ohjelmointiin, päätettiin lähdekoodin
 generointi tehdä täysin erillisellä Python-kielisellä ohjelmalla.
-
 Seuraavassa hahmotellaan tästä perusratkaisusta syntynyttä
 arkkitehtuuria.
 
@@ -140,8 +137,8 @@ ympäröity samanrakenteisella Java-kielisellä \path{BenchMark}-luokan
 aliluokalla --- silloinkin, kun kyseessä on sellainen
 verrokkioperaatio, joka suoritetaan puhtaasti
 \path{libnativebenchmark}-natiivikirjaston sisällä. Tällaisessakin
-tapauksessa mittauksen kuitenkin aina käynnistää
-\path{BenchmarkRunner} -Java-olio.
+tapauksessa mittauksen kuitenkin aina käynnistää Java-komponentin
+\path{BenchmarkRunner}-olio.
 
 Mittauskohteet voi luokitella kahteen joukkoon: funktiokutsuihin
 sekä muihin JNI:n tarjoamiin palveluihin. Ensiksi mainittu joukko
@@ -155,8 +152,8 @@ palveluita kuten merkkijonojen ja taulukoiden käsittelyä.
 
 Seuraavaksi havainnollistetaan ensimmäisen joukon kaikkia neljää
 permutaatiota, jotka saadaan lähtösilmukoiden ja kutsukohteiden
-toteutuskielistä: (Java \rightarrow C), (Java \rightarrow Java), (C
-\rightarrow Java) sekä (C \rightarrow C). Aluksi käsitellään kutsu
+toteutuskielistä: ({{{jc}}}), ({{{jj}}}), ({{{cj}}})
+sekä ({{{cc}}}). Aluksi käsitellään kutsu
 Javasta C:hen.
 
 #+NAME: fig:sequence_java_to_c
@@ -196,7 +193,7 @@ C-lähtösilmukka kutsuu Java-tynkämetodia.
 #+RESULTS: fig:sequence_c_to_java
 
 Kuvassa \ref{fig:sequence_c_to_java} JNI-rajapinta ylitetään kahdessa
-kohtaa. Ensinnäkin, koska tällä kertaa lähtösilmukka on
+kohtaa. Koska tällä kertaa lähtösilmukka on
 natiivikoodissa (moduulin \path{nativerunners.c} funktiossa
 \path{runInternal}), täytyy jo tätä fuktiota kutsua JNI:n
 kautta. Varsinainen mittauskohde on kuitenkin natiivikoodin kutsuma
@@ -226,12 +223,9 @@ uudelleen käännetyt versiot Dalvikista ja su-komennosta. Profilointi
 vaatii myös profiloitavien komponenttien kuten Dalvikin
 uudelleenkääntämistä erikseen määritellyllä kutsukonventiolla, jotta
 perf-työkalu osaa tulkita aliohjelmakutsujen muodostamat ketjut oikein
-kutsupinosta otetuista näytteistä. Muokattujen
-järjestelmäkomponenttien asentaminen laitteeseen saattaa tehdä siitä
-toimintakyvyttömän, joten riskin minimoimiseksi ja resurssisyistä
-mittauksia ei toistettu viimeisimmillä laitteilla.
+kutsupinosta otetuista näytteistä.
 
-Mikään käytetyissä mittausmenetelmissä ei kuitenkaan estä mittausten
+Mikään käytetyissä mittausmenetelmissä ei estä mittausten
 toistamista uusilla Android-laitteilla, mikä olisikin tulosten
 toistettavuuden ja yleistettävyyden kannalta tärkeä seuraava
 askel. Mittausojelmiston siirtäminen on helpointa Android Open Source
@@ -326,15 +320,13 @@ pois tyhjän silmukan, jolla ei ole sivuvaikutuksia.
 
 Perusrasitemittausten tulokset näkyvät C-kieliselle lähtösilmukalle
 kuvassa \ref{fig:normaloverhead-c-fit} ja Java-kieliselle kuvassa
-\ref{fig:normaloverhead-j-fit}.
-
-Käytännön mittauksissa osoittautui kuitenkin, että ainakaan
-Java-koodissa menetelmä ei toimi, sillä perusrasitteeksi
-interpoloinnissa saadaan negatiivinen arvo. Vaatisi lisätutkimuksia
-kehittää perusrasitemittauksista käyttökelpoisia. Ongelma saattaa
-liittyä näissä mittauksissa käytettyihin epätyypillisiin
-ohjelmalohkoihin, joiden käyttäytyminen JIT-käännöksen syötteenä ei
-ole ennustettavaa.
+\ref{fig:normaloverhead-j-fit}. Käytännön mittauksissa osoittautui
+kuitenkin, että ainakaan Java-koodissa menetelmä ei toimi, sillä
+perusrasitteeksi interpoloinnissa saadaan negatiivinen arvo. Vaatisi
+lisätutkimuksia kehittää perusrasitemittauksista
+käyttökelpoisia. Ongelma saattaa liittyä näissä mittauksissa
+käytettyihin epätyypillisiin ohjelmalohkoihin, joiden käyttäytyminen
+JIT-käännöksen syötteenä ei ole ennustettavaa.
 
 # TODO two plots below: scale 50%
 

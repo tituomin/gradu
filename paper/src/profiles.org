@@ -17,7 +17,7 @@
 # #+LATEX: \DeclareCaptionType{profile}[Typename][List of mytype]
 #+LATEX: \newenvironment{profile}{}{}
 
-#+MACRO: permu $1\nbsp{}\rightarrow\nbsp{}$2
+#+MACRO: permu $1\rightarrow{}$2
 #+MACRO: TODO \textcolor{red}{TEHTÄVÄ}
 
 #+MACRO: cj C\to{}Java

@@ -2,16 +2,14 @@
 
 Tässä luvussa esitellään kerätyt mittaustulokset ja koostetaan niistä
 alustavat havainnot. Myös mittausten ulkopuolelle jätetyt operaatiot
-mainitaan perusteluineen. Mittauskohteet on luokiteltu
-aihepiireittäin.
+mainitaan perusteluineen.
 
 # TODO metodisignaturet lisää alle?
 
 * Metodien ja funktioiden kutsuminen
 Mittausten kannalta keskiössä ovat JNI-natiivirajapinnan kautta
 tehtävät aliohjelmakutsut erityyppisillä parametreilla.
-
-Operaatiot suunnassa C \rightarrow Java ovat
+Operaatiot suunnassa {{{cj}}} ovat
 1. \verb|Call|\tau\verb|Method|,
 2. \verb|CallNonVirtual|\tau\verb|Method| ja
 3. \verb|CallStatic|\tau\verb|Method|.
@@ -24,15 +22,14 @@ mittauksissa.
 
 Metodien kutsuminen edellyttää aina metoditunnuksen noutamista
 ~GetMethodID~- ja ~GetStaticMethodID~-kutsuilla. Kuten suositeltu,
-palveluita ei mittauksissa kutsuta joka kerta jokaisen metodikutsun
+palveluita ei mittauksissa kutsuta jokaisen metodikutsun
 yhteydessä vaan kerran koko mittausta käynnistettäessä.
 
-Vastinpari suunnassa Java \rightarrow C on ~native~ -metodin
+Vastinpari suunnassa {{{jc}}} on ~native~ -metodin
 kutsuminen Javasta eli C-ohjelmassa olevan funktion
 kutsuminen. Variaatioille (1)--(2) ei ole vastinetta C-kielessä, mutta
 ~native~-metodin voi merkitä staattiseksi (3). Vastinpari suunnassa
-Java \rightarrow Java on tavallinen metodikutsu. Vastinpari suunnassa C
-\rightarrow C on tavallinen funktiokutsu.
+{{{jj}}} on tavallinen metodikutsu. Vastinpari {{{c}}} on tavallinen funktiokutsu.
 
 {{{plot(basic-call-Object-fit)}}}
 
@@ -71,21 +68,22 @@ Lineaarisen riippuvuuden perusteella Java-kääntäjä tai Dalvikin
 JIT-kääntäjä ei ole onnistunut optimoimaan pois tyhjän metodin kutsua
 Java-koodista.
 
-Kuviin \ref{fig:basic-call-all-types-c-j} ja \ref{fig:basic-call-all-types-j-c} on koostettu eri
-parametrityypit suunnissa ({{{permu(C,Java)}}}) ja ({{{permu(\mbox{Java},C)}}}).
-Primitiivi- ja viitetyyppien ryhmittyminen näkyy kuvissa selvästi.
-
-Samankielisissä permutaatioissa (kuvat
-\ref{fig:basic-call-all-types-j-j-fit} ja
-\ref{fig:basic-call-all-types-c-c-fit}) ei vastaavaa eroa näy, mutta
-mielenkiintoisena yksityiskohtana niissä voidaan havaita 64-bittisten
-parametrityyppien ~long~ ja ~double~ suurempi rasite 32-bittisessä
-prosessorissa. Kuvassa \ref{fig:basic-call-all-types-c-c-fit}
+Kuvassa \ref{fig:basic-call-all-types-c-c-fit}
 mainitut Java-tyypit kuvautuvat C-kielen tyypeiksi
 seuraavasti. Viitetyyppiset ~Object~ sekä taulukkotyypit
 kuvautuvat ~jobject~-tyyppinimen kautta ~void~-osoittimiksi ja
 primitiivityypit kuvautuvat taulukon \ref{tab-primitives} mukaisesti
 C-kielen perustyypeiksi.
+
+Kuviin \ref{fig:basic-call-all-types-c-j} ja \ref{fig:basic-call-all-types-j-c} on koostettu eri
+parametrityypit suunnissa ({{{permu(C,Java)}}}) ja ({{{permu(\mbox{Java},C)}}}).
+Primitiivi- ja viitetyyppien ryhmittyminen näkyy kuvissa selvästi. Samankielisissä
+permutaatioissa (kuvat
+\ref{fig:basic-call-all-types-j-j-fit} ja
+\ref{fig:basic-call-all-types-c-c-fit}) ei vastaavaa eroa näy, mutta
+mielenkiintoisena yksityiskohtana niissä voidaan havaita 64-bittisten
+parametrityyppien ~long~ ja ~double~ suurempi rasite 32-bittisessä
+prosessorissa.
 
 {{{plot(basic-call-all-types-c-c-fit)}}}
 
@@ -125,7 +123,7 @@ Luettaessa profiilia ylhäältä alaspäin päästään kutsuvasta
 aliohjelmasta kutsuttuun aliohjelmaan. Profiilissa näkyvä aliohjelma
 /A/ on suorituksen aikana kutsunut suoraan kaikkia aliohjelmia, joiden
 prosenttiluku ja nimi on piirretty välittömästi aliohjelman /A/
-nimestä lähtevän pystyviivan oikealle puolelle. Esimerkiksi
+prosenttiluvusta lähtevän pystyviivan oikealle puolelle. Esimerkiksi
 \path{dvmDecodeIndirectRef} \ding{202} on kutsunut suoraan
 C++-luokan \path{ScopedPthreadMutexLock} konstruktoria \ding{203} ja destruktoria \ding{204}
 sekä luokan \path{IndirectRefTable} metodia \path{get} \ding{205}. Jos
@@ -155,10 +153,10 @@ Mitattavassa metodissa on keinotekoisen paljon viiteparametreja, joten
 profiilista erottuu viitteiden välittämisen aikarasite. Avainkohta on
 Dalvikin metodi \path{dvmDecodeIndirectRef}, joka vie 46.21% koko
 suoritusajasta ja 64% testin suoritusajasta. /Indirect
-ref[erence]/ tarkoittaa epäsuoraa viitettä, joka välitetään
-parametrinä JNI-rajapinnan yli, eli JNI-kutsujen \path{jobject *}
--tyyppisiä parametreja eri muodoissaan. Dalvik-virtuaalikone joutuu
-pitämään kirjaa välitetyistä viitteistä tarkoitusta varten
+reference/ tarkoittaa epäsuoraa viitettä, joka välitetään
+parametrinä rajapinnan yli: JNI-kutsujen \path{jobject *}
+-tyyppisiä parametreja eri muodoissaan. Dalvik-virtuaalikone 
+pitää kirjaa välitetyistä viitteistä tarkoitusta varten
 toteutetulla taulutietorakenteella
 (\path{dalvik/vm/IndirectRefTable}). Epäsuoria viitteitä tarvitaan,
 jotta virtuaalikoneen muistinhallinnalla säilyy tieto myös JNI:n yli
@@ -175,7 +173,8 @@ säilytetään Dalvikin kaikille säikeille yhteisessä, globaalissa
 viitetaulukossa. Mittauksessa käytetään globaaleja viitteitä lähinnä
 ohjelmakoodin yksinkertaistamiseksi, minkä seurauksena löytyikin
 sattumalta tämä hitain suorituspolku \path{dvmDecodeIndirectRef}
--metodin sisältä. Listauksessa \ref{src:dvmDecodeIndirectRef} näkyy
+-metodin sisältä. Listaus \ref{src:dvmDecodeIndirectRef} on ote
+Dalvik-virtuaalikoneen lähdekoodista. Siinä näkyy
 mutex-lukon varaaminen kohdassa \ding{202}. Nopeampi suorituspolku
 käyttää lokaalin JNI-kontekstin omaa viitetaulukkoa ilman lukitusta
 \ding{203}
@@ -231,16 +230,16 @@ välittää viitteenä JNI-kutsussa.
 Kutsussa välitetään siis viite \path{java_counterparts_object}
 -olioon, jonka metodia ollaan kutsumassa. Viitteidenkäsittely ei
 kuitenkaan enää dominoi kutsuprofiilia, vaan merkittäviä ovat myös
-muut C \to Java -kutsun perusrasitteet, jotka ovat nähtävissä
+muut {{{cj}}} -kutsun perusrasitteet, jotka ovat nähtävissä
 profiilin haaran \path{CallVoidMethod} alakohdissa.
 
 \path{dvmCallMethodV} (15.56%) vastaa Dalvikissa metodin kutsumisesta
 vaihtelevalla argumenttimäärällä kaikissa kutsusuunnissa. Ainoa
 JNI:hin liittyvä rasite siitä alkavassa kutsuhaarassa on
 \path{callPrep}-metodi, jota ei näy vastaavassa vertailukohdassa
-suunnassa Java\to{}Java. Suurimpana yleisrasitteena kyseisessä
+suunnassa {{{jj}}}. Suurimpana yleisrasitteena kyseisessä
 haarassa näkyvät JIT-kääntäjän suorituksen jäljittämiseen (tracing)
-liittyvät toimet, jotka näkyvät myös suunnassa Java\to{}Java.
+liittyvät toimet, jotka näkyvät myös suunnassa {{{jj}}}.
 
 {{{profile(C2JBenchmark00001)}}}
 
@@ -654,7 +653,7 @@ kerrallaan operaatioilla ~GetObjectArrayElement~ ja
 kutsua kohti eli karkeasti arvioiden yli 20 sekuntia 512-alkioisen
 taulukon läpikäyntiin.
 
-Suoria vertailukohtia näille suunnan C\to{}Java taulukko-operaatioille
+Suoria vertailukohtia näille suunnan {{{cj}}} taulukko-operaatioille
 ei ole muissa kutsusuunnissa, jälleen kerran lukuunottamatta
 ~NIO~-rajapintaa (ks. kohta \ref{sec:measurement-classification-nio}).
 

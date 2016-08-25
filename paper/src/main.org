@@ -57,7 +57,7 @@
 #+MACRO: plot_edited \begin{figure}[b!]\caption{$2}\label{fig:$1}\def\svgwidth{\textwidth}\input{figures/plots/plot-47d22819-625b-43f6-8e9f-afeb5066b758-$1-latin.pdf_tex}\end{figure}
 #+MACRO: rotated_plot_edited \begin{sidewaysfigure}\input{figures/plots/plot-47d22819-625b-43f6-8e9f-afeb5066b758-$1-latin.pdf_tex}\end{sidewaysfigure}
 
-#+MACRO: permu $1\nbsp{}\rightarrow\nbsp{}$2
+#+MACRO: permu $1\rightarrow{}$2
 #+MACRO: TODO \textcolor{red}{TEHTÄVÄ}
 
 #+MACRO: cj C\to{}Java
@@ -89,7 +89,8 @@
   Tutkielman aineisto saatiin mittaamalla JNI-operaatioita käyttäviä
   ohjelmia Android-laitteessa ja analysoimalla tuloksia. Tässä luvussa
   kuvaillaan mittausten koeasetelma, esitellään mittaustulokset ja
-  tehdään niistä johtopäätelmiä.
+  rakennetaan niiden avulla parametrisoitu malli, joka ennustaa rajapinnan
+  suorituskykykäyttäytymistä.
 
 ** Koeasetelman kuvaus
 #+INCLUDE: "../gen/chapters/measurement-setup.org" :minlevel 3
