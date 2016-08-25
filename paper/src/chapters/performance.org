@@ -287,7 +287,7 @@ tutkii yleensä ohjelman suoritusaikaa aliohjelmien tarkkuudella.
 # knuth irrallinen > siirrä myöhemmäksi
 
 Näytteenoton tavoite on kerätä ohjelman suoritustiloista edustava
-otanta kirjaamatta jokaista tilanmuutosta ohjelman sisältä käsin
+otos kirjaamatta jokaista tilanmuutosta ohjelman sisältä käsin
 @@spe(328).  Yksittäinen näyte voidaan ottaa esimerkiksi
 laitteiston tosiaikakellon aiheuttaman keskeytyksen laukaisemana, ja näytteeseen
 voidaan tallentaa esimerkiksi suorituksessa olleen konekäskyn osoite.
@@ -328,8 +328,8 @@ Vaihtoehto normaalin suoritusympäristön käyttämiselle on
 /virtualisointi/, jossa pelkkä sovellus tai koko ohjelmistoympäristö
 käyttöjärjestelmineen suoritetaan ohjelmallisessa
 virtuaalikoneessa. Tällöin virtuaalikoneeseen voi periaatteessa
-ohjelmoida mitä tahansa räätälöityjä mittauksia.[fn:vm] Olen rajannut
-virtualisointimenetelmät tutkielman ulkopuolelle, sillä tavallisessa
+ohjelmoida mitä tahansa räätälöityjä mittauksia.[fn:vm] 
+Virtualisointimenetelmät on rajattu tutkielman ulkopuolelle, sillä tavallisessa
 Android-laitteessa tehtävät mittaukset antavat kaikki tarvittavat
 tulokset, ja virtualisoitu suoritusympäristö voi käyttäytymiseltään
 erota todellisista laitteista tavoilla, joiden toteaminen kuitenkin
@@ -346,11 +346,11 @@ siinä missä tämän tutkielman tarkoituksena on tutkia Dalvikin itsensä
 suorituskykyä: Javan natiivirajapinnan toteutus on osa
 virtuaalikonetta.
 
-Tutkielman mittaukset suoritetaan näytteenottotekniikalla, Linuxin
+Tutkielman mittaukset tehtiin näytteenottotekniikalla, Linuxin
 /perf/-työkalun avulla @@du(13). Android-laitteeseen on asennettu
-räätälöity Linux-ydin, joka tukee suorituskykylaskurien käyttöä. Itse
-mittaukset käynnistetään ja raportit tulostetaan ytimen ulkopuolisilla
-/perf/-komentorivityökaluilla.
+uudelleenkonfiguroitu Linux-ydin, joka tukee suorituskykylaskurien
+käyttöä. Itse mittaukset käynnistetään ja raportit tulostetaan ytimen
+ulkopuolisilla /perf/-komentorivityökaluilla.
 
 [fn:vm] Esimerkki virtualisoinnista on Androidin oma /emulaattori/,
 joka perustuu QEMU-virtuaalikoneeseen. Se on emulaattori, sillä se
@@ -433,7 +433,7 @@ tilannekohtaisesti jostakin pääohjelman ja suoritettavan kohdan
 väliltä kutsupinosta.
 
 Profilointityökaluissa aliohjelman suoritusaikaa kutsutaan usein
-/inklusiiviseksi/ \label{sec-profiling-inclusive}, jos siihen lasketaan mukaan myös aliohjelman
+/inklusiiviseksi/, \label{sec-profiling-inclusive} jos siihen lasketaan mukaan myös aliohjelman
 kutsumien muiden aliohjelmien ajat @@android-tracing. Pelkkään
 käskyosoittimeen perustuva raaka suoritusaika on tässä tutkielmassa
 /eksklusiivinen/ suoritusaika, jota usein kutsutaan nimellä /self time/.
@@ -655,11 +655,11 @@ edustamaan todellisuudessa kohdattavia ohjelmia
 tavoitetta selvästikään saavuteta.
 
 Mittaustavan ongelma johtuu siitä, ettei nykyaikaisessa
-suoritusympäristössä alkeisosista c_0 ... c_i koostuvan ohjelman
-kokonaissuoritusaikaa voi laskea deterministisesti osien suoritusajan
-perusteella @@wilhelm-wcet(5-6). Todellisuudessa suoritusaika riippuu
-myös suorittimen sekä ohjelmallisen suoritusympäristön kuten
-virtuaalikoneen tiloista.
+suoritusympäristössä alkeisosista koostuvan ohjelman
+kokonaissuoritusaikaa voi laskea deterministisesti osien
+suoritusajan perusteella @@wilhelm-wcet(5-6). Todellisuudessa
+suoritusaika riippuu myös suorittimen sekä ohjelmallisen
+suoritusympäristön kuten virtuaalikoneen tiloista.
 
 Suorittimessa tämän epädeterministisyyden aiheuttavat välimuistit,
 käskyliukuhihnat (/pipelines/) sekä kontrollivuon ennustaminen
@@ -695,7 +695,7 @@ Tutkielmassa mitataan Dalvik-virtuaalikoneen
 Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
 suhteessa toisiinsa ja vastaaviin alkeisoperaatioihin Java- ja
 C-kielisessä ohjelmassa. Esimerkiksi JNI:n läpi tehtäviä metodikutsuja
-verrataan tavallisiin metodikutsuihin Java- ja C-kielissä. Tuloksista
+verrataan tavallisiin aliohjelmakutsuihin Java- ja C-kielissä. Tuloksista
 johdetaan yksinkertainen malli, joka ennustaa ohjelmiston
 JNI-operaatioista aiheutuvia rasitteita eri tilanteissa. Mallin
 parametreina ovat kutsuttu JNI-funktio sekä kutsuissa käytettyjen
@@ -754,7 +754,7 @@ tuloksia tutkimuskohteesta. Tutkielman tavoitteena on hyödyntää
 mittaustuloksia siten, että niitä tulkitsemalla voidaan laatia malli,
 jota voisi hyödyntää ohjelmistojen suorituskykytekniikan @@spe
 menetelmien osana ja ensi askeleena kehittyneempään
-suorituskykymallin.
+suorituskykymalliin.
 
 * Ohjelmiston mallintaminen                                           :noexport:
 
