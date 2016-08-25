@@ -596,7 +596,7 @@ natiivikomponenttiin, joten kyseinen metodikutsu saattaa pitää
 paikallisten viitteiden edellyttämät muistivaraukset käytössä hyvinkin
 pitkään, ellei viitteitä erikseen vapauteta.
 
-Ennakoimme, että natiivirajapinnan ylittäminen voi aiheuttaa
+Ennakoin, että natiivirajapinnan ylittäminen voi aiheuttaa
 ylimääräisiä suorituskykyrasitteita aivan tavallisissa
 laskentatehtävissä kuten merkkijonojen ja taulukoiden käsittelyssä,
 olioiden kenttien ja metodien käyttämisessä sekä natiivimetodien
@@ -605,8 +605,8 @@ natiivialiohjelmien erilaisista kutsukäytännöistä, menetelmistä kuroa
 umpeen eroja natiivikielten ja virtuaalikoneen muistinhallinnassa,
 operaatioiden edellyttämästä rajapintakutsujen määristä sekä
 JNI-operaatiossa toistuvasta osoittimien käytöstä. Seuraavaksi
-mittaamme eri natiivioperaatioiden suorituskykyä eri parametreilla ja
-luomme tuloksista mallin, joka auttaa hahmottamaan tapoja Javan
+eri natiivioperaatioiden suorituskykyä mitataan eri parametreilla ja
+tuloksista luodaan malli, joka auttaa hahmottamaan tapoja Javan
 natiivirajapinnan tehokkaalle hyödyntämiselle Android-sovelluksissa.
 
 # mainitse jossain virheistä

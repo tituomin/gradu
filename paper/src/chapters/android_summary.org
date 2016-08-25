@@ -85,7 +85,7 @@ palveluhakemistokomponenttiin.
 
 Osa Androidin järjestelmäpalveluista on toteutettu Java-kielellä ja
 osa C++-kielellä. Javan natiivirajapinta JNI esitellään tarkemmin
-luvussa \ref{sec-jni}, mutta voimme jo havaita, että natiivirajapintaa käytetään
+luvussa \ref{sec-jni}, mutta voidaan jo havaita, että natiivirajapintaa käytetään
 yleisesti järjestelmän sisäisessä toteutuksessa, kun Java-koodista on
 kutsuttava matalamman arkkitehtuuritason natiiveja kirjastoja
 @@embedded(78).  Esimerkiksi Binder-kutsumekanismin toteutus on
@@ -185,8 +185,8 @@ minimoidaan joitakin tulkkien toteutuksille tyypillisiä
 suorituskykyrasitteita @@aosp.
 # todo lähde google io video?
 
-Jos tarkastelemme Dalvikin suoritusaikaista toimintaa Java-ohjelman
-ulkopuolisesta näkökulmasta, havaitsemme siis, että Dalvik viettää
+Jos Dalvikin suoritusaikaista toimintaa tarkastellaan Java-ohjelman
+ulkopuolisesta näkökulmasta, havaitaan, että Dalvik viettää
 ohjelman suoritusajan hieman yksinkertaistaen joko tulkissa,
 JIT-kääntäjässä tai jo kääntämänsä metodin konekielisessä
 ohjelmakoodissa. Lisäksi virtuaalikoneella on toki muita,
@@ -211,7 +211,7 @@ tulosten analyysi.
 
 * ART-virtuaalikone
 
-Käsittelemme tässä lyhyesti ART-virtuaalikoneen merkittävimmät erot
+Seuraavaksi käsitellään lyhyesti ART-virtuaalikoneen merkittävimmät erot
 Dalvikiin verrattuna @@art-dalvik-summary. Dalvikin JIT-käännöksen
 sijaan ART- virtuaalikone kääntää Android-sovelluksen DEX-tavukoodista
 natiivikoodiksi /kun sovellus asennetaan laitteeseen/. Käännös on siis
@@ -223,10 +223,8 @@ rinnakkaistuvassa roskienkeruumenetelmässä, johon on kehitteillä myös
 Viimeksi mainitulla ominaisuudella on suuri merkitys myös
 natiivirajapinnan käytön kannalta, sillä sen myötä automaattinen
 muistinhallinta voi siirrellä olioita vapaasti muistissa
-@@art-dalvik-gc-jni.
-
-Arvioimme tutkielman tulosten sovellettavuutta ART-virtuaalikoneeseen
-lyhyesti tutkielman yhteenvedossa.
+@@art-dalvik-gc-jni. Tutkielman tulosten sovellettavuutta
+ART-virtuaalikoneeseen käsitellään lyhyesti tutkielman yhteenvedossa.
 
 * todo :noexport:
 ** TODO mainitse renderscript ja muut vaihtoehdot jni:lle?

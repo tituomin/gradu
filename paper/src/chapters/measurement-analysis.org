@@ -1,6 +1,6 @@
 
-Kokoamme nyt mittaustuloksista karkean mallin, joka kuvaa, mistä
-osatekijöistä JNI-rajapinnan käytön rasitteet syntyvät. Mallista
+Seuraavaksi mittaustuloksista rakennettaan karkea malli, joka kuvaa,
+mistä osatekijöistä JNI-rajapinnan käytön rasitteet syntyvät. Mallista
 saatavat lukuarvot ovat suhdelukuja, jotka ilmaisevat eri rasitteiden
 suuruusluokan suhteessa toisiinsa. Mallissa on vain lineaarisia
 riippuvuuksia, ja /muuttuja/-sarakkeessa ilmaistaan, mikä on
@@ -109,7 +109,7 @@ globaalien viitteiden muodossa sekä välittäen ylipäätään
 lukumääräisesti mahdollisimman vähän Javan muistinhallinnan piirissä
 olevaan kekoon allokoituja olioita natiivikomponentille.
 
-Lopputuloksena voimme todeta, että Androidin Dalvik-suoritusympäristön
+Lopputuloksena voidaan todeta, että Androidin Dalvik-suoritusympäristön
 käyttäytymistä saatiin mitattua kvantitatiivisesti niin, että
 tuloksista saatiin hyödyllistä ennakkotietoa monikielisten
 Android-sovellusten käyttäytymisestä. Laaditun mallin avulla

@@ -95,8 +95,7 @@ malli natiivirajapinnasta mittausten perusteella. Tutkielma siis
 yhdistää omalla tavallaan mittauksen mallintamiseen, sillä
 mittaustulokset toimivat laadittavan mallin lähtökohtana.
 
-
-Seuraavaksi käsittelemme tutkielmassa käytettyjä
+Seuraavaksi käsitellään tutkielmassa käytettyjä
 suorituskykymittareita yleisellä tasolla, ohjelmiston suorituskyvyn
 mittaamiseen käytettäviä konkreettisia tekniikoita ja lopuksi itse
 mittauskohteena olevaa ohjelmistoa sekä mittausten järjestämiseen ja
@@ -120,8 +119,8 @@ suhteen/, mihin myös tutkielma keskittyy. Toinen keskeinen
 suorituskykymittareiden luokka tutkii ohjelmiston /muistinkäyttöä/
 @@ferrari(457). Tässä tutkielmassa aikaulottuvuus on ensisijainen ja
 sitä tutkitaan kvantitatiivisesti; mobiilisovellusten muistinkulutus
-on toki oleellinen suorituskykytekijä, mutta tutkimme ainoastaan sen
-vaikutuksia sovelluksen ajalliseen käyttäytymiseen.
+on toki oleellinen suorituskykytekijä, mutta tutkielmassa käsitellään
+ainoastaan sen vaikutuksia sovelluksen ajalliseen käyttäytymiseen.
 
 Jotta järjestelmän suorituskykyä voisi arvioida täsmällisesti, käsite
 on purettava kvantitatiivisiksi /mittareiksi/. Näitä ovat järjestelmän
@@ -150,7 +149,7 @@ haasteita suorituskyvyn arvioinnissa @@spe(115), @@ferrari(221).
 
 * Mittausmenetelmät
 
-Seuraavaksi käsittelemme ohjelmiston vasteaikojen mittaamiseen
+Seuraavaksi käsitellään ohjelmiston vasteaikojen mittaamiseen
 käytettäviä konkreettisia mittausmenetelmiä, joilla saadaan mitattua
 kokonaisvasteaikoja sekä vasteaikojen jakautumista ohjelmiston eri
 osiin.
@@ -464,7 +463,7 @@ niiden suhteelliset osuudet otetuissa näytteissä.
 Kaikenlaisessa näytteenotossa on varmistettava, että otanta on
 /tilastollisesti edustava/: rajattua /otosta/ tutkimalla on voitava
 tehdä päätelmiä koko /perusjoukosta/ @@probability(469). Tässä
-tapauksessa haluamme päätellä rajallisesta joukosta ajanhetkiä (otos),
+tapauksessa rajallisesta joukosta ajanhetkiä (otos) halutaan päätellä,
 miten käskyosoittimen ja kutsupinon arvot jakautuvat ohjelman koko
 suoritusajalle (perusjoukko). Tämä varmistetaan suoritinsyklien
 laskemiseen perustuvassa näytteenotossa /systemaattisen otannan/
@@ -492,7 +491,7 @@ mittauksissa.
 
 Näytteenoton toteutustavassa saattaa myös olla sisäänrakennettuja
 seurausvaikutuksia, joiden takia mittaus jo lähtökohtaisesti painottaa
-tiettyjä ajanhetkiä. Koska haluamme tutkia suorittimen tilaa
+tiettyjä ajanhetkiä. Koska suorittimen tilaa halutaan tutkia
 /tosiajassa/, on varmistuttava, että näytteet jakautuvat tasaisesti
 tosiajan suhteen. Esimerkiksi monet yleisesti käytetyt Java-profilointityökalut
 kykenevät saamaan näytteitä ainoastaan ohjelman ns. luovutuskohdista
@@ -513,12 +512,11 @@ kellotaajuuden ajanhetket ylikorostuisi.
 Kannattaa huomata, ettei otannan tarvitse olla satunnainen:
 systemaattinen jaksollinen otanta riittää, kunhan on varmistuttu
 siitä, ettei perusjoukko sisällä jaksollisia ilmiöitä
-@@ferrari(58). Oletamme tässä tutkielmassa, ettei mitattava
+@@ferrari(58). Tutkielmassa oletetaan, ettei mitattava
 järjestelmä sisällä jaksollisia ilmiöitä, joiden jakson pituudella
 olisi yhteisiä tekijöitä /n/ suoritinsyklin kuluttaman ajanjakson
-kanssa. Varmistumme tästä suorittamalla useita mittauksia, joista
-jokainen alkaa satunnaisella ajanhetkellä, ja vaihtelemme jakson
-pituutta syklimäärässä.
+kanssa.
+
 # todo: analysoi linuxin timeria ja schedulointia..
 # todo: onko dalvikissa ym. muissa komponenteissa jaksollisia ilmiöitä?
 \newpage
@@ -599,7 +597,7 @@ suorituskykymittauksista on laatia mitattavalle järjestelmälle sarja
 ennalta laadittuja syötteitä, jotka on suunniteltu edustamaan
 todellisuudessa kohdattavia syötteitä tai ovat peräisin todellisista
 työkuormista, ja mitata järjestelmän suoriutumista
-syötteistä. Kutsumme tätä yleistä menetelmää /vakioiduksi
+syötteistä. Kutsun tätä yleistä menetelmää /vakioiduksi
 mittaamiseksi/ (/benchmarking/) @@dependability-benchmarking(69-71),
 @@curnow, @@saavedra. Menetelmää voi hyödyntää, kun tutkittava
 järjestelmä toteuttaa jonkin spesifikaation tai rajapinnan, joka
@@ -633,10 +631,10 @@ mittausten perusteella.
 
 ** Alkeisoperaatioiden mittaaminen
 
-Toinen, tutkielmassa käytetty lähtökohta JNI:n
+Toinen, tässä tutkielmassa käytetty lähtökohta JNI:n
 suorituskykyominaisuuksien tutkimiseen on ikään kuin synteettinen:
-yritämme tutkia JNI-rajapinnan yksittäisten operaatioiden
-suorituskykyominaisuuksia ja päätellä niistä, miten osista rakennettu
+JNI-rajapinnan yksittäisten operaatioiden
+suorituskykyominaisuuksista yritetään päätellä, miten osista rakennettu
 kokonaisuus mahdollisesti toimisi. Kutsun /alkeisoperaatioiden
 mittaamiseksi/ (/microbenchmarking/) tällaista menetelmää, jossa
 verrataan kielen tai järjestelmän yksittäisten perusoperaatioiden
@@ -691,7 +689,7 @@ muistinhallinta/, /dynaamisen optimoinnin/ aiheuttama epädeterminismi
 sekä /järjestelmän lämmitysviiveet/, jotka johtuvat luokkien
 lataamisesta ja JIT-kääntämisestä @@coffee(83). Näiden hallitsemiseksi
 on omat mittausmenetelmänsä sekä tilastolliset työkalunsa, joita
-käsittelemme tarkemmin luvussa \ref{sec-measurement-setup}.
+käsitellään tarkemmin luvussa \ref{sec-measurement-setup}.
 
 Tutkielmassa mitataan Dalvik-virtuaalikoneen
 Java-natiivirajapintatoteutuksen eri osien suorituskykyrasituksia
@@ -738,19 +736,19 @@ seuraavat huomiot.
 3. Koska mittauksissa yhdistetään kokonaisvasteaikojen mittaaminen
    profilointiin, saadaan JNI-toteutuksen suoritusaikaisesta
    käyttäytymisestä yksityiskohtaista tietoa mallien pohjaksi, jolloin
-   voimme päätellä, mitkä JNI:n osat ovat suorituskyvyn kannalta kriittisimpiä.
+   voidaan päätellä, mitkä JNI:n osat ovat suorituskyvyn kannalta kriittisimpiä.
 4. Mittauksissa alkeisoperaatioille annettavia mahdollisia parametreja
    vaihdellaan hallitusti. Yksittäisten epävarmojen vasteaika-arvojen
-   sijaan saamme kuvaajia, joissa vasteaika vaihtelee halutun
-   muuttujan funktiona. Regressioanalyysin avulla saamme varmistusta
-   mittausten oikeellisuudelle, sikäli kuin mittauksissa on näkyvissä
-   selviä esimerkiksi lineaarisia korrelaatioita. Yhdistettynä
+   sijaan saadaan kuvaajia, joissa vasteaika vaihtelee halutun
+   muuttujan funktiona. Mittausten oikeellisuudelle saadaan varmistusta
+   regressioanalyysin avulla, sikäli kuin mittauksissa on näkyvissä
+   selviä korrelaatioita. Yhdistettynä
    profilointiin menetelmillä saadaan joka tapauksessa
    mielenkiintoista tietoa JNI-rajapinnan toiminnasta vähintäänkin
    kvalitatiivisella tasolla, vaikka numeeristen mittausarvojen
    relevanssi jää epävarmaksi.
 
-Tutkielman analyysivaiheessa esitämme ehdotuksia täydentävistä
+Tutkielman analyysivaiheessa esitetään ehdotuksia täydentävistä
 mittauksista ja vaihtoehtoisista tavoista saada luotettavampia
 tuloksia tutkimuskohteesta. Tutkielman tavoitteena on hyödyntää
 mittaustuloksia siten, että niitä tulkitsemalla voidaan laatia malli,
