@@ -1,0 +1,43 @@
+\addtocounter{profile}{-1}
+\begin{profile}[t!]
+\caption{Unicode-merkkijonon osoitinoperaatio [jatkoa]}
+\begin{topbot}
+\begin{minipage}{1.0\textwidth}
+\scriptsize
+\dirtree{%
+.1 . 
+.2 \textbf{28.88\%} ReleaseStringChars(\_JNIEnv*, \_jstring*, unsigned short const*). 
+.3 \textbf{8.56\%} dvmDecodeIndirectRef(Thread*, \_jobject*). 
+.4 \textbf{2.53\%} ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread\_mutex\_t*). 
+.5 \textbf{1.92\%} pthread\_mutex\_lock. 
+.6 \textbf{0.88\%} pthread\_mutex\_lock\_impl. 
+.4 \textbf{1.93\%} ScopedPthreadMutexLock::~ScopedPthreadMutexLock(). 
+.5 \textbf{1.66\%} pthread\_mutex\_unlock. 
+.6 \textbf{0.89\%} pthread\_mutex\_unlock\_impl. 
+.4 \textbf{0.69\%} IndirectRefTable::get(void*) const. 
+.3 \textbf{8.38\%} unpinPrimitiveArray(ArrayObject*). 
+.4 \textbf{2.67\%} ScopedPthreadMutexLock::ScopedPthreadMutexLock(pthread\_mutex\_t*). 
+.5 \textbf{1.91\%} pthread\_mutex\_lock. 
+.6 \textbf{0.72\%} pthread\_mutex\_lock\_impl. 
+.4 \textbf{2.35\%} ScopedPthreadMutexLock::~ScopedPthreadMutexLock(). 
+.5 \textbf{2.01\%} pthread\_mutex\_unlock. 
+.6 \textbf{1.26\%} pthread\_mutex\_unlock\_impl. 
+.4 \textbf{0.69\%} dvmRemoveFromReferenceTable(ReferenceTable*, Object**, Object*). 
+.3 \textbf{2.40\%} ScopedJniThreadState::~ScopedJniThreadState(). 
+.4 \textbf{1.81\%} dvmChangeStatus(Thread*, ThreadStatus). 
+.5 \textbf{0.71\%} android\_atomic\_release\_store. 
+.6 \textbf{0.07\%} android\_memory\_barrier. 
+.3 \textbf{1.63\%} ScopedJniThreadState::ScopedJniThreadState(\_JNIEnv*). 
+.4 \textbf{0.95\%} dvmChangeStatus(Thread*, ThreadStatus). 
+.5 \textbf{0.70\%} android\_atomic\_acquire\_store. 
+.6 \textbf{0.06\%} android\_memory\_barrier. 
+.3 \textbf{0.23\%} StringObject::array() const. 
+.2 \textbf{0.09\%} PushLocalFrame(\_JNIEnv*, int). 
+.3 \textbf{0.06\%} dvmGetCurrentJNIMethod(). 
+.3 \textbf{0.03\%} ScopedJniThreadState::ScopedJniThreadState(\_JNIEnv*)\newline \phantom{\textbf{0.03\%}} dvmChangeStatus(Thread*,ThreadStatus). 
+.2 \textbf{0.03\%} PopLocalFrame(\_JNIEnv*, \_jobject*). 
+}
+\end{minipage}
+\end{topbot}
+\end{profile}
+
