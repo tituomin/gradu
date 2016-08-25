@@ -9,7 +9,7 @@ riippuvuudessa esiintyvän muuttujan tulkinta.
 Kun mallin muuttujiin sijoittaa jonkin konkreettisen JNI-rajapinnan
 käyttötapauksen arvot, nähdään erottelu kyseisen käyttötapauksen
 /JNI:n käytöstä/ muodostuvan rasitteen jakautumisesta osatekijöihinsä.
-Kun osatekijöiden rasitteet laskee yhteen, saadaan JNI:stä johtuva
+Kun osatekijöiden rasitteet laskee yhteen, saa tulokseksi JNI:stä johtuva
 kokonaisrasite. Eri käyttötapauksille saatuja kokonaisrasitteiden
 vertailulukuja voi myös verrata keskenään.
 
@@ -24,7 +24,7 @@ sillä suoritettavan ohjelman käyttäytymistä kokonaisuutena aidossa
 suoritusympäristössä ei voi täysin palauttaa ohjelmien alkeisosien
 itsenäiseen käyttäytymiseen erillään kokonaisuudesta. Mallia voi
 käyttää osana ohjelmistojen suorituskykytekniikan (SPE) menetelmiä
-varhaisen suunnitteluvaiheen apuna, sillä sen avulla voi saada
+sovelluksen varhaisen kehitysvaiheen apuna, sillä sen avulla voi saada
 arvion vasta suunnitteluvaiheessa olevan ohjelmiston
 suorituskykykäyttäytymisestä.
 
@@ -62,12 +62,12 @@ JNI-operaatioille/. Kutsusuunnassa {{{jc}}} ei ole muita operaatioita
 kuin natiivimetodikutsu, joten aliohjelmakutsun perusrasite on mukana
 JNI-perusrasitteessa.
 
-Sovelletaan mallia tapaukseen, jossa suunnassa {{{cj}}} kutsutaan
+Sovelletaan mallia esimerkkitapaukseen, jossa suunnassa {{{cj}}} kutsutaan
 ~void~-arvon palauttavaa instanssimetodia virtuaalikutsuna kymmenellä
 ~long[]~-tyyppisellä parameterilla. C-ohjelmassa kutsu näyttää tältä:
 
 #+begin_src c
-(*env)->CallVoidMethod(env, java_counterparts_object, mid, l1, [...] l10);
+(*env)->CallVoidMethod(env, java_object, mid, l1, [...] l10);
 #+end_src
 
 JNI-kutsuja on tässä yksi, joka on aliohjelmakutsu ja
