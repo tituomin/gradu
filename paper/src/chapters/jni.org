@@ -1,7 +1,7 @@
 \label{sec-jni}
 
 Kaikki Android-järjestelmään asennettavat tavalliset sovellukset
-suoritetaan omassa prosessissaan Dalvik-virtuaalikoneessa, vaikka ne
+suoritetaan omassa prosessissaan virtuaalikoneessa, vaikka ne
 sisältäisivätkin natiivikomponentteja.  Tutkimusten mukaan
 @@benchmark-ndk @@eval-android-ndk @@dba natiivikomponenttien
 käytöstä saattaa joskus todella olla suorituskykyetua: koska Java-ohjelmaa
@@ -18,7 +18,7 @@ jälkeen tutkitaan suunnitteluperiaatteita ja perusongelmia, joiden
 vuoksi JNI-rajapinnan suunnitteluratkaisuihin on päädytty. Rajapintaa
 esitellään myös sovellusohjelmoijan näkökulmasta. Lopuksi käsitellään
 tarkemmin vieraskutsurajapintojen keskeistä ongelmakohtaa eli
-/muistinhallintaa/ JNI-rajapinnan näkökulmasta.
+muistinhallintaa JNI-rajapinnan näkökulmasta.
 
 * Java Native Interface ja vieraskutsurajapinnat
 /Vieraskutsurajapinta/ (/Foreign Function Interface/) on rajapinta,
@@ -33,11 +33,6 @@ päinvastoin @@reppy(49). JNI tarjoaa lisäksi takaisinkutsumekanismin,
 jonka avulla natiiviohjelmasta voi kutsua Java-ohjelman metodeja sekä
 käsitellä Java-ohjelman dataa @@jnibook(41).
 
-\begin{figure}[h!]
-\centerline{\includegraphics[scale=1]{figures/jni-basic.pdf}}
-\caption{Natiivirajapinnan asema \cite[s. 5]{jnibook}}\label{fig:jnibasic}
-\end{figure}
-
 Kuva \ref{fig:jnibasic} antaa kokonaiskäsityksen JNI:n
 roolista. Sovelluksen kokonaisuuden kannalta Javan natiivirajapinta
 tukee kahdenlaista integraatiota natiivikomponentin ja virtuaalikoneen
@@ -48,10 +43,15 @@ vaihtoehdossa pääsovellus toteutetaan matalan tason kielellä ja
 sovellukseen /upotetaan/ Java-virtuaalikone, jonka avulla sovellus voi
 suorittaa Java-kielisiä ohjelmia.
 
+\begin{figure}[h!]
+\centerline{\includegraphics[scale=1]{figures/jni-basic.pdf}}
+\caption{Natiivirajapinnan asema \cite[s. 5]{jnibook}}\label{fig:jnibasic}
+\end{figure}
+
 Android-sovellukset ovat lähtökohtaisesti Java-kielisiä, joten
 ainoastaan ensimmäinen integraatiomekanismi on käytettävissä
 sovellusohjelmoijalle. Natiivikomponentit toteutetaan siis
-/dynaamisesti linkitettävinä kirjastoina/, jotka Dalvik-virtuaalikone
+/dynaamisesti linkitettävinä kirjastoina/, jotka virtuaalikone
 lataa Java-ohjelman käyttöön.
 
 # todo: mainitse java-c-spesifit tehtävät vielä toisessa listassa
@@ -131,10 +131,8 @@ Java-ohjelmassa viite natiivitietorakenteeseen onkin sen osoitteen
 tallentaminen ~long~-kenttään; osoitteen tulkitseminen osoitteeksi on
 tietenkin mahdollista ainoastaan natiivikoodissa @@jnibook(123--130).
 
-Käytännössä suurin osa JNI:n edellyttämästä integraatiokoodista
-toteutetaan matalan tason kielellä. /C-ohjelmoijalle/
-Java-virtuaalikone -- sekä Dalvik -- tarjoaakin laajan rajapinnan,
-jonka funktioiden avulla C-ohjelmoija voi monipuolisesti käsitellä
+C-ohjelmoijalle virtuaalikone tarjoaa laajan rajapinnan, jonka
+funktioiden avulla C-ohjelmoija voi monipuolisesti käsitellä
 Java-ohjelman tietorakenteita. Rajapinta myös määrittelee, mitä
 C-kielen primitiivityyppejä Javan primitiivityypit vastaavat, joten
 natiivimetodille välitettyjä primitiivityyppisiä parametreja voi
@@ -240,7 +238,7 @@ tietotyypit ja palvelut, joiden avulla nativiimetodit toteutetaan.
 
 ** Tietotyypit
 C-kielestä on voitava käsitellä kaikkia Javan tietotyyppejä. Javan
-tyypit kuvautuvat C- ja C++-tyypeille seuraavan taulukon mukaisesti
+tyypit kuvautuvat C- ja C++-tyypeille taulukon \ref{tab-primitives} mukaisesti
 @@jnibook(166).
 
 # todo suomennos opaque reference
@@ -429,7 +427,7 @@ kopion ja palauttaa osoittimen siihen. Jos näin tapahtui,
 ~jboolean~-muuttujaan arvon ~JNI_TRUE~.
 
 Merkkijonoresurssi on aina lopuksi vapautettava eksplisiittisellä
-kutsulla:
+~ReleaseStringChars~-kutsulla:
 
 \todo{<<GetStringChars>>}
 
@@ -441,7 +439,7 @@ Dalvik-virtuaalikone tukee olioiden /kiinnikytkemistä/ (/pinning/),
 joka estää olion muistiosoitteen muuttumisen roskienkeruun aikana
 @@aosp. Periaatteessa tämän pitäisi mahdollistaa nopeat osoittimiin
 perustuvat merkkijono- ja taulukko-operaatiot, jotka eivät siis
-suorita kopiointia eivätkä aiheuta muistinvaraus- tai
+Dalvikissa suorita kopiointia eivätkä aiheuta muistinvaraus- tai
 kopiointikustannuksia.
 
 Android-dokumentaation mukaan kopiointikustannuksia syntyy lähinnä,
@@ -544,7 +542,7 @@ toteuttaa spesifikaation määräämät takuut tietorakenteiden
 elinkaarille.  Dalvik-virtuaalikoneen muistinhallinta tukee
 allokoitujen kohteiden kiinnikytkemistä eli sen takaamista, ettei
 niiden muistialueita siirretään muistissa osoitteesta toiseen
-@@aosp. /JNI-spesifikaatio/ sallii kuitenkin virtuaalikoneen myös
+@@aosp. JNI-spesifikaatio sallii kuitenkin virtuaalikoneen myös
 /kopioida/ kohteen arvon natiivikomponenttia varten. Tutkimme
 myöhemmässä vaiheessa, millaisia suorituskykyrasitteita
 kiinnikytkemisellä on kopiointiin verrattuna.
