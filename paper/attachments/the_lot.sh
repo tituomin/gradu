@@ -8,7 +8,7 @@ function individual_file() {
     HEADER=${filename#$BASEDIR}
     HEADER=${HEADER//_/\\_}
     echo "\subsubsection{$HEADER}"
-    echo "\inputminted[fontsize=\small, linenos, numbersep=5pt, tabsize=4, frame=topline,framesep=0.8cm]{$language}{$filename}"
+    echo "\inputminted[fontsize=\footnotesize, linenos, numbersep=5pt, tabsize=4, frame=topline,framesep=0.8cm]{$language}{$filename}"
 }
 
 function print_all() {

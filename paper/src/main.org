@@ -20,7 +20,7 @@
 #+LaTeX_HEADER: \AtBeginDocument{\let\c@profile\c@lstlisting}
 #+LaTeX_HEADER: \makeatother
 
-#+LATEX: \numberofpagesinformation{\numberofpages\ sivua + 159 liitesivua}
+#+LATEX: \numberofpagesinformation{\numberofpages\ sivua + 141 liitesivua}
 #+LATEX: \keywords{Android, Dalvik, ART, Java, Java Native Interface, suorituskyky, mobiilisovellukset}
 # TODO: css https://helda.helsinki.fi/search?scope=10138%2F18093&query=tietojenk%C3%A4sittelytieteen&rpp=20&sort_by=0&order=DESC&submit=Hae
 
