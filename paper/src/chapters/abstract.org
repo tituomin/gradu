@@ -25,3 +25,11 @@ toiseen. Lopputuloksena todetaan, että mittauksia tulkitsemalla saatiin
 aikaan hyödyllinen suorituskykymalli, jota voidaan hyödyntää
 sovelluskehityksen varhaisessa vaiheessa, kun natiivirajapinnan
 käyttötapoja suunnitellaan.
+
+ACM Computing Classification System (CCS):
+#+LATEX: \newline
+#+LATEX: $\bullet$ \textbf{Software and its engineering{\raise.17ex\hbox{$\scriptstyle\sim$}}Software performance}
+#+LATEX: \newline
+#+LATEX: $\bullet$ \textbf{Software and its engineering{\raise.17ex\hbox{$\scriptstyle\sim$}}Runtime environments}
+#+LATEX: \newline
+#+LATEX: $\bullet$ \textit{Information systems{\raise.17ex\hbox{$\scriptstyle\sim$}}Mobile information processing systems}
