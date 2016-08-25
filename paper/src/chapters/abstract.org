@@ -1,8 +1,8 @@
 Android on mobiilikäyttöjärjestelmä ja sovelluskehitysalusta, jonka
-sovellukset ohjelmoidaan tavallisesti Java-kielellä ja niitä
+sovellukset ohjelmoidaan tavallisesti Java-kielellä ja 
 suoritetaan Androidin omassa, Java-virtuaalikoneen kaltaisessa
 suoritusympäristössä. Tässä tutkielmassa käsitellään Androidin
-Dalvik-virtuaalikoneen toteutusta Javan JNI-natiivirajapinnasta, jonka
+Dalvik-virtuaalikoneen toteutusta Javan natiivirajapinnasta (JNI), jonka
 avulla sovelluksissa voi yhdistellä Javalla sekä C- tai C++-kielellä
 toteutettuja komponentteja erityisesti suorituskykyvaatimusten
 saavuttamiseksi. Tutkielman tavoite on JNI-rajapintatoteutusta
@@ -13,7 +13,7 @@ tavalla. Tutkielma perustuu kahdenlaisiin suorituskykymittauksiin:
 rajapintaa harjoittavien operaatioiden vasteaikojen mittaamiseen sekä
 samojen operaatioiden kutsuprofiilien laatimiseen ajonaikaisista
 kutsupinoista näytteenottotekniikalla. Mittaustuloksista johdetaan
-yksinkertainen lineaarinen malli jossa on nähtävillä ne rajapinnan
+yksinkertainen lineaarinen malli, jossa on nähtävillä ne rajapinnan
 käytön osatekijät, joista rajapinnan suorituskykyrasitteet
 johtuvat. Mallin ja mittaustulosten perusteella voidaan nähdä, että
 virtuaalikoneen automaattisen muistinhallinnan asettamat vaatimukset
@@ -21,7 +21,7 @@ aiheuttavat suurimmat suorituskykyrasitteet natiivirajapinnan
 käytössä. Ne johtuvat siitä, että muistinhallinnan on pidettävä kirjaa
 natiivikomponentille välitetyistä viitteistä tietorakenteissaan ja
 tarvittaessa estää muistialueiden siirtäminen muistiosoitteesta
-toiseen. Lopputuloksena todetaan, että mittausten avulla saatiin
+toiseen. Lopputuloksena todetaan, että mittauksia tulkitsemalla saatiin
 aikaan hyödyllinen suorituskykymalli, jota voidaan hyödyntää
-sovelluskehityksen varhaisessa vaiheessa kun natiivirajapinnan
+sovelluskehityksen varhaisessa vaiheessa, kun natiivirajapinnan
 käyttötapoja suunnitellaan.
