@@ -53,8 +53,8 @@ index 73ec342..64bb6cc 100644
 #+LATEX: \end{footnotesize}
 
 #+LATEX: \subsection*{device}
-#+LATEX: \begin{footnotesize}
 Otettu käyttöön itse käännetty kernel-versio.
+#+LATEX: \begin{footnotesize}
 #+BEGIN_EXAMPLE
 
 project device/samsung/crespo/
