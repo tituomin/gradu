@@ -10,7 +10,7 @@ Dalvikia vasten, uudistettu virtuaalikone tekee mittaustuloksista osin
 vanhentuneita. Tutkielman metodologian kannalta uudistuksella ei
 kuitenkaan ole väliä. Samat mittaukset voi toteuttaa samoilla
 periaatteilla ja pitkälti samalla mittausohjelmistollakin uudemmissa
-Android-versioissa. Lisäksi käytössä olevista Android-laitteista
+Android-versioissa. Käytössä olevista Android-laitteista
 Dalvikin osuus on vielä merkittävä: heinäkuussa 2016 Dalvik oli
 käytössä noin 50% laitteista @@android-share.
 
@@ -101,7 +101,7 @@ järjestelmäpalvelutason: esimerkiksi ~Log~-luokka kutsuu suoraan
 # todo sisäinen viite
 
 Järjestelmäpalveluita matalammalla olevia arkkitehtuuritasoja, mukaan
-lukien dynaamisesti ladattavia natiivikirjastoja, en käsittele
+lukien dynaamisesti ladattavia natiivikirjastoja, ei käsitellä
 yksityiskohtaisesti. Mainittakoon kuitenkin, että Native Development
 Kitin @@ndk vakaat natiivirajapinnat kuuluvat tälle tasolle
 arkkitehtuurissa.  Näitä dynaamisesti linkitettyjä natiivikirjastoja
@@ -142,12 +142,11 @@ valmiudet laitteen sensorien lukemiseen.
 * Dalvik-virtuaalikone
 \label{sec-dalvik-intro}
 
-Javalla ohjelmoidun Android-sovelluksen matka suoritettavaksi
-ohjelmaksi on pääpiirteissään seuraavanlainen, kun käytössä on
-Dalvik-virtuaalikone. Aluksi sovellus käännetään Java-lähdekoodista
-tavallisella Java-kääntäjällä luokkatiedostoiksi, jotka sisältävät
-standardinmukaisen Java-virtuaalikoneen ymmärtämää välikieltä,
-Java-tavukoodia.
+Javalla ohjelmoidun Android-sovelluksen matka Dalvikissa
+suoritettavaksi ohjelmaksi on pääpiirteissään seuraavanlainen. Aluksi
+sovellus käännetään Java-lähdekoodista tavallisella Java-kääntäjällä
+luokkatiedostoiksi, jotka sisältävät standardinmukaisen
+Java-virtuaalikoneen ymmärtämää välikieltä, Java-tavukoodia.
 
 Androidin Dalvik-virtuaalikone ei kuitenkaan ole
 Java-virtuaalikone. Luokkatiedostoja käyttävä Java-virtuaalikone
@@ -166,7 +165,7 @@ tiedostoihin. Näistä tiedostoista Dalvik-virtuaalikone lataa ohjelman
 luokat ja niiden sisältämät Dalvik-käskykannan mukaiset käskyt.
 # todo wikipedia sanoo että kaikkia class-tiedostoja ei käännetä?
 
-Dalvik-virtuaalikone nykyisessä muodossaan on /jäljittävä Just-In-Time
+Dalvik-virtuaalikone on /jäljittävä Just-In-Time
 -kääntäjä/ (/tracing JIT compiler/) @@dvm-jit(15-16). Näin ollen
 Dalvikin /tulkki/ suorittaa Dalvik-käskykannan mukaista ohjelmaa ja
 pitää samalla kirjaa koodialueista, usein silmukoista, joiden
@@ -174,8 +173,8 @@ kääntäminen suoraan laitteistoalustan konekielelle nopeuttaisi
 todennäköisimmin ohjelman suoritusta. Tällaiset ohjelmakohdat Dalvik
 kääntää konekielelle ja suorittaa konekielisinä. Ne myös tallennetaan
 JIT-kääntäjän välimuistiin @@embedded(197). Androidin uudempi
-ART-virtuaalikone perustuu Java-koodin Ahead-of-Time kääntämiseen
-(AOT).
+ART-virtuaalikone perustuu Java-koodin /Ahead-of-Time/ -kääntämiseen
+(/AOT/) @@art-dalvik-summary.
 
 \todo{<<ashmem>> onko jit-cache persistoitu -- poistettu nyt}
 
@@ -205,17 +204,13 @@ suorituskykyrasitteiden tarkastelu eli käytännössä
 Dalvik-virtuaalikoneen suoritusaikaisen käyttäytymisen mittaaminen ja
 tulosten analyysi.
 
-# todo tuossa yllä ei ole esim optimointia, garbage collectionia, ym.
-
-\todo{<<kappale-art-aot>>} 
-
 * ART-virtuaalikone
 
 Seuraavaksi käsitellään lyhyesti ART-virtuaalikoneen merkittävimmät erot
 Dalvikiin verrattuna @@art-dalvik-summary. Dalvikin JIT-käännöksen
 sijaan ART- virtuaalikone kääntää Android-sovelluksen DEX-tavukoodista
 natiivikoodiksi /kun sovellus asennetaan laitteeseen/. Käännös on siis
-Ahead-of-Time -kääntämistä (AOT).
+Ahead-of-Time -kääntämistä.
 
 Toinen keskeinen ero on ART:in tehokkaammassa ja paremmin
 rinnakkaistuvassa roskienkeruumenetelmässä, johon on kehitteillä myös
@@ -224,7 +219,7 @@ Viimeksi mainitulla ominaisuudella on suuri merkitys myös
 natiivirajapinnan käytön kannalta, sillä sen myötä automaattinen
 muistinhallinta voi siirrellä olioita vapaasti muistissa
 @@art-dalvik-gc-jni. Tutkielman tulosten sovellettavuutta
-ART-virtuaalikoneeseen käsitellään lyhyesti tutkielman yhteenvedossa.
+ART-virtuaalikoneeseen käsitellään tutkielman yhteenvedossa.
 
 * todo :noexport:
 ** TODO mainitse renderscript ja muut vaihtoehdot jni:lle?
