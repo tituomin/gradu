@@ -361,6 +361,12 @@ suorituskykyhäiriöitä. Ongelmaa on vältetty allokoimalla heti
 sovelluksen käynnistyessä suuri taulukko-olio, johon saatu viite
 tuhotaan heti roskienkeruun mahdollistamiseksi.
 
+
+\begin{figure}
+\caption{Vasteajan muuttuminen suorituksen jatkuessa}\label{fig:warmup-plot}
+    \input{figures/warmup-test}
+\end{figure}
+
 * JIT-käännös
 
 Dalvik sisältää JIT-kääntäjän, jonka toiminta tekee Java-koodin
@@ -382,10 +388,6 @@ systemaattisesti hieman pienempiä.
 
 # TODO: ref below above
 
-\begin{figure}
-\caption{Vasteajan muuttuminen suorituksen jatkuessa}\label{fig:warmup-plot}
-    \input{figures/warmup-test}
-\end{figure}
 
 * Benchmark Generator                                                 :noexport:
 

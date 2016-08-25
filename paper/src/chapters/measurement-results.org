@@ -255,8 +255,6 @@ roskienkeruu edellyttää tilamuutosta esimerkiksi
 ~THREAD_SUSPENDED~-tilaan (johon tilaan virtuaalikone asettaa itsensä
 ennen roskien keruuta).
 
-{{{profile(J2CBenchmark00001)}}}
-
 * Staattiset metodikutsut suunnassa C\to{}Java
 
 Viitteidenkäsittelyn lisärasitteesta Dalvikissa voi päästä eroon
@@ -294,6 +292,9 @@ suorittaa mahdollisesti JIT-käännettyä koodia. Lisäksi
 Java-kohdemetodiin on näissä mittauksissa lisätty yksinkertainen
 sivuvaikutuksellinen operaatio, jotta sitä ei optimoitaisi tyhjänä
 pois käännösvaiheessa.
+
+{{{profile(J2CBenchmark00001)}}}
+
 
 JNI-lisärasitteen suuruudesta saakin paremman arvion seuraavasti.
 Kutsusuunnan {{{cj}}} rasite saadaan vähentämällä ({{{cj}}})-vasteajasta
