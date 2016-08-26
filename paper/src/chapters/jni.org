@@ -239,7 +239,10 @@ tietotyypit ja palvelut, joiden avulla nativiimetodit toteutetaan.
 ** Tietotyypit
 C-kielestä on voitava käsitellä kaikkia Javan tietotyyppejä. Javan
 tyypit kuvautuvat C- ja C++-tyypeille taulukon \ref{tab-primitives} mukaisesti
-@@jnibook(166).
+@@jnibook(166). C-kieliset tyyppinimet ovat peräisin
+~jni.h~-otsaketiedostosta. Natiivimetodien primitiiviparametrien arvot
+ja primitiivityyppiset paluuarvot välitetään natiivirajapinnan yli
+kopioimalla.
 
 # todo suomennos opaque reference
 
@@ -260,10 +263,6 @@ tyypit kuvautuvat C- ja C++-tyypeille taulukon \ref{tab-primitives} mukaisesti
 | ~Object~  | ~jobject~       |       ? | ---       |
 |-----------+-----------------+---------+-----------|
 
-C-kieliset tyyppinimet ovat peräisin
-~jni.h~-otsaketiedostosta. Natiivimetodien primitiiviparametrien arvot
-ja primitiivityyppiset paluuarvot välitetään natiivirajapinnan yli
-kopioimalla.
 
 # todo selvennä mitä kutsukäytännöt tarkoittavat
 

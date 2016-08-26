@@ -89,8 +89,10 @@ arkkitehtuuria.
 * Ohjelmiston kokonaisarkkitehtuuri
 
 Ohjelmisto koostuu kolmesta komponentista, joista käännöstyökalut ja
-analyysityökalut ajetaan kehitysympäristössä työpöytä-Linux-järjestelmässä ja
-mittaustyökalut Android-laitteessa.
+analyysityökalut ajetaan kehitysympäristössä
+työpöytä-Linux-järjestelmässä ja mittaustyökalut
+Android-laitteessa. Ohjelmiston pääkomponentit näkyvät kuvassa
+\ref{fig:architecture}, ja ne käsitellään seuraavassa tarkemmin.
 
 #+NAME: fig:architecture
 #+INCLUDE: "../../src/figures/architecture.puml" src plantuml :results file :file /tmp/architecture.png :exports results
@@ -98,8 +100,6 @@ mittaustyökalut Android-laitteessa.
 #+LABEL: fig:architecture
 #+RESULTS: fig:architecture
 
-Ohjelmiston pääkomponentit näkyvät kuvassa \ref{fig:architecture}, ja
-ne käsitellään seuraavassa tarkemmin.
 
 * Android-sovellus NativeBenchmark
 

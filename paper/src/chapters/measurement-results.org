@@ -556,6 +556,8 @@ Natiivimerkkijonojen eli ~char~-taulukoiden käsittely
 ~Non-blocking IO~-API:n kautta, jota käsitellään myöhemmin tässä
 luvussa.
 
+{{{profile(C2JReadUnicode-512-2)}}}
+
 # TODO: copyUTF O^2? -- mikä on arvo parametrilla 0?
 Vasteaikamittauksista huomataan ensinnäkin, että osoitinoperaatiot,
 jotka välittävät viittauksen suoraan virtuaalikoneen sisäiseen
@@ -572,7 +574,6 @@ lineaarinen.
 
 # TODO Lisää prosentit alle
 
-{{{profile(C2JReadUnicode-512-2)}}}
 
 Kuitenkin noin alle 1500 merkin pituisilla merkkijonoilla merkkijonon
 kopioiminen \path{GetStringRegion}-metodilla on nopeampaa kuin
@@ -596,6 +597,8 @@ Kopioivan Unicode-operaation profiilissa
 
 {{{profile(C2JCopyUnicode-512)}}}
 
+{{{plot_a(special-calls-utf-c-j-alloc-fit)}}}
+
 Sen sijaan UTF-8-muunnoksen tekevä osoitinoperaatio on riippuvainen
 kohteen koosta. Se on myös operaatio, joka johtaa Dalvikin allokoimaan
 muistia muunnettua merkkijonoa varten. Siksi kyseisen operaation
@@ -604,7 +607,6 @@ allokoiviin operaatioihin soveltuvilla vähäisemmillä lähtösilmukan
 kierrosmäärillä: allokoivien operaatioiden kierrosluku on 300 ja
 ei-allokoivien 500000, joten vasteaikojen suhdeluku on 3:5000.
 
-{{{plot_a(special-calls-utf-c-j-alloc-fit)}}}
 # TODO kuva puuttuu yltä
 
 Samoin kopioivat operaatiot ovat lineaarisesti raskaampia kopioitavan
