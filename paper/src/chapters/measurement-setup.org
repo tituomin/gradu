@@ -128,7 +128,7 @@ näkyvät sovelluksen keskeisimmät osat:
   testien natiiviosat,
 - ~BenchmarkRunner~ -luokka,
 - ~MeasuringTool~ -luokan kaksi aliluokkaa
-  \path{JavaSystemNanoResponseTimeRecorder} sekä \path{LinuxPerfRecordTool}.
+  \path{JavaSystemNanoResponse}\-\path{Time}\-\path{Re}\-\path{corder} sekä \path{LinuxPerfRecordTool}.
 
 Testit ovat pohjimmiltaan vain monta kertaa toistettavia
 silmukoita (/lähtösilmukoita/), joiden sisällä kutsutaan tutkinnan

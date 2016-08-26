@@ -323,7 +323,7 @@ toteutusyksityiskohtien tarkempi analyysi jätetään tässä tekemättä.
 
 {{{profile(J2CBenchmark00206)}}}
 
-kuvasta \ref{fig:basic-call-Object-fit} nähdään myös, että
+Kuvasta \ref{fig:basic-call-Object-fit} nähdään myös, että
 viiteparametrien määrän lisääntyessä {{{jc}}}-suunnan kuvaajan
 kulmakerroin on loivempi. Tästä voisi päätellä, että viitteiden
 hallinta tähän suuntaan on tehokkaampaa. Listauksen

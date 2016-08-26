@@ -644,6 +644,7 @@ tulkittavaa dataa siitä, mitkä operaatiot ovat suhteessa erityisen
 raskaita ohjelmistoissa käytettäviksi. Lähestymistavassa on kuitenkin
 myös vakavia puutteita @@goetz-benchmark.
 
+\newpage
 Koska kielen tai järjestelmän alkeisoperaatioiden suoritusaika on
 minimaalinen, käytännössä niiden suorituskykyä mitataan toistamalla
 operaatioita pitkäkestoisessa silmukassa. Alkeisoperaatioiden
@@ -717,6 +718,7 @@ prosessoriarkkitehtuurin ominaisuudet vähentävät tulosten relevanssia
 todellisten sovellusten näkökulmasta. Tulokset ovat siis suuntaa
 antavia, mutta lisätukea tulosten oikeellisuudelle antavat kuitenkin
 seuraavat huomiot.
+\vspace{0.5cm}
 
 1. Pääasiallisena mittauskohteena on C++-kielellä ja konekielellä
    toteutetun Dalvik-virtuaalikoneen sisäiset osat, joihin

@@ -48,6 +48,7 @@ suorittaa Java-kielisiä ohjelmia.
 \caption{Natiivirajapinnan asema \cite[s. 5]{jnibook}}\label{fig:jnibasic}
 \end{figure}
 
+\newpage
 Android-sovellukset ovat lähtökohtaisesti Java-kielisiä, joten
 ainoastaan ensimmäinen integraatiomekanismi on käytettävissä
 sovellusohjelmoijalle. Natiivikomponentit toteutetaan siis
@@ -162,13 +163,11 @@ Java-luokan sisällä. Seuraava esimerkki kuvaa tilannetta
 
 #+begin_src java -r
 class NativeExample {
-
     private native void print(int num); (*@\ding{202}@*)
 
     public static void main(String[] args) {
         new NativeExample().print(5);
     }
-
     static {
         System.loadLibrary("native_example"); (*@\ding{203}@*)
     }
