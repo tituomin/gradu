@@ -51,7 +51,7 @@ tyyppiä vastaavan literaalin, jonka voi aina lisätä lähdekoodiin, kun
 tarvitaan kyseisen tyyppistä arvoa. Kenttä ~jvm-desc~ on
 Java-tavukoodissa ja joissain JNI-kutsuissa käytetty tyyppimääritys.
 Kentän ~representative~ arvon perusteella voidaan alustavien
-mittausten jälkeen välttää turhien testien aikaavievä suoritus --
+mittausten jälkeen välttää turhien testien aikaa vievä suoritus --
 esimerkiksi ~int~- ja ~char~-tyyppien välillä ei huomattu mitään eroa,
 joten mittauksissa voidaan käyttää vain ~int~-tyyppisiä testejä
 edustamaan molempia.

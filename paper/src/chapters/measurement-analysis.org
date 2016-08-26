@@ -1,5 +1,5 @@
 
-Seuraavaksi mittaustuloksista rakennettaan karkea malli, joka kuvaa,
+Seuraavaksi mittaustuloksista rakennetaan karkea malli, joka kuvaa,
 mistä osatekijöistä JNI-rajapinnan käytön rasitteet syntyvät. Mallista
 saatavat lukuarvot ovat suhdelukuja, jotka ilmaisevat eri rasitteiden
 suuruusluokan suhteessa toisiinsa. Mallissa on vain lineaarisia
@@ -12,21 +12,6 @@ käyttötapauksen arvot, nähdään erottelu kyseisen käyttötapauksen
 Kun osatekijöiden rasitteet laskee yhteen, saa tulokseksi JNI:stä johtuva
 kokonaisrasite. Eri käyttötapauksille saatuja kokonaisrasitteiden
 vertailulukuja voi myös verrata keskenään.
-
-Malli /ei/ kerro käyttötapauksen kokonaisrasitetta /suhteessa JNI:n
-käytöstä saatuun hyötyyn/. Tämä on hyvin tapauskohtaista, ja tiedon
-saamiseksi tarvittaisiin tarkat mittaukset siitä, miten paljon
-tehokkaampaa natiivikomponentin käyttö on verrattuna saman laskennan
-suorittamiseen Java-koodissa.
-
-Mallista saatuihin tuloksiin tulee suhtautua summittaisena arviona,
-sillä suoritettavan ohjelman käyttäytymistä kokonaisuutena aidossa
-suoritusympäristössä ei voi täysin palauttaa ohjelmien alkeisosien
-itsenäiseen käyttäytymiseen erillään kokonaisuudesta. Mallia voi
-käyttää osana ohjelmistojen suorituskykytekniikan (SPE) menetelmiä
-sovelluksen varhaisen kehitysvaiheen apuna, sillä sen avulla voi saada
-arvion vasta suunnitteluvaiheessa olevan ohjelmiston
-suorituskykykäyttäytymisestä.
 
 #+LATEX: {\footnotesize
 #+ATTR_LaTeX: align=rr
@@ -48,6 +33,20 @@ suorituskykykäyttäytymisestä.
 
 #+LATEX: }
 
+Malli /ei/ kerro käyttötapauksen kokonaisrasitetta /suhteessa JNI:n
+käytöstä saatuun hyötyyn/. Tämä on hyvin tapauskohtaista, ja tiedon
+saamiseksi tarvittaisiin tarkat mittaukset siitä, miten paljon
+tehokkaampaa natiivikomponentin käyttö on verrattuna saman laskennan
+suorittamiseen Java-koodissa.
+
+Mallista saatuihin tuloksiin tulee suhtautua summittaisena arviona,
+sillä suoritettavan ohjelman käyttäytymistä kokonaisuutena aidossa
+suoritusympäristössä ei voi täysin palauttaa ohjelmien alkeisosien
+itsenäiseen käyttäytymiseen erillään kokonaisuudesta. Mallia voi
+käyttää osana ohjelmistojen suorituskykytekniikan (SPE) menetelmiä
+sovelluksen varhaisen kehitysvaiheen apuna, sillä sen avulla voi saada
+arvion vasta suunnitteluvaiheessa olevan ohjelmiston
+suorituskykykäyttäytymisestä.
 
 Malliin ei ole otettu mukaan kaikkia JNI-rajapinnan tarjoamia
 erikoistoimintoja kuten merkkijonojen merkistömuunnoksia, vaan se
@@ -62,9 +61,12 @@ JNI-operaatioille/. Kutsusuunnassa {{{jc}}} ei ole muita operaatioita
 kuin natiivimetodikutsu, joten aliohjelmakutsun perusrasite on mukana
 JNI-perusrasitteessa.
 
+
+
+
 Sovelletaan mallia esimerkkitapaukseen, jossa suunnassa {{{cj}}} kutsutaan
 ~void~-arvon palauttavaa instanssimetodia virtuaalikutsuna kymmenellä
-~long[]~-tyyppisellä parameterilla. C-ohjelmassa kutsu näyttää tältä:
+~long[]~-tyyppisellä parametrilla. C-ohjelmassa kutsu näyttää tältä:
 
 #+begin_src c
 (*env)->CallVoidMethod(env, java_object, mid, l1, [...] l10);
@@ -115,7 +117,7 @@ tuloksista saatiin hyödyllistä ennakkotietoa monikielisten
 Android-sovellusten käyttäytymisestä. Laaditun mallin avulla
 sovelluksen suunnittelijan on mahdollista esimerkiksi vertailla kahden
 vaihtoehtoisen arkkitehtuurimallin suorituskykyrasitteita ennen kuin
-sitoutuu jompaan kumpaan malliin. Lisäksi tulosten avulla saatiin
+sitoutuu jompaankumpaan malliin. Lisäksi tulosten avulla saatiin
 selville joitakin natiivirajapinnan käyttötapoja, joita tulisi välttää
 kaikissa rajapintaa hyödyntävissä sovelluksissa.
 

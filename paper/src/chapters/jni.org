@@ -387,6 +387,8 @@ tallennetaan valmiiksi normaalilla ~GetMethodID~-kutsulla
 natiivimetodissa \ding{204}, jota kutsutaan staattisessa
 alustuslohkossa \ding{205}.
 
+\newpage
+
 Alkuperäisessä natiivirajapinnan spesifikaatiossa arvioidaan, että
 tunnisteiden tallentamisesta huolimatta takaisinkutsurajapinnan
 käyttäminen on tyypillisissä toteutuksissa hitaampaa kuin
@@ -558,7 +560,7 @@ natiiviohjelman sisältämien erityyppisten Java-viitteiden
 eksplisiittistä hallintaa. Natiivirajapinta tarjoaa
 natiivikomponentille kolmentyyppisiä viitteitä virtuaalikoneen
 olioihin: /paikallisia viitteitä/, /globaaleja viitteitä/ ja /heikkoja
-globaaleja viitteitä/ (/local references/, /global references/, /weak
+globaaleja viitteitä/ (/local references/, /glo\-bal references/, /weak
 global references/).
 
 Kuten mainittu, JNI:n palauttamat suorat osoittimet virtuaalikoneen

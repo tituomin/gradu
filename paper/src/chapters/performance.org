@@ -7,7 +7,7 @@ kysymykseen on vastattu hyvin eri tavoin.
 Tämä luku käsittelee sitä, miten ohjelmistolta vaadittava riittävä
 suorituskyky voidaan saavuttaa ohjelmistoa laadittaesssa. Aluksi
 tutkitaan, missä vaiheessa ohjelmistoprosessia suorituskyky tulisi
-huomioida. Sitten käsittelyä syvennettään määrittelemällä mittareita,
+huomioida. Sitten käsittelyä syvennetään määrittelemällä mittareita,
 joiden avulla suorituskykyä voi arvioida ja mitata
 kvantitatiivisesti. Tämän jälkeen käsittely keskittyy konkreettisten
 ohjelmien suorituskyvyn mittausmenetelmiin ja aivan lopuksi
@@ -84,7 +84,7 @@ mallintamiseen varhaisessa kehitysvaiheessa
 sen osa on jo olemassa. Mallintamista hankaloittaa puolestaan, että
 käyttökelpoiselta mallilta vaaditaan abstraktisuutta ja
 yksinkertaisuutta mutta samalla riittävää /tarkkuutta/ suhteessa
-määriteltyyn syötejoukkoon sekä reunaehtoihin ollaakseen /validi/
+määriteltyyn syötejoukkoon sekä reunaehtoihin ollakseen /validi/
 @@ferrari(161--162).
 
 Mittaus- ja mallintamisnäkökulmaa ei ole saatu yhdistettyä toisiinsa
@@ -188,7 +188,7 @@ prosessien määrä pyritään minimoimaan ja niiden vaikutus tulkitaan
 mittausten satunnaisvirheeksi.
 
 Kvantitatiivisten mittausten rinnalla kannattaa pitää mielessä
-käyttäjän subjektiivinen kokemus: käyttäjä voi kokea jopa yhtäsuuriksi
+käyttäjän subjektiivinen kokemus: käyttäjä voi kokea jopa yhtä suuriksi
 mitatut vasteajat erilaisiksi, jos käyttöliittymässä näkyvä työn
 valmistumista havainnollistava edistymispalkki etenee eri tavalla
 @@progressbar.
@@ -475,7 +475,7 @@ tarvitse painottaa suhteessa toisiinsa.
 # todo: lue tilastotieteen perusteet ja kirjoita em. kappale paremmin
 # ferrari 57-59
 
-Systemaattisen ja jaksollisen näytteenotton suunnittelussa saattaa
+Systemaattisen ja jaksollisen näytteenoton suunnittelussa saattaa
 kuitenkin sattua erilaisia virheitä, joiden seurauksena tietyt
 ajanhetket valitaan otokseen todennäköisemmin kuin toiset. Jos
 tutkittavassa prosessissa on jokin jaksollisesti toistuva ilmiö, jonka
@@ -519,7 +519,7 @@ kanssa.
 
 # todo: analysoi linuxin timeria ja schedulointia..
 # todo: onko dalvikissa ym. muissa komponenteissa jaksollisia ilmiöitä?
-\newpage
+
 * Mittauskohteen edustavuus ja tulosten yleistettävyys
 \label{performance:representativeness-generalization}
 

@@ -86,7 +86,7 @@
 #+LATEX: \newpage
 * Suorituskykymittaukset
   Tutkielman aineisto saatiin mittaamalla JNI-operaatioita käyttäviä
-  ohjelmia Android-laitteessa ja analysoimalla tuloksia. Tässä luvussa
+  ohjelmia An\-droid-laitteessa ja analysoimalla tuloksia. Tässä luvussa
   kuvaillaan mittausten koeasetelma, esitellään mittaustulokset ja
   rakennetaan niiden avulla parametrisoitu malli, joka ennustaa rajapinnan
   suorituskykykäyttäytymistä.

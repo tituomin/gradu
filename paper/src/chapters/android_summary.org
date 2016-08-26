@@ -5,7 +5,7 @@ syvennytään tutkielman varsinaiseen aiheeseen, suorituskyvyn
 mittaamiseen ja mallintamiseen sekä Androidin Java-natiivirajapintaan.
 
 Androidin versiosta 6 lähtien Dalvik-virtuaalikone on korvattu
-ART-virtuaalikoneella. Koska tämän tutkielman mittaukset on tehty
+ART-virtuaaliko\-neel\-la. Koska tämän tutkielman mittaukset on tehty
 Dalvikia vasten, uudistettu virtuaalikone tekee mittaustuloksista osin
 vanhentuneita. Tutkielman metodologian kannalta uudistuksella ei
 kuitenkaan ole väliä. Samat mittaukset voi toteuttaa samoilla
@@ -74,7 +74,9 @@ yksinkertaisen näkymän käyttöjärjestelmän palveluihin. Valtaosa
 palveluiden varsinaisesta toteutuksesta sijoittuu kuitenkin Androidin
 /järjestelmäpalveluihin/ (/system services/) eli komponentteihin joita
 järjestelmä suorittaa omissa palvelinprosesseissaan
-@@embedded(79). Yleensä sovellusohjelmoija ei kutsu näitä
+@@embedded(79).
+
+Yleensä sovellusohjelmoija ei kutsu näitä
 tukipalveluita suoraan, vaan Android-ohjelmointirajapintojen sisäiset
 toteutukset kutsuvat niitä Binderin tarjoaman prosessienvälisen
 kutsumekanismin avulla sovelluksen prosessista käsin. Komponenttien

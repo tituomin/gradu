@@ -49,7 +49,6 @@ päinvastaista suuntaa nopeampia/: edellisten vasteajat suhteessa
 jälkimmäisten aikoihin ovat noin kolminkertaisia. Tämä pätee kaikilla
 parametrityypeillä.
 
-{{{plot(basic-call-all-types-j-j-fit)}}}
 
 Sen sijaan samankielisten suuntien ({{{permu(Java,Java)}}}) sekä
 ({{{permu(C,C)}}}) välisestä erosta ei tämän mittauksen perusteella
@@ -67,6 +66,8 @@ mittausten parametrityypit samankielisissä kutsusuunnissa.
 Lineaarisen riippuvuuden perusteella Java-kääntäjä tai Dalvikin
 JIT-kääntäjä ei ole onnistunut optimoimaan pois tyhjän metodin kutsua
 Java-koodista.
+
+{{{plot(basic-call-all-types-j-j-fit)}}}
 
 Kuvassa \ref{fig:basic-call-all-types-c-c-fit}
 mainitut Java-tyypit kuvautuvat C-kielen tyypeiksi
@@ -182,7 +183,8 @@ case kIndirectKindLocal:
     {
         Object* result = self->jniLocalRefTable.get(jobj); (*@\ding{203}@*)
         if (UNLIKELY(result == NULL)) {
-            ALOGE("JNI ERROR (app bug): use of deleted local reference (%p)", jobj);
+            ALOGE("JNI ERROR (app bug): "
+                  "use of deleted local reference (%p)", jobj);
             dvmAbort();
         }
         return result;
@@ -194,7 +196,8 @@ case kIndirectKindGlobal:
         ScopedPthreadMutexLock lock(&gDvm.jniGlobalRefLock); (*@\ding{202}@*)
         Object* result = pRefTable->get(jobj);
         if (UNLIKELY(result == NULL)) {
-            ALOGE("JNI ERROR (app bug): use of deleted global reference (%p)", jobj);
+            ALOGE("JNI ERROR (app bug): "
+                  "use of deleted global reference (%p)", jobj);
             dvmAbort();
         }
         return result;
@@ -320,7 +323,7 @@ toteutusyksityiskohtien tarkempi analyysi jätetään tässä tekemättä.
 
 {{{profile(J2CBenchmark00206)}}}
 
-Kuvasta \ref{fig:basic-call-Object-fit} nähdään myös, että
+kuvasta \ref{fig:basic-call-Object-fit} nähdään myös, että
 viiteparametrien määrän lisääntyessä {{{jc}}}-suunnan kuvaajan
 kulmakerroin on loivempi. Tästä voisi päätellä, että viitteiden
 hallinta tähän suuntaan on tehokkaampaa. Listauksen
@@ -563,7 +566,7 @@ Vasteaikamittauksista huomataan ensinnäkin, että osoitinoperaatiot,
 jotka välittävät viittauksen suoraan virtuaalikoneen sisäiseen
 Unicode-tietorakenteeseen, ovat yhtä nopeita riippumatta merkkijonon
 pituudesta (ks. kuva \ref{fig:special-calls-unicode-c-j-fit}). Tämä on
-odotetusten mukaista, sillä operaatiossa välitetään vain osoite
+odotusten mukaista, sillä operaatiossa välitetään vain osoite
 merkkijonoon. Myös Unicode-merkkijonon pituuden selvitys on
 vakiollinen operaatio, oletettavasti koska merkkijonon pituus on
 tallessa Java-merkkijonon sisäisessä toteutuksessa. Kopioivan
@@ -634,8 +637,8 @@ seuraavissa testeissä.
 
 - Get\tau{}ArrayElements :: Funktiot \verb|Get|\tau\verb|ArrayElements| ja
      \verb|Release|\tau\verb|ArrayElements|
-- ReadPrimitiveArrayCritical :: Funktiot \path{GetPrimitiveArrayCritical} ja
-     \path{Release}-\path{PrimitiveArrayCritical}
+- ReadPrimitiveArrayCritical :: Funktiot \path{GetPrimitiveArrayCritical} ja\newline
+     \path{ReleasePrimitiveArrayCritical}
 
 Operaatioiden nimet saadaan korvaamalla \tau jollakin Javan
 primitiivityypeistä. Kopioivat operaatiot ovat ~Get~\(\tau\)\verb|ArrayRegion| ja
@@ -648,10 +651,10 @@ kutsua kohti eli karkeasti arvioiden yli 20 sekuntia 512-alkioisen
 taulukon läpikäyntiin.
 
 Suoria vertailukohtia näille suunnan {{{cj}}} taulukko-operaatioille
-ei ole muissa kutsusuunnissa, jälleen kerran lukuunottamatta
+ei ole muissa kutsusuunnissa, jälleen kerran lukuun ottamatta
 ~NIO~-rajapintaa (ks. kohta \ref{sec:measurement-classification-nio}).
 
-Primitiivitaululukoiden operaatioiden osoitinversioiden vasteajat ovat
+Primitiivitaulukoiden operaatioiden osoitinversioiden vasteajat ovat
 odotetusti vakiollisia suhteessa syötteen kokoon (kuvan
 \ref{fig:special-calls-arrayelements-c-j-fit} ylempi ryhmittymä), kun
 taas kopioivat versiot kasvavat lineaarisesti syötteen koon kasvaessa
@@ -660,7 +663,7 @@ pituuden selvittäminen on vakiollinen operaatio (kuvan
 \ref{fig:special-calls-arrayelements-c-j-fit} alempi ryhmittymä).
 
 {{{plot_edited(special-calls-arrayregion-c-j-fit, Taulukoiden käsittely kopioimalla suunnassa C$\rightarrow$Java)}}}
-
+\newpage
 Kutsuprofiilien perusteella taulukoiden osoitinoperaatioiden
 kutsurakenteet ovat täsmälleen samoja merkkijonojen
 osoitinoperaatioiden kanssa, joten kutsuprofiileja ei ole erikseen
@@ -712,7 +715,7 @@ Jos ~ByteBuffer~-on allokoitu /suorana/ (/direct/), virtuaalikone
 yrittää taata, että natiivioperaatiot (käyttöjärjestelmän operaatiot
 tai JNI-natiivikomponentin suorittamat operaatiot), joita puskurille
 suoritetaan, tehdään suoraan samalle muistialueelle, jota
-Java-ohjelmakin käsittelee. Sitävastoin epäsuoran puskurin sisältö
+Java-ohjelmakin käsittelee. Sitä vastoin epäsuoran puskurin sisältö
 saatetaan kopioida erikseen ennen
 natiivi-I/O-operaatioita. JNI-rajapinta tarjoaa pääsyn ainoastaan
 /suoran/ ~ByteBuffer~-olion muistialueelle, jota voi käsitellä suoraan
@@ -755,6 +758,7 @@ jotka nähtiin aiemminkin käsitellyissä JNI-kutsuissa.
 |---------------------------------+--------------+-------------+--------------|
 | \path{NewDirectByteBuffer}      | 300          | 0.007909092 |         13.2 |
 
+\vspace{0.5cm}
 \path{NewDirectByteBuffer}-kutsuprofiili listauksessa
 \ref{profile:C2JNewDirectBuffer-512} näyttää lähes yksinomaan
 roskienkeruuseen liittyviä metodikutsuja alkaen metodista
@@ -814,7 +818,7 @@ yksinkertaistamisen vuoksi pois rajatut palvelut liittyvät
 rinnakkaisohjelmointiin (\path{MonitorEnter} ja \path{MonitorExit}) ja
 poikkeustenkäsittelyyn. Ne olisivat mielenkiintoinen jatkotutkimuksen
 aihe.
-
+\newpage
 Mittauksia tehtiin myös /allokoiville/ rajapinnan palveluille, joilla
 luodaan uusia Java-olioita. Näitä operaatioita ei kuitenkaan käsitelty
 systemaattisesti, koska muiden tulosten valossa niidenkään
